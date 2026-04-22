@@ -24,7 +24,7 @@ export function FinalCtaSection() {
               </a>
               <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-3 text-white/90 hover:text-[var(--color-accent-300)] transition-colors group" dir="ltr">
                 <div className="h-10 w-10 rounded-xl bg-white/10 group-hover:bg-[var(--color-accent-500)]/20 flex items-center justify-center transition-colors"><Mail className="h-4 w-4" /></div>
-                <div class ="text-start"><p className="text-xs text-white/60">راسلنا</p><p className="text-sm font-semibold">{CONTACT.email}</p></div>
+                <div className="text-start"><p className="text-xs text-white/60">راسلنا</p><p className="text-sm font-semibold">{CONTACT.email}</p></div>
               </a>
               <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-white/90 hover:text-[var(--color-accent-300)] transition-colors group">
                 <div className="h-10 w-10 rounded-xl bg-white/10 group-hover:bg-[var(--color-accent-500)]/20 flex items-center justify-center transition-colors"><MessageSquare className="h-4 w-4" /></div>
