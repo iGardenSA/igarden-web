@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   iGarden — الحديقة الذكية | Design Tokens v1.0
+   مرجع: Brand Guidelines v1.0
+   ========================================================================== */
+
+@theme {
+  /* ----- Brand Colors (Primary) ----- */
+  --color-brand-50: #f0f7f3;
+  --color-brand-100: #d9ebe1;
+  --color-brand-200: #b3d7c3;
+  --color-brand-300: #7fb89c;
+  --color-brand-400: #4a9472;
+  --color-brand-500: #1b5e3f; /* الأخضر المؤسسي البديل */
+  --color-brand-600: #0f3d2e; /* الأخضر الأساسي – Deep Forest */
+  --color-brand-700: #0c3225;
+  --color-brand-800: #08251c;
+  --color-brand-900: #051912;
+
+  /* ----- Accent (Lime) ----- */
+  --color-accent-50: #f5fbe8;
+  --color-accent-100: #e8f5cc;
+  --color-accent-200: #d4ec99;
+  --color-accent-300: #a5d63f; /* المحفّز الفاتح */
+  --color-accent-400: #8fc73a;
+  --color-accent-500: #7cb342; /* المحفّز الأساسي – Lime Accent */
+  --color-accent-600: #66942f;
+  --color-accent-700: #517627;
+  --color-accent-800: #3e591e;
+  --color-accent-900: #2c3f15;
+
+  /* ----- Neutrals (Surface & Text) ----- */
+  --color-surface: #fafaf7;       /* الخلفية الكريمية */
+  --color-surface-alt: #ffffff;
+  --color-foreground: #1a1a1a;    /* النص الأساسي */
+  --color-muted: #6b7280;         /* النص الثانوي */
+  --color-border: #e5e7eb;        /* الحدود/الفواصل */
+
+  /* ----- Semantic ----- */
+  --color-success: #7cb342;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-info: #1b5e3f;
+
+  /* ----- Typography ----- */
+  --font-sans-ar: "Tajawal", "IBM Plex Sans Arabic", "Cairo", system-ui, sans-serif;
+  --font-sans-en: "Poppins", "Inter", system-ui, sans-serif;
+  --font-display: "Tajawal", "Poppins", system-ui, sans-serif;
+
+  /* ----- Type Scale ----- */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  /* ----- Spacing & Radius ----- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+
+  /* ----- Shadows (Eco-Tech feel — soft, brand-tinted) ----- */
+  --shadow-soft: 0 2px 8px rgba(15, 61, 46, 0.08);
+  --shadow-md: 0 4px 16px rgba(15, 61, 46, 0.10);
+  --shadow-lg: 0 8px 32px rgba(15, 61, 46, 0.12);
+  --shadow-glow: 0 0 24px rgba(124, 179, 66, 0.25);
+
+  /* ----- Container ----- */
+  --container-padding: 1.5rem;
+}
+
+/* ==========================================================================
+   Base Layer — التهيئة العامة
+   ========================================================================== */
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  html[lang="en"] {
+    direction: ltr;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-foreground);
+    font-family: var(--font-sans-ar);
+    font-feature-settings: "kern", "liga", "calt";
+    line-height: 1.6;
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-sans-en);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--color-brand-600);
+  }
+
+  /* الأرقام بخط Latin أكثر أناقة */
+  .num,
+  [data-num] {
+    font-family: var(--font-sans-en);
+    font-feature-settings: "tnum" 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* تحديد النص — لون الهوية */
+  ::selection {
+    background-color: var(--color-accent-500);
+    color: var(--color-brand-600);
+  }
+
+  /* Focus accessible */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar نحيف بلون الهوية */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-brand-200);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-300);
+  }
+}
+
+/* ==========================================================================
+   Components Layer — أنماط جاهزة
+   ========================================================================== */
+
+@layer components {
+  .container-igarden {
+    @apply mx-auto w-full max-w-7xl px-6 md:px-8 lg:px-12;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold;
+    color: var(--color-brand-600);
+  }
+
+  .heading-eyebrow {
+    @apply text-xs md:text-sm font-bold uppercase tracking-[0.2em];
+    color: var(--color-accent-500);
+  }
+}
