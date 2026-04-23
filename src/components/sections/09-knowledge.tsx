@@ -30,7 +30,7 @@ export function KnowledgeSection() {
                 <Link href="/knowledge">اكتشف برامجنا التدريبية<ArrowLeft className="rotate-180" /></Link>
               </Button>
               <Button variant="light" size="lg" asChild>
-                <Link href="/insights">تصفّح المقالات</Link>
+                <Link href="/blog">تصفّح المقالات</Link>
               </Button>
             </div>
           </div>

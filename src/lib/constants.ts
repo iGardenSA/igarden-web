@@ -104,10 +104,8 @@ export const SOCIAL = {
 export const NAV_MAIN = [
   { href: "/", label: "الرئيسية" },
   { href: "/about", label: "من نحن" },
-  { href: "/solutions", label: "الحلول" },
-  { href: "/roadmap", label: "خارطة الطريق" },
   { href: "/products", label: "المنتجات" },
+  { href: "/roadmap", label: "خارطة الطريق" },
   { href: "/investors", label: "المستثمرون" },
-  { href: "/insights", label: "المعرفة" },
   { href: "/contact", label: "تواصل معنا" },
 ] as const;

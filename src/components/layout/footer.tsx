@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Twitter } from "lucide-react";
-import { COMPANY, CONTACT, SOCIAL, NAV_MAIN } from "@/lib/constants";
+import { COMPANY, CONTACT, SOCIAL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -26,58 +26,58 @@ export function Footer() {
             </p>
           </div>
 
-          {/* روابط سريعة */}
+          {/* الشركة */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              روابط سريعة
-            </h4>
-            <ul className="space-y-3">
-              {NAV_MAIN.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-white/80 hover:text-[var(--color-accent-300)] transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* الحلول */}
-          <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
-              حلولنا
+              الشركة
             </h4>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <Link href="/products#tower" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/about" className="hover:text-[var(--color-accent-300)] transition-colors">
+                  من نحن
+                </Link>
+              </li>
+              <li>
+                <Link href="/roadmap" className="hover:text-[var(--color-accent-300)] transition-colors">
+                  خارطة الطريق
+                </Link>
+              </li>
+              <li>
+                <Link href="/investors" className="hover:text-[var(--color-accent-300)] transition-colors">
+                  المستثمرون
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* المنتجات والخدمات */}
+          <div>
+            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
+              المنتجات
+            </h4>
+            <ul className="space-y-3 text-sm text-white/80">
+              <li>
+                <Link href="/products#smart-os" className="hover:text-[var(--color-accent-300)] transition-colors">
+                  iGarden Smart OS
+                </Link>
+              </li>
+              <li>
+                <Link href="/products#tower" className="hover:text-[var(--color-accent-300)] transition-colors">
                   iGarden Tower
                 </Link>
               </li>
               <li>
-                <Link href="/products#greenhouse" className="hover:text-[var(--color-accent-300)]">
-                  Smart Greenhouses
+                <Link href="/products" className="hover:text-[var(--color-accent-300)] transition-colors">
+                  جميع المنتجات
                 </Link>
               </li>
               <li>
-                <Link href="/products#aquaponics" className="hover:text-[var(--color-accent-300)]">
-                  Aquaponics
-                </Link>
-              </li>
-              <li>
-                <Link href="/products#cloud" className="hover:text-[var(--color-accent-300)]">
-                  iGarden Cloud
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/blog" className="hover:text-[var(--color-accent-300)] transition-colors">
                   المدونة
                 </Link>
               </li>
               <li>
-                <Link href="/case-studies" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/case-studies" className="hover:text-[var(--color-accent-300)] transition-colors">
                   دراسات الحالة
                 </Link>
               </li>
