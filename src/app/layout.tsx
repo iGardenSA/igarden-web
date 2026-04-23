@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Tajawal, Poppins } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { WhatsAppFab } from "@/components/ui/whatsapp-fab";
 import { COMPANY, CONTACT } from "@/lib/constants";
 import "@/styles/globals.css";
 
@@ -132,8 +133,9 @@ export default function RootLayout({
 
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pt-16 md:pt-20">{children}</main>
           <Footer />
+          <WhatsAppFab />
         </div>
       </body>
     </html>

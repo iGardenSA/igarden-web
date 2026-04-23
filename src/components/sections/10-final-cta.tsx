@@ -5,13 +5,13 @@ import { CONTACT } from "@/lib/constants";
 
 export function FinalCtaSection() {
   return (
-    <section className="container-igarden py-16 md:py-24">
+    <section className="container-igarden py-10 sm:py-14 md:py-20">
       <div className="relative overflow-hidden rounded-3xl bg-[var(--color-brand-600)] text-white">
         <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 90% 50%, var(--color-accent-500) 0%, transparent 50%), radial-gradient(circle at 10% 20%, var(--color-accent-300) 0%, transparent 40%)" }} />
         <div className="relative p-10 md:p-16 lg:p-20">
           <div className="max-w-3xl">
             <Leaf className="h-10 w-10 text-[var(--color-accent-300)] mb-6" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white leading-tight">جاهز لبدء رحلتك<br />في الزراعة الذكية؟</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-white leading-tight">جاهز لبدء رحلتك<br />في الزراعة الذكية؟</h2>
             <p className="text-lg text-white/85 leading-relaxed mb-10 max-w-2xl">احجز استشارة مجانية مع فريقنا التقني — سنصمّم لك حلاً يناسب موقعك ومناخك وأهدافك الإنتاجية، خلال 72 ساعة من تواصلك.</p>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button variant="accent" size="xl" asChild><Link href="/contact">احجز استشارتك المجانية</Link></Button>

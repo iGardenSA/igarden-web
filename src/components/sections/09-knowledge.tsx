@@ -15,7 +15,7 @@ export function KnowledgeSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <p className="heading-eyebrow mb-4 text-[var(--color-accent-300)]">iGarden Knowledge</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
               التقنية وحدها لا تكفي —<br /><span className="text-[var(--color-accent-300)]">المعرفة تصنع الفرق.</span>
             </h2>
             <p className="text-lg text-white/85 leading-relaxed mb-8">
