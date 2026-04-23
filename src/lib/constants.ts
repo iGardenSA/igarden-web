@@ -105,6 +105,7 @@ export const NAV_MAIN = [
   { href: "/", label: "الرئيسية" },
   { href: "/about", label: "من نحن" },
   { href: "/solutions", label: "الحلول" },
+  { href: "/roadmap", label: "خارطة الطريق" },
   { href: "/products", label: "المنتجات" },
   { href: "/insights", label: "المعرفة" },
   { href: "/contact", label: "تواصل معنا" },

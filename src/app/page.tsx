@@ -1,6 +1,7 @@
 import {
   HeroSection,
   TrustBarSection,
+  AchievementsSection,
   ProblemSection,
   SolutionSection,
   ProductsSection,
@@ -8,6 +9,7 @@ import {
   ProcessSection,
   SectorsSection,
   KnowledgeSection,
+  EWAxSection,
   FinalCtaSection,
 } from "@/components/sections";
 
@@ -16,6 +18,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <TrustBarSection />
+      <AchievementsSection />
       <ProblemSection />
       <SolutionSection />
       <ProductsSection />
@@ -23,6 +26,7 @@ export default function HomePage() {
       <ProcessSection />
       <SectorsSection />
       <KnowledgeSection />
+      <EWAxSection />
       <FinalCtaSection />
     </>
   );
