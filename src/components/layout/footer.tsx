@@ -52,23 +52,33 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-white/80">
               <li>
-                <Link href="/products/tower" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/products#tower" className="hover:text-[var(--color-accent-300)]">
                   iGarden Tower
                 </Link>
               </li>
               <li>
-                <Link href="/products/greenhouse" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/products#greenhouse" className="hover:text-[var(--color-accent-300)]">
                   Smart Greenhouses
                 </Link>
               </li>
               <li>
-                <Link href="/products/aquaponics" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/products#aquaponics" className="hover:text-[var(--color-accent-300)]">
                   Aquaponics
                 </Link>
               </li>
               <li>
-                <Link href="/products/cloud" className="hover:text-[var(--color-accent-300)]">
+                <Link href="/products#cloud" className="hover:text-[var(--color-accent-300)]">
                   iGarden Cloud
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[var(--color-accent-300)]">
+                  المدونة
+                </Link>
+              </li>
+              <li>
+                <Link href="/case-studies" className="hover:text-[var(--color-accent-300)]">
+                  دراسات الحالة
                 </Link>
               </li>
             </ul>
