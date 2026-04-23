@@ -3,7 +3,7 @@
 > **تعليمات لـ Claude Code للعمل في هذا المستودع**
 >
 > هذا الملف يُقرأ تلقائياً في كل جلسة Claude Code.
-> آخر تحديث: 2026-04-23 (متوافق مع Master v1.0.1 + Tech Appendix v1.0)
+> آخر تحديث: 2026-04-24 (متوافق مع Master v1.0.1 + Tech Appendix v1.0)
 
 ---
 
@@ -52,7 +52,7 @@
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 15.2.3** (App Router) — ⚠️ marked vulnerable, upgrade to 15.5+ planned
+- **Next.js 16.2.4** (App Router)
 - **TypeScript** (strict mode)
 - **Tailwind CSS v4** + CSS Variables
 - **shadcn/ui** components
@@ -69,7 +69,7 @@
 - **Resend** (Edge Email — مخطط)
 
 ### DevOps
-- **Vercel Pro** — 🔴 Production deployment blocked (Next.js vulnerable)
+- **Vercel Pro** — ✅ مفعّل (Paid plan active)
 - **GitHub:** iGardenSA/igarden-web (Public)
 - **Domain:** igarden.sa (لم يُربط بعد)
 
@@ -77,15 +77,7 @@
 
 ## 🔴 Blockers الحرجة (Apr 2026)
 
-### Blocker 1: Vercel Production Deployment
-- **المشكلة:** Next.js 15.2.3 مُعلَّم vulnerable من Vercel
-- **الخيارات:**
-  - أ) ترقية Next 15.5+ (30-60 دقيقة، خطر متوسط)
-  - ب) Downgrade لـ Vercel Hobby (10 دقائق)
-  - ج) Netlify/Cloudflare migration (1-2 ساعة)
-- **الأولوية:** P0 — قبل تقديم سنبلة
-
-### Blocker 2: Pitch Deck UTF-8 (للتسويق)
+### Blocker 1: Pitch Deck UTF-8 (للتسويق)
 - شرائح 1-3 معطوبة الترميز
 - الحل: إعادة بناء في Claude Design (مخطط)
 
@@ -399,8 +391,8 @@ FastAPI Backend:
 ## 🎯 الأولويات الحالية (Apr 2026)
 
 ### P0 — هذا الأسبوع
-1. 🔴 حل Vercel Deployment Blocker
-2. 🔴 ربط دومين igarden.sa بعد الحل
+1. ✅ ~~Vercel Deployment Blocker~~ — محلول (Next 16 + Vercel Pro)
+2. 🔴 ربط دومين igarden.sa بـ Vercel
 3. 🔴 Pitch Deck v4 (بـ Claude Design)
 
 ### P1 — الأسبوع القادم
@@ -467,8 +459,8 @@ iGarden Ecosystem:
 5. **شهرياً على الأقل** → مراجعة عامة
 
 **صاحب التحديث:** Ali Ghanimah (CEO)
-**آخر تحديث:** 2026-04-23
-**الإصدار:** v1.1 (متوافق مع Master v1.0.1 + Tech Appendix v1.0)
+**آخر تحديث:** 2026-04-24
+**الإصدار:** v1.2 (متوافق مع Master v1.0.1 + Tech Appendix v1.0)
 
 ---
 
