@@ -180,3 +180,20 @@
     color: var(--color-accent-500);
   }
 }
+
+/* ==========================================================================
+   Input Fields — حقول النماذج
+   ========================================================================== */
+
+@layer components {
+  .input-igarden {
+    @apply w-full px-4 py-3 rounded-xl border-2 bg-white;
+    @apply text-[var(--color-foreground)] placeholder:text-[var(--color-muted)];
+    @apply border-[var(--color-border)] transition-colors duration-200;
+    @apply focus:outline-none focus:border-[var(--color-accent-500)] focus:ring-2 focus:ring-[var(--color-accent-500)]/20;
+  }
+
+  textarea.input-igarden {
+    @apply leading-relaxed;
+  }
+}
