@@ -1,48 +1,115 @@
-# 🌱 iGarden — الموقع المؤسسي
+# iGarden Web — igarden.sa
 
-> **iGarden — الحديقة الذكية** | الموقع الرسمي على `igarden.sa`
+> **شركة انتيليجنت غاردن (ذات مسؤولية محدودة)** · Intelligent Garden Company
+>
+> الموقع المؤسسي لـ **iGarden — الحديقة الذكية**
+>
+> ازرع بذكاء · Plant Smart
 
-موقع مؤسسي لشركة **الحديقة الذكية** مبني بـ Next.js 15 + Tailwind v4 + shadcn/ui، ملتزم بالكامل بدليل الهوية البصرية v1.0.
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.4-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.5-61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6)](https://www.typescriptlang.org/)
+[![Tailwind](https://img.shields.io/badge/Tailwind-v4-38B2AC)](https://tailwindcss.com/)
+[![Deployed](https://img.shields.io/badge/Deployed-Vercel%20Pro-000000)](https://vercel.com)
 
 ---
 
-## 📐 البنية التقنية (Stack)
+## 🌐 الروابط
 
-| الطبقة | التقنية |
-|---|---|
-| Framework | Next.js 15 (App Router) + TypeScript |
-| Styling | Tailwind CSS v4 + CSS Variables |
-| UI Components | shadcn/ui (Radix Primitives) |
-| Icons | Lucide React (outline, stroke 1.5) |
-| Fonts | Tajawal (AR) + Poppins (EN) |
-| CMS | Sanity.io (محتوى مرن قابل للتحرير) |
-| Auth + DB | Supabase |
-| Hosting | Vercel |
-| Forms | React Hook Form + Zod |
+- **الموقع الرسمي:** https://igarden.sa
+- **الديمو التفاعلي:** https://demo.igarden.sa
+- **المتجر (قريباً):** https://shop.igarden.sa
+
+---
+
+## 🎯 التموضع
+
+**iGarden** شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي.
+
+**ننفّذ · نُوطّن · نُطوّر**
+
+- **ننفّذ:** نُصمّم ونُركّب مزارع وأنظمة تحكّم ذكية كمقاول متخصّص
+- **نُوطّن:** نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية لمناخ +45°C
+- **نُطوّر:** R&D داخلي كسلاح دائم، لا خدمة خارجية
+
+---
+
+## 🏗️ الركائز الثلاث للمنتج
+
+1. **Smart Controllers** ⭐ — لوحات التحكم (Flagship — صناعة سعودية)
+2. **Smart Greenhouses** — المحميات الذكية (للمشاريع الكبيرة والمتوسطة)
+3. **Hydroponic Systems** — أنظمة الزراعة المائية (تشمل iGarden Tower · SAIP #423450193)
+
+منتجات تكميلية: Hydroponic Fodder · Aquaponics
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 16.2.4** (App Router)
+- **React 19.2.5**
+- **TypeScript** (strict mode)
+- **Tailwind CSS v4**
+- **shadcn/ui** components
+- **Lucide React** (line icons)
+- **React Hook Form + Zod**
+
+### Backend
+- **Supabase** (Postgres + Auth + RLS) — Frankfurt EU
+- **Resend** (Transactional email — قيد الإعداد)
+
+### DevOps
+- **Vercel Pro** (استضافة + CDN + SSL)
+- **GitHub:** [iGardenSA/igarden-web](https://github.com/iGardenSA)
+- **DNS:** Vercel DNS
+
+### Fonts
+- **Arabic:** Tajawal (via next/font)
+- **English:** Poppins + Inter
 
 ---
 
 ## 🚀 البدء السريع
 
-### 1) المتطلبات
-- Node.js **20+**
-- pnpm / npm / yarn
+### المتطلبات
 
-### 2) التثبيت
+- Node.js ≥ 20
+- npm أو yarn
+- حساب Supabase (لـ CRM)
+
+### التنصيب
+
 ```bash
+# استنساخ المستودع
+git clone https://github.com/iGardenSA/igarden-web.git
+cd igarden-web
+
+# تثبيت الحزم
 npm install
-```
 
-### 3) متغيرات البيئة
-```bash
+# نسخ ملف البيئة
 cp .env.example .env.local
-# عبّئ القيم: Sanity, Supabase, ...
+
+# إضافة متغيّرات Supabase في .env.local:
+# NEXT_PUBLIC_SUPABASE_URL=https://...supabase.co
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+# SUPABASE_SERVICE_ROLE_KEY=...  (للـ server-side فقط)
+
+# تشغيل dev server
+npm run dev
 ```
 
-### 4) التشغيل
+افتح [http://localhost:3000](http://localhost:3000) في المتصفّح.
+
+### أوامر مفيدة
+
 ```bash
-npm run dev          # موقع Next.js على http://localhost:3000
-npm run sanity:dev   # Sanity Studio على http://localhost:3333
+npm run dev          # تشغيل local dev server
+npm run build        # build للإنتاج
+npm run start        # تشغيل production build
+npm run lint         # فحص ESLint
+npm run type-check   # فحص TypeScript
 ```
 
 ---
@@ -50,189 +117,174 @@ npm run sanity:dev   # Sanity Studio على http://localhost:3333
 ## 📂 هيكل المشروع
 
 ```
-igarden-web/
-├── src/
-│   ├── app/                      # Next.js App Router
-│   │   ├── layout.tsx           # Root layout (RTL, fonts, SEO)
-│   │   ├── page.tsx             # الصفحة الرئيسية
-│   │   └── about/
-│   │       └── page.tsx         # صفحة من نحن
-│   │
-│   ├── components/
-│   │   ├── ui/                  # مكونات shadcn (Button, Card, Badge, Stat)
-│   │   ├── layout/              # Header, Footer
-│   │   └── sections/            # أقسام صفحات قابلة لإعادة الاستخدام
-│   │
-│   ├── lib/
-│   │   ├── utils.ts            # دالة cn()
-│   │   ├── constants.ts        # ⭐ الثوابت الرسمية (أرقام، تواصل، رسائل)
-│   │   ├── sanity.ts           # عميل Sanity
-│   │   └── supabase.ts         # عميل Supabase
-│   │
-│   └── styles/
-│       └── globals.css         # ⭐ نظام الألوان والخطوط (Design Tokens)
-│
-├── sanity/
-│   ├── schemas/                # مخططات المحتوى
-│   └── ...
-│
-├── public/                     # صور، شعار، favicons
-├── sanity.config.ts
-├── next.config.ts
-├── postcss.config.mjs
-├── tsconfig.json
-└── package.json
+src/
+├── app/
+│   ├── layout.tsx                       ← RTL + Fonts + Schema.org
+│   ├── page.tsx                         ← Homepage
+│   ├── about/                           ← من نحن + Timeline
+│   ├── products/
+│   │   ├── page.tsx                     ← Products overview
+│   │   ├── smart-controllers/           ← Flagship
+│   │   ├── smart-greenhouses/
+│   │   └── hydroponics/                 ← يشمل iGarden Tower
+│   ├── osfan-station/                   ← محطّة عسفان
+│   ├── contact/                         ← CRM form
+│   ├── blog/                            ← Academy
+│   ├── sitemap.ts
+│   └── robots.ts
+├── components/
+│   ├── layout/                          ← Navigation + Footer
+│   ├── sections/                        ← Homepage sections
+│   ├── SchemaOrg.tsx                    ← JSON-LD
+│   └── ui/                              ← shadcn components
+└── lib/
+    ├── constants.ts                     ← Brand constants
+    ├── supabase.ts                      ← Client
+    ├── supabase-server.ts               ← Server client
+    ├── lead-schema.ts                   ← Zod validation
+    └── utils.ts                         ← Helpers
 ```
 
 ---
 
-## 🎨 الالتزام بدليل الهوية
+## 🎨 الهوية البصرية
 
-### الألوان (CSS Variables)
-
-كل الألوان معرّفة في `src/styles/globals.css` تحت `@theme`:
+### الألوان الرسمية
 
 ```css
---color-brand-600: #0F3D2E;   /* Deep Forest Green - أساسي */
---color-accent-500: #7CB342;  /* Lime Accent - محفّز */
---color-surface: #FAFAF7;     /* خلفية كريمية */
---color-foreground: #1A1A1A;
---color-muted: #6B7280;
-```
-
-**استخدمها دائماً** عبر:
-```tsx
-<div className="bg-[var(--color-brand-600)] text-[var(--color-accent-300)]">
+--igarden-primary: #0F3D2E;        /* Deep Forest Green */
+--igarden-primary-alt: #1B5E3F;    /* Corporate Green */
+--igarden-accent: #7CB342;         /* Lime Accent */
+--igarden-accent-bright: #A5D63F;  /* Bright Lime */
+--igarden-bg: #FAFAF7;             /* Cream */
+--igarden-text: #1A1A1A;           /* Dark Text */
 ```
 
 ### قاعدة 60-30-10
-- **60%** أبيض/كريمي → خلفيات (`bg-white`, `bg-[var(--color-surface)]`)
-- **30%** أخضر غامق → عناوين، أزرار رئيسية، Hero
-- **10%** ليموني → CTAs ثانوية، أرقام، أيقونات تأكيد
 
-### الخطوط
-- العربية: `Tajawal` (محمّل عبر `next/font`)
-- اللاتينية: `Poppins`
-- الأرقام: `Poppins` مع `font-feature-settings: "tnum"` (استخدم class `num` أو attr `data-num`)
+- **60%** Cream/White (surfaces, bodies)
+- **30%** Deep Forest Green (headings, CTAs, nav)
+- **10%** Lime Accent (stats, badges, highlights)
+
+### Design System
+
+- **Border radius:** 8-16px
+- **Shadows:** `0 2px 8px rgba(15, 61, 46, 0.08)`
+- **Icons:** Line icons (1.5-2px stroke) only
+- **Typography:** Minimalist Eco-Tech
+
+راجع `CLAUDE.md` للتفاصيل الكاملة.
 
 ---
 
-## 📊 الثوابت الرسمية
+## 🌱 SEO & Accessibility
 
-⚠️ **أي رقم أو رسالة تظهر في الواجهة يجب أن تأتي من `src/lib/constants.ts` فقط.**
+- ✅ Server-side rendering (Next.js App Router)
+- ✅ RTL support (`dir="rtl"`)
+- ✅ Mobile-first responsive
+- ✅ Schema.org JSON-LD (Organization + Product + LocalBusiness)
+- ✅ Open Graph + Twitter Cards
+- ✅ Sitemap + robots.txt
+- ✅ ARIA labels بالعربية
+- ✅ Lighthouse target: ≥ 90 لكل المحاور
 
-```ts
-import { STATS, KEY_MESSAGES, PRODUCTS, CONTACT } from "@/lib/constants";
+---
 
-// ✅ صحيح
-<Stat value={STATS.waterSavingsMax.value} unit="%" />
+## 🔒 الأمان
 
-// ❌ خطأ — لا تكتب الأرقام يدوياً
-<Stat value={95} unit="%" />
+- ✅ Supabase RLS (Row Level Security) مفعّل
+- ✅ Public insert مسموح فقط لجدول `leads`
+- ✅ Service Role key server-side فقط
+- ✅ Environment variables محمية
+- ✅ CSP headers عبر Vercel
+- ✅ HTTPS عبر Vercel SSL
+
+---
+
+## 📊 CRM Integration
+
+الموقع مربوط مع Supabase CRM لإدارة Leads القادمة من نموذج `/contact`.
+
+### جدول Leads يدعم
+
+- 10 قنوات (`lead_channel`)
+- 6 حالات (`lead_status`)
+- 5 أنواع عملاء (`lead_type`)
+- 4 مستويات أولوية (`lead_priority`)
+
+للتفاصيل الكاملة راجع `CLAUDE.md § CRM Database`.
+
+---
+
+## 🚢 النشر (Deployment)
+
+الموقع يُنشَر تلقائياً على Vercel عند أي `git push` إلى branch `main`.
+
+- **Production:** [igarden.sa](https://igarden.sa)
+- **Preview:** كل PR يحصل على preview URL تلقائياً
+
+### متغيّرات البيئة المطلوبة على Vercel
+
 ```
-
-أي تعديل على هذا الملف يتطلب موافقة مدير التسويق.
-
----
-
-## 🧩 المكونات الجاهزة
-
-### Button
-```tsx
-<Button variant="primary" size="lg">احجز استشارة</Button>
-<Button variant="accent">تواصل الآن</Button>
-<Button variant="outline">اقرأ المزيد</Button>
-<Button variant="light">على خلفية داكنة</Button>
-```
-
-### Stat
-```tsx
-<Stat value={95} unit="%" label="توفير في المياه" size="lg" />
-```
-
-### Badge
-```tsx
-<Badge variant="hardware">HARDWARE</Badge>
-<Badge variant="software">SOFTWARE</Badge>
-<Badge variant="knowledge">KNOWLEDGE</Badge>
-```
-
-### Card
-```tsx
-<Card>
-  <CardHeader>
-    <CardTitle>عنوان</CardTitle>
-    <CardDescription>وصف</CardDescription>
-  </CardHeader>
-</Card>
-```
-
----
-
-## 🌐 Routing وSEO
-
-- **اللغة الافتراضية:** عربي (`ar`) — RTL
-- **الإنجليزية:** ستضاف لاحقاً تحت `/en`
-- **Open Graph + Twitter Cards** مهيأة في `app/layout.tsx`
-- **JSON-LD Organization Schema** للسيو المحلي السعودي
-- **Sitemap + robots.txt:** أضف لاحقاً عبر `next-sitemap`
-
----
-
-## 🔌 ربط Sanity
-
-1. أنشئ مشروع Sanity جديد على [sanity.io](https://sanity.io)
-2. ضع `Project ID` في `.env.local`
-3. شغّل `npm run sanity:dev` للوصول إلى Studio
-4. الصفحات تُحرَّر من Studio وتظهر تلقائياً في الموقع
-
-المخططات الجاهزة: `page`, `heroSection`, `statsSection`, `featureGrid`, `ctaSection`, `richTextSection`.
-
----
-
-## 🔐 ربط Supabase
-
-- `lib/supabase.ts` يوفّر `createBrowserSupabase()` و `createServerSupabase()`
-- استخدمه لاحقاً لـ:
-  - نماذج التواصل (Contact Forms)
-  - تسجيل العملاء المحتملين (Leads)
-  - لوحة العميل (مستقبلاً)
-
----
-
-## 🚢 النشر على Vercel
-
-```bash
-# 1) ارفع الكود إلى GitHub
-git push origin main
-
-# 2) اربط المستودع بـ Vercel
-# 3) أضف متغيرات البيئة من .env.example
-# 4) اربط الدومين igarden.sa
+NEXT_PUBLIC_SUPABASE_URL
+NEXT_PUBLIC_SUPABASE_ANON_KEY
+SUPABASE_SERVICE_ROLE_KEY
+RESEND_API_KEY                     # عند تفعيل Resend
 ```
 
 ---
 
-## 📝 خارطة الطريق — الأسبوع الأول
+## 📚 الوثائق المرجعية
 
-- [x] إعداد Boilerplate كامل
-- [x] نظام الألوان والخطوط
-- [x] مكونات UI أساسية
-- [x] Header + Footer
-- [x] الصفحة الرئيسية (Hero + Pillars + Stats + CTA)
-- [x] صفحة من نحن (Vision + Mission + Values + Integration)
-- [ ] صور Hero عالية الجودة
-- [ ] استبدال LogoMark المؤقت بالشعار الرسمي SVG
-- [ ] ربط Sanity فعلياً وتعبئة محتوى من نحن
-- [ ] اختبارات Lighthouse + Accessibility
-- [ ] نشر تجريبي على `staging.igarden.sa`
+قبل أي عمل في هذا المستودع، راجع:
+
+- **`CLAUDE.md`** — تعليمات كاملة لـ Claude Code (وللمطوّرين)
+- **iGarden Master Doc v1.4** — المرجع التجاري + التسميات + Timeline
+- **استراتيجية الموقع v3** — Blueprint الصفحات
+- **ClaudeCode Brief v1** — تفاصيل التنفيذ كود-بكود
 
 ---
 
-## 📞 جهة الاتصال
+## 🤝 الفريق
 
-**iGarden — الحديقة الذكية**
-- 📧 info@igarden.sa
-- 📱 +966 57 034 0500
-- 📍 جدة، المملكة العربية السعودية
-- 🌐 [igarden.sa](https://igarden.sa)
+- **علي محمد غنيمة** — CEO & Founder (Hydroponics · IoT · Raspberry Pi)
+- **م. أيمن حسين المخزومي** — R&D Director (Agronomy · Water Systems)
+- **محمد يعن الله الكثيري** — Founding Partner (Finance · B2G)
+
+---
+
+## 📞 التواصل
+
+- **الموقع:** [igarden.sa](https://igarden.sa)
+- **البريد:** info@igarden.sa
+- **الجوال:** +966 57 034 0500
+- **المقر:** جدة، المملكة العربية السعودية
+
+---
+
+## 📜 التراخيص
+
+- **MISA:** #24926249716
+- **Entity ID:** 1490078
+- **SAIP:** #423450193 (iGarden Tower)
+- **Tax:** 312554598200003
+
+---
+
+## 📅 Timeline الشركة
+
+- **2024** — مرحلة الفكرة + التسجيل الأولي
+- **2025** — محطّة عسفان + 5 ورش عمل + النماذج التجريبية
+- **2026** — الانطلاق الرسمي (MISA فبراير · التشغيل أبريل)
+
+---
+
+## 📄 الترخيص
+
+هذا المستودع خاصّ بـ **شركة انتيليجنت غاردن (ذات مسؤولية محدودة)**.
+
+© 2026 شركة انتيليجنت غاردن — جميع الحقوق محفوظة.
+
+---
+
+*ازرع بذكاء · Plant Smart* 🌱
