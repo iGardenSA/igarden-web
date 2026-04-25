@@ -1,15 +1,15 @@
-import { Hammer, Globe2, Microscope } from "lucide-react";
+import { Building2, Globe2, Microscope } from "lucide-react";
 
 const PILLARS = [
   {
-    Icon: Hammer,
-    title: "ننفّذ",
-    text: "نُصمّم ونُركّب مزارع وأنظمة تحكّم ذكي. من الفكرة إلى التشغيل، فريقنا يُنفّذ ميدانياً.",
+    Icon: Building2,
+    title: "نبني",
+    text: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي. من الفكرة إلى التشغيل، فريقنا يبني ميدانياً.",
   },
   {
     Icon: Globe2,
     title: "نُوطّن",
-    text: "نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات سعودية وتصنيع محلي. ما يصلك، صُنع لمناخك.",
+    text: "نأخذ التقنية العالمية ونُعيد بناءها بمدخلات سعودية وتصنيع محلي. ما يصلك، صُنع لمناخك.",
   },
   {
     Icon: Microscope,

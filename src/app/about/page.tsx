@@ -1,409 +1,407 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { CTAButton } from "@/components/shared/CTAButton";
 import {
-  Eye, Target, Sparkles, Award, Users, Leaf,
-  Shield, Globe, Rocket, ArrowLeft, MapPin, Calendar,
-  Lightbulb, Heart, TrendingUp,
+  Hammer,
+  Globe2,
+  Microscope,
+  User,
+  CheckCircle2,
+  Sprout,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "من نحن",
+  title: "من نحن — شركة سعودية لتطوير المزارع | iGarden",
   description:
-    "iGarden — شركة الحديقة الذكية | فريق مؤسس ثلاثي يقود التحول الرقمي الزراعي في المملكة العربية السعودية ودعم رؤية 2030 والأمن الغذائي.",
+    "iGarden — العلامة التجارية لشركة انتيليجنت غاردن. نبني ونُوطّن ونُطوّر أنظمة الزراعة الذكية. تأسّست 2024، مُرخَّصة 2026.",
+  alternates: { canonical: "https://igarden.sa/about" },
+  openGraph: {
+    title: "من نحن — iGarden",
+    description:
+      "شركة سعودية لتطوير المزارع. سلاحنا الابتكار، ومنهجنا «نبني · نُوطّن · نُطوّر».",
+    images: ["/images/og/about.jpg"],
+    type: "website",
+    locale: "ar_SA",
+  },
 };
+
+/* ─── Section 1: Hero ─────────────────────────────────────── */
+function Hero() {
+  return (
+    <section className="section-light py-20 md:py-28">
+      <div className="container mx-auto px-4 max-w-4xl text-center">
+        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+          منذ 2024 · AgriTech سعودية ريادية
+        </p>
+        <h1 className="h1 text-deep-green mb-5">
+          شركة ريادية سعودية، سلاحها الابتكار
+        </h1>
+        <p className="body-base text-medium-gray max-w-2xl mx-auto">
+          <span dir="ltr" className="ltr-inline font-latin font-bold">
+            iGarden
+          </span>{" "}
+          — العلامة التجارية لشركة انتيليجنت غاردن (ذات مسؤولية محدودة).
+          نُطوّر أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية ومدخلاتها
+          المحلية.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 2: Why We Started ──────────────────────────── */
+function WhyWeStarted() {
+  return (
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <div className="text-center mb-8">
+          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+            القصة
+          </p>
+          <h2 className="h2 text-deep-green">لماذا بدأنا؟</h2>
+        </div>
+        {/*
+          [CONTENT_NEEDED: قصّة 120-150 كلمة عن سبب بدء iGarden.
+           المحاور المقترحة:
+           - الفجوة في حلول الزراعة الذكية المُكيَّفة محلياً
+           - رؤية المملكة 2030 + الأمن الغذائي
+           - شغف الفريق المؤسّس
+           - تجربة مع منتجات مستوردة لا تصمد في الصيف]
+        */}
+        <div className="bg-cream rounded-card p-8 shadow-soft">
+          <p className="body-base text-medium-gray leading-relaxed">
+            [CONTENT_NEEDED: القصّة الكاملة — سبب بدء iGarden بقلم المؤسّس
+            علي غنيمة. 120-150 كلمة. المحاور: الفجوة المحلية، رؤية 2030،
+            تجربة مع منتجات مستوردة لا تصمد في +45°C.]
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 3: Timeline ─────────────────────────────────── */
+const TIMELINE = [
+  {
+    year: "2024",
+    title: "البداية والتأسيس",
+    items: [
+      "تأسيس فريق العمل المؤسّس",
+      "بحث وتطوير أوّلي في تقنيات الزراعة المائية",
+      "تحديد المنهج «نبني · نُوطّن · نُطوّر»",
+    ],
+  },
+  {
+    year: "2025",
+    title: "النماذج والتجارب",
+    items: [
+      "بناء النماذج الأوّلية لـ Smart Controllers",
+      "إطلاق محطّة عسفان للتجارب والتطوير",
+      "تنفيذ 5 ورش «ازرع بذكاء»",
+      "208 اختبار وحدوي ناجح على Smart OS",
+    ],
+  },
+  {
+    year: "2026",
+    title: "الترخيص والإطلاق",
+    items: [
+      "الترخيص الرسمي MISA — فبراير 2026",
+      "تسجيل iGarden Tower في SAIP (#423450193)",
+      "إطلاق المنصّة الرقمية الكاملة",
+      "الإعداد لمنحة سنبلة",
+    ],
+  },
+];
+
+function TimelineSection() {
+  return (
+    <section className="section-light py-20">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+            الرحلة
+          </p>
+          <h2 className="h2 text-deep-green">3 سنوات من التطوير</h2>
+          {/* [CONTENT_NEEDED: تأكيد التواريخ والإنجازات الدقيقة من Master Doc §1.5] */}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {TIMELINE.map((t) => (
+            <div key={t.year} className="bg-white rounded-card p-6 shadow-soft">
+              <div className="w-16 h-16 rounded-full bg-lime/10 border-2 border-lime flex items-center justify-center mb-4">
+                <span className="font-latin font-bold text-deep-green text-lg">
+                  {t.year}
+                </span>
+              </div>
+              <h3 className="h4 text-deep-green mb-4">{t.title}</h3>
+              <ul className="space-y-2">
+                {t.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <CheckCircle2
+                      className="w-4 h-4 text-lime flex-shrink-0 mt-0.5"
+                      aria-hidden
+                    />
+                    <span className="body-sm text-medium-gray">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 4: Methodology Deep Dive ───────────────────── */
+const METHODOLOGY = [
+  {
+    Icon: Hammer,
+    verb: "نبني",
+    title: "من الحساس إلى الحصاد",
+    body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني يبني — لا يوجّه فقط.",
+    example:
+      "[CONTENT_NEEDED: مثال عملي — مشروع بناه الفريق ميدانياً من الصفر حتى التسليم]",
+  },
+  {
+    Icon: Globe2,
+    verb: "نُوطّن",
+    title: "التقنية العالمية بمدخلات سعودية",
+    body: "نأخذ التقنية العالمية ونُعيد تنفيذها بمواد ومدخلات محلية. ما يصلك صُنع لمناخك — لا لمناخ أوروبا.",
+    example:
+      "[CONTENT_NEEDED: مثال عملي — مثلاً: «اختبرنا 4 مضخّات محلية لـ Tower قبل اعتماد الأفضل بدلاً من الاستيراد»]",
+  },
+  {
+    Icon: Microscope,
+    verb: "نُطوّر",
+    title: "R&D داخلي مستمرّ",
+    body: "نُواجه الصعوبات بالابتكار، لا بالاستسلام لحدود المنتج المستورد. كل فشل في عسفان يُترجَم إلى تحسين.",
+    example:
+      "[CONTENT_NEEDED: مثال عملي — تحدٍّ واجهه الفريق في عسفان وكيف طوّر حلاً داخلياً]",
+  },
+];
+
+function MethodologyDeepDive() {
+  return (
+    <section className="bg-white py-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+            المنهج
+          </p>
+          <h2 className="h2 text-deep-green">ننفّذ · نُوطّن · نُطوّر</h2>
+          <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
+            ليس شعاراً — هو الوصف الحرفي لما نفعله كل يوم.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {METHODOLOGY.map(({ Icon, verb, title, body, example }) => (
+            <div
+              key={verb}
+              className="bg-cream rounded-card p-8 shadow-soft hover:shadow-md transition-shadow"
+            >
+              <div className="w-14 h-14 rounded-full bg-lime/10 flex items-center justify-center mb-6">
+                <Icon className="w-7 h-7 text-deep-green" aria-hidden />
+              </div>
+              <p className="text-lime font-bold text-xl mb-1">{verb}</p>
+              <h3 className="h4 text-deep-green mb-3">{title}</h3>
+              <p className="body-base text-medium-gray mb-4">{body}</p>
+              <div className="border-t border-light-gray pt-4">
+                <p className="text-xs text-lime font-bold uppercase tracking-wider mb-1">
+                  مثال حقيقي
+                </p>
+                <p className="body-sm text-medium-gray italic">{example}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 5: Team ─────────────────────────────────────── */
+const TEAM = [
+  {
+    name: "علي محمد غنيمة",
+    role: "المؤسس والمدير التنفيذي",
+    expertise: "Hydroponics · Aquaponics · IoT · Raspberry Pi",
+  },
+  {
+    name: "م. أيمن المخزومي",
+    role: "شريك ومسؤول R&D",
+    expertise: "[CONTENT_NEEDED: خلفية م. أيمن العملية والتخصص]",
+  },
+  {
+    name: "محمد الكثيري",
+    role: "شريك ممول",
+    expertise: "[CONTENT_NEEDED: خلفية محمد والدور الاستراتيجي]",
+  },
+];
+
+function TeamSection() {
+  return (
+    <section className="section-light py-20">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+            الفريق المؤسّس
+          </p>
+          <h2 className="h2 text-deep-green">الأشخاص خلف iGarden</h2>
+          {/* [CONTENT_NEEDED: صور احترافية للفريق بعد جلسة التصوير (P1)] */}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {TEAM.map((member) => (
+            <div
+              key={member.name}
+              className="bg-white rounded-card p-6 shadow-soft text-center"
+            >
+              {/* Photo placeholder — يُستبدل بعد جلسة التصوير */}
+              <div className="w-24 h-24 rounded-full border-2 border-lime bg-cream flex items-center justify-center mx-auto mb-4">
+                <User className="w-10 h-10 text-lime" aria-hidden />
+              </div>
+              <h3 className="h4 text-deep-green mb-1">{member.name}</h3>
+              <p className="text-lime text-sm font-medium mb-3">{member.role}</p>
+              <p className="body-sm text-medium-gray font-latin text-xs leading-relaxed">
+                {member.expertise}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="text-center text-medium-gray text-xs mt-6">
+          الصور الاحترافية قيد التصوير — ستُضاف قريباً.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 6: Osfan Link ──────────────────────────────── */
+const OSFAN_IMAGES = [
+  { src: "/images/osfan/preview-1.jpg", alt: "نظام زراعة مائية في عسفان" },
+  { src: "/images/osfan/preview-2.jpg", alt: "ورشة «ازرع بذكاء» في عسفان" },
+  { src: "/images/osfan/preview-3.jpg", alt: "نباتات الخس في المحطة" },
+];
+
+function OsfanLinkSection() {
+  return (
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-3 gap-3">
+            {OSFAN_IMAGES.map((img) => (
+              <div
+                key={img.src}
+                className="aspect-square rounded-card overflow-hidden bg-brand-500/20"
+                style={{
+                  backgroundImage: `url(${img.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                role="img"
+                aria-label={img.alt}
+              >
+                <span className="sr-only">{img.alt}</span>
+              </div>
+            ))}
+          </div>
+          <div>
+            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+              مختبرنا الميداني
+            </p>
+            <h2 className="h2 text-deep-green mb-4">
+              نحن نملك ما لا تملكه شركات «AgriTech» الورقية
+            </h2>
+            <p className="body-base text-medium-gray mb-6">
+              مختبرٌ ميداني حقيقي في عسفان — حيث نختبر كلّ نظام في ظروف
+              المناخ السعودي قبل تسليمه لأيّ عميل.
+            </p>
+            <CTAButton href="/osfan-station" variant="outline-green">
+              استكشف محطّة عسفان
+            </CTAButton>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 7: Values ───────────────────────────────────── */
+const VALUES = [
+  { title: "احترافية", desc: "في كلّ تفصيلة — من الاتّصال الأوّل إلى التسليم النهائي." },
+  { title: "ابتكار", desc: "نحلّ المشاكل بدل تجاوزها. R&D داخلي مستمرّ." },
+  { title: "استدامة", desc: "كفاءة الموارد ليست شعاراً — هي معيار التصميم." },
+  { title: "محلية", desc: "مدخلات سعودية، تصنيع سعودي، اختبار سعودي." },
+  { title: "ثقة بالبيانات", desc: "قراراتنا مبنيّة على قياسات وليس على افتراضات." },
+];
+
+function ValuesSection() {
+  return (
+    <section className="section-light py-16">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-10">
+          <h2 className="h2 text-deep-green">قيمنا الخمس</h2>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {VALUES.map((v) => (
+            <div
+              key={v.title}
+              className="bg-white rounded-card p-5 shadow-soft text-center hover:shadow-md transition-shadow"
+            >
+              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mx-auto mb-3">
+                <Sprout className="w-5 h-5 text-lime" aria-hidden />
+              </div>
+              <h3 className="font-bold text-deep-green text-sm mb-2">{v.title}</h3>
+              <p className="text-medium-gray text-xs leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 8: Final CTA ────────────────────────────────── */
+function FinalCTA() {
+  return (
+    <section className="bg-deep-green py-24">
+      <div className="container mx-auto px-4 max-w-4xl text-center">
+        <h2 className="h2 text-cream mb-5">
+          هل أنت جاهز للعمل مع شركة تُجرّب قبل أن تُسلّم؟
+        </h2>
+        <p className="body-base text-cream/80 max-w-xl mx-auto mb-10">
+          استشارة مجانية أو زيارة لمحطّة عسفان — ابدأ من أيّ نقطة تريدها.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <CTAButton href="/contact" variant="lime">
+            احجز استشارة مجانية
+          </CTAButton>
+          <CTAButton href="/osfan-station" variant="outline-green">
+            احجز زيارة لمحطّة عسفان
+          </CTAButton>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Page ────────────────────────────────────────────────── */
+const BREADCRUMB = [
+  { name: "الرئيسية", url: "/" },
+  { name: "من نحن", url: "/about" },
+];
 
 export default function AboutPage() {
   return (
     <>
-      {/* ============================================================
-          1. Hero
-          ============================================================ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[var(--color-brand-600)] via-[var(--color-brand-500)] to-[var(--color-brand-600)] text-white">
-        <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 20% 30%, var(--color-accent-500) 0%, transparent 40%), radial-gradient(circle at 80% 70%, var(--color-accent-300) 0%, transparent 40%)",
-          }}
-        />
-        <div className="container-igarden relative py-20 md:py-28">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-sm font-semibold mb-8">
-              <MapPin className="h-4 w-4" />
-              <span>جدة · المملكة العربية السعودية</span>
-            </div>
-            <p className="heading-eyebrow mb-6 text-[var(--color-accent-300)]">من نحن</p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-white mb-6">
-              نقود التحول الرقمي الزراعي
-              <br />
-              <span className="text-[var(--color-accent-300)]">في المنطقة.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl">
-              <span className="font-bold text-white">{COMPANY.legalEn}</span> — شركة سعودية مقرها جدة،
-              مرخّصة من وزارة الاستثمار، نؤمن بأن مستقبل الأمن الغذائي يبدأ بدمج التقنية في الزراعة —
-              وأن هذا المستقبل يُصنع محلياً، ويبدأ من هنا.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          2. رحلتنا — Timeline
-          ============================================================ */}
-      <section className="bg-[var(--color-surface)] section-padding">
-        <div className="container-igarden">
-          <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
-            <p className="heading-eyebrow mb-4">رحلتنا</p>
-            <h2 className="heading-section mb-6">من فكرة إلى شركة مسجّلة</h2>
-            <p className="text-lg text-[var(--color-muted)] leading-relaxed">
-              رحلة قصيرة زمنياً، لكن مليئة بالعمل والتعلّم والتحقّق من كل قرار.
-            </p>
-          </div>
-
-          <div className="relative max-w-4xl mx-auto">
-            {/* الخط العمودي */}
-            <div
-              className="absolute top-0 bottom-0 right-6 md:right-1/2 md:translate-x-1/2 w-0.5 bg-[var(--color-brand-200)]"
-              aria-hidden
-            />
-
-            <div className="space-y-10 md:space-y-14">
-              <TimelineItem
-                side="right"
-                year="2025"
-                title="انطلاق الفكرة والتطوير"
-                description="بدأت رحلة iGarden بفكرة دمج IoT مع الزراعة الذكية. قضينا العام في بناء النماذج الأولية، تجربة التقنيات (Hydroponics, Aquaponics, Aeroponics)، وتطوير أنظمة التحكم بالحساسات ودرجة الحموضة والتحكم المناخي."
-              />
-              <TimelineItem
-                side="left"
-                year="2026"
-                title="تأسيس الشركة رسمياً"
-                description="سجّلنا الشركة بترخيص استثماري رسمي من وزارة الاستثمار (رقم 24926249716)، وحصلنا على نموذج صناعي مسجل لـ iGarden Tower — انطلاقاً من جدة نحو تحول رقمي زراعي في المنطقة."
-              />
-              <TimelineItem
-                side="right"
-                year="2026"
-                title="المشاركات والشراكات"
-                description="شاركنا في معرض Agrofood 2025، وبدأنا بناء شراكات استراتيجية مع جهات حكومية وأكاديمية وتجارية، مع التحضير لإطلاق أول الحلول التجارية في السوق السعودي."
-                future
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          3. الرؤية والرسالة
-          ============================================================ */}
-      <section className="bg-white section-padding">
-        <div className="container-igarden">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            <PurposeCard
-              icon={<Eye className="h-7 w-7" />}
-              eyebrow="رؤيتنا"
-              title="الخيار الأول للتحول الرقمي الزراعي"
-              description="أن نكون الخيار الأول في التحول الرقمي الزراعي بالمنطقة، وقيادة مستقبل الأمن الغذائي عبر تقنيات ذكية ومستدامة."
-            />
-            <PurposeCard
-              icon={<Target className="h-7 w-7" />}
-              eyebrow="رسالتنا"
-              title="تمكين الجميع من زراعة ذكية"
-              description="تمكين الجميع من زراعة ذكية ومستدامة عبر أحدث تقنيات IoT & AI، لتحويل الزراعة التقليدية إلى منظومة منتجة وكفؤة."
-              accent
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          4. الدوافع — Why
-          ============================================================ */}
-      <section className="bg-[var(--color-surface)] section-padding">
-        <div className="container-igarden">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="heading-eyebrow mb-4">لماذا iGarden؟</p>
-            <h2 className="heading-section mb-6">الدوافع التي تحرّكنا</h2>
-            <p className="text-lg text-[var(--color-muted)] leading-relaxed">
-              كل قرار نتخذه، وكل منتج نطوّره، ينبع من قناعة عميقة بأربعة محاور مترابطة.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-            <DriverCard
-              icon={<Globe className="h-6 w-6" />}
-              number="01"
-              title="دعم رؤية 2030"
-              description="توطين التقنية الزراعية المتقدمة محلياً، وبناء قدرات وطنية في AgriTech تُقلّل الاعتماد على الاستيراد وتدعم أهداف التنمية المستدامة."
-            />
-            <DriverCard
-              icon={<Shield className="h-6 w-6" />}
-              number="02"
-              title="تحديات الأمن الغذائي"
-              description="تستورد المنطقة نسبة كبيرة من احتياجاتها الغذائية، ومواردها المائية محدودة. نسعى لأن نكون جزءاً من الحل عبر حلول زراعية كفؤة ومتوطّنة."
-            />
-            <DriverCard
-              icon={<Leaf className="h-6 w-6" />}
-              number="03"
-              title="حلول مستدامة"
-              description="نقدّم للمجتمع حلولاً تحترم الموارد وتحفظ البيئة — 95% توفير في المياه، 50% خفض للأسمدة، وكفاءة طاقة عالية في كل أنظمتنا."
-            />
-            <DriverCard
-              icon={<Rocket className="h-6 w-6" />}
-              number="04"
-              title="فرصة سوقية كبيرة"
-              description="قطاع الزراعة الذكية في الخليج ينمو بوتيرة متسارعة، والسوق السعودي وحده فرصة واعدة لم تُستغل بعد بشكل كافٍ — ونحن هنا لنكون في المقدمة."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          5. الفريق المؤسس
-          ============================================================ */}
-      <section className="bg-white section-padding">
-        <div className="container-igarden">
-          <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
-            <p className="heading-eyebrow mb-4">فريق التأسيس</p>
-            <h2 className="heading-section mb-6">ثلاثة شركاء · رؤية واحدة</h2>
-            <p className="text-lg text-[var(--color-muted)] leading-relaxed">
-              فريق مؤسس يجمع بين الخبرة التقنية والرؤية الاستراتيجية والتنفيذ العملي —
-              مع التزام راسخ بقيم المنطقة وأهداف رؤية المملكة.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            <FounderCard
-              name="علي محمد غنيمه"
-              nameEn="Ali M. Ghanimah"
-              role="المؤسس والمدير العام"
-              roleEn="Founder & CEO"
-              bio="قائد الرؤية الاستراتيجية في iGarden ومهندس المنظومة التكاملية بين العتاد والبرمجيات والمعرفة. يشرف على مجمل عمليات الشركة والعلاقات مع الشركاء والجهات الحكومية."
-              highlight
-            />
-            <FounderCard
-              name="محمد يعن الله الكثيري"
-              nameEn="Mohammed Y. Alkathiri"
-              role="شريك تنفيذي"
-              roleEn="Executive Partner"
-              bio="مسؤول عن التنفيذ التشغيلي والتطوير التجاري في المملكة، ويقود جهود التوسّع وبناء العلاقات مع العملاء والمستثمرين المحليين."
-            />
-            <FounderCard
-              name="أيمن حسين المخزوم"
-              nameEn="Ayman H. Almakhzoum"
-              role="شريك تقني"
-              roleEn="Technical Partner"
-              bio="يقود الجانب التقني في تطوير الأنظمة والحلول الذكية — من تصميم العتاد إلى تطوير منصة iGarden Cloud ودمج الذكاء الاصطناعي وإنترنت الأشياء."
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          6. القيم
-          ============================================================ */}
-      <section className="bg-[var(--color-brand-600)] text-white section-padding">
-        <div className="container-igarden">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="heading-eyebrow mb-4 text-[var(--color-accent-300)]">قيمنا الراسخة</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              المبادئ التي نبني عليها
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            <ValueCard icon={<Sparkles className="h-6 w-6" />} title="الابتكار" description="حلول إبداعية تسبق التطلعات." />
-            <ValueCard icon={<Award className="h-6 w-6" />} title="الجودة" description="الالتزام بأعلى معايير الدقة." />
-            <ValueCard icon={<Heart className="h-6 w-6" />} title="العميل أولاً" description="شراكة حقيقية لنجاح العميل." />
-            <ValueCard icon={<Leaf className="h-6 w-6" />} title="الاستدامة" description="ضمان مستقبل أخضر للأجيال." />
-          </div>
-
-          <div className="text-center mt-14">
-            <Button variant="accent" size="lg" asChild>
-              <Link href="/contact">
-                تحدّث معنا
-                <ArrowLeft className="rotate-180" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <BreadcrumbSchema items={BREADCRUMB} />
+      <Hero />
+      <WhyWeStarted />
+      <TimelineSection />
+      <MethodologyDeepDive />
+      <TeamSection />
+      <OsfanLinkSection />
+      <ValuesSection />
+      <FinalCTA />
     </>
-  );
-}
-
-/* ============================================================
-   مكونات داخلية
-   ============================================================ */
-
-function TimelineItem({
-  side,
-  year,
-  title,
-  description,
-  future = false,
-}: {
-  side: "right" | "left";
-  year: string;
-  title: string;
-  description: string;
-  future?: boolean;
-}) {
-  const isRight = side === "right";
-  return (
-    <div className="relative grid md:grid-cols-2 gap-6 items-start">
-      {/* نقطة الخط */}
-      <div className="absolute right-6 md:right-1/2 md:translate-x-1/2 top-2 z-10" aria-hidden>
-        <div className={`h-4 w-4 rounded-full border-4 ${future ? "bg-white border-[var(--color-accent-500)]" : "bg-[var(--color-accent-500)] border-[var(--color-brand-600)]"}`} />
-      </div>
-
-      <div className={isRight ? "md:order-2 md:pl-10" : "md:order-1 md:pr-10 md:text-left"}>
-        {!isRight && <div />}
-      </div>
-
-      <div className={`pr-16 md:pr-0 ${isRight ? "md:order-1 md:pr-10 md:text-end" : "md:order-2 md:pl-10"}`}>
-        <div className="bg-white rounded-2xl p-6 md:p-7 border border-[var(--color-border)] shadow-[var(--shadow-soft)]">
-          <div className="flex items-center gap-3 mb-3">
-            {future && (
-              <Badge variant="accent">قادم</Badge>
-            )}
-            <span
-              className="inline-flex items-center gap-2 text-sm font-bold text-[var(--color-brand-600)]"
-              data-num
-            >
-              <Calendar className="h-4 w-4" />
-              {year}
-            </span>
-          </div>
-          <h3 className="text-xl font-bold text-[var(--color-brand-600)] mb-3">{title}</h3>
-          <p className="text-sm md:text-base text-[var(--color-muted)] leading-relaxed">{description}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function PurposeCard({
-  icon, eyebrow, title, description, accent = false,
-}: {
-  icon: React.ReactNode;
-  eyebrow: string;
-  title: string;
-  description: string;
-  accent?: boolean;
-}) {
-  return (
-    <Card className="p-2">
-      <CardHeader>
-        <div
-          className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-4 ${
-            accent
-              ? "bg-[var(--color-accent-500)] text-[var(--color-brand-700)]"
-              : "bg-[var(--color-brand-50)] text-[var(--color-brand-600)]"
-          }`}
-        >
-          {icon}
-        </div>
-        <p className="heading-eyebrow mb-2">{eyebrow}</p>
-        <CardTitle className="text-2xl md:text-3xl mb-3">{title}</CardTitle>
-        <CardDescription className="text-base leading-relaxed">{description}</CardDescription>
-      </CardHeader>
-    </Card>
-  );
-}
-
-function DriverCard({
-  icon, number, title, description,
-}: {
-  icon: React.ReactNode;
-  number: string;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="bg-white rounded-2xl p-7 border border-[var(--color-border)] hover:border-[var(--color-accent-500)] transition-colors">
-      <div className="flex items-start justify-between mb-5">
-        <div className="h-12 w-12 rounded-xl bg-[var(--color-brand-600)] text-[var(--color-accent-300)] flex items-center justify-center">
-          {icon}
-        </div>
-        <span className="text-3xl font-extrabold text-[var(--color-brand-100)] leading-none" data-num>{number}</span>
-      </div>
-      <h3 className="text-xl font-bold text-[var(--color-brand-600)] mb-3">{title}</h3>
-      <p className="text-sm md:text-base text-[var(--color-muted)] leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-function FounderCard({
-  name, nameEn, role, roleEn, bio, highlight = false,
-}: {
-  name: string;
-  nameEn: string;
-  role: string;
-  roleEn: string;
-  bio: string;
-  highlight?: boolean;
-}) {
-  const initials = nameEn.split(" ").map((n) => n[0]).slice(0, 2).join("");
-  return (
-    <div
-      className={`rounded-2xl p-7 md:p-8 border-2 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col ${
-        highlight
-          ? "bg-[var(--color-brand-600)] border-[var(--color-accent-500)] text-white shadow-[var(--shadow-md)]"
-          : "bg-white border-[var(--color-border)] hover:border-[var(--color-brand-300)] shadow-[var(--shadow-soft)]"
-      }`}
-    >
-      {/* Avatar دائري مع الأحرف الأولى */}
-      <div
-        className={`h-20 w-20 rounded-full flex items-center justify-center mb-6 font-bold text-2xl ${
-          highlight
-            ? "bg-[var(--color-accent-500)] text-[var(--color-brand-700)]"
-            : "bg-[var(--color-brand-50)] text-[var(--color-brand-600)]"
-        }`}
-        data-num
-      >
-        {initials}
-      </div>
-
-      <h3 className={`text-xl md:text-2xl font-bold mb-1 ${highlight ? "text-white" : "text-[var(--color-brand-600)]"}`}>
-        {name}
-      </h3>
-      <p className={`text-sm mb-4 ${highlight ? "text-white/70" : "text-[var(--color-muted)]"}`} dir="ltr">
-        {nameEn}
-      </p>
-
-      <div className={`inline-flex self-start px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 ${
-        highlight
-          ? "bg-[var(--color-accent-500)]/20 text-[var(--color-accent-300)]"
-          : "bg-[var(--color-brand-50)] text-[var(--color-brand-600)]"
-      }`}>
-        {role}
-      </div>
-
-      <p className={`text-sm md:text-base leading-relaxed ${highlight ? "text-white/80" : "text-[var(--color-muted)]"}`}>
-        {bio}
-      </p>
-    </div>
-  );
-}
-
-function ValueCard({
-  icon, title, description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 md:p-6 hover:bg-white/10 hover:border-[var(--color-accent-500)]/50 transition-all">
-      <div className="h-11 w-11 rounded-xl bg-[var(--color-accent-500)] text-[var(--color-brand-700)] flex items-center justify-center mb-4">
-        {icon}
-      </div>
-      <h4 className="text-base md:text-lg font-bold text-white mb-2">{title}</h4>
-      <p className="text-xs md:text-sm text-white/70 leading-relaxed">{description}</p>
-    </div>
   );
 }

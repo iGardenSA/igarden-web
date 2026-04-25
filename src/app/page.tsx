@@ -1,3 +1,4 @@
+import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { MethodologySection } from "@/components/sections/MethodologySection";
@@ -13,6 +14,8 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 export default function HomePage() {
   return (
     <>
+      <OrganizationSchema />
+      <WebSiteSchema />
       <HeroSection />
       <TrustBar />
       <MethodologySection />

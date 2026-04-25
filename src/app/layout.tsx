@@ -3,6 +3,7 @@ import { Tajawal, Poppins } from "next/font/google";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppFab } from "@/components/ui/whatsapp-fab";
+import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 import { COMPANY, CONTACT } from "@/lib/constants";
 import "@/styles/globals.css";
 
@@ -23,11 +24,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${COMPANY.domain}`),
   title: {
-    default: `${COMPANY.nameEn} — ${COMPANY.nameAr} | أنظمة الزراعة الذكية`,
+    default: "iGarden — نبني · نُوطّن · نُطوّر أنظمة الزراعة الذكية",
     template: `%s | ${COMPANY.nameEn}`,
   },
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
+    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
   keywords: [
     "iGarden",
     "الحديقة الذكية",
@@ -47,6 +48,7 @@ export const metadata: Metadata = {
   authors: [{ name: COMPANY.legalAr }],
   creator: COMPANY.legalAr,
   publisher: COMPANY.legalAr,
+  formatDetection: { email: false, address: false, telephone: false },
 
   icons: {
     icon: [
@@ -69,32 +71,32 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ar_SA",
-    alternateLocale: "en_US",
     url: `https://${COMPANY.domain}`,
-    siteName: `${COMPANY.nameEn} — ${COMPANY.nameAr}`,
-    title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
+    siteName: COMPANY.nameEn,
+    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء · Plant Smart.",
+      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد بناءها بمدخلات محلية — ازرع بذكاء · Plant Smart.",
     images: [
       {
-        url: "/og/home.jpg",
+        url: "/images/og/home.jpg",
         width: 1200,
         height: 630,
-        alt: `${COMPANY.nameEn} — أنظمة الزراعة الذكية · ازرع بذكاء`,
+        alt: `${COMPANY.nameEn} — ازرع بذكاء · Plant Smart`,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء · Plant Smart.",
-    images: ["/og/home.jpg"],
+    images: ["/images/og/home.jpg"],
   },
 
   alternates: {
     canonical: `https://${COMPANY.domain}`,
+    languages: { "ar-SA": `https://${COMPANY.domain}` },
   },
 
   robots: {
@@ -124,31 +126,8 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl" className={`${tajawal.variable} ${poppins.variable}`}>
       <body suppressHydrationWarning>
-        {/* JSON-LD: Organization Schema للسيو المحلي */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: COMPANY.legalEn,
-              legalName: COMPANY.legalFull,
-              alternateName: [COMPANY.nameEn, COMPANY.nameAr, COMPANY.legalAr],
-              url: `https://${COMPANY.domain}`,
-              logo: `https://${COMPANY.domain}/logo/icon-only.svg`,
-              email: CONTACT.email,
-              telephone: CONTACT.phone,
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Jeddah",
-                addressCountry: "SA",
-              },
-              areaServed: ["SA", "AE", "KW", "QA", "BH", "OM"],
-              foundingDate: `${COMPANY.founded}`,
-              slogan: COMPANY.tagline,
-            }),
-          }}
-        />
+        <OrganizationSchema />
+        <WebSiteSchema />
 
         <div className="flex min-h-screen flex-col">
           <Navigation />

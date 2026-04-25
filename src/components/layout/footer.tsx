@@ -21,7 +21,7 @@ export function Footer() {
             />
             <p className="text-sm leading-relaxed opacity-80 mb-4">
               شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي.
-              ننفّذ · نُوطّن · نُطوّر.
+              نبني · نُوطّن · نُطوّر.
             </p>
             <p className="text-sm font-latin opacity-90">{COMPANY.tagline}</p>
           </div>
