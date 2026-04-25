@@ -1,57 +1,70 @@
 import { CTAButton } from "@/components/shared/CTAButton";
-import { IGardenName } from "@/components/shared/BilingualText";
 
 export function HeroSection() {
   return (
-    <section className="section-light py-20 md:py-28 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full overflow-hidden bg-deep-green min-h-[80vh] md:min-h-[90vh] flex items-center">
+      {/* Background Video Layer */}
+      <div className="absolute inset-0 w-full h-full" aria-hidden="true">
+        <video
+          poster="/images/hero-poster.jpg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover motion-reduce:hidden"
+        >
+          <source src="/videos/hero-video.webm" type="video/webm" />
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+        </video>
 
-          {/* Text */}
-          <div>
-            <p className="text-lime font-medium text-sm md:text-base mb-4 tracking-wide">
-              AgriTech سعودية · ريادية · مُبتكرة
-            </p>
-            <h1 className="h1 text-deep-green mb-6">
-              نبني ونُوطّن ونُطوّر
-              <br />
-              أنظمة الزراعة الذكية
-            </h1>
-            <p className="body-base text-medium-gray max-w-xl mb-8">
-              شركة سعودية لبناء المزارع وأنظمة التحكم الزراعي — نأخذ التقنية
-              العالمية ونُعيد تنفيذها بمدخلات محلية، ونختبرها في مناخك قبل أن
-              تصل إليك.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <CTAButton href="/contact" variant="lime">
-                احجز استشارة مجانية
-              </CTAButton>
-              <CTAButton href="/osfan-station" variant="outline-green">
-                تعرّف على محطّة عسفان
-              </CTAButton>
-            </div>
-            <p className="mt-6 text-sm text-medium-gray">
-              <a
-                href="https://demo.igarden.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lime hover:text-deep-green underline-offset-4 hover:underline transition-colors"
-              >
-                شاهد الديمو التفاعلي ↗
-              </a>
-            </p>
-          </div>
+        <div
+          className="absolute inset-0 w-full h-full hidden motion-reduce:block bg-cover bg-center"
+          style={{ backgroundImage: "url('/images/hero-poster.jpg')" }}
+        />
+      </div>
 
-          {/* Visual — placeholder for hero-osfan.jpg */}
-          <div className="relative aspect-[4/3] rounded-card overflow-hidden shadow-lg bg-gradient-to-br from-brand-100 to-brand-200 flex items-center justify-center">
-            {/* [CONTENT_NEEDED] /images/osfan/hero-osfan.jpg — 1600px+, 4:3 */}
-            <div className="text-center text-brand-400 p-6">
-              <p className="text-lg font-medium text-brand-500">محطة عسفان</p>
-              <p className="text-sm mt-1 opacity-70">المختبر الميداني الرئيسي</p>
-            </div>
-          </div>
+      {/* Gradient Overlay */}
+      <div
+        className="absolute inset-0 bg-gradient-to-b from-deep-green/70 via-deep-green/55 to-deep-green/85"
+        aria-hidden="true"
+      />
 
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4 max-w-5xl text-center">
+        <p className="text-lime font-medium text-sm md:text-base mb-6 tracking-[0.2em] uppercase">
+          AgriTech سعودية · ريادية · مُبتكرة
+        </p>
+
+        <h1 className="text-cream font-bold mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.15] tracking-tight drop-shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
+          نَبني ونُوطّن ونُطوّر
+          <br />
+          <span className="text-lime">أنظمة الزراعة الذكية</span>
+        </h1>
+
+        <p className="text-cream/90 max-w-2xl mx-auto mb-10 text-lg md:text-xl leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]">
+          شركة سعودية لبناء المزارع وأنظمة التحكم الزراعي — نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية، ونختبرها في مناخك قبل أن تصل إليك.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          <CTAButton href="/contact" variant="lime">
+            احجز استشارة مجانية
+          </CTAButton>
+          <CTAButton href="/osfan-station" variant="outline-green">
+            تعرّف على محطّة عسفان
+          </CTAButton>
         </div>
+
+        <p className="text-sm text-cream/80">
+          <a
+            href="https://demo.igarden.sa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lime hover:text-cream underline-offset-4 hover:underline transition-colors duration-200"
+          >
+            شاهد الديمو التفاعلي ↗
+          </a>
+        </p>
       </div>
     </section>
   );

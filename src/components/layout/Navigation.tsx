@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { cn } from "@/lib/utils";
 
 type NavChild = { label: string; href: string; badge?: string };
 type NavItem = { label: string; href: string; children?: NavChild[] };
@@ -33,7 +34,16 @@ export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const productsRef = useRef<HTMLDivElement>(null);
+
+  // ===== Scroll Detection — للـ Transparent Header =====
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll(); // قراءة فورية للحالة الحالية
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -67,22 +77,37 @@ export function Navigation() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  // ===== Transparent Logic =====
+  // الـ Header شفاف فقط على الصفحة الرئيسية (Hero فيديو) قبل أن يبدأ المستخدم بالـ scroll
+  const isHome = pathname === "/";
+  const transparent = isHome && !scrolled;
+
   const linkBase =
     "block px-3 py-2 rounded-lg text-sm font-medium transition-colors";
-  const linkActive = "text-lime";
-  const linkIdle = "text-deep-green hover:text-lime";
+  const linkActive = transparent ? "text-lime drop-shadow-md" : "text-lime";
+  const linkIdle = transparent
+    ? "text-cream hover:text-lime drop-shadow-md"
+    : "text-deep-green hover:text-lime";
 
   return (
     <>
       <header
-        className="sticky top-0 z-50 border-b border-light-gray"
-        style={{ backgroundColor: "rgba(250,250,247,0.95)", backdropFilter: "blur(8px)" }}
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          transparent
+            ? "bg-gradient-to-b from-deep-green/60 via-deep-green/30 to-transparent border-b border-transparent"
+            : "bg-cream/95 backdrop-blur-md border-b border-light-gray"
+        )}
       >
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
-          {/* Logo */}
+          {/* Logo — يتبدّل بين الأبيض والأخضر */}
           <Link href="/" aria-label="iGarden — الصفحة الرئيسية" className="flex-shrink-0">
             <Image
-              src="/logo/lockup-horizontal-en.svg"
+              src={
+                transparent
+                  ? "/logo/lockup-horizontal-en-white.png"
+                  : "/logo/lockup-horizontal-en.svg"
+              }
               alt="iGarden"
               width={130}
               height={38}
@@ -98,9 +123,11 @@ export function Navigation() {
                   <div ref={productsRef} className="relative">
                     <button
                       onClick={() => setProductsOpen((v) => !v)}
-                      className={`${linkBase} flex items-center gap-1 ${
+                      className={cn(
+                        linkBase,
+                        "flex items-center gap-1",
                         isActive(item.href) ? linkActive : linkIdle
-                      }`}
+                      )}
                       aria-expanded={productsOpen}
                     >
                       {item.label}
@@ -136,7 +163,7 @@ export function Navigation() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`${linkBase} ${isActive(item.href) ? linkActive : linkIdle}`}
+                    className={cn(linkBase, isActive(item.href) ? linkActive : linkIdle)}
                   >
                     {item.label}
                   </Link>
@@ -145,17 +172,27 @@ export function Navigation() {
             )}
           </ul>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA — مخفي على Hero الشفاف */}
           <div className="hidden lg:block">
-            <CTAButton href="/contact" variant="lime">
-              احجز استشارة مجانية
-            </CTAButton>
+            {transparent ? (
+              // على Hero الشفاف: زر Lime عادي يبرز فوق الفيديو
+              <CTAButton href="/contact" variant="lime">
+                احجز استشارة
+              </CTAButton>
+            ) : (
+              <CTAButton href="/contact" variant="lime">
+                احجز استشارة مجانية
+              </CTAButton>
+            )}
           </div>
 
-          {/* Mobile burger */}
+          {/* Mobile burger — أبيض على الشفاف، أخضر على الصلب */}
           <button
             onClick={() => setMobileOpen(true)}
-            className="lg:hidden p-2 text-deep-green"
+            className={cn(
+              "lg:hidden p-2 transition-colors",
+              transparent ? "text-cream drop-shadow-md" : "text-deep-green"
+            )}
             aria-label="فتح القائمة"
             aria-expanded={mobileOpen}
           >
@@ -173,36 +210,37 @@ export function Navigation() {
         aria-hidden="true"
       />
 
-      {/* Mobile sheet — RTL: slides from right */}
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label="قائمة التنقل"
+      {/* Mobile drawer */}
+      <aside
         className={`fixed top-0 right-0 z-50 h-dvh w-[min(300px,85vw)] bg-cream flex flex-col shadow-2xl lg:hidden transition-transform duration-300 ease-in-out ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
+        aria-label="قائمة التنقل"
       >
-        {/* Sheet header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-light-gray flex-shrink-0">
-          <Image
-            src="/logo/lockup-horizontal-en.svg"
-            alt="iGarden"
-            width={110}
-            height={32}
-            priority
-          />
+        <div className="flex items-center justify-between px-4 h-16 border-b border-light-gray">
+          <Link
+            href="/"
+            onClick={() => setMobileOpen(false)}
+            aria-label="iGarden — الصفحة الرئيسية"
+          >
+            <Image
+              src="/logo/lockup-horizontal-en.svg"
+              alt="iGarden"
+              width={110}
+              height={32}
+            />
+          </Link>
           <button
             onClick={() => setMobileOpen(false)}
-            className="p-2 text-medium-gray hover:text-deep-green transition-colors rounded-lg"
+            className="p-2 text-deep-green"
             aria-label="إغلاق القائمة"
           >
-            <X className="w-5 h-5" />
+            <X className="w-6 h-6" />
           </button>
         </div>
 
-        {/* Sheet links */}
         <nav className="flex-1 overflow-y-auto px-3 py-4">
-          <ul className="space-y-0.5">
+          <ul className="space-y-1">
             {NAV_ITEMS.map((item) =>
               item.children ? (
                 <li key={item.href}>
@@ -213,13 +251,13 @@ export function Navigation() {
                   >
                     <span>{item.label}</span>
                     <ChevronDown
-                      className={`w-4 h-4 transition-transform duration-200 ${
+                      className={`w-5 h-5 transition-transform duration-200 ${
                         mobileProductsOpen ? "-rotate-180" : ""
                       }`}
                     />
                   </button>
                   {mobileProductsOpen && (
-                    <ul className="ms-4 mt-1 mb-2 space-y-0.5 border-s-2 border-lime/40 ps-3">
+                    <ul className="mt-1 mr-4 space-y-1">
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <Link
@@ -244,11 +282,12 @@ export function Navigation() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                    className={cn(
+                      "block px-4 py-3 rounded-lg text-base font-medium transition-colors",
                       isActive(item.href)
                         ? "text-lime bg-lime/10"
-                        : "text-deep-green hover:bg-white hover:text-lime"
-                    }`}
+                        : "text-deep-green hover:text-lime hover:bg-white"
+                    )}
                   >
                     {item.label}
                   </Link>
@@ -258,13 +297,12 @@ export function Navigation() {
           </ul>
         </nav>
 
-        {/* Sheet CTA */}
-        <div className="px-4 pt-3 pb-6 border-t border-light-gray flex-shrink-0">
+        <div className="p-4 border-t border-light-gray">
           <CTAButton href="/contact" variant="lime" className="w-full justify-center">
             احجز استشارة مجانية
           </CTAButton>
         </div>
-      </div>
+      </aside>
     </>
   );
 }
