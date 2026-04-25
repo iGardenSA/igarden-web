@@ -1,53 +1,73 @@
-# iGarden Status — 25 أبريل 2026
+# iGarden Status — 26 أبريل 2026
 
-## ما أُنجز (الليلة الفائتة)
-
-### Git
+## آخر تحديث
+- التاريخ: 26 أبريل 2026 (~01:30 صباحاً)
+- آخر commit: `d474739` feat(hero): full-bleed video hero + scroll-aware transparent header
 - Branch: `feat/rebuild-v1.4`
-- آخر commit: `e16cae0 feat(stage-F): SEO stack`
-- Tag محفوظ: `pre-rebuild-v1.4` (نقطة عودة آمنة)
 
-### المراحل المُكتمَلة
-- A: Design System (globals.css + tokens + BilingualText + CTAButton)
-- B: Layout (Navigation + Footer + WhatsAppFab)
-- C: Homepage 11 sections
-- D: 3 صفحات ركائز (smart-controllers + smart-greenhouses + hydroponics)
-- E: /osfan-station + /about
-- F: SEO Stack (sitemap.ts + robots.ts + 6 Schema.org components)
+## ما أُنجز هذا اليوم (25-26 أبريل)
 
-### القرارات الاستراتيجية
-- التموضع: «نبني · نُوطّن · نُطوّر»
-  - «نبني» = طبقة تموضعية (الشركة، المنظومة)
-  - «نُنفّذ» = طبقة تشغيلية (المشاريع الزراعية)
-- السلوغان: «ازرع بذكاء» (عربي بحت)
-  - "Plant Smart" منفصل في constants.taglineEn للنسخة الإنجليزية لاحقاً
+### تنظيف الكود (5 commits)
+- حذف 13 ملف ميت من v1.2 (570 سطر)
+- إصلاح barrel export في `sections/index.ts`
+- حذف Sanity scripts من package.json (الكود نظيف، scripts كانت بقايا)
 
-### Build
+### Hero Full-Bleed
+- HeroSection.tsx: استبدال split layout بفيديو خلفية كامل
+- Video assets: hero-video.{mp4,webm} + hero-poster.jpg
+- Triple gradient overlay لقابلية القراءة
+- 15 ثانية loop، 1920×1080، صامت
+- إضافة "نَبني" بالحركات
+
+### Header Scroll-Aware
+- شفاف على home (Y < 50px)، صلب بعد scroll
+- Logo: أبيض ↔ أخضر تلقائياً
+- Nav links: cream ↔ deep-green
+- Position: fixed (transparent) / sticky (solid)
+- لا يكسر باقي الصفحات
+
+## Build Status
+- ✅ 16/16 صفحات prerendered
 - ✅ TypeScript نظيف
-- ✅ 16/16 صفحة prerendered (static)
-- ✅ Build production يعمل
+- ✅ Tailwind v4 + Next 16 + React 19
 
 ## ما لم يُنجز بعد
 
-### P0 — قبل التقديم لسنبلة
-- [ ] رفع 15 صورة من عسفان إلى public/images/osfan/
-- [ ] صور بطاقات الركائز (3 صور)
-- [ ] قصّة "لماذا بدأنا" (120-150 كلمة)
-- [ ] قصّة التَوطين لـ iGarden Tower
+### P0 — Vercel Deploy
+- [ ] إنشاء `.env.local` بمتغيرات Supabase
+- [ ] Vercel deployment + اختبار
+- [ ] ربط دومين igarden.sa
+
+### P0 — المحتوى
+- [ ] رفع 9 صور عسفان إلى public/images/osfan/
+- [ ] قصة "لماذا بدأنا" (120-150 كلمة)
+- [ ] قصة التَوطين لـ iGarden Tower
 - [ ] FAQ × 15 سؤال (5 لكل ركيزة)
-- [ ] Quality Pass الأخير (Lighthouse)
-- [ ] Vercel Preview Deploy + اختبار جوال
+
+### P0 — التحقق
+- [ ] Lighthouse audit (Mobile + Desktop)
+- [ ] اختبار جوال فعلي
 
 ### P1 — بعد سنبلة
 - [ ] جلسة تصوير الفريق (3 أعضاء)
-- [ ] OG Images الـ 6 (1200x630)
+- [ ] OG Images الـ 6 (1200×630)
 - [ ] PDF Lead Magnet
 - [ ] صفحات /privacy + /terms (بعد استشارة PDPL)
+- [ ] حذف ملفات video.mp4 المكررة (غير ضروري الآن)
 
-## ملفات مرجعية
-- `.claude/Brief_v2.md` — Brief التنفيذي الكامل
-- `iGarden_Master_v1_4.docx` — في Project Knowledge
+## ملاحظات تقنية
 
-## تنبيه
-- تعارض موجود في Brief v2 §6.1 — ربط Demo (نُصلحه لاحقاً)
-- WhatsAppFab يحتاج توثيق في Brief v2 (لم يُذكر أصلاً)
+### تبديل Logo
+- Transparent: `/logo/lockup-horizontal-en-white.png` (PNG, 19KB)
+- Solid: `/logo/lockup-horizontal-en.svg` (SVG)
+- لاحقاً: تحويل الـ PNG إلى SVG أبيض للجودة
+
+### Hero Video
+- الجودة: 1080p مُعالَج من 480p (upscale + grading)
+- Loop seam خفيف لكن مخفي بالـ overlay
+- يحتاج إعادة تصوير 4K في P1
+
+### Navigation
+- 7 روابط (الرئيسية، المنتجات، عسفان، من نحن، الأكاديمية، المدونة، تواصل)
+- Mobile drawer من اليمين، 300px width
+- z-50 للـ header، z-40 للـ backdrop، z-50 للـ drawer
