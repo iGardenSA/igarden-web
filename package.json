@@ -9,10 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\"",
-    "sanity:dev": "sanity dev",
-    "sanity:build": "sanity build",
-    "sanity:deploy": "sanity deploy"
+    "format": "prettier --write \"**/*.{ts,tsx,md,mdx,json}\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
