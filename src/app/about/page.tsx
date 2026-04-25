@@ -188,7 +188,7 @@ function MethodologyDeepDive() {
           <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
             المنهج
           </p>
-          <h2 className="h2 text-deep-green">ننفّذ · نُوطّن · نُطوّر</h2>
+          <h2 className="h2 text-deep-green">نبني · نُوطّن · نُطوّر</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ليس شعاراً — هو الوصف الحرفي لما نفعله كل يوم.
           </p>

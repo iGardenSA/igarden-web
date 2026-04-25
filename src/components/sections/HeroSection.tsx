@@ -19,7 +19,7 @@ export function HeroSection() {
             </h1>
             <p className="body-base text-medium-gray max-w-xl mb-8">
               شركة سعودية لبناء المزارع وأنظمة التحكم الزراعي — نأخذ التقنية
-              العالمية ونُعيد بناءها بمدخلات محلية، ونختبرها في مناخك قبل أن
+              العالمية ونُعيد تنفيذها بمدخلات محلية، ونختبرها في مناخك قبل أن
               تصل إليك.
             </p>
             <div className="flex flex-wrap gap-4">

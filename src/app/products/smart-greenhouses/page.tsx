@@ -234,7 +234,7 @@ function HowItWorks() {
           <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
             من الفكرة إلى الحصاد
           </p>
-          <h2 className="h2 text-deep-green">كيف نبني مشروعك</h2>
+          <h2 className="h2 text-deep-green">كيف نُنفّذ مشروعك</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">

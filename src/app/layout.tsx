@@ -75,13 +75,13 @@ export const metadata: Metadata = {
     siteName: COMPANY.nameEn,
     title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد بناءها بمدخلات محلية — ازرع بذكاء · Plant Smart.",
+      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
     images: [
       {
         url: "/images/og/home.jpg",
         width: 1200,
         height: 630,
-        alt: `${COMPANY.nameEn} — ازرع بذكاء · Plant Smart`,
+        alt: `${COMPANY.nameEn} — ازرع بذكاء`,
       },
     ],
   },
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء · Plant Smart.",
+      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
     images: ["/images/og/home.jpg"],
   },
 

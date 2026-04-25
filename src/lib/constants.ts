@@ -16,7 +16,7 @@ export const COMPANY = {
   hqEn: "Jeddah, Saudi Arabia",
   founded: 2024,
   launched: 2026,
-  tagline: "ازرع بذكاء · Plant Smart",
+  tagline: "ازرع بذكاء",
   legalEntity: "شركة ذات مسؤولية محدودة",
 } as const;
 
