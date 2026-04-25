@@ -7,13 +7,16 @@
 export const COMPANY = {
   nameEn: "iGarden",
   nameAr: "الحديقة الذكية",
-  legalAr: "شركة الحديقة الذكية",
-  legalEn: "Intelligent Garden Co.",
+  legalAr: "شركة انتيليجنت غاردن",
+  legalFull: "شركة انتيليجنت غاردن (ذات مسؤولية محدودة)",
+  legalEn: "Intelligent Garden Company",
   domain: "igarden.sa",
   shopDomain: "shop.igarden.sa",
   hq: "جدة، المملكة العربية السعودية",
   hqEn: "Jeddah, Saudi Arabia",
-  founded: 2026,
+  founded: 2024,
+  launched: 2026,
+  tagline: "ازرع بذكاء · Plant Smart",
   legalEntity: "شركة ذات مسؤولية محدودة",
 } as const;
 

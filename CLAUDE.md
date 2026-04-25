@@ -16,7 +16,7 @@
 |---|---|---|
 | **iGarden Master Document** | **v1.4** | المرجع الأعلى — التسميات، Timeline، Tagline، الركائز |
 | **iGarden استراتيجية الموقع** | **v3** | Homepage Blueprint + 3 صفحات ركائز + Osfan |
-| **iGarden ClaudeCode Brief** | **v1** | تفاصيل التنفيذ كود-بكود للـ Pages |
+| **iGarden ClaudeCode Brief** | **v2** | تفاصيل التنفيذ كود-بكود للـ Pages · الملف: `.claude/Brief_v2.md` |
 | **iGarden Pitch Sunbolah** | **v2** | المحتوى التسويقي المُعتمد + الأرقام |
 | **Brand Guidelines** | v1.0 | الهوية البصرية الرسمية (قيد التحديث لـ v1.4) |
 
@@ -25,7 +25,7 @@
 ```
 تموضع + تسميات + تاريخ        →  Master Doc v1.4
 بنية الموقع + الصفحات          →  استراتيجية الموقع v3
-تفاصيل كود كل صفحة             →  ClaudeCode Brief v1
+تفاصيل كود كل صفحة             →  ClaudeCode Brief v2 (.claude/Brief_v2.md)
 المحتوى التسويقي + الأرقام     →  Pitch v2
 الألوان + الخطوط + الشعار      →  Brand Guidelines
 ```
@@ -192,7 +192,7 @@ Tagline الرسمي:           ازرع بذكاء · Plant Smart
 ### Blocker 1: إعادة بناء الموقع بالتموضع الجديد 🔴
 - الموقع الحالي مبني على تموضع «AI First» المُلغى
 - يحتاج إعادة بناء Homepage + إضافة 3 صفحات ركائز + صفحة Osfan
-- **المرجع:** `iGarden_ClaudeCode_Brief_v1.md`
+- **المرجع:** `.claude/Brief_v2.md`
 - **الحالة:** في الانتظار — هذا الـ Blocker الرئيسي لـ Claude Code
 
 ### Blocker 2: تسجيل العلامة التجارية 🟠
@@ -656,7 +656,7 @@ FastAPI Backend:
    - 3 صفحات ركائز
    - صفحة `/osfan-station` جديدة
    - Navigation + Footer جديدان
-   - **المرجع:** `iGarden_ClaudeCode_Brief_v1.md`
+   - **المرجع:** `.claude/Brief_v2.md`
 
 2. 🔴 **إضافة Meta + Schema.org + sitemap + robots**
 
