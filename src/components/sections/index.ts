@@ -1,12 +1,21 @@
-export { HeroSection }         from "./01-hero";
-export { TrustBarSection }     from "./02-trust-bar";
-export { AchievementsSection } from "./02b-achievements";
-export { ProblemSection }      from "./03-problem";
-export { SolutionSection }     from "./04-solution";
-export { ProductsSection }     from "./05-products";
-export { ImpactSection }       from "./06-impact";
-export { ProcessSection }      from "./07-process";
-export { SectorsSection }      from "./08-sectors";
-export { KnowledgeSection }    from "./09-knowledge";
-export { EWAxSection }         from "./09b-ewax";
-export { FinalCtaSection }     from "./10-final-cta";
+// =============================================
+// iGarden — Sections Barrel Export (v1.4 clean)
+// Source of truth: components used in app/page.tsx
+// =============================================
+
+export { HeroSection }            from "./HeroSection";
+export { TrustBar }               from "./TrustBar";
+export { MethodologySection }     from "./MethodologySection";
+export { ThreePillarsSection }    from "./ThreePillarsSection";
+export { ComplementaryProducts }  from "./ComplementaryProducts";
+export { OsfanStationPreview }    from "./OsfanStationPreview";
+export { SmartOSDemoSection }     from "./SmartOSDemoSection";
+export { StatsStrip }             from "./StatsStrip";
+export { HowWeWork }              from "./HowWeWork";
+export { KnowledgeSection }       from "./KnowledgeSection";
+export { FinalCTA }               from "./FinalCTA";
+
+// Achievements + EWAx — تحت المراجعة (غير مستخدمين في page.tsx حالياً)
+// لو تحتاجهم أعد تفعيلهم:
+// export { AchievementsSection } from "./02b-achievements";
+// export { EWAxSection }         from "./09b-ewax";
