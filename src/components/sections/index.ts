@@ -3,7 +3,7 @@
 // Source of truth: components used in app/page.tsx
 // =============================================
 
-export { HeroSection }            from "./HeroSection";
+export { default as HeroSection } from "./HeroSection";
 export { TrustBar }               from "./TrustBar";
 export { MethodologySection }     from "./MethodologySection";
 export { ThreePillarsSection }    from "./ThreePillarsSection";
