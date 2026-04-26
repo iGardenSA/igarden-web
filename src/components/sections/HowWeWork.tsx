@@ -26,7 +26,7 @@ export function HowWeWork() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             من الفكرة إلى الحصاد
           </p>
           <h2 className="h2 text-deep-green">كيف نعمل معك</h2>

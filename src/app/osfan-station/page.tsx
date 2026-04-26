@@ -38,7 +38,7 @@ function Hero() {
         aria-hidden
       />
       <div className="relative container mx-auto px-4 max-w-4xl text-center py-24">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-4">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           عسفان، شمال جدة · منذ 2025
         </p>
         <h1 className="h1 text-cream mb-4">
@@ -63,7 +63,7 @@ function WhyOsfan() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               لماذا عسفان؟
             </p>
             <h2 className="h2 text-deep-green mb-6">
@@ -127,7 +127,7 @@ function Gallery() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-10">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             الصور الحقيقية
           </p>
           <h2 className="h2 text-deep-green">عسفان بالصور</h2>
@@ -207,7 +207,7 @@ function TestedSystems() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             من الفشل أتعلّمنا
           </p>
           <h2 className="h2 text-deep-green">ما اختبرناه في عسفان</h2>
@@ -223,18 +223,18 @@ function TestedSystems() {
               key={s.name}
               className="bg-cream rounded-card p-6 shadow-soft hover:shadow-md transition-shadow"
             >
-              <h3 className="h4 text-deep-green mb-4 font-latin text-base">
+              <h3 className="h4 text-deep-green mb-4 font-latin text-lg">
                 {s.name}
               </h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-lime text-xs font-bold uppercase tracking-wider mb-1">
+                  <p className="text-lime text-lg font-bold uppercase tracking-wider mb-1">
                     ما تعلّمناه
                   </p>
                   <p className="body-sm text-medium-gray">{s.learned}</p>
                 </div>
                 <div>
-                  <p className="text-lime text-xs font-bold uppercase tracking-wider mb-1">
+                  <p className="text-lime text-lg font-bold uppercase tracking-wider mb-1">
                     كيف غيّر منتجاتنا
                   </p>
                   <p className="body-sm text-medium-gray">{s.changed}</p>
@@ -271,7 +271,7 @@ function WorkshopsSection() {
 
           {/* Text + numbers */}
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               «ازرع بذكاء»
             </p>
             <h2 className="h2 text-deep-green mb-4">
@@ -285,17 +285,17 @@ function WorkshopsSection() {
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
                 <p className="stat-num !text-3xl mb-1">5</p>
-                <p className="text-deep-green text-xs font-medium">ورش مُنفَّذة</p>
+                <p className="text-deep-green text-lg font-medium">ورش مُنفَّذة</p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
                 {/* [CONTENT_NEEDED: عدد المشاركين الإجمالي] */}
                 <p className="stat-num !text-3xl mb-1">—</p>
-                <p className="text-deep-green text-xs font-medium">مشارك إجمالاً</p>
+                <p className="text-deep-green text-lg font-medium">مشارك إجمالاً</p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft col-span-1">
                 {/* [CONTENT_NEEDED: أهم تعليق إيجابي مع اسم/مهنة المشارك] */}
-                <p className="text-lime text-xs font-bold mb-1">«»</p>
-                <p className="text-medium-gray text-xs">[CONTENT_NEEDED: اقتباس مشارك]</p>
+                <p className="text-lime text-lg font-bold mb-1">«»</p>
+                <p className="text-medium-gray text-lg">[CONTENT_NEEDED: اقتباس مشارك]</p>
               </div>
             </div>
 
@@ -322,7 +322,7 @@ function ExpansionPlans() {
     <section className="section-dark py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-10">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             بعد سنبلة
           </p>
           <h2 className="h2 text-cream">ما يأتي بعد ذلك في عسفان</h2>
@@ -353,7 +353,7 @@ function BookVisit() {
     <section id="احجز-زيارة" className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-10">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             نرحّب بزيارتك
           </p>
           <h2 className="h2 text-deep-green">
@@ -369,7 +369,7 @@ function BookVisit() {
           <VisitForm />
         </div>
 
-        <p className="text-center text-medium-gray text-sm mt-6">
+        <p className="text-center text-medium-gray text-lg mt-6">
           أو تواصل مباشرة:{" "}
           <a
             href="https://wa.me/966570340500"

@@ -48,11 +48,11 @@ export function ThreePillarsSection() {
                 className={`relative aspect-[4/3] ${p.bgClass} flex items-center justify-center`}
               >
                 {p.badge && (
-                  <span className="absolute top-4 right-4 bg-lime text-white text-xs font-medium px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-4 bg-lime text-white text-lg font-medium px-3 py-1 rounded-full">
                     {p.badge}
                   </span>
                 )}
-                <span className="text-white/40 text-sm">
+                <span className="text-white/40 text-lg">
                   {/* [CONTENT_NEEDED: card image] */}
                 </span>
               </div>

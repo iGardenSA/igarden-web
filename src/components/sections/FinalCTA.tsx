@@ -4,7 +4,7 @@ export function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-4">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           ابدأ اليوم
         </p>
         <h2 className="h2 text-cream mb-5">
@@ -23,7 +23,7 @@ export function FinalCTA() {
           </CTAButton>
         </div>
 
-        <p className="text-cream/40 text-xs mt-8">
+        <p className="text-cream/40 text-lg mt-8">
           أو تواصل مباشرة:{" "}
           <a
             href="mailto:info@igarden.sa"

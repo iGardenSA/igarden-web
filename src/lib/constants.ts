@@ -54,7 +54,7 @@ export const KEY_MESSAGES = {
 } as const;
 
 /**
- * المنتجات والخدمات — الأسماء الرسمية.
+ * خدماتنا والخدمات — الأسماء الرسمية.
  */
 export const PRODUCTS = {
   tower: {
@@ -107,7 +107,7 @@ export const SOCIAL = {
 export const NAV_MAIN = [
   { href: "/", label: "الرئيسية" },
   { href: "/about", label: "من نحن" },
-  { href: "/products", label: "المنتجات" },
+  { href: "/products", label: "خدماتنا" },
   { href: "/roadmap", label: "خارطة الطريق" },
   { href: "/investors", label: "المستثمرون" },
   { href: "/contact", label: "تواصل معنا" },

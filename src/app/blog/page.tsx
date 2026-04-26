@@ -58,7 +58,7 @@ export default function BlogPage() {
         <GlowAccent position="top-right" intensity="subtle" color="lime" />
         <div className="container-igarden relative py-20 md:py-28">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-lg font-semibold mb-8">
               <BookOpen className="h-4 w-4" />
               <span>مدرسة iGarden</span>
             </div>
@@ -86,7 +86,7 @@ export default function BlogPage() {
         <div className="container-igarden">
           <FadeIn>
             <div className="max-w-2xl mx-auto text-center mb-14">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-100)] text-[var(--color-accent-700)] text-sm font-bold mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-accent-100)] text-[var(--color-accent-700)] text-lg font-bold mb-6">
                 <Rss className="h-4 w-4" />
                 <span>قريباً</span>
               </div>
@@ -112,7 +112,7 @@ export default function BlogPage() {
                     </p>
                     <div className="flex items-center gap-3 flex-wrap">
                       <Badge variant="outline">{article.category}</Badge>
-                      <span className="flex items-center gap-1 text-xs text-[var(--color-muted)]">
+                      <span className="flex items-center gap-1 text-lg text-[var(--color-muted)]">
                         <Clock className="h-3 w-3" />
                         {article.readTime}
                       </span>

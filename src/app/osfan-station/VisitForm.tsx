@@ -60,7 +60,7 @@ export function VisitForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="visit-name" className="block text-sm font-medium text-deep-green mb-1.5">
+          <label htmlFor="visit-name" className="block text-lg font-medium text-deep-green mb-1.5">
             الاسم الكامل <span className="text-lime">*</span>
           </label>
           <input
@@ -73,7 +73,7 @@ export function VisitForm() {
           />
         </div>
         <div>
-          <label htmlFor="visit-phone" className="block text-sm font-medium text-deep-green mb-1.5">
+          <label htmlFor="visit-phone" className="block text-lg font-medium text-deep-green mb-1.5">
             رقم الجوال <span className="text-lime">*</span>
           </label>
           <input
@@ -90,7 +90,7 @@ export function VisitForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="visit-date" className="block text-sm font-medium text-deep-green mb-1.5">
+          <label htmlFor="visit-date" className="block text-lg font-medium text-deep-green mb-1.5">
             تاريخ مقترح
           </label>
           <input
@@ -101,7 +101,7 @@ export function VisitForm() {
           />
         </div>
         <div>
-          <label htmlFor="visit-type" className="block text-sm font-medium text-deep-green mb-1.5">
+          <label htmlFor="visit-type" className="block text-lg font-medium text-deep-green mb-1.5">
             نوع الزيارة
           </label>
           <select
@@ -127,7 +127,7 @@ export function VisitForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-sm text-red-600 text-center">
+        <p className="text-lg text-red-600 text-center">
           تعذّر إرسال الطلب. حاول مرة أخرى أو تواصل معنا مباشرة.
         </p>
       )}

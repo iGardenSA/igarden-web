@@ -174,10 +174,10 @@ export default function ContactPage() {
                   </InfoRow>
                 </div>
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <p className="text-sm text-white/70 mb-2">
+                  <p className="text-lg text-white/70 mb-2">
                     الأوقات المتوقعة للرد:
                   </p>
-                  <ul className="text-sm space-y-1.5 text-white/85">
+                  <ul className="text-lg space-y-1.5 text-white/85">
                     <li>اتصال: فوري خلال ساعات العمل</li>
                     <li>واتساب: خلال ساعتين</li>
                     <li>بريد/نموذج: خلال 72 ساعة</li>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                       <p className="font-bold text-[var(--color-brand-700)] mb-1">
                         تم استلام رسالتك بنجاح
                       </p>
-                      <p className="text-sm text-[var(--color-brand-600)]">
+                      <p className="text-lg text-[var(--color-brand-600)]">
                         سنتواصل معك خلال 72 ساعة على البيانات التي أدخلتها.
                       </p>
                     </div>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                       <p className="font-bold text-red-800 mb-1">
                         تعذّر الإرسال
                       </p>
-                      <p className="text-sm text-red-700">{errorMessage}</p>
+                      <p className="text-lg text-red-700">{errorMessage}</p>
                     </div>
                   </div>
                 )}
@@ -359,7 +359,7 @@ export default function ContactPage() {
                         </>
                       )}
                     </Button>
-                    <p className="text-xs text-[var(--color-muted)] mt-4 leading-relaxed">
+                    <p className="text-lg text-[var(--color-muted)] mt-4 leading-relaxed">
                       بإرسالك هذه الرسالة، توافق على{" "}
                       <Link
                         href="/privacy"
@@ -423,15 +423,15 @@ function InternalContactCard(props: InternalContactCardProps) {
       </div>
       <p
         className={
-          "text-xs font-bold uppercase tracking-wider mb-1 " + labelClass
+          "text-lg font-bold uppercase tracking-wider mb-1 " + labelClass
         }
       >
         {props.title}
       </p>
-      <p className={"text-base font-bold mb-2 " + valueClass} dir={valueDir}>
+      <p className={"text-lg font-bold mb-2 " + valueClass} dir={valueDir}>
         {props.value}
       </p>
-      <p className={"text-xs " + labelClass}>{props.subtitle}</p>
+      <p className={"text-lg " + labelClass}>{props.subtitle}</p>
     </a>
   );
 }
@@ -457,13 +457,13 @@ function ExternalContactCard(props: ExternalContactCardProps) {
       <div className="h-12 w-12 rounded-xl flex items-center justify-center mb-4 bg-[var(--color-brand-50)] text-[var(--color-brand-600)]">
         {props.icon}
       </div>
-      <p className="text-xs font-bold uppercase tracking-wider mb-1 text-[var(--color-muted)]">
+      <p className="text-lg font-bold uppercase tracking-wider mb-1 text-[var(--color-muted)]">
         {props.title}
       </p>
-      <p className="text-base font-bold mb-2 text-[var(--color-brand-600)]">
+      <p className="text-lg font-bold mb-2 text-[var(--color-brand-600)]">
         {props.value}
       </p>
-      <p className="text-xs text-[var(--color-muted)]">{props.subtitle}</p>
+      <p className="text-lg text-[var(--color-muted)]">{props.subtitle}</p>
     </a>
   );
 }
@@ -482,7 +482,7 @@ function InterestChip(props: InterestChipProps) {
     ? "bg-[var(--color-accent-500)] border-[var(--color-accent-500)]"
     : "border-[var(--color-border)]";
   const wrapperClass =
-    "flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 cursor-pointer transition-all text-sm " +
+    "flex items-center gap-2 px-3 py-2.5 rounded-xl border-2 cursor-pointer transition-all text-lg " +
     boxClass;
   const markFullClass =
     "h-4 w-4 rounded border-2 shrink-0 flex items-center justify-center " +
@@ -517,10 +517,10 @@ function InfoRow(props: InfoRowProps) {
         {props.icon}
       </div>
       <div>
-        <p className="text-xs text-white/60 uppercase tracking-wider mb-1">
+        <p className="text-lg text-white/60 uppercase tracking-wider mb-1">
           {props.label}
         </p>
-        <p className="text-sm md:text-base text-white leading-relaxed">
+        <p className="text-lg md:text-lg text-white leading-relaxed">
           {props.children}
         </p>
       </div>
@@ -538,13 +538,13 @@ type FormFieldProps = {
 function FormField(props: FormFieldProps) {
   return (
     <div>
-      <label className="block text-sm font-semibold text-[var(--color-foreground)] mb-2">
+      <label className="block text-lg font-semibold text-[var(--color-foreground)] mb-2">
         {props.label}
         {props.required && <span className="text-red-500 mr-1">*</span>}
       </label>
       {props.children}
       {props.error && (
-        <p className="text-xs text-red-600 mt-1.5 flex items-center gap-1">
+        <p className="text-lg text-red-600 mt-1.5 flex items-center gap-1">
           <AlertCircle className="h-3 w-3" />
           {props.error}
         </p>

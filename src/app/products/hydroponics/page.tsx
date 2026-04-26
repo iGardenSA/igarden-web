@@ -38,7 +38,7 @@ function Hero() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               الزراعة المائية · 7 تقنيات
             </p>
             <h1 className="h1 text-deep-green mb-5">
@@ -164,7 +164,7 @@ function TechniquesSection() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             التقنيات المُختَبَرة في عسفان
           </p>
           <h2 className="h2 text-deep-green">7 تقنيات لـ 7 احتياجات</h2>
@@ -184,11 +184,11 @@ function TechniquesSection() {
               <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mb-3">
                 <Icon className="w-5 h-5 text-lime" aria-hidden />
               </div>
-              <p className="font-latin font-bold text-deep-green text-sm mb-0.5">
+              <p className="font-latin font-bold text-deep-green text-lg mb-0.5">
                 {name}
               </p>
-              <p className="text-medium-gray text-xs mb-2">{fullName}</p>
-              <p className="body-sm text-medium-gray text-xs leading-relaxed flex-1">
+              <p className="text-medium-gray text-lg mb-2">{fullName}</p>
+              <p className="body-sm text-medium-gray text-lg leading-relaxed flex-1">
                 {desc}
               </p>
             </div>
@@ -197,8 +197,8 @@ function TechniquesSection() {
           {/* 8th cell — anchor to Tower section */}
           <div className="bg-lime/10 border-2 border-lime rounded-card p-5 flex flex-col items-center justify-center text-center">
             <Award className="w-8 h-8 text-lime mb-2" aria-hidden />
-            <p className="font-bold text-deep-green text-sm mb-1">iGarden Tower</p>
-            <p className="text-xs text-medium-gray">
+            <p className="font-bold text-deep-green text-lg mb-1">iGarden Tower</p>
+            <p className="text-lg text-medium-gray">
               منتجنا المُسجَّل — اكتشفه أدناه ↓
             </p>
           </div>
@@ -220,7 +220,7 @@ function IGardenTowerSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Badge */}
         <div className="flex justify-center mb-8">
-          <span className="bg-lime text-white text-xs font-bold px-4 py-1.5 rounded-pill flex items-center gap-2">
+          <span className="bg-lime text-white text-lg font-bold px-4 py-1.5 rounded-pill flex items-center gap-2">
             <Award className="w-4 h-4" aria-hidden />
             نموذج صناعي مُسجَّل · SAIP
           </span>
@@ -236,14 +236,14 @@ function IGardenTowerSection() {
             {/* [CONTENT_NEEDED: /images/products/hydroponics/igarden-tower.jpg — صورة كاملة للبرج] */}
             <div className="text-center p-8">
               <Layers className="w-24 h-24 text-white/20 mx-auto mb-4" aria-hidden />
-              <p className="text-white/40 text-sm font-latin">iGarden Tower</p>
+              <p className="text-white/40 text-lg font-latin">iGarden Tower</p>
             </div>
             {/* SAIP badge on image */}
             <div className="absolute bottom-4 start-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow">
-              <p className="text-deep-green font-bold text-xs">نموذج صناعي مُسجَّل</p>
+              <p className="text-deep-green font-bold text-lg">نموذج صناعي مُسجَّل</p>
               <p
                 dir="ltr"
-                className="ltr-inline font-latin text-lime font-bold text-xs"
+                className="ltr-inline font-latin text-lime font-bold text-lg"
               >
                 SAIP #423450193
               </p>
@@ -290,19 +290,19 @@ function IGardenTowerSection() {
                 >
                   #423450193
                 </p>
-                <p className="text-deep-green text-xs font-medium">
+                <p className="text-deep-green text-lg font-medium">
                   SAIP — مسجَّل
                 </p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
                 <p className="stat-num !text-3xl mb-1">3</p>
-                <p className="text-deep-green text-xs font-medium">
+                <p className="text-deep-green text-lg font-medium">
                   مراحل تطوير في عسفان
                 </p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
                 <p className="stat-num !text-3xl mb-1">×4</p>
-                <p className="text-deep-green text-xs font-medium">
+                <p className="text-deep-green text-lg font-medium">
                   يُضاعف الإنتاج عمودياً
                 </p>
               </div>
@@ -333,7 +333,7 @@ function OsfanGallery() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-10">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             كلّها تعمل الآن في عسفان
           </p>
           <h2 className="h2 text-deep-green">الأنظمة في الميدان</h2>
@@ -401,7 +401,7 @@ function ScalesSection() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             حلول بكل الأحجام
           </p>
           <h2 className="h2 text-deep-green">
@@ -419,7 +419,7 @@ function ScalesSection() {
                   : "bg-white"
               }`}
             >
-              <span className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+              <span className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
                 {s.tier}
               </span>
               <h3 className={`h3 mb-3 ${s.highlight ? "text-cream" : "text-deep-green"}`}>
@@ -433,7 +433,7 @@ function ScalesSection() {
                   href={s.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-lime font-medium hover:text-bright-lime transition-colors text-sm"
+                  className="inline-flex items-center gap-1 text-lime font-medium hover:text-bright-lime transition-colors text-lg"
                 >
                   {s.cta.label}
                   <ExternalLink className="w-3.5 h-3.5" aria-hidden />
@@ -504,7 +504,7 @@ function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-4">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           شاهد بعينك
         </p>
         <h2 className="h2 text-cream mb-5">
@@ -530,7 +530,7 @@ function FinalCTA() {
 /* ─── Page ────────────────────────────────────────────────── */
 const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
-  { name: "المنتجات", url: "/products" },
+  { name: "خدماتنا", url: "/products" },
   { name: "Hydroponic Systems", url: "/products/hydroponics" },
 ];
 

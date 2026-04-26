@@ -19,19 +19,21 @@ export function Footer() {
               height={40}
               className="mb-4"
             />
-            <p className="text-sm leading-relaxed opacity-80 mb-4">
-              شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي.
-              نبني · نُوطّن · نُطوّر.
+            <p className="text-lg leading-relaxed opacity-80 mb-3">
+              شركة سعودية ريادية لتطوير المزارع ونظم التحكم الزراعي الذكي.
             </p>
-            <p className="text-sm font-latin opacity-90">{COMPANY.tagline}</p>
+            <p className="text-lg font-medium text-lime mb-4">
+              نَبني · نُوطّن · نُطوّر
+            </p>
+            <p className="text-lg font-latin opacity-90">{COMPANY.tagline}</p>
           </div>
 
           {/* Column 2: الركائز */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-widest text-cream/60 mb-4">
+            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
               الركائز
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-lg">
               <FooterLink href="/products/smart-controllers">
                 <span className="ltr-inline">Smart Controllers</span>
               </FooterLink>
@@ -43,16 +45,16 @@ export function Footer() {
 
           {/* Column 3: الشركة */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-widest text-cream/60 mb-4">
+            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
               الشركة
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-lg">
               <FooterLink href="/about">من نحن</FooterLink>
               <FooterLink href="/contact">تواصل معنا</FooterLink>
               <FooterLink href="/learn">الأكاديمية</FooterLink>
               <FooterLink href="/blog">المدونة</FooterLink>
               <FooterLink href={COMPANY.shopDomain ? `https://${COMPANY.shopDomain}` : "#"} external>
-                متجر <span className="ltr-inline">iGarden</span> — حلول منزلية
+                متجر <span className="ltr-inline">iGarden</span>
               </FooterLink>
               <FooterLink href="https://demo.igarden.sa" external>
                 الديمو التفاعلي
@@ -62,10 +64,10 @@ export function Footer() {
 
           {/* Column 4: التواصل */}
           <div>
-            <h3 className="text-sm font-bold uppercase tracking-widest text-cream/60 mb-4">
+            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
               التواصل
             </h3>
-            <ul className="space-y-3 text-sm mb-6">
+            <ul className="space-y-3 text-lg mb-6">
               <li>
                 <a
                   href={`mailto:${CONTACT.email}`}
@@ -113,7 +115,7 @@ export function Footer() {
 
         {/* Legal strip */}
         <div className="border-t border-cream/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs opacity-60">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-lg opacity-60">
             <div className="space-y-1">
               <p>{COMPANY.legalFull}</p>
               <p>

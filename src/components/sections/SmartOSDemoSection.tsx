@@ -14,7 +14,7 @@ export function SmartOSDemoSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text side */}
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               Smart OS — نظام التحكم الذكي
             </p>
             <h2 className="h2 text-cream mb-5">
@@ -49,7 +49,7 @@ export function SmartOSDemoSection() {
                 <div className="w-16 h-16 rounded-full bg-lime/20 flex items-center justify-center mx-auto mb-4">
                   <MonitorSmartphone className="w-8 h-8 text-lime" aria-hidden />
                 </div>
-                <p className="text-cream/60 text-sm">
+                <p className="text-cream/60 text-lg">
                   {/* [CONTENT_NEEDED: Smart OS dashboard screenshot] */}
                   demo.igarden.sa
                 </p>

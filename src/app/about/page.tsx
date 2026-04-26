@@ -13,12 +13,12 @@ import {
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لتطوير المزارع | iGarden",
   description:
-    "iGarden — العلامة التجارية لشركة انتيليجنت غاردن. نبني ونُوطّن ونُطوّر أنظمة الزراعة الذكية. تأسّست 2024، مُرخَّصة 2026.",
+    "iGarden — العلامة التجارية لشركة انتيليجنت غاردن. نَبني ونُوطّن ونُطوّر أنظمة الزراعة الذكية. تأسّست 2024، مُرخَّصة 2026.",
   alternates: { canonical: "https://igarden.sa/about" },
   openGraph: {
     title: "من نحن — iGarden",
     description:
-      "شركة سعودية لتطوير المزارع. سلاحنا الابتكار، ومنهجنا «نبني · نُوطّن · نُطوّر».",
+      "شركة سعودية لتطوير المزارع. سلاحنا الابتكار، ومنهجنا «نَبني · نُوطّن · نُطوّر».",
     images: ["/images/og/about.jpg"],
     type: "website",
     locale: "ar_SA",
@@ -30,7 +30,7 @@ function Hero() {
   return (
     <section className="section-light py-20 md:py-28">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
           منذ 2024 · AgriTech سعودية ريادية
         </p>
         <h1 className="h1 text-deep-green mb-5">
@@ -55,7 +55,7 @@ function WhyWeStarted() {
     <section className="bg-white py-16">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-8">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             القصة
           </p>
           <h2 className="h2 text-deep-green">لماذا بدأنا؟</h2>
@@ -88,7 +88,7 @@ const TIMELINE = [
     items: [
       "تأسيس فريق العمل المؤسّس",
       "بحث وتطوير أوّلي في تقنيات الزراعة المائية",
-      "تحديد المنهج «نبني · نُوطّن · نُطوّر»",
+      "تحديد المنهج «نَبني · نُوطّن · نُطوّر»",
     ],
   },
   {
@@ -118,7 +118,7 @@ function TimelineSection() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             الرحلة
           </p>
           <h2 className="h2 text-deep-green">3 سنوات من التطوير</h2>
@@ -156,7 +156,7 @@ function TimelineSection() {
 const METHODOLOGY = [
   {
     Icon: Hammer,
-    verb: "نبني",
+    verb: "نَبني",
     title: "من الحساس إلى الحصاد",
     body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني يبني — لا يوجّه فقط.",
     example:
@@ -185,10 +185,10 @@ function MethodologyDeepDive() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             المنهج
           </p>
-          <h2 className="h2 text-deep-green">نبني · نُوطّن · نُطوّر</h2>
+          <h2 className="h2 text-deep-green">نَبني · نُوطّن · نُطوّر</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ليس شعاراً — هو الوصف الحرفي لما نفعله كل يوم.
           </p>
@@ -206,7 +206,7 @@ function MethodologyDeepDive() {
               <h3 className="h4 text-deep-green mb-3">{title}</h3>
               <p className="body-base text-medium-gray mb-4">{body}</p>
               <div className="border-t border-light-gray pt-4">
-                <p className="text-xs text-lime font-bold uppercase tracking-wider mb-1">
+                <p className="text-lg text-lime font-bold uppercase tracking-wider mb-1">
                   مثال حقيقي
                 </p>
                 <p className="body-sm text-medium-gray italic">{example}</p>
@@ -243,7 +243,7 @@ function TeamSection() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             الفريق المؤسّس
           </p>
           <h2 className="h2 text-deep-green">الأشخاص خلف iGarden</h2>
@@ -260,14 +260,14 @@ function TeamSection() {
                 <User className="w-10 h-10 text-lime" aria-hidden />
               </div>
               <h3 className="h4 text-deep-green mb-1">{member.name}</h3>
-              <p className="text-lime text-sm font-medium mb-3">{member.role}</p>
-              <p className="body-sm text-medium-gray font-latin text-xs leading-relaxed">
+              <p className="text-lime text-lg font-medium mb-3">{member.role}</p>
+              <p className="body-sm text-medium-gray font-latin text-lg leading-relaxed">
                 {member.expertise}
               </p>
             </div>
           ))}
         </div>
-        <p className="text-center text-medium-gray text-xs mt-6">
+        <p className="text-center text-medium-gray text-lg mt-6">
           الصور الاحترافية قيد التصوير — ستُضاف قريباً.
         </p>
       </div>
@@ -305,7 +305,7 @@ function OsfanLinkSection() {
             ))}
           </div>
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               مختبرنا الميداني
             </p>
             <h2 className="h2 text-deep-green mb-4">
@@ -350,8 +350,8 @@ function ValuesSection() {
               <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mx-auto mb-3">
                 <Sprout className="w-5 h-5 text-lime" aria-hidden />
               </div>
-              <h3 className="font-bold text-deep-green text-sm mb-2">{v.title}</h3>
-              <p className="text-medium-gray text-xs leading-relaxed">{v.desc}</p>
+              <h3 className="font-bold text-deep-green text-lg mb-2">{v.title}</h3>
+              <p className="text-medium-gray text-lg leading-relaxed">{v.desc}</p>
             </div>
           ))}
         </div>

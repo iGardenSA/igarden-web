@@ -26,7 +26,7 @@ export default function InvestorsPage() {
         <GlowAccent position="top-right" intensity="subtle" color="lime" />
         <div className="container-igarden relative py-20 md:py-28">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-sm font-semibold mb-8 uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-lg font-semibold mb-8 uppercase tracking-widest">
               <Award className="h-4 w-4" />
               <span>Sunbolah 2026 · Series Seed Ready</span>
             </div>
@@ -162,7 +162,7 @@ export default function InvestorsPage() {
 
           <FadeIn delay={350}>
             <div className="mt-8 p-6 bg-[var(--color-brand-600)] rounded-2xl text-center">
-              <p className="text-white/80 text-sm mb-1">التراكمي 3 سنوات</p>
+              <p className="text-white/80 text-lg mb-1">التراكمي 3 سنوات</p>
               <p className="text-3xl md:text-4xl font-extrabold text-[var(--color-accent-300)]" data-num>
                 17.3M+ ريال
               </p>
@@ -346,7 +346,7 @@ export default function InvestorsPage() {
                   </h3>
                 </div>
               </div>
-              <p className="text-[var(--color-muted)] leading-relaxed text-base md:text-lg">
+              <p className="text-[var(--color-muted)] leading-relaxed text-lg md:text-lg">
                 نفخر بتقديم طلب لمسرعة{" "}
                 <span className="font-bold text-[var(--color-brand-600)]">سنبلة EWAx</span>{" "}
                 التابعة لوزارة البيئة والمياه والزراعة — الشراكة المثالية لتحقيق أهدافنا المشتركة
@@ -361,7 +361,7 @@ export default function InvestorsPage() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1.5 bg-[var(--color-brand-50)] text-[var(--color-brand-600)] text-sm font-medium rounded-full border border-[var(--color-brand-200)]"
+                    className="px-3 py-1.5 bg-[var(--color-brand-50)] text-[var(--color-brand-600)] text-lg font-medium rounded-full border border-[var(--color-brand-200)]"
                   >
                     {tag}
                   </span>
@@ -394,14 +394,14 @@ export default function InvestorsPage() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
                 <Download className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
                 <h4 className="font-bold text-white mb-2">Pitch Deck</h4>
-                <p className="text-xs text-white/60 mb-4">ملف PDF تفصيلي</p>
+                <p className="text-lg text-white/60 mb-4">ملف PDF تفصيلي</p>
                 <PitchDeckButton compact />
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
                 <FileText className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
                 <h4 className="font-bold text-white mb-2">احجز موعداً</h4>
-                <p className="text-xs text-white/60 mb-4">لقاء مستثمرين مباشر</p>
+                <p className="text-lg text-white/60 mb-4">لقاء مستثمرين مباشر</p>
                 <Button variant="accent" size="sm" asChild>
                   <Link href="/contact">احجز الآن</Link>
                 </Button>
@@ -410,7 +410,7 @@ export default function InvestorsPage() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
                 <Mail className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
                 <h4 className="font-bold text-white mb-2">تواصل مباشر</h4>
-                <p className="text-xs text-white/60 mb-4" dir="ltr">
+                <p className="text-lg text-white/60 mb-4" dir="ltr">
                   {CONTACT.email}
                 </p>
                 <Button variant="light" size="sm" asChild>
@@ -443,7 +443,7 @@ function PitchDeckButton({ compact = false }: { compact?: boolean }) {
         {compact ? "تحميل PDF" : "تحميل Pitch Deck"}
       </Button>
       <div
-        className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[var(--color-brand-600)] text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+        className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[var(--color-brand-600)] text-white text-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
         role="tooltip"
         aria-hidden="true"
       >
@@ -472,14 +472,14 @@ function QuickFactCard({
       <div className="h-12 w-12 rounded-xl bg-[var(--color-brand-50)] text-[var(--color-brand-600)] flex items-center justify-center mb-5">
         {icon}
       </div>
-      <p className="text-xs text-[var(--color-muted)] uppercase tracking-wider mb-2">{label}</p>
+      <p className="text-lg text-[var(--color-muted)] uppercase tracking-wider mb-2">{label}</p>
       <p
         className={`text-2xl font-extrabold text-[var(--color-brand-600)] leading-tight ${mono ? "font-mono text-xl" : ""}`}
         data-num
       >
         {value}
       </p>
-      <p className="text-sm text-[var(--color-muted)] mt-1">{unit}</p>
+      <p className="text-lg text-[var(--color-muted)] mt-1">{unit}</p>
     </div>
   );
 }
@@ -508,7 +508,7 @@ function FinancialCard({
       }`}
     >
       <p
-        className={`text-sm font-bold uppercase tracking-widest mb-2 ${
+        className={`text-lg font-bold uppercase tracking-widest mb-2 ${
           highlight ? "text-[var(--color-accent-300)]" : "text-[var(--color-muted)]"
         }`}
       >
@@ -523,13 +523,13 @@ function FinancialCard({
         {revenue}
       </p>
       <p
-        className={`text-sm mb-1 ${highlight ? "text-white/80" : "text-[var(--color-muted)]"}`}
+        className={`text-lg mb-1 ${highlight ? "text-white/80" : "text-[var(--color-muted)]"}`}
       >
         ريال سعودي
       </p>
       {net && (
         <p
-          className={`text-sm font-medium mb-4 ${
+          className={`text-lg font-medium mb-4 ${
             highlight ? "text-white/70" : "text-[var(--color-muted)]"
           }`}
         >
@@ -537,7 +537,7 @@ function FinancialCard({
         </p>
       )}
       <p
-        className={`text-sm font-semibold mt-4 mb-4 ${
+        className={`text-lg font-semibold mt-4 mb-4 ${
           highlight ? "text-white" : "text-[var(--color-foreground)]"
         }`}
       >
@@ -581,8 +581,8 @@ function RevenueCard({
       <p className={`text-5xl font-extrabold mb-2 ${textColorClass}`} data-num>
         {percentage}%
       </p>
-      <p className="font-bold text-[var(--color-brand-600)] text-base mb-1">{title}</p>
-      <p className="text-xs text-[var(--color-muted)]">{subtitle}</p>
+      <p className="font-bold text-[var(--color-brand-600)] text-lg mb-1">{title}</p>
+      <p className="text-lg text-[var(--color-muted)]">{subtitle}</p>
       <div className="h-1.5 bg-[var(--color-border)] rounded-full mt-5">
         <div
           className={`h-1.5 rounded-full ${barColorClass}`}
@@ -615,7 +615,7 @@ function InvestmentAdvantage({
         </span>
       </div>
       <h3 className="text-xl font-bold text-[var(--color-brand-600)] mb-3">{title}</h3>
-      <p className="text-sm text-[var(--color-muted)] leading-relaxed">{description}</p>
+      <p className="text-lg text-[var(--color-muted)] leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -624,8 +624,8 @@ function FundingBar({ label, percentage }: { label: string; percentage: number }
   return (
     <div>
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-semibold text-[var(--color-foreground)]">{label}</span>
-        <span className="text-sm font-extrabold text-[var(--color-accent-600)]" data-num>
+        <span className="text-lg font-semibold text-[var(--color-foreground)]">{label}</span>
+        <span className="text-lg font-extrabold text-[var(--color-accent-600)]" data-num>
           {percentage}%
         </span>
       </div>

@@ -52,7 +52,7 @@ export function Stat({
           </span>
         )}
       </div>
-      <p className="text-sm md:text-base text-[var(--color-muted)] font-medium">
+      <p className="text-lg md:text-lg text-[var(--color-muted)] font-medium">
         {label}
       </p>
     </div>

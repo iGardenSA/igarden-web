@@ -4,7 +4,7 @@ const TRUST_ITEMS = [
   { text: "مرخّصة", label: "MISA", number: "24926249716" },
   { text: "نموذج صناعي", label: "SAIP", number: "#423450193" },
   { text: "محطّة عسفان للتجارب قائمة", label: null, number: null },
-  { text: "Smart OS Backend يعمل — Demo حيّ", label: null, number: null },
+  { text: "Smart OS Backend — Demo", label: null, number: null },
 ];
 
 export function TrustBar() {
@@ -13,7 +13,7 @@ export function TrustBar() {
       <div className="container mx-auto px-4 max-w-7xl">
         <ul className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           {TRUST_ITEMS.map((item) => (
-            <li key={item.text} className="flex items-start gap-2 text-sm text-dark-text">
+            <li key={item.text} className="flex items-start gap-2 text-base text-dark-text">
               <CheckCircle2
                 className="w-5 h-5 text-lime flex-shrink-0 mt-0.5"
                 aria-hidden

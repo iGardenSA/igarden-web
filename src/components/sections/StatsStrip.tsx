@@ -14,8 +14,8 @@ export function StatsStrip() {
           {STATS.map((s) => (
             <div key={s.num} className="flex flex-col items-center">
               <p className="stat-num mb-1">{s.num}</p>
-              <p className="text-cream font-medium text-sm mb-0.5">{s.label}</p>
-              <p className="text-cream/50 text-xs">{s.sub}</p>
+              <p className="text-cream font-medium text-lg mb-0.5">{s.label}</p>
+              <p className="text-cream/50 text-lg">{s.sub}</p>
             </div>
           ))}
         </div>

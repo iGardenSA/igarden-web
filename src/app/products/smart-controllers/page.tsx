@@ -36,11 +36,11 @@ function Hero() {
           {/* Text */}
           <div>
             <div className="flex flex-wrap gap-2 mb-4">
-              <span className="bg-lime text-white text-xs font-bold px-3 py-1 rounded-pill">
+              <span className="bg-lime text-white text-lg font-bold px-3 py-1 rounded-pill">
                 Flagship · صناعة سعودية
               </span>
             </div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               المنتج الرائد · Smart OS Powered
             </p>
             <h1 className="h1 text-deep-green mb-5">
@@ -86,7 +86,7 @@ function StatusCard() {
     <section className="bg-white py-10">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mx-auto bg-cream rounded-card p-6 border-s-4 border-lime shadow-soft">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             شفافية ريادية
           </p>
           <h2 className="h4 text-deep-green mb-3">منتج قيد التطوير الميداني</h2>
@@ -101,7 +101,7 @@ function StatusCard() {
           </p>
           <Link
             href="/contact?interest=controllers&type=early-access"
-            className="text-lime font-medium hover:text-deep-green transition-colors text-sm"
+            className="text-lime font-medium hover:text-deep-green transition-colors text-lg"
           >
             انضمّ لـ Early Access ←
           </Link>
@@ -178,7 +178,7 @@ function TechSpecs() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             المواصفات التقنية
           </p>
           <h2 className="h2 text-deep-green">ما داخل الصندوق</h2>
@@ -195,7 +195,7 @@ function TechSpecs() {
                   <div className="w-12 h-12 rounded bg-brand-600 flex items-center justify-center">
                     <Cpu className="w-6 h-6 text-white" aria-hidden />
                   </div>
-                  <span className="text-xs text-medium-gray font-latin">Pi 5</span>
+                  <span className="text-lg text-medium-gray font-latin">Pi 5</span>
                 </div>
                 <div className="flex flex-col items-center gap-2 self-center">
                   <div className="h-px w-full bg-lime" aria-hidden />
@@ -204,10 +204,10 @@ function TechSpecs() {
                   <div className="w-12 h-12 rounded bg-corp-green flex items-center justify-center">
                     <Radio className="w-6 h-6 text-white" aria-hidden />
                   </div>
-                  <span className="text-xs text-medium-gray font-latin">ESP32</span>
+                  <span className="text-lg text-medium-gray font-latin">ESP32</span>
                 </div>
               </div>
-              <p className="text-medium-gray text-xs mt-6">
+              <p className="text-medium-gray text-lg mt-6">
                 [Diagram قيد الإعداد]
               </p>
             </div>
@@ -301,7 +301,7 @@ function HowItWorks() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             من القياس إلى التحكم
           </p>
           <h2 className="h2 text-deep-green">كيف يعمل النظام</h2>
@@ -334,7 +334,7 @@ function DemoSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               تجربة حيّة قبل الشراء
             </p>
             <h2 className="h2 text-cream mb-5">
@@ -357,7 +357,7 @@ function DemoSection() {
             {/* [CONTENT_NEEDED: /images/products/smart-controllers/dashboard-screenshot.jpg — Screenshot من Smart OS Dashboard] */}
             <div className="text-center p-6">
               <MonitorSmartphone className="w-16 h-16 text-lime/40 mx-auto mb-3" aria-hidden />
-              <p className="text-cream/40 text-xs">demo.igarden.sa</p>
+              <p className="text-cream/40 text-lg">demo.igarden.sa</p>
             </div>
           </div>
         </div>
@@ -381,7 +381,7 @@ function DevTimeline() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             رحلة التطوير
           </p>
           <h2 className="h2 text-deep-green">من فكرة إلى نظام يعمل</h2>
@@ -400,7 +400,7 @@ function DevTimeline() {
                 className={`relative flex gap-6 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
                 <div className="relative z-10 w-16 h-16 rounded-full bg-cream border-2 border-lime flex items-center justify-center flex-shrink-0 shadow-soft">
-                  <span className="text-deep-green font-bold text-xs text-center leading-tight font-latin px-1">
+                  <span className="text-deep-green font-bold text-lg text-center leading-tight font-latin px-1">
                     {p.year}
                   </span>
                 </div>
@@ -432,7 +432,7 @@ function B2BSection() {
     <section className="section-light py-16">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             للمشاريع التجارية والحكومية
           </p>
           <h2 className="h3 text-deep-green mb-4">
@@ -446,7 +446,7 @@ function B2BSection() {
             {SECTORS.map((s) => (
               <span
                 key={s}
-                className="bg-white border border-light-gray rounded-pill px-4 py-2 text-sm text-deep-green font-medium shadow-soft"
+                className="bg-white border border-light-gray rounded-pill px-4 py-2 text-lg text-deep-green font-medium shadow-soft"
               >
                 {s}
               </span>
@@ -511,7 +511,7 @@ function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-4">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           Early Access
         </p>
         <h2 className="h2 text-cream mb-5">
@@ -537,7 +537,7 @@ function FinalCTA() {
 /* ─── Page ────────────────────────────────────────────────── */
 const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
-  { name: "المنتجات", url: "/products" },
+  { name: "خدماتنا", url: "/products" },
   { name: "Smart Controllers", url: "/products/smart-controllers" },
 ];
 

@@ -4,12 +4,12 @@ import { ComplementaryProducts } from "@/components/sections/ComplementaryProduc
 import { CTAButton } from "@/components/shared/CTAButton";
 
 export const metadata: Metadata = {
-  title: "المنتجات — منصّة منتجات زراعية متكاملة | iGarden",
+  title: "خدماتنا — منصّة منتجات زراعية متكاملة | iGarden",
   description:
     "ثلاث ركائز منتجات مُختَبَرة في عسفان: Smart Controllers (Flagship) + Smart Greenhouses + Hydroponic Systems. يشمل iGarden Tower المُسجَّل صناعياً.",
   alternates: { canonical: "https://igarden.sa/products" },
   openGraph: {
-    title: "المنتجات — منصّة منتجات زراعية متكاملة",
+    title: "خدماتنا — منصّة منتجات زراعية متكاملة",
     description: "ثلاث ركائز + منتجات تكميلية. كلّها مُختَبَرة في عسفان لمناخ السعودية.",
     images: ["/images/og/products.jpg"],
     type: "website",
@@ -21,8 +21,8 @@ function Hero() {
   return (
     <section className="section-light py-16 md:py-20">
       <div className="container mx-auto px-4 max-w-7xl text-center">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
-          نبني · نُوطّن · نُطوّر
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
+          نَبني · نُوطّن · نُطوّر
         </p>
         <h1 className="h1 text-deep-green mb-5">منصّة منتجات متكاملة</h1>
         <p className="body-base text-medium-gray max-w-2xl mx-auto">

@@ -67,7 +67,7 @@ export default function CaseStudiesPage() {
         <GlowAccent position="top-right" intensity="subtle" color="lime" />
         <div className="container-igarden relative py-20 md:py-28">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-sm font-semibold mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-lg font-semibold mb-8">
               <BarChart2 className="h-4 w-4" />
               <span>أدلة نجاح ميدانية</span>
             </div>
@@ -103,11 +103,11 @@ export default function CaseStudiesPage() {
 
           <FadeIn delay={400}>
             <div className="mt-10 p-6 bg-white rounded-2xl border border-[var(--color-border)] text-center shadow-[var(--shadow-soft)]">
-              <div className="inline-flex items-center gap-2 text-[var(--color-accent-600)] bg-[var(--color-accent-100)] px-4 py-2 rounded-full text-sm font-bold mb-3">
+              <div className="inline-flex items-center gap-2 text-[var(--color-accent-600)] bg-[var(--color-accent-100)] px-4 py-2 rounded-full text-lg font-bold mb-3">
                 <Clock className="h-4 w-4" />
                 <span>قيد التوثيق</span>
               </div>
-              <p className="text-[var(--color-muted)] text-base leading-relaxed max-w-2xl mx-auto">
+              <p className="text-[var(--color-muted)] text-lg leading-relaxed max-w-2xl mx-auto">
                 سيتم نشر التفاصيل الكاملة لكل دراسة حالة قريباً بعد الحصول على موافقة العملاء
                 المكتوبة وإتمام التحقق من البيانات.
               </p>
@@ -181,7 +181,7 @@ function CaseStudyCard({
           </div>
           <Badge variant="outline">قريباً</Badge>
         </div>
-        <div className="flex items-center gap-1.5 text-xs text-[var(--color-muted)] mb-2">
+        <div className="flex items-center gap-1.5 text-lg text-[var(--color-muted)] mb-2">
           <MapPin className="h-3.5 w-3.5" />
           <span>{study.location}</span>
         </div>
@@ -195,7 +195,7 @@ function CaseStudyCard({
           <Badge variant="outline">{study.area}</Badge>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs text-[var(--color-muted)] mb-5">
+        <div className="flex items-center gap-1.5 text-lg text-[var(--color-muted)] mb-5">
           <Clock className="h-3.5 w-3.5" />
           <span>{study.duration}</span>
         </div>
@@ -210,12 +210,12 @@ function CaseStudyCard({
               <p className="text-lg font-extrabold text-[var(--color-accent-600)]" data-num>
                 {r.value}
               </p>
-              <p className="text-xs text-[var(--color-muted)]">{r.label}</p>
+              <p className="text-lg text-[var(--color-muted)]">{r.label}</p>
             </div>
           ))}
         </div>
 
-        <p className="text-xs text-[var(--color-muted)] mb-4 mt-auto">
+        <p className="text-lg text-[var(--color-muted)] mb-4 mt-auto">
           النظام:{" "}
           <span className="font-semibold text-[var(--color-brand-600)]" dir="ltr">
             {study.system}
@@ -223,7 +223,7 @@ function CaseStudyCard({
         </p>
 
         {/* Overlay إشعار */}
-        <div className="bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-xl p-3 text-center text-xs text-[var(--color-brand-600)] font-medium">
+        <div className="bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-xl p-3 text-center text-lg text-[var(--color-brand-600)] font-medium">
           سيتم نشر التفاصيل الكاملة قريباً بإذن العملاء
         </div>
       </div>

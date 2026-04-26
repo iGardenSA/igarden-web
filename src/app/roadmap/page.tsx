@@ -114,7 +114,7 @@ function MilestoneCard({
         <div className="flex-1 min-w-0">
           {/* الشارة (نقطة التحوّل) */}
           {milestone.badge && (
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--color-accent-500)]/20 text-[var(--color-accent-500)] text-xs font-bold mb-3">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-[var(--color-accent-500)]/20 text-[var(--color-accent-500)] text-lg font-bold mb-3">
               {milestone.badge}
             </span>
           )}
@@ -147,7 +147,7 @@ function MilestoneCard({
                   {milestone.phase}
                 </p>
                 <p
-                  className={`text-sm font-medium mt-0.5 ${
+                  className={`text-lg font-medium mt-0.5 ${
                     isAccent ? "text-white/70" : "text-[var(--color-muted)]"
                   }`}
                 >
@@ -159,7 +159,7 @@ function MilestoneCard({
             {/* الأنشطة */}
             <ul className="space-y-2 mb-6">
               {milestone.activities.map((a) => (
-                <li key={a} className="flex items-start gap-2.5 text-sm">
+                <li key={a} className="flex items-start gap-2.5 text-lg">
                   <div
                     className={`mt-1.5 h-1.5 w-1.5 rounded-full shrink-0 ${
                       isAccent
@@ -185,7 +185,7 @@ function MilestoneCard({
               }`}
             >
               <p
-                className={`text-xs font-bold uppercase tracking-widest mb-1 ${
+                className={`text-lg font-bold uppercase tracking-widest mb-1 ${
                   isAccent ? "text-white/50" : "text-[var(--color-muted)]"
                 }`}
               >
@@ -297,7 +297,7 @@ export default function RoadmapPage() {
                   className="flex items-center gap-2.5 px-5 py-3 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-brand-300)] hover:bg-[var(--color-brand-50)] transition-all duration-200"
                 >
                   <Icon className="h-4 w-4 text-[var(--color-accent-500)]" />
-                  <span className="text-sm font-medium text-[var(--color-brand-600)]">
+                  <span className="text-lg font-medium text-[var(--color-brand-600)]">
                     {seg.label}
                   </span>
                 </div>

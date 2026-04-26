@@ -33,7 +33,7 @@ export function KnowledgeSection() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             نُشارك ما نعرفه
           </p>
           <h2 className="h2 text-deep-green">المعرفة جزء من المنتج</h2>
@@ -51,12 +51,12 @@ export function KnowledgeSection() {
               <div className="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center mb-4">
                 <Icon className="w-6 h-6 text-lime" aria-hidden />
               </div>
-              <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">{tag}</p>
+              <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">{tag}</p>
               <h3 className="h4 text-deep-green mb-3 flex-1">{title}</h3>
               <p className="body-sm text-medium-gray mb-4">{desc}</p>
               <Link
                 href={href}
-                className="text-lime font-medium hover:text-deep-green transition-colors text-sm mt-auto"
+                className="text-lime font-medium hover:text-deep-green transition-colors text-lg mt-auto"
               >
                 {cta} ←
               </Link>

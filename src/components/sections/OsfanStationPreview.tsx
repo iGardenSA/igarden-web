@@ -37,7 +37,7 @@ export function OsfanStationPreview() {
               role="img"
               aria-label={img.alt}
             >
-              <span className="text-brand-300 text-xs text-center p-2 sr-only">
+              <span className="text-brand-300 text-lg text-center p-2 sr-only">
                 {img.alt}
               </span>
             </div>

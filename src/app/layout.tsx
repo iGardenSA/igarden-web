@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Tajawal, Poppins } from "next/font/google";
-import { Navigation } from "@/components/layout/Navigation";
+import Navigation from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/footer";
-import { WhatsAppFab } from "@/components/ui/whatsapp-fab";
+import WhatsAppFab from "@/components/layout/WhatsAppFab";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 import { COMPANY, CONTACT } from "@/lib/constants";
 import "@/styles/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
@@ -24,11 +25,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${COMPANY.domain}`),
   title: {
-    default: "iGarden — نبني · نُوطّن · نُطوّر أنظمة الزراعة الذكية",
+    default: "iGarden — نَبني · نُوطّن · نُطوّر أنظمة الزراعة الذكية",
     template: `%s | ${COMPANY.nameEn}`,
   },
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
+    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نَبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
   keywords: [
     "iGarden",
     "الحديقة الذكية",
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: `https://${COMPANY.domain}`,
     siteName: COMPANY.nameEn,
-    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
     images: [
@@ -88,7 +89,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
     images: ["/images/og/home.jpg"],
@@ -134,6 +135,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFab />
+          <SpeedInsights />
         </div>
       </body>
     </html>

@@ -25,7 +25,7 @@ function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text */}
           <div>
-            <p className="text-lime text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
               المحميات الذكية · IoT-Enabled
             </p>
             <h1 className="h1 text-deep-green mb-5">
@@ -133,7 +133,7 @@ function TechSpecs() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             المواصفات التقنية
           </p>
           <h2 className="h2 text-deep-green">ما تحصل عليه</h2>
@@ -231,7 +231,7 @@ function HowItWorks() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             من الفكرة إلى الحصاد
           </p>
           <h2 className="h2 text-deep-green">كيف نُنفّذ مشروعك</h2>
@@ -277,7 +277,7 @@ function OsfanGallery() {
     <section className="section-light py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-10">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             اختُبرت في عسفان
           </p>
           <h2 className="h2 text-deep-green">مُختَبَرة في ظروف سعودية حقيقية</h2>
@@ -349,7 +349,7 @@ function ScalesSection() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             حلول بكل الأحجام
           </p>
           <h2 className="h2 text-deep-green">
@@ -371,7 +371,7 @@ function ScalesSection() {
               }`}
             >
               <span
-                className={`text-xs font-bold uppercase tracking-widest mb-3 ${
+                className={`text-lg font-bold uppercase tracking-widest mb-3 ${
                   s.highlight ? "text-lime" : "text-lime"
                 }`}
               >
@@ -396,7 +396,7 @@ function ScalesSection() {
                   href={s.cta.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-lime font-medium hover:text-bright-lime transition-colors text-sm"
+                  className="inline-flex items-center gap-1 text-lime font-medium hover:text-bright-lime transition-colors text-lg"
                 >
                   {s.cta.label}
                   <ExternalLink className="w-3.5 h-3.5" aria-hidden />
@@ -469,7 +469,7 @@ function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
       <div className="container mx-auto px-4 max-w-4xl text-center">
-        <p className="text-lime text-xs font-bold uppercase tracking-widest mb-4">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           ابدأ بزيارة مجانية
         </p>
         <h2 className="h2 text-cream mb-5">
@@ -495,7 +495,7 @@ function FinalCTA() {
 /* ─── Page ────────────────────────────────────────────────── */
 const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
-  { name: "المنتجات", url: "/products" },
+  { name: "خدماتنا", url: "/products" },
   { name: "Smart Greenhouses", url: "/products/smart-greenhouses" },
 ];
 

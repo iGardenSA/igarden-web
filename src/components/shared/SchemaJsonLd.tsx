@@ -14,7 +14,7 @@ export function OrganizationSchema() {
     logo: "https://igarden.sa/logo/icon-master-original.png",
     image: "https://igarden.sa/images/og/home.jpg",
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نبني · نُوطّن · نُطوّر.",
+      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نَبني · نُوطّن · نُطوّر.",
     foundingDate: "2024",
     address: {
       "@type": "PostalAddress",

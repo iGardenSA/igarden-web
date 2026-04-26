@@ -23,7 +23,7 @@ export function ComplementaryProducts() {
     <section className="bg-brand-50 py-16">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-10">
-          <p className="text-lime text-xs font-bold uppercase tracking-widest mb-2">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             منتجات تكميلية
           </p>
           <h2 className="h3 text-deep-green">
@@ -42,7 +42,7 @@ export function ComplementaryProducts() {
               </div>
               <h3 className="h4 text-deep-green mb-3">{title}</h3>
               <p className="body-sm text-medium-gray mb-4">{desc}</p>
-              <CTAButton href={href} variant="outline-green" className="text-sm px-4 py-2">
+              <CTAButton href={href} variant="outline-green" className="text-lg px-4 py-2">
                 {cta}
               </CTAButton>
             </div>

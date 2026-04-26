@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const buttonVariants = cva(
   [
     "inline-flex items-center justify-center gap-2 whitespace-nowrap",
-    "rounded-xl text-sm font-semibold transition-all duration-200",
+    "rounded-xl text-lg font-semibold transition-all duration-200",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
     "focus-visible:ring-[var(--color-accent-500)]",
     "disabled:pointer-events-none disabled:opacity-50",
@@ -50,10 +50,10 @@ const buttonVariants = cva(
         link: "text-[var(--color-brand-600)] underline-offset-4 hover:underline",
       },
       size: {
-        sm: "h-9 px-4 text-xs",
-        md: "h-11 px-6 text-sm",
-        lg: "h-12 px-8 text-base",
-        xl: "h-14 px-10 text-base",
+        sm: "h-9 px-4 text-lg",
+        md: "h-11 px-6 text-lg",
+        lg: "h-12 px-8 text-lg",
+        xl: "h-14 px-10 text-lg",
         icon: "size-10",
       },
     },
