@@ -7,6 +7,7 @@ import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJso
 import { COMPANY, CONTACT } from "@/lib/constants";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
@@ -136,6 +137,7 @@ export default function RootLayout({
           <Footer />
           <WhatsAppFab />
           <SpeedInsights />
+          <Analytics />
         </div>
       </body>
     </html>
