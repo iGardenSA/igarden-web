@@ -73,3 +73,55 @@ export const INTERESTS = [
   { value: "knowledge", label: "iGarden Knowledge" },
   { value: "consultation", label: "استشارة عامة" },
 ] as const;
+
+// ============================================================================
+// App Waitlist Schema — قواعد التحقق لنموذج قائمة انتظار التطبيق
+// يستخدم في src/app/app/AppWaitlistForm.tsx
+// ============================================================================
+
+export const appWaitlistSchema = z.object({
+  email: z
+    .string()
+    .min(1, "البريد الإلكتروني مطلوب")
+    .email("بريد إلكتروني غير صحيح")
+    .max(254, "البريد طويل جداً"),
+
+  phone: z
+    .string()
+    .regex(/^[\d\s+()-]*$/, "رقم الهاتف يحتوي أحرفاً غير صالحة")
+    .max(20, "رقم الهاتف طويل جداً")
+    .optional()
+    .or(z.literal("")),
+
+  city: z
+    .string()
+    .max(60, "اسم المدينة طويل جداً")
+    .optional()
+    .or(z.literal("")),
+
+  interest_level: z.enum(["beginner", "serious", "commercial"], {
+    message: "اختر مستوى اهتمامك",
+  }),
+
+  source: z.string().default("website"),
+});
+
+export type AppWaitlistData = z.infer<typeof appWaitlistSchema>;
+
+export const APP_INTEREST_LEVELS = [
+  {
+    value: "beginner",
+    label: "مبتدئ — أحب الفكرة وأريد أبدأ",
+    desc: "لم أزرع هيدروبونيك من قبل، أو في بدايتي",
+  },
+  {
+    value: "serious",
+    label: "هاوٍ جادّ — عندي نظام منزلي",
+    desc: "أبني/شغّلت DWC أو NFT أو نظاماً مشابهاً",
+  },
+  {
+    value: "commercial",
+    label: "مزارع صغير — تجاري",
+    desc: "أبيع جزءاً من إنتاجي أو أخطّط لذلك",
+  },
+] as const;
