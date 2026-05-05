@@ -50,6 +50,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5 text-lg">
               <FooterLink href="/about">من نحن</FooterLink>
+              <FooterLink href="/investors">للمستثمرين</FooterLink>
               <FooterLink href="/contact">تواصل معنا</FooterLink>
               <FooterLink href="/learn">الأكاديمية</FooterLink>
               <FooterLink href="/blog">المدونة</FooterLink>

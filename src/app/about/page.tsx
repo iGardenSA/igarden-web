@@ -70,9 +70,10 @@ function WhyWeStarted() {
         */}
         <div className="bg-cream rounded-card p-8 shadow-soft">
           <p className="body-base text-medium-gray leading-relaxed">
-            [CONTENT_NEEDED: القصّة الكاملة — سبب بدء iGarden بقلم المؤسّس
-            علي غنيمة. 120-150 كلمة. المحاور: الفجوة المحلية، رؤية 2030،
-            تجربة مع منتجات مستوردة لا تصمد في +45°C.]
+            الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حسّاسات،
+            تحكّم آلي، وبرمجيات بيانات وامتثال — مُكيَّفة لمناخ المملكة.
+            نُنفّذ، نُشغّل، ونُطوّر مع كلّ موسم. عملاؤنا الحاليون
+            يمتدّون من خميس مشيط إلى الأحساء.
           </p>
         </div>
       </div>
@@ -159,24 +160,21 @@ const METHODOLOGY = [
     verb: "نَبني",
     title: "من الحساس إلى الحصاد",
     body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني يبني — لا يوجّه فقط.",
-    example:
-      "[CONTENT_NEEDED: مثال عملي — مشروع بناه الفريق ميدانياً من الصفر حتى التسليم]",
+    example: "",
   },
   {
     Icon: Globe2,
     verb: "نُوطّن",
     title: "التقنية العالمية بمدخلات سعودية",
     body: "نأخذ التقنية العالمية ونُعيد تنفيذها بمواد ومدخلات محلية. ما يصلك صُنع لمناخك — لا لمناخ أوروبا.",
-    example:
-      "[CONTENT_NEEDED: مثال عملي — مثلاً: «اختبرنا 4 مضخّات محلية لـ Tower قبل اعتماد الأفضل بدلاً من الاستيراد»]",
+    example: "",
   },
   {
     Icon: Microscope,
     verb: "نُطوّر",
     title: "R&D داخلي مستمرّ",
     body: "نُواجه الصعوبات بالابتكار، لا بالاستسلام لحدود المنتج المستورد. كل فشل في عسفان يُترجَم إلى تحسين.",
-    example:
-      "[CONTENT_NEEDED: مثال عملي — تحدٍّ واجهه الفريق في عسفان وكيف طوّر حلاً داخلياً]",
+    example: "",
   },
 ];
 
@@ -205,12 +203,15 @@ function MethodologyDeepDive() {
               <p className="text-lime font-bold text-xl mb-1">{verb}</p>
               <h3 className="h4 text-deep-green mb-3">{title}</h3>
               <p className="body-base text-medium-gray mb-4">{body}</p>
-              <div className="border-t border-light-gray pt-4">
-                <p className="text-lg text-lime font-bold uppercase tracking-wider mb-1">
-                  مثال حقيقي
-                </p>
-                <p className="body-sm text-medium-gray italic">{example}</p>
-              </div>
+              {/* HIDDEN IN WAVE 1 — Real field examples needed from team (Wave 2) */}
+              {example && (
+                <div className="border-t border-light-gray pt-4">
+                  <p className="text-lg text-lime font-bold uppercase tracking-wider mb-1">
+                    مثال حقيقي
+                  </p>
+                  <p className="body-sm text-medium-gray italic">{example}</p>
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -229,12 +230,12 @@ const TEAM = [
   {
     name: "م. أيمن المخزومي",
     role: "شريك ومسؤول R&D",
-    expertise: "[CONTENT_NEEDED: خلفية م. أيمن العملية والتخصص]",
+    expertise: "هندسة زراعية · Hydroponics ميداني · تصميم أنظمة",
   },
   {
     name: "محمد الكثيري",
     role: "شريك ممول",
-    expertise: "[CONTENT_NEEDED: خلفية محمد والدور الاستراتيجي]",
+    expertise: "استثمار · تطوير أعمال · شراكات استراتيجية",
   },
 ];
 

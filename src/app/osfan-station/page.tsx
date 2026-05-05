@@ -282,21 +282,16 @@ function WorkshopsSection() {
               المشارك من الفكرة إلى نظام شغّال — في يوم واحد.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
                 <p className="stat-num !text-3xl mb-1">5</p>
                 <p className="text-deep-green text-lg font-medium">ورش مُنفَّذة</p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
-                {/* [CONTENT_NEEDED: عدد المشاركين الإجمالي] */}
-                <p className="stat-num !text-3xl mb-1">—</p>
-                <p className="text-deep-green text-lg font-medium">مشارك إجمالاً</p>
+                <p className="stat-num !text-3xl mb-1">+45°C</p>
+                <p className="text-deep-green text-lg font-medium">اختبار ميداني</p>
               </div>
-              <div className="text-center bg-white rounded-card p-4 shadow-soft col-span-1">
-                {/* [CONTENT_NEEDED: أهم تعليق إيجابي مع اسم/مهنة المشارك] */}
-                <p className="text-lime text-lg font-bold mb-1">«»</p>
-                <p className="text-medium-gray text-lg">[CONTENT_NEEDED: اقتباس مشارك]</p>
-              </div>
+              {/* HIDDEN IN WAVE 1 — Workshop quote needed from team (Wave 2) */}
             </div>
 
             <CTAButton href="/contact?interest=workshop" variant="lime">
@@ -397,7 +392,8 @@ export default function OsfanStationPage() {
       <Hero />
       <WhyOsfan />
       <Gallery />
-      <TestedSystems />
+      {/* HIDDEN IN WAVE 1 — TestedSystems content needed from م. أيمن (Wave 2) */}
+      {/* <TestedSystems /> */}
       <WorkshopsSection />
       <ExpansionPlans />
       <BookVisit />

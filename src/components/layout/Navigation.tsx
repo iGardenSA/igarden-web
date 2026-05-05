@@ -25,7 +25,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: "محطة عسفان", href: "/osfan-station" },
   { label: "من نحن", href: "/about" },
   { label: "الأكاديمية", href: "/learn" },
-  { label: "المدونة", href: "/blog" },
+  // { label: "المدونة", href: "/blog" }, // HIDDEN IN WAVE 1 — Blog content not ready
   { label: "تواصل", href: "/contact" },
 ];
 
