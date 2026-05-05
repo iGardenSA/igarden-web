@@ -60,18 +60,34 @@ const FOR_WHOM = [
   },
 ] as const;
 
+// ─────────────────────────────────────────────────────────────
+// 6 ميزات بدلاً من 4 — تشمل كل الـ mockups المهمة
+// ─────────────────────────────────────────────────────────────
 const FEATURES = [
   {
-    Icon: LineChart,
-    title: "حاسبات دقيقة",
-    subtitle: "أرقام، لا تقدير",
-    desc: "حاسبة المحلول الغذائي (GHE 3-Part وغيرها)، pH الهدف لكل مرحلة نمو، معدل التدفق المثالي. تختار المحصول والمرحلة، تحصل على الأرقام.",
+    Icon: Smartphone,
+    title: "الرئيسية الذكية",
+    subtitle: "كل شيء في لمحة",
+    desc: "آخر قراءات نظامك، مهام اليوم، ومحاصيلك النشطة في شاشة واحدة. صباح الخير شخصي، ومتابعة فورية لـ EC و pH ودرجة الحرارة.",
     bullets: [
-      "30+ محصول معايَر للمناخ السعودي",
-      "نطاقات EC و pH لكل مرحلة نمو",
+      "ملخص يومي مخصّص باسمك",
+      "بطاقة قراءات لحظية",
+      "مهام اليوم مع تقدّم بصري",
+    ],
+    img: "/images/app/mockup-02.png",
+    alt: "الشاشة الرئيسية — تطبيق الحديقة الذكية",
+  },
+  {
+    Icon: LineChart,
+    title: "حاسبة المحلول الغذائي",
+    subtitle: "أرقام، لا تقدير",
+    desc: "حاسبة GHE 3-Part وغيرها — تختار المحصول والمرحلة وحجم الخزان، تحصل على المطلوب بالـ ml من كل مكوّن. مع نطاقات pH و EC الهدف لكل مرحلة.",
+    bullets: [
+      "GHE 3-Part · Masterblend · مخصص",
+      "pH و EC مُحدّثان للمحصول",
       "تحويل تلقائي بين الوحدات",
     ],
-    img: "/images/app/mockup-03-calculator.png",
+    img: "/images/app/mockup-03.png",
     alt: "حاسبة المحلول الغذائي — تطبيق الحديقة الذكية",
   },
   {
@@ -84,7 +100,7 @@ const FEATURES = [
       "تنبيهات عند الخروج من النطاق",
       "تصدير CSV للنسخ الاحتياطي",
     ],
-    img: "/images/app/mockup-04-journal.png",
+    img: "/images/app/mockup-04.png",
     alt: "يوميات النظام — تطبيق الحديقة الذكية",
   },
   {
@@ -97,21 +113,34 @@ const FEATURES = [
       "اقتراحات بالأرقام لا الكلمات",
       "ذاكرة لكل محادثة",
     ],
-    img: "/images/app/mockup-05-guide.png",
+    img: "/images/app/mockup-05.png",
     alt: "المرشد التقني — تطبيق الحديقة الذكية",
   },
   {
     Icon: BookOpen,
     title: "دليل المحاصيل",
     subtitle: "30 محصولاً معايراً",
-    desc: "لكل محصول: مدة الحصاد، الإنتاج المتوقع، 4 مراحل نمو بـ EC و pH، وملاحظات للمناخ السعودي تحديداً (شتاء/صيف/منطقة).",
+    desc: "خس · ريحان · طماطم · نعنع · رشاد ومزيد. تصفية حسب الصعوبة (سهل / متوسط / متقدم) ونوع النبات (ورقيات / ثمار / أعشاب).",
     bullets: [
-      "خس · ريحان · طماطم · نعنع · رشاد...",
-      "موسمية لكل منطقة",
-      "ملاحظات من تجاربنا الميدانية",
+      "بحث فوري بالعربي والإنجليزي",
+      "تصنيفات بصرية واضحة",
+      "EC و pH وزمن الحصاد لكل محصول",
     ],
-    img: "/images/app/mockup-06-library.png",
+    img: "/images/app/mockup-06.png",
     alt: "دليل المحاصيل — تطبيق الحديقة الذكية",
+  },
+  {
+    Icon: Sprout,
+    title: "تفاصيل المحصول",
+    subtitle: "4 مراحل · معايرة كاملة",
+    desc: "لكل محصول 4 مراحل نمو: إنبات، شتلة، نمو خضري، قبل الحصاد. لكل مرحلة EC و pH خاصّان، ومدّة بالأيام، وملاحظات للمناخ السعودي تحديداً.",
+    bullets: [
+      "خط زمني واضح لكل مرحلة",
+      "ملاحظات موسمية محلية",
+      "توقّعات إنتاج معقولة",
+    ],
+    img: "/images/app/mockup-07.png",
+    alt: "تفاصيل المحصول — تطبيق الحديقة الذكية",
   },
 ] as const;
 
@@ -146,21 +175,12 @@ const ROADMAP = [
   },
 ] as const;
 
-const MOCKUP_SLIDES = [
-  { idx: 1, title: "الترحيب", desc: "مدخل بسيط — ثلاث قيم محورية: حاسبات، يوميات، مرشد." },
-  { idx: 2, title: "الرئيسية", desc: "آخر قراءات نظامك، مهام اليوم، ومحاصيلك النشطة في لمحة." },
-  { idx: 3, title: "حاسبة المحلول", desc: "اختر المحصول والمرحلة وحجم الخزان — يحسب لك المطلوب من كل مكوّن." },
-  { idx: 4, title: "يوميات النظام", desc: "اتجاه EC خلال 7 أيام، آخر القراءات، تنبيهات عند الخروج." },
-  { idx: 5, title: "المرشد التقني", desc: "محادثة بالعربية تشرح لماذا انخفض EC وتقترح الحلّ بالأرقام." },
-  { idx: 6, title: "دليل المحاصيل", desc: "30 محصولاً معايَراً — تصفية حسب الصعوبة والنوع." },
-  { idx: 7, title: "تفاصيل المحصول", desc: "4 مراحل نمو، EC/pH لكل مرحلة، ملاحظات للمناخ السعودي." },
-  { idx: 8, title: "حسابي + Hydro Kit", desc: "ملفك الشخصي ومدخل قائمة الانتظار للهاردوير القادم." },
-] as const;
-
 export default function AppPage() {
   return (
     <>
-      {/* HERO */}
+      {/* ───────────────────────────────────────────── */}
+      {/* HERO — mockup أصغر، نص أكبر */}
+      {/* ───────────────────────────────────────────── */}
       <section className="relative min-h-[90vh] flex items-center bg-deep-green overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-30 pointer-events-none" aria-hidden>
           <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-lime blur-3xl" />
@@ -168,8 +188,9 @@ export default function AppPage() {
         </div>
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10 py-24 lg:py-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* النص — يأخذ مساحة أكبر */}
+            <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-lime/20 border border-lime/30 backdrop-blur-sm text-lime text-sm font-bold tracking-widest uppercase mb-6">
                 <Smartphone className="w-4 h-4" />
                 <span>Phase 2 · قريباً</span>
@@ -222,16 +243,17 @@ export default function AppPage() {
               </div>
             </div>
 
-            <div className="relative flex justify-center lg:justify-end">
+            {/* mockup — أصغر، يأخذ 5 من 12 عمود */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <div className="relative">
-                <div className="absolute -inset-8 bg-lime/10 blur-3xl rounded-full" aria-hidden />
+                <div className="absolute -inset-6 bg-lime/10 blur-3xl rounded-full" aria-hidden />
                 <Image
                   src="/images/app/mockup-01-welcome.png"
                   alt="الشاشة الرئيسية لتطبيق الحديقة الذكية — صفحة الترحيب"
-                  width={400}
-                  height={820}
+                  width={320}
+                  height={680}
                   priority
-                  className="relative drop-shadow-2xl max-w-[320px] lg:max-w-[380px] w-full h-auto"
+                  className="relative drop-shadow-2xl max-w-[220px] lg:max-w-[280px] w-full h-auto"
                 />
               </div>
             </div>
@@ -278,7 +300,9 @@ export default function AppPage() {
         </div>
       </section>
 
-      {/* الميزات */}
+      {/* ───────────────────────────────────────────── */}
+      {/* الميزات — 6 الآن، تشمل كل الـ mockups */}
+      {/* ───────────────────────────────────────────── */}
       <section id="features" className="bg-white py-20 lg:py-24">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-14">
@@ -286,14 +310,14 @@ export default function AppPage() {
               الميزات · What&apos;s Inside
             </p>
             <h2 className="text-deep-green text-3xl md:text-4xl font-bold mb-4">
-              أربع أدوات · بنية واحدة متكاملة
+              ست أدوات · بنية واحدة متكاملة
             </h2>
             <p className="text-medium-gray max-w-2xl mx-auto">
               كل ميزة مبنيّة على بيانات حقيقية من الميدان — ومُكيَّفة للمناخ السعودي.
             </p>
           </div>
 
-          <div className="space-y-16 lg:space-y-24">
+          <div className="space-y-20 lg:space-y-28">
             {FEATURES.map((feature, i) => {
               const reversed = i % 2 === 1;
               return (
@@ -419,49 +443,9 @@ export default function AppPage() {
         </div>
       </section>
 
-      {/* معرض الـ mockups */}
-      <section className="bg-cream py-20 lg:py-24">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-14">
-            <p className="text-brand-600 text-sm font-bold uppercase tracking-widest mb-3">
-              لمحة · Sneak Peek
-            </p>
-            <h2 className="text-deep-green text-3xl md:text-4xl font-bold mb-4">
-              ثمان شاشات من النسخة قيد التطوير
-            </h2>
-            <p className="text-medium-gray max-w-2xl mx-auto">
-              التصميم النهائي قد يختلف. نُشارك التصور الحالي للشفافية مع المسجَّلين الأوائل.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            {MOCKUP_SLIDES.map((slide) => (
-              <figure
-                key={slide.idx}
-                className="bg-white rounded-card p-4 border border-deep-green/10 hover:shadow-md transition-shadow"
-              >
-                <div className="relative aspect-[9/19] mb-3 overflow-hidden rounded-lg bg-cream">
-                  <Image
-                    src={`/images/app/mockup-0${slide.idx}.png`}
-                    alt={`${slide.title} — تطبيق الحديقة الذكية`}
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-contain"
-                  />
-                </div>
-                <figcaption className="text-center">
-                  <p className="text-deep-green font-bold text-sm mb-1">
-                    {slide.idx}. {slide.title}
-                  </p>
-                  <p className="text-medium-gray text-xs leading-relaxed">
-                    {slide.desc}
-                  </p>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─────────────────────────────────────────── */}
+      {/* قسم معرض الـ 8 mockups محذوف */}
+      {/* ─────────────────────────────────────────── */}
 
       {/* التكامل مع iGarden */}
       <section className="bg-white py-20 lg:py-24">

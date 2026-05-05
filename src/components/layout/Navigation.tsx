@@ -1,131 +1,60 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { CTAButton } from "@/components/shared/CTAButton";
+import { cn } from "@/lib/utils";
 
-type NavChild = {
-  href: string;
-  label: string;
-  desc?: string;
-  soon?: boolean;
-};
+type NavChild = { label: string; href: string; badge?: string };
+type NavItem = { label: string; href: string; children?: NavChild[] };
 
-type NavLink = {
-  href: string;
-  label: string;
-  children?: ReadonlyArray<NavChild>;
-};
-
-const NAV_LINKS: ReadonlyArray<NavLink> = [
-  { href: "/", label: "الرئيسية" },
+const NAV_ITEMS: NavItem[] = [
+  { label: "الرئيسية", href: "/" },
   {
+    label: "المنتجات",
     href: "/products",
-    label: "خدماتنا",
     children: [
-      { href: "/products", label: "كل الخدمات", desc: "نظرة شاملة على منتجات iGarden" },
-      { href: "/products/smart-greenhouses", label: "البيوت المحمية الذكية", desc: "تحكم مناخي + كفاءة طاقة 40%" },
-      { href: "/products/hydroponics", label: "أنظمة الزراعة المائية", desc: "DWC · NFT · Aeroponics" },
-      { href: "/products/smart-controllers", label: "أنظمة التحكم الذكية", desc: "Smart OS + IoT" },
-      { href: "/compliance", label: "Compliance Suite", desc: "تقارير الامتثال للوزارة" },
-      { href: "/app", label: "التطبيق", desc: "الحديقة الذكية في جيبك", soon: true },
+      { label: "Smart Controllers", href: "/products/smart-controllers", badge: "Flagship" },
+      { label: "المحميات الذكية", href: "/products/smart-greenhouses" },
+      { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
     ],
   },
-  { href: "/osfan-station", label: "محطة عسفان" },
-  { href: "/about", label: "من نحن" },
-  { href: "/learn", label: "الأكاديمية" },
-  { href: "/blog", label: "المدونة" },
-  { href: "/contact", label: "تواصل" },
+  { label: "محطة عسفان", href: "/osfan-station" },
+  { label: "من نحن", href: "/about" },
+  { label: "الأكاديمية", href: "/learn" },
+  { label: "المدونة", href: "/blog" },
+  { label: "تواصل", href: "/contact" },
 ];
 
-function DesktopNavItem({ link, pathname }: { link: NavLink; pathname: string }) {
-  const [open, setOpen] = useState(false);
-  const active =
-    pathname === link.href ||
-    (link.children?.some((c) => pathname === c.href) ?? false);
-
-  if (!link.children) {
-    return (
-      <Link
-        href={link.href}
-        className={[
-          "text-lg font-medium text-white/90 hover:text-white transition-colors duration-200 drop-shadow-sm",
-          active ? "underline decoration-2 underline-offset-[6px] decoration-[#7CB342]" : "",
-        ].join(" ")}
-      >
-        {link.label}
-      </Link>
-    );
-  }
-
-  return (
-    <div
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        aria-haspopup="true"
-        className={[
-          "inline-flex items-center gap-1 text-lg font-medium text-white/90 hover:text-white transition-colors duration-200 drop-shadow-sm",
-          active ? "underline decoration-2 underline-offset-[6px] decoration-[#7CB342]" : "",
-        ].join(" ")}
-      >
-        {link.label}
-        <ChevronDown
-          className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
-          aria-hidden
-        />
-      </button>
-
-      {open && (
-        <div className="absolute top-full right-0 pt-3 min-w-[320px]" role="menu">
-          <div className="bg-white rounded-xl shadow-lg border border-deep-green/10 overflow-hidden">
-            {link.children.map((child) => {
-              const childActive = pathname === child.href;
-              return (
-                <Link
-                  key={child.href}
-                  href={child.href}
-                  role="menuitem"
-                  onClick={() => setOpen(false)}
-                  className={`flex items-start justify-between gap-3 px-4 py-3 hover:bg-cream transition-colors ${
-                    childActive ? "bg-cream" : ""
-                  }`}
-                >
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="text-deep-green font-bold text-sm">
-                        {child.label}
-                      </span>
-                      {child.soon && (
-                        <span className="text-[10px] font-bold text-brand-600 bg-lime/20 px-1.5 py-0.5 rounded-full">
-                          قريباً
-                        </span>
-                      )}
-                    </div>
-                    {child.desc && (
-                      <p className="text-medium-gray text-xs mt-0.5">{child.desc}</p>
-                    )}
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default function Navigation() {
+export function Navigation() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const productsRef = useRef<HTMLDivElement>(null);
+
+  // ===== Scroll Detection — للـ Transparent Header =====
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll(); // قراءة فورية للحالة الحالية
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        setProductsOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -135,155 +64,248 @@ export default function Navigation() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    if (!mobileOpen) return;
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileOpen(false);
+    if (!productsOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (productsRef.current && !productsRef.current.contains(e.target as Node)) {
+        setProductsOpen(false);
+      }
     };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [mobileOpen]);
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [productsOpen]);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  // ===== Transparent Logic =====
+  // الـ Header شفاف فقط على الصفحة الرئيسية (Hero فيديو) قبل أن يبدأ المستخدم بالـ scroll
+  const isHome = pathname === "/";
+  const transparent = isHome && !scrolled;
+
+  const linkBase =
+    "block px-3 py-2 rounded-lg text-sm font-medium transition-colors";
+  const linkActive = transparent ? "text-lime drop-shadow-md" : "text-lime";
+  const linkIdle = transparent
+    ? "text-cream hover:text-lime drop-shadow-md"
+    : "text-deep-green hover:text-lime";
 
   return (
     <>
-      <header className="fixed top-0 inset-x-0 z-50 bg-transparent" dir="rtl">
-        <div
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-black/50 via-black/20 to-transparent pointer-events-none"
-          aria-hidden="true"
-        />
-        <div className="max-w-7xl mx-auto h-16 lg:h-[72px] px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Link
-            href="/"
-            aria-label="iGarden — الحديقة الذكية"
-            className="flex items-center shrink-0"
-          >
+      <header
+        className={cn(
+          "sticky top-0 z-50 transition-all duration-300",
+          transparent
+            ? "bg-transparent border-b border-transparent"
+            : "bg-cream/95 backdrop-blur-md border-b border-light-gray"
+        )}
+      >
+        <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
+          {/* Logo — يتبدّل بين الأبيض والأخضر */}
+          <Link href="/" aria-label="iGarden — الصفحة الرئيسية" className="flex-shrink-0">
             <Image
-              src="/logo/lockup-horizontal-en-white.png"
-              alt="iGarden — الحديقة الذكية"
-              width={144}
-              height={40}
+              src={
+                transparent
+                  ? "/logo/lockup-horizontal-en-white.png"
+                  : "/logo/lockup-horizontal-en.svg"
+              }
+              alt="iGarden"
+              width={130}
+              height={38}
               priority
-              quality={75}
-              style={{ width: "auto", height: "auto" }}
-              className="h-9 lg:h-10 w-auto"
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-7 lg:ms-12">
-            {NAV_LINKS.map((link) => (
-              <DesktopNavItem key={link.href} link={link} pathname={pathname} />
-            ))}
-            <Link
-              href="/contact"
-              className="ml-2 inline-flex items-center px-5 py-2.5 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-lg font-medium transition-colors duration-200 focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none"
-            >
-              احجز استشارة
-            </Link>
-          </nav>
+          {/* Desktop nav */}
+          <ul className="hidden lg:flex items-center gap-1">
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                <li key={item.href}>
+                  <div ref={productsRef} className="relative">
+                    <button
+                      onClick={() => setProductsOpen((v) => !v)}
+                      className={cn(
+                        linkBase,
+                        "flex items-center gap-1",
+                        isActive(item.href) ? linkActive : linkIdle
+                      )}
+                      aria-expanded={productsOpen}
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          productsOpen ? "-rotate-180" : ""
+                        }`}
+                      />
+                    </button>
 
-          <button
-            type="button"
-            onClick={() => setMobileOpen(true)}
-            className="lg:hidden p-2 -mr-2 text-white transition-colors"
-            aria-label="فتح القائمة"
-            aria-expanded={mobileOpen}
-          >
-            <Menu className="w-6 h-6" strokeWidth={1.5} />
-          </button>
-        </div>
-      </header>
-
-      {mobileOpen && (
-        <div
-          className="lg:hidden fixed inset-0 z-[60] bg-[#0F3D2E] flex flex-col"
-          dir="rtl"
-        >
-          <div className="h-16 px-4 flex items-center justify-between border-b border-white/10">
-            <Link
-              href="/"
-              onClick={() => setMobileOpen(false)}
-              aria-label="iGarden"
-              className="flex items-center"
-            >
-              <Image
-                src="/logo/lockup-horizontal-en-white.png"
-                alt="iGarden"
-                width={144}
-                height={40}
-                quality={75}
-                style={{ width: "auto", height: "auto" }}
-                className="h-9 w-auto"
-              />
-            </Link>
-            <button
-              type="button"
-              onClick={() => setMobileOpen(false)}
-              className="p-2 -ml-2 text-white"
-              aria-label="إغلاق القائمة"
-            >
-              <X className="w-6 h-6" strokeWidth={1.5} />
-            </button>
-          </div>
-
-          <nav className="flex-1 overflow-y-auto px-4 py-6">
-            {NAV_LINKS.map((link) => {
-              const active = pathname === link.href;
-              return (
-                <div key={link.href}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={[
-                      "block text-lg font-medium py-4 border-b border-white/10 transition-colors",
-                      active ? "text-[#A5D63F]" : "text-white hover:text-[#A5D63F]",
-                    ].join(" ")}
-                  >
-                    {link.label}
-                  </Link>
-                  {link.children && (
-                    <div className="pr-4 pb-2 border-b border-white/10">
-                      {link.children.map((child) => {
-                        const childActive = pathname === child.href;
-                        return (
+                    {productsOpen && (
+                      <div className="absolute top-full mt-1 right-0 bg-white rounded-card shadow-lg border border-light-gray py-1.5 min-w-[220px] z-20">
+                        {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            onClick={() => setMobileOpen(false)}
-                            className={[
-                              "flex items-center gap-2 py-2.5 text-sm transition-colors",
-                              childActive ? "text-[#A5D63F]" : "text-white/80 hover:text-[#A5D63F]",
-                            ].join(" ")}
+                            onClick={() => setProductsOpen(false)}
+                            className="flex items-center justify-between px-4 py-2.5 text-sm text-dark-text hover:bg-cream hover:text-deep-green transition-colors"
                           >
-                            <span>← {child.label}</span>
-                            {child.soon && (
-                              <span className="text-[10px] font-bold text-[#0F3D2E] bg-[#A5D63F] px-1.5 py-0.5 rounded-full">
-                                قريباً
+                            <span>{child.label}</span>
+                            {child.badge && (
+                              <span className="text-xs bg-lime/15 text-lime px-2 py-0.5 rounded-full font-medium ltr-inline">
+                                {child.badge}
                               </span>
                             )}
                           </Link>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={cn(linkBase, isActive(item.href) ? linkActive : linkIdle)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
 
-          <div className="p-4 border-t border-white/10">
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="block w-full text-center bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] py-4 rounded-lg text-lg font-medium transition-colors"
-            >
-              احجز استشارة
-            </Link>
+          {/* Desktop CTA — مخفي على Hero الشفاف */}
+          <div className="hidden lg:block">
+            {transparent ? (
+              // على Hero الشفاف: زر Lime عادي يبرز فوق الفيديو
+              <CTAButton href="/contact" variant="lime">
+                احجز استشارة
+              </CTAButton>
+            ) : (
+              <CTAButton href="/contact" variant="lime">
+                احجز استشارة مجانية
+              </CTAButton>
+            )}
           </div>
+
+          {/* Mobile burger — أبيض على الشفاف، أخضر على الصلب */}
+          <button
+            onClick={() => setMobileOpen(true)}
+            className={cn(
+              "lg:hidden p-2 transition-colors",
+              transparent ? "text-cream drop-shadow-md" : "text-deep-green"
+            )}
+            aria-label="فتح القائمة"
+            aria-expanded={mobileOpen}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </nav>
+      </header>
+
+      {/* Mobile backdrop */}
+      <div
+        className={`fixed inset-0 z-40 bg-black/40 lg:hidden transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMobileOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile drawer */}
+      <aside
+        className={`fixed top-0 right-0 z-50 h-dvh w-[min(300px,85vw)] bg-cream flex flex-col shadow-2xl lg:hidden transition-transform duration-300 ease-in-out ${
+          mobileOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        aria-label="قائمة التنقل"
+      >
+        <div className="flex items-center justify-between px-4 h-16 border-b border-light-gray">
+          <Link
+            href="/"
+            onClick={() => setMobileOpen(false)}
+            aria-label="iGarden — الصفحة الرئيسية"
+          >
+            <Image
+              src="/logo/lockup-horizontal-en.svg"
+              alt="iGarden"
+              width={110}
+              height={32}
+            />
+          </Link>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="p-2 text-deep-green"
+            aria-label="إغلاق القائمة"
+          >
+            <X className="w-6 h-6" />
+          </button>
         </div>
-      )}
+
+        <nav className="flex-1 overflow-y-auto px-3 py-4">
+          <ul className="space-y-1">
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                <li key={item.href}>
+                  <button
+                    onClick={() => setMobileProductsOpen((v) => !v)}
+                    className="w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium text-deep-green hover:bg-white transition-colors"
+                    aria-expanded={mobileProductsOpen}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform duration-200 ${
+                        mobileProductsOpen ? "-rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {mobileProductsOpen && (
+                    <ul className="mt-1 mr-4 space-y-1">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-dark-text hover:text-lime hover:bg-white transition-colors"
+                          >
+                            <span>{child.label}</span>
+                            {child.badge && (
+                              <span className="text-xs bg-lime/15 text-lime px-2 py-0.5 rounded-full font-medium ltr-inline">
+                                {child.badge}
+                              </span>
+                            )}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "block px-4 py-3 rounded-lg text-base font-medium transition-colors",
+                      isActive(item.href)
+                        ? "text-lime bg-lime/10"
+                        : "text-deep-green hover:text-lime hover:bg-white"
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
+
+        <div className="p-4 border-t border-light-gray">
+          <CTAButton href="/contact" variant="lime" className="w-full justify-center">
+            احجز استشارة مجانية
+          </CTAButton>
+        </div>
+      </aside>
     </>
   );
 }
+
+export default Navigation;
+

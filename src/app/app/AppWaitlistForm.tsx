@@ -82,29 +82,40 @@ export default function AppWaitlistForm({
     }
   }
 
+  // ─────────────────────────────────────────────────────────
+  // شاشة النجاح — كريمي بإطار واضح وتباين عالٍ
+  // ─────────────────────────────────────────────────────────
   if (status === "success") {
     return (
-      <div className="bg-lime/10 border-2 border-lime/40 rounded-card p-6 lg:p-8 text-center">
-        <CheckCircle2 className="w-12 h-12 text-brand-600 mx-auto mb-4" aria-hidden />
-        <h3 className="text-deep-green text-xl lg:text-2xl font-bold mb-2">
-          تم — أنت في القائمة
+      <div className="bg-cream rounded-card p-8 lg:p-12 text-center shadow-2xl border-2 border-lime">
+        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-lime/25 flex items-center justify-center ring-4 ring-lime/10">
+          <CheckCircle2 className="w-12 h-12 text-brand-600" aria-hidden strokeWidth={2.5} />
+        </div>
+        <h3 className="text-deep-green text-2xl lg:text-3xl font-bold mb-3">
+          تم — أنت في القائمة 🌱
         </h3>
-        <p className="text-medium-gray text-sm lg:text-base leading-relaxed max-w-md mx-auto">
-          سنرسل لك تحديثات مباشرة من الميدان — بدون إزعاج. أول نسخة تجريبية
-          ستصلك قبل الإطلاق الرسمي.
+        <p className="text-deep-green/85 text-base lg:text-lg leading-relaxed max-w-md mx-auto">
+          سنرسل لك تحديثات مباشرة من الميدان — بدون إزعاج.
+          <br />
+          <span className="font-semibold">أول نسخة تجريبية ستصلك قبل الإطلاق الرسمي.</span>
         </p>
       </div>
     );
   }
 
+  // ─────────────────────────────────────────────────────────
+  // شاشة "مسجَّل من قبل"
+  // ─────────────────────────────────────────────────────────
   if (status === "duplicate") {
     return (
-      <div className="bg-cream border-2 border-brand-600/30 rounded-card p-6 lg:p-8 text-center">
-        <CheckCircle2 className="w-12 h-12 text-brand-600 mx-auto mb-4" aria-hidden />
-        <h3 className="text-deep-green text-xl lg:text-2xl font-bold mb-2">
-          مسجَّل من قبل
+      <div className="bg-cream rounded-card p-8 lg:p-12 text-center shadow-2xl border-2 border-brand-600/50">
+        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-brand-600/15 flex items-center justify-center ring-4 ring-brand-600/5">
+          <CheckCircle2 className="w-12 h-12 text-brand-600" aria-hidden strokeWidth={2.5} />
+        </div>
+        <h3 className="text-deep-green text-2xl lg:text-3xl font-bold mb-3">
+          مسجَّل من قبل ✓
         </h3>
-        <p className="text-medium-gray text-sm lg:text-base">
+        <p className="text-deep-green/85 text-base lg:text-lg leading-relaxed max-w-md mx-auto">
           هذا البريد موجود في قائمتنا. سنبقى على تواصل.
         </p>
       </div>
