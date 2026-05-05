@@ -30,7 +30,7 @@ export default function HeroSection() {
           <span className="block">أنظمة الزراعة الذكية</span>
         </h1>
 
-        <p className="text-[#7CB342] text-xl md:text-2xl font-medium mb-5">ازرع بذكاء · Plant Smart</p>
+        <p className="text-[#7CB342] text-xl md:text-2xl font-medium mb-5">ازرع بذكاء.</p>
 
         <p className="text-white/80 text-lg md:text-lg leading-relaxed max-w-xl mb-8">
           شركة سعودية تُوطّن التقنية الزراعية لمناخ +45°C. نختبر كل نظام في عسفان قبل أن يصل إليك.
