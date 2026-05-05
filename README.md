@@ -288,3 +288,4 @@ RESEND_API_KEY                     # عند تفعيل Resend
 ---
 
 *ازرع بذكاء · Plant Smart* 🌱
+
