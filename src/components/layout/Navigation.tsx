@@ -77,16 +77,20 @@ export function Navigation() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  // ===== Transparent Logic =====
-  // الـ Header شفاف فقط على الصفحة الرئيسية (Hero فيديو) قبل أن يبدأ المستخدم بالـ scroll
+  // ===== Header Mode =====
+  // hero    → الرئيسية قبل الـ scroll   → شفاف تماماً، نص أبيض
+  // homeDark → الرئيسية بعد الـ scroll  → أخضر داكن شفاف، نص أبيض (لا أبيض)
+  // solid   → باقي الصفحات              → كريمي مع blur، نص أخضر
   const isHome = pathname === "/";
   const transparent = isHome && !scrolled;
+  const homeDark    = isHome && scrolled;
+  const useLightText = isHome; // على الرئيسية دائماً نص أبيض
 
   const linkBase =
     "block px-3 py-2 rounded-lg text-sm font-medium transition-colors";
-  const linkActive = transparent ? "text-lime drop-shadow-md" : "text-lime";
-  const linkIdle = transparent
-    ? "text-cream hover:text-lime drop-shadow-md"
+  const linkActive = "text-lime drop-shadow-sm";
+  const linkIdle = useLightText
+    ? "text-cream/90 hover:text-lime drop-shadow-sm"
     : "text-deep-green hover:text-lime";
 
   return (
@@ -96,15 +100,17 @@ export function Navigation() {
           "sticky top-0 z-50 transition-all duration-300",
           transparent
             ? "bg-transparent border-b border-transparent"
+            : homeDark
+            ? "bg-[#0F3D2E]/90 backdrop-blur-md border-b border-[#1B5E3F]/40"
             : "bg-cream/95 backdrop-blur-md border-b border-light-gray"
         )}
       >
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
-          {/* Logo — يتبدّل بين الأبيض والأخضر */}
+          {/* Logo — أبيض على الرئيسية (شفاف أو داكن)، ملوّن على باقي الصفحات */}
           <Link href="/" aria-label="iGarden — الصفحة الرئيسية" className="flex-shrink-0">
             <Image
               src={
-                transparent
+                isHome
                   ? "/logo/lockup-horizontal-en-white.png"
                   : "/logo/lockup-horizontal-en.svg"
               }
@@ -172,26 +178,19 @@ export function Navigation() {
             )}
           </ul>
 
-          {/* Desktop CTA — مخفي على Hero الشفاف */}
+          {/* Desktop CTA */}
           <div className="hidden lg:block">
-            {transparent ? (
-              // على Hero الشفاف: زر Lime عادي يبرز فوق الفيديو
-              <CTAButton href="/contact" variant="lime">
-                احجز استشارة
-              </CTAButton>
-            ) : (
-              <CTAButton href="/contact" variant="lime">
-                احجز استشارة مجانية
-              </CTAButton>
-            )}
+            <CTAButton href="/contact" variant="lime">
+              {transparent ? "احجز استشارة" : "احجز استشارة مجانية"}
+            </CTAButton>
           </div>
 
-          {/* Mobile burger — أبيض على الشفاف، أخضر على الصلب */}
+          {/* Mobile burger — أبيض على الرئيسية، أخضر على باقي الصفحات */}
           <button
             onClick={() => setMobileOpen(true)}
             className={cn(
               "lg:hidden p-2 transition-colors",
-              transparent ? "text-cream drop-shadow-md" : "text-deep-green"
+              useLightText ? "text-cream drop-shadow-sm" : "text-deep-green"
             )}
             aria-label="فتح القائمة"
             aria-expanded={mobileOpen}
