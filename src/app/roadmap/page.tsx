@@ -16,9 +16,9 @@ import { GlowAccent } from "@/components/ui/glow-accent";
 import { FadeIn } from "@/components/ui/fade-in";
 
 export const metadata: Metadata = {
-  title: "خارطة الطريق",
+  title: "خارطة الطريق | iGarden",
   description:
-    "استراتيجية توسع iGarden على 3 سنوات — من جدة إلى الخليج بأهداف قابلة للقياس في كل مرحلة.",
+    "خارطة طريق iGarden 2026–2028 — من الانطلاق الرسمي في جدة إلى التوسع الخليجي، بأهداف مالية قابلة للقياس.",
 };
 
 /* ============================================================ */
@@ -27,44 +27,47 @@ export const metadata: Metadata = {
 
 const milestones = [
   {
-    year: "2025",
+    year: "2026",
     icon: MapPin,
-    phase: "التوسع الغربي",
-    cities: "جدة · مكة · المدينة",
+    phase: "الانطلاق الرسمي — جدة",
+    cities: "جدة · المنطقة الغربية",
     activities: [
-      "إطلاق برامج تجريبية للمزارع",
-      "شراكات مع جمعيات زراعية",
-      "بناء قاعدة العملاء الأولى",
+      "ترخيص MISA وإطلاق العمليات التجارية",
+      "تسليم أولى مشاريع Smart Controllers",
+      "بناء قاعدة العملاء الأولى في السوق الغربي",
+      "إطلاق الموقع والهوية الرقمية",
     ],
-    target: "150 مزرعة",
-    badge: null,
+    target: "2.4M ريال إيرادات",
+    badge: "نحن هنا",
     accent: "current",
   },
   {
-    year: "2026",
+    year: "2027",
     icon: Compass,
     phase: "الانتشار الوطني",
     cities: "الرياض · الدمام · القصيم",
     activities: [
-      "توسيع شبكة الموزعين الإقليميين",
-      "بناء فرق مبيعات إقليمية",
-      "إطلاق منصة SaaS الكاملة",
+      "توسيع شبكة العملاء والموزعين الإقليميين",
+      "إطلاق منصة SaaS للتحكم عن بُعد",
+      "تحقيق نقطة التعادل Q2 2027",
+      "منتج Smart Greenhouse v2 للسوق",
     ],
-    target: "500 مزرعة",
+    target: "6.9M ريال إيرادات",
     badge: "نقطة التحوّل",
     accent: "pivot",
   },
   {
-    year: "2027",
+    year: "2028",
     icon: Globe,
     phase: "التوسع الخليجي",
-    cities: "الإمارات · الكويت · الخليج",
+    cities: "الإمارات · الكويت · البحرين",
     activities: [
-      "الحصول على شهادات دولية",
-      "توطين كامل لسلاسل الإمداد",
-      "إغلاق جولة استثمارية Series A",
+      "الحصول على شهادات دولية لمنتجاتنا",
+      "توطين سلاسل الإمداد بالكامل داخل السعودية",
+      "إغلاق جولة Seed/Series A",
+      "شراكات إقليمية للتصنيع المحلي",
     ],
-    target: "1000+ مزرعة",
+    target: "12M ريال إيرادات",
     badge: null,
     accent: "future",
   },
@@ -233,10 +236,10 @@ export default function RoadmapPage() {
           <p className="heading-eyebrow mb-6 text-[var(--color-accent-300)]">خارطة الطريق</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-6 max-w-4xl">
             من جدة إلى الخليج —<br />
-            <span className="text-[var(--color-accent-300)]">خطة نمو على 3 سنوات</span>
+            <span className="text-[var(--color-accent-300)]">خطة نمو 2026–2028</span>
           </h1>
           <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mb-10">
-            استراتيجية توسع مرحلية مدروسة تغطي المملكة والخليج بحلول 2027، مع أهداف قابلة للقياس في كل مرحلة.
+            استراتيجية توسع مرحلية مدروسة — انطلاق رسمي 2026، تعادل Q2 2027، وتوسع خليجي 2028. أهداف قابلة للقياس في كل مرحلة.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button variant="accent" size="xl" asChild>
@@ -254,9 +257,9 @@ export default function RoadmapPage() {
         <div className="container-igarden">
           <div className="text-center max-w-2xl mx-auto mb-14 md:mb-16">
             <p className="heading-eyebrow mb-4">المراحل الثلاث</p>
-            <h2 className="heading-section mb-4">توسع مرحلي مدروس</h2>
+            <h2 className="heading-section mb-4">ثلاث مراحل — نمو مدروس</h2>
             <p className="text-lg text-[var(--color-muted)] leading-relaxed">
-              كل مرحلة تبني على الأخرى — نمو منهجي يضمن الجودة ويُحقق الأثر الوطني.
+              كل مرحلة تبني على الأخرى — من الانطلاق المحلي إلى التوسع الخليجي، مع أهداف مالية واضحة في كل سنة.
             </p>
           </div>
 
