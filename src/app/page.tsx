@@ -18,9 +18,8 @@ export default function HomePage() {
     <>
       <OrganizationSchema />
       <WebSiteSchema />
-      {/* Pull hero up behind both sticky TopBar (36px) + Header (64px) = 100px
-          so the transparent nav shows the dark hero video through both layers */}
-      <div className="-mt-[100px]">
+      {/* Pull hero up behind sticky Header (64px) so transparent nav shows video */}
+      <div className="-mt-[64px]">
         <HeroSection />
       </div>
       <HeroTrustBar />

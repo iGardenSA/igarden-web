@@ -66,7 +66,7 @@ export default function Header() {
     <>
       <header
         className={cn(
-          "sticky top-9 z-50 transition-all duration-300",
+          "sticky top-0 z-50 transition-all duration-300",
           transparent
             ? "bg-transparent border-b border-transparent"
             : homeDark

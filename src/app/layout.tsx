@@ -133,7 +133,6 @@ export default function RootLayout({
         <WebSiteSchema />
 
         <div className="flex min-h-screen flex-col">
-          <TopBar />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
