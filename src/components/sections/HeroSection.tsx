@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 export default function HeroSection() {
   return (
     <section
-      className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center overflow-hidden pt-24 md:pt-28 pb-16 md:pb-20"
+      className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center overflow-hidden pt-28 md:pt-32 pb-16 md:pb-20"
       dir="rtl"
       aria-labelledby="hero-headline"
     >
@@ -14,8 +14,14 @@ export default function HeroSection() {
         <source src="/videos/hero-video.webm" type="video/webm" />
         <source src="/videos/hero-video.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 -z-10 bg-[#0F3D2E]/55" aria-hidden="true" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#0F3D2E]/85 via-[#0F3D2E]/30 to-transparent" aria-hidden="true" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(15,61,46,0.45) 0%, rgba(15,61,46,0.30) 50%, rgba(15,61,46,0.55) 100%)",
+        }}
+        aria-hidden="true"
+      />
 
       <div className="relative max-w-7xl mx-auto w-full px-4 md:px-8">
         <div className="inline-flex items-center self-start bg-[#7CB342]/15 border border-[#7CB342]/30 text-[#A5D63F] px-3.5 py-1.5 rounded-full text-lg md:text-lg font-medium tracking-wide mb-6">

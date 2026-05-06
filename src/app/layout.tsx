@@ -27,8 +27,8 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${COMPANY.domain}`),
   title: {
-    default: "iGarden — نَبني · نُوطّن · نُطوّر أنظمة الزراعة الذكية",
-    template: `%s | ${COMPANY.nameEn}`,
+    default: "iGarden — الحديقة الذكية",
+    template: "%s | iGarden",
   },
   description:
     "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نَبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Globe, Monitor, ShoppingBag, Smartphone, type LucideIcon } from "lucide-react";
 import { TOP_BAR_ITEMS, type TopBarIconName } from "@/lib/constants";
@@ -12,16 +13,30 @@ const iconMap: Record<TopBarIconName, LucideIcon> = {
 };
 
 export default function TopBar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 80);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
-      className="bg-[#0A2920] border-b border-[#1B5E3F]/30"
+      className={[
+        "sticky top-0 z-[60] transition-all duration-300",
+        isScrolled
+          ? "bg-[#0A2920]/95 backdrop-blur-md border-b border-[#1B5E3F]/30"
+          : "bg-black/20 backdrop-blur-sm border-b border-white/10",
+      ].join(" ")}
       role="navigation"
       aria-label="منصات iGarden"
     >
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between h-9">
           {/* Platform Switcher */}
-          <ul className="flex items-center gap-0.5 overflow-x-auto scrollbar-hide">
+          <ul className="flex items-center gap-2 md:gap-4 overflow-x-auto scrollbar-hide">
             {TOP_BAR_ITEMS.map((item, idx) => {
               const Icon = iconMap[item.icon];
               const isLive = item.badge === "live";
@@ -31,7 +46,7 @@ export default function TopBar() {
                 <span
                   className={[
                     "inline-flex items-center gap-1.5",
-                    "px-2.5 py-1 rounded-md",
+                    "px-3 md:px-4 py-1 rounded-md",
                     "text-[13px] font-medium whitespace-nowrap",
                     "transition-all duration-150",
                     item.active
@@ -42,10 +57,18 @@ export default function TopBar() {
                   <Icon className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
                   <span>{item.label}</span>
 
+                  {/* Fix 4: Live indicator — larger + glow + blur halo */}
                   {isLive && (
-                    <span className="relative inline-flex ms-0.5" aria-label="مباشر">
-                      <span className="absolute inline-flex h-2 w-2 rounded-full bg-[#A5D63F] opacity-75 animate-ping" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#A5D63F]" />
+                    <span className="relative inline-flex ms-1" aria-label="مباشر">
+                      <span className="absolute inline-flex h-2.5 w-2.5 rounded-full bg-[#A5D63F] opacity-60 animate-ping" />
+                      <span
+                        className="absolute inline-flex h-2.5 w-2.5 rounded-full bg-[#A5D63F] opacity-40"
+                        style={{ filter: "blur(2px)" }}
+                      />
+                      <span
+                        className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#A5D63F]"
+                        style={{ boxShadow: "0 0 8px rgba(165, 214, 63, 0.8)" }}
+                      />
                     </span>
                   )}
 
@@ -67,9 +90,10 @@ export default function TopBar() {
                     <Link href={item.href}>{content}</Link>
                   )}
 
+                  {/* Fix 5: separator always visible, more breathing room */}
                   {idx < TOP_BAR_ITEMS.length - 1 && (
                     <span
-                      className="hidden md:inline text-[#7CB342]/30 mx-0.5 text-xs select-none"
+                      className="text-[#7CB342]/30 mx-1 text-xs select-none"
                       aria-hidden="true"
                     >
                       ·
