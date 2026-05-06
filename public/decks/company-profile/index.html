@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGarden — بروفايل الشركة 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: #F5F2E5;
+            font-family: 'Tajawal', sans-serif;
+            color: #1F3A2A;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #1F3A2A;
+            padding: 22px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-brand { display: flex; align-items: center; gap: 14px; }
+        .header-brand img { width: 50px; height: 50px; object-fit: contain; }
+        .header-title { font-size: 21px; font-weight: 700; color: #FFFFFF; }
+        .header-sub { font-size: 13px; color: #A5D63F; margin-top: 2px; }
+        .header-badge {
+            background-color: #6FA634; color: #FFFFFF;
+            font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+            padding: 6px 16px; border-radius: 20px;
+        }
+        main { max-width: 1100px; margin: 0 auto; padding: 44px 40px 80px; }
+        .section-label {
+            font-size: 12px; font-weight: 600; color: #6FA634;
+            letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
+        }
+        .section-title {
+            font-size: 26px; font-weight: 700; color: #1F3A2A; margin-bottom: 28px;
+        }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+        .card {
+            background: #FFFFFF; border-radius: 12px; padding: 22px;
+            box-shadow: 0 2px 8px rgba(15, 61, 46, 0.06);
+            text-decoration: none; color: inherit;
+            display: flex; flex-direction: column; gap: 10px;
+            border: 1.5px solid transparent;
+            transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+            position: relative; overflow: hidden;
+        }
+        .card:hover {
+            border-color: #6FA634;
+            box-shadow: 0 6px 24px rgba(15, 61, 46, 0.12);
+            transform: translateY(-2px);
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; right: 0;
+            width: 4px; height: 100%; background-color: #6FA634;
+            opacity: 0; transition: opacity 0.18s;
+        }
+        .card:hover::before { opacity: 1; }
+
+        .card-num { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: #9CA3AF; }
+        .card-icon {
+            width: 42px; height: 42px; background-color: #E8F0DD;
+            border-radius: 9px; display: flex; align-items: center; justify-content: center;
+            font-size: 17px; color: #1F3A2A; flex-shrink: 0;
+        }
+        .card-title { font-size: 16px; font-weight: 700; color: #1F3A2A; margin-bottom: 2px; }
+        .card-desc { font-size: 12px; color: #6B7280; font-weight: 400; line-height: 1.5; }
+        .card-arrow { color: #6FA634; font-size: 13px; align-self: flex-end; transition: transform 0.18s; }
+        .card:hover .card-arrow { transform: translateX(-4px); }
+
+        /* Cover card — full width */
+        .card-cover {
+            grid-column: 1 / -1; background-color: #1F3A2A; color: #FFFFFF;
+            flex-direction: row; align-items: center; gap: 22px; padding: 26px 30px;
+        }
+        .card-cover .card-icon { background-color: rgba(111,166,52,0.2); color: #A5D63F; width: 50px; height: 50px; font-size: 21px; }
+        .card-cover .card-title { color: #FFFFFF; font-size: 19px; }
+        .card-cover .card-desc { color: #A5D63F; }
+        .card-cover .card-num { color: rgba(255,255,255,0.4); }
+        .card-cover .card-arrow { color: #6FA634; margin-right: auto; }
+        .card-cover::before { background-color: #A5D63F; }
+        .card-cover:hover { border-color: #6FA634; }
+
+        .deck-actions {
+            margin-top: 32px; display: flex; gap: 12px; align-items: center; justify-content: flex-end;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 22px; border-radius: 8px; font-family: 'Tajawal', sans-serif;
+            font-size: 14px; font-weight: 700; text-decoration: none; cursor: pointer;
+            border: none;
+        }
+        .btn-primary { background: #6FA634; color: #FFFFFF; }
+        .btn-secondary { background: #FFFFFF; color: #1F3A2A; border: 1.5px solid #E5E7EB; }
+
+        footer {
+            background-color: #1F3A2A; padding: 20px 60px;
+            text-align: center; color: rgba(255,255,255,0.5);
+            font-size: 13px; font-family: 'Inter', sans-serif;
+        }
+        footer span { color: #6FA634; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-brand">
+        <img src="/logo/icon-master-original.png" alt="iGarden Logo">
+        <div>
+            <div class="header-title">بروفايل الشركة</div>
+            <div class="header-sub">ازرع بذكاء · Plant Smart</div>
+        </div>
+    </div>
+    <div class="header-badge">2026 · 8 شرائح</div>
+</header>
+
+<main>
+    <div class="section-label">COMPANY PROFILE</div>
+    <div class="section-title">انتقل إلى أي شريحة</div>
+
+    <div class="grid">
+
+        <!-- 1 Cover -->
+        <a class="card card-cover" href="slide-01-cover.html" target="_blank">
+            <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div style="flex:1;">
+                <div class="card-num">01 / 08</div>
+                <div class="card-title">الغلاف — Cover</div>
+                <div class="card-desc">iGarden · الحديقة الذكية · ننفّذ نُوطّن نُطوّر</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 2 من نحن -->
+        <a class="card" href="slide-02-about.html" target="_blank">
+            <div class="card-num">02 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-building"></i></div>
+            <div>
+                <div class="card-title">من نحن</div>
+                <div class="card-desc">شركة سعودية · Timeline 2024→2026 · التراخيص</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 3 المنهجية -->
+        <a class="card" href="slide-03-methodology.html" target="_blank">
+            <div class="card-num">03 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+            <div>
+                <div class="card-title">منهجيتنا</div>
+                <div class="card-desc">ننفّذ · نُوطّن · نُطوّر — الفارق الحقيقي</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 4 المنتجات -->
+        <a class="card" href="slide-04-products.html" target="_blank">
+            <div class="card-num">04 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div>
+                <div class="card-title">المنتجات والخدمات</div>
+                <div class="card-desc">Smart Controllers ⭐ · محميات · زراعة مائية</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 5 محطة عسفان -->
+        <a class="card" href="slide-05-osfan.html" target="_blank">
+            <div class="card-num">05 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+            <div>
+                <div class="card-title">محطة عسفان</div>
+                <div class="card-desc">المختبر الميداني · +45°C · 5+ ورش عمل</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 6 الإنجازات -->
+        <a class="card" href="slide-06-achievements.html" target="_blank">
+            <div class="card-num">06 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div>
+                <div class="card-title">الإنجازات والزخم</div>
+                <div class="card-desc">4 عملاء · 500K ريال · MISA · التوقعات المالية</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 7 الفريق -->
+        <a class="card" href="slide-07-team.html" target="_blank">
+            <div class="card-num">07 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+            <div>
+                <div class="card-title">فريق القيادة</div>
+                <div class="card-desc">3 مؤسسين · تقنية + استراتيجية + علاقات حكومية</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 8 تواصل -->
+        <a class="card" href="slide-08-contact.html" target="_blank">
+            <div class="card-num">08 / 08</div>
+            <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+            <div>
+                <div class="card-title">تواصل معنا</div>
+                <div class="card-desc">igarden.sa · hello@igarden.sa · جدة</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+    </div>
+
+    <div class="deck-actions">
+        <a class="btn btn-secondary" href="/decks/"><i class="fa-solid fa-arrow-right"></i> كل العروض</a>
+        <a class="btn btn-secondary" href="slide-01-cover.html" target="_blank"><i class="fa-solid fa-play"></i> بدء العرض</a>
+    </div>
+</main>
+
+<footer>
+    <span>iGarden</span> — بروفايل الشركة 2026 &nbsp;·&nbsp; Intelligent Garden Company &nbsp;·&nbsp; igarden.sa
+</footer>
+
+</body>
+</html>
