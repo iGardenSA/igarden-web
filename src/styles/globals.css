@@ -208,6 +208,38 @@
 }
 
 /* ==========================================================================
+   Utilities Layer — مساعدات مخصّصة
+   ========================================================================== */
+
+@keyframes igFadeDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes igSlideRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-ig-fade-down {
+    animation: igFadeDown 0.15s ease-out forwards;
+  }
+
+  .animate-ig-slide-right {
+    animation: igSlideRight 0.3s ease-out forwards;
+  }
+}
+
+/* ==========================================================================
    Type Scale Utilities (Brief v2 §3.1)
    ========================================================================== */
 

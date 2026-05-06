@@ -112,3 +112,131 @@ export const NAV_MAIN = [
   { href: "/investors", label: "المستثمرون" },
   { href: "/contact", label: "تواصل معنا" },
 ] as const;
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Wave 2A — Navigation System Types + Constants
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type TopBarIconName = "globe" | "monitor" | "shopping-bag" | "smartphone";
+
+export type TopBarItem = {
+  label: string;
+  icon: TopBarIconName;
+  href: string;
+  external?: boolean;
+  active?: boolean;
+  badge?: "live" | "soon";
+};
+
+export type NavColumnItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+export type NavColumn = {
+  title: string;
+  icon: "tractor" | "cpu" | "leaf";
+  items: NavColumnItem[];
+  cta?: {
+    label: string;
+    href: string;
+    external?: boolean;
+    variant: "live" | "shop" | "default";
+  };
+};
+
+export type NavItemMega = {
+  label: string;
+  href: string;
+  hasMegaMenu: true;
+  megaMenuColumns: NavColumn[];
+};
+
+export type NavItemSimple = {
+  label: string;
+  href: string;
+  hasMegaMenu?: never;
+  megaMenuColumns?: never;
+};
+
+export type NavItemType = NavItemMega | NavItemSimple;
+
+// ─── Top Bar — المنظومة الموحّدة ─────────────────────────────────────────────
+
+export const TOP_BAR_ITEMS: TopBarItem[] = [
+  { label: "الموقع", icon: "globe", href: "/", active: true },
+  {
+    label: "Demo",
+    icon: "monitor",
+    href: "https://demo.igarden.sa",
+    external: true,
+    badge: "live",
+  },
+  {
+    label: "المتجر",
+    icon: "shopping-bag",
+    href: "https://shop.igarden.sa",
+    external: true,
+  },
+  { label: "احجز التطبيق", icon: "smartphone", href: "/app", badge: "soon" },
+];
+
+// ─── Main Navigation — 5 عناصر ───────────────────────────────────────────────
+
+export const HEADER_NAV_ITEMS: NavItemType[] = [
+  {
+    label: "الحلول",
+    href: "/solutions",
+    hasMegaMenu: true,
+    megaMenuColumns: [
+      {
+        title: "للمزارع التجارية",
+        icon: "tractor",
+        items: [
+          { label: "أنظمة الري والتحكم الذكي", href: "/solutions/farms" },
+          { label: "البيوت المحمية والـ Hydroponics", href: "/solutions/greenhouses" },
+        ],
+      },
+      {
+        title: "منصة Smart OS",
+        icon: "cpu",
+        items: [
+          { label: "منصة الإدارة الموحّدة", href: "/solutions/smart-os" },
+          { label: "تقارير الامتثال", href: "/compliance" },
+        ],
+        cta: {
+          label: "Live Demo",
+          href: "https://demo.igarden.sa",
+          external: true,
+          variant: "live",
+        },
+      },
+      {
+        title: "للحديقة المنزلية",
+        icon: "leaf",
+        items: [
+          { label: "البرج الهوائي iGarden Tower", href: "https://shop.igarden.sa", external: true },
+          { label: "مستلزمات الزراعة", href: "https://shop.igarden.sa", external: true },
+        ],
+        cta: {
+          label: "تسوّق المتجر",
+          href: "https://shop.igarden.sa",
+          external: true,
+          variant: "shop",
+        },
+      },
+    ],
+  },
+  { label: "محطة عسفان", href: "/osfan-station" },
+  { label: "كيف نعمل", href: "/about" },
+  { label: "المعرفة", href: "/learn" },
+  { label: "للمستثمرين", href: "/investors" },
+];
+
+// ─── Main CTA ─────────────────────────────────────────────────────────────────
+
+export const MAIN_CTA = {
+  label: "تحدّث معنا",
+  href: "/contact",
+} as const;

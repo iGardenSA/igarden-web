@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Tajawal, Poppins } from "next/font/google";
-import Navigation from "@/components/layout/Navigation";
+import TopBar from "@/components/layout/TopBar";
+import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/footer";
 import WhatsAppFab from "@/components/layout/WhatsAppFab";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
@@ -132,7 +133,8 @@ export default function RootLayout({
         <WebSiteSchema />
 
         <div className="flex min-h-screen flex-col">
-          <Navigation />
+          <TopBar />
+          <Header />
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFab />
