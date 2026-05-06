@@ -18,7 +18,11 @@ export default function HomePage() {
     <>
       <OrganizationSchema />
       <WebSiteSchema />
-      <HeroSection />
+      {/* -mt-16 pulls the hero up behind the transparent Header (64px) so the
+          dark video background shows through instead of the cream body bg */}
+      <div className="-mt-16">
+        <HeroSection />
+      </div>
       <HeroTrustBar />
       <TrustBar />
       <MethodologySection />
