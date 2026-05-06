@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGarden Pitch Deck — سُنبُلة 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background-color: #F5F2E5;
+            font-family: 'Tajawal', sans-serif;
+            color: #1F3A2A;
+            min-height: 100vh;
+        }
+
+        /* ─── Header ─── */
+        header {
+            background-color: #1F3A2A;
+            padding: 24px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .header-brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+        }
+        .header-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFFFFF;
+        }
+        .header-sub {
+            font-size: 14px;
+            font-weight: 400;
+            color: #A5D63F;
+            margin-top: 2px;
+        }
+        .header-badge {
+            background-color: #6FA634;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+
+        /* ─── Grid ─── */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 40px 80px;
+        }
+
+        .section-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #6FA634;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1F3A2A;
+            margin-bottom: 32px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(15, 61, 46, 0.06);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            border: 1.5px solid transparent;
+            transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            border-color: #6FA634;
+            box-shadow: 0 6px 24px rgba(15, 61, 46, 0.12);
+            transform: translateY(-2px);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #6FA634;
+            opacity: 0;
+            transition: opacity 0.18s;
+        }
+        .card:hover::before { opacity: 1; }
+
+        .card-num {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #9CA3AF;
+            letter-spacing: 0.5px;
+        }
+        .card-icon {
+            width: 44px;
+            height: 44px;
+            background-color: #E8F0DD;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #1F3A2A;
+            flex-shrink: 0;
+        }
+        .card-body {
+            flex: 1;
+        }
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1F3A2A;
+            margin-bottom: 4px;
+        }
+        .card-desc {
+            font-size: 13px;
+            color: #6B7280;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        .card-arrow {
+            color: #6FA634;
+            font-size: 14px;
+            align-self: flex-end;
+            transition: transform 0.18s;
+        }
+        .card:hover .card-arrow { transform: translateX(-4px); }
+
+        /* Cover card — full width */
+        .card-cover {
+            grid-column: 1 / -1;
+            background-color: #1F3A2A;
+            color: #FFFFFF;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+            padding: 28px 32px;
+        }
+        .card-cover .card-icon {
+            background-color: rgba(111,166,52,0.2);
+            color: #A5D63F;
+            width: 52px;
+            height: 52px;
+            font-size: 22px;
+        }
+        .card-cover .card-title { color: #FFFFFF; font-size: 20px; }
+        .card-cover .card-desc  { color: #A5D63F; }
+        .card-cover .card-num   { color: rgba(255,255,255,0.4); }
+        .card-cover .card-arrow { color: #6FA634; margin-right: auto; }
+        .card-cover::before { background-color: #A5D63F; }
+        .card-cover:hover { border-color: #6FA634; }
+
+        /* ─── Footer ─── */
+        footer {
+            background-color: #1F3A2A;
+            padding: 20px 60px;
+            text-align: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+        }
+        footer span { color: #6FA634; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-brand">
+        <img src="/logo/icon-master-original.png" alt="iGarden Logo">
+        <div>
+            <div class="header-title">iGarden Pitch Deck</div>
+            <div class="header-sub">ازرع بذكاء · Plant Smart</div>
+        </div>
+    </div>
+    <div class="header-badge">سُنبُلة 2026 · 15 شريحة</div>
+</header>
+
+<main>
+    <div class="section-label">PITCH DECK</div>
+    <div class="section-title">انتقل إلى أي شريحة</div>
+
+    <div class="grid">
+
+        <!-- 1 Cover -->
+        <a class="card card-cover" href="/pitch-deck-cover.html" target="_blank">
+            <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+            <div class="card-body">
+                <div class="card-num">01 / 15</div>
+                <div class="card-title">Cover — الغلاف</div>
+                <div class="card-desc">انتيليجنت غاردن × مسرعة سُنبُلة · EWAx 2026</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 2 لماذا الآن -->
+        <a class="card" href="/pitch-deck-why-now.html" target="_blank">
+            <div class="card-num">02 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div class="card-body">
+                <div class="card-title">لماذا الآن؟</div>
+                <div class="card-desc">تقاطع 3 قوى نادر — نافذة استراتيجية مفتوحة</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 3 التحدي -->
+        <a class="card" href="/pitch-deck-challenge.html" target="_blank">
+            <div class="card-num">03 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <div class="card-body">
+                <div class="card-title">التحدّي</div>
+                <div class="card-desc">أزمة تشغيلية حالية وموجة تنظيمية قادمة</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 4 الجسر التنظيمي -->
+        <a class="card" href="/pitch-deck-regulatory-bridge.html" target="_blank">
+            <div class="card-num">04 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="card-body">
+                <div class="card-title">الجسر التنظيمي</div>
+                <div class="card-desc">رؤية 2030 · MEWA · ZATCA · GOSI</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 5 الحل المتكامل -->
+        <a class="card" href="/pitch-deck-integrated-solution.html" target="_blank">
+            <div class="card-num">05 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="card-body">
+                <div class="card-title">الحل المتكامل</div>
+                <div class="card-desc">بنية موطّنة بالكامل — 3 طبقات متكاملة</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 6 Smart OS -->
+        <a class="card" href="/pitch-deck-smart-os.html" target="_blank">
+            <div class="card-num">06 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+            <div class="card-body">
+                <div class="card-title">iGarden Smart OS</div>
+                <div class="card-desc">FastAPI · MQTT · Vision AI · 208 اختبار ناجح</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 7 خارطة الطريق -->
+        <a class="card" href="/pitch-deck-roadmap.html" target="_blank">
+            <div class="card-num">07 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-map"></i></div>
+            <div class="card-body">
+                <div class="card-title">خارطة الطريق</div>
+                <div class="card-desc">اليوم → مع سُنبُلة → ما بعدها</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 8 عرض تجريبي -->
+        <a class="card" href="/pitch-deck-live-demo.html" target="_blank">
+            <div class="card-num">08 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-display"></i></div>
+            <div class="card-body">
+                <div class="card-title">عرض تجريبي مباشر</div>
+                <div class="card-desc">demo.igarden.sa — جرّب النظام الآن</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 9 من المختبر -->
+        <a class="card" href="/pitch-deck-lab-to-market.html" target="_blank">
+            <div class="card-num">09 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="card-body">
+                <div class="card-title">من المختبر إلى السوق</div>
+                <div class="card-desc">3 مواقع R&D · 4 عملاء صناعيون</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 10 الإنجازات -->
+        <a class="card" href="/pitch-deck-achievements.html" target="_blank">
+            <div class="card-num">10 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="card-body">
+                <div class="card-title">الإنجازات والزخم</div>
+                <div class="card-desc">4 عملاء · 500K SAR · MISA مرخّص</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 11 حجم السوق -->
+        <a class="card" href="/pitch-deck-market-size.html" target="_blank">
+            <div class="card-num">11 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <div class="card-body">
+                <div class="card-title">حجم السوق والفرصة</div>
+                <div class="card-desc">TAM 45B · SAM 4.2B · SOM 50M ريال</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 12 نموذج الإيرادات -->
+        <a class="card" href="/pitch-deck-revenue-model.html" target="_blank">
+            <div class="card-num">12 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-coins"></i></div>
+            <div class="card-body">
+                <div class="card-title">نموذج الإيرادات</div>
+                <div class="card-desc">2026: 1.5M · 2027: 3-5M · 2028: 7-10M ريال</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 13 التحليل التنافسي -->
+        <a class="card" href="/pitch-deck-competitive-analysis.html" target="_blank">
+            <div class="card-num">13 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-chess-knight"></i></div>
+            <div class="card-body">
+                <div class="card-title">التحليل التنافسي</div>
+                <div class="card-desc">خندق: عتاد × برمجيات × امتثال × علاقات</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 14 الفريق -->
+        <a class="card" href="/pitch-deck-team.html" target="_blank">
+            <div class="card-num">14 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="card-body">
+                <div class="card-title">فريق iGarden</div>
+                <div class="card-desc">3 مؤسسين · تقنية + استراتيجية + علاقات حكومية</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+        <!-- 15 لماذا سُنبُلة -->
+        <a class="card" href="/pitch-deck-why-sunbolah.html" target="_blank">
+            <div class="card-num">15 / 15</div>
+            <div class="card-icon"><i class="fa-solid fa-handshake"></i></div>
+            <div class="card-body">
+                <div class="card-title">لماذا سُنبُلة؟</div>
+                <div class="card-desc">الشراكة التي تبني الجيل القادم من الزراعة السعودية</div>
+            </div>
+            <div class="card-arrow"><i class="fa-solid fa-arrow-left"></i></div>
+        </a>
+
+    </div>
+</main>
+
+<footer>
+    <span>iGarden</span> × سُنبُلة 2026 &nbsp;·&nbsp; Intelligent Garden Company &nbsp;·&nbsp; igarden.sa
+</footer>
+
+</body>
+</html>
