@@ -24,6 +24,11 @@ export default function HomePage() {
         <HeroSection />
       </div>
       <HeroTrustBar />
+      <div
+        className="h-12 w-full"
+        style={{ background: "linear-gradient(to bottom, #0F3D2E 0%, #FAFAF7 100%)" }}
+        aria-hidden="true"
+      />
       <TrustBar />
       <MethodologySection />
       <ThreePillarsSection />

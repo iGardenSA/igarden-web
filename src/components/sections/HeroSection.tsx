@@ -30,22 +30,18 @@ export default function HeroSection() {
 
         <h1
           id="hero-headline"
-          className="font-arabic font-bold text-[#FAFAF7] text-4xl md:text-5xl lg:text-6xl leading-[1.2] mb-4"
+          className="font-arabic font-bold text-[#FAFAF7] text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-5"
           style={{ fontFeatureSettings: '"liga", "dlig"' }}
         >
-          <span className="block">نَبني ونُوطّن ونُطوّر</span>
-          <span className="block">أنظمة الزراعة الذكية</span>
+          ازرع بذكاء.
         </h1>
 
-        <p
-          className="text-[#A5D63F] text-xl md:text-2xl font-medium mb-5"
-          style={{ textShadow: "0 2px 8px rgba(15,61,46,0.6), 0 1px 2px rgba(0,0,0,0.4)" }}
-        >
-          ازرع بذكاء · Plant Smart
+        <p className="text-white/80 text-lg leading-relaxed max-w-xl mb-2">
+          نظام زراعي مُكيَّف لأرض السعودية ومناخها — يوفّر مياهك، يُراقب محصولك، ويعمل وأنت بعيد عن المزرعة.
         </p>
 
-        <p className="text-white/80 text-lg md:text-lg leading-relaxed max-w-xl mb-8">
-          شركة سعودية تُوطّن التقنية الزراعية لمناخ +45°C. نختبر كل نظام في عسفان قبل أن يصل إليك.
+        <p className="text-sm text-[#A5D63F]/70 font-medium tracking-wider uppercase mt-2 mb-8">
+          نَبني · نُوطّن · نُطوّر
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start">
@@ -53,7 +49,7 @@ export default function HeroSection() {
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-lg md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none min-w-[220px]"
           >
-            احجز استشارة 30 دقيقة
+            احجز استشارة
           </Link>
 
           <a
