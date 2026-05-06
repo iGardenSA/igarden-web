@@ -24,7 +24,7 @@ export default function HeroSection() {
       />
 
       <div className="relative max-w-7xl mx-auto w-full px-4 md:px-8">
-        <div className="inline-flex items-center self-start bg-[#7CB342]/15 border border-[#7CB342]/30 text-[#A5D63F] px-3.5 py-1.5 rounded-full text-lg md:text-lg font-medium tracking-wide mb-6">
+        <div className="inline-flex items-center self-start bg-[#0F3D2E]/40 backdrop-blur-sm border border-[#A5D63F]/40 text-[#A5D63F] px-4 py-1.5 rounded-full text-sm font-medium shadow-sm shadow-black/20 mb-6">
           AgriTech سعودية · ريادية · مُبتكرة
         </div>
 
@@ -37,7 +37,12 @@ export default function HeroSection() {
           <span className="block">أنظمة الزراعة الذكية</span>
         </h1>
 
-        <p className="text-[#7CB342] text-xl md:text-2xl font-medium mb-5">ازرع بذكاء · Plant Smart</p>
+        <p
+          className="text-[#A5D63F] text-xl md:text-2xl font-medium mb-5"
+          style={{ textShadow: "0 2px 8px rgba(15,61,46,0.6), 0 1px 2px rgba(0,0,0,0.4)" }}
+        >
+          ازرع بذكاء · Plant Smart
+        </p>
 
         <p className="text-white/80 text-lg md:text-lg leading-relaxed max-w-xl mb-8">
           شركة سعودية تُوطّن التقنية الزراعية لمناخ +45°C. نختبر كل نظام في عسفان قبل أن يصل إليك.

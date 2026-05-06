@@ -27,8 +27,8 @@ export default function TopBar() {
       className={[
         "sticky top-0 z-[60] transition-all duration-300",
         isScrolled
-          ? "bg-[#0A2920]/95 backdrop-blur-md border-b border-[#1B5E3F]/30"
-          : "bg-black/20 backdrop-blur-sm border-b border-white/10",
+          ? "bg-[#0A2920]/95 backdrop-blur-md border-b border-[#1B5E3F]/40 shadow-sm shadow-black/20"
+          : "bg-black/25 backdrop-blur-sm border-b border-white/15 shadow-sm shadow-black/10",
       ].join(" ")}
       role="navigation"
       aria-label="منصات iGarden"
