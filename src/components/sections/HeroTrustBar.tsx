@@ -5,7 +5,7 @@ import { Droplet, Leaf, CalendarCheck, ShieldCheck } from 'lucide-react';
 const stats = [
   {
     icon: Droplet,
-    number: '38%',
+    number: 'حتى 90%',
     label: 'توفير في استهلاك المياه',
   },
   {
