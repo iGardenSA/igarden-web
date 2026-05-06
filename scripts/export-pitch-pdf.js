@@ -57,6 +57,7 @@ async function run() {
       width:  `${SLIDE_WIDTH}px`,
       height: `${SLIDE_HEIGHT}px`,
       printBackground: true,
+      pageRanges: '1',
       margin: { top: 0, right: 0, bottom: 0, left: 0 },
     });
 
