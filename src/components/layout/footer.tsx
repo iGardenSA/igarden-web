@@ -121,7 +121,10 @@ export function Footer() {
               <p>{COMPANY.legalFull}</p>
               <p>
                 سجل تجاري{" "}
-                <span className="ltr-inline font-latin">MISA: 24926249716</span>
+                <span className="ltr-inline font-latin">CR: 4030579637</span>
+                {" · "}
+                رخصة MISA{" "}
+                <span className="ltr-inline font-latin">24926249716</span>
               </p>
               <p>
                 نموذج صناعي{" "}

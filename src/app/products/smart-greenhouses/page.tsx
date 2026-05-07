@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import { Building2, Cpu, Wind, CheckCircle2, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -514,6 +515,12 @@ export default function SmartGreenhousesPage() {
       />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
+      <TargetAudience />
+      <section className="bg-[#FAFAF7] py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <StageHonesty />
+        </div>
+      </section>
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />

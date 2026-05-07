@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Droplets,
   TrendingUp,
@@ -561,6 +562,12 @@ export default function HydroponicsPage() {
       <FAQSchema faqs={SCHEMA_FAQS} />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
+      <TargetAudience />
+      <section className="bg-[#FAFAF7] py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <StageHonesty />
+        </div>
+      </section>
       <ValuesSection />
       <TechniquesSection />
       <IGardenTowerSection />

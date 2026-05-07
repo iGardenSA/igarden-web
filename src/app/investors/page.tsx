@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import { GlowAccent } from "@/components/ui/glow-accent";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -55,6 +56,13 @@ export default function InvestorsPage() {
               </Button>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Stage honesty banner */}
+      <section className="bg-[#FAFAF7] py-6">
+        <div className="container-igarden">
+          <StageHonesty />
         </div>
       </section>
 
@@ -365,6 +373,160 @@ export default function InvestorsPage() {
                   >
                     {tag}
                   </span>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
+          6b. لماذا الآن؟
+          ============================================================ */}
+      <section className="bg-white section-padding" dir="rtl">
+        <div className="container-igarden">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto">
+              <p className="heading-eyebrow mb-4">التوقيت</p>
+              <h2 className="heading-section mb-6">لماذا الآن؟</h2>
+              <div className="space-y-4">
+                {[
+                  {
+                    num: "01",
+                    text: "رؤية 2030 تضع الأمن الغذائي والزراعة الذكية في صلب الأولويات الوطنية — والسوق لا يزال شحيح الحلول المحلية المتخصصة.",
+                  },
+                  {
+                    num: "02",
+                    text: "التشغيل الميداني بدأ: عملاء نشطون، أنظمة قيد التركيب، عقود موقّعة. ليس مجرد فكرة.",
+                  },
+                  {
+                    num: "03",
+                    text: "نافذة الحصص الأولى مفتوحة. الدخول مبكراً يعني شروطاً أفضل ومشاركة أكبر في التشكيل الاستراتيجي.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.num}
+                    className="flex items-start gap-5 bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6"
+                  >
+                    <span className="font-mono text-xl font-bold text-[var(--color-accent-500)] flex-shrink-0">
+                      {item.num}
+                    </span>
+                    <p className="text-[var(--color-muted)] leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
+          6c. ماذا بُني فعلاً؟
+          ============================================================ */}
+      <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
+        <div className="container-igarden">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto">
+              <p className="heading-eyebrow mb-4">ما تم فعلاً</p>
+              <h2 className="heading-section mb-6">ماذا بُني فعلاً؟</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "منظومة Smart Controllers (ESP32 + Raspberry Pi) — 208 unit test ناجح",
+                  "واجهة Smart OS — تشغيل على demo.igarden.sa",
+                  "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة",
+                  "نموذج صناعي مسجّل SAIP #423450193",
+                  "4 عملاء نشطون بتشغيل ميداني حقيقي",
+                  "عقود موقّعة للتوسع في المنطقة الشرقية",
+                  "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
+                  "Supabase CRM + نموذج جمع العملاء المحتملين",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 bg-white rounded-xl border border-[var(--color-border)] p-4"
+                  >
+                    <CheckCircle2 className="w-4 h-4 text-[var(--color-accent-500)] flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <p className="text-sm text-[var(--color-foreground)] leading-relaxed">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
+          6d. أين نركز في 2026؟
+          ============================================================ */}
+      <section className="bg-white section-padding" dir="rtl">
+        <div className="container-igarden">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto">
+              <p className="heading-eyebrow mb-4">التركيز</p>
+              <h2 className="heading-section mb-6">أين نركّز في 2026؟</h2>
+              <div className="space-y-3">
+                {[
+                  {
+                    label: "Smart Controllers",
+                    body: "توسيع قاعدة التركيب — 10 عملاء بحلول Q3 2026.",
+                  },
+                  {
+                    label: "Compliance Module",
+                    body: "Pilot رسمي مع مزرعة بحاجة لسجلات امتثال غذائي.",
+                  },
+                  {
+                    label: "محطة عسفان",
+                    body: "تحويلها لمساحة بحث تطبيقي + استقطاب شركاء محتملين.",
+                  },
+                  {
+                    label: "SaaS Platform",
+                    body: "الانتقال من اشتراكات سنوية إلى منصة سحابية بإيرادات متكررة — Q4 2026.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-start gap-4 bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-5"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-[var(--color-accent-500)] flex-shrink-0 mt-2" />
+                    <div>
+                      <span className="font-bold text-[var(--color-brand-600)]">{item.label}:</span>{" "}
+                      <span className="text-[var(--color-muted)] text-sm">{item.body}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
+          6e. ما الذي لا نبنيه الآن؟
+          ============================================================ */}
+      <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
+        <div className="container-igarden">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-[var(--color-border)] p-8 md:p-10">
+              <p className="heading-eyebrow mb-4">حدود واضحة</p>
+              <h2 className="text-2xl font-bold text-[var(--color-brand-600)] mb-2">
+                ما الذي لا نبنيه الآن؟
+              </h2>
+              <p className="text-[var(--color-muted)] mb-6 leading-relaxed">
+                الوضوح في ما لا نفعله بنفس أهمية ما نفعله — هذه قراراتنا المعمارية المقصودة.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "لا نطوّر أجهزة حساسات من الصفر — نوطّن منظومات عالمية لمناخنا.",
+                  "لا نبني متجراً B2C الآن — تركيزنا على B2B وB2G.",
+                  "لا نتوسع خارج المملكة قبل تحقيق Break-even محلي.",
+                  "لا نستثمر في تسويق مدفوع الآن — نمو عضوي + شراكات مباشرة.",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 text-sm text-[var(--color-muted)]"
+                  >
+                    <span className="text-amber-500 font-bold flex-shrink-0">✕</span>
+                    <p>{item}</p>
+                  </div>
                 ))}
               </div>
             </div>
