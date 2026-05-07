@@ -229,7 +229,7 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
     ],
   },
   { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "كيف نعمل", href: "/about" },
+  { label: "كيف نعمل", href: "/how-we-work" },
   { label: "المعرفة", href: "/learn" },
   { label: "للمستثمرين", href: "/investors" },
 ];

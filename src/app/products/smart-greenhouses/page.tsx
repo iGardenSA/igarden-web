@@ -40,7 +40,7 @@ function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=greenhouses" variant="lime">
-                اطلب عرض مخصّص
+                اطلب تقييم مزرعتك
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
                 شاهد محطّة عسفان
@@ -56,6 +56,31 @@ function Hero() {
           >
             {/* [CONTENT_NEEDED: /images/products/smart-greenhouses/hero.jpg — صورة محمية حقيقية من عسفان] */}
             <Building2 className="w-20 h-20 text-white/20" aria-hidden />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 1b: لمن هذا الحل؟ ─────────────────────────── */
+function TargetAudience() {
+  return (
+    <section className="bg-white py-12 border-b border-[#E5E7EB]">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
+            لمن هذا الحل؟
+          </p>
+          <p className="body-base text-medium-gray leading-relaxed">
+            هذا الحل مناسب للمزارع التجارية التي تريد بيئة نمو محكومة ومستقلة
+            عن التقلبات المناخية. مناسب أيضاً للمشاريع الحكومية والجهات الساعية
+            لرفع كفاءة الإنتاج مع الحفاظ على المياه في المناخ السعودي القاسي.
+          </p>
+          <div className="flex flex-wrap gap-2 mt-4">
+            {["مزارع ورقيات وأعشاب", "مشاريع الأمن الغذائي", "محميات زراعية حكومية", "شركات الإنتاج الزراعي"].map(tag => (
+              <span key={tag} className="bg-cream border border-light-gray rounded-pill px-3 py-1 text-sm text-deep-green font-medium">{tag}</span>
+            ))}
           </div>
         </div>
       </div>
@@ -514,6 +539,7 @@ export default function SmartGreenhousesPage() {
       />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
+      <TargetAudience />
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />

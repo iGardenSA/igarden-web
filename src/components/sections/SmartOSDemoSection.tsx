@@ -37,8 +37,20 @@ export function SmartOSDemoSection() {
               ))}
             </ul>
 
+            <div className="bg-white/5 border border-white/10 rounded-xl p-4 mb-6 text-right">
+              <p className="text-cream/70 text-sm leading-relaxed mb-2">
+                <span className="text-[#A5D63F] font-semibold">ملاحظة:</span>{" "}
+                هذا نموذج تفاعلي يوضح معمارية Smart OS. القراءات المعروضة محاكاة لأغراض
+                العرض، بينما تعكس البنية طريقة عمل النظام في الميدان.
+              </p>
+              <ul className="space-y-1 text-cream/60 text-sm">
+                <li>· يراقب pH وEC والحرارة والرطوبة</li>
+                <li>· يسجّل كل قراءة وكل أمر تشغيل</li>
+                <li>· يمهّد لتقارير تشغيل وامتثال قابلة للمراجعة</li>
+              </ul>
+            </div>
             <CTAButton href="https://demo.igarden.sa" variant="lime" external>
-              افتح الـ Demo الحيّ
+              افتح الديمو
             </CTAButton>
           </div>
 

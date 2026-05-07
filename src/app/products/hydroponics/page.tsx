@@ -52,7 +52,7 @@ function Hero() {
               المُسجَّل صناعياً.
             </p>
             <CTAButton href="/contact?interest=hydroponics" variant="lime">
-              اطلب استشارة
+              اطلب تقييم مزرعتك
             </CTAButton>
           </div>
 
@@ -64,6 +64,31 @@ function Hero() {
           >
             {/* [CONTENT_NEEDED: /images/products/hydroponics/hero.jpg — صورة نظام هيدروبونيك من عسفان] */}
             <Droplets className="w-20 h-20 text-white/20" aria-hidden />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 1b: لمن هذا الحل؟ ─────────────────────────── */
+function TargetAudience() {
+  return (
+    <section className="bg-white py-12 border-b border-[#E5E7EB]">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="max-w-3xl">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
+            لمن هذا الحل؟
+          </p>
+          <p className="body-base text-medium-gray leading-relaxed">
+            هذا الحل مناسب للمزارع التجارية والمشاريع الغذائية التي تريد إنتاجاً أعلى
+            بمساحة أقل واستهلاك مياه يصل لـ 95% أقل من الزراعة التقليدية. مناسب
+            لمشاريع الورقيات والأعشاب والفراولة والمحاصيل قصيرة الدورة.
+          </p>
+          <div className="flex flex-wrap gap-2 mt-4">
+            {["ورقيات وأعشاب طبية", "فراولة ومحاصيل قيمة", "مشاريع الأمن الغذائي", "زراعة المدن والمباني"].map(tag => (
+              <span key={tag} className="bg-cream border border-light-gray rounded-pill px-3 py-1 text-sm text-deep-green font-medium">{tag}</span>
+            ))}
           </div>
         </div>
       </div>
@@ -561,6 +586,7 @@ export default function HydroponicsPage() {
       <FAQSchema faqs={SCHEMA_FAQS} />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
+      <TargetAudience />
       <ValuesSection />
       <TechniquesSection />
       <IGardenTowerSection />

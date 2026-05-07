@@ -22,6 +22,8 @@ import {
   type LeadFormData,
   LEAD_TYPES,
   INTERESTS,
+  PROJECT_SIZES,
+  TIMELINES,
 } from "@/lib/lead-schema";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
@@ -48,6 +50,12 @@ export default function ContactPage() {
 
     try {
       const supabase = createBrowserSupabase();
+      const extraInfo = [
+        data.city ? `المدينة/المنطقة: ${data.city}` : null,
+        data.project_size ? `حجم المشروع: ${PROJECT_SIZES.find(p => p.value === data.project_size)?.label}` : null,
+        data.timeline ? `موعد البدء: ${TIMELINES.find(t => t.value === data.timeline)?.label}` : null,
+      ].filter(Boolean).join(" | ");
+      const fullMessage = extraInfo ? `${data.message}\n\n[${extraInfo}]` : data.message;
       const { error } = await supabase.from("leads").insert({
         full_name: data.full_name,
         email: data.email || null,
@@ -56,7 +64,7 @@ export default function ContactPage() {
         lead_type: data.lead_type,
         interested_in: data.interested_in?.length ? data.interested_in : null,
         subject: data.subject || null,
-        message: data.message,
+        message: fullMessage,
         channel: "website",
         status: "new",
         source_url:
@@ -284,6 +292,34 @@ export default function ContactPage() {
                       </select>
                     </FormField>
                   </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <FormField label="المدينة / المنطقة">
+                      <input
+                        type="text"
+                        {...register("city")}
+                        className="input-igarden"
+                        placeholder="مثال: جدة، الرياض، خميس مشيط"
+                      />
+                    </FormField>
+                    <FormField label="حجم المشروع">
+                      <select {...register("project_size")} className="input-igarden">
+                        <option value="">اختر...</option>
+                        {PROJECT_SIZES.map((p) => (
+                          <option key={p.value} value={p.value}>{p.label}</option>
+                        ))}
+                      </select>
+                    </FormField>
+                  </div>
+
+                  <FormField label="متى ترغب بالبدء؟">
+                    <select {...register("timeline")} className="input-igarden">
+                      <option value="">اختر...</option>
+                      {TIMELINES.map((t) => (
+                        <option key={t.value} value={t.value}>{t.label}</option>
+                      ))}
+                    </select>
+                  </FormField>
 
                   <FormField label="مهتم بـ (اختر ما يناسب)">
                     <Controller

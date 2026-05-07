@@ -39,6 +39,23 @@ export const leadSchema = z.object({
 
   subject: z.string().max(200).optional().or(z.literal("")),
 
+  city: z.string().max(100).optional().or(z.literal("")),
+
+  project_size: z.enum([
+    "less_50",
+    "50_500",
+    "500_2000",
+    "more_2000",
+    "unknown",
+  ]).optional(),
+
+  timeline: z.enum([
+    "now",
+    "month",
+    "three_months",
+    "later",
+  ]).optional(),
+
   message: z
     .string()
     .min(10, "الرسالة قصيرة جداً (10 أحرف على الأقل)")
@@ -65,13 +82,28 @@ export const LEAD_TYPES = [
 ] as const;
 
 export const INTERESTS = [
-  { value: "tower", label: "iGarden Tower" },
-  { value: "greenhouse", label: "Smart Greenhouses" },
-  { value: "aquaponics", label: "Aquaponics" },
-  { value: "aeroponics", label: "Aeroponics" },
-  { value: "cloud", label: "iGarden Cloud" },
-  { value: "knowledge", label: "iGarden Knowledge" },
+  { value: "controllers", label: "نظام تحكم وحساسات" },
+  { value: "hydroponics", label: "زراعة مائية" },
+  { value: "greenhouse", label: "محمية ذكية" },
+  { value: "osfan_visit", label: "زيارة محطة عسفان" },
+  { value: "demo", label: "ديمو Smart OS" },
+  { value: "investment", label: "استثمار / شراكة" },
   { value: "consultation", label: "استشارة عامة" },
+] as const;
+
+export const PROJECT_SIZES = [
+  { value: "less_50", label: "أقل من 50 م²" },
+  { value: "50_500", label: "50 – 500 م²" },
+  { value: "500_2000", label: "500 – 2,000 م²" },
+  { value: "more_2000", label: "أكثر من 2,000 م²" },
+  { value: "unknown", label: "غير متأكد" },
+] as const;
+
+export const TIMELINES = [
+  { value: "now", label: "الآن" },
+  { value: "month", label: "خلال شهر" },
+  { value: "three_months", label: "خلال 3 أشهر" },
+  { value: "later", label: "لاحقاً" },
 ] as const;
 
 // ============================================================================
