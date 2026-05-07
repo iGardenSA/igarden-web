@@ -318,12 +318,12 @@ function ExpansionPlans() {
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-10">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            بعد سنبلة
+            المرحلة القادمة
           </p>
           <h2 className="h2 text-cream">ما يأتي بعد ذلك في عسفان</h2>
           <p className="body-base text-cream/70 max-w-xl mx-auto mt-3">
-            بدعم من حاضنة سنبلة (عند الفوز بها)، نخطّط لتوسعة المحطّة
-            لتشمل:
+            نعمل على توسعة محطّة عسفان كمساحة اختبار وتشغيل ميداني
+            لأنظمة الزراعة الذكية في ظروف سعودية حقيقية. الخطوات القادمة:
           </p>
         </div>
         <ul className="space-y-4 max-w-2xl mx-auto">

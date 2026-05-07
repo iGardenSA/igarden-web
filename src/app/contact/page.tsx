@@ -104,7 +104,7 @@ export default function ContactPage() {
             </h1>
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
               احجز استشارة مجانية، اسأل عن منتجاتنا، أو اقترح شراكة — فريقنا
-              يرد على جميع الرسائل خلال 72 ساعة عمل.
+              يرد على جميع الرسائل خلال يوم عمل.
             </p>
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function ContactPage() {
                   <ul className="text-lg space-y-1.5 text-white/85">
                     <li>اتصال: فوري خلال ساعات العمل</li>
                     <li>واتساب: خلال ساعتين</li>
-                    <li>بريد/نموذج: خلال 72 ساعة</li>
+                    <li>بريد/نموذج: خلال يوم عمل</li>
                   </ul>
                 </div>
               </div>
@@ -192,7 +192,7 @@ export default function ContactPage() {
                   احجز استشارتك المجانية
                 </h2>
                 <p className="text-[var(--color-muted)] mb-8">
-                  املأ النموذج التالي وسنتواصل معك خلال 72 ساعة بخطة مبدئية.
+                  املأ النموذج التالي وسنتواصل معك خلال يوم عمل بخطة مبدئية.
                 </p>
 
                 {submitState === "success" && (
@@ -203,7 +203,7 @@ export default function ContactPage() {
                         تم استلام رسالتك بنجاح
                       </p>
                       <p className="text-lg text-[var(--color-brand-600)]">
-                        سنتواصل معك خلال 72 ساعة على البيانات التي أدخلتها.
+                        سنتواصل معك خلال يوم عمل على البيانات التي أدخلتها.
                       </p>
                     </div>
                   </div>

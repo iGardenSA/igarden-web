@@ -13,7 +13,7 @@ import { CONTACT, COMPANY } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "المستثمرون",
   description:
-    "iGarden — فرصة استثمارية في AgriFood Tech السعودية. شركة مرخّصة، نموذج صناعي مسجل، توقعات نمو 150% سنوياً.",
+    "iGarden — ملخص للمستثمرين. شركة سعودية لأنظمة الزراعة الذكية، مرخّصة ونموذجها الصناعي مسجّل. مرحلة مبكرة بإيرادات حقيقية وعملاء نشطين.",
 };
 
 export default function InvestorsPage() {
@@ -28,7 +28,7 @@ export default function InvestorsPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-lg font-semibold mb-8 uppercase tracking-widest">
               <Award className="h-4 w-4" />
-              <span>Sunbolah 2026 · Series Seed Ready</span>
+              <span>Sunbolah 2026 · مرحلة مبكرة</span>
             </div>
           </FadeIn>
           <FadeIn delay={100}>
@@ -40,8 +40,8 @@ export default function InvestorsPage() {
           </FadeIn>
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-10">
-              iGarden شركة AgriFood Tech سعودية مُرخّصة، بترخيص استثماري رسمي ونموذج صناعي
-              مسجل، نبحث عن شركاء استراتيجيين للتوسع الإقليمي.
+              الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي: حساسات، تحكم،
+              وبرمجيات تشغيل ميدانية. نحن في مرحلة مبكرة، بإيرادات حقيقية، عملاء نشطين، وبراءة اختراع مسجّلة.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
@@ -66,9 +66,9 @@ export default function InvestorsPage() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="heading-eyebrow mb-4">لمحة سريعة</p>
-              <h2 className="heading-section mb-4">الحقائق الأساسية</h2>
+              <h2 className="heading-section mb-4">أرقام لا كلام</h2>
               <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                كل ما تحتاج معرفته في أربعة أرقام.
+                مرحلة مبكرة، تشغيل ميداني حقيقي.
               </p>
             </div>
           </FadeIn>
@@ -76,27 +76,26 @@ export default function InvestorsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <FadeIn delay={100}>
               <QuickFactCard
-                icon={<Building className="h-6 w-6" />}
-                label="رأس المال المسجل"
-                value="100,000"
-                unit="ريال"
+                icon={<Users className="h-6 w-6" />}
+                label="عملاء نشطون"
+                value="4"
+                unit="تشغيل ميداني"
               />
             </FadeIn>
             <FadeIn delay={150}>
               <QuickFactCard
                 icon={<Calendar className="h-6 w-6" />}
-                label="تاريخ التأسيس"
-                value="فبراير"
-                unit="2026"
+                label="تشغيل مستمر منذ"
+                value="2025"
+                unit="محطة عسفان"
               />
             </FadeIn>
             <FadeIn delay={200}>
               <QuickFactCard
                 icon={<Shield className="h-6 w-6" />}
                 label="رخصة MISA"
-                value="24926249716"
-                unit="رقم الرخصة"
-                mono
+                value="مُرخَّصة"
+                unit="وزارة الاستثمار"
               />
             </FadeIn>
             <FadeIn delay={250}>
@@ -104,7 +103,7 @@ export default function InvestorsPage() {
                 icon={<Award className="h-6 w-6" />}
                 label="نموذج صناعي"
                 value="423450193"
-                unit="SAIP"
+                unit="SAIP — مسجَّل"
                 mono
               />
             </FadeIn>
@@ -120,9 +119,9 @@ export default function InvestorsPage() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="heading-eyebrow mb-4">التوقعات المالية</p>
-              <h2 className="heading-section mb-4">نمو 150% سنوياً</h2>
+              <h2 className="heading-section mb-4">التوقعات المالية</h2>
               <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                توقعات محافظة مبنية على تحليل سوقي دقيق وخطة تنفيذ واضحة.
+                أهداف قابلة للقياس لكل سنة — مبنية على خطة تنفيذ واضحة.
               </p>
             </div>
           </FadeIn>
@@ -241,7 +240,7 @@ export default function InvestorsPage() {
               <p className="heading-eyebrow mb-4">لماذا iGarden؟</p>
               <h2 className="heading-section mb-4">الميزات الاستثمارية</h2>
               <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                ستة أسباب تجعل iGarden فرصة استثمارية استثنائية.
+                ستة أسباب تجعل iGarden خياراً جديراً بالدراسة.
               </p>
             </div>
           </FadeIn>
