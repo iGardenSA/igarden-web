@@ -37,7 +37,11 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/80 text-lg leading-relaxed max-w-xl mb-2">
-          نظام زراعي مُكيَّف لأرض السعودية ومناخها — يوفّر مياهك، يُراقب محصولك، ويعمل وأنت بعيد عن المزرعة.
+          الحديقة الذكية تبني أنظمة الزراعة الذكية في السعودية: حساسات، تحكّم، وبرمجيات تشغيل ميدانية مكيّفة لمناخنا.
+        </p>
+
+        <p className="text-white/60 text-base leading-relaxed max-w-xl mt-3 mb-2">
+          من خميس مشيط إلى الأحساء، نُشغّل أنظمة تراقب الماء، المناخ، التغذية، واتخاذ القرار — من الحساس إلى التقرير.
         </p>
 
         <p className="text-sm text-[#A5D63F]/70 font-medium tracking-wider uppercase mt-2 mb-8">
@@ -60,7 +64,7 @@ export default function HeroSection() {
           >
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#A5D63F] animate-pulse flex-shrink-0" />
-              شاهد النظام الحيّ
+              شاهد الديمو
             </span>
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           </a>

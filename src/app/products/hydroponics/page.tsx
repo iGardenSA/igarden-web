@@ -43,7 +43,7 @@ function Hero() {
             </p>
             <h1 className="h1 text-deep-green mb-5">
               Hydroponic Systems —{" "}
-              <span className="block">زراعة بلا تربة، بكفاءة استثنائية</span>
+              <span className="block">زراعة بلا تربة، مُختَبَرة في الميدان السعودي</span>
             </h1>
             <p className="body-base text-medium-gray mb-8 max-w-lg">
               7 تقنيات زراعة مائية مُختَبَرة في عسفان — توفّر 95% من المياه

@@ -7,10 +7,10 @@ export function HomeSolutions() {
     <section className="section-light py-20" dir="rtl">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <p className="text-base font-medium text-lime mb-3">حلول منزلية</p>
-          <h2 className="h2 text-deep-green mb-4">ابدأ زراعتك من بيتك</h2>
+          <p className="text-base font-medium text-lime mb-3">للأفراد أيضاً</p>
+          <h2 className="h2 text-deep-green mb-4">هل تبحث عن مستلزمات زراعية؟</h2>
           <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            ليس كل حل يحتاج مزرعة — قدمنا للأفراد نسخة مصغرة من تقنياتنا.
+            نقدّم للأفراد نسخة مصغرة من تقنياتنا — انتقل إلى متجر الحديقة الذكية.
           </p>
         </div>
 
