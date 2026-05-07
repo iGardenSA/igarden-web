@@ -12,9 +12,10 @@ import { StageHonesty } from "@/components/shared/StageHonesty";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "المستثمرون",
+  title: "للمستثمرين — مرحلة مبكرة بإيرادات حقيقية | iGarden",
   description:
-    "iGarden — فرصة استثمارية في AgriFood Tech السعودية. شركة مرخّصة، نموذج صناعي مسجل، توقعات نمو 150% سنوياً.",
+    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 4 عملاء نشطون، مرحلة مبكرة بإيرادات حقيقية.",
+  alternates: { canonical: "https://igarden.sa/investors" },
 };
 
 export default function InvestorsPage() {
@@ -29,7 +30,7 @@ export default function InvestorsPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-lg font-semibold mb-8 uppercase tracking-widest">
               <Award className="h-4 w-4" />
-              <span>Sunbolah 2026 · Series Seed Ready</span>
+              <span>Sunbolah 2026 · مرحلة مبكرة</span>
             </div>
           </FadeIn>
           <FadeIn delay={100}>
@@ -128,9 +129,9 @@ export default function InvestorsPage() {
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="heading-eyebrow mb-4">التوقعات المالية</p>
-              <h2 className="heading-section mb-4">نمو 150% سنوياً</h2>
+              <h2 className="heading-section mb-4">التوقعات المالية</h2>
               <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                توقعات محافظة مبنية على تحليل سوقي دقيق وخطة تنفيذ واضحة.
+                أهداف قابلة للقياس لكل سنة — مبنية على خطة تنفيذ واضحة.
               </p>
             </div>
           </FadeIn>
@@ -249,7 +250,7 @@ export default function InvestorsPage() {
               <p className="heading-eyebrow mb-4">لماذا iGarden؟</p>
               <h2 className="heading-section mb-4">الميزات الاستثمارية</h2>
               <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                ستة أسباب تجعل iGarden فرصة استثمارية استثنائية.
+                ستة أسباب تجعل iGarden خياراً جديراً بالدراسة.
               </p>
             </div>
           </FadeIn>

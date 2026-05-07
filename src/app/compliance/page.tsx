@@ -40,7 +40,8 @@ export default function CompliancePage() {
             <Construction className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
             <p className="text-amber-800 text-sm leading-relaxed">
               <strong>ملاحظة شفافية:</strong> هذا النموذج قيد التطوير الميداني، ولا يمثّل اعتماداً رسمياً
-              من أي جهة حكومية أو رقابية. نُصرّح بمرحلته كما هي، ونُوثّق التقدم مع كل مشروع Pilot جديد.
+              من أي جهة حكومية أو رقابية. تنسيقات التقارير قابلة للتعديل عند صدور المتطلبات الرسمية
+              أو بناءً على متطلبات مفتش معتمد.
             </p>
           </div>
         </div>
