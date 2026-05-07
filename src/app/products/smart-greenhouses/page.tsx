@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import { Building2, Cpu, Wind, CheckCircle2, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=greenhouses" variant="lime">
-                اطلب تقييم مزرعتك
+                اطلب عرض مخصّص
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
                 شاهد محطّة عسفان
@@ -56,31 +57,6 @@ function Hero() {
           >
             {/* [CONTENT_NEEDED: /images/products/smart-greenhouses/hero.jpg — صورة محمية حقيقية من عسفان] */}
             <Building2 className="w-20 h-20 text-white/20" aria-hidden />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 1b: لمن هذا الحل؟ ─────────────────────────── */
-function TargetAudience() {
-  return (
-    <section className="bg-white py-12 border-b border-[#E5E7EB]">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            لمن هذا الحل؟
-          </p>
-          <p className="body-base text-medium-gray leading-relaxed">
-            هذا الحل مناسب للمزارع التجارية التي تريد بيئة نمو محكومة ومستقلة
-            عن التقلبات المناخية. مناسب أيضاً للمشاريع الحكومية والجهات الساعية
-            لرفع كفاءة الإنتاج مع الحفاظ على المياه في المناخ السعودي القاسي.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["مزارع ورقيات وأعشاب", "مشاريع الأمن الغذائي", "محميات زراعية حكومية", "شركات الإنتاج الزراعي"].map(tag => (
-              <span key={tag} className="bg-cream border border-light-gray rounded-pill px-3 py-1 text-sm text-deep-green font-medium">{tag}</span>
-            ))}
           </div>
         </div>
       </div>
@@ -232,22 +208,22 @@ const HOW_STEPS = [
   {
     num: "01",
     title: "استشارة وزيارة الموقع",
-    desc: "[CONTENT_NEEDED: وصف المرحلة — زيارة ميدانية، تقييم المناخ والتربة والمساحة]",
+    desc: "نزور موقع مزرعتك، نقيس المساحة، ندرس المناخ المحلي ودرجات الحرارة الفعلية، ونستمع لمتطلبات المحصول والميزانية.",
   },
   {
     num: "02",
     title: "تصميم مخصّص لمشروعك",
-    desc: "[CONTENT_NEEDED: وصف مرحلة التصميم — الحجم، نوع الهيكل، أنظمة التحكم]",
+    desc: "نُعدّ مخطط محمية بالحجم والهيكل المناسبَين — مع اختيار أنظمة التحكم المناخي والري المناسبة لمحصولك وظروفك.",
   },
   {
     num: "03",
     title: "التصنيع والتركيب",
-    desc: "[CONTENT_NEEDED: مدّة التصنيع والتركيب، الفريق الميداني، آلية الجودة]",
+    desc: "الهيكل يُصنَّع بمواصفاتك، والتركيب يتولاّه فريقنا الميداني مع مراقبة جودة مُستمرّة — من الهيكل إلى الحساسات.",
   },
   {
     num: "04",
     title: "التشغيل والدعم المستمرّ",
-    desc: "[CONTENT_NEEDED: التدريب، عقود الصيانة، دعم Smart OS المستمرّ]",
+    desc: "نُدرّب فريقك على التشغيل اليومي، ونُهيّئ Smart OS للتحكم والمراقبة، ونوفّر دعماً ميدانياً مستمراً.",
   },
 ];
 
@@ -449,23 +425,23 @@ function ScalesSection() {
 const FAQS = [
   {
     q: "ما حجم المحمية المُناسب لمشروعي؟",
-    a: "[CONTENT_NEEDED: يُحدَّد بعد الاستشارة الميدانية — يعتمد على المحصول والمساحة والميزانية]",
+    a: "الحجم يعتمد على المحصول المستهدف والمساحة المتاحة والميزانية. نُحدّد ذلك معك في استشارة مجانية — تواصل معنا.",
   },
   {
     q: "هل تستوردون المواد أم تُصنَّع محلياً؟",
-    a: "[CONTENT_NEEDED: تفاصيل مصادر المواد — محلي/مستورد وما نسبة كل منهما]",
+    a: "نُوطّن ما أمكن — الهياكل الفولاذية والتغطيات تُصنَّع بمواصفاتنا داخل المملكة. بعض مكوّنات الأتمتة مستوردة وتُدمَج محلياً.",
   },
   {
     q: "ما مدّة التركيب الكامل؟",
-    a: "[CONTENT_NEEDED: مدّة التركيب حسب الحجم — أسابيع لكل فئة]",
+    a: "المحميات الصغيرة (<200 م²) تستغرق 2-3 أسابيع. المشاريع الأكبر تُقدَّر حسب الحجم والتعقيد.",
   },
   {
     q: "ما تكلفة التشغيل الشهرية؟",
-    a: "[CONTENT_NEEDED: تقدير تكلفة التشغيل — طاقة، مياه، صيانة — حسب الحجم]",
+    a: "الطاقة والمياه تُقدَّر حسب حجم المحمية والمحصول. Smart Controllers يُقلّل الهدر تلقائياً — نُقدّم تقديراً عند التصميم.",
   },
   {
     q: "هل تقدّمون عقود صيانة سنوية؟",
-    a: "[CONTENT_NEEDED: تفاصيل عقود الصيانة وما تشمله]",
+    a: "نعم — نُوفّر عقود صيانة سنوية تشمل الزيارات الدورية، تحديث برمجيات Smart OS، وخط دعم فني.",
   },
 ];
 
@@ -540,6 +516,11 @@ export default function SmartGreenhousesPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <TargetAudience />
+      <section className="bg-[#FAFAF7] py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <StageHonesty />
+        </div>
+      </section>
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />

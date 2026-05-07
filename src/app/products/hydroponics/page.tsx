@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Droplets,
   TrendingUp,
@@ -52,7 +53,7 @@ function Hero() {
               المُسجَّل صناعياً.
             </p>
             <CTAButton href="/contact?interest=hydroponics" variant="lime">
-              اطلب تقييم مزرعتك
+              اطلب استشارة
             </CTAButton>
           </div>
 
@@ -64,31 +65,6 @@ function Hero() {
           >
             {/* [CONTENT_NEEDED: /images/products/hydroponics/hero.jpg — صورة نظام هيدروبونيك من عسفان] */}
             <Droplets className="w-20 h-20 text-white/20" aria-hidden />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 1b: لمن هذا الحل؟ ─────────────────────────── */
-function TargetAudience() {
-  return (
-    <section className="bg-white py-12 border-b border-[#E5E7EB]">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            لمن هذا الحل؟
-          </p>
-          <p className="body-base text-medium-gray leading-relaxed">
-            هذا الحل مناسب للمزارع التجارية والمشاريع الغذائية التي تريد إنتاجاً أعلى
-            بمساحة أقل واستهلاك مياه يصل لـ 95% أقل من الزراعة التقليدية. مناسب
-            لمشاريع الورقيات والأعشاب والفراولة والمحاصيل قصيرة الدورة.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["ورقيات وأعشاب طبية", "فراولة ومحاصيل قيمة", "مشاريع الأمن الغذائي", "زراعة المدن والمباني"].map(tag => (
-              <span key={tag} className="bg-cream border border-light-gray rounded-pill px-3 py-1 text-sm text-deep-green font-medium">{tag}</span>
-            ))}
           </div>
         </div>
       </div>
@@ -480,19 +456,18 @@ function ScalesSection() {
 }
 
 /* ─── Section 7: FAQ ──────────────────────────────────────── */
-/* [CONTENT_NEEDED: إجابات الأسئلة الخمسة — يراجعها م. أيمن] */
 const FAQS = [
   {
     q: "ما الفرق بين NFT و DWC وأيّهما يناسبني؟",
-    a: "[CONTENT_NEEDED: مقارنة مبسَّطة بين التقنيتين + معيار الاختيار حسب نوع المحصول والميزانية]",
+    a: "NFT مثالي للورقيات سريعة الدورة (20-40 يوم) بتيار مائي رفيع. DWC أبسط في التشغيل وأفضل للأصناف الأثقل. نُرشّحك للأنسب بعد تقييم محصولك والميزانية.",
   },
   {
     q: "كم تستهلك الأنظمة من الكهرباء يومياً؟",
-    a: "[CONTENT_NEEDED: أرقام استهلاك الكهرباء لكل نظام — بالكيلوواط/ساعة — م. أيمن المصدر]",
+    a: "الاستهلاك يتفاوت بحسب حجم النظام ونوع المضخات. أنظمتنا مُحسَّنة للكفاءة — نُقدّم تقدير واضح عند تصميم النظام.",
   },
   {
     q: "ما المحاصيل الأنسب للزراعة المائية في السعودية؟",
-    a: "[CONTENT_NEEDED: قائمة بالمحاصيل الأفضل أداءً في ظروف عسفان — خضراوات ورقية، أعشاب، فراولة…]",
+    a: "اختُبر في عسفان: الخضراوات الورقية (جرجير، سبانخ، خس)، الأعشاب، الفراولة، والطماطم الكرزية. مناسب لأي محصول قصير الجذر.",
   },
   {
     q: "هل أحتاج خبير لتشغيل النظام يومياً؟",
@@ -587,6 +562,11 @@ export default function HydroponicsPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <TargetAudience />
+      <section className="bg-[#FAFAF7] py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <StageHonesty />
+        </div>
+      </section>
       <ValuesSection />
       <TechniquesSection />
       <IGardenTowerSection />

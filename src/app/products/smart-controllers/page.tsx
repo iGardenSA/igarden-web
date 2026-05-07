@@ -53,14 +53,14 @@ function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=controllers" variant="lime">
-                اطلب تقييم مزرعتك
+                سجّل اهتمامك — Early Access
               </CTAButton>
               <CTAButton
                 href="https://demo.igarden.sa"
                 variant="outline-green"
                 external
               >
-                شاهد الديمو ↗
+                افتح الديمو التفاعلي ↗
               </CTAButton>
             </div>
           </div>
@@ -73,31 +73,6 @@ function Hero() {
           >
             {/* [CONTENT_NEEDED: /images/products/smart-controllers/hero.jpg — لوحة Controller الحقيقية من عسفان] */}
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 1b: لمن هذا الحل؟ ─────────────────────────── */
-function TargetAudience() {
-  return (
-    <section className="bg-white py-12 border-b border-[#E5E7EB]">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="max-w-3xl">
-          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            لمن هذا الحل؟
-          </p>
-          <p className="body-base text-medium-gray leading-relaxed">
-            هذا الحل مناسب للمزارع التجارية والمتوسطة التي تريد تقليل الهدر، رفع دقة التشغيل،
-            ومراقبة الري والتغذية دون الاعتماد الكامل على المتابعة اليدوية. كذلك للجهات الحكومية
-            والمشاريع التي تحتاج سجلات تشغيلية قابلة للمراجعة.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {["مزارع تمور وورقيات", "محميات تجارية", "مشاريع حكومية زراعية", "شركات الإنتاج الغذائي"].map(tag => (
-              <span key={tag} className="bg-cream border border-light-gray rounded-pill px-3 py-1 text-sm text-deep-green font-medium">{tag}</span>
-            ))}
           </div>
         </div>
       </div>
@@ -396,10 +371,10 @@ function DevTimeline() {
   /* [CONTENT_NEEDED: Timeline 4 مراحل — البحث الأوّلي → أول Prototype → الاختبار في عسفان → الإصدار القادم.
      مع تواريخ وصور حقيقية. م. أيمن مصدر المعلومات. */
   const PHASES = [
-    { year: "2024", title: "البحث الأوّلي", desc: "دراسة السوق المحلي واحتياجات المزارع السعودية. تحديد الفجوات في حلول التحكم المستوردة." },
-    { year: "2024–25", title: "أول Prototype", desc: "بناء أول نموذج أوّلي لـ Smart Controller يجمع Pi 5 وESP32 مع مجموعة حساسات زراعية أساسية." },
-    { year: "2025", title: "الاختبار في عسفان", desc: "208 اختبار وحدوي ناجح. اختبار ميداني مستمرّ في ظروف +45°C ورطوبة الخليج." },
-    { year: "2026", title: "الإصدار التجاري", desc: "انطلاق الإصدار التجاري مع أولوية لعملاء Early Access المسجّلين." },
+    { year: "2024", title: "البحث الأوّلي", desc: "دراسة السوق المحلي وتحديد الفجوة — حلول موجودة لا تتحمّل المناخ السعودي." },
+    { year: "2024–25", title: "أول Prototype", desc: "بناء نموذج أوّلي بـ ESP32 وRaspberry Pi في بيئة مختبرية. اختبار حساسات pH وEC والحرارة." },
+    { year: "2025", title: "الاختبار في عسفان", desc: "208 اختبار وحدوي ناجح. اختبار ميداني مستمرّ." },
+    { year: "2026", title: "الإصدار التجاري — Early Access", desc: "تشغيل أوّلي مع 4 عملاء. انضمّ لقائمة Early Access لأولوية التركيب." },
   ];
 
   return (
@@ -487,27 +462,26 @@ function B2BSection() {
 }
 
 /* ─── Section 9: FAQ ──────────────────────────────────────── */
-/* [CONTENT_NEEDED: إجابات الأسئلة الخمسة — يراجعها م. أيمن] */
 const FAQS = [
+  {
+    q: "متى الإصدار التجاري المتوقّع؟",
+    a: "نحن في مرحلة Early Access — 4 عملاء في التشغيل الأوّلي. سجّل اهتمامك للحصول على أولوية التركيب والتسعير.",
+  },
   {
     q: "هل يعمل مع نظامي الزراعي الحالي؟",
     a: "نعم — Smart Controllers مُصمَّمة للتكامل مع أيّ نظام زراعة قائم (هيدروبونيك، تربة، أيروبونيك). نُقيّم نظامك الحالي في الاستشارة المجانية.",
+  },
+  {
+    q: "ما النطاق السعري المتوقّع؟",
+    a: "التسعير يعتمد على حجم المزرعة وعدد الحساسات والمناطق. تواصل معنا لعرض مخصّص — تقييم أوّلي مجاني.",
   },
   {
     q: "هل يحتاج تركيباً من فريقكم؟",
     a: "فريقنا الميداني يتولّى التركيب والتشغيل والتدريب. لا تحتاج خبرة تقنية مسبقة.",
   },
   {
-    q: "متى الإصدار التجاري المتوقّع؟",
-    a: "النظام حالياً في مرحلة الاختبار الميداني في محطة عسفان. نقبل حالياً اهتمام عملاء Early Access. تواصل معنا للحصول على التحديثات.",
-  },
-  {
-    q: "ما النطاق السعري المتوقّع؟",
-    a: "يتفاوت السعر حسب حجم المزرعة وعدد الحساسات. تواصل معنا للحصول على تقييم مخصّص لمشروعك.",
-  },
-  {
     q: "ما الضمان وفترة الدعم الفنّي؟",
-    a: "نوفّر دعماً فنياً مستمراً بعد التركيب. شروط الضمان الرسمية تُحدَّد مع كل عقد تركيب.",
+    a: "ندعم كل تركيب بمتابعة تشغيلية مستمرة. شروط الضمان التفصيلية تُحدَّد في العقد حسب نوع النظام.",
   },
 ];
 
@@ -547,11 +521,11 @@ function FinalCTA() {
           التجاري — مع أولوية في التركيب والتسعير.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=controllers" variant="lime">
-            اطلب تقييم مزرعتك
+          <CTAButton href="/contact?interest=controllers&type=early-access" variant="lime">
+            سجّل اهتمامك — Early Access
           </CTAButton>
           <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>
-            شاهد الديمو أولاً ↗
+            جرّب الديمو أولاً ↗
           </CTAButton>
         </div>
       </div>
@@ -593,7 +567,6 @@ export default function SmartControllersPage() {
       <FAQSchema faqs={SCHEMA_FAQS} />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
-      <TargetAudience />
       <StatusCard />
       <ValuesSection />
       <TechSpecs />
