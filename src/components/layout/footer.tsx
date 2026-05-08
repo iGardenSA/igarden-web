@@ -120,8 +120,8 @@ export function Footer() {
             <div className="space-y-1">
               <p>{COMPANY.legalFull}</p>
               <p>
-                سجل تجاري{" "}
-                <span className="ltr-inline font-latin">CR: 4030579637</span>
+                السجل التجاري:{" "}
+                <span className="ltr-inline font-latin">4030579637</span>
                 {" · "}
                 رخصة MISA{" "}
                 <span className="ltr-inline font-latin">24926249716</span>
