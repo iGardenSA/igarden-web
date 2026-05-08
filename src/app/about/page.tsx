@@ -5,20 +5,18 @@ import {
   Hammer,
   Globe2,
   Microscope,
-  User,
   CheckCircle2,
-  Sprout,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لأنظمة الزراعة الذكية | iGarden",
   description:
-    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. نَبني ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
+    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
   alternates: { canonical: "https://igarden.sa/about" },
   openGraph: {
     title: "من نحن — الحديقة الذكية",
     description:
-      "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. نَبني · نُوطّن · نُطوّر.",
+      "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
     images: ["/images/og/about.jpg"],
     type: "website",
     locale: "ar_SA",
@@ -57,21 +55,32 @@ function WhyWeStarted() {
           </p>
           <h2 className="h2 text-deep-green">لماذا بدأنا؟</h2>
         </div>
-        {/*
-          [CONTENT_NEEDED: قصّة 120-150 كلمة عن سبب بدء iGarden.
-           المحاور المقترحة:
-           - الفجوة في حلول الزراعة الذكية المُكيَّفة محلياً
-           - رؤية المملكة 2030 + الأمن الغذائي
-           - شغف الفريق المؤسّس
-           - تجربة مع منتجات مستوردة لا تصمد في الصيف]
-        */}
-        <div className="bg-cream rounded-card p-8 shadow-soft">
-          <p className="body-base text-medium-gray leading-relaxed">
-            الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حسّاسات،
-            تحكّم آلي، وبرمجيات بيانات وامتثال — مُكيَّفة لمناخ المملكة.
-            نُنفّذ، نُشغّل، ونُطوّر مع كلّ موسم. عملاؤنا الحاليون
-            يمتدّون من خميس مشيط إلى الأحساء.
-          </p>
+        <div className="bg-cream rounded-card p-8 md:p-10 shadow-soft">
+          <div className="space-y-4 body-base text-medium-gray leading-relaxed">
+            <p>
+              في 2023 جرّبتُ أوّل نظام Hydroponics مستورَد في حديقة المنزل بجدة.
+              النشرة قالت إنّه «يَعمل في كل المناخات». في يونيو انفجرت ٣ مواسير،
+              تكلّس النظام، وماتت ٢٢ نبتة من أصل ٣٠.
+            </p>
+            <p>
+              اتّصلتُ بالموزّع. قال: «المنتج لم يُختبَر فوق ٣٥°C — هذه مشكلتك،
+              لا مشكلتنا». بحثتُ في السوق المحلي: لا حلّ متوفّر. كل ما يُباع
+              ترجمة لكتالوج أوروبي، أو محاكاة لنظام صيني صُمّم لشتاء بكين.
+            </p>
+            <p>
+              هنا تَوضّحت الفكرة: لا نَستورد ونُعيد البيع — نَبني نسختنا.
+              كلّ خطّ في كلّ لوحة Smart Controller مَرسوم في جدة. كلّ نظام يَمرّ
+              بصيف عسفان قبل أن يَصل إلى عميل. وكلّ ما نتعلّمه من فشل النموذج،
+              نُترجمه إلى إصدار أفضل.
+            </p>
+            <p>
+              iGarden ليست مشروعاً تجارياً وحده. هي محاولة بناء صناعة محلية
+              للزراعة الذكية — بأيدٍ سعودية، لمناخنا، لطعامنا.
+            </p>
+            <p className="pt-4 border-t border-light-gray text-deep-green font-medium">
+              — علي محمد غنيمة، المؤسس
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -86,7 +95,7 @@ const TIMELINE = [
     items: [
       "تأسيس فريق العمل المؤسّس",
       "بحث وتطوير أوّلي في تقنيات الزراعة المائية",
-      "تحديد المنهج «نَبني · نُوطّن · نُطوّر»",
+      "تحديد المنهج «ننفّذ · نُوطّن · نُطوّر»",
     ],
   },
   {
@@ -154,24 +163,24 @@ function TimelineSection() {
 const METHODOLOGY = [
   {
     Icon: Hammer,
-    verb: "نَبني",
-    title: "من الحساس إلى الحصاد",
-    body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني يبني — لا يوجّه فقط.",
-    example: "",
+    verb: "ننفّذ",
+    title: "من الحسّاس إلى الحصاد",
+    body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني ينفّذ — لا يوجّه فقط.",
+    example: "في صيف 2025 نفّذنا أوّل نظام DWC في عسفان. تعفّنت الجذور في 14 يوماً تحت الحرارة. أعَدنا التنفيذ بـ Heat Exchanger مُدمَج — وكلّ وحدة DWC اليوم تُسلَّم به.",
   },
   {
     Icon: Globe2,
     verb: "نُوطّن",
     title: "التقنية العالمية بمدخلات سعودية",
     body: "نأخذ التقنية العالمية ونُعيد تنفيذها بمواد ومدخلات محلية. ما يصلك صُنع لمناخك — لا لمناخ أوروبا.",
-    example: "",
+    example: "كنّا نَستورد لوحات تحكّم بأسعار مرتفعة وقطع غيار بانتظار شحنات. صَنعنا نسختنا في جدة بتكلفة أقلّ — نفس الدقّة، قطع غيار محلية، وفريق دعم في نفس المدينة.",
   },
   {
     Icon: Microscope,
     verb: "نُطوّر",
     title: "R&D داخلي مستمرّ",
     body: "نُواجه الصعوبات بالابتكار، لا بالاستسلام لحدود المنتج المستورد. كل فشل في عسفان يُترجَم إلى تحسين.",
-    example: "",
+    example: "Smart Controller v0.1 كان يَخطئ في قراءة pH تحت حرارة الصيف. v0.2 يَستخدم ADS1115 بتعويض حراري تلقائي — الدقّة الآن ±0.1 pH، مدعومة بـ 208 اختبار وحدوي ناجح.",
   },
 ];
 
@@ -183,7 +192,7 @@ function MethodologyDeepDive() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             المنهج
           </p>
-          <h2 className="h2 text-deep-green">نَبني · نُوطّن · نُطوّر</h2>
+          <h2 className="h2 text-deep-green">ننفّذ · نُوطّن · نُطوّر</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ليس شعاراً — هو الوصف الحرفي لما نفعله كل يوم.
           </p>
@@ -221,16 +230,19 @@ function MethodologyDeepDive() {
 const TEAM = [
   {
     name: "علي محمد غنيمة",
+    initials: "ع.غ",
     role: "المؤسس والمدير التنفيذي",
     expertise: "Hydroponics · Aquaponics · IoT · Raspberry Pi",
   },
   {
     name: "م. أيمن المخزومي",
+    initials: "أ.م",
     role: "شريك ومسؤول R&D",
     expertise: "هندسة زراعية · Hydroponics ميداني · تصميم أنظمة",
   },
   {
     name: "محمد الكثيري",
+    initials: "م.ك",
     role: "شريك ممول",
     expertise: "استثمار · تطوير أعمال · شراكات استراتيجية",
   },
@@ -245,7 +257,6 @@ function TeamSection() {
             الفريق المؤسّس
           </p>
           <h2 className="h2 text-deep-green">الأشخاص خلف iGarden</h2>
-          {/* [CONTENT_NEEDED: صور احترافية للفريق بعد جلسة التصوير (P1)] */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {TEAM.map((member) => (
@@ -253,9 +264,15 @@ function TeamSection() {
               key={member.name}
               className="bg-white rounded-card p-6 shadow-soft text-center"
             >
-              {/* Photo placeholder — يُستبدل بعد جلسة التصوير */}
-              <div className="w-24 h-24 rounded-full border-2 border-lime bg-cream flex items-center justify-center mx-auto mb-4">
-                <User className="w-10 h-10 text-lime" aria-hidden />
+              <div
+                className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-cream font-bold text-2xl shadow-soft"
+                style={{
+                  background:
+                    "linear-gradient(135deg, var(--igarden-primary, #0F3D2E) 0%, var(--igarden-primary-alt, #1B5E3F) 100%)",
+                }}
+                aria-hidden
+              >
+                {member.initials}
               </div>
               <h3 className="h4 text-deep-green mb-1">{member.name}</h3>
               <p className="text-lime text-lg font-medium mb-3">{member.role}</p>
@@ -265,9 +282,6 @@ function TeamSection() {
             </div>
           ))}
         </div>
-        <p className="text-center text-medium-gray text-lg mt-6">
-          الصور الاحترافية قيد التصوير — ستُضاف قريباً.
-        </p>
       </div>
     </section>
   );
@@ -323,57 +337,7 @@ function OsfanLinkSection() {
   );
 }
 
-/* ─── Section 7: Values ───────────────────────────────────── */
-const VALUES = [
-  {
-    title: "محلي بحق",
-    desc: "التقنية العالمية بمواد ومدخلات سعودية — مُختَبَرة في مناخنا، لا مُستوردة من ظروف أوروبا.",
-  },
-  {
-    title: "الأرقام لا الكلام",
-    desc: "كل ادعاء مدعوم بقياس ميداني. لا نعرض رقماً لم نختبره في عسفان أو عند عميل.",
-  },
-  {
-    title: "شريك لا بائع",
-    desc: "نُشغّل معك بعد التسليم ونُطوّر مع كل موسم. علاقتنا بدأت من التركيب، لا من العقد.",
-  },
-  {
-    title: "بناء يتراكم",
-    desc: "كل مشروع يُغذّي المشروع التالي — درس من عسفان يتحول إلى تحسين في الإصدار القادم.",
-  },
-  {
-    title: "الامتثال أصيل",
-    desc: "نوثّق من أول يوم لأن البيانات تحمي العميل والشركة. السجل التشغيلي ليس خياراً.",
-  },
-];
-
-function ValuesSection() {
-  return (
-    <section className="section-light py-16">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-10">
-          <h2 className="h2 text-deep-green">ما يميّزنا</h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {VALUES.map((v) => (
-            <div
-              key={v.title}
-              className="bg-white rounded-card p-5 shadow-soft text-center hover:shadow-md transition-shadow"
-            >
-              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mx-auto mb-3">
-                <Sprout className="w-5 h-5 text-lime" aria-hidden />
-              </div>
-              <h3 className="font-bold text-deep-green text-lg mb-2">{v.title}</h3>
-              <p className="text-medium-gray text-lg leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 8: Final CTA ────────────────────────────────── */
+/* ─── Section 7: Final CTA ────────────────────────────────── */
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -413,7 +377,6 @@ export default function AboutPage() {
       <MethodologyDeepDive />
       <TeamSection />
       <OsfanLinkSection />
-      <ValuesSection />
       <FinalCTA />
     </>
   );

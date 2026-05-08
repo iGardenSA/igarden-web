@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ProductSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { StageHonesty } from "@/components/shared/StageHonesty";
-import { Building2, Cpu, Wind, CheckCircle2, ExternalLink } from "lucide-react";
+import { Building2, Cpu, Wind, CheckCircle2, ExternalLink, AlertTriangle, Zap, TrendingUp } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Smart Greenhouses — محميات ذكية تصمد في +45°C | iGarden",
@@ -27,37 +27,122 @@ function Hero() {
           {/* Text */}
           <div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              المحميات الذكية · IoT-Enabled
+              للمزارع التجارية · IoT-Enabled
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              Smart Greenhouses —{" "}
-              <span className="block">محميات ذكية تصمد في مناخك</span>
+              محمية ليست مجرّد هيكل.
+              <span className="block">بل نظام تشغيل لإنتاجك.</span>
             </h1>
-            <p className="body-base text-medium-gray mb-8 max-w-lg">
-              محميات بأتمتة{" "}
-              <span dir="ltr" className="ltr-inline font-latin">IoT</span>{" "}
-              كاملة، هياكل مقاومة لرياح الخليج، وتحكم مناخي اختُبر في
-              عسفان عند +45°C.
+            <p className="body-base text-medium-gray mb-4 max-w-lg">
+              نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — هياكل مقاومة
+              لرياح الخليج، تَبريد متعدّد المراحل، ريّ ذكي، وتحكّم مناخي اختُبر
+              في عسفان تحت +45°C.
+            </p>
+            <p className="body-sm text-medium-gray mb-8 max-w-lg">
+              كفاءة طاقة حتى ٤٠٪ بحسب التصميم والمحصول. تركيب مفتاح-باليد. دعم
+              ميداني بعد التَسليم.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=greenhouses" variant="lime">
-                اطلب عرض مخصّص
+                اطلب عرضاً مخصّصاً
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
-                شاهد محطّة عسفان
+                شاهد المحميات في عسفان
               </CTAButton>
             </div>
           </div>
 
-          {/* Hero image placeholder */}
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-500 flex items-center justify-center"
             role="img"
             aria-label="محمية ذكية من iGarden في محطة عسفان"
           >
-            {/* [CONTENT_NEEDED: /images/products/smart-greenhouses/hero.jpg — صورة محمية حقيقية من عسفان] */}
             <Building2 className="w-20 h-20 text-white/20" aria-hidden />
+            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
+              +45°C · Tested in Osfan
+            </span>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 1.5: Pain Scenarios ────────────────────────── */
+const SCENARIOS = [
+  {
+    Icon: Zap,
+    pain: "فاتورة كهرباء قاتلة في الصيف",
+    detail: "تَكييف يَعمل ٢٤/٧ من مايو إلى سبتمبر. الفاتورة الشهرية ٤-٦× الشتاء. الربح يَختفي.",
+    solution: "كفاءة طاقة حتى ٤٠٪",
+    benefit: "تَهوية ذكية + ظلّ آلي + Foggers تَعمل بتَنسيق — تَشغيل أقلّ، نفس درجة الحرارة الداخلية.",
+  },
+  {
+    Icon: AlertTriangle,
+    pain: "محصول يَخسر ٧ أيام من ضغطة حرارية",
+    detail: "درجة الحرارة قَفزت ٤°C في ساعة. اكتشفتَها بعد ساعتين. الخسّ ذابل، الطماطم تَوقّفت عن العقد.",
+    solution: "ضبط آلي قبل الانحراف",
+    benefit: "Smart OS يَفتح المنافذ ويُشغّل المراوح عند ٢°C انحراف — قبل أن يَتأثّر المحصول.",
+  },
+  {
+    Icon: TrendingUp,
+    pain: "تَوسعة محدودة بسبب التَشغيل اليدوي",
+    detail: "كلّ ٥٠٠م² تَحتاج عاملاً متفرّغاً للتَهوية والريّ والمراقبة. التَوسعة تَعني ضِعف العمالة.",
+    solution: "أتمتة تَوسّع ميزانيّتك",
+    benefit: "٥,٠٠٠م² تُدار بمنظومة Smart OS وفريق ٢-٣ أشخاص — التَوسعة تَزيد الإنتاج، لا التَكلفة.",
+  },
+];
+
+function PainScenarios() {
+  return (
+    <section className="bg-white py-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
+            ما الذي يَتغيّر؟
+          </p>
+          <h2 className="h2 text-deep-green">
+            ٣ آلام يَعيشها كلّ صاحب محمية في السعودية
+          </h2>
+          <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
+            ليست تَهديدات نَظرية — هذه المَشاهد التي رأيناها قبل أن نَبدأ
+            بناء Smart Greenhouses.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SCENARIOS.map((s, i) => (
+            <article
+              key={i}
+              className="bg-cream rounded-card overflow-hidden shadow-soft flex flex-col"
+            >
+              <div className="p-6 border-b-2 border-amber-200 bg-amber-50/40 flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <s.Icon className="w-4 h-4 text-amber-700" aria-hidden />
+                  <p className="text-amber-800 text-xs font-bold uppercase tracking-widest">
+                    قبل
+                  </p>
+                </div>
+                <p className="font-bold text-deep-green text-base mb-2 leading-snug">
+                  {s.pain}
+                </p>
+                <p className="body-sm text-medium-gray">{s.detail}</p>
+              </div>
+
+              <div className="p-6 bg-gradient-to-br from-lime/5 to-cream flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <CheckCircle2 className="w-4 h-4 text-lime" aria-hidden />
+                  <p className="text-lime text-xs font-bold uppercase tracking-widest">
+                    بعد · مع Smart Greenhouses
+                  </p>
+                </div>
+                <p className="font-bold text-deep-green text-base mb-2 leading-snug">
+                  {s.solution}
+                </p>
+                <p className="body-sm text-medium-gray">{s.benefit}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -520,6 +605,7 @@ export default function SmartGreenhousesPage() {
           <StageHonesty />
         </div>
       </section>
+      <PainScenarios />
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />

@@ -4,12 +4,12 @@ import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJso
 export const metadata: Metadata = {
   title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
   description:
-    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حساسات، تحكم، وبرمجيات تشغيل ميدانية مكيّفة للمناخ السعودي. نَبني · نُوطّن · نُطوّر — منذ 2024.",
+    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حساسات، تحكم، وبرمجيات تشغيل ميدانية مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر — منذ 2024.",
   alternates: { canonical: "https://igarden.sa/" },
   openGraph: {
     title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
     description:
-      "شركة سعودية تبني أنظمة تحكم وزراعة مائية مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
     images: ["/images/og/home.jpg"],
     type: "website",
     locale: "ar_SA",
@@ -17,30 +17,28 @@ export const metadata: Metadata = {
 };
 import HeroSection from "@/components/sections/HeroSection";
 import HeroTrustBar from "@/components/sections/HeroTrustBar";
-import { TrustBar } from "@/components/sections/TrustBar";
 import { MethodologySection } from "@/components/sections/MethodologySection";
-import { SmartOSDemoSection } from "@/components/sections/SmartOSDemoSection";
-import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
 import { ThreePillarsSection } from "@/components/sections/ThreePillarsSection";
 import { ComplianceSection } from "@/components/sections/ComplianceSection";
+import { SmartOSDemoSection } from "@/components/sections/SmartOSDemoSection";
+import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { HowWeWork } from "@/components/sections/HowWeWork";
-import { FinalCTA } from "@/components/sections/FinalCTA";
-import { HomeSolutions } from "@/components/sections/HomeSolutions";
 import { ComplementaryProducts } from "@/components/sections/ComplementaryProducts";
-import { KnowledgeSection } from "@/components/sections/KnowledgeSection";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function HomePage() {
   return (
     <>
       <OrganizationSchema />
       <WebSiteSchema />
-      {/* Pull hero up behind sticky Header (64px) so transparent nav shows video */}
+
+      {/* 1. Hero — pulled up behind transparent sticky header */}
       <div className="-mt-[64px]">
         <HeroSection />
       </div>
 
-      {/* 2. شريط أرقام الثقة */}
+      {/* 2. شريط أرقام الثقة (٥ أرقام دستورية) */}
       <HeroTrustBar />
       <div
         className="h-12 w-full"
@@ -48,33 +46,30 @@ export default function HomePage() {
         aria-hidden="true"
       />
 
-      {/* 3. لماذا الحديقة الذكية */}
-      <TrustBar />
+      {/* 3. ما تحصل عليه — ثلاثة فروق ملموسة */}
       <MethodologySection />
 
-      {/* 4. Smart OS */}
-      <SmartOSDemoSection />
-
-      {/* 5. محطة عسفان */}
-      <OsfanStationPreview />
-
-      {/* 6. حلول المزارع التجارية */}
+      {/* 4. الركائز الثلاث */}
       <ThreePillarsSection />
 
-      {/* 7. من التحكم إلى الامتثال */}
+      {/* 5. من التحكّم إلى الامتثال */}
       <ComplianceSection />
+
+      {/* 6. Smart OS Demo */}
+      <SmartOSDemoSection />
+
+      {/* 7. محطّة عسفان */}
+      <OsfanStationPreview />
 
       {/* 8. أرقام + كيف نعمل */}
       <StatsStrip />
       <HowWeWork />
 
-      {/* 9. دعوة للتواصل */}
-      <FinalCTA />
-
-      {/* 10. ثانوي: B2C + أكاديمية */}
-      <HomeSolutions />
+      {/* 9. منتجات تكميلية (Fodder + Aquaponics — دستورياً بطاقات في الرئيسية) */}
       <ComplementaryProducts />
-      <KnowledgeSection />
+
+      {/* 10. دعوة للتواصل */}
+      <FinalCTA />
     </>
   );
 }

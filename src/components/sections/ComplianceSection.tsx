@@ -4,18 +4,18 @@ import { ArrowLeft, FileCheck, Database, Eye } from "lucide-react";
 const PILLARS = [
   {
     icon: Database,
-    title: "بيانات من الميدان",
-    desc: "كل قراءة pH وEC وحرارة ومستوى ماء تُسجَّل تلقائياً مع طابع زمني دقيق.",
+    title: "بيانات من الميدان، لا من Excel",
+    desc: "كل قراءة pH وEC وحرارة ومستوى ماء تُسجَّل تلقائياً مع طابع زمني دقيق — لا أوراق ولا ذاكرة فنّي يَنسى.",
   },
   {
     icon: Eye,
-    title: "مراقبة مستمرة",
-    desc: "كل أمر ري وكل تعديل في النظام يُسجَّل ويصبح قابلاً للمراجعة.",
+    title: "كل قرار قابل للتتبّع",
+    desc: "كل أمر ريّ وكل تعديل تَشغيلي يَدخل سجلّاً يُمكن مراجعته بعد ٦ أشهر أو ٦ سنوات — متى ما طلبتَه أنت أو الجهة التنظيمية.",
   },
   {
     icon: FileCheck,
-    title: "تقارير قابلة للتدقيق",
-    desc: "نعمل على تطوير طبقة امتثال لتحويل بيانات الميدان إلى تقارير واضحة للجهات التنظيمية.",
+    title: "تقارير جاهزة للجهات التنظيمية",
+    desc: "بدلاً من تَجهيز ملفّات يدوية كل تفتيش، نُولّد تقارير امتثال آلياً من بيانات النظام — بصيغة قابلة للتدقيق.",
   },
 ];
 
@@ -25,16 +25,16 @@ export function ComplianceSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mb-12">
           <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">
-            قيد التطوير
+            للمشاريع التجارية والحكومية
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-5 leading-tight">
-            من التحكم إلى الامتثال
+            من التحكّم إلى الامتثال — في النظام نفسه
           </h2>
           <p className="text-white/75 text-lg leading-relaxed">
-            كل قراءة من الحساس، وكل أمر ري، وكل تعديل في النظام يمكن أن يتحوّل
-            إلى سجل تشغيلي قابل للمراجعة. نعمل على تطوير طبقة امتثال تساعد
-            المزارع على تجهيز تقارير واضحة للجهات التنظيمية — من بيانات الميدان
-            لا من ملفات يدوية متفرقة.
+            مزرعتك الحديثة تُولّد بيانات بمعدّل آلاف القراءات يومياً.
+            نُحوّل هذه البيانات إلى سجلّ تَشغيلي قابل للمراجعة، يَخدمك في
+            التَدقيق الداخلي، يُجهّز ملفّاتك للجهات التنظيمية، ويُقلّل ملفّات
+            الإكسل المتفرّقة إلى صفر.
           </p>
         </div>
 
@@ -53,15 +53,24 @@ export function ComplianceSection() {
           ))}
         </div>
 
-        <Link
-          href="https://demo.igarden.sa"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold text-base transition-colors"
-        >
-          شاهد نموذج Smart OS
-          <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Link
+            href="/contact?interest=compliance"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold text-base transition-colors"
+          >
+            اطلب عيّنة تقرير امتثال
+            <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+          </Link>
+          <Link
+            href="https://demo.igarden.sa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent border-2 border-white/40 hover:border-[#A5D63F] text-white hover:text-[#A5D63F] rounded-lg font-medium text-base transition-colors"
+          >
+            <span className="w-2 h-2 rounded-full bg-[#A5D63F] animate-pulse" />
+            شاهد البيانات الحيّة في Smart OS
+          </Link>
+        </div>
       </div>
     </section>
   );

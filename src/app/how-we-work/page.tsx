@@ -144,6 +144,138 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
+      {/* Transparency tables — time + cost */}
+      <section className="bg-[#FAFAF7] py-20" dir="rtl">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <p className="text-[#7CB342] text-sm font-bold uppercase tracking-widest mb-3">
+              شفافية كاملة
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#0F3D2E] mb-3">
+              كم نأخذ من وقتك؟ كم نأخذ من مالك؟
+            </h2>
+            <p className="text-[#6B7280] leading-relaxed max-w-2xl mx-auto">
+              نَفضّل أن نَبدأ بأرقام واضحة قبل العقد، حتى تَعرف ما الذي تَدخل
+              فيه. التَفاصيل النهائية تُحدَّد في العرض المكتوب.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Time table */}
+            <div className="bg-white rounded-2xl shadow-sm border border-[#E5E7EB] overflow-hidden">
+              <div className="bg-[#0F3D2E] text-white p-5">
+                <h3 className="text-lg font-bold mb-1">⏱️ الوقت</h3>
+                <p className="text-white/70 text-sm">
+                  كم تأخذ كلّ مرحلة منك ومنّا
+                </p>
+              </div>
+              <table className="w-full text-sm">
+                <thead className="bg-[#FAFAF7] border-b border-[#E5E7EB]">
+                  <tr>
+                    <th className="text-right p-3 font-bold text-[#0F3D2E]">المرحلة</th>
+                    <th className="text-right p-3 font-bold text-[#0F3D2E]">وقتك</th>
+                    <th className="text-right p-3 font-bold text-[#0F3D2E]">وقتنا</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ["١. الاستشارة", "٣٠ دقيقة", "٣٠ دقيقة"],
+                    ["٢. الزيارة الميدانية", "٢ ساعة", "يوم كامل"],
+                    ["٣. التَصميم والعرض", "—", "٧-١٠ أيام"],
+                    ["٤. التَركيب", "ساعة/يوم متابعة", "٢-٤ أسابيع"],
+                    ["٥. التَدريب", "٤ ساعات", "٤ ساعات"],
+                    ["٦. المتابعة الأولى", "حسب الحاجة", "أسبوع ٢٤/٧"],
+                  ].map(([phase, you, us], i) => (
+                    <tr
+                      key={phase}
+                      className={i % 2 === 0 ? "bg-white" : "bg-[#FAFAF7]/50"}
+                    >
+                      <td className="p-3 text-[#1A1A1A] font-medium border-b border-[#E5E7EB]">
+                        {phase}
+                      </td>
+                      <td className="p-3 text-[#6B7280] border-b border-[#E5E7EB]">
+                        {you}
+                      </td>
+                      <td className="p-3 text-[#6B7280] border-b border-[#E5E7EB]">
+                        {us}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Cost table */}
+            <div className="bg-white rounded-2xl shadow-sm border border-[#E5E7EB] overflow-hidden">
+              <div className="bg-[#7CB342] text-[#0F3D2E] p-5">
+                <h3 className="text-lg font-bold mb-1">💰 التَكلفة</h3>
+                <p className="text-[#0F3D2E]/70 text-sm">
+                  ما الذي يُدفع متى — بلا مفاجآت
+                </p>
+              </div>
+              <ul className="divide-y divide-[#E5E7EB]">
+                {[
+                  {
+                    label: "الاستشارة الأولى",
+                    cost: "مجانية",
+                    detail: "هاتف أو فيديو · بلا التزام",
+                    free: true,
+                  },
+                  {
+                    label: "الزيارة الميدانية",
+                    cost: "مجانية",
+                    detail: "ضمن جدة + ٢٠٠ كم · خارجها بترتيب",
+                    free: true,
+                  },
+                  {
+                    label: "التصميم والعرض الفنّي",
+                    cost: "مجاني",
+                    detail: "تَقرير مكتوب بالمواصفات والتقدير",
+                    free: true,
+                  },
+                  {
+                    label: "التَنفيذ",
+                    cost: "حسب المشروع",
+                    detail: "من Smart Controller واحد إلى محمية كاملة",
+                  },
+                  {
+                    label: "Smart OS — الاشتراك",
+                    cost: "٣ أشهر مجانية",
+                    detail: "بعدها رسوم سنوية حسب نطاق الاستخدام",
+                  },
+                  {
+                    label: "الصيانة والدعم",
+                    cost: "عقد سنوي اختياري",
+                    detail: "زيارات دورية + تحديثات + دعم فنّي",
+                  },
+                ].map((row) => (
+                  <li key={row.label} className="p-4">
+                    <div className="flex items-center justify-between gap-3 mb-1">
+                      <span className="font-medium text-[#1A1A1A]">
+                        {row.label}
+                      </span>
+                      <span
+                        className={`text-sm font-bold whitespace-nowrap ${
+                          row.free ? "text-[#7CB342]" : "text-[#0F3D2E]"
+                        }`}
+                      >
+                        {row.cost}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#6B7280]">{row.detail}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-center text-[#6B7280] text-sm mt-8 max-w-2xl mx-auto leading-relaxed">
+            الأرقام التَقديرية تَتغيّر حسب المحصول والموقع وحجم المشروع.
+            العرض الفنّي المُفصَّل يَأتي بعد الزيارة الميدانية.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#0F3D2E] py-20" dir="rtl">
         <div className="container mx-auto px-4 max-w-3xl text-center">

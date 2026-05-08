@@ -122,11 +122,11 @@ export default function MegaMenu({ columns, onClose }: MegaMenuProps) {
       {/* Footer */}
       <div className="bg-[#FAFAF7] px-5 py-2.5 border-t border-gray-100">
         <Link
-          href="/solutions"
+          href="/products"
           onClick={onClose}
           className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 hover:text-[#0F3D2E] transition-colors duration-150"
         >
-          <span>استعرض كل الحلول</span>
+          <span>استعرض كل المنتجات</span>
           <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
         </Link>
       </div>

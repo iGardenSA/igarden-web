@@ -114,19 +114,8 @@ export const NAV_MAIN = [
 ] as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Wave 2A — Navigation System Types + Constants
+// Navigation System Types + Constants
 // ─────────────────────────────────────────────────────────────────────────────
-
-export type TopBarIconName = "globe" | "monitor" | "shopping-bag" | "smartphone";
-
-export type TopBarItem = {
-  label: string;
-  icon: TopBarIconName;
-  href: string;
-  external?: boolean;
-  active?: boolean;
-  badge?: "live" | "soon";
-};
 
 export type NavColumnItem = {
   label: string;
@@ -162,81 +151,68 @@ export type NavItemSimple = {
 
 export type NavItemType = NavItemMega | NavItemSimple;
 
-// ─── Top Bar — المنظومة الموحّدة ─────────────────────────────────────────────
-
-export const TOP_BAR_ITEMS: TopBarItem[] = [
-  { label: "الموقع", icon: "globe", href: "/", active: true },
-  {
-    label: "Demo",
-    icon: "monitor",
-    href: "https://demo.igarden.sa",
-    external: true,
-    badge: "live",
-  },
-  {
-    label: "المتجر",
-    icon: "shopping-bag",
-    href: "https://shop.igarden.sa",
-    external: true,
-  },
-  { label: "احجز التطبيق", icon: "smartphone", href: "/app", badge: "soon" },
-];
-
-// ─── Main Navigation — 5 عناصر ───────────────────────────────────────────────
+// ─── Main Navigation — هيكل دستوري (CLAUDE.md v2.0) ──────────────────────────
 
 export const HEADER_NAV_ITEMS: NavItemType[] = [
   {
-    label: "الحلول",
-    href: "/solutions",
+    label: "المنتجات",
+    href: "/products",
     hasMegaMenu: true,
     megaMenuColumns: [
       {
-        title: "للمزارع التجارية",
-        icon: "tractor",
-        items: [
-          { label: "أنظمة الري والتحكم الذكي", href: "/solutions/farms" },
-          { label: "البيوت المحمية والـ Hydroponics", href: "/solutions/greenhouses" },
-        ],
-      },
-      {
-        title: "منصة Smart OS",
+        title: "Smart Controllers · Flagship",
         icon: "cpu",
         items: [
-          { label: "منصة الإدارة الموحّدة", href: "/solutions/smart-os" },
-          { label: "تقارير الامتثال", href: "/compliance" },
+          { label: "لوحات تحكّم زراعية بصناعتنا", href: "/products/smart-controllers" },
+          { label: "Smart OS مُدمَج", href: "/products/smart-controllers#smart-os" },
+          { label: "مُختبَرة في عسفان", href: "/osfan-station" },
         ],
         cta: {
-          label: "Live Demo",
-          href: "https://demo.igarden.sa",
-          external: true,
-          variant: "live",
+          label: "استكشف Smart Controllers",
+          href: "/products/smart-controllers",
+          variant: "default",
         },
       },
       {
-        title: "للحديقة المنزلية",
-        icon: "leaf",
+        title: "المحميات الذكية",
+        icon: "tractor",
         items: [
-          { label: "البرج الهوائي iGarden Tower", href: "https://shop.igarden.sa", external: true },
-          { label: "مستلزمات الزراعة", href: "https://shop.igarden.sa", external: true },
+          { label: "هياكل تَصمد في +45°C", href: "/products/smart-greenhouses" },
+          { label: "أتمتة IoT كاملة", href: "/products/smart-greenhouses#automation" },
+          { label: "تحكّم مناخي ذكي", href: "/products/smart-greenhouses#climate" },
         ],
         cta: {
-          label: "تسوّق المتجر",
-          href: "https://shop.igarden.sa",
-          external: true,
-          variant: "shop",
+          label: "استكشف المحميات",
+          href: "/products/smart-greenhouses",
+          variant: "default",
+        },
+      },
+      {
+        title: "أنظمة الزراعة المائية",
+        icon: "leaf",
+        items: [
+          { label: "7 تقنيات مُختَبَرة", href: "/products/hydroponics" },
+          { label: "يشمل iGarden Tower", href: "/products/hydroponics#tower" },
+          { label: "توفير 95% من المياه", href: "/products/hydroponics#savings" },
+        ],
+        cta: {
+          label: "استكشف الأنظمة",
+          href: "/products/hydroponics",
+          variant: "default",
         },
       },
     ],
   },
   { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "المعرفة", href: "/learn" },
-  { label: "للمستثمرين", href: "/investors" },
+  { label: "من نحن", href: "/about" },
+  { label: "الأكاديمية", href: "/learn" },
+  { label: "المدونة", href: "/blog" },
+  { label: "تواصل", href: "/contact" },
 ];
 
-// ─── Main CTA ─────────────────────────────────────────────────────────────────
+// ─── Main CTA — دستوري ───────────────────────────────────────────────────────
 
 export const MAIN_CTA = {
-  label: "تحدّث معنا",
+  label: "احجز استشارة مجانية",
   href: "/contact",
 } as const;

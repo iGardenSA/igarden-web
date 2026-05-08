@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Tajawal, Poppins } from "next/font/google";
-import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/footer";
 import WhatsAppFab from "@/components/layout/WhatsAppFab";
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | iGarden",
   },
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نَبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
+    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
   keywords: [
     "iGarden",
     "الحديقة الذكية",
@@ -76,7 +75,7 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: `https://${COMPANY.domain}`,
     siteName: COMPANY.nameEn,
-    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
     images: [
@@ -91,7 +90,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
     images: ["/images/og/home.jpg"],

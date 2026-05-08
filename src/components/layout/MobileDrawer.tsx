@@ -3,25 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  X,
-  ChevronDown,
-  Globe,
-  Monitor,
-  ShoppingBag,
-  Smartphone,
-  ExternalLink,
-  type LucideIcon,
-} from "lucide-react";
+import { X, ChevronDown, ExternalLink } from "lucide-react";
 import { CTAButton } from "@/components/shared/CTAButton";
-import { HEADER_NAV_ITEMS, TOP_BAR_ITEMS, MAIN_CTA, type TopBarIconName } from "@/lib/constants";
-
-const topBarIconMap: Record<TopBarIconName, LucideIcon> = {
-  globe: Globe,
-  monitor: Monitor,
-  "shopping-bag": ShoppingBag,
-  smartphone: Smartphone,
-};
+import { HEADER_NAV_ITEMS, MAIN_CTA } from "@/lib/constants";
 
 interface MobileDrawerProps {
   open: boolean;
@@ -91,54 +75,6 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
           </button>
         </div>
 
-        {/* Mini TopBar (platforms) */}
-        <div className="bg-[#0A2920] px-3 py-2">
-          <ul className="flex items-center gap-0.5 flex-wrap">
-            {TOP_BAR_ITEMS.map((item, idx) => {
-              const Icon = topBarIconMap[item.icon];
-              const isLive = item.badge === "live";
-              const isSoon = item.badge === "soon";
-
-              const content = (
-                <span
-                  className={[
-                    "inline-flex items-center gap-1.5 px-2 py-1 rounded-md text-[12px] font-medium whitespace-nowrap transition-colors",
-                    item.active
-                      ? "bg-[#7CB342]/15 text-[#A5D63F]"
-                      : "text-white/70 hover:text-[#A5D63F]",
-                  ].join(" ")}
-                >
-                  <Icon className="w-3 h-3 flex-shrink-0" aria-hidden="true" />
-                  <span>{item.label}</span>
-                  {isLive && (
-                    <span className="relative inline-flex ms-0.5" aria-label="مباشر">
-                      <span className="absolute inline-flex h-1.5 w-1.5 rounded-full bg-[#A5D63F] opacity-75 animate-ping" />
-                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#A5D63F]" />
-                    </span>
-                  )}
-                  {isSoon && (
-                    <span className="text-[10px] text-[#A5D63F]/70 ms-0.5">قريباً</span>
-                  )}
-                </span>
-              );
-
-              return (
-                <li key={idx}>
-                  {item.external ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer" onClick={onClose}>
-                      {content}
-                    </a>
-                  ) : (
-                    <Link href={item.href} onClick={onClose}>
-                      {content}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
         {/* Nav Items */}
         <nav className="flex-1 overflow-y-auto px-3 py-3">
           <ul className="space-y-0.5">
@@ -199,11 +135,11 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         ))}
                         <div className="border-t border-[#E5E7EB] px-4 py-2.5">
                           <Link
-                            href="/solutions"
+                            href="/products"
                             onClick={onClose}
                             className="text-xs font-medium text-[#0F3D2E] hover:text-[#7CB342] transition-colors"
                           >
-                            استعرض كل الحلول ←
+                            استعرض كل المنتجات ←
                           </Link>
                         </div>
                       </div>

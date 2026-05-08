@@ -23,9 +23,14 @@ export function Footer() {
               شركة سعودية ريادية لتطوير المزارع ونظم التحكم الزراعي الذكي.
             </p>
             <p className="text-lg font-medium text-lime mb-4">
-              نَبني · نُوطّن · نُطوّر
+              ننفّذ · نُوطّن · نُطوّر
             </p>
-            <p className="text-lg font-latin opacity-90">{COMPANY.tagline}</p>
+            <p className="text-lg opacity-90">
+              ازرع بذكاء{" "}
+              <span dir="ltr" className="ltr-inline font-latin">
+                · Plant Smart
+              </span>
+            </p>
           </div>
 
           {/* Column 2: الركائز */}
@@ -50,16 +55,24 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5 text-lg">
               <FooterLink href="/about">من نحن</FooterLink>
+              <FooterLink href="/how-we-work">كيف نعمل</FooterLink>
               <FooterLink href="/investors">للمستثمرين</FooterLink>
               <FooterLink href="/contact">تواصل معنا</FooterLink>
+            </ul>
+
+            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mt-8 mb-4">
+              موارد
+            </h3>
+            <ul className="space-y-2.5 text-lg">
+              <FooterLink href="/case-studies">دراسات ميدانية</FooterLink>
+              <FooterLink href="/compliance">الامتثال</FooterLink>
+              <FooterLink href="/roadmap">خارطة الطريق</FooterLink>
               <FooterLink href="/learn">الأكاديمية</FooterLink>
               <FooterLink href="/blog">المدونة</FooterLink>
-              <FooterLink href={COMPANY.shopDomain ? `https://${COMPANY.shopDomain}` : "#"} external>
-                متجر <span className="ltr-inline">iGarden</span>
-              </FooterLink>
               <FooterLink href="https://demo.igarden.sa" external>
                 الديمو التفاعلي
               </FooterLink>
+              <FooterLink href="/app">تطبيق المنزل</FooterLink>
             </ul>
           </div>
 
@@ -130,6 +143,9 @@ export function Footer() {
                 نموذج صناعي{" "}
                 <span className="ltr-inline font-latin">SAIP: #423450193</span>
               </p>
+              <p className="text-cream/50">
+                العلامة التجارية «iGarden — الحديقة الذكية» قيد التسجيل الرسمي في SAIP
+              </p>
             </div>
             <div className="flex gap-5">
               <Link href="/privacy" className="hover:opacity-100 transition-opacity">
@@ -139,8 +155,11 @@ export function Footer() {
                 الشروط والأحكام
               </Link>
             </div>
-            <p className="font-latin ltr-inline">
-              © {new Date().getFullYear()} iGarden. All rights reserved.
+            <p>
+              © {new Date().getFullYear()} {COMPANY.legalAr}.{" "}
+              <span className="ltr-inline font-latin opacity-80">
+                All rights reserved.
+              </span>
             </p>
           </div>
         </div>

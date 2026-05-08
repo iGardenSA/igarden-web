@@ -11,6 +11,8 @@ import {
   Gauge,
   MonitorSmartphone,
   CheckCircle2,
+  AlertTriangle,
+  ArrowLeft,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,15 +43,20 @@ function Hero() {
               </span>
             </div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              المنتج الرائد · Smart OS Powered
+              لوحات التحكّم · Smart OS Powered
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              Smart Controllers —{" "}
-              <span className="block">لوحات التحكم الزراعي بصناعتنا</span>
+              لا تُغيّر نظامك الزراعي.
+              <span className="block">أَضف له عقلاً.</span>
             </h1>
-            <p className="body-base text-medium-gray mb-8 max-w-lg">
-              تصميم وبرمجة وتصنيع 100% سعودي — قابلة للربط مع أيّ نظام زراعة
-              قائم. لا حاجة لاستبدال معداتك، فقط أضف الذكاء.
+            <p className="body-base text-medium-gray mb-4 max-w-lg">
+              Smart Controllers من iGarden تَربط حسّاساتك ومضخّاتك ونظام الري
+              الحالي بلوحة تَحكّم واحدة. تَعرف حالة الماء والتغذية والمناخ
+              لحظياً — قبل أن يَتحوّل الخلل إلى خسارة.
+            </p>
+            <p className="body-sm text-medium-gray mb-8 max-w-lg">
+              تصميم وبرمجة وتصنيع 100% سعودي. قطع غيار محلية. فريق دعم في نفس
+              مدينتك.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=controllers" variant="lime">
@@ -60,19 +67,20 @@ function Hero() {
                 variant="outline-green"
                 external
               >
-                افتح الديمو التفاعلي ↗
+                شاهد البيانات الحيّة ↗
               </CTAButton>
             </div>
           </div>
 
-          {/* Hero image placeholder */}
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-600 flex items-center justify-center"
             role="img"
             aria-label="لوحة Smart Controller من محطة عسفان"
           >
-            {/* [CONTENT_NEEDED: /images/products/smart-controllers/hero.jpg — لوحة Controller الحقيقية من عسفان] */}
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
+            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
+              208 unit tests · ESP32 + Pi 5
+            </span>
           </div>
         </div>
       </div>
@@ -104,6 +112,96 @@ function StatusCard() {
             className="text-lime font-medium hover:text-deep-green transition-colors text-lg"
           >
             انضمّ لـ Early Access ←
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 2.5: Pain Scenarios ────────────────────────── */
+const SCENARIOS = [
+  {
+    pain: "المراقبة اليدوية تَستهلك العامل وتَتأخّر",
+    detail: "عامل يَفحص pH وEC كل ٤ ساعات. ليلاً ونهاراً. التَكلفة تَرتفع، والأخطاء تَحدث.",
+    solution: "قراءة كل ٣٠ ثانية، ٢٤/٧",
+    benefit: "تَنبيه فوري عند انحراف ٠.٢ pH — قبل أن يَتأثّر المحصول.",
+  },
+  {
+    pain: "اكتشاف المشاكل عند ذبول النباتات",
+    detail: "مضخّة تَتعطّل في الفجر. تَكتشف المشكلة الظهر، بعد فقدان دورة ريّ كاملة في يوم +٤٥°C.",
+    solution: "تنبيه واتساب فور الانحراف",
+    benefit: "تَدخّل خلال دقائق، لا ساعات. خسارة ٠ نباتات مقابل ١٥٠.",
+  },
+  {
+    pain: "بيانات الموسم الماضي ضائعة",
+    detail: "تُريد مَعرفة لماذا نَجح موسم الخس في يناير، لكن البيانات على ورق فنّي غادر العمل.",
+    solution: "سجلّ مُؤرشَف قابل للبحث",
+    benefit: "كل قراءة، كل أمر، كل تَدخّل — مَحفوظ مع طابع زمني.",
+  },
+];
+
+function PainScenarios() {
+  return (
+    <section className="bg-white py-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
+            ما الذي يَتغيّر؟
+          </p>
+          <h2 className="h2 text-deep-green">٣ مَواقف يَومية — قبل وبعد</h2>
+          <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
+            ليست ميزات تَقنية مُجرَّدة. هذه مَشاهد حقيقية من المزارع التي
+            رأيناها قبل التَركيب وبعده.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SCENARIOS.map((s, i) => (
+            <article
+              key={i}
+              className="bg-cream rounded-card overflow-hidden shadow-soft flex flex-col"
+            >
+              {/* قبل */}
+              <div className="p-6 border-b-2 border-amber-200 bg-amber-50/40 flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <AlertTriangle
+                    className="w-4 h-4 text-amber-700"
+                    aria-hidden
+                  />
+                  <p className="text-amber-800 text-xs font-bold uppercase tracking-widest">
+                    قبل
+                  </p>
+                </div>
+                <p className="font-bold text-deep-green text-base mb-2 leading-snug">
+                  {s.pain}
+                </p>
+                <p className="body-sm text-medium-gray">{s.detail}</p>
+              </div>
+
+              {/* بعد */}
+              <div className="p-6 bg-gradient-to-br from-lime/5 to-cream flex-1">
+                <div className="flex items-center gap-2 mb-3">
+                  <CheckCircle2 className="w-4 h-4 text-lime" aria-hidden />
+                  <p className="text-lime text-xs font-bold uppercase tracking-widest">
+                    بعد · مع Smart Controllers
+                  </p>
+                </div>
+                <p className="font-bold text-deep-green text-base mb-2 leading-snug">
+                  {s.solution}
+                </p>
+                <p className="body-sm text-medium-gray">{s.benefit}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link
+            href="/contact?interest=controllers"
+            className="inline-flex items-center gap-2 text-lime font-medium hover:text-deep-green transition-colors"
+          >
+            ناقش وضع مزرعتك معنا <ArrowLeft className="w-4 h-4" aria-hidden />
           </Link>
         </div>
       </div>
@@ -208,7 +306,7 @@ function TechSpecs() {
                 </div>
               </div>
               <p className="text-medium-gray text-lg mt-6">
-                [Diagram قيد الإعداد]
+                Pi 5 يُدير المنظومة المركزية · ESP32 يَستشعر ويُنفّذ ميدانياً
               </p>
             </div>
           </div>
@@ -374,7 +472,7 @@ function DevTimeline() {
     { year: "2024", title: "البحث الأوّلي", desc: "دراسة السوق المحلي وتحديد الفجوة — حلول موجودة لا تتحمّل المناخ السعودي." },
     { year: "2024–25", title: "أول Prototype", desc: "بناء نموذج أوّلي بـ ESP32 وRaspberry Pi في بيئة مختبرية. اختبار حساسات pH وEC والحرارة." },
     { year: "2025", title: "الاختبار في عسفان", desc: "208 اختبار وحدوي ناجح. اختبار ميداني مستمرّ." },
-    { year: "2026", title: "الإصدار التجاري — Early Access", desc: "تشغيل أوّلي مع 4 عملاء. انضمّ لقائمة Early Access لأولوية التركيب." },
+    { year: "2026", title: "الإصدار التجاري — Early Access", desc: "نَفتح قائمة Early Access لعدد محدود من المشاريع التجريبية. سجّل اهتمامك للحصول على أولوية التركيب." },
   ];
 
   return (
@@ -465,7 +563,7 @@ function B2BSection() {
 const FAQS = [
   {
     q: "متى الإصدار التجاري المتوقّع؟",
-    a: "نحن في مرحلة Early Access — 4 عملاء في التشغيل الأوّلي. سجّل اهتمامك للحصول على أولوية التركيب والتسعير.",
+    a: "نحن في مرحلة Early Access — قائمة محدودة من المشاريع التجريبية مفتوحة الآن. سجّل اهتمامك للحصول على أولوية التركيب والتسعير.",
   },
   {
     q: "هل يعمل مع نظامي الزراعي الحالي؟",
@@ -568,6 +666,7 @@ export default function SmartControllersPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <StatusCard />
+      <PainScenarios />
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />

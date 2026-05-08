@@ -30,27 +30,35 @@ function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* [CONTENT_NEEDED: /images/osfan/hero-banner.jpg — أفضل صورة بانورامية لمحطة عسفان] */}
-      {/* Dark overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: "rgba(15, 61, 46, 0.6)" }}
+        style={{ background: "rgba(15, 61, 46, 0.65)" }}
         aria-hidden
       />
       <div className="relative container mx-auto px-4 max-w-4xl text-center py-24">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           عسفان، شمال جدة · منذ 2025
         </p>
-        <h1 className="h1 text-cream mb-4">
-          محطّة عسفان — حيث نُجرّب قبل أن نُسلّم
+        <h1 className="h1 text-cream mb-5">
+          قبل أن نُنفّذ في مزرعتك،
+          <span className="block text-[#A5D63F]">نَكسر النظام في عسفان.</span>
         </h1>
-        <p className="body-base text-cream/80 max-w-2xl mx-auto">
+        <p className="body-base text-cream/85 max-w-2xl mx-auto leading-relaxed">
           المختبر الميداني لـ{" "}
           <span dir="ltr" className="ltr-inline font-latin font-bold">
             iGarden
           </span>{" "}
-          في عسفان، شمال جدة
+          — حيث تَمرّ كلّ تقنية بصيف +٤٥°C، رطوبة ساحلية، رياح الخليج، وغبار
+          قبل أن تَصل إلى عميل.
         </p>
+
+        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-4 text-cream/70 text-sm">
+          <span className="font-latin">7 تقنيات نشطة</span>
+          <span className="text-[#A5D63F]/40">·</span>
+          <span>5 ورش مُنفَّذة</span>
+          <span className="text-[#A5D63F]/40">·</span>
+          <span className="font-latin">208 unit tests</span>
+        </div>
       </div>
     </section>
   );
@@ -111,15 +119,51 @@ function WhyOsfan() {
 
 /* ─── Section 3: Gallery ──────────────────────────────────── */
 const GALLERY_IMAGES = [
-  { src: "/images/osfan/gallery-1.jpg", alt: "منظر عام لمحطة عسفان" },
-  { src: "/images/osfan/gallery-2.jpg", alt: "البنية التحتية والمساحة المغطّاة" },
-  { src: "/images/osfan/gallery-3.jpg", alt: "مدخل المحطة وترتيبها الخارجي" },
-  { src: "/images/osfan/gallery-4.jpg", alt: "نظام NFT يعمل في المحطة" },
-  { src: "/images/osfan/gallery-5.jpg", alt: "نظام DWC — خزانات الزراعة المائية" },
-  { src: "/images/osfan/gallery-6.jpg", alt: "iGarden Tower في وضع التشغيل" },
-  { src: "/images/osfan/gallery-7.jpg", alt: "نبتة خس في مرحلة الحصاد" },
-  { src: "/images/osfan/gallery-8.jpg", alt: "جذور نظام Aeroponics — لقطة قريبة" },
-  { src: "/images/osfan/gallery-9.jpg", alt: "ورشة «ازرع بذكاء» — المشاركون يتعرّفون على الأنظمة" },
+  {
+    src: "/images/osfan/gallery-1.jpg",
+    label: "منظر عام للمحطة",
+    detail: "١٢٠٠م² شمال جدة",
+  },
+  {
+    src: "/images/osfan/gallery-2.jpg",
+    label: "البنية التَحتية المغطّاة",
+    detail: "هيكل مقاوم لرياح الخليج",
+  },
+  {
+    src: "/images/osfan/gallery-3.jpg",
+    label: "مدخل المحطّة",
+    detail: "ترتيب خارجي + غرف تَجارب",
+  },
+  {
+    src: "/images/osfan/gallery-4.jpg",
+    label: "نظام NFT في تشغيل",
+    detail: "ورقيات سريعة · دورة ٢٨ يوم",
+  },
+  {
+    src: "/images/osfan/gallery-5.jpg",
+    label: "نظام DWC",
+    detail: "خزانات مع مبدّل حرارة مُدمَج",
+  },
+  {
+    src: "/images/osfan/gallery-6.jpg",
+    label: "iGarden Tower",
+    detail: "النموذج المُسجَّل SAIP في وضع تَشغيل",
+  },
+  {
+    src: "/images/osfan/gallery-7.jpg",
+    label: "خس في مرحلة الحصاد",
+    detail: "نموّ تَحت ظروف صيف +٤٥°C",
+  },
+  {
+    src: "/images/osfan/gallery-8.jpg",
+    label: "جذور Aeroponics",
+    detail: "لقطة قريبة — تَهوية دائمة",
+  },
+  {
+    src: "/images/osfan/gallery-9.jpg",
+    label: "ورشة «ازرع بذكاء»",
+    detail: "ميدان تَطبيقي، لا محاضرة",
+  },
 ];
 
 function Gallery() {
@@ -131,24 +175,38 @@ function Gallery() {
             الصور الحقيقية
           </p>
           <h2 className="h2 text-deep-green">عسفان بالصور</h2>
-          {/* [CONTENT_NEEDED: 9-12 صورة منظَّمة من عسفان — انظر Brief §7.1 القسم 3 للتصنيفات المطلوبة] */}
+          <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
+            كلّ صورة مَوقع فعلي في عسفان — لا صور stock، ولا renders.
+          </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {GALLERY_IMAGES.map((img) => (
-            <div
+            <figure
               key={img.src}
-              className="relative aspect-square rounded-card overflow-hidden bg-brand-500/20"
-              style={{
-                backgroundImage: `url(${img.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              role="img"
-              aria-label={img.alt}
+              className="relative aspect-square rounded-card overflow-hidden bg-brand-500/20 group"
             >
-              <span className="sr-only">{img.alt}</span>
-            </div>
+              <div
+                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                style={{
+                  backgroundImage: `url(${img.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                role="img"
+                aria-label={`${img.label} — ${img.detail}`}
+              />
+              <figcaption
+                className="absolute bottom-0 inset-x-0 px-4 py-3 bg-gradient-to-t from-deep-green/95 via-deep-green/70 to-transparent text-cream"
+              >
+                <p className="font-bold text-sm leading-snug mb-0.5">
+                  {img.label}
+                </p>
+                <p className="text-xs text-cream/75 leading-snug">
+                  {img.detail}
+                </p>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
@@ -392,8 +450,7 @@ export default function OsfanStationPage() {
       <Hero />
       <WhyOsfan />
       <Gallery />
-      {/* HIDDEN IN WAVE 1 — TestedSystems content needed from م. أيمن (Wave 2) */}
-      {/* <TestedSystems /> */}
+      <TestedSystems />
       <WorkshopsSection />
       <ExpansionPlans />
       <BookVisit />

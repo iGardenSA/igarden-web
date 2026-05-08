@@ -1,13 +1,13 @@
 'use client';
 
-import { Users, CalendarCheck, Thermometer, MonitorSmartphone, Award } from 'lucide-react';
+import { CalendarCheck, FlaskConical, Thermometer, GraduationCap, Award } from 'lucide-react';
 
 const stats = [
-  { icon: Users,             number: '4',           label: 'عملاء نشطون'               },
-  { icon: CalendarCheck,     number: 'منذ 2025',    label: 'تشغيل مستمر'               },
-  { icon: Thermometer,       number: '+45°C',        label: 'اختبار ميداني'             },
-  { icon: MonitorSmartphone, number: '24/7',         label: 'Smart OS بلا انقطاع'       },
-  { icon: Award,             number: 'SAIP',         label: 'براءة صناعية مسجّلة'       },
+  { icon: CalendarCheck,  number: '+3',     label: 'سنوات تطوير منذ 2024'       },
+  { icon: FlaskConical,   number: '208',    label: 'اختبار وحدوي ناجح'         },
+  { icon: Thermometer,    number: '+45°C',  label: 'اختُبر ميدانياً في عسفان'   },
+  { icon: GraduationCap,  number: '5',      label: 'ورش «ازرع بذكاء» مُنفَّذة' },
+  { icon: Award,          number: 'SAIP',   label: 'نموذج صناعي #423450193'    },
 ];
 
 export default function HeroTrustBar() {

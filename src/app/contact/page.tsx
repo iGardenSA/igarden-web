@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   AlertCircle,
   Loader2,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { createBrowserSupabase } from "@/lib/supabase";
@@ -32,6 +33,7 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 export default function ContactPage() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [showDetails, setShowDetails] = useState(false);
 
   const {
     register,
@@ -101,18 +103,19 @@ export default function ContactPage() {
         <div className="container-igarden relative py-20 md:py-24">
           <div className="max-w-3xl">
             <p className="heading-eyebrow mb-6 text-[var(--color-accent-300)]">
-              تواصل معنا
+              الخطوة الأولى
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-6">
-              حدّثنا عن مشروعك.
+              ابدأ بتقييم مشروعك.
               <br />
               <span className="text-[var(--color-accent-300)]">
-                نحن نستمع.
+                ١٥ دقيقة، بلا التزام.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">
-              احجز استشارة مجانية، اسأل عن منتجاتنا، أو اقترح شراكة — فريقنا
-              يرد على جميع الرسائل خلال يوم عمل.
+              احجز محادثة مع فريقنا الفنّي. نَسمع فكرتك، نُصارحك إن كانت غير
+              جاهزة بعد، ونَقترح مساراً عملياً إن كانت جاهزة. لا توقّع NDA،
+              لا مندوب مبيعات.
             </p>
           </div>
         </div>
@@ -197,10 +200,11 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <div className="bg-[var(--color-surface)] rounded-2xl p-7 md:p-10 border border-[var(--color-border)]">
                 <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-brand-600)] mb-2">
-                  احجز استشارتك المجانية
+                  احجز ١٥ دقيقة مع فريقنا الفنّي
                 </h2>
                 <p className="text-[var(--color-muted)] mb-8">
-                  املأ النموذج التالي وسنتواصل معك خلال يوم عمل بخطة مبدئية.
+                  ٤ حقول أساسية. تَفاصيل المشروع اختيارية — تُساعدنا نُجهّز
+                  لك مكالمة أفضل، لكن لسنا نَنتظرها لنَردّ.
                 </p>
 
                 {submitState === "success" && (
@@ -230,6 +234,7 @@ export default function ContactPage() {
                 )}
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                  {/* الحقول الأساسية */}
                   <FormField
                     label="الاسم الكامل"
                     required
@@ -245,18 +250,6 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField
-                      label="البريد الإلكتروني"
-                      error={errors.email?.message}
-                    >
-                      <input
-                        type="email"
-                        {...register("email")}
-                        className="input-igarden"
-                        placeholder="name@example.com"
-                        dir="ltr"
-                      />
-                    </FormField>
-                    <FormField
                       label="رقم الجوال"
                       error={errors.phone?.message}
                     >
@@ -266,17 +259,6 @@ export default function ContactPage() {
                         className="input-igarden"
                         placeholder="+966 5X XXX XXXX"
                         dir="ltr"
-                      />
-                    </FormField>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <FormField label="الجهة / الشركة (اختياري)">
-                      <input
-                        type="text"
-                        {...register("company")}
-                        className="input-igarden"
-                        placeholder="اسم الجهة"
                       />
                     </FormField>
                     <FormField label="نوع الجهة">
@@ -292,34 +274,6 @@ export default function ContactPage() {
                       </select>
                     </FormField>
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <FormField label="المدينة / المنطقة">
-                      <input
-                        type="text"
-                        {...register("city")}
-                        className="input-igarden"
-                        placeholder="مثال: جدة، الرياض، خميس مشيط"
-                      />
-                    </FormField>
-                    <FormField label="حجم المشروع">
-                      <select {...register("project_size")} className="input-igarden">
-                        <option value="">اختر...</option>
-                        {PROJECT_SIZES.map((p) => (
-                          <option key={p.value} value={p.value}>{p.label}</option>
-                        ))}
-                      </select>
-                    </FormField>
-                  </div>
-
-                  <FormField label="متى ترغب بالبدء؟">
-                    <select {...register("timeline")} className="input-igarden">
-                      <option value="">اختر...</option>
-                      {TIMELINES.map((t) => (
-                        <option key={t.value} value={t.value}>{t.label}</option>
-                      ))}
-                    </select>
-                  </FormField>
 
                   <FormField label="مهتم بـ (اختر ما يناسب)">
                     <Controller
@@ -353,15 +307,6 @@ export default function ContactPage() {
                     />
                   </FormField>
 
-                  <FormField label="الموضوع (اختياري)">
-                    <input
-                      type="text"
-                      {...register("subject")}
-                      className="input-igarden"
-                      placeholder="مثال: استفسار عن iGarden Tower"
-                    />
-                  </FormField>
-
                   <FormField
                     label="الرسالة"
                     required
@@ -374,6 +319,89 @@ export default function ContactPage() {
                       placeholder="أخبرنا عن مشروعك واحتياجاتك — كلما أعطيتنا تفاصيل أكثر، ساعدناك بدقة أكبر."
                     />
                   </FormField>
+
+                  {/* تفاصيل المشروع — اختيارية، قابلة للطيّ */}
+                  <div className="border-t border-[var(--color-border)] pt-5">
+                    <button
+                      type="button"
+                      onClick={() => setShowDetails((v) => !v)}
+                      className="flex items-center justify-between w-full text-right group"
+                      aria-expanded={showDetails}
+                    >
+                      <span className="text-base font-semibold text-[var(--color-brand-600)] group-hover:text-[var(--color-accent-600)] transition-colors">
+                        + أَضف تفاصيل المشروع <span className="text-[var(--color-muted)] font-normal">(اختياري — تُساعدنا نُجهّز مكالمة أفضل)</span>
+                      </span>
+                      <ChevronDown
+                        className={`h-5 w-5 text-[var(--color-brand-600)] transition-transform ${showDetails ? "rotate-180" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </button>
+
+                    {showDetails && (
+                      <div className="mt-5 space-y-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          <FormField
+                            label="البريد الإلكتروني"
+                            error={errors.email?.message}
+                          >
+                            <input
+                              type="email"
+                              {...register("email")}
+                              className="input-igarden"
+                              placeholder="name@example.com"
+                              dir="ltr"
+                            />
+                          </FormField>
+                          <FormField label="الجهة / الشركة">
+                            <input
+                              type="text"
+                              {...register("company")}
+                              className="input-igarden"
+                              placeholder="اسم الجهة"
+                            />
+                          </FormField>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          <FormField label="المدينة / المنطقة">
+                            <input
+                              type="text"
+                              {...register("city")}
+                              className="input-igarden"
+                              placeholder="مثال: جدة، الرياض، خميس مشيط"
+                            />
+                          </FormField>
+                          <FormField label="حجم المشروع">
+                            <select {...register("project_size")} className="input-igarden">
+                              <option value="">اختر...</option>
+                              {PROJECT_SIZES.map((p) => (
+                                <option key={p.value} value={p.value}>{p.label}</option>
+                              ))}
+                            </select>
+                          </FormField>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          <FormField label="متى تَرغب بالبدء؟">
+                            <select {...register("timeline")} className="input-igarden">
+                              <option value="">اختر...</option>
+                              {TIMELINES.map((t) => (
+                                <option key={t.value} value={t.value}>{t.label}</option>
+                              ))}
+                            </select>
+                          </FormField>
+                          <FormField label="الموضوع">
+                            <input
+                              type="text"
+                              {...register("subject")}
+                              className="input-igarden"
+                              placeholder="مثال: استفسار عن iGarden Tower"
+                            />
+                          </FormField>
+                        </div>
+                      </div>
+                    )}
+                  </div>
 
                   <div className="pt-3">
                     <Button

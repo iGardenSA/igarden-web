@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   TrendingUp, Shield, Globe, Users, Award, Rocket,
   Building, FileText, Calendar, ArrowLeft, CheckCircle2,
-  Download, Mail, Phone,
+  Mail, Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -12,9 +12,9 @@ import { StageHonesty } from "@/components/shared/StageHonesty";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "للمستثمرين — مرحلة مبكرة بإيرادات حقيقية | iGarden",
+  title: "للمستثمرين — مرحلة مبكرة بأصول ميدانية | iGarden",
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 4 عملاء نشطون، مرحلة مبكرة بإيرادات حقيقية.",
+    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير منذ 2024، و208 اختبار وحدوي ناجح على Smart OS — مرحلة الانطلاق الرسمي 2026.",
   alternates: { canonical: "https://igarden.sa/investors" },
 };
 
@@ -94,9 +94,9 @@ export default function InvestorsPage() {
             <FadeIn delay={150}>
               <QuickFactCard
                 icon={<Calendar className="h-6 w-6" />}
-                label="تاريخ التأسيس"
-                value="فبراير"
-                unit="2026"
+                label="التأسيس · ترخيص MISA"
+                value="2024"
+                unit="ترخيص فبراير 2026"
               />
             </FadeIn>
             <FadeIn delay={200}>
@@ -309,28 +309,75 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          5. توزيع التمويل
+          5. توزيع التمويل (منحة سنبلة 150,000 ريال)
           ============================================================ */}
       <section className="bg-white section-padding">
         <div className="container-igarden">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <FadeIn>
               <div className="text-center mb-12">
-                <p className="heading-eyebrow mb-4">خطة الاستخدام</p>
-                <h2 className="heading-section mb-4">توزيع التمويل</h2>
+                <p className="heading-eyebrow mb-4">Use of Funds — منحة سنبلة</p>
+                <h2 className="heading-section mb-4">
+                  ١٥٠ ألف ريال — كيف نَستخدم كلّ ريال؟
+                </h2>
                 <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                  كيف نستثمر تمويل سنبلة لتحقيق أقصى أثر.
+                  منحة EWAx · سنبلة المُتوقَّعة ٢٠٢٦ — موزَّعة على أربعة محاور
+                  تَخدم القفزة من Early Access إلى Production.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
               <div className="bg-[var(--color-surface)] rounded-2xl p-8 border border-[var(--color-border)] space-y-6">
-                <FundingBar label="تطوير المنتج" percentage={40} />
-                <FundingBar label="توزيع نماذج تجريبية" percentage={25} />
-                <FundingBar label="تسويق ومبيعات" percentage={15} />
-                <FundingBar label="دعم لوجستي" percentage={10} />
-                <FundingBar label="تكاليف تشغيل" percentage={10} />
+                <FundingBar
+                  label="Smart Controllers — تَطوير وتَصنيع"
+                  amount="75,000 ريال"
+                  percentage={50}
+                />
+                <FundingBar
+                  label="محطّة عسفان — توسعة وأنظمة جديدة"
+                  amount="37,500 ريال"
+                  percentage={25}
+                />
+                <FundingBar
+                  label="التَسويق + الموقع + المحتوى"
+                  amount="22,500 ريال"
+                  percentage={15}
+                />
+                <FundingBar
+                  label="القانوني + تَسجيل العلامة التجارية"
+                  amount="15,000 ريال"
+                  percentage={10}
+                />
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={150}>
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-xl p-5 text-center">
+                  <p className="text-3xl font-bold text-[var(--color-brand-600)] font-latin mb-1">
+                    150K
+                  </p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    منحة سنبلة (P0)
+                  </p>
+                </div>
+                <div className="bg-[var(--color-accent-100)] border border-[var(--color-accent-300)] rounded-xl p-5 text-center">
+                  <p className="text-3xl font-bold text-[var(--color-accent-700)] font-latin mb-1">
+                    2.0M
+                  </p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    Seed Round Q4 2026
+                  </p>
+                </div>
+                <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 text-center">
+                  <p className="text-3xl font-bold text-amber-700 font-latin mb-1">
+                    15-20%
+                  </p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    حصّة تَقديرية للجولة
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -398,7 +445,7 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: عملاء نشطون، أنظمة قيد التركيب، عقود موقّعة. ليس مجرد فكرة.",
+                    text: "التشغيل الميداني بدأ: محطّة عسفان للتجارب قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، و208 اختبار وحدوي ناجح. ليس مجرد فكرة.",
                   },
                   {
                     num: "03",
@@ -434,10 +481,10 @@ export default function InvestorsPage() {
                 {[
                   "منظومة Smart Controllers (ESP32 + Raspberry Pi) — 208 unit test ناجح",
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
-                  "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة",
-                  "نموذج صناعي مسجّل SAIP #423450193",
-                  "4 عملاء نشطون بتشغيل ميداني حقيقي",
-                  "عقود موقّعة للتوسع في المنطقة الشرقية",
+                  "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
+                  "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
+                  "Early Access pipeline — مشاريع تجريبية قيد التركيب",
+                  "خط تركيب يَمتد من جدة إلى المنطقة الشرقية",
                   "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
                   "Supabase CRM + نموذج جمع العملاء المحتملين",
                 ].map((item) => (
@@ -536,6 +583,72 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
+          6f. استراتيجية الخروج
+          ============================================================ */}
+      <section className="bg-white section-padding" dir="rtl">
+        <div className="container-igarden">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto">
+              <p className="heading-eyebrow mb-4">Exit Strategy</p>
+              <h2 className="heading-section mb-4">استراتيجية الخروج المُتوقَّعة</h2>
+              <p className="text-[var(--color-muted)] text-lg leading-relaxed mb-8">
+                نَخطّط لجولات تَمويل مُتعدّدة المراحل، يَتبعها مسار خروج واضح
+                للمستثمرين الأوائل. السيناريوهات التَقديرية مَبنيّة على نماذج
+                AgriTech الإقليمية المُقارنة.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {[
+                  {
+                    horizon: "2030 — 2032",
+                    title: "استحواذ استراتيجي",
+                    desc: "من شركة AgriTech إقليمية أو تكتّل غذائي خليجي يَبحث عن قُدرة محلية مُختبَرة.",
+                    badge: "السيناريو الأرجح",
+                  },
+                  {
+                    horizon: "2032+",
+                    title: "طرح في تداول-نمو",
+                    desc: "إن وَصلنا إلى الإيرادات والمعايير المطلوبة للسوق الموازي، نَستهدف الطرح العام.",
+                    badge: "السيناريو الطموح",
+                  },
+                  {
+                    horizon: "2028 — 2030",
+                    title: "شراكة استراتيجية",
+                    desc: "بيع حصّة أقلية لشريك صناعي/سيادي مع إبقاء فريق التَأسيس على رأس التَنفيذ.",
+                    badge: "السيناريو المرن",
+                  },
+                ].map((s) => (
+                  <div
+                    key={s.title}
+                    className="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6 flex flex-col"
+                  >
+                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-600)] mb-2">
+                      {s.horizon}
+                    </p>
+                    <h3 className="font-bold text-[var(--color-brand-600)] text-lg mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed flex-1 mb-3">
+                      {s.desc}
+                    </p>
+                    <span className="text-xs font-medium text-[var(--color-brand-500)] bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-full px-3 py-1 self-start">
+                      {s.badge}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-sm text-[var(--color-muted)] mt-6 leading-relaxed">
+                * السيناريوهات تَقديرية لأغراض التَخطيط وليست تَعهّداً ملزماً.
+                التَوقيت والمسار الفعلي يَعتمد على أداء الشركة، السوق، والإطار
+                التَنظيمي.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
           7. CTA نهائي
           ============================================================ */}
       <section className="bg-[var(--color-brand-600)] text-white section-padding">
@@ -555,9 +668,9 @@ export default function InvestorsPage() {
           <FadeIn delay={100}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
-                <Download className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
-                <h4 className="font-bold text-white mb-2">Pitch Deck</h4>
-                <p className="text-lg text-white/60 mb-4">ملف PDF تفصيلي</p>
+                <FileText className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
+                <h4 className="font-bold text-white mb-2">نسخة المستثمرين</h4>
+                <p className="text-lg text-white/60 mb-4">PDF شامل عند الطلب</p>
                 <PitchDeckButton compact />
               </div>
 
@@ -594,26 +707,19 @@ export default function InvestorsPage() {
 
 function PitchDeckButton({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="relative group inline-block">
-      <Button
-        variant={compact ? "outline" : "light"}
-        size={compact ? "sm" : "lg"}
-        disabled
-        className="cursor-not-allowed opacity-70"
-        aria-label="تحميل Pitch Deck — قريباً"
+    <Button
+      variant={compact ? "outline" : "light"}
+      size={compact ? "sm" : "lg"}
+      asChild
+    >
+      <Link
+        href="/contact?interest=investor&type=pitch-deck"
+        aria-label="اطلب نسخة المستثمرين"
       >
-        <Download className="h-4 w-4" />
-        {compact ? "تحميل PDF" : "تحميل Pitch Deck"}
-      </Button>
-      <div
-        className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[var(--color-brand-600)] text-white text-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
-        role="tooltip"
-        aria-hidden="true"
-      >
-        قريباً — يُعدّ الآن
-        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[var(--color-brand-600)]" />
-      </div>
-    </div>
+        <Mail className="h-4 w-4" />
+        {compact ? "اطلب النسخة" : "اطلب نسخة المستثمرين"}
+      </Link>
+    </Button>
   );
 }
 
@@ -783,13 +889,33 @@ function InvestmentAdvantage({
   );
 }
 
-function FundingBar({ label, percentage }: { label: string; percentage: number }) {
+function FundingBar({
+  label,
+  percentage,
+  amount,
+}: {
+  label: string;
+  percentage: number;
+  amount?: string;
+}) {
   return (
     <div>
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-lg font-semibold text-[var(--color-foreground)]">{label}</span>
-        <span className="text-lg font-extrabold text-[var(--color-accent-600)]" data-num>
-          {percentage}%
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <span className="text-lg font-semibold text-[var(--color-foreground)]">
+          {label}
+        </span>
+        <span className="flex items-center gap-3">
+          {amount && (
+            <span className="text-sm text-[var(--color-muted)] font-latin">
+              {amount}
+            </span>
+          )}
+          <span
+            className="text-lg font-extrabold text-[var(--color-accent-600)]"
+            data-num
+          >
+            {percentage}%
+          </span>
         </span>
       </div>
       <div className="h-3 bg-[var(--color-brand-100)] rounded-full overflow-hidden">
