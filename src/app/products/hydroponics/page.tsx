@@ -219,6 +219,114 @@ function TechniquesSection() {
   );
 }
 
+/* ─── Section 3.5: Pick by Crop ──────────────────────────── */
+const CROP_GUIDE = [
+  {
+    crops: "ورقيات سريعة",
+    examples: "خس · جرجير · بقدونس · ريحان",
+    techniques: ["NFT", "DWC"],
+    why: "دورة قصيرة (٢٨-٤٢ يوم)، جذور صغيرة، استهلاك مياه منخفض، مَرونة في الحجم.",
+    color: "from-lime/10 to-lime/5",
+  },
+  {
+    crops: "ثماريات",
+    examples: "طماطم · فلفل · خيار · فراولة",
+    techniques: ["Drip", "Dutch Buckets"],
+    why: "نباتات تَحتاج جذوراً قويّة وتَهوية للأوساط الصلبة. التَنقيط يَضمن تَغذية مستقرّة.",
+    color: "from-amber-100/40 to-amber-50/30",
+  },
+  {
+    crops: "زراعة عمودية / ضيقة المساحة",
+    examples: "خس عمودي · أعشاب · فراولة معلّقة",
+    techniques: ["iGarden Tower", "Aeroponics"],
+    why: "تَضاعف الإنتاج لكلّ متر مربّع، وتُوفّر ٩٥٪ مياه. مناسبة للمساحات المغطّاة الصغيرة.",
+    color: "from-lime/15 to-lime/5",
+    flagship: true,
+  },
+  {
+    crops: "أعلاف خضراء طازجة",
+    examples: "شعير مُستنبَت · أعلاف للماشية والدواجن",
+    techniques: ["Hydroponic Fodder"],
+    why: "إنتاج يومي مُتجدّد بـ ٩٨٪ توفير مياه مقارنةً بالأعلاف التقليدية.",
+    color: "from-amber-100/40 to-amber-50/30",
+  },
+];
+
+function CropGuideSection() {
+  return (
+    <section className="bg-white py-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
+            دليل الاختيار
+          </p>
+          <h2 className="h2 text-deep-green">أيّ تقنية لأيّ محصول؟</h2>
+          <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
+            الاختيار يَعتمد على نوع المحصول، حجم المشروع، والميزانية. هذا
+            الدليل يُساعدك تَبدأ — ثم نَضبط التَفاصيل في الاستشارة.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+          {CROP_GUIDE.map((g) => (
+            <article
+              key={g.crops}
+              className={`rounded-card p-6 shadow-soft border ${
+                g.flagship ? "border-lime/40" : "border-light-gray"
+              } bg-gradient-to-br ${g.color} flex flex-col`}
+            >
+              <div className="flex items-center justify-between gap-3 mb-3">
+                <h3 className="h4 text-deep-green">{g.crops}</h3>
+                {g.flagship && (
+                  <span className="bg-lime text-white text-xs font-bold px-2.5 py-0.5 rounded-pill">
+                    iGarden Tower
+                  </span>
+                )}
+              </div>
+
+              <p className="body-sm text-medium-gray mb-4">
+                <span className="font-medium text-deep-green">أمثلة:</span>{" "}
+                {g.examples}
+              </p>
+
+              <div className="mb-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-lime mb-2">
+                  التقنية الموصى بها
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {g.techniques.map((t) => (
+                    <span
+                      key={t}
+                      className="bg-deep-green text-cream text-sm font-medium px-3 py-1 rounded-pill font-latin"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <p className="body-sm text-medium-gray border-t border-light-gray pt-3 mt-auto">
+                <span className="font-medium text-deep-green">لماذا:</span>{" "}
+                {g.why}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <p className="text-center text-medium-gray text-sm mt-8 max-w-2xl mx-auto">
+          محصول مختلف؟{" "}
+          <a
+            href="/contact?interest=hydroponics"
+            className="text-lime hover:text-deep-green font-medium"
+          >
+            اسأل عن النظام الأنسب لمشروعك ←
+          </a>
+        </p>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Section 4: iGarden Tower (HERO OF THE PAGE) ─────────── */
 function IGardenTowerSection() {
   return (
@@ -578,6 +686,7 @@ export default function HydroponicsPage() {
       </section>
       <ValuesSection />
       <TechniquesSection />
+      <CropGuideSection />
       <IGardenTowerSection />
       <OsfanGallery />
       <ScalesSection />

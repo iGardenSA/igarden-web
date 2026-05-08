@@ -119,15 +119,51 @@ function WhyOsfan() {
 
 /* ─── Section 3: Gallery ──────────────────────────────────── */
 const GALLERY_IMAGES = [
-  { src: "/images/osfan/gallery-1.jpg", alt: "منظر عام لمحطة عسفان" },
-  { src: "/images/osfan/gallery-2.jpg", alt: "البنية التحتية والمساحة المغطّاة" },
-  { src: "/images/osfan/gallery-3.jpg", alt: "مدخل المحطة وترتيبها الخارجي" },
-  { src: "/images/osfan/gallery-4.jpg", alt: "نظام NFT يعمل في المحطة" },
-  { src: "/images/osfan/gallery-5.jpg", alt: "نظام DWC — خزانات الزراعة المائية" },
-  { src: "/images/osfan/gallery-6.jpg", alt: "iGarden Tower في وضع التشغيل" },
-  { src: "/images/osfan/gallery-7.jpg", alt: "نبتة خس في مرحلة الحصاد" },
-  { src: "/images/osfan/gallery-8.jpg", alt: "جذور نظام Aeroponics — لقطة قريبة" },
-  { src: "/images/osfan/gallery-9.jpg", alt: "ورشة «ازرع بذكاء» — المشاركون يتعرّفون على الأنظمة" },
+  {
+    src: "/images/osfan/gallery-1.jpg",
+    label: "منظر عام للمحطة",
+    detail: "١٢٠٠م² شمال جدة",
+  },
+  {
+    src: "/images/osfan/gallery-2.jpg",
+    label: "البنية التَحتية المغطّاة",
+    detail: "هيكل مقاوم لرياح الخليج",
+  },
+  {
+    src: "/images/osfan/gallery-3.jpg",
+    label: "مدخل المحطّة",
+    detail: "ترتيب خارجي + غرف تَجارب",
+  },
+  {
+    src: "/images/osfan/gallery-4.jpg",
+    label: "نظام NFT في تشغيل",
+    detail: "ورقيات سريعة · دورة ٢٨ يوم",
+  },
+  {
+    src: "/images/osfan/gallery-5.jpg",
+    label: "نظام DWC",
+    detail: "خزانات مع مبدّل حرارة مُدمَج",
+  },
+  {
+    src: "/images/osfan/gallery-6.jpg",
+    label: "iGarden Tower",
+    detail: "النموذج المُسجَّل SAIP في وضع تَشغيل",
+  },
+  {
+    src: "/images/osfan/gallery-7.jpg",
+    label: "خس في مرحلة الحصاد",
+    detail: "نموّ تَحت ظروف صيف +٤٥°C",
+  },
+  {
+    src: "/images/osfan/gallery-8.jpg",
+    label: "جذور Aeroponics",
+    detail: "لقطة قريبة — تَهوية دائمة",
+  },
+  {
+    src: "/images/osfan/gallery-9.jpg",
+    label: "ورشة «ازرع بذكاء»",
+    detail: "ميدان تَطبيقي، لا محاضرة",
+  },
 ];
 
 function Gallery() {
@@ -139,24 +175,38 @@ function Gallery() {
             الصور الحقيقية
           </p>
           <h2 className="h2 text-deep-green">عسفان بالصور</h2>
-          {/* [CONTENT_NEEDED: 9-12 صورة منظَّمة من عسفان — انظر Brief §7.1 القسم 3 للتصنيفات المطلوبة] */}
+          <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
+            كلّ صورة مَوقع فعلي في عسفان — لا صور stock، ولا renders.
+          </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {GALLERY_IMAGES.map((img) => (
-            <div
+            <figure
               key={img.src}
-              className="relative aspect-square rounded-card overflow-hidden bg-brand-500/20"
-              style={{
-                backgroundImage: `url(${img.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              role="img"
-              aria-label={img.alt}
+              className="relative aspect-square rounded-card overflow-hidden bg-brand-500/20 group"
             >
-              <span className="sr-only">{img.alt}</span>
-            </div>
+              <div
+                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
+                style={{
+                  backgroundImage: `url(${img.src})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+                role="img"
+                aria-label={`${img.label} — ${img.detail}`}
+              />
+              <figcaption
+                className="absolute bottom-0 inset-x-0 px-4 py-3 bg-gradient-to-t from-deep-green/95 via-deep-green/70 to-transparent text-cream"
+              >
+                <p className="font-bold text-sm leading-snug mb-0.5">
+                  {img.label}
+                </p>
+                <p className="text-xs text-cream/75 leading-snug">
+                  {img.detail}
+                </p>
+              </figcaption>
+            </figure>
           ))}
         </div>
       </div>
