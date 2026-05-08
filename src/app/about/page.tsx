@@ -6,7 +6,6 @@ import {
   Globe2,
   Microscope,
   CheckCircle2,
-  Sprout,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -56,21 +55,32 @@ function WhyWeStarted() {
           </p>
           <h2 className="h2 text-deep-green">لماذا بدأنا؟</h2>
         </div>
-        {/*
-          [CONTENT_NEEDED: قصّة 120-150 كلمة عن سبب بدء iGarden.
-           المحاور المقترحة:
-           - الفجوة في حلول الزراعة الذكية المُكيَّفة محلياً
-           - رؤية المملكة 2030 + الأمن الغذائي
-           - شغف الفريق المؤسّس
-           - تجربة مع منتجات مستوردة لا تصمد في الصيف]
-        */}
-        <div className="bg-cream rounded-card p-8 shadow-soft">
-          <p className="body-base text-medium-gray leading-relaxed">
-            الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حسّاسات،
-            تحكّم آلي، وبرمجيات بيانات وامتثال — مُكيَّفة لمناخ المملكة.
-            نُنفّذ، نُشغّل، ونُطوّر مع كلّ موسم. عملاؤنا الحاليون
-            يمتدّون من خميس مشيط إلى الأحساء.
-          </p>
+        <div className="bg-cream rounded-card p-8 md:p-10 shadow-soft">
+          <div className="space-y-4 body-base text-medium-gray leading-relaxed">
+            <p>
+              في 2023 جرّبتُ أوّل نظام Hydroponics مستورَد في حديقة المنزل بجدة.
+              النشرة قالت إنّه «يَعمل في كل المناخات». في يونيو انفجرت ٣ مواسير،
+              تكلّس النظام، وماتت ٢٢ نبتة من أصل ٣٠.
+            </p>
+            <p>
+              اتّصلتُ بالموزّع. قال: «المنتج لم يُختبَر فوق ٣٥°C — هذه مشكلتك،
+              لا مشكلتنا». بحثتُ في السوق المحلي: لا حلّ متوفّر. كل ما يُباع
+              ترجمة لكتالوج أوروبي، أو محاكاة لنظام صيني صُمّم لشتاء بكين.
+            </p>
+            <p>
+              هنا تَوضّحت الفكرة: لا نَستورد ونُعيد البيع — نَبني نسختنا.
+              كلّ خطّ في كلّ لوحة Smart Controller مَرسوم في جدة. كلّ نظام يَمرّ
+              بصيف عسفان قبل أن يَصل إلى عميل. وكلّ ما نتعلّمه من فشل النموذج،
+              نُترجمه إلى إصدار أفضل.
+            </p>
+            <p>
+              iGarden ليست مشروعاً تجارياً وحده. هي محاولة بناء صناعة محلية
+              للزراعة الذكية — بأيدٍ سعودية، لمناخنا، لطعامنا.
+            </p>
+            <p className="pt-4 border-t border-light-gray text-deep-green font-medium">
+              — علي محمد غنيمة، المؤسس
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -327,57 +337,7 @@ function OsfanLinkSection() {
   );
 }
 
-/* ─── Section 7: Values ───────────────────────────────────── */
-const VALUES = [
-  {
-    title: "محلي بحق",
-    desc: "التقنية العالمية بمواد ومدخلات سعودية — مُختَبَرة في مناخنا، لا مُستوردة من ظروف أوروبا.",
-  },
-  {
-    title: "الأرقام لا الكلام",
-    desc: "كل ادعاء مدعوم بقياس ميداني. لا نعرض رقماً لم نختبره في عسفان أو عند عميل.",
-  },
-  {
-    title: "شريك لا بائع",
-    desc: "نُشغّل معك بعد التسليم ونُطوّر مع كل موسم. علاقتنا بدأت من التركيب، لا من العقد.",
-  },
-  {
-    title: "بناء يتراكم",
-    desc: "كل مشروع يُغذّي المشروع التالي — درس من عسفان يتحول إلى تحسين في الإصدار القادم.",
-  },
-  {
-    title: "الامتثال أصيل",
-    desc: "نوثّق من أول يوم لأن البيانات تحمي العميل والشركة. السجل التشغيلي ليس خياراً.",
-  },
-];
-
-function ValuesSection() {
-  return (
-    <section className="section-light py-16">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-10">
-          <h2 className="h2 text-deep-green">ما يميّزنا</h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {VALUES.map((v) => (
-            <div
-              key={v.title}
-              className="bg-white rounded-card p-5 shadow-soft text-center hover:shadow-md transition-shadow"
-            >
-              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mx-auto mb-3">
-                <Sprout className="w-5 h-5 text-lime" aria-hidden />
-              </div>
-              <h3 className="font-bold text-deep-green text-lg mb-2">{v.title}</h3>
-              <p className="text-medium-gray text-lg leading-relaxed">{v.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ─── Section 8: Final CTA ────────────────────────────────── */
+/* ─── Section 7: Final CTA ────────────────────────────────── */
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -417,7 +377,6 @@ export default function AboutPage() {
       <MethodologyDeepDive />
       <TeamSection />
       <OsfanLinkSection />
-      <ValuesSection />
       <FinalCTA />
     </>
   );

@@ -30,27 +30,35 @@ function Hero() {
         backgroundPosition: "center",
       }}
     >
-      {/* [CONTENT_NEEDED: /images/osfan/hero-banner.jpg — أفضل صورة بانورامية لمحطة عسفان] */}
-      {/* Dark overlay */}
       <div
         className="absolute inset-0"
-        style={{ background: "rgba(15, 61, 46, 0.6)" }}
+        style={{ background: "rgba(15, 61, 46, 0.65)" }}
         aria-hidden
       />
       <div className="relative container mx-auto px-4 max-w-4xl text-center py-24">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           عسفان، شمال جدة · منذ 2025
         </p>
-        <h1 className="h1 text-cream mb-4">
-          محطّة عسفان — حيث نُجرّب قبل أن نُسلّم
+        <h1 className="h1 text-cream mb-5">
+          قبل أن نُنفّذ في مزرعتك،
+          <span className="block text-[#A5D63F]">نَكسر النظام في عسفان.</span>
         </h1>
-        <p className="body-base text-cream/80 max-w-2xl mx-auto">
+        <p className="body-base text-cream/85 max-w-2xl mx-auto leading-relaxed">
           المختبر الميداني لـ{" "}
           <span dir="ltr" className="ltr-inline font-latin font-bold">
             iGarden
           </span>{" "}
-          في عسفان، شمال جدة
+          — حيث تَمرّ كلّ تقنية بصيف +٤٥°C، رطوبة ساحلية، رياح الخليج، وغبار
+          قبل أن تَصل إلى عميل.
         </p>
+
+        <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-4 text-cream/70 text-sm">
+          <span className="font-latin">7 تقنيات نشطة</span>
+          <span className="text-[#A5D63F]/40">·</span>
+          <span>5 ورش مُنفَّذة</span>
+          <span className="text-[#A5D63F]/40">·</span>
+          <span className="font-latin">208 unit tests</span>
+        </div>
       </div>
     </section>
   );

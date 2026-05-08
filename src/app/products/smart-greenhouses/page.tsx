@@ -27,36 +27,40 @@ function Hero() {
           {/* Text */}
           <div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              المحميات الذكية · IoT-Enabled
+              للمزارع التجارية · IoT-Enabled
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              Smart Greenhouses —{" "}
-              <span className="block">محميات ذكية تصمد في مناخك</span>
+              محمية ليست مجرّد هيكل.
+              <span className="block">بل نظام تشغيل لإنتاجك.</span>
             </h1>
-            <p className="body-base text-medium-gray mb-8 max-w-lg">
-              محميات بأتمتة{" "}
-              <span dir="ltr" className="ltr-inline font-latin">IoT</span>{" "}
-              كاملة، هياكل مقاومة لرياح الخليج، وتحكم مناخي اختُبر في
-              عسفان عند +45°C.
+            <p className="body-base text-medium-gray mb-4 max-w-lg">
+              نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — هياكل مقاومة
+              لرياح الخليج، تَبريد متعدّد المراحل، ريّ ذكي، وتحكّم مناخي اختُبر
+              في عسفان تحت +45°C.
+            </p>
+            <p className="body-sm text-medium-gray mb-8 max-w-lg">
+              كفاءة طاقة حتى ٤٠٪ بحسب التصميم والمحصول. تركيب مفتاح-باليد. دعم
+              ميداني بعد التَسليم.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=greenhouses" variant="lime">
-                اطلب عرض مخصّص
+                اطلب عرضاً مخصّصاً
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
-                شاهد محطّة عسفان
+                شاهد المحميات في عسفان
               </CTAButton>
             </div>
           </div>
 
-          {/* Hero image placeholder */}
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-500 flex items-center justify-center"
             role="img"
             aria-label="محمية ذكية من iGarden في محطة عسفان"
           >
-            {/* [CONTENT_NEEDED: /images/products/smart-greenhouses/hero.jpg — صورة محمية حقيقية من عسفان] */}
             <Building2 className="w-20 h-20 text-white/20" aria-hidden />
+            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
+              +45°C · Tested in Osfan
+            </span>
           </div>
         </div>
       </div>

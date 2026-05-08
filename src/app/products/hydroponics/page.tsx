@@ -43,28 +43,38 @@ function Hero() {
               الزراعة المائية · 7 تقنيات
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              Hydroponic Systems —{" "}
-              <span className="block">زراعة بلا تربة، مُختَبَرة في الميدان السعودي</span>
+              لا نَبيعك تقنية جاهزة.
+              <span className="block">نَختار الأنسب لمحصولك.</span>
             </h1>
-            <p className="body-base text-medium-gray mb-8 max-w-lg">
-              7 تقنيات زراعة مائية مُختَبَرة في عسفان — توفّر 95% من المياه
-              وتُنتج 3× مقارنة بالزراعة التقليدية. يشمل{" "}
-              <span className="font-medium text-deep-green">iGarden Tower</span>{" "}
-              المُسجَّل صناعياً.
+            <p className="body-base text-medium-gray mb-4 max-w-lg">
+              ٧ تقنيات زراعة مائية مُختَبَرة في عسفان — NFT · DWC · Drip ·
+              Aeroponics · Tower وغيرها. نَختار النظام الأنسب لمحصولك ومساحتك
+              وميزانيتك، لا الأشهر تسويقياً.
             </p>
-            <CTAButton href="/contact?interest=hydroponics" variant="lime">
-              اطلب استشارة
-            </CTAButton>
+            <p className="body-sm text-medium-gray mb-8 max-w-lg">
+              حتى ٩٥٪ توفير في المياه و٣× إنتاجية بحسب التقنية والمحصول. يَشمل{" "}
+              <span className="font-medium text-deep-green">iGarden Tower</span>{" "}
+              المُسجَّل صناعياً (SAIP #423450193).
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <CTAButton href="/contact?interest=hydroponics" variant="lime">
+                أيّ تقنية تُناسب محصولك؟
+              </CTAButton>
+              <CTAButton href="/osfan-station" variant="outline-green">
+                شاهدها تَعمل في عسفان
+              </CTAButton>
+            </div>
           </div>
 
-          {/* Hero image placeholder */}
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green flex items-center justify-center"
             role="img"
             aria-label="أنظمة الزراعة المائية من iGarden في محطة عسفان"
           >
-            {/* [CONTENT_NEEDED: /images/products/hydroponics/hero.jpg — صورة نظام هيدروبونيك من عسفان] */}
             <Droplets className="w-20 h-20 text-white/20" aria-hidden />
+            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
+              7 techniques · 1 right pick
+            </span>
           </div>
         </div>
       </div>

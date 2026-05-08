@@ -41,15 +41,20 @@ function Hero() {
               </span>
             </div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              المنتج الرائد · Smart OS Powered
+              لوحات التحكّم · Smart OS Powered
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              Smart Controllers —{" "}
-              <span className="block">لوحات التحكم الزراعي بصناعتنا</span>
+              لا تُغيّر نظامك الزراعي.
+              <span className="block">أَضف له عقلاً.</span>
             </h1>
-            <p className="body-base text-medium-gray mb-8 max-w-lg">
-              تصميم وبرمجة وتصنيع 100% سعودي — قابلة للربط مع أيّ نظام زراعة
-              قائم. لا حاجة لاستبدال معداتك، فقط أضف الذكاء.
+            <p className="body-base text-medium-gray mb-4 max-w-lg">
+              Smart Controllers من iGarden تَربط حسّاساتك ومضخّاتك ونظام الري
+              الحالي بلوحة تَحكّم واحدة. تَعرف حالة الماء والتغذية والمناخ
+              لحظياً — قبل أن يَتحوّل الخلل إلى خسارة.
+            </p>
+            <p className="body-sm text-medium-gray mb-8 max-w-lg">
+              تصميم وبرمجة وتصنيع 100% سعودي. قطع غيار محلية. فريق دعم في نفس
+              مدينتك.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=controllers" variant="lime">
@@ -60,19 +65,20 @@ function Hero() {
                 variant="outline-green"
                 external
               >
-                افتح الديمو التفاعلي ↗
+                شاهد البيانات الحيّة ↗
               </CTAButton>
             </div>
           </div>
 
-          {/* Hero image placeholder */}
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-600 flex items-center justify-center"
             role="img"
             aria-label="لوحة Smart Controller من محطة عسفان"
           >
-            {/* [CONTENT_NEEDED: /images/products/smart-controllers/hero.jpg — لوحة Controller الحقيقية من عسفان] */}
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
+            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
+              208 unit tests · ESP32 + Pi 5
+            </span>
           </div>
         </div>
       </div>
