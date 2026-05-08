@@ -241,21 +241,61 @@
 
 /* ==========================================================================
    Type Scale Utilities (Brief v2 §3.1)
+   Responsive — match heading-eyebrow / heading-section behavior so old
+   utility classes (h1/h2/h3) and new Tailwind-direct classes feel the same
+   on both mobile and desktop.
    ========================================================================== */
 
-.h1 { font-size: 3rem; line-height: 1.2; font-weight: 700; }
-.h2 { font-size: 2.25rem; line-height: 1.25; font-weight: 700; }
-.h3 { font-size: 1.5rem; line-height: 1.35; font-weight: 500; }
-.h4 { font-size: 1.25rem; line-height: 1.4; font-weight: 500; }
+.h1 {
+  font-size: 2.25rem; /* 36px mobile */
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.h2 {
+  font-size: 1.875rem; /* 30px mobile */
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+.h3 {
+  font-size: 1.375rem; /* 22px mobile */
+  line-height: 1.35;
+  font-weight: 600;
+}
+.h4 {
+  font-size: 1.125rem; /* 18px mobile */
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .h1 { font-size: 2.5rem; }   /* 40px sm */
+  .h2 { font-size: 2rem; }     /* 32px sm */
+  .h3 { font-size: 1.5rem; }   /* 24px sm */
+  .h4 { font-size: 1.25rem; }  /* 20px sm */
+}
+
+@media (min-width: 768px) {
+  .h1 { font-size: 3rem; }     /* 48px md */
+  .h2 { font-size: 2.25rem; }  /* 36px md */
+  .h3 { font-size: 1.625rem; } /* 26px md */
+}
+
 .body-base { font-size: 1rem; line-height: 1.7; font-weight: 400; }
 .body-sm { font-size: 0.875rem; line-height: 1.6; font-weight: 400; }
+.body-large { font-size: 1.125rem; line-height: 1.65; font-weight: 400; }
 .caption { font-size: 0.75rem; letter-spacing: 0.02em; }
+
 .stat-num {
-  font-size: 3.5rem;
+  font-size: 2.5rem; /* 40px mobile */
   line-height: 1;
   font-weight: 700;
   font-family: var(--font-latin);
   color: var(--color-lime);
+}
+@media (min-width: 768px) {
+  .stat-num { font-size: 3.5rem; } /* 56px md */
 }
 
 /* ==========================================================================

@@ -309,28 +309,75 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          5. توزيع التمويل
+          5. توزيع التمويل (منحة سنبلة 150,000 ريال)
           ============================================================ */}
       <section className="bg-white section-padding">
         <div className="container-igarden">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <FadeIn>
               <div className="text-center mb-12">
-                <p className="heading-eyebrow mb-4">خطة الاستخدام</p>
-                <h2 className="heading-section mb-4">توزيع التمويل</h2>
+                <p className="heading-eyebrow mb-4">Use of Funds — منحة سنبلة</p>
+                <h2 className="heading-section mb-4">
+                  ١٥٠ ألف ريال — كيف نَستخدم كلّ ريال؟
+                </h2>
                 <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                  كيف نستثمر تمويل سنبلة لتحقيق أقصى أثر.
+                  منحة EWAx · سنبلة المُتوقَّعة ٢٠٢٦ — موزَّعة على أربعة محاور
+                  تَخدم القفزة من Early Access إلى Production.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
               <div className="bg-[var(--color-surface)] rounded-2xl p-8 border border-[var(--color-border)] space-y-6">
-                <FundingBar label="تطوير المنتج" percentage={40} />
-                <FundingBar label="توزيع نماذج تجريبية" percentage={25} />
-                <FundingBar label="تسويق ومبيعات" percentage={15} />
-                <FundingBar label="دعم لوجستي" percentage={10} />
-                <FundingBar label="تكاليف تشغيل" percentage={10} />
+                <FundingBar
+                  label="Smart Controllers — تَطوير وتَصنيع"
+                  amount="75,000 ريال"
+                  percentage={50}
+                />
+                <FundingBar
+                  label="محطّة عسفان — توسعة وأنظمة جديدة"
+                  amount="37,500 ريال"
+                  percentage={25}
+                />
+                <FundingBar
+                  label="التَسويق + الموقع + المحتوى"
+                  amount="22,500 ريال"
+                  percentage={15}
+                />
+                <FundingBar
+                  label="القانوني + تَسجيل العلامة التجارية"
+                  amount="15,000 ريال"
+                  percentage={10}
+                />
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={150}>
+              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-xl p-5 text-center">
+                  <p className="text-3xl font-bold text-[var(--color-brand-600)] font-latin mb-1">
+                    150K
+                  </p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    منحة سنبلة (P0)
+                  </p>
+                </div>
+                <div className="bg-[var(--color-accent-100)] border border-[var(--color-accent-300)] rounded-xl p-5 text-center">
+                  <p className="text-3xl font-bold text-[var(--color-accent-700)] font-latin mb-1">
+                    2.0M
+                  </p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    Seed Round Q4 2026
+                  </p>
+                </div>
+                <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 text-center">
+                  <p className="text-3xl font-bold text-amber-700 font-latin mb-1">
+                    15-20%
+                  </p>
+                  <p className="text-sm text-[var(--color-muted)]">
+                    حصّة تَقديرية للجولة
+                  </p>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -530,6 +577,72 @@ export default function InvestorsPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ============================================================
+          6f. استراتيجية الخروج
+          ============================================================ */}
+      <section className="bg-white section-padding" dir="rtl">
+        <div className="container-igarden">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto">
+              <p className="heading-eyebrow mb-4">Exit Strategy</p>
+              <h2 className="heading-section mb-4">استراتيجية الخروج المُتوقَّعة</h2>
+              <p className="text-[var(--color-muted)] text-lg leading-relaxed mb-8">
+                نَخطّط لجولات تَمويل مُتعدّدة المراحل، يَتبعها مسار خروج واضح
+                للمستثمرين الأوائل. السيناريوهات التَقديرية مَبنيّة على نماذج
+                AgriTech الإقليمية المُقارنة.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                {[
+                  {
+                    horizon: "2030 — 2032",
+                    title: "استحواذ استراتيجي",
+                    desc: "من شركة AgriTech إقليمية أو تكتّل غذائي خليجي يَبحث عن قُدرة محلية مُختبَرة.",
+                    badge: "السيناريو الأرجح",
+                  },
+                  {
+                    horizon: "2032+",
+                    title: "طرح في تداول-نمو",
+                    desc: "إن وَصلنا إلى الإيرادات والمعايير المطلوبة للسوق الموازي، نَستهدف الطرح العام.",
+                    badge: "السيناريو الطموح",
+                  },
+                  {
+                    horizon: "2028 — 2030",
+                    title: "شراكة استراتيجية",
+                    desc: "بيع حصّة أقلية لشريك صناعي/سيادي مع إبقاء فريق التَأسيس على رأس التَنفيذ.",
+                    badge: "السيناريو المرن",
+                  },
+                ].map((s) => (
+                  <div
+                    key={s.title}
+                    className="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6 flex flex-col"
+                  >
+                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-600)] mb-2">
+                      {s.horizon}
+                    </p>
+                    <h3 className="font-bold text-[var(--color-brand-600)] text-lg mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed flex-1 mb-3">
+                      {s.desc}
+                    </p>
+                    <span className="text-xs font-medium text-[var(--color-brand-500)] bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-full px-3 py-1 self-start">
+                      {s.badge}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-sm text-[var(--color-muted)] mt-6 leading-relaxed">
+                * السيناريوهات تَقديرية لأغراض التَخطيط وليست تَعهّداً ملزماً.
+                التَوقيت والمسار الفعلي يَعتمد على أداء الشركة، السوق، والإطار
+                التَنظيمي.
+              </p>
             </div>
           </FadeIn>
         </div>
@@ -776,13 +889,33 @@ function InvestmentAdvantage({
   );
 }
 
-function FundingBar({ label, percentage }: { label: string; percentage: number }) {
+function FundingBar({
+  label,
+  percentage,
+  amount,
+}: {
+  label: string;
+  percentage: number;
+  amount?: string;
+}) {
   return (
     <div>
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-lg font-semibold text-[var(--color-foreground)]">{label}</span>
-        <span className="text-lg font-extrabold text-[var(--color-accent-600)]" data-num>
-          {percentage}%
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+        <span className="text-lg font-semibold text-[var(--color-foreground)]">
+          {label}
+        </span>
+        <span className="flex items-center gap-3">
+          {amount && (
+            <span className="text-sm text-[var(--color-muted)] font-latin">
+              {amount}
+            </span>
+          )}
+          <span
+            className="text-lg font-extrabold text-[var(--color-accent-600)]"
+            data-num
+          >
+            {percentage}%
+          </span>
         </span>
       </div>
       <div className="h-3 bg-[var(--color-brand-100)] rounded-full overflow-hidden">
