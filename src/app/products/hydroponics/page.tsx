@@ -561,7 +561,6 @@ export default function HydroponicsPage() {
       <FAQSchema faqs={SCHEMA_FAQS} />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
-      <TargetAudience />
       <section className="bg-[#FAFAF7] py-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <StageHonesty />
