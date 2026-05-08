@@ -3,7 +3,7 @@ import Link from "next/link";
 import {
   TrendingUp, Shield, Globe, Users, Award, Rocket,
   Building, FileText, Calendar, ArrowLeft, CheckCircle2,
-  Download, Mail, Phone,
+  Mail, Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -12,9 +12,9 @@ import { StageHonesty } from "@/components/shared/StageHonesty";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "للمستثمرين — مرحلة مبكرة بإيرادات حقيقية | iGarden",
+  title: "للمستثمرين — مرحلة مبكرة بأصول ميدانية | iGarden",
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 4 عملاء نشطون، مرحلة مبكرة بإيرادات حقيقية.",
+    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير منذ 2024، و208 اختبار وحدوي ناجح على Smart OS — مرحلة الانطلاق الرسمي 2026.",
   alternates: { canonical: "https://igarden.sa/investors" },
 };
 
@@ -94,9 +94,9 @@ export default function InvestorsPage() {
             <FadeIn delay={150}>
               <QuickFactCard
                 icon={<Calendar className="h-6 w-6" />}
-                label="تاريخ التأسيس"
-                value="فبراير"
-                unit="2026"
+                label="التأسيس · ترخيص MISA"
+                value="2024"
+                unit="ترخيص فبراير 2026"
               />
             </FadeIn>
             <FadeIn delay={200}>
@@ -398,7 +398,7 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: عملاء نشطون، أنظمة قيد التركيب، عقود موقّعة. ليس مجرد فكرة.",
+                    text: "التشغيل الميداني بدأ: محطّة عسفان للتجارب قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، و208 اختبار وحدوي ناجح. ليس مجرد فكرة.",
                   },
                   {
                     num: "03",
@@ -434,10 +434,10 @@ export default function InvestorsPage() {
                 {[
                   "منظومة Smart Controllers (ESP32 + Raspberry Pi) — 208 unit test ناجح",
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
-                  "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة",
-                  "نموذج صناعي مسجّل SAIP #423450193",
-                  "4 عملاء نشطون بتشغيل ميداني حقيقي",
-                  "عقود موقّعة للتوسع في المنطقة الشرقية",
+                  "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
+                  "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
+                  "Early Access pipeline — مشاريع تجريبية قيد التركيب",
+                  "خط تركيب يَمتد من جدة إلى المنطقة الشرقية",
                   "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
                   "Supabase CRM + نموذج جمع العملاء المحتملين",
                 ].map((item) => (
@@ -555,9 +555,9 @@ export default function InvestorsPage() {
           <FadeIn delay={100}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
-                <Download className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
-                <h4 className="font-bold text-white mb-2">Pitch Deck</h4>
-                <p className="text-lg text-white/60 mb-4">ملف PDF تفصيلي</p>
+                <FileText className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
+                <h4 className="font-bold text-white mb-2">نسخة المستثمرين</h4>
+                <p className="text-lg text-white/60 mb-4">PDF شامل عند الطلب</p>
                 <PitchDeckButton compact />
               </div>
 
@@ -594,26 +594,19 @@ export default function InvestorsPage() {
 
 function PitchDeckButton({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="relative group inline-block">
-      <Button
-        variant={compact ? "outline" : "light"}
-        size={compact ? "sm" : "lg"}
-        disabled
-        className="cursor-not-allowed opacity-70"
-        aria-label="تحميل Pitch Deck — قريباً"
+    <Button
+      variant={compact ? "outline" : "light"}
+      size={compact ? "sm" : "lg"}
+      asChild
+    >
+      <Link
+        href="/contact?interest=investor&type=pitch-deck"
+        aria-label="اطلب نسخة المستثمرين"
       >
-        <Download className="h-4 w-4" />
-        {compact ? "تحميل PDF" : "تحميل Pitch Deck"}
-      </Button>
-      <div
-        className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-[var(--color-brand-600)] text-white text-lg rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
-        role="tooltip"
-        aria-hidden="true"
-      >
-        قريباً — يُعدّ الآن
-        <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[var(--color-brand-600)]" />
-      </div>
-    </div>
+        <Mail className="h-4 w-4" />
+        {compact ? "اطلب النسخة" : "اطلب نسخة المستثمرين"}
+      </Link>
+    </Button>
   );
 }
 

@@ -392,8 +392,7 @@ export default function OsfanStationPage() {
       <Hero />
       <WhyOsfan />
       <Gallery />
-      {/* HIDDEN IN WAVE 1 — TestedSystems content needed from م. أيمن (Wave 2) */}
-      {/* <TestedSystems /> */}
+      <TestedSystems />
       <WorkshopsSection />
       <ExpansionPlans />
       <BookVisit />

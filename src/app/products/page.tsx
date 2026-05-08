@@ -22,7 +22,7 @@ function Hero() {
     <section className="section-light py-16 md:py-20">
       <div className="container mx-auto px-4 max-w-7xl text-center">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-          نَبني · نُوطّن · نُطوّر
+          ننفّذ · نُوطّن · نُطوّر
         </p>
         <h1 className="h1 text-deep-green mb-5">منصّة منتجات متكاملة</h1>
         <p className="body-base text-medium-gray max-w-2xl mx-auto">

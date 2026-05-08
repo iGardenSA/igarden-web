@@ -45,7 +45,7 @@ export default function HeroSection() {
         </p>
 
         <p className="text-sm text-[#A5D63F]/70 font-medium tracking-wider uppercase mt-2 mb-8">
-          نَبني · نُوطّن · نُطوّر
+          ننفّذ · نُوطّن · نُطوّر
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start">
