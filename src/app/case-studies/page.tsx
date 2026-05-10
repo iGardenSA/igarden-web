@@ -34,7 +34,7 @@ const PHASE_META: Record<Phase, { label: string; color: string; icon: typeof Act
 const CASES = [
   {
     id: "001",
-    region: "خميس مشيط",
+    region: "منطقة جنوبية",
     type: "Sprouting Room",
     phase: "live" as Phase,
     monitors: ["درجة الحرارة", "الرطوبة النسبية", "دورات التشغيل", "استهلاك المياه"],
@@ -42,7 +42,7 @@ const CASES = [
   },
   {
     id: "002",
-    region: "غولة",
+    region: "المنطقة الغربية",
     type: "Raft DWC",
     phase: "installing" as Phase,
     monitors: ["pH", "EC", "درجة حرارة الماء", "التغذية", "التدخلات التشغيلية"],

@@ -10,9 +10,10 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { GlowAccent } from "@/components/ui/glow-accent";
 
 export const metadata: Metadata = {
-  title: "المدونة",
+  title: "المدوّنة — iGarden",
   description:
-    "مدونة iGarden التقنية — مقالات متخصصة في Hydroponics وAquaponics وIoT وAI الزراعي.",
+    "مدوّنة iGarden التقنية — مقالات ميدانية في الزراعة المائية والمحميات الذكية وأنظمة التحكم، مكتوبة من تجارب عسفان.",
+  alternates: { canonical: "https://igarden.sa/blog" },
 };
 
 const UPCOMING_ARTICLES = [
@@ -36,15 +37,15 @@ const UPCOMING_ARTICLES = [
   },
   {
     icon: <BarChart2 className="h-5 w-5" />,
-    title: "AI والزراعة: التحليلات التنبؤية في العمل",
-    category: "الذكاء الاصطناعي",
+    title: "كيف تقرأ بيانات pH وEC وتتخذ قرارات التشغيل؟",
+    category: "أدلة عملية",
     readTime: "9 دقائق",
   },
   {
     icon: <TreePine className="h-5 w-5" />,
-    title: "حالة: كيف وفّرت محميات جدة 60% من التكاليف",
-    category: "دراسات حالة",
-    readTime: "15 دقيقة",
+    title: "دراسة: تجربة Sprouting Room في المناخ السعودي",
+    category: "دراسات ميدانية",
+    readTime: "12 دقيقة",
   },
 ];
 

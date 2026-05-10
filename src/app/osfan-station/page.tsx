@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { VisitForm } from "./VisitForm";
-import { CheckCircle2, Users, Microscope, Sprout } from "lucide-react";
+import { CheckCircle2, Microscope } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "محطّة عسفان للتجارب والتطوير | iGarden",
@@ -28,19 +29,16 @@ export const metadata: Metadata = {
 /* ─── Section 1: Hero (full-width banner) ─────────────────── */
 function Hero() {
   return (
-    <section
-      className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-corp-green"
-      style={{
-        backgroundImage: "url(/images/osfan/hero-banner.jpg)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div
-        className="absolute inset-0"
-        style={{ background: "rgba(15, 61, 46, 0.65)" }}
-        aria-hidden
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-[#0A2920]">
+      <Image
+        src="/images/osfan-full/04_greenhouse_wide.webp"
+        alt="محطة عسفان — المختبر الميداني لـ iGarden شمال جدة"
+        fill
+        className="object-cover"
+        sizes="100vw"
+        priority
       />
+      <div className="absolute inset-0 bg-[#0F3D2E]/65" aria-hidden />
       <div className="relative container mx-auto px-4 max-w-4xl text-center py-24">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
           عسفان، شمال جدة · منذ 2025
@@ -104,18 +102,14 @@ function WhyOsfan() {
           </div>
 
           {/* Close-up plant image */}
-          <div
-            className="aspect-[4/3] rounded-card overflow-hidden bg-brand-500/30 flex items-center justify-center"
-            style={{
-              backgroundImage: "url(/images/osfan/plant-closeup.jpg)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            role="img"
-            aria-label="نباتات نامية في محطة عسفان"
-          >
-            {/* [CONTENT_NEEDED: /images/osfan/plant-closeup.jpg — صورة قريبة لنبتة في النظام] */}
-            <Sprout className="w-16 h-16 text-white/20" aria-hidden />
+          <div className="aspect-[4/3] rounded-card overflow-hidden relative">
+            <Image
+              src="/images/osfan-full/03_cabbage_diversity.webp"
+              alt="نباتات نامية في محطة عسفان"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
         </div>
       </div>
@@ -126,49 +120,34 @@ function WhyOsfan() {
 /* ─── Section 3: Gallery ──────────────────────────────────── */
 const GALLERY_IMAGES = [
   {
-    src: "/images/osfan/gallery-1.jpg",
+    src: "/images/osfan-full/04_greenhouse_wide.webp",
     label: "منظر عام للمحطة",
-    detail: "١٢٠٠م² شمال جدة",
+    detail: "شمال جدة — ظروف مناخية حقيقية",
   },
   {
-    src: "/images/osfan/gallery-2.jpg",
+    src: "/images/osfan-full/01_tower_visitors.webp",
     label: "البنية التَحتية المغطّاة",
     detail: "هيكل مقاوم لرياح الخليج",
   },
   {
-    src: "/images/osfan/gallery-3.jpg",
-    label: "مدخل المحطّة",
-    detail: "ترتيب خارجي + غرف تَجارب",
+    src: "/images/osfan-full/03_cabbage_diversity.webp",
+    label: "تنوع المحاصيل",
+    detail: "ورقيات مُنتجة في ظروف +٤٥°C",
   },
   {
-    src: "/images/osfan/gallery-4.jpg",
-    label: "نظام NFT في تشغيل",
-    detail: "ورقيات سريعة · دورة ٢٨ يوم",
-  },
-  {
-    src: "/images/osfan/gallery-5.jpg",
-    label: "نظام DWC",
-    detail: "خزانات مع مبدّل حرارة مُدمَج",
-  },
-  {
-    src: "/images/osfan/gallery-6.jpg",
+    src: "/images/osfan-full/02_tower_closeup.webp",
     label: "iGarden Tower",
     detail: "النموذج المُسجَّل SAIP في وضع تَشغيل",
   },
   {
-    src: "/images/osfan/gallery-7.jpg",
-    label: "خس في مرحلة الحصاد",
-    detail: "نموّ تَحت ظروف صيف +٤٥°C",
+    src: "/images/osfan-full/05_tomato_tunnel.webp",
+    label: "نفق الطماطم",
+    detail: "اختبار Drip Hydroponics ميدانياً",
   },
   {
-    src: "/images/osfan/gallery-8.jpg",
-    label: "جذور Aeroponics",
-    detail: "لقطة قريبة — تَهوية دائمة",
-  },
-  {
-    src: "/images/osfan/gallery-9.jpg",
-    label: "ورشة «ازرع بذكاء»",
-    detail: "ميدان تَطبيقي، لا محاضرة",
+    src: "/images/osfan-full/06_inspector_crops.webp",
+    label: "متابعة المحاصيل",
+    detail: "مراقبة آنية لأداء الأنظمة",
   },
 ];
 
@@ -190,21 +169,16 @@ function Gallery() {
           {GALLERY_IMAGES.map((img) => (
             <figure
               key={img.src}
-              className="relative aspect-square rounded-card overflow-hidden bg-brand-500/20 group"
+              className="relative aspect-square rounded-card overflow-hidden group"
             >
-              <div
-                className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                style={{
-                  backgroundImage: `url(${img.src})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-                role="img"
-                aria-label={`${img.label} — ${img.detail}`}
+              <Image
+                src={img.src}
+                alt={`${img.label} — ${img.detail}`}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(min-width: 768px) 33vw, 50vw"
               />
-              <figcaption
-                className="absolute bottom-0 inset-x-0 px-4 py-3 bg-gradient-to-t from-deep-green/95 via-deep-green/70 to-transparent text-cream"
-              >
+              <figcaption className="absolute bottom-0 inset-x-0 px-4 py-3 bg-gradient-to-t from-deep-green/95 via-deep-green/70 to-transparent text-cream">
                 <p className="font-bold text-sm leading-snug mb-0.5">
                   {img.label}
                 </p>
@@ -319,18 +293,14 @@ function WorkshopsSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Workshop image */}
-          <div
-            className="aspect-[4/3] rounded-card overflow-hidden bg-brand-600/20 flex items-center justify-center"
-            style={{
-              backgroundImage: "url(/images/osfan/workshop-panorama.jpg)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-            role="img"
-            aria-label="ورشة «ازرع بذكاء» في محطة عسفان"
-          >
-            {/* [CONTENT_NEEDED: /images/osfan/workshop-panorama.jpg — صورة بانورامية من إحدى الورش] */}
-            <Users className="w-16 h-16 text-white/20" aria-hidden />
+          <div className="aspect-[4/3] rounded-card overflow-hidden relative">
+            <Image
+              src="/images/osfan-full/01_tower_visitors.webp"
+              alt="ورشة «ازرع بذكاء» في محطة عسفان"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
 
           {/* Text + numbers */}
