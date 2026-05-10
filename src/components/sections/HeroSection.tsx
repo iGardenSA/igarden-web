@@ -25,7 +25,7 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto w-full px-4 md:px-8">
         <div className="inline-flex items-center self-start bg-[#0F3D2E]/40 backdrop-blur-sm border border-[#A5D63F]/40 text-[#A5D63F] px-4 py-1.5 rounded-full text-sm font-medium shadow-sm shadow-black/20 mb-6">
-          منذ 2024 · شركة سعودية · مُختبَرة ميدانياً في عسفان
+          شركة AgriTech سعودية · ترخيص استثماري ريادي · اختبار ميداني في عسفان
         </div>
 
         <h1
