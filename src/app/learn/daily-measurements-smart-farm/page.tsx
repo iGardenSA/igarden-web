@@ -298,18 +298,26 @@ export default function ArticlePage() {
 
           {/* 8. CTA */}
           <section className="text-center py-8">
-            <h2 className="text-xl font-bold text-[#0F3D2E] mb-3">هل تريد مشاهدة هذه القراءات بشكل مباشر؟</h2>
+            <h2 className="text-xl font-bold text-[#0F3D2E] mb-3">هل تريد أتمتة هذه القياسات؟</h2>
             <p className="text-[#6B7280] mb-6 max-w-md mx-auto">
-              جرّب النسخة التجريبية من <span dir="ltr">Smart OS</span> وتعرّف على كيفية عرض وتحليل هذه المؤشرات في الوقت الفعلي.
+              <span dir="ltr">Smart Controllers</span> من iGarden يُسجّل هذه المؤشرات تلقائياً ويُنبّهك عند الانحراف — دون أن تحمل قلماً.
             </p>
-            <a
-              href="https://demo.igarden.sa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
-            >
-              شاهد Smart OS Demo
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/products/smart-controllers"
+                className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
+              >
+                تعرّف على Smart Controllers
+              </Link>
+              <a
+                href="https://demo.igarden.sa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block border border-[#0F3D2E] text-[#0F3D2E] hover:bg-[#0F3D2E] hover:text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
+              >
+                شاهد Smart OS Demo
+              </a>
+            </div>
           </section>
 
           <hr className="border-[#E5E7EB] my-8" />

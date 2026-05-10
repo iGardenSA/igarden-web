@@ -283,14 +283,22 @@ export default function ArticlePage() {
           <section className="text-center py-8">
             <h2 className="text-xl font-bold text-[#0F3D2E] mb-3">هل نظامك مستعد للصيف القادم؟</h2>
             <p className="text-[#6B7280] mb-6 max-w-md mx-auto">
-              صِف لنا وضع نظامك الحالي وسنُساعدك في تحديد نقاط الضعف وكيفية معالجتها قبل الموسم.
+              أنظمة iGarden الهيدروبونيكية مُصمَّمة لمناخ السعودية — مُختبَرة ميدانياً في عسفان في +45°C.
             </p>
-            <Link
-              href="/osfan-station"
-              className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
-            >
-              شاهد محطة عسفان
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/products/hydroponics"
+                className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
+              >
+                تعرّف على أنظمة الزراعة المائية
+              </Link>
+              <Link
+                href="/osfan-station"
+                className="inline-block border border-[#0F3D2E] text-[#0F3D2E] hover:bg-[#0F3D2E] hover:text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
+              >
+                شاهد محطة عسفان
+              </Link>
+            </div>
           </section>
 
           <hr className="border-[#E5E7EB] my-8" />
