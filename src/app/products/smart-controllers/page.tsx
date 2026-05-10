@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Factory,
   Plug,
@@ -13,6 +14,10 @@ import {
   CheckCircle2,
   AlertTriangle,
   ArrowLeft,
+  Users,
+  BarChart3,
+  FileText,
+  Bell,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -23,9 +28,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
     description: "تصميم وبرمجة وتصنيع 100% سعودي. قابلة للربط مع أيّ نظام قائم.",
-    images: ["/images/og/smart-controllers.jpg"],
+    images: [
+      {
+        url: "/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84",
+        width: 1200,
+        height: 630,
+        alt: "Smart Controllers — iGarden",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
+    description: "تصميم وبرمجة وتصنيع 100% سعودي. قابلة للربط مع أيّ نظام قائم.",
+    images: ["/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84"],
   },
 };
 
@@ -113,6 +131,50 @@ function StatusCard() {
           >
             انضمّ لـ Early Access ←
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 2: لمن هذا الحل؟ ───────────────────────────── */
+const FOR_WHOM = [
+  {
+    title: "مزارعون قائمون يريدون الرقابة",
+    desc: "تملك مزرعة تعمل بالري التقليدي أو الهيدروبونيك، لكن المراقبة يدوية وأخطاء التشغيل تُكلّفك يومياً.",
+  },
+  {
+    title: "مشغّلو أنظمة هيدروبونيك",
+    desc: "نظامك الحالي يحتاج قياس pH وEC وتغذية مستمرّة — بدون لوحة مركزية تجمعها وتُنبّهك فور الانحراف.",
+  },
+  {
+    title: "مديرو محميات تجارية",
+    desc: "لديك حساسات ومضخات، لكن لا توجد طريقة لإدارتها جميعاً من مكان واحد وتتبّع السجل التشغيلي.",
+  },
+  {
+    title: "مشاريع حكومية وزراعية",
+    desc: "تحتاج منظومة تحكم موثوقة وقابلة للتدقيق — مع توثيق السجلات وتقارير الأداء الأسبوعية.",
+  },
+];
+
+function ForWhomSection() {
+  return (
+    <section className="bg-white py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">لمن هذا الحل؟</p>
+        <h2 className="h2 text-deep-green mb-8">
+          Smart Controllers مُصمَّمة لمن يملك مزرعة — ويريد أن يُضيف لها عقلاً
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {FOR_WHOM.map((t) => (
+            <div key={t.title} className="bg-[#FAFAF7] rounded-2xl p-6 border border-[#E5E7EB]">
+              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mb-4">
+                <Users className="w-5 h-5 text-deep-green" aria-hidden />
+              </div>
+              <h3 className="text-[#0F3D2E] font-bold text-lg mb-2">{t.title}</h3>
+              <p className="text-[#6B7280] text-base leading-relaxed">{t.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
