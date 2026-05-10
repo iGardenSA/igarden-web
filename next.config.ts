@@ -12,10 +12,6 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn.sanity.io",
-      },
-      {
-        protocol: "https",
         hostname: "igarden.sa",
       },
       {
@@ -28,16 +24,11 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
-  // RTL/i18n لاحقاً عند إضافة النسخة الإنجليزية
-  // i18n: { locales: ["ar", "en"], defaultLocale: "ar" },
 
-  // ─────────────────────────────────────────────────────────
-  // Subdomain routing — app.igarden.sa
-  // ─────────────────────────────────────────────────────────
   async rewrites() {
     return [
       {
-        // عند زيارة app.igarden.sa/ → اعرض محتوى /app بشفافية
+        // app.igarden.sa/ → /app
         source: "/",
         destination: "/app",
         has: [{ type: "host", value: APP_HOST }],
@@ -47,19 +38,81 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
+      // ─── App subdomain ────────────────────────────────────────────
       {
-        // عند زيارة igarden.sa/app → حوّل لـ app.igarden.sa
         source: "/app",
         destination: `https://${APP_HOST}`,
         permanent: true,
         has: [{ type: "host", value: MAIN_HOST }],
       },
       {
-        // عند زيارة www.igarden.sa/app → حوّل لـ app.igarden.sa
         source: "/app",
         destination: `https://${APP_HOST}`,
         permanent: true,
         has: [{ type: "host", value: `www.${MAIN_HOST}` }],
+      },
+
+      // ─── /solutions/* → /products/* (URL aliasing) ───────────────
+      {
+        source: "/solutions",
+        destination: "/products",
+        permanent: true,
+      },
+      {
+        source: "/solutions/smart-controllers",
+        destination: "/products/smart-controllers",
+        permanent: true,
+      },
+      {
+        source: "/solutions/smart-greenhouses",
+        destination: "/products/smart-greenhouses",
+        permanent: true,
+      },
+      {
+        source: "/solutions/hydroponics",
+        destination: "/products/hydroponics",
+        permanent: true,
+      },
+
+      // ─── Academy / Knowledge ─────────────────────────────────────
+      {
+        source: "/academy",
+        destination: "/learn",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        destination: "/learn",
+        permanent: false, // temporary until /blog has content
+      },
+      {
+        source: "/knowledge",
+        destination: "/learn",
+        permanent: true,
+      },
+      {
+        source: "/knowledge/articles",
+        destination: "/learn",
+        permanent: true,
+      },
+
+      // ─── Operational logs alias ──────────────────────────────────
+      {
+        source: "/operational-logs",
+        destination: "/compliance",
+        permanent: true,
+      },
+
+      // ─── Store redirect ──────────────────────────────────────────
+      {
+        source: "/store",
+        destination: "https://shop.igarden.sa",
+        permanent: true,
+      },
+      {
+        source: "/shop",
+        destination: "https://shop.igarden.sa",
+        permanent: true,
       },
     ];
   },

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  TrendingUp, Shield, Globe, Users, Award, Rocket,
+  Shield, Globe, Users, Award, Rocket,
   Building, FileText, Calendar, ArrowLeft, CheckCircle2,
-  Mail, Phone,
+  Mail, AlertCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
@@ -12,9 +12,9 @@ import { StageHonesty } from "@/components/shared/StageHonesty";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "للمستثمرين — مرحلة مبكرة بأصول ميدانية | iGarden",
+  title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير منذ 2024، و208 اختبار وحدوي ناجح على Smart OS — مرحلة الانطلاق الرسمي 2026.",
+    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير منذ 2024، ومحطة اختبار ميدانية في عسفان.",
   alternates: { canonical: "https://igarden.sa/investors" },
 };
 
@@ -30,20 +30,20 @@ export default function InvestorsPage() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent-500)]/30 bg-[var(--color-accent-500)]/10 text-[var(--color-accent-300)] text-lg font-semibold mb-8 uppercase tracking-widest">
               <Award className="h-4 w-4" />
-              <span>Sunbolah 2026 · مرحلة مبكرة</span>
+              <span>AgriTech سعودية · مرحلة مبكرة</span>
             </div>
           </FadeIn>
           <FadeIn delay={100}>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight text-white mb-6">
-              استثمر في مستقبل
+              AgriTech سعودية.
               <br />
-              <span className="text-[var(--color-accent-300)]">الزراعة الذكية</span>
+              <span className="text-[var(--color-accent-300)]">أصول ميدانية. مرحلة مبكرة.</span>
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-10">
-              iGarden شركة AgriFood Tech سعودية مُرخّصة، بترخيص استثماري رسمي ونموذج صناعي
-              مسجل، نبحث عن شركاء استراتيجيين للتوسع الإقليمي.
+              نطوّر حلول التحكم والزراعة الذكية للمناخ السعودي، مع محطة اختبار ميدانية، نموذج
+              صناعي مسجّل، ومنصة تشغيل قيد التطوير.
             </p>
           </FadeIn>
           <FadeIn delay={300}>
@@ -51,12 +51,26 @@ export default function InvestorsPage() {
               <PitchDeckButton />
               <Button variant="light" size="lg" asChild>
                 <Link href="/contact">
-                  احجز لقاء مستثمرين
+                  احجز لقاء
                   <ArrowLeft className="rotate-180" />
                 </Link>
               </Button>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <section className="bg-amber-50 border-b border-amber-200 py-5">
+        <div className="container-igarden">
+          <div className="flex items-start gap-3">
+            <AlertCircle className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
+            <p className="text-amber-800 text-sm leading-relaxed" dir="rtl">
+              <strong>إخلاء مسؤولية:</strong> المحتوى المنشور هنا تعريفي فقط، ولا يُعد عرضاً
+              استثمارياً أو دعوة للاكتتاب أو ضماناً للعائد. تتوفر التفاصيل المالية ومواد
+              المستثمرين عند الطلب للشركاء المؤهلين.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -68,7 +82,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          1. لمحة سريعة
+          1. الحقائق الأساسية
           ============================================================ */}
       <section className="bg-white section-padding">
         <div className="container-igarden">
@@ -76,9 +90,6 @@ export default function InvestorsPage() {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="heading-eyebrow mb-4">لمحة سريعة</p>
               <h2 className="heading-section mb-4">الحقائق الأساسية</h2>
-              <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                كل ما تحتاج معرفته في أربعة أرقام.
-              </p>
             </div>
           </FadeIn>
 
@@ -122,126 +133,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          2. التوقعات المالية
-          ============================================================ */}
-      <section className="bg-[var(--color-surface)] section-padding">
-        <div className="container-igarden">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="heading-eyebrow mb-4">التوقعات المالية</p>
-              <h2 className="heading-section mb-4">التوقعات المالية</h2>
-              <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                أهداف قابلة للقياس لكل سنة — مبنية على خطة تنفيذ واضحة.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <FadeIn delay={100}>
-              <FinancialCard
-                year="2026"
-                revenue="2.4M"
-                net="0.3M"
-                label="انطلاق السوق"
-                highlight={false}
-                barWidth="19"
-              />
-            </FadeIn>
-            <FadeIn delay={200}>
-              <FinancialCard
-                year="2027"
-                revenue="6.9M"
-                net={null}
-                label="تحوّل وتوسع"
-                highlight={false}
-                barWidth="55"
-              />
-            </FadeIn>
-            <FadeIn delay={300}>
-              <FinancialCard
-                year="2028"
-                revenue="12.5M"
-                net={null}
-                label="وصول خليجي"
-                highlight
-                barWidth="100"
-              />
-            </FadeIn>
-          </div>
-
-          <FadeIn delay={350}>
-            <div className="mt-8 p-6 bg-[var(--color-brand-600)] rounded-2xl text-center">
-              <p className="text-white/80 text-lg mb-1">التراكمي 3 سنوات</p>
-              <p className="text-3xl md:text-4xl font-extrabold text-[var(--color-accent-300)]" data-num>
-                17.3M+ ريال
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ============================================================
-          3. نموذج الإيرادات
-          ============================================================ */}
-      <section className="bg-white section-padding">
-        <div className="container-igarden">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <p className="heading-eyebrow mb-4">نموذج الإيرادات</p>
-              <h2 className="heading-section mb-4">4 مصادر دخل متنوعة</h2>
-              <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                تنويع الإيرادات يضمن الاستقرار ويقلل المخاطر.
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <FadeIn delay={100}>
-              <RevenueCard
-                percentage={40}
-                title="مبيعات الأنظمة"
-                subtitle="Hardware + Installation"
-                colorClass="border-[var(--color-brand-600)]"
-                textColorClass="text-[var(--color-brand-600)]"
-                barColorClass="bg-[var(--color-brand-600)]"
-              />
-            </FadeIn>
-            <FadeIn delay={150}>
-              <RevenueCard
-                percentage={30}
-                title="اشتراكات SaaS"
-                subtitle="Cloud Platform"
-                colorClass="border-[var(--color-accent-500)]"
-                textColorClass="text-[var(--color-accent-700)]"
-                barColorClass="bg-[var(--color-accent-500)]"
-              />
-            </FadeIn>
-            <FadeIn delay={200}>
-              <RevenueCard
-                percentage={20}
-                title="تدريب واستشارات"
-                subtitle="Knowledge Services"
-                colorClass="border-amber-400"
-                textColorClass="text-amber-700"
-                barColorClass="bg-amber-400"
-              />
-            </FadeIn>
-            <FadeIn delay={250}>
-              <RevenueCard
-                percentage={10}
-                title="صيانة ودعم"
-                subtitle="Annual Contracts"
-                colorClass="border-[var(--color-brand-300)]"
-                textColorClass="text-[var(--color-brand-500)]"
-                barColorClass="bg-[var(--color-brand-300)]"
-              />
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================================
-          4. الميزات الاستثمارية
+          2. الميزات الاستثمارية
           ============================================================ */}
       <section className="bg-[var(--color-surface)] section-padding">
         <div className="container-igarden">
@@ -249,9 +141,6 @@ export default function InvestorsPage() {
             <div className="text-center max-w-2xl mx-auto mb-12">
               <p className="heading-eyebrow mb-4">لماذا iGarden؟</p>
               <h2 className="heading-section mb-4">الميزات الاستثمارية</h2>
-              <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                ستة أسباب تجعل iGarden خياراً جديراً بالدراسة.
-              </p>
             </div>
           </FadeIn>
 
@@ -261,47 +150,47 @@ export default function InvestorsPage() {
                 icon={<Globe className="h-6 w-6" />}
                 number="01"
                 title="سوق ضخم"
-                description="سوق الزراعة الذكية في المنطقة يتجاوز 45+ مليار ريال، مع نمو متسارع مدفوع برؤية 2030."
+                description="سوق الزراعة الذكية في المنطقة في نمو متسارع مدفوع برؤية 2030 والأمن الغذائي."
               />
             </FadeIn>
             <FadeIn delay={150}>
               <InvestmentAdvantage
-                icon={<TrendingUp className="h-6 w-6" />}
-                number="02"
-                title="نمو متسارع"
-                description="CAGR 8-10% في قطاع AgriTech الخليجي مع ندرة الحلول المحلية المتخصصة."
-              />
-            </FadeIn>
-            <FadeIn delay={200}>
-              <InvestmentAdvantage
                 icon={<Shield className="h-6 w-6" />}
-                number="03"
+                number="02"
                 title="توطين استراتيجي"
                 description="تماشٍ تام مع رؤية 2030، الأمن الغذائي، وبرامج التوطين — مما يُسهّل الحصول على الدعم الحكومي."
               />
             </FadeIn>
-            <FadeIn delay={250}>
+            <FadeIn delay={200}>
               <InvestmentAdvantage
                 icon={<Award className="h-6 w-6" />}
-                number="04"
+                number="03"
                 title="ملكية فكرية محمية"
-                description="نموذج صناعي مسجل SAIP #423450193 — حماية قانونية واضحة للمنتج الأساسي."
+                description="نموذج صناعي مسجّل SAIP #423450193 — حماية قانونية واضحة للمنتج الأساسي."
+              />
+            </FadeIn>
+            <FadeIn delay={250}>
+              <InvestmentAdvantage
+                icon={<Users className="h-6 w-6" />}
+                number="04"
+                title="فريق متخصص"
+                description="فريق تأسيسي يجمع التقنية والأعمال والتشغيل الميداني في السوق السعودي."
               />
             </FadeIn>
             <FadeIn delay={300}>
               <InvestmentAdvantage
-                icon={<Users className="h-6 w-6" />}
+                icon={<Rocket className="h-6 w-6" />}
                 number="05"
-                title="فريق خبير"
-                description="فريق تأسيسي بخبرة تراكمية تزيد عن 15 عاماً يجمع التقنية والأعمال والتشغيل."
+                title="قابلية توسع خليجية"
+                description="نموذج قابل للتكرار في دول الخليج — بنفس المنظومة وتكيّف محدود."
               />
             </FadeIn>
             <FadeIn delay={350}>
               <InvestmentAdvantage
-                icon={<Rocket className="h-6 w-6" />}
+                icon={<Building className="h-6 w-6" />}
                 number="06"
-                title="قابلية توسع خليجية"
-                description="نموذج قابل للتكرار في الإمارات والكويت والبحرين — بنفس المنظومة وتكيّف محدود."
+                title="أصول تشغيلية"
+                description="محطة عسفان الميدانية، 5+ ورش عمل، نماذج Hydroponics مُختبَرة، و208 unit test ناجح."
               />
             </FadeIn>
           </div>
@@ -309,20 +198,17 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          5. توزيع التمويل (منحة سنبلة 150,000 ريال)
+          3. توزيع التمويل (منحة سنبلة)
           ============================================================ */}
       <section className="bg-white section-padding">
         <div className="container-igarden">
           <div className="max-w-4xl mx-auto">
             <FadeIn>
               <div className="text-center mb-12">
-                <p className="heading-eyebrow mb-4">Use of Funds — منحة سنبلة</p>
-                <h2 className="heading-section mb-4">
-                  ١٥٠ ألف ريال — كيف نَستخدم كلّ ريال؟
-                </h2>
+                <p className="heading-eyebrow mb-4">برامج دعم وتسريع محتملة</p>
+                <h2 className="heading-section mb-4">توزيع استخدام التمويل</h2>
                 <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                  منحة EWAx · سنبلة المُتوقَّعة ٢٠٢٦ — موزَّعة على أربعة محاور
-                  تَخدم القفزة من Early Access إلى Production.
+                  إطار مقترح لتوزيع الدعم على أربعة محاور تشغيلية رئيسية.
                 </p>
               </div>
             </FadeIn>
@@ -331,53 +217,20 @@ export default function InvestorsPage() {
               <div className="bg-[var(--color-surface)] rounded-2xl p-8 border border-[var(--color-border)] space-y-6">
                 <FundingBar
                   label="Smart Controllers — تَطوير وتَصنيع"
-                  amount="75,000 ريال"
                   percentage={50}
                 />
                 <FundingBar
                   label="محطّة عسفان — توسعة وأنظمة جديدة"
-                  amount="37,500 ريال"
                   percentage={25}
                 />
                 <FundingBar
                   label="التَسويق + الموقع + المحتوى"
-                  amount="22,500 ريال"
                   percentage={15}
                 />
                 <FundingBar
                   label="القانوني + تَسجيل العلامة التجارية"
-                  amount="15,000 ريال"
                   percentage={10}
                 />
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={150}>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-xl p-5 text-center">
-                  <p className="text-3xl font-bold text-[var(--color-brand-600)] font-latin mb-1">
-                    150K
-                  </p>
-                  <p className="text-sm text-[var(--color-muted)]">
-                    منحة سنبلة (P0)
-                  </p>
-                </div>
-                <div className="bg-[var(--color-accent-100)] border border-[var(--color-accent-300)] rounded-xl p-5 text-center">
-                  <p className="text-3xl font-bold text-[var(--color-accent-700)] font-latin mb-1">
-                    2.0M
-                  </p>
-                  <p className="text-sm text-[var(--color-muted)]">
-                    Seed Round Q4 2026
-                  </p>
-                </div>
-                <div className="bg-amber-50 border border-amber-300 rounded-xl p-5 text-center">
-                  <p className="text-3xl font-bold text-amber-700 font-latin mb-1">
-                    15-20%
-                  </p>
-                  <p className="text-sm text-[var(--color-muted)]">
-                    حصّة تَقديرية للجولة
-                  </p>
-                </div>
               </div>
             </FadeIn>
           </div>
@@ -385,53 +238,9 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          6. شراكة EWAx
+          4. لماذا الآن؟
           ============================================================ */}
-      <section className="bg-[var(--color-surface)] section-padding">
-        <div className="container-igarden">
-          <FadeIn>
-            <div className="max-w-3xl mx-auto bg-white rounded-2xl p-8 md:p-10 border-2 border-[var(--color-brand-200)] shadow-[var(--shadow-soft)]">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-12 w-12 rounded-xl bg-[var(--color-brand-600)] text-[var(--color-accent-300)] flex items-center justify-center">
-                  <CheckCircle2 className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="heading-eyebrow">PARTNERSHIP</p>
-                  <h3 className="text-xl font-bold text-[var(--color-brand-600)]">
-                    شراكتنا مع EWAx · سنبلة
-                  </h3>
-                </div>
-              </div>
-              <p className="text-[var(--color-muted)] leading-relaxed text-lg md:text-lg">
-                نفخر بتقديم طلب لمسرعة{" "}
-                <span className="font-bold text-[var(--color-brand-600)]">سنبلة EWAx</span>{" "}
-                التابعة لوزارة البيئة والمياه والزراعة — الشراكة المثالية لتحقيق أهدافنا المشتركة
-                في تطوير القطاع الزراعي وتحقيق الأمن الغذائي للمملكة.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                {[
-                  "مصادقة حكومية",
-                  "شبكة موردين",
-                  "دعم تسويقي",
-                  "وصول للأسواق",
-                ].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1.5 bg-[var(--color-brand-50)] text-[var(--color-brand-600)] text-lg font-medium rounded-full border border-[var(--color-brand-200)]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ============================================================
-          6b. لماذا الآن؟
-          ============================================================ */}
-      <section className="bg-white section-padding" dir="rtl">
+      <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
         <div className="container-igarden">
           <FadeIn>
             <div className="max-w-3xl mx-auto">
@@ -445,16 +254,16 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: محطّة عسفان للتجارب قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، و208 اختبار وحدوي ناجح. ليس مجرد فكرة.",
+                    text: "التشغيل الميداني بدأ: محطّة عسفان قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، و208 اختبار وحدوي ناجح. ليس مجرد فكرة.",
                   },
                   {
                     num: "03",
-                    text: "نافذة الحصص الأولى مفتوحة. الدخول مبكراً يعني شروطاً أفضل ومشاركة أكبر في التشكيل الاستراتيجي.",
+                    text: "نافذة الشراكة المبكرة مفتوحة. الدخول المبكر يعني شروطاً أفضل ومشاركة أكبر في التشكيل الاستراتيجي.",
                   },
                 ].map((item) => (
                   <div
                     key={item.num}
-                    className="flex items-start gap-5 bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6"
+                    className="flex items-start gap-5 bg-white rounded-2xl border border-[var(--color-border)] p-6"
                   >
                     <span className="font-mono text-xl font-bold text-[var(--color-accent-500)] flex-shrink-0">
                       {item.num}
@@ -469,9 +278,9 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          6c. ماذا بُني فعلاً؟
+          5. ماذا بُني فعلاً؟
           ============================================================ */}
-      <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
+      <section className="bg-white section-padding" dir="rtl">
         <div className="container-igarden">
           <FadeIn>
             <div className="max-w-3xl mx-auto">
@@ -483,14 +292,12 @@ export default function InvestorsPage() {
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
                   "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
                   "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
-                  "Early Access pipeline — مشاريع تجريبية قيد التركيب",
-                  "خط تركيب يَمتد من جدة إلى المنطقة الشرقية",
                   "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
                   "Supabase CRM + نموذج جمع العملاء المحتملين",
                 ].map((item) => (
                   <div
                     key={item}
-                    className="flex items-start gap-3 bg-white rounded-xl border border-[var(--color-border)] p-4"
+                    className="flex items-start gap-3 bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-4"
                   >
                     <CheckCircle2 className="w-4 h-4 text-[var(--color-accent-500)] flex-shrink-0 mt-0.5" aria-hidden="true" />
                     <p className="text-sm text-[var(--color-foreground)] leading-relaxed">{item}</p>
@@ -503,52 +310,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          6d. أين نركز في 2026؟
-          ============================================================ */}
-      <section className="bg-white section-padding" dir="rtl">
-        <div className="container-igarden">
-          <FadeIn>
-            <div className="max-w-3xl mx-auto">
-              <p className="heading-eyebrow mb-4">التركيز</p>
-              <h2 className="heading-section mb-6">أين نركّز في 2026؟</h2>
-              <div className="space-y-3">
-                {[
-                  {
-                    label: "Smart Controllers",
-                    body: "توسيع قاعدة التركيب — 10 عملاء بحلول Q3 2026.",
-                  },
-                  {
-                    label: "Compliance Module",
-                    body: "Pilot رسمي مع مزرعة بحاجة لسجلات امتثال غذائي.",
-                  },
-                  {
-                    label: "محطة عسفان",
-                    body: "تحويلها لمساحة بحث تطبيقي + استقطاب شركاء محتملين.",
-                  },
-                  {
-                    label: "SaaS Platform",
-                    body: "الانتقال من اشتراكات سنوية إلى منصة سحابية بإيرادات متكررة — Q4 2026.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-start gap-4 bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] p-5"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-[var(--color-accent-500)] flex-shrink-0 mt-2" />
-                    <div>
-                      <span className="font-bold text-[var(--color-brand-600)]">{item.label}:</span>{" "}
-                      <span className="text-[var(--color-muted)] text-sm">{item.body}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* ============================================================
-          6e. ما الذي لا نبنيه الآن؟
+          6. ما الذي لا نبنيه الآن؟
           ============================================================ */}
       <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
         <div className="container-igarden">
@@ -559,7 +321,7 @@ export default function InvestorsPage() {
                 ما الذي لا نبنيه الآن؟
               </h2>
               <p className="text-[var(--color-muted)] mb-6 leading-relaxed">
-                الوضوح في ما لا نفعله بنفس أهمية ما نفعله — هذه قراراتنا المعمارية المقصودة.
+                الوضوح في ما لا نفعله بنفس أهمية ما نفعله.
               </p>
               <div className="space-y-3">
                 {[
@@ -583,73 +345,45 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          6f. استراتيجية الخروج
+          7. نوع الشركاء المطلوبين
           ============================================================ */}
       <section className="bg-white section-padding" dir="rtl">
         <div className="container-igarden">
           <FadeIn>
             <div className="max-w-3xl mx-auto">
-              <p className="heading-eyebrow mb-4">Exit Strategy</p>
-              <h2 className="heading-section mb-4">استراتيجية الخروج المُتوقَّعة</h2>
-              <p className="text-[var(--color-muted)] text-lg leading-relaxed mb-8">
-                نَخطّط لجولات تَمويل مُتعدّدة المراحل، يَتبعها مسار خروج واضح
-                للمستثمرين الأوائل. السيناريوهات التَقديرية مَبنيّة على نماذج
-                AgriTech الإقليمية المُقارنة.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              <p className="heading-eyebrow mb-4">من نبحث عنه</p>
+              <h2 className="heading-section mb-6">نوع الشركاء المطلوبين</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 {[
                   {
-                    horizon: "2030 — 2032",
-                    title: "استحواذ استراتيجي",
-                    desc: "من شركة AgriTech إقليمية أو تكتّل غذائي خليجي يَبحث عن قُدرة محلية مُختبَرة.",
-                    badge: "السيناريو الأرجح",
+                    title: "مستثمر استراتيجي",
+                    desc: "يؤمن بمستقبل الزراعة الذكية في المملكة ويملك شبكة صناعية أو حكومية.",
                   },
                   {
-                    horizon: "2032+",
-                    title: "طرح في تداول-نمو",
-                    desc: "إن وَصلنا إلى الإيرادات والمعايير المطلوبة للسوق الموازي، نَستهدف الطرح العام.",
-                    badge: "السيناريو الطموح",
+                    title: "شريك تشغيلي",
+                    desc: "مزارع كبيرة أو مشغلو سلاسل غذائية يريدون رفع كفاءتهم بأنظمة تحكم ذكي.",
                   },
                   {
-                    horizon: "2028 — 2030",
-                    title: "شراكة استراتيجية",
-                    desc: "بيع حصّة أقلية لشريك صناعي/سيادي مع إبقاء فريق التَأسيس على رأس التَنفيذ.",
-                    badge: "السيناريو المرن",
+                    title: "مسرّع أو برنامج دعم",
+                    desc: "مسرّعات زراعية أو برامج حكومية تدعم التوطين التقني والأمن الغذائي.",
                   },
-                ].map((s) => (
+                ].map((item) => (
                   <div
-                    key={s.title}
-                    className="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6 flex flex-col"
+                    key={item.title}
+                    className="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-6"
                   >
-                    <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-600)] mb-2">
-                      {s.horizon}
-                    </p>
-                    <h3 className="font-bold text-[var(--color-brand-600)] text-lg mb-2">
-                      {s.title}
-                    </h3>
-                    <p className="text-sm text-[var(--color-muted)] leading-relaxed flex-1 mb-3">
-                      {s.desc}
-                    </p>
-                    <span className="text-xs font-medium text-[var(--color-brand-500)] bg-[var(--color-brand-50)] border border-[var(--color-brand-200)] rounded-full px-3 py-1 self-start">
-                      {s.badge}
-                    </span>
+                    <h3 className="font-bold text-[var(--color-brand-600)] mb-2">{item.title}</h3>
+                    <p className="text-sm text-[var(--color-muted)] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
-
-              <p className="text-sm text-[var(--color-muted)] mt-6 leading-relaxed">
-                * السيناريوهات تَقديرية لأغراض التَخطيط وليست تَعهّداً ملزماً.
-                التَوقيت والمسار الفعلي يَعتمد على أداء الشركة، السوق، والإطار
-                التَنظيمي.
-              </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
       {/* ============================================================
-          7. CTA نهائي
+          8. CTA نهائي
           ============================================================ */}
       <section className="bg-[var(--color-brand-600)] text-white section-padding">
         <div className="container-igarden">
@@ -669,7 +403,7 @@ export default function InvestorsPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-3xl mx-auto">
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
                 <FileText className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
-                <h4 className="font-bold text-white mb-2">نسخة المستثمرين</h4>
+                <h4 className="font-bold text-white mb-2">ملف المستثمرين</h4>
                 <p className="text-lg text-white/60 mb-4">PDF شامل عند الطلب</p>
                 <PitchDeckButton compact />
               </div>
@@ -677,7 +411,7 @@ export default function InvestorsPage() {
               <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-colors">
                 <FileText className="h-8 w-8 text-[var(--color-accent-300)] mx-auto mb-3" />
                 <h4 className="font-bold text-white mb-2">احجز موعداً</h4>
-                <p className="text-lg text-white/60 mb-4">لقاء مستثمرين مباشر</p>
+                <p className="text-lg text-white/60 mb-4">لقاء مباشر</p>
                 <Button variant="accent" size="sm" asChild>
                   <Link href="/contact">احجز الآن</Link>
                 </Button>
@@ -694,6 +428,14 @@ export default function InvestorsPage() {
                 </Button>
               </div>
             </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <p className="text-center text-white/40 text-sm mt-10 max-w-2xl mx-auto leading-relaxed">
+              المحتوى المنشور هنا تعريفي فقط، ولا يُعد عرضاً استثمارياً أو دعوة للاكتتاب أو
+              ضماناً للعائد. تتوفر التفاصيل المالية ومواد المستثمرين عند الطلب للشركاء
+              المؤهلين.
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -714,10 +456,10 @@ function PitchDeckButton({ compact = false }: { compact?: boolean }) {
     >
       <Link
         href="/contact?interest=investor&type=pitch-deck"
-        aria-label="اطلب نسخة المستثمرين"
+        aria-label="اطلب ملف المستثمرين"
       >
         <Mail className="h-4 w-4" />
-        {compact ? "اطلب النسخة" : "اطلب نسخة المستثمرين"}
+        {compact ? "اطلب الملف" : "اطلب ملف المستثمرين"}
       </Link>
     </Button>
   );
@@ -753,115 +495,6 @@ function QuickFactCard({
   );
 }
 
-function FinancialCard({
-  year,
-  revenue,
-  net,
-  label,
-  highlight,
-  barWidth,
-}: {
-  year: string;
-  revenue: string;
-  net: string | null;
-  label: string;
-  highlight: boolean;
-  barWidth: string;
-}) {
-  return (
-    <div
-      className={`rounded-2xl p-8 border-2 shadow-[var(--shadow-soft)] ${
-        highlight
-          ? "bg-[var(--color-brand-600)] border-[var(--color-accent-500)] text-white"
-          : "bg-white border-[var(--color-border)]"
-      }`}
-    >
-      <p
-        className={`text-lg font-bold uppercase tracking-widest mb-2 ${
-          highlight ? "text-[var(--color-accent-300)]" : "text-[var(--color-muted)]"
-        }`}
-      >
-        {year}
-      </p>
-      <p
-        className={`text-3xl md:text-4xl font-extrabold mb-1 ${
-          highlight ? "text-[var(--color-accent-300)]" : "text-[var(--color-brand-600)]"
-        }`}
-        data-num
-      >
-        {revenue}
-      </p>
-      <p
-        className={`text-lg mb-1 ${highlight ? "text-white/80" : "text-[var(--color-muted)]"}`}
-      >
-        ريال سعودي
-      </p>
-      {net && (
-        <p
-          className={`text-lg font-medium mb-4 ${
-            highlight ? "text-white/70" : "text-[var(--color-muted)]"
-          }`}
-        >
-          صافي: {net} ريال
-        </p>
-      )}
-      <p
-        className={`text-lg font-semibold mt-4 mb-4 ${
-          highlight ? "text-white" : "text-[var(--color-foreground)]"
-        }`}
-      >
-        {label}
-      </p>
-      <div
-        className={`h-2 rounded-full ${
-          highlight ? "bg-white/20" : "bg-[var(--color-brand-100)]"
-        }`}
-      >
-        <div
-          className={`h-2 rounded-full ${
-            highlight ? "bg-[var(--color-accent-300)]" : "bg-[var(--color-accent-500)]"
-          }`}
-          style={{ width: `${barWidth}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function RevenueCard({
-  percentage,
-  title,
-  subtitle,
-  colorClass,
-  textColorClass,
-  barColorClass,
-}: {
-  percentage: number;
-  title: string;
-  subtitle: string;
-  colorClass: string;
-  textColorClass: string;
-  barColorClass: string;
-}) {
-  return (
-    <div
-      className={`rounded-2xl border-2 p-6 text-center bg-white shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-md)] transition-shadow ${colorClass}`}
-    >
-      <p className={`text-5xl font-extrabold mb-2 ${textColorClass}`} data-num>
-        {percentage}%
-      </p>
-      <p className="font-bold text-[var(--color-brand-600)] text-lg mb-1">{title}</p>
-      <p className="text-lg text-[var(--color-muted)]">{subtitle}</p>
-      <div className="h-1.5 bg-[var(--color-border)] rounded-full mt-5">
-        <div
-          className={`h-1.5 rounded-full ${barColorClass}`}
-          style={{ width: `${percentage * 2.5}%` }}
-        />
-      </div>
-    </div>
-  );
-}
-
 function InvestmentAdvantage({
   icon,
   number,
@@ -892,11 +525,9 @@ function InvestmentAdvantage({
 function FundingBar({
   label,
   percentage,
-  amount,
 }: {
   label: string;
   percentage: number;
-  amount?: string;
 }) {
   return (
     <div>
@@ -904,18 +535,11 @@ function FundingBar({
         <span className="text-lg font-semibold text-[var(--color-foreground)]">
           {label}
         </span>
-        <span className="flex items-center gap-3">
-          {amount && (
-            <span className="text-sm text-[var(--color-muted)] font-latin">
-              {amount}
-            </span>
-          )}
-          <span
-            className="text-lg font-extrabold text-[var(--color-accent-600)]"
-            data-num
-          >
-            {percentage}%
-          </span>
+        <span
+          className="text-lg font-extrabold text-[var(--color-accent-600)]"
+          data-num
+        >
+          {percentage}%
         </span>
       </div>
       <div className="h-3 bg-[var(--color-brand-100)] rounded-full overflow-hidden">
