@@ -41,7 +41,6 @@ export function Footer() {
             <ul className="space-y-2.5 text-lg">
               <FooterLink href="/about">من نحن</FooterLink>
               <FooterLink href="/how-we-work">كيف نعمل</FooterLink>
-              <FooterLink href="/case-studies">دراسات ميدانية</FooterLink>
               <FooterLink href="/investors">المستثمرون</FooterLink>
               <FooterLink href="/contact">تواصل معنا</FooterLink>
             </ul>

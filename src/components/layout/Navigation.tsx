@@ -23,7 +23,6 @@ const NAV_ITEMS: NavItem[] = [
   },
   { label: "محطة عسفان", href: "/osfan-station" },
   { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "دراسات ميدانية", href: "/case-studies" },
   { label: "المستثمرون", href: "/investors" },
   { label: "المعرفة", href: "/learn" },
 ];
