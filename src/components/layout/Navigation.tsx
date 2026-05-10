@@ -12,8 +12,9 @@ type NavChild = { label: string; href: string; badge?: string };
 type NavItem = { label: string; href: string; children?: NavChild[] };
 
 const NAV_ITEMS: NavItem[] = [
+  { label: "الرئيسية", href: "/" },
   {
-    label: "الحلول",
+    label: "المنتجات",
     href: "/products",
     children: [
       { label: "Smart Controllers", href: "/products/smart-controllers", badge: "Flagship" },
@@ -22,9 +23,10 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "المستثمرون", href: "/investors" },
-  { label: "المعرفة", href: "/learn" },
+  { label: "من نحن", href: "/about" },
+  { label: "الأكاديمية", href: "/learn" },
+  // { label: "المدونة", href: "/blog" }, // HIDDEN IN WAVE 1 — Blog content not ready
+  { label: "تواصل", href: "/contact" },
 ];
 
 export function Navigation() {
@@ -179,7 +181,7 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <CTAButton href="/contact" variant="lime">
-              احجز استشارة
+              {transparent ? "احجز استشارة" : "احجز استشارة مجانية"}
             </CTAButton>
           </div>
 
@@ -296,7 +298,7 @@ export function Navigation() {
 
         <div className="p-4 border-t border-light-gray">
           <CTAButton href="/contact" variant="lime" className="w-full justify-center">
-            احجز استشارة
+            احجز استشارة مجانية
           </CTAButton>
         </div>
       </aside>
