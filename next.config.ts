@@ -52,49 +52,30 @@ const nextConfig: NextConfig = {
         has: [{ type: "host", value: `www.${MAIN_HOST}` }],
       },
 
-      // ─── /solutions/* → /products/* (URL aliasing) ───────────────
-      {
-        source: "/solutions",
-        destination: "/products",
-        permanent: true,
-      },
-      {
-        source: "/solutions/smart-controllers",
-        destination: "/products/smart-controllers",
-        permanent: true,
-      },
-      {
-        source: "/solutions/smart-greenhouses",
-        destination: "/products/smart-greenhouses",
-        permanent: true,
-      },
-      {
-        source: "/solutions/hydroponics",
-        destination: "/products/hydroponics",
-        permanent: true,
-      },
+      // ─── /solutions/* → /products/* ──────────────────────────────
+      { source: "/solutions", destination: "/products", permanent: true },
+      { source: "/solutions/smart-controllers", destination: "/products/smart-controllers", permanent: true },
+      { source: "/solutions/smart-greenhouses", destination: "/products/smart-greenhouses", permanent: true },
+      { source: "/solutions/hydroponics", destination: "/products/hydroponics", permanent: true },
+
+      // ─── /services/* → /products/* (Phase 3 will create real pages) ─
+      { source: "/services", destination: "/products", permanent: false },
+      { source: "/services/hardware", destination: "/products/hydroponics", permanent: false },
+      { source: "/services/smart-os", destination: "/products/smart-controllers", permanent: false },
+      { source: "/services/compliance", destination: "/compliance", permanent: false },
+      { source: "/services/support", destination: "/how-we-work", permanent: false },
+
+      // ─── /asfan → /osfan-station ─────────────────────────────────
+      { source: "/asfan", destination: "/osfan-station", permanent: false },
+      { source: "/asfan-station", destination: "/osfan-station", permanent: true },
+
+      // ─── /projects → /case-studies ───────────────────────────────
+      { source: "/projects", destination: "/case-studies", permanent: false },
 
       // ─── Academy / Knowledge ─────────────────────────────────────
-      {
-        source: "/academy",
-        destination: "/learn",
-        permanent: true,
-      },
-      {
-        source: "/blog",
-        destination: "/learn",
-        permanent: false, // temporary until /blog has content
-      },
-      {
-        source: "/knowledge",
-        destination: "/learn",
-        permanent: true,
-      },
-      {
-        source: "/knowledge/articles",
-        destination: "/learn",
-        permanent: true,
-      },
+      { source: "/academy", destination: "/learn", permanent: true },
+      { source: "/knowledge", destination: "/learn", permanent: true },
+      { source: "/knowledge/articles", destination: "/learn", permanent: true },
 
       // ─── Operational logs alias ──────────────────────────────────
       {

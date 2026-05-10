@@ -182,28 +182,30 @@ export const TOP_BAR_ITEMS: TopBarItem[] = [
   { label: "احجز التطبيق", icon: "smartphone", href: "/app", badge: "soon" },
 ];
 
-// ─── Main Navigation — 5 عناصر ───────────────────────────────────────────────
+// ─── Main Navigation — الهيكل الجديد v3 ──────────────────────────────────────
 
 export const HEADER_NAV_ITEMS: NavItemType[] = [
   {
-    label: "الحلول",
-    href: "/solutions",
+    label: "خدماتنا",
+    href: "/products",
     hasMegaMenu: true,
     megaMenuColumns: [
       {
-        title: "للمزارع التجارية",
+        title: "الأنظمة والعتاد",
         icon: "tractor",
         items: [
-          { label: "أنظمة الري والتحكم الذكي", href: "/solutions/farms" },
-          { label: "البيوت المحمية والـ Hydroponics", href: "/solutions/greenhouses" },
+          { label: "Smart Controllers", href: "/products/smart-controllers" },
+          { label: "المحميات الذكية", href: "/products/smart-greenhouses" },
+          { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
         ],
       },
       {
-        title: "منصة Smart OS",
+        title: "البرمجيات والامتثال",
         icon: "cpu",
         items: [
-          { label: "منصة الإدارة الموحّدة", href: "/solutions/smart-os" },
-          { label: "تقارير الامتثال", href: "/compliance" },
+          { label: "منصة Smart OS", href: "/products/smart-controllers" },
+          { label: "جاهزية الامتثال", href: "/compliance" },
+          { label: "كيف نعمل", href: "/how-we-work" },
         ],
         cta: {
           label: "Live Demo",
@@ -212,31 +214,18 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
           variant: "live",
         },
       },
-      {
-        title: "للحديقة المنزلية",
-        icon: "leaf",
-        items: [
-          { label: "البرج الهوائي iGarden Tower", href: "https://shop.igarden.sa", external: true },
-          { label: "مستلزمات الزراعة", href: "https://shop.igarden.sa", external: true },
-        ],
-        cta: {
-          label: "تسوّق المتجر",
-          href: "https://shop.igarden.sa",
-          external: true,
-          variant: "shop",
-        },
-      },
     ],
   },
-  { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "المعرفة", href: "/learn" },
-  { label: "للمستثمرين", href: "/investors" },
+  { label: "مشاريعنا", href: "/case-studies" },
+  { label: "عسفان", href: "/osfan-station" },
+  { label: "للأفراد", href: "/home-solutions" },
+  { label: "المدوّنة", href: "/blog" },
+  { label: "تواصل", href: "/contact" },
 ];
 
 // ─── Main CTA ─────────────────────────────────────────────────────────────────
 
 export const MAIN_CTA = {
-  label: "تحدّث معنا",
+  label: "احجز استشارة",
   href: "/contact",
 } as const;
