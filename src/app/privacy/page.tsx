@@ -8,6 +8,19 @@ export const metadata: Metadata = {
     "سياسة الخصوصية الخاصة بـ iGarden — شركة انتيليجنت غاردن. كيف نَجمع بياناتك ونَستخدمها ونَحميها وفقاً لنظام حماية البيانات الشخصية في المملكة العربية السعودية.",
   alternates: { canonical: "https://igarden.sa/privacy" },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "سياسة الخصوصية | iGarden",
+    description: "كيف نَجمع بياناتك ونَستخدمها ونَحميها وفقاً لنظام PDPL السعودي.",
+    images: [{ url: "/api/og?title=%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9+%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9+%E2%80%94+iGarden&sub=%D9%86%D8%B8%D8%A7%D9%85+PDPL+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A", width: 1200, height: 630 }],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "سياسة الخصوصية | iGarden",
+    description: "حماية بياناتك وفق نظام PDPL السعودي.",
+    images: ["/api/og?title=%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9+%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9"],
+  },
 };
 
 const LAST_UPDATED = "8 مايو 2026";

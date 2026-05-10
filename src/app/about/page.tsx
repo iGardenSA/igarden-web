@@ -17,9 +17,15 @@ export const metadata: Metadata = {
     title: "من نحن — الحديقة الذكية",
     description:
       "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
-    images: ["/images/og/about.jpg"],
+    images: [{ url: "/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%B4%D8%B1%D9%83%D8%A9+%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9+%D9%84%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "من نحن — الحديقة الذكية | iGarden",
+    description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+    images: ["/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86"],
   },
 };
 

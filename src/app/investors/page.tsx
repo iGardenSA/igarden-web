@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/ui/fade-in";
 import { GlowAccent } from "@/components/ui/glow-accent";
 import { StageHonesty } from "@/components/shared/StageHonesty";
+import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -16,11 +17,30 @@ export const metadata: Metadata = {
   description:
     "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير، ومحطة اختبار ميدانية في عسفان.",
   alternates: { canonical: "https://igarden.sa/investors" },
+  openGraph: {
+    title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
+    description: "شركة سعودية مرخّصة MISA بنموذج صناعي مسجّل وأصول ميدانية مُختبَرة في عسفان.",
+    images: [{ url: "/api/og?title=%D9%84%D9%84%D9%85%D8%B3%D8%AA%D8%AB%D9%85%D8%B1%D9%8A%D9%86+%E2%80%94+iGarden&sub=AgriTech+%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9+%D9%85%D8%B1%D8%AE%D9%91%D8%B5%D8%A9+MISA", width: 1200, height: 630 }],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "للمستثمرين — AgriTech سعودية | iGarden",
+    description: "أصول ميدانية مُختبَرة، ترخيص MISA، نموذج صناعي SAIP مسجّل.",
+    images: ["/api/og?title=%D9%84%D9%84%D9%85%D8%B3%D8%AA%D8%AB%D9%85%D8%B1%D9%8A%D9%86"],
+  },
 };
+
+const BREADCRUMB = [
+  { name: "الرئيسية", url: "/" },
+  { name: "المستثمرون", url: "/investors" },
+];
 
 export default function InvestorsPage() {
   return (
     <>
+      <BreadcrumbSchema items={BREADCRUMB} />
       {/* ============================================================
           Hero
           ============================================================ */}

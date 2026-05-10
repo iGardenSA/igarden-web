@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Factory,
   Plug,
@@ -13,6 +14,10 @@ import {
   CheckCircle2,
   AlertTriangle,
   ArrowLeft,
+  Users,
+  BarChart3,
+  FileText,
+  Bell,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -23,9 +28,22 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
     description: "تصميم وبرمجة وتصنيع 100% سعودي. قابلة للربط مع أيّ نظام قائم.",
-    images: ["/images/og/smart-controllers.jpg"],
+    images: [
+      {
+        url: "/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84",
+        width: 1200,
+        height: 630,
+        alt: "Smart Controllers — iGarden",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
+    description: "تصميم وبرمجة وتصنيع 100% سعودي. قابلة للربط مع أيّ نظام قائم.",
+    images: ["/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84"],
   },
 };
 
@@ -113,6 +131,50 @@ function StatusCard() {
           >
             انضمّ لـ Early Access ←
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 2: لمن هذا الحل؟ ───────────────────────────── */
+const FOR_WHOM = [
+  {
+    title: "مزارعون قائمون يريدون الرقابة",
+    desc: "تملك مزرعة تعمل بالري التقليدي أو الهيدروبونيك، لكن المراقبة يدوية وأخطاء التشغيل تُكلّفك يومياً.",
+  },
+  {
+    title: "مشغّلو أنظمة هيدروبونيك",
+    desc: "نظامك الحالي يحتاج قياس pH وEC وتغذية مستمرّة — بدون لوحة مركزية تجمعها وتُنبّهك فور الانحراف.",
+  },
+  {
+    title: "مديرو محميات تجارية",
+    desc: "لديك حساسات ومضخات، لكن لا توجد طريقة لإدارتها جميعاً من مكان واحد وتتبّع السجل التشغيلي.",
+  },
+  {
+    title: "مشاريع حكومية وزراعية",
+    desc: "تحتاج منظومة تحكم موثوقة وقابلة للتدقيق — مع توثيق السجلات وتقارير الأداء الأسبوعية.",
+  },
+];
+
+function ForWhomSection() {
+  return (
+    <section className="bg-white py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">لمن هذا الحل؟</p>
+        <h2 className="h2 text-deep-green mb-8">
+          Smart Controllers مُصمَّمة لمن يملك مزرعة — ويريد أن يُضيف لها عقلاً
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {FOR_WHOM.map((t) => (
+            <div key={t.title} className="bg-[#FAFAF7] rounded-2xl p-6 border border-[#E5E7EB]">
+              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mb-4">
+                <Users className="w-5 h-5 text-deep-green" aria-hidden />
+              </div>
+              <h3 className="text-[#0F3D2E] font-bold text-lg mb-2">{t.title}</h3>
+              <p className="text-[#6B7280] text-base leading-relaxed">{t.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -425,6 +487,178 @@ function HowItWorks() {
   );
 }
 
+/* ─── Section 5.1: Scope (Includes / Excludes) ────────────── */
+const SCOPE_INCLUDES = [
+  "تقييم ميداني أوّلي للمزرعة (زيارة أو مكالمة تقنية)",
+  "توريد لوحة Smart Controller (Pi 5 + ESP32 + وحدة حساسات)",
+  "تركيب وتوصيل الحساسات بالمعدات القائمة",
+  "ربط النظام بـ Smart OS وضبط قيم التشغيل المثلى",
+  "متابعة تشغيلية مكثّفة لمدّة أسبوع بعد التركيب",
+  "توثيق تقني كامل للنظام (كتيّب تشغيل)",
+];
+
+const SCOPE_EXCLUDES = [
+  "استبدال أنظمة الري أو البنية التحتية الحالية",
+  "أعمال مدنية أو سباكة جديدة",
+  "شراء حساسات إضافية (متاح بعرض منفصل إن احتجت)",
+  "رسوم اشتراك الخدمة السحابية المستمرّة (تُحدَّد بالعقد)",
+  "شهادة امتثال من جهات حكومية — نوفّر السجلات والتوثيق، لكن الاعتماد الرسمي يبقى مسؤوليتك",
+];
+
+function ScopeSection() {
+  return (
+    <section className="bg-[#FAFAF7] py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="h2 text-deep-green mb-10 text-center">نطاق التنفيذ</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-2xl p-7 border border-[#E5E7EB]">
+            <h3 className="text-[#0F3D2E] font-bold text-xl mb-5 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-[#A5D63F]/20 flex items-center justify-center text-[#7CB342] font-bold text-sm">✓</span>
+              يشمل التنفيذ
+            </h3>
+            <ul className="space-y-3">
+              {SCOPE_INCLUDES.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-[#374151]">
+                  <CheckCircle2 className="w-4 h-4 text-[#7CB342] mt-0.5 flex-shrink-0" aria-hidden />
+                  <span className="body-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white rounded-2xl p-7 border border-amber-200">
+            <h3 className="text-[#0F3D2E] font-bold text-xl mb-5 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-sm">✕</span>
+              لا يشمل التنفيذ
+            </h3>
+            <ul className="space-y-3">
+              {SCOPE_EXCLUDES.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-[#6B7280]">
+                  <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" aria-hidden />
+                  <span className="body-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 5.2: Prerequisites ──────────────────────────── */
+const PREREQUISITES = [
+  {
+    title: "مزرعة قائمة مع معدات قابلة للاستشعار",
+    desc: "نظام ري أو زراعة مائية يعمل مع مضخات أو صمّامات أو حساسات موجودة.",
+  },
+  {
+    title: "مصدر كهرباء مستقرّ في موقع التركيب",
+    desc: "يكفي مقبس 220V في مكان التركيب. التركيب على طاقة شمسية مُتاح بعرض منفصل.",
+  },
+  {
+    title: "اتصال إنترنت أو SIM ثابت",
+    desc: "لتَلقّي التنبيهات عن بُعد وسحب البيانات إلى السحابة. يعمل محلياً بدون إنترنت أيضاً.",
+  },
+  {
+    title: "التزام المشغّل بالمتابعة الأسبوع الأوّل",
+    desc: "نطلب حضور المشغّل المسؤول في أول أسبوع لضبط القيم المثلى ومراجعة التنبيهات معاً.",
+  },
+];
+
+function PrerequisitesSection() {
+  return (
+    <section className="bg-white py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">قبل البدء</p>
+        <h2 className="h2 text-deep-green mb-8">المتطلبات قبل التركيب</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {PREREQUISITES.map((p, i) => (
+            <div key={p.title} className="bg-[#FAFAF7] rounded-2xl p-6 border border-[#E5E7EB] flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center flex-shrink-0">
+                <span className="font-latin font-bold text-deep-green text-sm">{String(i + 1).padStart(2, "0")}</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-deep-green mb-1">{p.title}</h3>
+                <p className="text-[#6B7280] body-sm leading-relaxed">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 5.3: Client Outputs ─────────────────────────── */
+const CLIENT_OUTPUTS = [
+  {
+    Icon: MonitorSmartphone,
+    title: "لوحة بيانات لحظية",
+    desc: "Dashboard يعرض pH وEC والحرارة والرطوبة ومستوى الخزّانات — لحظياً ومن أيّ جهاز.",
+  },
+  {
+    Icon: Bell,
+    title: "تنبيهات واتساب فورية",
+    desc: "إشعار فوري عند أيّ انحراف خارج النطاق — مع تحديد الحساس والقيمة والوقت.",
+  },
+  {
+    Icon: FileText,
+    title: "تقارير أداء أسبوعية",
+    desc: "ملخّص أسبوعي تلقائي: استهلاك الماء، دورات التشغيل، أعلى وأدنى قراءة لكل حساس.",
+  },
+  {
+    Icon: BarChart3,
+    title: "سجل تشغيلي كامل",
+    desc: "كل قراءة وكل قرار وكل أمر تشغيل — محفوظ بطابع زمني دقيق وقابل للتصدير.",
+  },
+];
+
+function ClientOutputsSection() {
+  return (
+    <section className="section-light py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">مخرجات العميل</p>
+        <h2 className="h2 text-deep-green mb-8">ماذا ستحصل بعد التركيب؟</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CLIENT_OUTPUTS.map(({ Icon, title, desc }) => (
+            <div key={title} className="bg-white rounded-card p-6 shadow-soft">
+              <div className="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center mb-4">
+                <Icon className="w-6 h-6 text-deep-green" aria-hidden />
+              </div>
+              <h3 className="h4 text-deep-green mb-2">{title}</h3>
+              <p className="body-sm text-medium-gray">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 5.4: Operational Logs ──────────────────────── */
+function OperationalLogsSection() {
+  return (
+    <section className="bg-[#0F3D2E] py-14" dir="rtl">
+      <div className="container mx-auto px-4 max-w-5xl text-center">
+        <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">سجلات التشغيل القابلة للمراجعة</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
+          كل قراءة. كل قرار. كل تنبيه.
+        </h2>
+        <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
+          النظام يُسجّل تلقائياً — بطابع زمني دقيق — كل pH وEC وحرارة وقرار تشغيل.
+          السجل قابل للمراجعة في أيّ وقت بصيغة قابلة للتدقيق.
+        </p>
+        <Link
+          href="/compliance"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold transition-colors"
+        >
+          تعرّف على سجلات التشغيل
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Section 6: Demo ─────────────────────────────────────── */
 function DemoSection() {
   return (
@@ -634,7 +868,7 @@ function FinalCTA() {
 /* ─── Page ────────────────────────────────────────────────── */
 const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
-  { name: "خدماتنا", url: "/products" },
+  { name: "الحلول", url: "/products" },
   { name: "Smart Controllers", url: "/products/smart-controllers" },
 ];
 
@@ -666,10 +900,20 @@ export default function SmartControllersPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <StatusCard />
+      <section className="bg-[#FAFAF7] py-6">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <StageHonesty />
+        </div>
+      </section>
+      <ForWhomSection />
       <PainScenarios />
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />
+      <ScopeSection />
+      <PrerequisitesSection />
+      <ClientOutputsSection />
+      <OperationalLogsSection />
       <DemoSection />
       <DevTimeline />
       <B2BSection />

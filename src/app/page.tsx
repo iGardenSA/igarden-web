@@ -10,9 +10,15 @@ export const metadata: Metadata = {
     title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
-    images: ["/images/og/home.jpg"],
+    images: [{ url: "/api/og?title=iGarden+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D9%86%D9%86%D9%81%D9%91%D8%B0+%C2%B7+%D9%86%D9%8F%D9%88%D8%B7%D9%91%D9%86+%C2%B7+%D9%86%D9%8F%D8%B7%D9%88%D9%91%D8%B1", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
+    description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+    images: ["/api/og"],
   },
 };
 import HeroSection from "@/components/sections/HeroSection";
