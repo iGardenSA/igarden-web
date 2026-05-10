@@ -25,7 +25,7 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto w-full px-4 md:px-8">
         <div className="inline-flex items-center self-start bg-[#0F3D2E]/40 backdrop-blur-sm border border-[#A5D63F]/40 text-[#A5D63F] px-4 py-1.5 rounded-full text-sm font-medium shadow-sm shadow-black/20 mb-6">
-          منذ 2024 — AgriTech سعودية ريادية
+          منذ 2024 · شركة سعودية · مُختبَرة ميدانياً في عسفان
         </div>
 
         <h1
@@ -33,18 +33,13 @@ export default function HeroSection() {
           className="font-arabic font-bold text-[#FAFAF7] text-4xl md:text-5xl lg:text-6xl leading-[1.15] mb-5 max-w-3xl"
           style={{ fontFeatureSettings: '"liga", "dlig"' }}
         >
-          حوّل مزرعتك إلى نظام ذكي
-          <span className="block text-[#A5D63F]">يَعمل تحت ظروف السعودية.</span>
+          شركة سعودية تبني أنظمة الزراعة الذكية
+          <span className="block text-[#A5D63F]">للمناخ السعودي.</span>
         </h1>
 
-        <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl mb-3">
-          من الحسّاس إلى الحصاد — نُنفّذ، نُوطّن، ونُطوّر أنظمة الزراعة الذكية
-          مُكيّفة لمناخك ومدخلاتك المحلية.
-        </p>
-
-        <p className="text-white/65 text-base leading-relaxed max-w-2xl mt-2 mb-6">
-          لوحات تحكّم سعودية الصناعة، محميات تَصمد في +45°C، وأنظمة زراعة مائية
-          مُختبَرة في عسفان قبل أن تَصل إليك.
+        <p className="text-white/85 text-lg md:text-xl leading-relaxed max-w-2xl mb-6">
+          من الحساس إلى الحصاد، نُصمّم ونُنفّذ ونُطوّر حلول التحكم الزراعي،
+          الزراعة المائية، المحميات الذكية، وسجلات التشغيل القابلة للمراجعة.
         </p>
 
         <div className="flex items-center gap-3 mb-8 text-[#A5D63F]/80">
@@ -65,7 +60,7 @@ export default function HeroSection() {
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-lg md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none min-w-[220px]"
           >
-            احجز استشارة مجانية
+            اطلب تقييم مشروعك
           </Link>
 
           <a

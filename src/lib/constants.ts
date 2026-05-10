@@ -155,7 +155,7 @@ export type NavItemType = NavItemMega | NavItemSimple;
 
 export const HEADER_NAV_ITEMS: NavItemType[] = [
   {
-    label: "المنتجات",
+    label: "الحلول",
     href: "/products",
     hasMegaMenu: true,
     megaMenuColumns: [
@@ -204,15 +204,15 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
     ],
   },
   { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "من نحن", href: "/about" },
-  { label: "الأكاديمية", href: "/learn" },
-  { label: "المدونة", href: "/blog" },
-  { label: "تواصل", href: "/contact" },
+  { label: "كيف نعمل", href: "/how-we-work" },
+  { label: "دراسات ميدانية", href: "/case-studies" },
+  { label: "المستثمرون", href: "/investors" },
+  { label: "المعرفة", href: "/learn" },
 ];
 
 // ─── Main CTA — دستوري ───────────────────────────────────────────────────────
 
 export const MAIN_CTA = {
-  label: "احجز استشارة مجانية",
+  label: "اطلب تقييم مشروعك",
   href: "/contact",
 } as const;
