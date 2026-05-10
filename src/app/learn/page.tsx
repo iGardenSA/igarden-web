@@ -4,13 +4,13 @@ import { ArrowLeft, BookOpen } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
-  title: "المعرفة — أكاديمية الحديقة الذكية | iGarden",
+  title: "المعرفة — أكاديمية iGarden | iGarden",
   description:
     "مكتبة معرفية عملية حول الزراعة الذكية، الحساسات، أنظمة التحكم، والزراعة المائية في البيئة السعودية. مقالات موضوعية وصادقة بدون مبالغات.",
   alternates: { canonical: "https://igarden.sa/learn" },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "المعرفة — أكاديمية الحديقة الذكية | iGarden",
+    title: "المعرفة — أكاديمية iGarden | iGarden",
     description:
       "مقالات عملية عن الزراعة الذكية والهيدروبونيك في البيئة السعودية.",
     images: [
@@ -89,7 +89,7 @@ export default function LearnPage() {
               المعرفة
             </p>
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4">
-              أكاديمية الحديقة الذكية
+              أكاديمية iGarden
             </h1>
             <p className="text-white/70 text-lg max-w-xl mx-auto leading-relaxed">
               مقالات عملية وموضوعية عن الزراعة الذكية والهيدروبونيك — مكتوبة من تجربة ميدانية حقيقية في محطة عسفان.
@@ -145,7 +145,7 @@ export default function LearnPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-[#0F3D2E] hover:bg-[#1B5E3F] text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
             >
-              <span>اطلب تقييم مشروعك</span>
+              <span>احجز استشارة</span>
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
           </div>

@@ -8,7 +8,7 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "iGarden",
-    alternateName: ["الحديقة الذكية", "شركة انتيليجنت غاردن"],
+    alternateName: ["انتيليجنت غاردن", "شركة انتيليجنت غاردن"],
     legalName: "شركة انتيليجنت غاردن (ذات مسؤولية محدودة)",
     url: "https://igarden.sa",
     logo: "https://igarden.sa/logo/icon-master-original.png",

@@ -17,7 +17,7 @@ export function FinalCTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            اطلب تقييم مشروعك
+            احجز استشارة
           </CTAButton>
           <CTAButton
             href={CONTACT.whatsapp}

@@ -81,7 +81,7 @@ export default function TermsPage() {
                 <span dir="ltr" className="ltr-inline font-latin font-medium">
                   iGarden
                 </span>{" "}
-                / "الحديقة الذكية" قيد التسجيل الرسمي. النموذج الصناعي iGarden
+                النموذج الصناعي iGarden
                 Tower مُسجَّل لدى الهيئة السعودية للملكية الفكرية برقم{" "}
                 <span dir="ltr" className="ltr-inline font-latin">
                   SAIP #423450193

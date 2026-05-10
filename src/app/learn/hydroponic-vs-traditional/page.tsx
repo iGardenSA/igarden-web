@@ -325,7 +325,7 @@ export default function ArticlePage() {
               href="/contact"
               className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
             >
-              اطلب تقييم مشروعك
+              احجز استشارة
             </Link>
           </section>
 

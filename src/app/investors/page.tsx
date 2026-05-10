@@ -15,7 +15,7 @@ import { CONTACT, COMPANY } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير، ومحطة اختبار ميدانية في عسفان.",
+    "iGarden (انتيليجنت غاردن): شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير، ومحطة اختبار ميدانية في عسفان.",
   alternates: { canonical: "https://igarden.sa/investors" },
   openGraph: {
     title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
