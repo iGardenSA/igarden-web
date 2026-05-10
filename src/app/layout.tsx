@@ -81,7 +81,7 @@ export const metadata: Metadata = {
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
     images: [
       {
-        url: "/images/og/home.jpg",
+        url: "/api/og",
         width: 1200,
         height: 630,
         alt: `${COMPANY.nameEn} — ازرع بذكاء`,
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
-    images: ["/images/og/home.jpg"],
+    images: ["/api/og"],
   },
 
   alternates: {

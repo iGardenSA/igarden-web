@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { COMPANY, CONTACT } from "@/lib/constants";
+import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
   title: "Fact Sheet — بيانات الشركة الرسمية | iGarden",
@@ -9,11 +10,30 @@ export const metadata: Metadata = {
     "البيانات القانونية والتشغيلية الرسمية لشركة انتيليجنت غاردن (iGarden) — السجل التجاري، رخصة MISA، النموذج الصناعي SAIP، والنطاقات الرسمية.",
   alternates: { canonical: "https://igarden.sa/fact-sheet" },
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Fact Sheet — بيانات الشركة الرسمية | iGarden",
+    description: "البيانات القانونية والتشغيلية الرسمية — MISA · SAIP · CR.",
+    images: [{ url: "/api/og?title=Fact+Sheet+%E2%80%94+iGarden&sub=%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA+%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9+%D8%A7%D9%84%D8%B1%D8%B3%D9%85%D9%8A%D8%A9", width: 1200, height: 630 }],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fact Sheet — iGarden",
+    description: "البيانات القانونية الرسمية — MISA · SAIP · CR.",
+    images: ["/api/og?title=Fact+Sheet+%E2%80%94+iGarden"],
+  },
 };
+
+const BREADCRUMB = [
+  { name: "الرئيسية", url: "/" },
+  { name: "Fact Sheet", url: "/fact-sheet" },
+];
 
 export default function FactSheetPage() {
   return (
     <>
+      <BreadcrumbSchema items={BREADCRUMB} />
       {/* Hero */}
       <section className="bg-deep-green py-16 md:py-20" dir="rtl">
         <div className="container mx-auto px-4 max-w-4xl text-center">

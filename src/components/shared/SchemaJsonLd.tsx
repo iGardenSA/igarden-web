@@ -30,7 +30,10 @@ export function OrganizationSchema() {
       availableLanguage: ["Arabic", "English"],
     },
     sameAs: [
-      // [CONTENT_NEEDED: روابط السوشيال ميديا — LinkedIn, X, Instagram, YouTube]
+      "https://linkedin.com/company/igarden-sa",
+      "https://instagram.com/igarden.sa",
+      "https://x.com/igarden_sa",
+      "https://youtube.com/@igarden",
     ],
     identifier: [
       { "@type": "PropertyValue", propertyID: "MISA", value: "24926249716" },
@@ -153,6 +156,41 @@ export function FAQSchema({ faqs }: FAQSchemaProps) {
       name: f.question,
       acceptedAnswer: { "@type": "Answer", text: f.answer },
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+interface ServiceSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  serviceType?: string;
+}
+
+export function ServiceSchema({ name, description, url, serviceType = "Agricultural Technology Service" }: ServiceSchemaProps) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `https://igarden.sa${url}`,
+    serviceType,
+    provider: {
+      "@type": "Organization",
+      name: "iGarden",
+      url: "https://igarden.sa",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Saudi Arabia",
+    },
+    inLanguage: "ar-SA",
   };
 
   return (

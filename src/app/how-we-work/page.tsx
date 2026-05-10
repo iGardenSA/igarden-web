@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { BreadcrumbSchema, ServiceSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
   title: "كيف نعمل — من أول اتصال حتى التشغيل | iGarden",
   description:
     "iGarden لا تبيع نظاماً جاهزاً وتغادر. ندخل المزرعة، نفهم الماء والمناخ والمحصول، ثم نبني حلاً يناسبها — من الحساس إلى التقرير.",
   alternates: { canonical: "https://igarden.sa/how-we-work" },
+  openGraph: {
+    title: "كيف نعمل — من أول اتصال حتى التشغيل | iGarden",
+    description: "6 خطوات من الاستشارة حتى التسليم — ننفّذ ونُوطّن ونُطوّر.",
+    images: [{ url: "/api/og?title=%D9%83%D9%8A%D9%81+%D9%86%D8%B9%D9%85%D9%84+%E2%80%94+iGarden&sub=%D9%85%D9%86+%D8%A3%D9%88%D9%84+%D8%A7%D8%AA%D8%B5%D8%A7%D9%84+%D8%AD%D8%AA%D9%89+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84", width: 1200, height: 630 }],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "كيف نعمل | iGarden",
+    description: "6 خطوات من الاستشارة حتى التسليم.",
+    images: ["/api/og?title=%D9%83%D9%8A%D9%81+%D9%86%D8%B9%D9%85%D9%84"],
+  },
 };
 
 const STEPS = [
@@ -62,9 +76,21 @@ const WHAT_WE_NEED = [
   "الميزانية التقديرية أو النطاق السعري المتوقّع",
 ];
 
+const BREADCRUMB = [
+  { name: "الرئيسية", url: "/" },
+  { name: "كيف نعمل", url: "/how-we-work" },
+];
+
 export default function HowWeWorkPage() {
   return (
     <>
+      <BreadcrumbSchema items={BREADCRUMB} />
+      <ServiceSchema
+        name="خدمة تنفيذ أنظمة الزراعة الذكية"
+        description="iGarden تُنفّذ أنظمة الزراعة الذكية من الاستشارة الأولى حتى التسليم والمتابعة — 6 خطوات ميدانية."
+        url="/how-we-work"
+        serviceType="Smart Agriculture Implementation"
+      />
       {/* Hero */}
       <section className="bg-[#0F3D2E] py-20 md:py-28" dir="rtl">
         <div className="container mx-auto px-4 max-w-4xl text-center">

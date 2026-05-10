@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Activity, Wrench, FileCheck, Clock } from "lucide-react";
+import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
   title: "دراسات ميدانية — أنظمة قيد التشغيل | iGarden",
   description:
     "iGarden تُوثّق ما تُشغّله في الميدان بأرقام وقراءات واضحة. أسماء العملاء محفوظة احتراماً للخصوصية.",
   alternates: { canonical: "https://igarden.sa/case-studies" },
+  openGraph: {
+    title: "دراسات ميدانية — أنظمة قيد التشغيل | iGarden",
+    description: "بيانات ميدانية حقيقية من أنظمة قيد التشغيل — pH وEC والحرارة والاستهلاك.",
+    images: [{ url: "/api/og?title=%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA+%D9%85%D9%8A%D8%AF%D8%A7%D9%86%D9%8A%D8%A9+%E2%80%94+iGarden&sub=%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D9%82%D9%8A%D8%AF+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84", width: 1200, height: 630 }],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "دراسات ميدانية | iGarden",
+    description: "بيانات حقيقية من أنظمة قيد التشغيل في الميدان.",
+    images: ["/api/og?title=%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA+%D9%85%D9%8A%D8%AF%D8%A7%D9%86%D9%8A%D8%A9"],
+  },
 };
 
 type Phase = "live" | "installing" | "contracted";
@@ -44,9 +58,15 @@ const CASES = [
   },
 ];
 
+const BREADCRUMB = [
+  { name: "الرئيسية", url: "/" },
+  { name: "دراسات ميدانية", url: "/case-studies" },
+];
+
 export default function CaseStudiesPage() {
   return (
     <>
+      <BreadcrumbSchema items={BREADCRUMB} />
       {/* Hero */}
       <section className="bg-[#0F3D2E] py-20 md:py-24" dir="rtl">
         <div className="container mx-auto px-4 max-w-5xl">

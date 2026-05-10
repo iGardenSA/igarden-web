@@ -4,18 +4,25 @@ import { ThreePillarsSection } from "@/components/sections/ThreePillarsSection";
 import { ComplementaryProducts } from "@/components/sections/ComplementaryProducts";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { Cpu, Building2, Droplets, ArrowLeft } from "lucide-react";
+import { BreadcrumbSchema, ServiceSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
-  title: "المنتجات — أيّ ركيزة تُناسبك؟ | iGarden",
+  title: "الحلول — أيّ ركيزة تُناسبك؟ | iGarden",
   description:
-    "ثلاث ركائز منتجات مُختَبَرة في عسفان: Smart Controllers (Flagship) + Smart Greenhouses + Hydroponic Systems. يَشمل iGarden Tower المُسجَّل صناعياً.",
+    "ثلاث ركائز مُختَبَرة في عسفان: Smart Controllers (Flagship) + المحميات الذكية + أنظمة الزراعة المائية. يَشمل iGarden Tower المُسجَّل صناعياً.",
   alternates: { canonical: "https://igarden.sa/products" },
   openGraph: {
-    title: "المنتجات — أيّ ركيزة تُناسبك؟",
+    title: "الحلول — أيّ ركيزة تُناسبك؟ | iGarden",
     description: "ثلاث ركائز + منتجات تكميلية. كلّها مُختَبَرة في عسفان لمناخ السعودية.",
-    images: ["/images/og/products.jpg"],
+    images: [{ url: "/api/og?title=%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84+%E2%80%94+iGarden&sub=Smart+Controllers+%2B+%D8%A7%D9%84%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%2B+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "الحلول — أيّ ركيزة تُناسبك؟ | iGarden",
+    description: "ثلاث ركائز مُختَبَرة في عسفان للمناخ السعودي.",
+    images: ["/api/og?title=%D8%A7%D9%84%D8%AD%D9%84%D9%88%D9%84"],
   },
 };
 
@@ -293,9 +300,21 @@ function FinalCTA() {
   );
 }
 
+const BREADCRUMB = [
+  { name: "الرئيسية", url: "/" },
+  { name: "الحلول", url: "/products" },
+];
+
 export default function ProductsPage() {
   return (
     <>
+      <BreadcrumbSchema items={BREADCRUMB} />
+      <ServiceSchema
+        name="أنظمة الزراعة الذكية — iGarden"
+        description="ثلاث ركائز: Smart Controllers (Flagship) + المحميات الذكية + أنظمة الزراعة المائية. مُختبَرة في عسفان للمناخ السعودي."
+        url="/products"
+        serviceType="Smart Agriculture Systems"
+      />
       <Hero />
       <DecisionTree />
       <ComparisonTable />
