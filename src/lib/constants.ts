@@ -191,21 +191,19 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
     hasMegaMenu: true,
     megaMenuColumns: [
       {
-        title: "الأنظمة والعتاد",
+        title: "العتاد والأنظمة",
         icon: "tractor",
         items: [
-          { label: "Smart Controllers", href: "/products/smart-controllers" },
-          { label: "المحميات الذكية", href: "/products/smart-greenhouses" },
           { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
+          { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
         ],
       },
       {
         title: "البرمجيات والامتثال",
         icon: "cpu",
         items: [
-          { label: "منصة Smart OS", href: "/products/smart-controllers" },
+          { label: "منصة Smart OS", href: "/products/smart-os" },
           { label: "جاهزية الامتثال", href: "/compliance" },
-          { label: "كيف نعمل", href: "/how-we-work" },
         ],
         cta: {
           label: "Live Demo",
@@ -216,8 +214,8 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
       },
     ],
   },
-  { label: "مشاريعنا", href: "/case-studies" },
   { label: "عسفان", href: "/osfan-station" },
+  { label: "فريقنا", href: "/team" },
   { label: "للأفراد", href: "/home-solutions" },
   { label: "المدوّنة", href: "/blog" },
   { label: "تواصل", href: "/contact" },

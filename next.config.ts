@@ -58,19 +58,31 @@ const nextConfig: NextConfig = {
       { source: "/solutions/smart-greenhouses", destination: "/products/smart-greenhouses", permanent: true },
       { source: "/solutions/hydroponics", destination: "/products/hydroponics", permanent: true },
 
-      // ─── /services/* → /products/* (Phase 3 will create real pages) ─
-      { source: "/services", destination: "/products", permanent: false },
-      { source: "/services/hardware", destination: "/products/hydroponics", permanent: false },
-      { source: "/services/smart-os", destination: "/products/smart-controllers", permanent: false },
-      { source: "/services/compliance", destination: "/compliance", permanent: false },
-      { source: "/services/support", destination: "/how-we-work", permanent: false },
+      // ─── /services/* → /products/* ───────────────────────────────
+      { source: "/services", destination: "/products", permanent: true },
+      { source: "/services/hardware", destination: "/products/iot", permanent: true },
+      { source: "/services/compliance", destination: "/compliance", permanent: true },
+      { source: "/services/support", destination: "/how-we-work", permanent: true },
 
       // ─── /asfan → /osfan-station ─────────────────────────────────
-      { source: "/asfan", destination: "/osfan-station", permanent: false },
+      { source: "/asfan", destination: "/osfan-station", permanent: true },
       { source: "/asfan-station", destination: "/osfan-station", permanent: true },
 
-      // ─── /projects → /case-studies ───────────────────────────────
-      { source: "/projects", destination: "/case-studies", permanent: false },
+      // ─── case-studies / projects → home (section removed) ───────
+      { source: "/case-studies", destination: "/", permanent: true },
+      { source: "/case-studies/:slug", destination: "/", permanent: true },
+      { source: "/projects", destination: "/", permanent: true },
+      { source: "/projects/:slug", destination: "/", permanent: true },
+
+      // ─── Team page aliases ────────────────────────────────────────
+      { source: "/about-team", destination: "/team", permanent: true },
+      { source: "/our-team", destination: "/team", permanent: true },
+
+      // ─── Compliance readiness ─────────────────────────────────────
+      { source: "/products/compliance-readiness", destination: "/compliance", permanent: true },
+
+      // ─── Old services smart-os → new page ────────────────────────
+      { source: "/services/smart-os", destination: "/products/smart-os", permanent: true },
 
       // ─── Academy / Knowledge ─────────────────────────────────────
       { source: "/academy", destination: "/learn", permanent: true },

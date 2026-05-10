@@ -5,16 +5,16 @@ import { COMPANY, CONTACT, SOCIAL } from "@/lib/constants";
 
 const COMPANY_LINKS = [
   { label: "من نحن", href: "/about" },
-  { label: "مشاريعنا", href: "/case-studies" },
+  { label: "فريقنا", href: "/team" },
   { label: "محطة عسفان", href: "/osfan-station" },
   { label: "المدوّنة", href: "/blog" },
   { label: "تواصل معنا", href: "/contact" },
 ];
 
 const SERVICES_LINKS = [
-  { label: "Smart Controllers", href: "/products/smart-controllers" },
-  { label: "المحميات الذكية", href: "/products/smart-greenhouses" },
   { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
+  { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
+  { label: "منصة Smart OS", href: "/products/smart-os" },
   { label: "جاهزية الامتثال", href: "/compliance" },
   { label: "كيف نعمل", href: "/how-we-work" },
 ];
@@ -51,6 +51,11 @@ export function Footer() {
             <p className="text-cream/60 text-sm font-latin">
               ازرع بذكاء · Plant Smart
             </p>
+            <span className="inline-block bg-lime/10 px-3 py-1 rounded-full mt-1 w-fit">
+              <span className="text-xs text-lime font-medium">
+                شركة ريادية مُرخّصة · وزارة الاستثمار
+              </span>
+            </span>
           </div>
 
           {/* Contact quick links */}
