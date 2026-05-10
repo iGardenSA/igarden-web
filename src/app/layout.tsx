@@ -1,10 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Tajawal, Poppins } from "next/font/google";
+import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/footer";
 import WhatsAppFab from "@/components/layout/WhatsAppFab";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
-import { PrivacyBanner } from "@/components/shared/PrivacyBanner";
 import { COMPANY, CONTACT } from "@/lib/constants";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -27,14 +27,14 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${COMPANY.domain}`),
   title: {
-    default: "iGarden — انتيليجنت غاردن",
+    default: "iGarden — الحديقة الذكية",
     template: "%s | iGarden",
   },
   description:
-    "iGarden (انتيليجنت غاردن): شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
+    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نَبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
   keywords: [
     "iGarden",
-    "انتيليجنت غاردن",
+    "الحديقة الذكية",
     "الزراعة الذكية",
     "AgriTech سعودية",
     "Smart Controllers",
@@ -76,12 +76,12 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: `https://${COMPANY.domain}`,
     siteName: COMPANY.nameEn,
-    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
     images: [
       {
-        url: "/api/og",
+        url: "/images/og/home.jpg",
         width: 1200,
         height: 630,
         alt: `${COMPANY.nameEn} — ازرع بذكاء`,
@@ -91,10 +91,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
-    images: ["/api/og"],
+    images: ["/images/og/home.jpg"],
   },
 
   alternates: {
@@ -137,7 +137,6 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFab />
-          <PrivacyBanner />
           <SpeedInsights />
           <Analytics />
         </div>

@@ -1,10 +1,13 @@
 'use client';
 
-import { GraduationCap, Award } from 'lucide-react';
+import { Users, CalendarCheck, Thermometer, MonitorSmartphone, Award } from 'lucide-react';
 
 const stats = [
-  { icon: GraduationCap,  number: '5',      label: 'ورش «ازرع بذكاء» مُنفَّذة' },
-  { icon: Award,          number: 'SAIP',   label: 'نموذج صناعي #423450193'    },
+  { icon: Users,             number: '4',           label: 'عملاء نشطون'               },
+  { icon: CalendarCheck,     number: 'منذ 2025',    label: 'تشغيل مستمر'               },
+  { icon: Thermometer,       number: '+45°C',        label: 'اختبار ميداني'             },
+  { icon: MonitorSmartphone, number: '24/7',         label: 'Smart OS بلا انقطاع'       },
+  { icon: Award,             number: 'SAIP',         label: 'براءة صناعية مسجّلة'       },
 ];
 
 export default function HeroTrustBar() {
@@ -14,7 +17,7 @@ export default function HeroTrustBar() {
       aria-label="إحصاءات الشركة"
     >
       <div className="container mx-auto px-4 py-6">
-        <div className="flex flex-wrap justify-center gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (

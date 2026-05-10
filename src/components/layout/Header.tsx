@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { CTAButton } from "@/components/shared/CTAButton";
+import MegaMenu from "@/components/layout/MegaMenu";
 import MobileDrawer from "@/components/layout/MobileDrawer";
 import { HEADER_NAV_ITEMS, MAIN_CTA } from "@/lib/constants";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,8 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [megaOpen, setMegaOpen] = useState(false);
+  const megaRef = useRef<HTMLDivElement>(null);
 
   const isHome = pathname === "/";
   const transparent = isHome && !scrolled;
@@ -29,11 +32,26 @@ export default function Header() {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileOpen(false);
+      if (e.key === "Escape") {
+        setMegaOpen(false);
+        setMobileOpen(false);
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
   }, []);
+
+  // Close mega menu on outside click
+  useEffect(() => {
+    if (!megaOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (megaRef.current && !megaRef.current.contains(e.target as Node)) {
+        setMegaOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [megaOpen]);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -53,7 +71,7 @@ export default function Header() {
             ? "bg-transparent border-b border-transparent"
             : homeDark
             ? "bg-[#0F3D2E]/90 backdrop-blur-md border-b border-[#1B5E3F]/40"
-            : "bg-[#FAFAF7] border-b border-[#E5E7EB]"
+            : "bg-[#FAFAF7]/95 backdrop-blur-md border-b border-[#E5E7EB]"
         )}
       >
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
@@ -74,16 +92,53 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex items-center gap-1">
-            {HEADER_NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(linkBase, isActive(item.href) ? linkActive : linkIdle)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {HEADER_NAV_ITEMS.map((item) => {
+              if (item.hasMegaMenu) {
+                return (
+                  <li key={item.href}>
+                    <div ref={megaRef} className="relative">
+                      <button
+                        onClick={() => setMegaOpen((v) => !v)}
+                        onMouseEnter={() => setMegaOpen(true)}
+                        className={cn(
+                          linkBase,
+                          "flex items-center gap-1",
+                          isActive(item.href) ? linkActive : linkIdle
+                        )}
+                        aria-expanded={megaOpen}
+                        aria-haspopup="true"
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            megaOpen ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </button>
+
+                      {megaOpen && (
+                        <MegaMenu
+                          columns={item.megaMenuColumns}
+                          onClose={() => setMegaOpen(false)}
+                        />
+                      )}
+                    </div>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={cn(linkBase, isActive(item.href) ? linkActive : linkIdle)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Desktop CTA */}
