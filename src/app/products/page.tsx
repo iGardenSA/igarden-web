@@ -122,7 +122,7 @@ function DecisionTree() {
         <p className="text-center text-medium-gray text-sm mt-10">
           مَوقفك مختلف؟{" "}
           <Link href="/contact" className="text-lime hover:text-deep-green font-medium">
-            احجز استشارة مجانية ←
+            اطلب تقييم مشروعك ←
           </Link>
         </p>
       </div>
@@ -262,7 +262,7 @@ function ComparisonTable() {
 
         <p className="text-center text-medium-gray text-sm mt-8 leading-relaxed max-w-2xl mx-auto">
           الأرقام والمدد التَقديرية تَتغيّر بحسب المحصول والموقع وحجم المشروع.
-          الاستشارة المجانية تُحدّد الأرقام الفعلية لمشروعك.
+          تقييم مشروعك يُحدّد الأرقام الفعلية.
         </p>
       </div>
     </section>
@@ -278,12 +278,11 @@ function FinalCTA() {
           لا تَعرف من أين تَبدأ؟ ابدأ بالمحادثة.
         </h2>
         <p className="body-base text-cream/80 max-w-xl mx-auto mb-8">
-          ١٥ دقيقة مع فريقنا الفنّي. نَسمع، نَسأل، ونَقترح — أو نُصارحك إن كان
-          مشروعك ليس جاهزاً بعد.
+          نَسمع، نَسأل، ونَقترح — أو نُصارحك إن كان مشروعك ليس جاهزاً بعد.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            احجز استشارة مجانية
+            اطلب تقييم مشروعك
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">
             شاهد عسفان أوّلاً
