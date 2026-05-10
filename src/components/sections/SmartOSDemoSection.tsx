@@ -43,11 +43,6 @@ export function SmartOSDemoSection() {
                 هذا نموذج تفاعلي يوضح معمارية Smart OS. القراءات المعروضة محاكاة لأغراض
                 العرض، بينما تعكس البنية طريقة عمل النظام في الميدان.
               </p>
-              <ul className="space-y-1 text-cream/60 text-sm">
-                <li>· يراقب pH وEC والحرارة والرطوبة</li>
-                <li>· يسجّل كل قراءة وكل أمر تشغيل</li>
-                <li>· يمهّد لتقارير تشغيل وامتثال قابلة للمراجعة</li>
-              </ul>
             </div>
             <CTAButton href="https://demo.igarden.sa" variant="lime" external>
               افتح الديمو

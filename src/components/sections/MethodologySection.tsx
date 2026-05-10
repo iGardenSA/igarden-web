@@ -3,19 +3,19 @@ import { Wrench, MapPin, RefreshCw } from "lucide-react";
 const BENEFITS = [
   {
     Icon: Wrench,
-    eyebrow: "ننفّذ",
+    verb: "نبني",
     title: "نظام يُركَّب، لا صندوق يُسلَّم",
     text: "فريقنا الميداني في موقعك من اليوم الأوّل حتى أوّل دورة ري ناجحة. لا تَستلم كرتوناً وكتيّب ترجمة — تَستلم نظاماً يَعمل، وفريقاً يَفهم محصولك.",
   },
   {
     Icon: MapPin,
-    eyebrow: "نُوطّن",
+    verb: "نُوطّن",
     title: "قطع غيار من جدة، لا من ألمانيا",
     text: "لوحات التحكّم مُصنَّعة محلياً بمواصفاتنا. عطل في يوليو؟ القطعة عندك خلال أيام، لا أسابيع. الدعم بنفس لغتك وفي نفس منطقتك الزمنية.",
   },
   {
     Icon: RefreshCw,
-    eyebrow: "نُطوّر",
+    verb: "نُطوّر",
     title: "تَحديث كل موسم، لا تَجميد على الإصدار",
     text: "ما تعلّمناه من فشل عسفان في الصيف يَتحوّل إلى تَحسين عند عملاء الموسم القادم. شريكنا يَحصل على آخر إصدار دائماً — ليس من اشترى أقدم نسخة.",
   },
@@ -37,20 +37,23 @@ export function MethodologySection() {
             ونظامٍ يَتعطّل في ثاني صيف.
           </p>
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {BENEFITS.map(({ Icon, eyebrow, title, text }) => (
+          {BENEFITS.map(({ Icon, verb, title, text }) => (
             <div
-              key={title}
+              key={verb}
               className="bg-white rounded-card p-8 shadow-soft hover:shadow-md transition-shadow flex flex-col"
             >
-              <div className="w-14 h-14 rounded-full bg-lime/10 flex items-center justify-center mb-6">
-                <Icon className="w-7 h-7 text-deep-green" aria-hidden />
+              {/* Icon + verb — centered square block */}
+              <div className="flex flex-col items-center justify-center w-24 h-24 rounded-2xl bg-deep-green mx-auto mb-6">
+                <Icon className="w-8 h-8 text-lime mb-1" aria-hidden />
+                <span className="text-lime font-bold text-xl leading-tight tracking-wide">
+                  {verb}
+                </span>
               </div>
-              <p className="text-lime text-sm font-bold uppercase tracking-widest mb-2">
-                {eyebrow}
-              </p>
-              <h3 className="h4 text-deep-green mb-3">{title}</h3>
-              <p className="body-base text-medium-gray">{text}</p>
+
+              <h3 className="h4 text-deep-green mb-3 text-center">{title}</h3>
+              <p className="body-base text-medium-gray text-center">{text}</p>
             </div>
           ))}
         </div>
