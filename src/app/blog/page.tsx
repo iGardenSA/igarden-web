@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const UPCOMING_ARTICLES = [
   {
     icon: <Droplets className="h-5 w-5" />,
-    title: "كيف يوفر Aeroponics 95% من المياه؟",
+    title: "كيف يُقلّص Aeroponics استهلاك المياه في الزراعة؟",
     category: "تقنيات الزراعة",
     readTime: "8 دقائق",
   },

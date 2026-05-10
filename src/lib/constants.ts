@@ -33,8 +33,8 @@ export const CONTACT = {
  * الأرقام الرسمية — تُستخدم كما هي دون تعديل.
  */
 export const STATS = {
-  waterSavingsMax: { value: 95, unit: "%", label: "توفير في استهلاك المياه" },
-  waterSavingsAero: { value: 60, unit: "%", label: "توفير مياه في Aeroponic" },
+  waterSavingsMax: { value: 95, unit: "%", label: "كفاءة مائية (مرجع داخلي — لا يُعرض مباشرةً)" },
+  waterSavingsAero: { value: 60, unit: "%", label: "كفاءة مياه في Aeroponic (مرجع داخلي)" },
   fertilizerReduction: { value: 50, unit: "%", label: "خفض في استهلاك الأسمدة" },
   opexReduction: { value: 60, unit: "%", label: "خفض تكاليف التشغيل" },
   productivity: { value: 3, unit: "x", label: "زيادة في الإنتاجية" },
@@ -81,7 +81,7 @@ export const PRODUCTS = {
     nameEn: "Aeroponics",
     nameAr: "الزراعة الهوائية",
     category: "HARDWARE",
-    description: "تقنية الزراعة الهوائية بتوفير مياه يصل إلى 95%.",
+    description: "تقنية الزراعة الهوائية — كفاءة مائية عالية عبر إعادة تدوير مستمرة.",
   },
   cloud: {
     nameEn: "iGarden Cloud Platform",

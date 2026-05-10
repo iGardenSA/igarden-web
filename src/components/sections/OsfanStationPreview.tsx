@@ -1,10 +1,23 @@
+import Image from "next/image";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 const GALLERY = [
-  { src: "/images/osfan/preview-1.jpg", alt: "نظام زراعة مائية في محطة عسفان" },
-  { src: "/images/osfan/preview-2.jpg", alt: "ورشة ازرع بذكاء — مشاركون يتعرّفون على الأنظمة" },
-  { src: "/images/osfan/preview-3.jpg", alt: "نباتات الخس النامية في محطة عسفان" },
-  { src: "/images/osfan/preview-4.jpg", alt: "برج iGarden Tower في وضع تشغيل ميداني" },
+  {
+    src: "/images/osfan-full/responsive/04_greenhouse_wide_tablet.webp",
+    alt: "منظر داخلي لمحمية iGarden في عسفان — صفوف محاصيل ذكية",
+  },
+  {
+    src: "/images/osfan-full/responsive/05_tomato_tunnel_tablet.webp",
+    alt: "نفق الطماطم بنظام Dutch Bucket في محطة iGarden عسفان",
+  },
+  {
+    src: "/images/osfan-full/responsive/03_cabbage_diversity_tablet.webp",
+    alt: "تنوّع محاصيل الخضار في منظومة الزراعة المائية بعسفان",
+  },
+  {
+    src: "/images/osfan-full/responsive/02_tower_closeup_tablet.webp",
+    alt: "نظام iGarden Tower للزراعة العمودية الهوائية في المحطة",
+  },
 ];
 
 const NUMBERS = [
@@ -27,24 +40,23 @@ export function OsfanStationPreview() {
           </p>
         </div>
 
-        {/* Gallery — [CONTENT_NEEDED: 4 photos from Osfan] */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
-          {GALLERY.map((img, i) => (
+          {GALLERY.map((img) => (
             <div
               key={img.src}
-              className="relative aspect-square rounded-card overflow-hidden bg-brand-100 flex items-center justify-center"
-              style={{ backgroundImage: `url(${img.src})`, backgroundSize: "cover", backgroundPosition: "center" }}
-              role="img"
-              aria-label={img.alt}
+              className="relative aspect-square rounded-card overflow-hidden"
             >
-              <span className="text-brand-300 text-lg text-center p-2 sr-only">
-                {img.alt}
-              </span>
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+              />
             </div>
           ))}
         </div>
 
-        {/* Numbers */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-center">
           {NUMBERS.map((n) => (
             <div key={n.label}>

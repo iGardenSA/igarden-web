@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const PILLARS = [
   {
@@ -6,21 +7,21 @@ const PILLARS = [
     title: "Smart Controllers",
     desc: "لوحات تحكم زراعية بصناعتنا. تُربط بأيّ نظام قائم وتُراقب pH وEC والحرارة لحظياً.",
     href: "/products/smart-controllers",
-    bgClass: "bg-brand-600",
+    img: { src: "/images/osfan-full/03_cabbage_diversity.webp", alt: "محاصيل خضار تحت مراقبة Smart Controllers في محطة عسفان" },
   },
   {
     badge: null,
     title: "Smart Greenhouses",
     desc: "محميات ذكية تصمد في +45°C وتُؤتمت بالكامل. كفاءة طاقة 40% وتحكّم مناخي دقيق.",
     href: "/products/smart-greenhouses",
-    bgClass: "bg-brand-500",
+    img: { src: "/images/osfan-full/04_greenhouse_wide.webp", alt: "منظر داخلي لمحمية ذكية في محطة iGarden عسفان" },
   },
   {
     badge: "يشمل iGarden Tower — منتجنا المسجَّل",
     title: "Hydroponic Systems",
-    desc: "7 تقنيات زراعة مائية + برج iGarden المُسجَّل SAIP. توفير 95% من المياه.",
+    desc: "7 تقنيات زراعة مائية + برج iGarden المُسجَّل SAIP. كفاءة مائية عالية مُختبَرة في عسفان.",
     href: "/products/hydroponics",
-    bgClass: "bg-corp-green",
+    img: { src: "/images/osfan-full/02_tower_closeup.webp", alt: "نظام iGarden Tower للزراعة العمودية — مُختبَر في محطة عسفان" },
   },
 ];
 
@@ -43,18 +44,20 @@ export function ThreePillarsSection() {
               key={p.title}
               className="bg-cream rounded-card overflow-hidden shadow-soft hover:shadow-md transition-shadow flex flex-col"
             >
-              {/* Image placeholder [CONTENT_NEEDED] */}
-              <div
-                className={`relative aspect-[4/3] ${p.bgClass} flex items-center justify-center`}
-              >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={p.img.src}
+                  alt={p.img.alt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-deep-green/20" aria-hidden />
                 {p.badge && (
-                  <span className="absolute top-4 right-4 bg-lime text-white text-lg font-medium px-3 py-1 rounded-full">
+                  <span className="absolute top-4 right-4 bg-lime text-white text-sm font-medium px-3 py-1 rounded-full z-10">
                     {p.badge}
                   </span>
                 )}
-                <span className="text-white/40 text-lg">
-                  {/* [CONTENT_NEEDED: card image] */}
-                </span>
               </div>
 
               <div className="p-6 flex flex-col flex-1">

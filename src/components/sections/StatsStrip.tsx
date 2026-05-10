@@ -1,5 +1,5 @@
 const STATS = [
-  { num: "95%", label: "توفير مياه", sub: "iGarden Tower" },
+  { num: "3+", label: "سنوات تطوير", sub: "منذ 2024" },
   { num: "3×", label: "إنتاجية أعلى", sub: "Vertical Systems" },
   { num: "+45°C", label: "تحمّل ميداني", sub: "اختُبر في عسفان" },
   { num: "208", label: "اختبار وحدوي", sub: "Smart OS — ناجح" },
