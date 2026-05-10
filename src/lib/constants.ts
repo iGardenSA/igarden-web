@@ -153,60 +153,14 @@ export type NavItemType = NavItemMega | NavItemSimple;
 
 // ─── Main Navigation — هيكل دستوري (CLAUDE.md v2.0) ──────────────────────────
 
-export const HEADER_NAV_ITEMS: NavItemType[] = [
-  {
-    label: "الحلول",
-    href: "/products",
-    hasMegaMenu: true,
-    megaMenuColumns: [
-      {
-        title: "Smart Controllers · Flagship",
-        icon: "cpu",
-        items: [
-          { label: "لوحات تحكّم زراعية بصناعتنا", href: "/products/smart-controllers" },
-          { label: "Smart OS مُدمَج", href: "/products/smart-controllers#smart-os" },
-          { label: "مُختبَرة في عسفان", href: "/osfan-station" },
-        ],
-        cta: {
-          label: "استكشف Smart Controllers",
-          href: "/products/smart-controllers",
-          variant: "default",
-        },
-      },
-      {
-        title: "المحميات الذكية",
-        icon: "tractor",
-        items: [
-          { label: "هياكل تَصمد في +45°C", href: "/products/smart-greenhouses" },
-          { label: "أتمتة IoT كاملة", href: "/products/smart-greenhouses#automation" },
-          { label: "تحكّم مناخي ذكي", href: "/products/smart-greenhouses#climate" },
-        ],
-        cta: {
-          label: "استكشف المحميات",
-          href: "/products/smart-greenhouses",
-          variant: "default",
-        },
-      },
-      {
-        title: "أنظمة الزراعة المائية",
-        icon: "leaf",
-        items: [
-          { label: "7 تقنيات مُختَبَرة", href: "/products/hydroponics" },
-          { label: "يشمل iGarden Tower", href: "/products/hydroponics#tower" },
-          { label: "توفير 95% من المياه", href: "/products/hydroponics#savings" },
-        ],
-        cta: {
-          label: "استكشف الأنظمة",
-          href: "/products/hydroponics",
-          variant: "default",
-        },
-      },
-    ],
-  },
-  { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "المستثمرون", href: "/investors" },
-  { label: "المعرفة", href: "/learn" },
+export const HEADER_NAV_ITEMS: NavItemSimple[] = [
+  { label: "Smart Controllers", href: "/products/smart-controllers" },
+  { label: "المحميات الذكية",   href: "/products/smart-greenhouses" },
+  { label: "الزراعة المائية",   href: "/products/hydroponics" },
+  { label: "محطة عسفان",        href: "/osfan-station" },
+  { label: "كيف نعمل",          href: "/how-we-work" },
+  { label: "المستثمرون",        href: "/investors" },
+  { label: "المعرفة",           href: "/learn" },
 ];
 
 // ─── Main CTA — دستوري ───────────────────────────────────────────────────────
