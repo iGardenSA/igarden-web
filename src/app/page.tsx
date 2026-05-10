@@ -4,7 +4,7 @@ import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJso
 export const metadata: Metadata = {
   title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
   description:
-    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حساسات، تحكم، وبرمجيات تشغيل ميدانية مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر — منذ 2024.",
+    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حساسات، تحكم، وبرمجيات تشغيل ميدانية مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
   alternates: { canonical: "https://igarden.sa/" },
   openGraph: {
     title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",

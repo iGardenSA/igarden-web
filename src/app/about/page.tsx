@@ -29,7 +29,7 @@ function Hero() {
     <section className="section-light py-20 md:py-28">
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-          منذ 2024 · أنظمة زراعة ذكية · مُختبَرة في الميدان
+          شركة AgriTech سعودية · مُختبَرة في الميدان · ترخيص استثماري ريادي
         </p>
         <h1 className="h1 text-deep-green mb-5">
           شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي
