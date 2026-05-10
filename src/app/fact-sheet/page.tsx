@@ -58,15 +58,9 @@ export default function FactSheetPage() {
 
             {/* الهوية التجارية */}
             <FactBlock title="الهوية التجارية">
-              <FactRow label="الاسم التجاري (عربي)" value="iGarden — الحديقة الذكية" />
               <FactRow label="الاسم التجاري (لاتيني)" value="iGarden" mono />
               <FactRow label="الاسم القانوني" value={COMPANY.legalFull} />
               <FactRow label="الاسم القانوني (إنجليزي)" value="Intelligent Garden Company (L.L.C.)" mono />
-              <FactRow
-                label="ملاحظة"
-                value='العلامة التجارية «iGarden — الحديقة الذكية» قيد التسجيل الرسمي في SAIP'
-                muted
-              />
             </FactBlock>
 
             {/* التراخيص والسجلات */}

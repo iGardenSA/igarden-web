@@ -129,7 +129,7 @@ function DecisionTree() {
         <p className="text-center text-medium-gray text-sm mt-10">
           مَوقفك مختلف؟{" "}
           <Link href="/contact" className="text-lime hover:text-deep-green font-medium">
-            اطلب تقييم مشروعك ←
+            احجز استشارة ←
           </Link>
         </p>
       </div>
@@ -289,7 +289,7 @@ function FinalCTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            اطلب تقييم مشروعك
+            احجز استشارة
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">
             شاهد عسفان أوّلاً

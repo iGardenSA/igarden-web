@@ -10,7 +10,7 @@ export function HomeSolutions() {
           <p className="text-base font-medium text-lime mb-3">للأفراد أيضاً</p>
           <h2 className="h2 text-deep-green mb-4">هل تبحث عن مستلزمات زراعية؟</h2>
           <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            نقدّم للأفراد نسخة مصغرة من تقنياتنا — انتقل إلى متجر الحديقة الذكية.
+            نقدّم للأفراد نسخة مصغرة من تقنياتنا — انتقل إلى متجرنا الإلكتروني.
           </p>
         </div>
 

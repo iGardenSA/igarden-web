@@ -6,7 +6,7 @@
 
 export const COMPANY = {
   nameEn: "iGarden",
-  nameAr: "الحديقة الذكية",
+  nameAr: "انتيليجنت غاردن",
   legalAr: "شركة انتيليجنت غاردن",
   legalFull: "شركة انتيليجنت غاردن (ذات مسؤولية محدودة)",
   legalEn: "Intelligent Garden Company",
@@ -213,6 +213,6 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
 // ─── Main CTA — دستوري ───────────────────────────────────────────────────────
 
 export const MAIN_CTA = {
-  label: "اطلب تقييم مشروعك",
+  label: "احجز استشارة",
   href: "/contact",
 } as const;

@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
-  const title = searchParams.get("title") || "iGarden — الحديقة الذكية";
+  const title = searchParams.get("title") || "iGarden — انتيليجنت غاردن";
   const sub =
     searchParams.get("sub") || "شركة سعودية لأنظمة الزراعة الذكية";
 

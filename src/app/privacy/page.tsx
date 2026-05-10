@@ -54,7 +54,7 @@ export default function PrivacyPage() {
                 <span dir="ltr" className="ltr-inline font-latin font-medium">
                   iGarden
                 </span>{" "}
-                (الحديقة الذكية)، وهي شركة سعودية مرخّصة من هيئة الاستثمار (MISA #
+                (انتيليجنت غاردن)، وهي شركة سعودية مرخّصة من هيئة الاستثمار (MISA #
                 <span dir="ltr" className="ltr-inline font-latin">
                   24926249716
                 </span>

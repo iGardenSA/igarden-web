@@ -31,9 +31,9 @@ export function ComplianceSection() {
             سجلات التشغيل القابلة للمراجعة
           </h2>
           <p className="text-white/75 text-lg leading-relaxed">
-            مزرعتك الحديثة تُولّد بيانات بمعدّل آلاف القراءات يومياً.
-            نُحوّل هذه البيانات إلى سجلّ تَشغيلي رقمي قابل للمراجعة — يَخدمك في التدقيق
-            الداخلي ويُجهّز ملفّاتك للجهات المختصّة.
+            طبقة الامتثال في iGarden تساعد على تنظيم سجلات التشغيل، تتبّع القراءات والأوامر،
+            وتجهيز تقارير داخلية قابلة للمراجعة — دون أن تكون شهادة امتثال رسمية
+            أو بديلاً عن الجهات التنظيمية.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export function ComplianceSection() {
             href="/contact"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold text-base transition-colors"
           >
-            اطلب تقييم مشروعك
+            احجز استشارة
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           </Link>
           <a

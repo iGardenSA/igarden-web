@@ -11,10 +11,10 @@ import {
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لأنظمة الزراعة الذكية | iGarden",
   description:
-    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
+    "iGarden (انتيليجنت غاردن): شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
   alternates: { canonical: "https://igarden.sa/about" },
   openGraph: {
-    title: "من نحن — الحديقة الذكية",
+    title: "من نحن — iGarden",
     description:
       "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
     images: [{ url: "/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%B4%D8%B1%D9%83%D8%A9+%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9+%D9%84%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9", width: 1200, height: 630 }],
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "من نحن — الحديقة الذكية | iGarden",
+    title: "من نحن — iGarden | iGarden",
     description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
     images: ["/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86"],
   },
@@ -41,7 +41,7 @@ function Hero() {
           شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي
         </h1>
         <p className="body-base text-medium-gray max-w-2xl mx-auto">
-          الحديقة الذكية — العلامة التجارية لشركة انتيليجنت غاردن (ذات مسؤولية محدودة).
+          انتيليجنت غاردن (iGarden) — شركة سعودية لأنظمة الزراعة الذكية.
           نُنفّذ المشاريع، نُشغّل الأنظمة، ونُطوّرها مع كل موسم — مُكيَّفة لمناخ المملكة
           ومدخلاتها المحلية.
         </p>
@@ -407,7 +407,7 @@ function FinalCTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            اطلب تقييم مشروعك
+            احجز استشارة
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">
             زُر محطّة عسفان

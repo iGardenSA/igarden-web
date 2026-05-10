@@ -18,11 +18,11 @@ import {
 import AppWaitlistForm from "./AppWaitlistForm";
 
 export const metadata: Metadata = {
-  title: "التطبيق · الحديقة الذكية في جيبك | iGarden",
+  title: "التطبيق · iGarden في جيبك | iGarden",
   description:
-    "تطبيق الحديقة الذكية — رفيقك في الزراعة المائية. حاسبات دقيقة لـ EC و pH، يوميات نظامك، ومرشد تقني عربي. للهواة الجادّين والمزارعين المنزليين في السعودية. قريباً.",
+    "تطبيق iGarden — رفيقك في الزراعة المائية. حاسبات دقيقة لـ EC و pH، يوميات نظامك، ومرشد تقني عربي. للهواة الجادّين والمزارعين المنزليين في السعودية. قريباً.",
   keywords: [
-    "تطبيق الحديقة الذكية",
+    "تطبيق iGarden",
     "iGarden App",
     "زراعة مائية السعودية",
     "هيدروبونيك تطبيق",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "Hydroponics Saudi Arabia",
   ],
   openGraph: {
-    title: "التطبيق · الحديقة الذكية في جيبك",
+    title: "التطبيق · iGarden في جيبك",
     description:
       "أرقام دقيقة، لا تخمين. EC · pH · PPM · توقيت الري — مرافق عربي للزراعة المائية.",
     images: ["/images/og/app.jpg"],
@@ -75,7 +75,7 @@ const FEATURES = [
       "مهام اليوم مع تقدّم بصري",
     ],
     img: "/images/app/mockup-02.png",
-    alt: "الشاشة الرئيسية — تطبيق الحديقة الذكية",
+    alt: "الشاشة الرئيسية — تطبيق iGarden",
   },
   {
     Icon: LineChart,
@@ -88,7 +88,7 @@ const FEATURES = [
       "تحويل تلقائي بين الوحدات",
     ],
     img: "/images/app/mockup-03.png",
-    alt: "حاسبة المحلول الغذائي — تطبيق الحديقة الذكية",
+    alt: "حاسبة المحلول الغذائي — تطبيق iGarden",
   },
   {
     Icon: BookOpen,
@@ -101,7 +101,7 @@ const FEATURES = [
       "تصدير CSV للنسخ الاحتياطي",
     ],
     img: "/images/app/mockup-04.png",
-    alt: "يوميات النظام — تطبيق الحديقة الذكية",
+    alt: "يوميات النظام — تطبيق iGarden",
   },
   {
     Icon: MessageCircle,
@@ -114,7 +114,7 @@ const FEATURES = [
       "ذاكرة لكل محادثة",
     ],
     img: "/images/app/mockup-05.png",
-    alt: "المرشد التقني — تطبيق الحديقة الذكية",
+    alt: "المرشد التقني — تطبيق iGarden",
   },
   {
     Icon: BookOpen,
@@ -127,7 +127,7 @@ const FEATURES = [
       "EC و pH وزمن الحصاد لكل محصول",
     ],
     img: "/images/app/mockup-06.png",
-    alt: "دليل المحاصيل — تطبيق الحديقة الذكية",
+    alt: "دليل المحاصيل — تطبيق iGarden",
   },
   {
     Icon: Sprout,
@@ -140,7 +140,7 @@ const FEATURES = [
       "توقّعات إنتاج معقولة",
     ],
     img: "/images/app/mockup-07.png",
-    alt: "تفاصيل المحصول — تطبيق الحديقة الذكية",
+    alt: "تفاصيل المحصول — تطبيق iGarden",
   },
 ] as const;
 
@@ -249,7 +249,7 @@ export default function AppPage() {
                 <div className="absolute -inset-6 bg-lime/10 blur-3xl rounded-full" aria-hidden />
                 <Image
                   src="/images/app/mockup-01-welcome.png"
-                  alt="الشاشة الرئيسية لتطبيق الحديقة الذكية — صفحة الترحيب"
+                  alt="الشاشة الرئيسية لتطبيق iGarden — صفحة الترحيب"
                   width={320}
                   height={680}
                   priority
@@ -472,7 +472,7 @@ export default function AppPage() {
                   المنزل
                 </h3>
                 <p className="text-medium-gray text-sm leading-relaxed">
-                  تطبيق الحديقة الذكية — للهواة والمزارعين المنزليين.
+                  تطبيق iGarden — للهواة والمزارعين المنزليين.
                 </p>
               </div>
 

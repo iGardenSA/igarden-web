@@ -167,9 +167,6 @@ export function Footer() {
                 نموذج صناعي{" "}
                 <span className="ltr-inline font-latin">SAIP: #423450193</span>
               </p>
-              <p className="text-cream/50">
-                العلامة التجارية «iGarden — الحديقة الذكية» قيد التسجيل الرسمي في SAIP
-              </p>
             </div>
             <div className="flex gap-5">
               <Link href="/privacy" className="hover:opacity-100 transition-opacity">

@@ -180,7 +180,7 @@ export function Navigation() {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <CTAButton href="/contact" variant="lime">
-              اطلب تقييم مشروعك
+              احجز استشارة
             </CTAButton>
           </div>
 
@@ -297,7 +297,7 @@ export function Navigation() {
 
         <div className="p-4 border-t border-light-gray">
           <CTAButton href="/contact" variant="lime" className="w-full justify-center">
-            اطلب تقييم مشروعك
+            احجز استشارة
           </CTAButton>
         </div>
       </aside>
