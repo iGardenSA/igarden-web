@@ -12,13 +12,12 @@ export function FinalCTA() {
           لا التزام، لا توقيع NDA، لا مندوب مبيعات.
         </h2>
         <p className="body-base text-cream/80 max-w-2xl mx-auto mb-10">
-          احجز ١٥ دقيقة مع فريقنا الفنّي. نَسمع فكرتك، نُصارحك إن كانت غير جاهزة
-          بعد، ونَقترح مساراً عملياً إن كانت جاهزة. هاتف، واتساب، أو زيارة
-          لمحطّة عسفان — اختَر الأنسب لك.
+          نَسمع فكرتك، نُصارحك إن كانت غير جاهزة بعد، ونَقترح مساراً عملياً
+          إن كانت جاهزة. هاتف، واتساب، أو زيارة لمحطّة عسفان — اختَر الأنسب لك.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            احجز ١٥ دقيقة
+            اطلب تقييم مشروعك
           </CTAButton>
           <CTAButton
             href={CONTACT.whatsapp}

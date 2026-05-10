@@ -346,14 +346,14 @@ function FinalCTA() {
           هل أنت جاهز للعمل مع شركة تُجرّب قبل أن تُسلّم؟
         </h2>
         <p className="body-base text-cream/80 max-w-xl mx-auto mb-10">
-          استشارة مجانية أو زيارة لمحطّة عسفان — ابدأ من أيّ نقطة تريدها.
+          تقييم مجاني أو زيارة لمحطّة عسفان — ابدأ من أيّ نقطة تريدها.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            احجز استشارة مجانية
+            اطلب تقييم مشروعك
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">
-            احجز زيارة لمحطّة عسفان
+            زُر محطّة عسفان
           </CTAButton>
         </div>
       </div>

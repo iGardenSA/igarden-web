@@ -19,12 +19,13 @@ import HeroSection from "@/components/sections/HeroSection";
 import HeroTrustBar from "@/components/sections/HeroTrustBar";
 import { MethodologySection } from "@/components/sections/MethodologySection";
 import { ThreePillarsSection } from "@/components/sections/ThreePillarsSection";
-import { ComplianceSection } from "@/components/sections/ComplianceSection";
 import { SmartOSDemoSection } from "@/components/sections/SmartOSDemoSection";
+import { ComplianceSection } from "@/components/sections/ComplianceSection";
 import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { ComplementaryProducts } from "@/components/sections/ComplementaryProducts";
+import { WhatWeDontClaim } from "@/components/sections/WhatWeDontClaim";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function HomePage() {
@@ -52,11 +53,11 @@ export default function HomePage() {
       {/* 4. الركائز الثلاث */}
       <ThreePillarsSection />
 
-      {/* 5. من التحكّم إلى الامتثال */}
-      <ComplianceSection />
-
-      {/* 6. Smart OS Demo */}
+      {/* 5. Smart OS Demo */}
       <SmartOSDemoSection />
+
+      {/* 6. سجلات التشغيل القابلة للمراجعة */}
+      <ComplianceSection />
 
       {/* 7. محطّة عسفان */}
       <OsfanStationPreview />
@@ -68,7 +69,10 @@ export default function HomePage() {
       {/* 9. منتجات تكميلية (Fodder + Aquaponics — دستورياً بطاقات في الرئيسية) */}
       <ComplementaryProducts />
 
-      {/* 10. دعوة للتواصل */}
+      {/* 10. ما لا ندّعيه — الشفافية */}
+      <WhatWeDontClaim />
+
+      {/* 11. دعوة للتواصل */}
       <FinalCTA />
     </>
   );
