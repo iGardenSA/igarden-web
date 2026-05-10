@@ -95,11 +95,11 @@ function StatusCard() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mx-auto bg-cream rounded-card p-6 border-s-4 border-lime shadow-soft">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            شفافية ريادية
+            الشفافية أوّلاً
           </p>
           <h2 className="h4 text-deep-green mb-3">منتج قيد التطوير الميداني</h2>
           <p className="body-base text-medium-gray mb-4">
-            نحن شركة ريادية — عدّة نماذج أوّلية قيد الاختبار في محطّة عسفان.
+            عدّة نماذج أوّلية قيد الاختبار في محطّة عسفان — إطلاق تجاري 2026.
             نقبل اهتمام عملاء{" "}
             <span dir="ltr" className="ltr-inline font-latin font-medium">
               Early Access
