@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: `https://${COMPANY.domain}`,
     siteName: COMPANY.nameEn,
-    title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
     images: [
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — ننفّذ · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} — نبني · نُوطّن · نُطوّر`,
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
     images: ["/api/og"],
