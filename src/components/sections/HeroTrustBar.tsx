@@ -1,11 +1,8 @@
 'use client';
 
-import { CalendarCheck, FlaskConical, Thermometer, GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award } from 'lucide-react';
 
 const stats = [
-  { icon: CalendarCheck,  number: '+3',     label: 'سنوات من التطوير'            },
-  { icon: FlaskConical,   number: '208',    label: 'اختبار وحدوي ناجح'         },
-  { icon: Thermometer,    number: '+45°C',  label: 'اختُبر ميدانياً في عسفان'   },
   { icon: GraduationCap,  number: '5',      label: 'ورش «ازرع بذكاء» مُنفَّذة' },
   { icon: Award,          number: 'SAIP',   label: 'نموذج صناعي #423450193'    },
 ];
@@ -17,7 +14,7 @@ export default function HeroTrustBar() {
       aria-label="إحصاءات الشركة"
     >
       <div className="container mx-auto px-4 py-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5">
+        <div className="flex flex-wrap justify-center gap-10">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (

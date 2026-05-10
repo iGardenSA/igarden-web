@@ -23,13 +23,7 @@ export function Footer() {
               شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي.
             </p>
             <p className="text-lg font-medium text-lime mb-4">
-              ننفّذ · نُوطّن · نُطوّر
-            </p>
-            <p className="text-lg opacity-90">
-              ازرع بذكاء{" "}
-              <span dir="ltr" className="ltr-inline font-latin">
-                · Plant Smart
-              </span>
+              ازرع بذكاء
             </p>
           </div>
 
