@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { ProductSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import Link from "next/link";
+import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { StageHonesty } from "@/components/shared/StageHonesty";
-import { Building2, Cpu, Wind, CheckCircle2, ExternalLink, AlertTriangle, Zap, TrendingUp } from "lucide-react";
+import {
+  Building2,
+  Cpu,
+  Wind,
+  CheckCircle2,
+  ExternalLink,
+  AlertTriangle,
+  Zap,
+  TrendingUp,
+  Users,
+  BarChart3,
+  MonitorSmartphone,
+  Bell,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Smart Greenhouses — محميات ذكية تصمد في +45°C | iGarden",
@@ -11,10 +25,23 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
   openGraph: {
     title: "Smart Greenhouses — محميات ذكية تصمد في +45°C",
-    description: "هيكل + أتمتة + تحكم مناخي. مُختَبَرة في عسفان.",
-    images: ["/images/og/smart-greenhouses.jpg"],
+    description: "هيكل + أتمتة + تحكم مناخي. كفاءة طاقة حتى 40% في الاختبارات الميدانية. مُختَبَرة في عسفان.",
+    images: [
+      {
+        url: "/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
+        width: 1200,
+        height: 630,
+        alt: "Smart Greenhouses — iGarden",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smart Greenhouses — محميات ذكية تصمد في +45°C",
+    description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة حتى 40% في الاختبارات الميدانية.",
+    images: ["/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
 };
 
@@ -62,6 +89,50 @@ function Hero() {
               +45°C · Tested in Osfan
             </span>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 1.2: لمن هذا الحل؟ ─────────────────────────── */
+const FOR_WHOM = [
+  {
+    title: "مستثمرون يبنون مزارع تجارية جديدة",
+    desc: "تريد محمية تُصمَّم من الصفر لمحصولك ومناخك — لا قوالب جاهزة بل تصميم يُراعي درجات الحرارة الفعلية في موقعك.",
+  },
+  {
+    title: "مشغّلو مزارع كبيرة يريدون خفض التكاليف",
+    desc: "فاتورة الكهرباء والعمالة ترتفع مع كل صيف — منظومة التحكم المناخي الذكي تُخفّضها حتى 40% في الاختبارات الميدانية.",
+  },
+  {
+    title: "مشاريع حكومية وزراعية مُمَوَّلة",
+    desc: "تحتاج منظومة موثّقة وقابلة للتدقيق، مع تقارير أداء ومتابعة ميدانية منظّمة.",
+  },
+  {
+    title: "من يريد بيئة مناخية محكومة للمحاصيل الحساسة",
+    desc: "محاصيل كالفراولة والورد والطماطم الكرزية تحتاج نطاق حرارة ورطوبة دقيق — المحمية الذكية توفّر ذلك على مدار السنة.",
+  },
+];
+
+function ForWhomSection() {
+  return (
+    <section className="bg-white py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">لمن هذا الحل؟</p>
+        <h2 className="h2 text-deep-green mb-8">
+          محميات ذكية مُصمَّمة لظروف السعودية — لمن يريد الإنتاج طوال العام
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {FOR_WHOM.map((t) => (
+            <div key={t.title} className="bg-[#FAFAF7] rounded-2xl p-6 border border-[#E5E7EB]">
+              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center mb-4">
+                <Users className="w-5 h-5 text-deep-green" aria-hidden />
+              </div>
+              <h3 className="text-[#0F3D2E] font-bold text-lg mb-2">{t.title}</h3>
+              <p className="text-[#6B7280] text-base leading-relaxed">{t.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -503,6 +574,206 @@ function ScalesSection() {
   );
 }
 
+/* ─── Section 6.1: Scope (Includes / Excludes) ────────────── */
+const SCOPE_INCLUDES = [
+  "استشارة تصميمية أوّلية وزيارة الموقع (أو مكالمة تقنية)",
+  "تصميم الهيكل والاختيار من المواد المناسبة لمناخك",
+  "توريد وتركيب الهيكل الفولاذي المجلفن والتغطية",
+  "تركيب أنظمة التهوية والتبريد والريّ الآلية",
+  "دمج Smart Controller وضبط Smart OS للتحكم المناخي",
+  "تسليم المفتاح وتدريب فريق التشغيل",
+];
+
+const SCOPE_EXCLUDES = [
+  "أعمال مدنية وأساسات الموقع (يُكمل بها صاحب العمل قبل التسليم)",
+  "البنية التحتية الكهربائية قبل لوحة التحكم",
+  "معدات التبريد (HVAC) ما لم تُدرَج صراحةً في العقد",
+  "استشارة اختيار المحصول أو الاستعانة بمزارع متخصّص",
+  "شهادة امتثال من جهات حكومية — نوفّر التوثيق والسجلات، لكن الاعتماد الرسمي يبقى مسؤوليتك",
+];
+
+function ScopeSection() {
+  return (
+    <section className="bg-[#FAFAF7] py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <h2 className="h2 text-deep-green mb-10 text-center">نطاق التنفيذ</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-2xl p-7 border border-[#E5E7EB]">
+            <h3 className="text-[#0F3D2E] font-bold text-xl mb-5 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-[#A5D63F]/20 flex items-center justify-center text-[#7CB342] font-bold text-sm">✓</span>
+              يشمل التنفيذ
+            </h3>
+            <ul className="space-y-3">
+              {SCOPE_INCLUDES.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-[#374151]">
+                  <CheckCircle2 className="w-4 h-4 text-[#7CB342] mt-0.5 flex-shrink-0" aria-hidden />
+                  <span className="body-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white rounded-2xl p-7 border border-amber-200">
+            <h3 className="text-[#0F3D2E] font-bold text-xl mb-5 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-sm">✕</span>
+              لا يشمل التنفيذ
+            </h3>
+            <ul className="space-y-3">
+              {SCOPE_EXCLUDES.map((item) => (
+                <li key={item} className="flex items-start gap-2 text-[#6B7280]">
+                  <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" aria-hidden />
+                  <span className="body-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 6.2: Prerequisites ──────────────────────────── */
+const PREREQUISITES = [
+  {
+    title: "موقع جاهز بأساسات مُكتملة",
+    desc: "الأرضية والأساسات وأعمال التسوية تُكمَل قبل وصول فريق التركيب. نُزوّدك بالمواصفات المطلوبة مسبقاً.",
+  },
+  {
+    title: "توصيل الكهرباء لقبل لوحة التحكم",
+    desc: "وصلة كهرباء ثلاثية إلى موقع التركيب. من هناك نُدير كل الأنظمة الداخلية.",
+  },
+  {
+    title: "وضوح المحصول المستهدف وهدف الإنتاج",
+    desc: "المحصول يُحدّد متطلبات الحرارة والرطوبة والتهوية — كلّما عرفنا محصولك مسبقاً، دقّ التصميم.",
+  },
+  {
+    title: "فريق تشغيل ملتزم بالمتابعة",
+    desc: "محمية ذكية تحتاج مشغّلاً يراجع التنبيهات ويتابع Smart OS. التدريب نُقدّمه — الالتزام اليومي عليك.",
+  },
+];
+
+function PrerequisitesSection() {
+  return (
+    <section className="bg-white py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">قبل البدء</p>
+        <h2 className="h2 text-deep-green mb-8">المتطلبات قبل التركيب</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {PREREQUISITES.map((p, i) => (
+            <div key={p.title} className="bg-[#FAFAF7] rounded-2xl p-6 border border-[#E5E7EB] flex gap-4">
+              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center flex-shrink-0">
+                <span className="font-latin font-bold text-deep-green text-sm">{String(i + 1).padStart(2, "0")}</span>
+              </div>
+              <div>
+                <h3 className="font-bold text-deep-green mb-1">{p.title}</h3>
+                <p className="text-[#6B7280] body-sm leading-relaxed">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 6.3: Client Outputs ─────────────────────────── */
+const CLIENT_OUTPUTS = [
+  {
+    Icon: Building2,
+    title: "محمية جاهزة للإنتاج",
+    desc: "تسليم مفتاح-باليد — من الهيكل إلى الحساسات إلى أوّل دورة تشغيل.",
+  },
+  {
+    Icon: MonitorSmartphone,
+    title: "تحكم مناخي آلي",
+    desc: "Smart OS يُحافظ على درجة الحرارة والرطوبة المثاليتين تلقائياً — أينما كنت.",
+  },
+  {
+    Icon: Bell,
+    title: "تنبيهات انحراف لحظية",
+    desc: "إشعار فوري عند أيّ انحراف في الحرارة أو الرطوبة أو ضغط الريّ — قبل أن يتأثّر المحصول.",
+  },
+  {
+    Icon: BarChart3,
+    title: "سجل تشغيلي كامل",
+    desc: "كل قراءة وكل قرار آلي محفوظ بطابع زمني — لمراجعة الأداء وتحسين الموسم القادم.",
+  },
+];
+
+function ClientOutputsSection() {
+  return (
+    <section className="section-light py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">مخرجات العميل</p>
+        <h2 className="h2 text-deep-green mb-8">ماذا ستحصل بعد التسليم؟</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {CLIENT_OUTPUTS.map(({ Icon, title, desc }) => (
+            <div key={title} className="bg-white rounded-card p-6 shadow-soft">
+              <div className="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center mb-4">
+                <Icon className="w-6 h-6 text-deep-green" aria-hidden />
+              </div>
+              <h3 className="h4 text-deep-green mb-2">{title}</h3>
+              <p className="body-sm text-medium-gray">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 6.4: علاقته بـ Smart OS ────────────────────── */
+function SmartOSSection() {
+  return (
+    <section className="bg-white py-14" dir="rtl">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="bg-[#0F3D2E] rounded-2xl p-8 md:p-10 text-center">
+          <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">علاقته بـ Smart OS</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
+            محميتك متصلة — تُراقَب وتُدار لحظياً
+          </h2>
+          <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
+            كل محمية نُركّبها تتصل بـ Smart OS — بيانات الحرارة والرطوبة والتهوية مرئية
+            في Dashboard أو عبر تنبيهات واتساب. جرّب الديمو الحيّ قبل الشراء.
+          </p>
+          <Link
+            href="https://demo.igarden.sa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold transition-colors"
+          >
+            جرّب الديمو الحيّ ↗
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 6.5: Operational Logs ──────────────────────── */
+function OperationalLogsSection() {
+  return (
+    <section className="bg-[#0F3D2E] py-14" dir="rtl">
+      <div className="container mx-auto px-4 max-w-5xl text-center">
+        <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">سجلات التشغيل القابلة للمراجعة</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
+          كل قراءة. كل قرار. كل تنبيه.
+        </h2>
+        <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
+          النظام يُسجّل تلقائياً — بطابع زمني دقيق — كل درجة حرارة وكل قرار تهوية وكل دورة ريّ.
+          السجل قابل للمراجعة في أيّ وقت بصيغة قابلة للتدقيق.
+        </p>
+        <Link
+          href="/compliance"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold transition-colors"
+        >
+          تعرّف على سجلات التشغيل
+        </Link>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Section 7: FAQ ──────────────────────────────────────── */
 /*
   [CONTENT_NEEDED: إجابات الأسئلة الخمسة — يراجعها م. أيمن]
@@ -581,12 +852,27 @@ function FinalCTA() {
 /* ─── Page ────────────────────────────────────────────────── */
 const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
-  { name: "خدماتنا", url: "/products" },
+  { name: "الحلول", url: "/products" },
   { name: "Smart Greenhouses", url: "/products/smart-greenhouses" },
 ];
 
-// FAQSchema مُحذوف لهذه الصفحة — جميع إجابات FAQ لا تزال [CONTENT_NEEDED]
-// يُضاف بعد توفّر الإجابات الحقيقية
+const SCHEMA_FAQS = [
+  {
+    question: "هل تستوردون المواد أم تُصنَّع محلياً؟",
+    answer:
+      "نُوطّن ما أمكن — الهياكل الفولاذية والتغطيات تُصنَّع بمواصفاتنا داخل المملكة. بعض مكوّنات الأتمتة مستوردة وتُدمَج محلياً.",
+  },
+  {
+    question: "هل تقدّمون عقود صيانة سنوية؟",
+    answer:
+      "نعم — نُوفّر عقود صيانة سنوية تشمل الزيارات الدورية، تحديث برمجيات Smart OS، وخط دعم فني.",
+  },
+  {
+    question: "ما مدّة التركيب الكامل؟",
+    answer:
+      "المحميات الصغيرة (<200 م²) تستغرق 2-3 أسابيع. المشاريع الأكبر تُقدَّر حسب الحجم والتعقيد.",
+  },
+];
 
 export default function SmartGreenhousesPage() {
   return (
@@ -598,6 +884,7 @@ export default function SmartGreenhousesPage() {
         url="/products/smart-greenhouses"
         category="Smart Agricultural Greenhouses"
       />
+      <FAQSchema faqs={SCHEMA_FAQS} />
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <section className="bg-[#FAFAF7] py-6">
@@ -605,12 +892,18 @@ export default function SmartGreenhousesPage() {
           <StageHonesty />
         </div>
       </section>
+      <ForWhomSection />
       <PainScenarios />
       <ValuesSection />
       <TechSpecs />
       <HowItWorks />
       <OsfanGallery />
       <ScalesSection />
+      <ScopeSection />
+      <PrerequisitesSection />
+      <ClientOutputsSection />
+      <SmartOSSection />
+      <OperationalLogsSection />
       <FAQ />
       <FinalCTA />
     </>
