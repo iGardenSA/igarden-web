@@ -200,7 +200,7 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               <div className="bg-[var(--color-surface)] rounded-2xl p-7 md:p-10 border border-[var(--color-border)]">
                 <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-brand-600)] mb-2">
-                  احجز ١٥ دقيقة مع فريقنا الفنّي
+                  اطلب تقييم مشروعك
                 </h2>
                 <p className="text-[var(--color-muted)] mb-8">
                   ٤ حقول أساسية. تَفاصيل المشروع اختيارية — تُساعدنا نُجهّز

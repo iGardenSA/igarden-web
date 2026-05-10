@@ -3,9 +3,9 @@ import Link from "next/link";
 import { ArrowLeft, Construction, Database, Cpu, FileText, CheckCircle2, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "نموذج الامتثال التشغيلي — Smart OS | iGarden",
+  title: "سجلات التشغيل القابلة للمراجعة — Smart OS | iGarden",
   description:
-    "iGarden تبني نموذج امتثال يُحوّل بيانات التشغيل الميداني إلى سجلات قابلة للمراجعة. النموذج قيد التطوير الميداني في مشاريع Pilot.",
+    "iGarden تبني سجلات تشغيل رقمية قابلة للمراجعة — قراءات حساسات، أوامر تشغيل، وتدخلات يدوية موثّقة بتوقيت دقيق لدعم فرق التشغيل والجودة.",
   alternates: { canonical: "https://igarden.sa/compliance" },
   robots: { index: true, follow: true },
 };
@@ -21,14 +21,14 @@ export default function CompliancePage() {
             قيد التطوير الميداني
           </div>
           <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-4">
-            Compliance Module · Smart OS
+            سجلات التشغيل · Smart OS
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-[#FAFAF7] mb-5 leading-tight">
-            نموذج الامتثال التشغيلي
+            سجلات التشغيل القابلة للمراجعة
           </h1>
           <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
-            كل قراءة حساس، كل أمر تشغيل، كل تدخل يدوي — مسجَّل بتوقيت دقيق، قابل للمراجعة،
-            ومبني ليخدم متطلبات الامتثال الغذائي والتشغيلي.
+            كل قراءة حساس، كل أمر تشغيل، كل تدخل يدوي — مسجَّل بتوقيت دقيق وقابل للمراجعة،
+            لدعم فرق التشغيل والجودة والاستعداد للمراجعات الداخلية والخارجية.
           </p>
         </div>
       </section>
@@ -39,9 +39,9 @@ export default function CompliancePage() {
           <div className="flex items-start gap-3">
             <Construction className="w-4 h-4 text-amber-700 flex-shrink-0 mt-0.5" aria-hidden="true" />
             <p className="text-amber-800 text-sm leading-relaxed">
-              <strong>ملاحظة شفافية:</strong> هذا النموذج قيد التطوير الميداني، ولا يمثّل اعتماداً رسمياً
-              من أي جهة حكومية أو رقابية. تنسيقات التقارير قابلة للتعديل عند صدور المتطلبات الرسمية
-              أو بناءً على متطلبات مفتش معتمد.
+              <strong>إخلاء مسؤولية:</strong> سجلات التشغيل القابلة للمراجعة لا تمثّل شهادة امتثال
+              رسمية، ولا تغني عن الجهات التنظيمية أو المتطلبات النظامية المعتمدة. هذا النموذج قيد
+              التطوير الميداني وتنسيقات التقارير قابلة للتعديل عند صدور المتطلبات الرسمية.
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function CompliancePage() {
             السياق
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#0F3D2E] mb-5">
-            لماذا الامتثال مهم للمزارع الذكية؟
+            لماذا سجلات التشغيل مهمة للمزارع الذكية؟
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {[
@@ -228,11 +228,11 @@ export default function CompliancePage() {
       <section className="bg-[#0F3D2E] py-16" dir="rtl">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-            هل مشروعك يحتاج سجلات امتثال؟
+            هل مشروعك يحتاج سجلات تشغيل قابلة للمراجعة؟
           </h2>
           <p className="text-white/70 leading-relaxed mb-8">
-            إذا كنت تستهدف تمويلاً حكومياً، شهادات جودة، أو سلاسل توريد — تواصل معنا لنناقش كيف
-            يخدمك نموذج الامتثال الميداني.
+            إذا كنت تستهدف تمويلاً حكومياً، شهادات جودة، أو سلاسل توريد — تواصل معنا لنناقش
+            كيف تساعدك سجلات التشغيل الرقمية.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
             <Link

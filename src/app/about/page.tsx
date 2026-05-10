@@ -29,7 +29,7 @@ function Hero() {
     <section className="section-light py-20 md:py-28">
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-          منذ 2024 · أنظمة زراعة ذكية · مُختبَرة في الميدان
+          شركة AgriTech سعودية · مُختبَرة في الميدان · ترخيص استثماري ريادي
         </p>
         <h1 className="h1 text-deep-green mb-5">
           شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي
@@ -337,7 +337,58 @@ function OsfanLinkSection() {
   );
 }
 
-/* ─── Section 7: Final CTA ────────────────────────────────── */
+/* ─── Section 7: Values ───────────────────────────────────── */
+const VALUES = [
+  {
+    title: "محلي بحق",
+    desc: "نُصمّم بمدخلات سعودية، لمناخ سعودي، بفريق سعودي. التوطين ليس شعاراً — هو قيد تصميمي.",
+  },
+  {
+    title: "الأرقام لا الكلام",
+    desc: "كل ادّعاء نُطلقه مَبني على قياس ميداني في عسفان. إذا لم نَقسه، لا نَذكره.",
+  },
+  {
+    title: "شريك لا بائع",
+    desc: "نَنتهي بعد التسليم بأسبوع متابعة مكثّف — ثم نَبقى متاحين. نجاحك يَبني سمعتنا.",
+  },
+  {
+    title: "بناء يتراكم",
+    desc: "كل مشروع يُضيف إلى قاعدة معرفتنا. ما نَتعلّمه اليوم يُحسّن عرضنا لك غداً.",
+  },
+  {
+    title: "الامتثال أصيل",
+    desc: "سجلات التشغيل القابلة للمراجعة ليست ميزة إضافية — هي جزء لا يتجزّأ من كل نظام نُسلّمه.",
+  },
+];
+
+function ValuesSection() {
+  return (
+    <section className="section-light py-20">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-12">
+          <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
+            قيمنا
+          </p>
+          <h2 className="h2 text-deep-green">ما يحكم قراراتنا يومياً</h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {VALUES.map(({ title, desc }) => (
+            <div
+              key={title}
+              className="bg-white border border-[#E5E7EB] rounded-2xl p-7"
+            >
+              <h3 className="text-[#0F3D2E] font-bold text-xl mb-3">{title}</h3>
+              <p className="text-[#6B7280] text-base leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 8: Final CTA ────────────────────────────────── */
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -346,14 +397,14 @@ function FinalCTA() {
           هل أنت جاهز للعمل مع شركة تُجرّب قبل أن تُسلّم؟
         </h2>
         <p className="body-base text-cream/80 max-w-xl mx-auto mb-10">
-          استشارة مجانية أو زيارة لمحطّة عسفان — ابدأ من أيّ نقطة تريدها.
+          تقييم مجاني أو زيارة لمحطّة عسفان — ابدأ من أيّ نقطة تريدها.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
-            احجز استشارة مجانية
+            اطلب تقييم مشروعك
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">
-            احجز زيارة لمحطّة عسفان
+            زُر محطّة عسفان
           </CTAButton>
         </div>
       </div>
@@ -377,6 +428,7 @@ export default function AboutPage() {
       <MethodologyDeepDive />
       <TeamSection />
       <OsfanLinkSection />
+      <ValuesSection />
       <FinalCTA />
     </>
   );

@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/footer";
 import WhatsAppFab from "@/components/layout/WhatsAppFab";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
+import { PrivacyBanner } from "@/components/shared/PrivacyBanner";
 import { COMPANY, CONTACT } from "@/lib/constants";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -136,6 +137,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <WhatsAppFab />
+          <PrivacyBanner />
           <SpeedInsights />
           <Analytics />
         </div>

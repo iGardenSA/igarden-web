@@ -3,7 +3,7 @@
 import { CalendarCheck, FlaskConical, Thermometer, GraduationCap, Award } from 'lucide-react';
 
 const stats = [
-  { icon: CalendarCheck,  number: '+3',     label: 'سنوات تطوير منذ 2024'       },
+  { icon: CalendarCheck,  number: '+3',     label: 'سنوات من التطوير'            },
   { icon: FlaskConical,   number: '208',    label: 'اختبار وحدوي ناجح'         },
   { icon: Thermometer,    number: '+45°C',  label: 'اختُبر ميدانياً في عسفان'   },
   { icon: GraduationCap,  number: '5',      label: 'ورش «ازرع بذكاء» مُنفَّذة' },

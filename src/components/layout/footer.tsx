@@ -20,7 +20,7 @@ export function Footer() {
               className="mb-4"
             />
             <p className="text-lg leading-relaxed opacity-80 mb-3">
-              شركة سعودية ريادية لتطوير المزارع ونظم التحكم الزراعي الذكي.
+              شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي.
             </p>
             <p className="text-lg font-medium text-lime mb-4">
               ننفّذ · نُوطّن · نُطوّر
@@ -33,22 +33,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Column 2: الركائز */}
-          <div>
-            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
-              الركائز
-            </h3>
-            <ul className="space-y-2.5 text-lg">
-              <FooterLink href="/products/smart-controllers">
-                <span className="ltr-inline">Smart Controllers</span>
-              </FooterLink>
-              <FooterLink href="/products/smart-greenhouses">المحميات الذكية</FooterLink>
-              <FooterLink href="/products/hydroponics">أنظمة الزراعة المائية</FooterLink>
-              <FooterLink href="/osfan-station">محطة عسفان</FooterLink>
-            </ul>
-          </div>
-
-          {/* Column 3: الشركة */}
+          {/* Column 2: الشركة */}
           <div>
             <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
               الشركة
@@ -56,32 +41,47 @@ export function Footer() {
             <ul className="space-y-2.5 text-lg">
               <FooterLink href="/about">من نحن</FooterLink>
               <FooterLink href="/how-we-work">كيف نعمل</FooterLink>
-              <FooterLink href="/investors">للمستثمرين</FooterLink>
-              <FooterLink href="/contact">تواصل معنا</FooterLink>
-            </ul>
-
-            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mt-8 mb-4">
-              موارد
-            </h3>
-            <ul className="space-y-2.5 text-lg">
               <FooterLink href="/case-studies">دراسات ميدانية</FooterLink>
-              <FooterLink href="/compliance">الامتثال</FooterLink>
-              <FooterLink href="/roadmap">خارطة الطريق</FooterLink>
-              <FooterLink href="/learn">الأكاديمية</FooterLink>
-              <FooterLink href="/blog">المدونة</FooterLink>
-              <FooterLink href="https://demo.igarden.sa" external>
-                الديمو التفاعلي
-              </FooterLink>
-              <FooterLink href="/app">تطبيق المنزل</FooterLink>
+              <FooterLink href="/investors">المستثمرون</FooterLink>
+              <FooterLink href="/contact">تواصل معنا</FooterLink>
             </ul>
           </div>
 
-          {/* Column 4: التواصل */}
+          {/* Column 3: الحلول */}
           <div>
             <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
+              الحلول
+            </h3>
+            <ul className="space-y-2.5 text-lg">
+              <FooterLink href="/products/smart-controllers">
+                <span className="ltr-inline">Smart Controllers</span>
+              </FooterLink>
+              <FooterLink href="/products/smart-greenhouses">المحميات الذكية</FooterLink>
+              <FooterLink href="/products/hydroponics">أنظمة الزراعة المائية</FooterLink>
+              <FooterLink href="https://demo.igarden.sa" external>
+                <span className="ltr-inline">Smart OS</span>
+              </FooterLink>
+              <FooterLink href="/compliance">سجلات التشغيل القابلة للمراجعة</FooterLink>
+            </ul>
+          </div>
+
+          {/* Column 4: الثقة + التواصل */}
+          <div>
+            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
+              الثقة
+            </h3>
+            <ul className="space-y-2.5 text-lg mb-6">
+              <FooterLink href="/osfan-station">محطة عسفان</FooterLink>
+              <FooterLink href="https://demo.igarden.sa" external>الديمو التفاعلي</FooterLink>
+              <FooterLink href="/fact-sheet">Fact Sheet</FooterLink>
+              <FooterLink href="/learn">المعرفة</FooterLink>
+              <FooterLink href="/privacy">سياسة الخصوصية</FooterLink>
+            </ul>
+
+            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-3">
               التواصل
             </h3>
-            <ul className="space-y-3 text-lg mb-6">
+            <ul className="space-y-2.5 text-lg mb-5">
               <li>
                 <a
                   href={`mailto:${CONTACT.email}`}
@@ -127,6 +127,30 @@ export function Footer() {
           </div>
         </div>
 
+        {/* قنوات شقيقة */}
+        <div className="border-t border-cream/10 pt-6 mb-8">
+          <p className="text-lg font-bold uppercase tracking-widest text-cream/40 mb-3">
+            قنوات شقيقة
+          </p>
+          <div className="flex flex-wrap gap-4 text-lg">
+            <a
+              href={CONTACT.shop}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-60 hover:opacity-100 hover:text-lime transition-all"
+            >
+              المتجر الإلكتروني{" "}
+              <span className="ltr-inline text-cream/40 text-sm">(shop.igarden.sa)</span>
+            </a>
+            <span className="opacity-40 flex items-center gap-1.5">
+              التطبيق المنزلي
+              <span className="text-xs bg-cream/10 text-cream/50 px-2 py-0.5 rounded-full">
+                قيد التطوير
+              </span>
+            </span>
+          </div>
+        </div>
+
         {/* Legal strip */}
         <div className="border-t border-cream/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-lg opacity-60">
@@ -153,6 +177,9 @@ export function Footer() {
               </Link>
               <Link href="/terms" className="hover:opacity-100 transition-opacity">
                 الشروط والأحكام
+              </Link>
+              <Link href="/fact-sheet" className="hover:opacity-100 transition-opacity">
+                Fact Sheet
               </Link>
             </div>
             <p>
