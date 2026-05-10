@@ -44,14 +44,7 @@ export default function HeroSection() {
 
         <div className="flex items-center gap-3 mb-8 text-[#A5D63F]/80">
           <span className="text-sm font-medium tracking-wider uppercase">
-            ننفّذ · نُوطّن · نُطوّر
-          </span>
-          <span className="text-white/30">|</span>
-          <span className="text-sm">
-            ازرع بذكاء{" "}
-            <span dir="ltr" className="font-latin">
-              · Plant Smart
-            </span>
+            ازرع بذكاء
           </span>
         </div>
 
