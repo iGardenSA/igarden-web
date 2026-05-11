@@ -76,18 +76,30 @@ export default function Header() {
       >
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between max-w-7xl">
           {/* Logo */}
-          <Link href="/" aria-label="iGarden — الصفحة الرئيسية" className="flex-shrink-0">
-            <Image
-              src={
-                isHome
-                  ? "/logo/lockup-horizontal-en-white.png"
-                  : "/logo/lockup-horizontal-en.svg"
-              }
-              alt="iGarden"
-              width={130}
-              height={38}
-              priority
-            />
+          <Link href="/" aria-label="iGarden — الصفحة الرئيسية" className="flex-shrink-0 flex items-center gap-2">
+            {isHome ? (
+              <Image
+                src="/logo/lockup-horizontal-en-white.png"
+                alt="iGarden"
+                width={130}
+                height={38}
+                priority
+              />
+            ) : (
+              <>
+                <Image
+                  src="/logo/icon-master-original.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  priority
+                  aria-hidden
+                />
+                <span className="font-latin font-bold text-[#0F3D2E] text-lg leading-none tracking-tight">
+                  iGarden
+                </span>
+              </>
+            )}
           </Link>
 
           {/* Desktop Nav */}

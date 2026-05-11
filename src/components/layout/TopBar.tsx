@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Globe, Monitor, ShoppingBag, Smartphone, type LucideIcon } from "lucide-react";
 import { TOP_BAR_ITEMS, type TopBarIconName } from "@/lib/constants";
 
@@ -13,7 +14,9 @@ const iconMap: Record<TopBarIconName, LucideIcon> = {
 };
 
 export default function TopBar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 80);
@@ -22,14 +25,14 @@ export default function TopBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Inner pages always get solid dark bg (no transparent over white content)
+  const bgClass = !isHome || isScrolled
+    ? "bg-[#0A2920]/95 backdrop-blur-md border-b border-[#1B5E3F]/40 shadow-sm shadow-black/20"
+    : "bg-black/25 backdrop-blur-sm border-b border-white/15 shadow-sm shadow-black/10";
+
   return (
     <div
-      className={[
-        "sticky top-0 z-[60] transition-all duration-300",
-        isScrolled
-          ? "bg-[#0A2920]/95 backdrop-blur-md border-b border-[#1B5E3F]/40 shadow-sm shadow-black/20"
-          : "bg-black/25 backdrop-blur-sm border-b border-white/15 shadow-sm shadow-black/10",
-      ].join(" ")}
+      className={`sticky top-0 z-[60] transition-all duration-300 ${bgClass}`}
       role="navigation"
       aria-label="منصات iGarden"
     >
