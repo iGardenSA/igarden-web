@@ -1,3 +1,0 @@
-module.exports=[54824,a=>{"use strict";var b=a.i(43312),c=a.i(96813),d=a.i(765);a.s(["FadeIn",0,function({children:a,delay:e=0,className:f}){let{ref:g,inView:h}=function(a={threshold:.15,rootMargin:"0px 0px -50px 0px"}){let b=(0,c.useRef)(null),[d,e]=(0,c.useState)(!1);return(0,c.useEffect)(()=>{let c=b.current;if(!c)return;let d=new IntersectionObserver(([a])=>{a.isIntersecting&&(e(!0),d.unobserve(c))},a);return d.observe(c),()=>d.disconnect()},[]),{ref:b,inView:d}}();return(0,b.jsx)("div",{ref:g,className:(0,d.cn)("fade-up-ready",h&&"fade-up-visible",f),style:e?{transitionDelay:`${e}ms`}:void 0,children:a})}],54824)}];
-
-//# sourceMappingURL=igarden-web_src_components_ui_fade-in_tsx_08td2gh._.js.map
