@@ -215,7 +215,7 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
     ],
   },
   { label: "عسفان", href: "/osfan-station" },
-  { label: "فريقنا", href: "/team" },
+  { label: "من نحن", href: "/about" },
   { label: "للأفراد", href: "/home-solutions" },
   { label: "المدوّنة", href: "/blog" },
   { label: "تواصل", href: "/contact" },

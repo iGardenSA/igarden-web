@@ -5,7 +5,7 @@ import { COMPANY, CONTACT, SOCIAL } from "@/lib/constants";
 
 const COMPANY_LINKS = [
   { label: "من نحن", href: "/about" },
-  { label: "فريقنا", href: "/team" },
+  { label: "الفريق المؤسّس", href: "/about#team" },
   { label: "محطة عسفان", href: "/osfan-station" },
   { label: "المدوّنة", href: "/blog" },
   { label: "تواصل معنا", href: "/contact" },

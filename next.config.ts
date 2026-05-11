@@ -74,9 +74,10 @@ const nextConfig: NextConfig = {
       { source: "/projects", destination: "/", permanent: true },
       { source: "/projects/:slug", destination: "/", permanent: true },
 
-      // ─── Team page aliases ────────────────────────────────────────
-      { source: "/about-team", destination: "/team", permanent: true },
-      { source: "/our-team", destination: "/team", permanent: true },
+      // ─── Team merged into /about#team ────────────────────────────
+      { source: "/team", destination: "/about#team", permanent: true },
+      { source: "/about-team", destination: "/about#team", permanent: true },
+      { source: "/our-team", destination: "/about#team", permanent: true },
 
       // ─── Compliance readiness ─────────────────────────────────────
       { source: "/products/compliance-readiness", destination: "/compliance", permanent: true },
