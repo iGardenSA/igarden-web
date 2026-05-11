@@ -27,25 +27,23 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${COMPANY.domain}`),
   title: {
-    default: "iGarden — الحديقة الذكية",
-    template: "%s | iGarden",
+    default: "iGarden · الحديقة الذكية — حلول الزراعة الذكية في السعودية",
+    template: "%s · iGarden",
   },
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ننفّذ · نُوطّن · نُطوّر — تأسّست 2024، إطلاق رسمي 2026.",
+    "شركة سعودية ريادية مُرخّصة من وزارة الاستثمار، تقدّم حلول الزراعة المُحكَمة بتقنيات IoT والذكاء الاصطناعي، مُختبَرة في مرفق R&D بعسفان. منذ 2024.",
   keywords: [
     "iGarden",
     "الحديقة الذكية",
-    "الزراعة الذكية",
-    "AgriTech سعودية",
-    "Smart Controllers",
-    "Hydroponics",
-    "Aquaponics",
-    "أنظمة الزراعة المائية",
+    "زراعة ذكية",
+    "IoT الزراعي",
+    "ذكاء اصطناعي زراعي",
+    "زراعة مائية",
+    "Smart OS",
     "محطة عسفان",
-    "البيوت المحمية الذكية",
+    "شركة ريادية سعودية",
     "الأمن الغذائي",
     "رؤية 2030",
-    "جدة",
     "السعودية",
   ],
   authors: [{ name: COMPANY.legalAr }],
@@ -76,9 +74,9 @@ export const metadata: Metadata = {
     locale: "ar_SA",
     url: `https://${COMPANY.domain}`,
     siteName: COMPANY.nameEn,
-    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} · الحديقة الذكية`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
+      "شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة · مُختبَرة في مرفق عسفان.",
     images: [
       {
         url: "/images/og/home.jpg",
@@ -91,9 +89,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} · الحديقة الذكية`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
+      "شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة.",
     images: ["/images/og/home.jpg"],
   },
 
