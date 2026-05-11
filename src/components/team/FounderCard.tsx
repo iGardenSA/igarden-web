@@ -5,6 +5,7 @@ export interface FounderCardProps {
   name: string;
   nameEn: string;
   role: string;
+  roleEn?: string;
   photoUrl: string;
   expertise: string;
   experience?: string;
@@ -21,6 +22,7 @@ export function FounderCard({
   name,
   nameEn,
   role,
+  roleEn,
   photoUrl,
   expertise,
   experience,
@@ -54,7 +56,10 @@ export function FounderCard({
         {/* Name + Role */}
         <h3 className="text-xl font-bold text-deep-green mb-0.5">{name}</h3>
         <p className="text-xs text-medium-gray/70 font-latin mb-1">{nameEn}</p>
-        <p className="text-sm font-semibold text-lime mb-4">{role}</p>
+        <p className="text-sm font-semibold text-lime mb-0.5">{role}</p>
+        {roleEn && (
+          <p className="text-xs text-medium-gray/60 font-latin mb-4">{roleEn}</p>
+        )}
 
         {/* Certification Badge */}
         {certification && (
