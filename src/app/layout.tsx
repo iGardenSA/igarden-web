@@ -27,25 +27,23 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${COMPANY.domain}`),
   title: {
-    default: "iGarden — الحديقة الذكية",
-    template: "%s | iGarden",
+    default: "iGarden · الحديقة الذكية — حلول الزراعة الذكية في السعودية",
+    template: "%s · iGarden",
   },
   description:
-    "iGarden — الحديقة الذكية: شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نَبني ونُوطّن ونُطوّر — تأسّست 2024، إطلاق رسمي 2026. توفير 95% من المياه و3x زيادة في الإنتاجية.",
+    "شركة سعودية ريادية مُرخّصة من وزارة الاستثمار، تقدّم حلول الزراعة المُحكَمة بتقنيات IoT والذكاء الاصطناعي، مُختبَرة في مرفق R&D بعسفان. منذ 2024.",
   keywords: [
     "iGarden",
     "الحديقة الذكية",
-    "الزراعة الذكية",
-    "AgriTech سعودية",
-    "Smart Controllers",
-    "Hydroponics",
-    "Aquaponics",
-    "أنظمة الزراعة المائية",
+    "زراعة ذكية",
+    "IoT الزراعي",
+    "ذكاء اصطناعي زراعي",
+    "زراعة مائية",
+    "Smart OS",
     "محطة عسفان",
-    "البيوت المحمية الذكية",
+    "شركة ريادية سعودية",
     "الأمن الغذائي",
     "رؤية 2030",
-    "جدة",
     "السعودية",
   ],
   authors: [{ name: COMPANY.legalAr }],
@@ -59,6 +57,7 @@ export const metadata: Metadata = {
       { url: "/favicons/favicon-32.png",  sizes: "32x32",  type: "image/png" },
       { url: "/favicons/favicon-96.png",  sizes: "96x96",  type: "image/png" },
       { url: "/favicons/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicons/favicon-512.png", sizes: "512x512", type: "image/png" },
       { url: "/favicons/favicon.ico",     sizes: "any" },
     ],
     apple: [
@@ -67,18 +66,18 @@ export const metadata: Metadata = {
     other: [
       { rel: "android-chrome", url: "/favicons/android-chrome-192x192.png" },
       { rel: "android-chrome", url: "/favicons/android-chrome-512x512.png" },
+      { rel: "mask-icon",      url: "/favicons/maskable-512.png" },
     ],
   },
-  manifest: "/favicons/site.webmanifest",
 
   openGraph: {
     type: "website",
     locale: "ar_SA",
     url: `https://${COMPANY.domain}`,
     siteName: COMPANY.nameEn,
-    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} · الحديقة الذكية`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. نأخذ التقنية العالمية ونُعيد تنفيذها بمدخلات محلية — ازرع بذكاء.",
+      "شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة · مُختبَرة في مرفق عسفان.",
     images: [
       {
         url: "/images/og/home.jpg",
@@ -91,9 +90,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${COMPANY.nameEn} — نَبني · نُوطّن · نُطوّر`,
+    title: `${COMPANY.nameEn} · الحديقة الذكية`,
     description:
-      "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
+      "شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة.",
     images: ["/images/og/home.jpg"],
   },
 

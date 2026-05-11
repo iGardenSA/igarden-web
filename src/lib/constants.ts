@@ -33,8 +33,8 @@ export const CONTACT = {
  * الأرقام الرسمية — تُستخدم كما هي دون تعديل.
  */
 export const STATS = {
-  waterSavingsMax: { value: 95, unit: "%", label: "توفير في استهلاك المياه" },
-  waterSavingsAero: { value: 60, unit: "%", label: "توفير مياه في Aeroponic" },
+  waterSavingsMax: { value: 95, unit: "%", label: "كفاءة مائية (مرجع داخلي — لا يُعرض مباشرةً)" },
+  waterSavingsAero: { value: 60, unit: "%", label: "كفاءة مياه في Aeroponic (مرجع داخلي)" },
   fertilizerReduction: { value: 50, unit: "%", label: "خفض في استهلاك الأسمدة" },
   opexReduction: { value: 60, unit: "%", label: "خفض تكاليف التشغيل" },
   productivity: { value: 3, unit: "x", label: "زيادة في الإنتاجية" },
@@ -81,7 +81,7 @@ export const PRODUCTS = {
     nameEn: "Aeroponics",
     nameAr: "الزراعة الهوائية",
     category: "HARDWARE",
-    description: "تقنية الزراعة الهوائية بتوفير مياه يصل إلى 95%.",
+    description: "تقنية الزراعة الهوائية — كفاءة مائية عالية عبر إعادة تدوير مستمرة.",
   },
   cloud: {
     nameEn: "iGarden Cloud Platform",
@@ -182,28 +182,28 @@ export const TOP_BAR_ITEMS: TopBarItem[] = [
   { label: "احجز التطبيق", icon: "smartphone", href: "/app", badge: "soon" },
 ];
 
-// ─── Main Navigation — 5 عناصر ───────────────────────────────────────────────
+// ─── Main Navigation — الهيكل الجديد v3 ──────────────────────────────────────
 
 export const HEADER_NAV_ITEMS: NavItemType[] = [
   {
-    label: "الحلول",
-    href: "/solutions",
+    label: "خدماتنا",
+    href: "/products",
     hasMegaMenu: true,
     megaMenuColumns: [
       {
-        title: "للمزارع التجارية",
+        title: "العتاد والأنظمة",
         icon: "tractor",
         items: [
-          { label: "أنظمة الري والتحكم الذكي", href: "/solutions/farms" },
-          { label: "البيوت المحمية والـ Hydroponics", href: "/solutions/greenhouses" },
+          { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
+          { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
         ],
       },
       {
-        title: "منصة Smart OS",
+        title: "البرمجيات والامتثال",
         icon: "cpu",
         items: [
-          { label: "منصة الإدارة الموحّدة", href: "/solutions/smart-os" },
-          { label: "تقارير الامتثال", href: "/compliance" },
+          { label: "منصة Smart OS", href: "/products/smart-os" },
+          { label: "جاهزية الامتثال", href: "/compliance" },
         ],
         cta: {
           label: "Live Demo",
@@ -212,31 +212,18 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
           variant: "live",
         },
       },
-      {
-        title: "للحديقة المنزلية",
-        icon: "leaf",
-        items: [
-          { label: "البرج الهوائي iGarden Tower", href: "https://shop.igarden.sa", external: true },
-          { label: "مستلزمات الزراعة", href: "https://shop.igarden.sa", external: true },
-        ],
-        cta: {
-          label: "تسوّق المتجر",
-          href: "https://shop.igarden.sa",
-          external: true,
-          variant: "shop",
-        },
-      },
     ],
   },
-  { label: "محطة عسفان", href: "/osfan-station" },
-  { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "المعرفة", href: "/learn" },
-  { label: "للمستثمرين", href: "/investors" },
+  { label: "عسفان", href: "/osfan-station" },
+  { label: "فريقنا", href: "/team" },
+  { label: "للأفراد", href: "/home-solutions" },
+  { label: "المدوّنة", href: "/blog" },
+  { label: "تواصل", href: "/contact" },
 ];
 
 // ─── Main CTA ─────────────────────────────────────────────────────────────────
 
 export const MAIN_CTA = {
-  label: "تحدّث معنا",
+  label: "احجز استشارة",
   href: "/contact",
 } as const;

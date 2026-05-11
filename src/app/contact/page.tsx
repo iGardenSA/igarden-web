@@ -121,6 +121,38 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* B2C Path — Individuals */}
+      <section className="bg-[var(--color-surface)] border-b border-[var(--color-border)] py-10">
+        <div className="container-igarden">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 max-w-4xl">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-600)] mb-1">
+                للأفراد والمنازل
+              </p>
+              <p className="text-base font-semibold text-[var(--color-brand-600)]">
+                تبحث عن حلول منزلية؟ تطبيق الحديقة الذكية أو متجر iGarden هما وجهتك.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <a
+                href="/home-solutions"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--color-brand-600)] text-white text-sm font-semibold hover:bg-[var(--color-brand-700)] transition-colors"
+              >
+                اكتشف الحلول الفردية
+              </a>
+              <a
+                href="https://shop.igarden.sa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-[var(--color-border)] text-[var(--color-brand-600)] text-sm font-semibold hover:border-[var(--color-brand-300)] transition-colors"
+              >
+                المتجر الإلكتروني
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white section-padding">
         <div className="container-igarden">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-16">

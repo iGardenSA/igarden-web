@@ -36,16 +36,16 @@ export default function HeroSection() {
           ازرع بذكاء.
         </h1>
 
-        <p className="text-white/80 text-lg leading-relaxed max-w-xl mb-2">
-          الحديقة الذكية تبني أنظمة الزراعة الذكية في السعودية: حساسات، تحكّم، وبرمجيات تشغيل ميدانية مكيّفة لمناخنا.
+        <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl mb-2">
+          شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة
         </p>
 
-        <p className="text-white/60 text-base leading-relaxed max-w-xl mt-3 mb-2">
-          من خميس مشيط إلى الأحساء، نُشغّل أنظمة تراقب الماء، المناخ، التغذية، واتخاذ القرار — من الحساس إلى التقرير.
+        <p className="text-white/65 text-base leading-relaxed max-w-xl mt-3 mb-2">
+          أنظمة استشعار وتحكم مُكيَّفة للمناخ السعودي — مُختبَرة ميدانياً في مرفق عسفان قبل أن تصل إليك.
         </p>
 
         <p className="text-sm text-[#A5D63F]/70 font-medium tracking-wider uppercase mt-2 mb-8">
-          نَبني · نُوطّن · نُطوّر
+          ننفّذ · نُوطّن · نُطوّر
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start">

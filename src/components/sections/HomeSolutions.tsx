@@ -43,7 +43,7 @@ export function HomeSolutions() {
                   <div className="w-9 h-9 rounded-full bg-lime/10 flex items-center justify-center">
                     <Droplets className="w-5 h-5 text-deep-green" />
                   </div>
-                  <span className="text-lg text-dark-text">توفير 95% من المياه</span>
+                  <span className="text-lg text-dark-text">كفاءة مائية عالية</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-full bg-lime/10 flex items-center justify-center">

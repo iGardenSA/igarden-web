@@ -199,11 +199,11 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
                         ))}
                         <div className="border-t border-[#E5E7EB] px-4 py-2.5">
                           <Link
-                            href="/solutions"
+                            href="/products"
                             onClick={onClose}
                             className="text-xs font-medium text-[#0F3D2E] hover:text-[#7CB342] transition-colors"
                           >
-                            استعرض كل الحلول ←
+                            استعرض كل الخدمات ←
                           </Link>
                         </div>
                       </div>

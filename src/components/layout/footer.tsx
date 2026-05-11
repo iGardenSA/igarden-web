@@ -3,143 +3,183 @@ import Image from "next/image";
 import { Mail, Phone, MapPin, Linkedin, Instagram, Youtube, Twitter } from "lucide-react";
 import { COMPANY, CONTACT, SOCIAL } from "@/lib/constants";
 
+const COMPANY_LINKS = [
+  { label: "من نحن", href: "/about" },
+  { label: "فريقنا", href: "/team" },
+  { label: "محطة عسفان", href: "/osfan-station" },
+  { label: "المدوّنة", href: "/blog" },
+  { label: "تواصل معنا", href: "/contact" },
+];
+
+const SERVICES_LINKS = [
+  { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
+  { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
+  { label: "منصة Smart OS", href: "/products/smart-os" },
+  { label: "جاهزية الامتثال", href: "/compliance" },
+  { label: "كيف نعمل", href: "/how-we-work" },
+];
+
+const INDIVIDUALS_LINKS = [
+  { label: "تطبيق الحديقة الذكية", href: "/app" },
+  { label: "المتجر الإلكتروني", href: "https://shop.igarden.sa", external: true },
+  { label: "Demo تفاعلي", href: "https://demo.igarden.sa", external: true },
+];
+
+const LEGAL_LINKS = [
+  { label: "سياسة الخصوصية", href: "/privacy" },
+  { label: "الشروط والأحكام", href: "/terms" },
+  { label: "إخلاء الامتثال", href: "/compliance-disclaimer" },
+  { label: "ميثاق بيانات العميل", href: "/data-charter" },
+];
+
 export function Footer() {
   return (
-    <footer className="bg-deep-green text-cream">
-      <div className="container mx-auto px-4 max-w-7xl py-16">
-        {/* 4 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-          {/* Column 1: Brand */}
-          <div>
+    <footer className="bg-deep-green text-cream" dir="rtl">
+      {/* Brand strip */}
+      <div className="border-b border-cream/10">
+        <div className="container mx-auto px-4 max-w-7xl py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="flex flex-col gap-2">
             <Image
               src="/logo/lockup-horizontal-en-white.png"
-              alt="iGarden"
+              alt="iGarden — الحديقة الذكية"
               width={140}
               height={40}
-              className="mb-4"
             />
-            <p className="text-lg leading-relaxed opacity-80 mb-3">
-              شركة سعودية ريادية لتطوير المزارع ونظم التحكم الزراعي الذكي.
+            <p className="text-lime font-medium text-base mt-1">
+              ننفّذ · نُوطّن · نُطوّر
             </p>
-            <p className="text-lg font-medium text-lime mb-4">
-              نَبني · نُوطّن · نُطوّر
+            <p className="text-cream/60 text-sm font-latin">
+              ازرع بذكاء · Plant Smart
             </p>
-            <p className="text-lg font-latin opacity-90">{COMPANY.tagline}</p>
+            <span className="inline-block bg-lime/10 px-3 py-1 rounded-full mt-1 w-fit">
+              <span className="text-xs text-lime font-medium">
+                شركة ريادية مُرخّصة · وزارة الاستثمار
+              </span>
+            </span>
           </div>
 
-          {/* Column 2: الركائز */}
-          <div>
-            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
-              الركائز
-            </h3>
-            <ul className="space-y-2.5 text-lg">
-              <FooterLink href="/products/smart-controllers">
-                <span className="ltr-inline">Smart Controllers</span>
-              </FooterLink>
-              <FooterLink href="/products/smart-greenhouses">المحميات الذكية</FooterLink>
-              <FooterLink href="/products/hydroponics">أنظمة الزراعة المائية</FooterLink>
-              <FooterLink href="/osfan-station">محطة عسفان</FooterLink>
-            </ul>
-          </div>
+          {/* Contact quick links */}
+          <ul className="flex flex-col gap-2 text-sm">
+            <li>
+              <a
+                href={`mailto:${CONTACT.email}`}
+                className="flex items-center gap-2 opacity-75 hover:opacity-100 hover:text-lime transition-all"
+              >
+                <Mail className="w-3.5 h-3.5 flex-shrink-0" aria-hidden />
+                <span className="font-latin">{CONTACT.email}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`tel:${CONTACT.phoneE164}`}
+                className="flex items-center gap-2 opacity-75 hover:opacity-100 hover:text-lime transition-all"
+              >
+                <Phone className="w-3.5 h-3.5 flex-shrink-0" aria-hidden />
+                <span className="font-latin">{CONTACT.phone}</span>
+              </a>
+            </li>
+            <li className="flex items-start gap-2 opacity-60 text-sm">
+              <MapPin className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" aria-hidden />
+              <span>{COMPANY.hq}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-          {/* Column 3: الشركة */}
+      {/* 4-column link grid */}
+      <div className="container mx-auto px-4 max-w-7xl py-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+
+          {/* الشركة */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-cream/50 mb-4">
               الشركة
             </h3>
-            <ul className="space-y-2.5 text-lg">
-              <FooterLink href="/about">من نحن</FooterLink>
-              <FooterLink href="/investors">للمستثمرين</FooterLink>
-              <FooterLink href="/contact">تواصل معنا</FooterLink>
-              <FooterLink href="/learn">الأكاديمية</FooterLink>
-              <FooterLink href="/blog">المدونة</FooterLink>
-              <FooterLink href={COMPANY.shopDomain ? `https://${COMPANY.shopDomain}` : "#"} external>
-                متجر <span className="ltr-inline">iGarden</span>
-              </FooterLink>
-              <FooterLink href="https://demo.igarden.sa" external>
-                الديمو التفاعلي
-              </FooterLink>
+            <ul className="space-y-2.5">
+              {COMPANY_LINKS.map((l) => (
+                <FooterLink key={l.href} href={l.href}>{l.label}</FooterLink>
+              ))}
             </ul>
           </div>
 
-          {/* Column 4: التواصل */}
+          {/* الخدمات */}
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-widest text-cream/60 mb-4">
-              التواصل
+            <h3 className="text-xs font-bold uppercase tracking-widest text-cream/50 mb-4">
+              الخدمات
             </h3>
-            <ul className="space-y-3 text-lg mb-6">
-              <li>
-                <a
-                  href={`mailto:${CONTACT.email}`}
-                  className="flex items-center gap-2 opacity-80 hover:opacity-100 hover:text-lime transition-all"
-                >
-                  <Mail className="w-4 h-4 flex-shrink-0" aria-hidden />
-                  <span className="ltr-inline">{CONTACT.email}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${CONTACT.phoneE164}`}
-                  className="flex items-center gap-2 opacity-80 hover:opacity-100 hover:text-lime transition-all"
-                >
-                  <Phone className="w-4 h-4 flex-shrink-0" aria-hidden />
-                  <span className="ltr-inline">{CONTACT.phone}</span>
-                </a>
-              </li>
-              <li className="flex items-start gap-2 opacity-70">
-                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" aria-hidden />
-                <span>{COMPANY.hq}</span>
-              </li>
+            <ul className="space-y-2.5">
+              {SERVICES_LINKS.map((l) => (
+                <FooterLink key={l.href} href={l.href}>{l.label}</FooterLink>
+              ))}
             </ul>
+          </div>
 
-            {/* Social icons */}
-            <div className="flex items-center gap-2 flex-wrap">
-              <SocialIcon href={SOCIAL.linkedin} label="LinkedIn">
-                <Linkedin className="w-4 h-4" />
-              </SocialIcon>
-              <SocialIcon href={SOCIAL.twitter} label="X (Twitter)">
-                <Twitter className="w-4 h-4" />
-              </SocialIcon>
-              <SocialIcon href={SOCIAL.instagram} label="Instagram">
-                <Instagram className="w-4 h-4" />
-              </SocialIcon>
-              <SocialIcon href={SOCIAL.youtube} label="YouTube">
-                <Youtube className="w-4 h-4" />
-              </SocialIcon>
-              <SocialIcon href={CONTACT.whatsapp} label="WhatsApp">
-                <WhatsAppIcon />
-              </SocialIcon>
-            </div>
+          {/* للأفراد */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-cream/50 mb-4">
+              للأفراد
+            </h3>
+            <ul className="space-y-2.5">
+              {INDIVIDUALS_LINKS.map((l) => (
+                <FooterLink key={l.href} href={l.href} external={l.external}>
+                  {l.label}
+                </FooterLink>
+              ))}
+            </ul>
+          </div>
+
+          {/* قانوني */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-cream/50 mb-4">
+              قانوني
+            </h3>
+            <ul className="space-y-2.5">
+              {LEGAL_LINKS.map((l) => (
+                <FooterLink key={l.href} href={l.href}>{l.label}</FooterLink>
+              ))}
+            </ul>
           </div>
         </div>
 
+        {/* Social icons */}
+        <div className="flex items-center gap-2 mb-10 flex-wrap">
+          <SocialIcon href={SOCIAL.linkedin} label="LinkedIn">
+            <Linkedin className="w-4 h-4" />
+          </SocialIcon>
+          <SocialIcon href={SOCIAL.twitter} label="X (Twitter)">
+            <Twitter className="w-4 h-4" />
+          </SocialIcon>
+          <SocialIcon href={SOCIAL.instagram} label="Instagram">
+            <Instagram className="w-4 h-4" />
+          </SocialIcon>
+          <SocialIcon href={SOCIAL.youtube} label="YouTube">
+            <Youtube className="w-4 h-4" />
+          </SocialIcon>
+          <SocialIcon href={CONTACT.whatsapp} label="WhatsApp">
+            <WhatsAppIcon />
+          </SocialIcon>
+        </div>
+
         {/* Legal strip */}
-        <div className="border-t border-cream/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-lg opacity-60">
-            <div className="space-y-1">
-              <p>{COMPANY.legalFull}</p>
+        <div className="border-t border-cream/15 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs opacity-55">
+            <div className="space-y-1 leading-relaxed">
+              <p className="font-medium opacity-80">{COMPANY.legalFull}</p>
               <p>
-                سجل تجاري{" "}
-                <span className="ltr-inline font-latin">CR: 4030579637</span>
+                <span className="font-latin">CR: 7041878278</span>
                 {" · "}
-                رخصة MISA{" "}
-                <span className="ltr-inline font-latin">24926249716</span>
+                <span className="font-latin">MISA: 24926249716</span>
+                {" · "}
+                <span className="font-latin">SAIP: #423450193</span>
               </p>
               <p>
-                نموذج صناعي{" "}
-                <span className="ltr-inline font-latin">SAIP: #423450193</span>
+                <span className="font-latin">Tax: 312554598200003</span>
+                {" · "}
+                رأس المال:{" "}
+                <span className="font-latin">100,000 SAR</span>
               </p>
             </div>
-            <div className="flex gap-5">
-              <Link href="/privacy" className="hover:opacity-100 transition-opacity">
-                سياسة الخصوصية
-              </Link>
-              <Link href="/terms" className="hover:opacity-100 transition-opacity">
-                الشروط والأحكام
-              </Link>
-            </div>
-            <p className="font-latin ltr-inline">
+            <p className="font-latin whitespace-nowrap">
               © {new Date().getFullYear()} iGarden. All rights reserved.
             </p>
           </div>
@@ -158,7 +198,8 @@ function FooterLink({
   children: React.ReactNode;
   external?: boolean;
 }) {
-  const cls = "opacity-75 hover:opacity-100 hover:text-lime transition-all";
+  const cls =
+    "text-sm opacity-70 hover:opacity-100 hover:text-lime transition-all block";
   if (external) {
     return (
       <li>
@@ -192,7 +233,7 @@ function SocialIcon({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-9 h-9 rounded-full border border-cream/25 flex items-center justify-center opacity-70 hover:opacity-100 hover:bg-lime hover:text-deep-green hover:border-lime transition-all"
+      className="w-9 h-9 rounded-full border border-cream/20 flex items-center justify-center opacity-65 hover:opacity-100 hover:bg-lime hover:text-deep-green hover:border-lime transition-all"
     >
       {children}
     </a>
