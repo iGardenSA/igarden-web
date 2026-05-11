@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
   openGraph: {
     title: "Smart Greenhouses — محميات ذكية تصمد في +45°C",
-    description: "هيكل + أتمتة + تحكم مناخي. كفاءة طاقة حتى 40% في الاختبارات الميدانية. مُختَبَرة في عسفان.",
+    description: "هيكل + أتمتة + تحكم مناخي. كفاءة طاقة محسّنة في الاختبارات الميدانية. مُختَبَرة في عسفان.",
     images: [
       {
         url: "/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Smart Greenhouses — محميات ذكية تصمد في +45°C",
-    description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة حتى 40% في الاختبارات الميدانية.",
+    description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة محسّنة في الاختبارات الميدانية.",
     images: ["/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
 };
@@ -66,7 +66,7 @@ function Hero() {
               في عسفان تحت +45°C.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
-              كفاءة طاقة حتى ٤٠٪ بحسب التصميم والمحصول. تركيب مفتاح-باليد. دعم
+              كفاءة طاقة محسّنة بحسب التصميم والمحصول. تركيب مفتاح-باليد. دعم
               ميداني بعد التَسليم.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -103,7 +103,7 @@ const FOR_WHOM = [
   },
   {
     title: "مشغّلو مزارع كبيرة يريدون خفض التكاليف",
-    desc: "فاتورة الكهرباء والعمالة ترتفع مع كل صيف — منظومة التحكم المناخي الذكي تُخفّضها حتى 40% في الاختبارات الميدانية.",
+    desc: "فاتورة الكهرباء والعمالة ترتفع مع كل صيف — منظومة التحكم المناخي الذكي تُخفّضها بشكل ملموس في الاختبارات الميدانية.",
   },
   {
     title: "مشاريع حكومية وزراعية مُمَوَّلة",
