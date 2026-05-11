@@ -83,10 +83,9 @@ export default function ContactPage() {
       setSubmitState("success");
       reset();
     } catch (err) {
+      console.error("[ContactForm] Submission error:", err);
       setSubmitState("error");
-      setErrorMessage(
-        err instanceof Error ? err.message : "حدث خطأ غير متوقع"
-      );
+      setErrorMessage("تعذّر إرسال الطلب حالياً. يمكنك التواصل معنا مباشرة:");
     }
   };
 
@@ -260,7 +259,24 @@ export default function ContactPage() {
                       <p className="font-bold text-red-800 mb-1">
                         تعذّر الإرسال
                       </p>
-                      <p className="text-lg text-red-700">{errorMessage}</p>
+                      <p className="text-lg text-red-700 mb-3">{errorMessage}</p>
+                      <ul className="space-y-1.5 text-lg text-red-900">
+                        <li>
+                          <a href={"mailto:" + CONTACT.email} className="underline hover:text-red-700">
+                            البريد: <span dir="ltr">{CONTACT.email}</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href={"tel:" + CONTACT.phoneE164} className="underline hover:text-red-700">
+                            الهاتف: <span dir="ltr">{CONTACT.phone}</span>
+                          </a>
+                        </li>
+                        <li>
+                          <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="underline hover:text-red-700">
+                            واتساب: تواصل مباشر
+                          </a>
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 )}
@@ -456,13 +472,13 @@ export default function ContactPage() {
                       )}
                     </Button>
                     <p className="text-lg text-[var(--color-muted)] mt-4 leading-relaxed">
-                      بإرسالك هذه الرسالة، توافق على{" "}
+                      بإرسالك هذه الرسالة، توافق على{" "}
                       <Link
                         href="/privacy"
                         className="text-[var(--color-brand-600)] underline hover:text-[var(--color-accent-600)]"
                       >
                         سياسة الخصوصية
-                      </Link>{" "}
+                      </Link>{" "}
                       الخاصة بنا. لن نشارك بياناتك مع أي طرف ثالث.
                     </p>
                   </div>
