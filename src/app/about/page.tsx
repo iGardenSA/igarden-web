@@ -93,7 +93,57 @@ function WhyWeStarted() {
   );
 }
 
-/* ─── Section 3: Timeline ─────────────────────────────────── */
+/* ─── Section 3: Identity ─────────────────────────────────── */
+const REGISTRATION_BADGES = [
+  { label: "السجل التجاري", value: "7041878278" },
+  { label: "وزارة الاستثمار", value: "24926249716" },
+  { label: "الملكية الفكرية", value: "423450193" },
+  { label: "التصنيف", value: "ريادية" },
+];
+
+function IdentitySection() {
+  return (
+    <section id="identity" className="bg-white py-20">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
+          هويتنا التشغيلية
+        </p>
+        <h2 className="h2 text-deep-green mb-8">شركة ريادية مُرخّصة</h2>
+
+        <div className="space-y-4 body-base text-medium-gray leading-relaxed mb-12">
+          <p>
+            <span dir="ltr" className="font-latin font-bold text-deep-green">iGarden</span>{" "}
+            شركة سعودية ريادية مُرخّصة، تعمل بترخيص استثمار ريادي رسمي من وزارة
+            الاستثمار، وتُسجَّل ضمن منظومة ريادة الأعمال السعودية.
+          </p>
+          <p>
+            نُركّز على تطوير حلول الزراعة المُحكَمة باستخدام تقنيات إنترنت الأشياء
+            و الذكاء الاصطناعي، ونختبر منتجاتنا ميدانياً في مرفق R&D خاص بنا
+            في عسفان قبل تقديمها للعملاء.
+          </p>
+          <p>
+            نخدم القطاعَين التجاري والحكومي بحلول مُكيَّفة للبيئة السعودية، مع
+            التزام صارم بمعايير الجودة والامتثال.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {REGISTRATION_BADGES.map(({ label, value }) => (
+            <div
+              key={label}
+              className="bg-cream p-4 rounded-card border border-light-gray"
+            >
+              <p className="text-xs text-medium-gray/60 mb-1">{label}</p>
+              <p className="font-mono font-bold text-deep-green text-sm">{value}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 4: Timeline ─────────────────────────────────── */
 const TIMELINE = [
   {
     year: "2024",
@@ -430,6 +480,7 @@ export default function AboutPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <WhyWeStarted />
+      <IdentitySection />
       <TimelineSection />
       <MethodologyDeepDive />
       <TeamSection />

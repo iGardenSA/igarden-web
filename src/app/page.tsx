@@ -23,6 +23,7 @@ import { SmartOSDemoSection } from "@/components/sections/SmartOSDemoSection";
 import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
 import { ThreePillarsSection } from "@/components/sections/ThreePillarsSection";
 import { ComplianceSection } from "@/components/sections/ComplianceSection";
+import { OperationalIdentity } from "@/components/sections/OperationalIdentity";
 import { StatsStrip } from "@/components/sections/StatsStrip";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -61,7 +62,10 @@ export default function HomePage() {
       {/* 6. حلول المزارع التجارية */}
       <ThreePillarsSection />
 
-      {/* 7. من التحكم إلى الامتثال */}
+      {/* 7. هويتنا التشغيلية */}
+      <OperationalIdentity />
+
+      {/* 8. من التحكم إلى الامتثال */}
       <ComplianceSection />
 
       {/* 8. أرقام + كيف نعمل */}
