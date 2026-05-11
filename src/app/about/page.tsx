@@ -171,7 +171,7 @@ const TIMELINE = [
       "الترخيص الرسمي MISA — فبراير 2026",
       "تسجيل iGarden Tower في SAIP (#423450193)",
       "إطلاق المنصّة الرقمية الكاملة",
-      "الإعداد لمنحة سنبلة",
+      "استكمال طبقة Compliance OS",
     ],
   },
 ];
@@ -282,62 +282,24 @@ function MethodologyDeepDive() {
   );
 }
 
-/* ─── Section 5: Team ─────────────────────────────────────── */
-const TEAM = [
-  {
-    name: "علي محمد غنيمة",
-    initials: "ع.غ",
-    role: "المؤسس والمدير التنفيذي",
-    expertise: "Hydroponics · Aquaponics · IoT · Raspberry Pi",
-  },
-  {
-    name: "م. أيمن المخزومي",
-    initials: "أ.م",
-    role: "شريك ومسؤول R&D",
-    expertise: "هندسة زراعية · Hydroponics ميداني · تصميم أنظمة",
-  },
-  {
-    name: "محمد الكثيري",
-    initials: "م.ك",
-    role: "شريك ممول",
-    expertise: "استثمار · تطوير أعمال · شراكات استراتيجية",
-  },
-];
-
+/* ─── Section 5: Team Teaser ──────────────────────────────── */
 function TeamSection() {
   return (
     <section className="section-light py-20">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-12">
-          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            الفريق المؤسّس
-          </p>
-          <h2 className="h2 text-deep-green">الأشخاص خلف iGarden</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TEAM.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white rounded-card p-6 shadow-soft text-center"
-            >
-              <div
-                className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-cream font-bold text-2xl shadow-soft"
-                style={{
-                  background:
-                    "linear-gradient(135deg, var(--igarden-primary, #0F3D2E) 0%, var(--igarden-primary-alt, #1B5E3F) 100%)",
-                }}
-                aria-hidden
-              >
-                {member.initials}
-              </div>
-              <h3 className="h4 text-deep-green mb-1">{member.name}</h3>
-              <p className="text-lime text-lg font-medium mb-3">{member.role}</p>
-              <p className="body-sm text-medium-gray font-latin text-lg leading-relaxed">
-                {member.expertise}
-              </p>
-            </div>
-          ))}
-        </div>
+      <div className="container mx-auto px-4 max-w-4xl text-center">
+        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
+          الفريق المؤسّس
+        </p>
+        <h2 className="h2 text-deep-green mb-6">الأشخاص خلف iGarden</h2>
+        <p className="body-base text-medium-gray max-w-2xl mx-auto mb-8">
+          ثلاثة مؤسسين بخبرات متكاملة: قيادة موثّقة في{" "}
+          <span dir="ltr" className="font-latin">AgriTech</span>{" "}
+          منذ 2017، هندسة زراعية معتمدة من الهيئة السعودية للمهندسين،
+          وعلاقات حكومية راسخة — يعملون يومياً في مرفق عسفان.
+        </p>
+        <CTAButton href="/team" variant="outline-green">
+          تعرّف على الفريق كاملاً ←
+        </CTAButton>
       </div>
     </section>
   );
