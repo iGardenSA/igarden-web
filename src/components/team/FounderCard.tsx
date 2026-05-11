@@ -18,7 +18,7 @@ export function FounderCard({ name, role, photoUrl, academic, specialties, linke
     <div className="bg-white rounded-card border border-light-gray shadow-soft flex flex-col overflow-hidden">
       {/* Photo */}
       <div className="relative aspect-[4/3] bg-[#0A2920]">
-        {photoUrl !== "/team/placeholder.webp" ? (
+        {photoUrl && photoUrl !== "/team/placeholder.webp" ? (
           <Image
             src={photoUrl}
             alt={name}

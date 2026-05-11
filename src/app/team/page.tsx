@@ -18,30 +18,28 @@ export const metadata: Metadata = {
   },
 };
 
-// TODO: Awaiting Ali's input — academic background, work history, LinkedIn URL, professional photo
-// TODO: Awaiting Ayman's input — academic background, work history, LinkedIn URL, professional photo
-// TODO: Awaiting Mohammed's input — academic background, work history, LinkedIn URL, professional photo
+// TODO: Awaiting academic background and work history for all three founders
 const FOUNDERS: FounderCardProps[] = [
   {
     name: "علي محمد غنيمة",
     role: "المؤسس والرئيس التنفيذي",
-    photoUrl: "/team/placeholder.webp",
+    photoUrl: "/team/team-ali.jpg",
     academic: { degree: "TBD", field: "TBD", university: "TBD" },
     specialties: ["استراتيجية المنتج", "هندسة الأنظمة", "تطوير Smart OS", "بناء الفريق"],
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/ali-ghanimah/?locale=ar",
   },
   {
     name: "أيمن المخزوم",
     role: "الشريك المؤسس · البحث والتطوير",
-    photoUrl: "/team/placeholder.webp",
+    photoUrl: "/team/team-ayman.jpg",
     academic: { degree: "TBD", field: "TBD", university: "TBD" },
     specialties: ["البحث الزراعي", "تطوير الأنظمة المائية", "الاختبار الميداني في عسفان"],
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/ayman-makhzoum-608061321/",
   },
   {
     name: "محمد الكثيري",
     role: "الشريك المؤسس · المالية والامتثال",
-    photoUrl: "/team/placeholder.webp",
+    photoUrl: "/team/team-mohammed.jpg",
     academic: { degree: "TBD", field: "TBD", university: "TBD" },
     specialties: ["الإدارة المالية", "الامتثال التنظيمي", "علاقات العملاء B2B/B2G"],
     linkedinUrl: "#",
