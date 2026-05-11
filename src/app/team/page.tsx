@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { GraduationCap, Sprout, Cpu, Building2, ArrowLeft } from "lucide-react";
+import { GraduationCap, Sprout, Cpu, Building2 } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { FounderCard, type FounderCardProps } from "@/components/team/FounderCard";
@@ -8,41 +7,71 @@ import { FounderCard, type FounderCardProps } from "@/components/team/FounderCar
 export const metadata: Metadata = {
   title: "فريقنا · iGarden",
   description:
-    "فريق متعدد التخصصات يجمع الزراعة الأكاديمية، الهندسة، والبرمجة. شركة سعودية ريادية مُرخّصة من وزارة الاستثمار.",
+    "ثلاثة مؤسسين بخبرات متكاملة: هندسة زراعية معتمدة، قيادة موثّقة في AgriTech منذ 2017، وعلاقات حكومية راسخة. شركة سعودية ريادية مُرخّصة من وزارة الاستثمار.",
   alternates: { canonical: "https://igarden.sa/team" },
   openGraph: {
-    title: "فريق iGarden — خبرات تُبنى عليها الزراعة الذكية",
-    description: "فريق متخصص يجمع الزراعة الأكاديمية، الهندسة، والبرمجة — يعمل في مرفق R&D بعسفان.",
+    title: "فريق iGarden — ثلاثة مؤسسين · خبرات متكاملة",
+    description:
+      "هندسة زراعية معتمدة، قيادة في AgriTech منذ 2017، وعلاقات حكومية — يعملون في مرفق R&D بعسفان.",
     type: "website",
     locale: "ar_SA",
   },
 };
 
-// TODO: Awaiting academic background and work history for all three founders
 const FOUNDERS: FounderCardProps[] = [
   {
     name: "علي محمد غنيمة",
-    role: "المؤسس والرئيس التنفيذي",
+    nameEn: "Ali Ghanimah",
+    role: "المؤسس والرئيس التنفيذي المشارك",
     photoUrl: "/team/team-ali.jpg",
-    academic: { degree: "TBD", field: "TBD", university: "TBD" },
-    specialties: ["استراتيجية المنتج", "هندسة الأنظمة", "تطوير Smart OS", "بناء الفريق"],
-    linkedinUrl: "https://www.linkedin.com/in/ali-ghanimah/?locale=ar",
+    expertise: "IoT · AgriTech · القيادة الاستراتيجية",
+    experience: "+9 سنوات في الزراعة الذكية",
+    bullets: [
+      "يقود iGarden منذ 2025 بتركيز على الحلول الزراعية الذكية والمستدامة",
+      "مؤسس ورئيس تنفيذي سابق لمؤسسة تقنيات الزراعة الحديثة (2017–2022)",
+      "يقود منظومة العملاء والشراكات والتوجّه الاستراتيجي للشركة",
+      "مالك نموذج صناعي مُسجَّل لدى هيئة الملكية الفكرية السعودية SAIP",
+    ],
+    background: {
+      education: "دبلوم تجارة — جامعة دمشق",
+      location: "جدة، المملكة العربية السعودية",
+    },
+    linkedinUrl: "https://www.linkedin.com/in/ali-ghanimah",
   },
   {
-    name: "أيمن المخزوم",
-    role: "الشريك المؤسس · البحث والتطوير",
+    name: "م. أيمن حسين المخزوم",
+    nameEn: "Eng. Ayman Makhzoum",
+    role: "الشريك المؤسس · رئيس البحث والتطوير",
     photoUrl: "/team/team-ayman.jpg",
-    academic: { degree: "TBD", field: "TBD", university: "TBD" },
-    specialties: ["البحث الزراعي", "تطوير الأنظمة المائية", "الاختبار الميداني في عسفان"],
-    linkedinUrl: "https://www.linkedin.com/in/ayman-makhzoum-608061321/",
+    expertise: "الهندسة الزراعية · IoT · Smart OS",
+    certification: "عضو الهيئة السعودية للمهندسين #1191492",
+    bullets: [
+      "مهندس زراعي معتمد من الهيئة السعودية للمهندسين",
+      "متخصص في تقنيات التحكم الذكي والأتمتة الزراعية",
+      "خبير في إنترنت الأشياء وأنظمة الري الذكية",
+      "يقود تطوير منظومة الحساسات ومنصة Smart OS في عسفان",
+    ],
+    background: {
+      education: "هندسة زراعية — جامعة البعث",
+      location: "جدة، المملكة العربية السعودية",
+    },
+    linkedinUrl: "https://www.linkedin.com/in/ayman-makhzoum-608061321",
   },
   {
-    name: "محمد الكثيري",
-    role: "الشريك المؤسس · المالية والامتثال",
+    name: "محمد يعن الله الكثيري",
+    nameEn: "Mohammed Al-Kuthairi",
+    role: "الشريك المؤسس · العمليات والامتثال",
     photoUrl: "/team/team-mohammed.jpg",
-    academic: { degree: "TBD", field: "TBD", university: "TBD" },
-    specialties: ["الإدارة المالية", "الامتثال التنظيمي", "علاقات العملاء B2B/B2G"],
-    linkedinUrl: "#",
+    expertise: "العلاقات الحكومية · الامتثال · تطوير الأعمال",
+    bullets: [
+      "إدارة العلاقات الحكومية وملفات التراخيص الرسمية",
+      "الهيكلة القانونية والامتثال التنظيمي للشركة",
+      "تطوير الأعمال وبناء الشراكات الاستراتيجية",
+      "إدارة ملف الترخيص الاستثماري من وزارة الاستثمار",
+    ],
+    background: {
+      location: "جدة، المملكة العربية السعودية",
+    },
   },
 ];
 
@@ -50,17 +79,17 @@ const PILLARS = [
   {
     Icon: GraduationCap,
     title: "الخلفية الأكاديمية",
-    description: "تخصصات متنوعة في الزراعة، الهندسة، والإدارة",
+    description: "هندسة زراعية معتمدة + تجارة وإدارة أعمال",
   },
   {
     Icon: Sprout,
     title: "الخبرة الميدانية",
-    description: "عمل مباشر في عسفان وبيئات سعودية واقعية",
+    description: "تأسيس وتشغيل مشاريع AgriTech في السعودية منذ 2017",
   },
   {
     Icon: Cpu,
     title: "الإتقان التقني",
-    description: "برمجة وIoT وتحليل بيانات مُكيَّف للبيئة المحلية",
+    description: "IoT وأتمتة زراعية وتطوير منصات تحليل بيانات",
   },
   {
     Icon: Building2,
@@ -86,32 +115,18 @@ export default function TeamPage() {
             الفريق التأسيسي
           </p>
           <h1 className="h1 text-cream mb-6">
-            خبرات تُبنى عليها الزراعة الذكية في السعودية
+            ثلاثة مؤسسين · خبرات متكاملة
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
-            فريق متعدد التخصصات يجمع الزراعة الأكاديمية، الهندسة، والبرمجة —
-            يعمل في مرفق R&D خاص في عسفان.
+            هندسة زراعية معتمدة، قيادة موثّقة في{" "}
+            <span dir="ltr" className="font-latin">AgriTech</span>{" "}
+            منذ 2017، وعلاقات حكومية راسخة — يعملون في مرفق R&D خاص في عسفان.
           </p>
         </div>
       </section>
 
-      {/* ─── Philosophy ──────────────────────────────────────── */}
-      <section className="section-light py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <p className="body-base text-medium-gray leading-relaxed">
-            في{" "}
-            <span dir="ltr" className="font-latin font-bold text-deep-green">
-              iGarden
-            </span>
-            ، نؤمن بأن المعرفة العملية تتقدّم على الادعاءات. نُدير مرفق R&D
-            خاص في عسفان حيث نختبر ما نقدّمه قبل أن نُسلّمه. وكل عضو في
-            الفريق يجلب خلفية أكاديمية ومهنية محدّدة تخدم رسالتنا.
-          </p>
-        </div>
-      </section>
-
-      {/* ─── Founders ────────────────────────────────────────── */}
-      <section className="bg-white py-20">
+      {/* ─── Founders Grid ───────────────────────────────────── */}
+      <section className="section-light py-20">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-12">
             <p className="text-lime text-sm font-bold uppercase tracking-widest mb-2">
@@ -122,35 +137,6 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {FOUNDERS.map((f) => (
               <FounderCard key={f.name} {...f} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Operations Team ─────────────────────────────────── */}
-      <section className="section-light py-16">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="text-center mb-10">
-            <p className="text-lime text-sm font-bold uppercase tracking-widest mb-2">
-              فريق العمليات
-            </p>
-            <h2 className="h3 text-deep-green">من يُشغّل عسفان يومياً</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
-            {[
-              { name: "كمال الشجري", role: "العمليات الميدانية — مرفق عسفان" },
-              { name: "عبدالله", role: "إدخال البيانات والأرشفة التشغيلية" },
-            ].map((m) => (
-              <div
-                key={m.name}
-                className="bg-white rounded-card border border-light-gray p-5 shadow-soft"
-              >
-                <div className="w-10 h-10 rounded-full bg-deep-green/5 flex items-center justify-center mb-3">
-                  <span className="text-lg font-bold text-deep-green/40">{m.name[0]}</span>
-                </div>
-                <p className="font-bold text-deep-green">{m.name}</p>
-                <p className="text-sm text-medium-gray mt-0.5">{m.role}</p>
-              </div>
             ))}
           </div>
         </div>
@@ -194,7 +180,6 @@ export default function TeamPage() {
           </p>
           <CTAButton href="/osfan-station" variant="lime">
             زر مرفق عسفان
-            <ArrowLeft className="w-4 h-4 mr-2" aria-hidden />
           </CTAButton>
         </div>
       </section>
