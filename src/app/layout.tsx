@@ -57,6 +57,7 @@ export const metadata: Metadata = {
       { url: "/favicons/favicon-32.png",  sizes: "32x32",  type: "image/png" },
       { url: "/favicons/favicon-96.png",  sizes: "96x96",  type: "image/png" },
       { url: "/favicons/favicon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicons/favicon-512.png", sizes: "512x512", type: "image/png" },
       { url: "/favicons/favicon.ico",     sizes: "any" },
     ],
     apple: [
@@ -65,9 +66,9 @@ export const metadata: Metadata = {
     other: [
       { rel: "android-chrome", url: "/favicons/android-chrome-192x192.png" },
       { rel: "android-chrome", url: "/favicons/android-chrome-512x512.png" },
+      { rel: "mask-icon",      url: "/favicons/maskable-512.png" },
     ],
   },
-  manifest: "/favicons/site.webmanifest",
 
   openGraph: {
     type: "website",
