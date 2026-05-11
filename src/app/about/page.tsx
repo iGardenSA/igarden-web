@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { FoundersSection } from "@/components/sections/FoundersSection";
+import { AIAugmentedSection } from "@/components/sections/AIAugmentedSection";
 import {
   Hammer,
   Globe2,
@@ -282,25 +284,11 @@ function MethodologyDeepDive() {
   );
 }
 
-/* ─── Section 5: Team Teaser ──────────────────────────────── */
-function TeamSection() {
+/* ─── Section 5: Founders ─────────────────────────────────── */
+function FoundersSectionWrapper() {
   return (
-    <section className="section-light py-20">
-      <div className="container mx-auto px-4 max-w-4xl text-center">
-        <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-          الفريق المؤسّس
-        </p>
-        <h2 className="h2 text-deep-green mb-6">الأشخاص خلف iGarden</h2>
-        <p className="body-base text-medium-gray max-w-2xl mx-auto mb-8">
-          ثلاثة مؤسسين بخبرات متكاملة: قيادة موثّقة في{" "}
-          <span dir="ltr" className="font-latin">AgriTech</span>{" "}
-          منذ 2017، هندسة زراعية معتمدة من الهيئة السعودية للمهندسين،
-          وعلاقات حكومية راسخة — يعملون يومياً في مرفق عسفان.
-        </p>
-        <CTAButton href="/team" variant="outline-green">
-          تعرّف على الفريق كاملاً ←
-        </CTAButton>
-      </div>
+    <section id="team" className="section-light py-20">
+      <FoundersSection />
     </section>
   );
 }
@@ -445,7 +433,8 @@ export default function AboutPage() {
       <IdentitySection />
       <TimelineSection />
       <MethodologyDeepDive />
-      <TeamSection />
+      <FoundersSectionWrapper />
+      <AIAugmentedSection />
       <OsfanLinkSection />
       <ValuesSection />
       <FinalCTA />
