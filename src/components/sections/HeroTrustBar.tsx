@@ -1,10 +1,10 @@
 'use client';
 
-import { Users, CalendarCheck, Thermometer, MonitorSmartphone, Award } from 'lucide-react';
+import { CalendarCheck, Thermometer, MonitorSmartphone, Award, FlaskConical } from 'lucide-react';
 
 const stats = [
-  { icon: Users,             number: '4',           label: 'عملاء نشطون'               },
-  { icon: CalendarCheck,     number: 'منذ 2025',    label: 'تشغيل مستمر'               },
+  { icon: FlaskConical,       number: 'منذ 2025',    label: '5+ ورش عمل مُنفَّذة'        },
+  { icon: CalendarCheck,     number: 'منذ 2024',    label: 'تطوير مستمر'               },
   { icon: Thermometer,       number: '+45°C',        label: 'اختبار ميداني'             },
   { icon: MonitorSmartphone, number: '24/7',         label: 'Smart OS بلا انقطاع'       },
   { icon: Award,             number: 'SAIP',         label: 'براءة صناعية مسجّلة'       },
