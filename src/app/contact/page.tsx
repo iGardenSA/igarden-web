@@ -145,7 +145,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-[var(--color-border)] text-[var(--color-brand-600)] text-sm font-semibold hover:border-[var(--color-brand-300)] transition-colors"
               >
-                المتجر الإلكتروني
+                iGarden Home Solutions
               </a>
             </div>
           </div>

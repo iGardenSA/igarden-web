@@ -91,7 +91,7 @@ export default function FactSheetPage() {
                 href="https://igarden.sa"
               />
               <FactRow
-                label="المتجر الإلكتروني"
+                label="iGarden Home Solutions"
                 value="shop.igarden.sa"
                 mono
                 href="https://shop.igarden.sa"

@@ -13,12 +13,12 @@ import {
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لأنظمة الزراعة الذكية | iGarden",
   description:
-    "iGarden (انتيليجنت غاردن): شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
+    "iGarden (انتيليجنت غاردن): شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. نَبني ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
   alternates: { canonical: "https://igarden.sa/about" },
   openGraph: {
     title: "من نحن — iGarden",
     description:
-      "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+      "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. نَبني · نُوطّن · نُطوّر.",
     images: [{ url: "/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%B4%D8%B1%D9%83%D8%A9+%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9+%D9%84%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "من نحن — iGarden | iGarden",
-    description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+    description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. نَبني · نُوطّن · نُطوّر.",
     images: ["/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86"],
   },
 };
@@ -97,7 +97,8 @@ function WhyWeStarted() {
 
 /* ─── Section 3: Identity ─────────────────────────────────── */
 const REGISTRATION_BADGES = [
-  { label: "السجل التجاري", value: "7041878278" },
+  { label: "السجل التجاري", value: "4030579637" },
+  { label: "الرقم الموحد", value: "7041878278" },
   { label: "وزارة الاستثمار", value: "24926249716" },
   { label: "الملكية الفكرية", value: "423450193" },
   { label: "التصنيف", value: "ريادية" },
@@ -153,7 +154,7 @@ const TIMELINE = [
     items: [
       "تأسيس فريق العمل المؤسّس",
       "بحث وتطوير أوّلي في تقنيات الزراعة المائية",
-      "تحديد المنهج «ننفّذ · نُوطّن · نُطوّر»",
+      "تحديد المنهج «نَبني · نُوطّن · نُطوّر»",
     ],
   },
   {
@@ -221,7 +222,7 @@ function TimelineSection() {
 const METHODOLOGY = [
   {
     Icon: Hammer,
-    verb: "ننفّذ",
+    verb: "نَبني",
     title: "من الحسّاس إلى الحصاد",
     body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني ينفّذ — لا يوجّه فقط.",
     example: "في صيف 2025 نفّذنا أوّل نظام DWC في عسفان. تعفّنت الجذور في 14 يوماً تحت الحرارة. أعَدنا التنفيذ بـ Heat Exchanger مُدمَج — وكلّ وحدة DWC اليوم تُسلَّم به.",
@@ -250,7 +251,7 @@ function MethodologyDeepDive() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             المنهج
           </p>
-          <h2 className="h2 text-deep-green">ننفّذ · نُوطّن · نُطوّر</h2>
+          <h2 className="h2 text-deep-green">نَبني · نُوطّن · نُطوّر</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ليس شعاراً — هو الوصف الحرفي لما نفعله كل يوم.
           </p>
