@@ -4,7 +4,7 @@ const TRUST_ITEMS = [
   { text: "مرخّصة", label: "MISA", number: "24926249716" },
   { text: "نموذج صناعي", label: "SAIP", number: "#423450193" },
   { text: "محطّة عسفان للتجارب قائمة", label: null, number: null },
-  { text: "Smart OS Backend — Demo", label: null, number: null },
+  { text: "Smart OS · ديمو حيّ", label: null, number: null },
 ];
 
 export function TrustBar() {
