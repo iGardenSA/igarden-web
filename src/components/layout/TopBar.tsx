@@ -107,18 +107,7 @@ export default function TopBar() {
             })}
           </ul>
 
-          {/* Language Switcher */}
-          <div className="hidden md:flex items-center gap-1.5 text-[11px] text-white/50 flex-shrink-0 ms-4">
-            <span className="text-[#A5D63F] font-medium">AR</span>
-            <span className="text-[#7CB342]/30">|</span>
-            <button
-              className="hover:text-[#A5D63F] transition-colors"
-              aria-label="English"
-              disabled
-            >
-              EN
-            </button>
-          </div>
+          {/* Language Switcher — hidden until i18n is ready */}
         </div>
       </div>
     </div>

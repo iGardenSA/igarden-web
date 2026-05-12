@@ -21,7 +21,7 @@ const SERVICES_LINKS = [
 
 const INDIVIDUALS_LINKS = [
   { label: "تطبيق الحديقة الذكية", href: "/app" },
-  { label: "المتجر الإلكتروني", href: "https://shop.igarden.sa", external: true },
+  { label: "iGarden Home Solutions", href: "https://shop.igarden.sa", external: true },
   { label: "Demo تفاعلي", href: "https://demo.igarden.sa", external: true },
 ];
 
@@ -46,7 +46,7 @@ export function Footer() {
               height={40}
             />
             <p className="text-lime font-medium text-base mt-1">
-              ننفّذ · نُوطّن · نُطوّر
+              نَبني · نُوطّن · نُطوّر
             </p>
             <p className="text-cream/60 text-sm font-latin">
               ازرع بذكاء · Plant Smart
@@ -166,13 +166,16 @@ export function Footer() {
             <div className="space-y-1 leading-relaxed">
               <p className="font-medium opacity-80">{COMPANY.legalFull}</p>
               <p>
-                <span className="font-latin">CR: 7041878278</span>
+                <span className="font-latin">CR: 4030579637</span>
+                {" · "}
+                الرقم الموحد:{" "}
+                <span className="font-latin">7041878278</span>
                 {" · "}
                 <span className="font-latin">MISA: 24926249716</span>
-                {" · "}
-                <span className="font-latin">SAIP: #423450193</span>
               </p>
               <p>
+                <span className="font-latin">SAIP: #423450193</span>
+                {" · "}
                 <span className="font-latin">Tax: 312554598200003</span>
                 {" · "}
                 رأس المال:{" "}

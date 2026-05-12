@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://igarden.sa/how-we-work" },
   openGraph: {
     title: "كيف نعمل — من أول اتصال حتى التشغيل | iGarden",
-    description: "6 خطوات من الاستشارة حتى التسليم — ننفّذ ونُوطّن ونُطوّر.",
+    description: "6 خطوات من الاستشارة حتى التسليم — نَبني ونُوطّن ونُطوّر.",
     images: [{ url: "/api/og?title=%D9%83%D9%8A%D9%81+%D9%86%D8%B9%D9%85%D9%84+%E2%80%94+iGarden&sub=%D9%85%D9%86+%D8%A3%D9%88%D9%84+%D8%A7%D8%AA%D8%B5%D8%A7%D9%84+%D8%AD%D8%AA%D9%89+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",

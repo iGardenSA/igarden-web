@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  BookOpen, Rss, Clock, ArrowLeft, Droplets, Cpu,
+  BookOpen, Rss, ArrowLeft, Droplets, Cpu,
   Leaf, BarChart2, TreePine,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,31 +21,26 @@ const UPCOMING_ARTICLES = [
     icon: <Droplets className="h-5 w-5" />,
     title: "كيف يُقلّص Aeroponics استهلاك المياه في الزراعة؟",
     category: "تقنيات الزراعة",
-    readTime: "8 دقائق",
   },
   {
     icon: <Leaf className="h-5 w-5" />,
     title: "دليل شامل للزراعة المائية في المناخ السعودي",
     category: "أدلة عملية",
-    readTime: "12 دقيقة",
   },
   {
     icon: <Cpu className="h-5 w-5" />,
     title: "IoT في الزراعة: من الحساس إلى الحصاد",
     category: "التقنية والذكاء",
-    readTime: "10 دقائق",
   },
   {
     icon: <BarChart2 className="h-5 w-5" />,
     title: "كيف تقرأ بيانات pH وEC وتتخذ قرارات التشغيل؟",
     category: "أدلة عملية",
-    readTime: "9 دقائق",
   },
   {
     icon: <TreePine className="h-5 w-5" />,
     title: "دراسة: تجربة Sprouting Room في المناخ السعودي",
     category: "دراسات ميدانية",
-    readTime: "12 دقيقة",
   },
 ];
 
@@ -113,10 +108,6 @@ export default function BlogPage() {
                     </p>
                     <div className="flex items-center gap-3 flex-wrap">
                       <Badge variant="outline">{article.category}</Badge>
-                      <span className="flex items-center gap-1 text-lg text-[var(--color-muted)]">
-                        <Clock className="h-3 w-3" />
-                        {article.readTime}
-                      </span>
                     </div>
                   </div>
                   <Badge variant="outline" className="shrink-0">قريباً</Badge>
