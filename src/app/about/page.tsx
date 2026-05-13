@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { FoundersSection } from "@/components/sections/FoundersSection";
+import { AIAugmentedSection } from "@/components/sections/AIAugmentedSection";
 import {
   Hammer,
   Globe2,
@@ -11,12 +13,12 @@ import {
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لأنظمة الزراعة الذكية | iGarden",
   description:
-    "iGarden (انتيليجنت غاردن): شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. ننفّذ ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
+    "iGarden (انتيليجنت غاردن): شركة سعودية تبني أنظمة الزراعة الذكية المُكيَّفة لمناخ السعودية. نَبني ونُوطّن ونُطوّر — تأسّست 2024، مُرخَّصة 2026.",
   alternates: { canonical: "https://igarden.sa/about" },
   openGraph: {
     title: "من نحن — iGarden",
     description:
-      "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+      "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. نَبني · نُوطّن · نُطوّر.",
     images: [{ url: "/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%B4%D8%B1%D9%83%D8%A9+%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9+%D9%84%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "من نحن — iGarden | iGarden",
-    description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+    description: "شركة سعودية تبني أنظمة الزراعة الذكية للمناخ السعودي. نَبني · نُوطّن · نُطوّر.",
     images: ["/api/og?title=%D9%85%D9%86+%D9%86%D8%AD%D9%86"],
   },
 };
@@ -95,7 +97,8 @@ function WhyWeStarted() {
 
 /* ─── Section 3: Identity ─────────────────────────────────── */
 const REGISTRATION_BADGES = [
-  { label: "السجل التجاري", value: "7041878278" },
+  { label: "السجل التجاري", value: "4030579637" },
+  { label: "الرقم الموحد", value: "7041878278" },
   { label: "وزارة الاستثمار", value: "24926249716" },
   { label: "الملكية الفكرية", value: "423450193" },
   { label: "التصنيف", value: "ريادية" },
@@ -151,7 +154,7 @@ const TIMELINE = [
     items: [
       "تأسيس فريق العمل المؤسّس",
       "بحث وتطوير أوّلي في تقنيات الزراعة المائية",
-      "تحديد المنهج «ننفّذ · نُوطّن · نُطوّر»",
+      "تحديد المنهج «نَبني · نُوطّن · نُطوّر»",
     ],
   },
   {
@@ -171,7 +174,7 @@ const TIMELINE = [
       "الترخيص الرسمي MISA — فبراير 2026",
       "تسجيل iGarden Tower في SAIP (#423450193)",
       "إطلاق المنصّة الرقمية الكاملة",
-      "الإعداد لمنحة سنبلة",
+      "استكمال طبقة Compliance OS",
     ],
   },
 ];
@@ -219,7 +222,7 @@ function TimelineSection() {
 const METHODOLOGY = [
   {
     Icon: Hammer,
-    verb: "ننفّذ",
+    verb: "نَبني",
     title: "من الحسّاس إلى الحصاد",
     body: "نُصمّم ونُنشئ مزارع وأنظمة تحكّم ذكي من الألف إلى الياء. فريقنا الميداني ينفّذ — لا يوجّه فقط.",
     example: "في صيف 2025 نفّذنا أوّل نظام DWC في عسفان. تعفّنت الجذور في 14 يوماً تحت الحرارة. أعَدنا التنفيذ بـ Heat Exchanger مُدمَج — وكلّ وحدة DWC اليوم تُسلَّم به.",
@@ -248,7 +251,7 @@ function MethodologyDeepDive() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             المنهج
           </p>
-          <h2 className="h2 text-deep-green">ننفّذ · نُوطّن · نُطوّر</h2>
+          <h2 className="h2 text-deep-green">نَبني · نُوطّن · نُطوّر</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ليس شعاراً — هو الوصف الحرفي لما نفعله كل يوم.
           </p>
@@ -282,63 +285,11 @@ function MethodologyDeepDive() {
   );
 }
 
-/* ─── Section 5: Team ─────────────────────────────────────── */
-const TEAM = [
-  {
-    name: "علي محمد غنيمة",
-    initials: "ع.غ",
-    role: "المؤسس والمدير التنفيذي",
-    expertise: "Hydroponics · Aquaponics · IoT · Raspberry Pi",
-  },
-  {
-    name: "م. أيمن المخزومي",
-    initials: "أ.م",
-    role: "شريك ومسؤول R&D",
-    expertise: "هندسة زراعية · Hydroponics ميداني · تصميم أنظمة",
-  },
-  {
-    name: "محمد الكثيري",
-    initials: "م.ك",
-    role: "شريك ممول",
-    expertise: "استثمار · تطوير أعمال · شراكات استراتيجية",
-  },
-];
-
-function TeamSection() {
+/* ─── Section 5: Founders ─────────────────────────────────── */
+function FoundersSectionWrapper() {
   return (
-    <section className="section-light py-20">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <div className="text-center mb-12">
-          <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            الفريق المؤسّس
-          </p>
-          <h2 className="h2 text-deep-green">الأشخاص خلف iGarden</h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TEAM.map((member) => (
-            <div
-              key={member.name}
-              className="bg-white rounded-card p-6 shadow-soft text-center"
-            >
-              <div
-                className="w-24 h-24 rounded-full mx-auto mb-4 flex items-center justify-center text-cream font-bold text-2xl shadow-soft"
-                style={{
-                  background:
-                    "linear-gradient(135deg, var(--igarden-primary, #0F3D2E) 0%, var(--igarden-primary-alt, #1B5E3F) 100%)",
-                }}
-                aria-hidden
-              >
-                {member.initials}
-              </div>
-              <h3 className="h4 text-deep-green mb-1">{member.name}</h3>
-              <p className="text-lime text-lg font-medium mb-3">{member.role}</p>
-              <p className="body-sm text-medium-gray font-latin text-lg leading-relaxed">
-                {member.expertise}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+    <section id="team" className="section-light py-20">
+      <FoundersSection />
     </section>
   );
 }
@@ -402,6 +353,10 @@ const VALUES = [
   {
     title: "الأرقام لا الكلام",
     desc: "كل ادّعاء نُطلقه مَبني على قياس ميداني في عسفان. إذا لم نَقسه، لا نَذكره.",
+  },
+  {
+    title: "نَختبر قبل أن نُسلّم",
+    desc: "كل تقنية تمرّ بدورة اختبار كاملة في عسفان قبل أن تصل لعميل. لا prototype في موقعك — نُسلّم ما أثبت نفسه.",
   },
   {
     title: "شريك لا بائع",
@@ -483,7 +438,8 @@ export default function AboutPage() {
       <IdentitySection />
       <TimelineSection />
       <MethodologyDeepDive />
-      <TeamSection />
+      <FoundersSectionWrapper />
+      <AIAugmentedSection />
       <OsfanLinkSection />
       <ValuesSection />
       <FinalCTA />

@@ -1,75 +1,208 @@
 import type { Metadata } from "next";
-import { CTAButton } from "@/components/shared/CTAButton";
 
 export const metadata: Metadata = {
-  title: "إخلاء الامتثال",
+  title: "إخلاء الامتثال | iGarden",
   description:
-    "إخلاء مسؤولية الامتثال — iGarden تقدّم دعماً لجاهزية الامتثال الزراعي ولا تضمن الحصول على شهادات أو تراخيص.",
+    "حدود ما تقدّمه طبقة الامتثال في Smart OS — شفافية كاملة حول ما هو سجل تشغيلي وما هو ليس شهادة امتثال رسمية.",
   alternates: { canonical: "https://igarden.sa/compliance-disclaimer" },
-  robots: { index: false, follow: true },
+  robots: { index: true, follow: true },
 };
 
 export default function ComplianceDisclaimerPage() {
   return (
-    <section className="section-light py-20">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
-          قانوني
+    <main className="container mx-auto max-w-3xl px-6 py-16" dir="rtl">
+      <header className="mb-12 border-b border-gray-200 pb-8">
+        <p className="text-sm text-emerald-700 mb-3">
+          شركة انتيليجنت غاردن (ذات مسؤولية محدودة)
         </p>
-        <h1 className="h1 text-deep-green mb-8">إخلاء مسؤولية الامتثال</h1>
+        <h1 className="text-4xl font-bold mb-4 text-gray-900">
+          إخلاء الامتثال
+        </h1>
+        <p className="text-gray-600 leading-relaxed text-lg">
+          نُحرّر هذه الصفحة لتعرف بدقة: ما الذي تقدّمه طبقة الامتثال في
+          Smart OS، وما الذي لا تقدّمه. الشفافية هنا أهم من التسويق.
+        </p>
+        <div className="mt-6 text-sm text-gray-500 space-y-1">
+          <p>الإصدار: 1.0 · تاريخ النفاذ: 12 مايو 2026</p>
+        </div>
+      </header>
 
-        <div className="bg-white rounded-card p-8 shadow-soft space-y-6 body-base text-medium-gray leading-relaxed">
-          <section>
-            <h2 className="h3 text-deep-green mb-3">1. طبيعة خدمات الامتثال</h2>
-            <p>
-              تقدّم شركة انتيليجنت غاردن (ذ.م.م) — المُشار إليها بـ «iGarden» — خدمات
-              مساندة لجاهزية الامتثال الزراعي، تشمل توثيق سجلات التشغيل، إعداد التقارير،
-              وتهيئة الأنظمة لمتطلبات الجهات التنظيمية. هذه الخدمات مساندة استشارية ولا
-              ترقى إلى مستوى الخدمات القانونية أو التنظيمية المتخصّصة.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="h3 text-deep-green mb-3">2. لا ضمان على الشهادات والتراخيص</h2>
-            <p>
-              لا تضمن iGarden حصول العميل على أي شهادة أو ترخيص تنظيمي، بما يشمل على
-              سبيل المثال لا الحصر: شهادة Saudi GAP، تراخيص وزارة البيئة والمياه والزراعة،
-              أو أي اعتماد آخر. قرار منح الشهادة يعود حصراً للجهات التنظيمية المختصّة.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="h3 text-deep-green mb-3">3. مسؤولية العميل</h2>
-            <p>
-              يتحمّل العميل المسؤولية الكاملة عن الامتثال للأنظمة والتشريعات المعمول بها في
-              المملكة العربية السعودية. توصيات iGarden تقنية وتشغيلية، ولا تُغني عن الاستشارة
-              القانونية أو التنظيمية المتخصّصة.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="h3 text-deep-green mb-3">4. تحديث المعلومات</h2>
-            <p>
-              تتغيّر متطلبات الامتثال بمرور الوقت. يلتزم العميل بمتابعة التحديثات التنظيمية
-              من المصادر الرسمية. تبذل iGarden جهدها لمواكبة هذه التحديثات لكنّها لا تضمن
-              دقّة المعلومات في كل وقت.
-            </p>
-          </section>
-
-          <p className="text-sm opacity-60 border-t border-light-gray pt-4">
-            آخر تحديث: مايو 2026 · للاستفسار:{" "}
-            <a href="mailto:info@igarden.sa" className="text-lime hover:underline">
-              info@igarden.sa
-            </a>
+      <article className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-emerald-700">
+        <div className="bg-amber-50 border-r-4 border-amber-500 p-6 rounded-lg mb-8 not-prose">
+          <h2 className="text-xl font-bold text-amber-900 mb-3">
+            تنبيه أساسي
+          </h2>
+          <p className="text-amber-900 leading-relaxed mb-0">
+            <strong>
+              طبقة الامتثال في Smart OS ليست شهادة امتثال رسمية، ولا
+              تُعفي المنشأة من التزاماتها أمام الجهات التنظيمية السعودية
+              أو الدولية.
+            </strong>
           </p>
         </div>
 
-        <div className="mt-8">
-          <CTAButton href="/contact" variant="outline-green">
-            تواصل معنا للاستفسار
-          </CTAButton>
+        <h2>1. ما تقدّمه طبقة الامتثال في Smart OS</h2>
+        <p>
+          Smart OS — منصة التشغيل لدى iGarden — تتضمّن طبقة تسمى
+          "Compliance Layer" تقوم بأربعة وظائف محددة:
+        </p>
+        <ol>
+          <li>
+            <strong>تسجيل القراءات والأوامر:</strong> كل قراءة حساس وكل
+            أمر تحكم يُحفظ مع طابع زمني وهوية المشغّل
+          </li>
+          <li>
+            <strong>سجلات قابلة للمراجعة:</strong> أرشيف منظَّم يمكن
+            للمنشأة أو مدققيها الرجوع إليه عند الحاجة
+          </li>
+          <li>
+            <strong>تقارير تشغيلية دورية:</strong> ملخصات يومية/أسبوعية/
+            شهرية للأداء، تُسلَّم للعميل بصيغة قابلة للقراءة
+          </li>
+          <li>
+            <strong>تنبيهات الانحراف:</strong> إشعارات تلقائية عند خروج
+            المؤشرات عن النطاقات المتّفق عليها
+          </li>
+        </ol>
+
+        <h2>2. ما لا تقدّمه طبقة الامتثال</h2>
+        <p>
+          هذا القسم مهم بقدر القسم السابق.{" "}
+          <strong>
+            طبقة الامتثال في Smart OS ليست:
+          </strong>
+        </p>
+        <ul>
+          <li>
+            <strong>ليست شهادة امتثال رسمية</strong> من أي جهة حكومية أو
+            تنظيمية (وزارة البيئة، هيئة الغذاء والدواء، الهيئة العامة
+            للأرصاد، إلخ)
+          </li>
+          <li>
+            <strong>ليست بديلاً عن التفتيش الحكومي</strong> أو أي تدقيق
+            رسمي تتطلّبه الجهات المختصّة
+          </li>
+          <li>
+            <strong>ليست ضماناً قانونياً</strong> بأن المنشأة تستوفي كل
+            متطلبات الأنظمة السعودية أو الدولية
+          </li>
+          <li>
+            <strong>ليست استشارة قانونية</strong> ولا اعتماد رسمي لأي
+            عملية إنتاجية
+          </li>
+          <li>
+            <strong>ليست بديلاً عن مستشار قانوني/فني</strong> متخصّص في
+            الامتثال البيئي أو الزراعي
+          </li>
+        </ul>
+
+        <h2>3. مسؤولية المنشأة</h2>
+        <p>
+          المنشأة التي تستخدم Smart OS تظل المسؤولة الكاملة عن:
+        </p>
+        <ul>
+          <li>
+            التزام أنظمة المملكة العربية السعودية المتعلّقة بنشاطها
+          </li>
+          <li>
+            الحصول على التراخيص اللازمة من الجهات المختصة
+          </li>
+          <li>
+            تقديم التقارير المطلوبة للجهات التنظيمية في مواعيدها
+          </li>
+          <li>التعامل المباشر مع المفتشين الحكوميين</li>
+          <li>
+            تدريب الكوادر على متطلبات السلامة والامتثال
+          </li>
+        </ul>
+        <p>
+          سجلات Smart OS قد تكون{" "}
+          <strong>أداة مساعدة</strong> في إعداد تلك التقارير أو الإجابة
+          على استفسارات المفتشين، لكنها ليست بديلاً عن مسؤولية المنشأة.
+        </p>
+
+        <h2>4. ديمو Smart OS والقراءات المُحاكاة</h2>
+        <div className="bg-blue-50 border-r-4 border-blue-500 p-6 rounded-lg my-6 not-prose">
+          <p className="text-blue-900 leading-relaxed mb-0">
+            <strong>ملاحظة مهمة:</strong> القراءات المعروضة في الديمو
+            التفاعلي على <code>demo.igarden.sa</code> هي{" "}
+            <strong>قراءات مُحاكاة لأغراض العرض فقط</strong>. لا تعكس
+            بيانات عميل فعلي، ولا تمثّل أداء مزرعة محددة.
+          </p>
         </div>
-      </div>
-    </section>
+
+        <h2>5. الادعاءات الرقمية على موقعنا</h2>
+        <p>
+          أي رقم نذكره (مثل: تحمّل +45°C، عدد الاختبارات الوحدوية، مدد
+          الاختبار في عسفان) يعكس{" "}
+          <strong>الواقع المُختبَر في مرفق R&D الخاص بنا</strong>، وليس
+          وعداً مطلقاً بنفس الأداء في كل بيئة ميدانية.
+        </p>
+        <p>الأداء الفعلي في موقع العميل يعتمد على:</p>
+        <ul>
+          <li>التصميم المُكيَّف للموقع</li>
+          <li>جودة المدخلات والصيانة</li>
+          <li>التزام الكوادر بدليل التشغيل</li>
+          <li>الظروف المناخية المحلية</li>
+        </ul>
+
+        <h2>6. ادعاءات الكفاءة (المياه، الطاقة، الإنتاجية)</h2>
+        <p>
+          عبارات مثل "كفاءة مائية عالية" أو "إنتاجية أعلى" التي قد تظهر
+          في محتوى الموقع،{" "}
+          <strong>هي اتجاهات عامة لا أرقام مطلقة</strong>. النتائج
+          الفعلية تختلف حسب:
+        </p>
+        <ul>
+          <li>نوع المحصول</li>
+          <li>
+            تقنية الزراعة المختارة (NFT، DWC، Dutch Buckets، إلخ)
+          </li>
+          <li>جودة المياه والمدخلات</li>
+          <li>نمط التشغيل اليومي</li>
+        </ul>
+        <p>
+          أي وعد رقمي محدّد (نسبة توفير ماء معينة، عائد استثمار محدّد)
+          لا يكون <strong>إلا</strong> ضمن عقد موقَّع، ومرتبط بشروط
+          تشغيلية مفصّلة.
+        </p>
+
+        <h2>7. مرحلة التطوير</h2>
+        <p>
+          Smart OS منتج في <strong>تطوير مستمر</strong>. بعض الميزات قيد
+          الاختبار الميداني في عسفان قبل النشر الواسع. عند تطبيقها على
+          مشروع عميل، نوضّح بدقة ما الذي يعمل في الإنتاج وما هو قيد
+          التطوير.
+        </p>
+
+        <h2>8. تواصل لأي استفسار</h2>
+        <p>
+          إن كان لديك سؤال عن حدود الامتثال أو كيفية استخدام سجلاتنا:
+        </p>
+        <ul>
+          <li>
+            البريد العام:{" "}
+            <a href="mailto:info@igarden.sa">
+              <code>info@igarden.sa</code>
+            </a>
+          </li>
+          <li>
+            الهاتف: <span dir="ltr">+966 57 034 0500</span>
+          </li>
+        </ul>
+        <p>
+          <strong>للاستشارات القانونية المتخصّصة</strong>، يجب التواصل مع
+          مستشار قانوني سعودي مختص في الامتثال البيئي أو الزراعي. لا
+          نقدّم نحن هذا النوع من الاستشارات.
+        </p>
+      </article>
+
+      <footer className="mt-16 pt-8 border-t border-gray-200 text-sm text-gray-500">
+        <p>
+          الإصدار 1.0 · 12 مايو 2026 · يُكمَّل بشروط الاستخدام وسياسة
+          الخصوصية.
+        </p>
+      </footer>
+    </main>
   );
 }

@@ -9,14 +9,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
     description:
-      "شركة سعودية تبني أنظمة تحكم وزراعة مائية مكيّفة للمناخ السعودي. ننفّذ · نُوطّن · نُطوّر.",
+      "شركة سعودية تبني أنظمة تحكم وزراعة مائية مكيّفة للمناخ السعودي. نَبني · نُوطّن · نُطوّر.",
     images: ["/images/og/home.jpg"],
     type: "website",
     locale: "ar_SA",
   },
 };
 import HeroSection from "@/components/sections/HeroSection";
-import HeroTrustBar from "@/components/sections/HeroTrustBar";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { MethodologySection } from "@/components/sections/MethodologySection";
 import { SmartOSDemoSection } from "@/components/sections/SmartOSDemoSection";
@@ -41,15 +40,7 @@ export default function HomePage() {
         <HeroSection />
       </div>
 
-      {/* 2. شريط أرقام الثقة */}
-      <HeroTrustBar />
-      <div
-        className="h-12 w-full"
-        style={{ background: "linear-gradient(to bottom, #0F3D2E 0%, #FAFAF7 100%)" }}
-        aria-hidden="true"
-      />
-
-      {/* 3. لماذا الحديقة الذكية */}
+      {/* 2. لماذا الحديقة الذكية */}
       <TrustBar />
       <MethodologySection />
 

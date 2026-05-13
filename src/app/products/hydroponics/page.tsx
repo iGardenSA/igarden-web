@@ -92,7 +92,7 @@ function Hero() {
           >
             <Droplets className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
-              7 techniques · 1 right pick
+              ٧ تقنيات · نَختار لك الأنسب
             </span>
           </div>
         </div>

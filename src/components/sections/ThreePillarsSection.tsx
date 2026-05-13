@@ -12,7 +12,7 @@ const PILLARS = [
   {
     badge: null,
     title: "Smart Greenhouses",
-    desc: "محميات ذكية تصمد في +45°C وتُؤتمت بالكامل. كفاءة طاقة 40% وتحكّم مناخي دقيق.",
+    desc: "محميات ذكية تصمد في +45°C وتُؤتمت بالكامل. كفاءة طاقة محسّنة وتحكّم مناخي دقيق.",
     href: "/products/smart-greenhouses",
     img: { src: "/images/osfan-full/04_greenhouse_wide.webp", alt: "منظر داخلي لمحمية ذكية في محطة iGarden عسفان" },
   },
