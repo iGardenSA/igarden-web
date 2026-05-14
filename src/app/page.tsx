@@ -67,9 +67,11 @@ export default function HomePage() {
       <FinalCTA />
 
       {/* 10. ثانوي: B2C + أكاديمية */}
-      <HomeSolutions />
       <ComplementaryProducts />
       <KnowledgeSection />
+
+      {/* 11. B2C path — شريط خفيف قبل الفوتر */}
+      <HomeSolutions />
     </>
   );
 }
