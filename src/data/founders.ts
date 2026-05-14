@@ -4,8 +4,8 @@ export const FOUNDERS: FounderCardProps[] = [
   {
     name: "علي محمد غنيمة",
     nameEn: "Ali Ghanimah",
-    role: "المؤسس والرئيس التنفيذي المشارك",
-    roleEn: "Co-Founder & Co-CEO",
+    role: "الرئيس التنفيذي والشريك المؤسس",
+    roleEn: "CEO & Co-Founder",
     photoUrl: "/team/team-ali.jpg",
     expertise: "IoT · AgriTech · القيادة الاستراتيجية",
     experience: "+9 سنوات في الزراعة الذكية",
@@ -24,8 +24,8 @@ export const FOUNDERS: FounderCardProps[] = [
   {
     name: "م. أيمن حسين المخزوم",
     nameEn: "Eng. Ayman Makhzoum",
-    role: "الشريك المؤسس · رئيس البحث والتطوير",
-    roleEn: "Co-Founder & Head of R&D",
+    role: "رئيس التقنية والشريك المؤسس",
+    roleEn: "CTO & Co-Founder",
     photoUrl: "/team/team-ayman.jpg",
     expertise: "الهندسة الزراعية · IoT · Smart OS",
     certification: "عضو الهيئة السعودية للمهندسين #1191492",
@@ -44,8 +44,8 @@ export const FOUNDERS: FounderCardProps[] = [
   {
     name: "محمد يعن الله الكثيري",
     nameEn: "Mohammed Al-Kuthairi",
-    role: "الشريك المؤسس · العمليات والامتثال",
-    roleEn: "Co-Founder & Operations",
+    role: "رئيس العمليات والشريك المؤسس",
+    roleEn: "COO & Co-Founder",
     photoUrl: "/team/team-mohammed.jpg",
     expertise: "العلاقات الحكومية · الامتثال · تطوير الأعمال",
     bullets: [
