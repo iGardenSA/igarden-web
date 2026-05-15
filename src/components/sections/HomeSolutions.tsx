@@ -1,75 +1,57 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft, Droplets, Sprout, Smartphone } from "lucide-react";
 
 export function HomeSolutions() {
   return (
-    <section className="section-light py-20" dir="rtl">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="text-center mb-12">
-          <p className="text-base font-medium text-lime mb-3">للأفراد أيضاً</p>
-          <h2 className="h2 text-deep-green mb-4">هل تبحث عن مستلزمات زراعية؟</h2>
-          <p className="text-lg text-medium-gray max-w-2xl mx-auto">
-            نقدّم للأفراد نسخة مصغرة من تقنياتنا — انتقل إلى متجر الحديقة الذكية.
-          </p>
-        </div>
+    <section
+      className="py-12 bg-gradient-to-b from-white to-emerald-50/30 border-t border-emerald-100"
+      dir="rtl"
+      aria-label="حلول منزلية"
+    >
+      <div className="container mx-auto max-w-5xl px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-right">
 
-        <div className="max-w-5xl mx-auto bg-white rounded-card shadow-soft overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-            <div className="relative bg-cream min-h-[320px] lg:min-h-[420px]">
-              <Image
-                src="/images/osfan-full/02_tower_closeup.jpg"
-                alt="iGarden Tower Mini"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute top-4 right-4 bg-lime text-deep-green px-3 py-1.5 rounded-full text-base font-medium">
-                صناعة سعودية
-              </div>
-            </div>
-
-            <div className="p-8 lg:p-10 flex flex-col justify-center">
-              <h3 className="text-2xl lg:text-3xl font-bold text-deep-green mb-3">
-                <span dir="ltr" className="ltr-inline font-latin">iGarden Tower Mini</span>
-              </h3>
-              <p className="text-lg text-medium-gray mb-2">برج المنزل الذكي</p>
-              <p className="text-lg text-dark-text leading-relaxed mb-6">
-                برج زراعة هوائية مصغر للمنازل والشقق — ازرع 30+ نبتة في متر واحد.
-              </p>
-
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-lime/10 flex items-center justify-center">
-                    <Droplets className="w-5 h-5 text-deep-green" />
-                  </div>
-                  <span className="text-lg text-dark-text">كفاءة مائية عالية</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-lime/10 flex items-center justify-center">
-                    <Sprout className="w-5 h-5 text-deep-green" />
-                  </div>
-                  <span className="text-lg text-dark-text">زراعة بدون تربة</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-lime/10 flex items-center justify-center">
-                    <Smartphone className="w-5 h-5 text-deep-green" />
-                  </div>
-                  <span className="text-lg text-dark-text">تطبيق جوال للتحكم</span>
-                </li>
-              </ul>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a href="https://shop.igarden.sa" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-lime hover:bg-bright-lime text-deep-green rounded-lg text-lg font-medium">
-                  تسوق من المتجر
-                  <ArrowLeft className="w-5 h-5" />
-                </a>
-                <Link href="/products/hydroponics" className="inline-flex items-center justify-center px-6 py-3.5 bg-transparent text-deep-green border border-deep-green/30 rounded-lg text-lg font-medium">
-                  تفاصيل أكثر
-                </Link>
-              </div>
-            </div>
+          {/* النص الرئيسي */}
+          <div className="flex-1">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              نُقدّم أيضاً حلولاً للمنزل
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-base md:text-lg">
+              عبر{" "}
+              <span className="font-semibold text-emerald-700">
+                iGarden Home Solutions
+              </span>
+              ، نوفّر حلولاً مدروسة للزراعة المنزلية الذكية — بنفس المعايير
+              الصناعية، بمقاس يناسب البيوت والمكاتب.
+            </p>
           </div>
+
+          {/* زر CTA */}
+          <div className="flex-shrink-0">
+            <Link
+              href="https://shop.igarden.sa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+            >
+              <span>زيارة المتجر</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-4 h-4 rotate-180"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </Link>
+          </div>
+
         </div>
       </div>
     </section>

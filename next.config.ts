@@ -108,6 +108,10 @@ const nextConfig: NextConfig = {
         destination: "https://shop.igarden.sa",
         permanent: true,
       },
+
+      // ─── /blog → /learn ──────────────────────────────────────────
+      { source: "/blog", destination: "/learn", permanent: true },
+      { source: "/blog/:slug*", destination: "/learn", permanent: true },
     ];
   },
 
