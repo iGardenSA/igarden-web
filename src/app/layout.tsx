@@ -1,11 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import { Tajawal, Poppins } from "next/font/google";
-import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import { Footer } from "@/components/layout/footer";
 import WhatsAppFab from "@/components/layout/WhatsAppFab";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
-import { COMPANY, CONTACT } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants";
 import "@/styles/globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";

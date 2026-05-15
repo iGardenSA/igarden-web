@@ -10,7 +10,7 @@ import { FadeIn } from "@/components/ui/fade-in";
 import { GlowAccent } from "@/components/ui/glow-accent";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
-import { CONTACT, COMPANY } from "@/lib/constants";
+import { CONTACT } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
