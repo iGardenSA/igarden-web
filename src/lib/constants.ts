@@ -69,13 +69,13 @@ export const PRODUCTS = {
     nameEn: "Smart Greenhouses",
     nameAr: "البيوت المحمية الذكية",
     category: "HARDWARE",
-    description: "بيوت محمية مؤتمتة مع تحكم مناخي دقيق وكفاءة طاقة 40%.",
+    description: "بيوت محمية مؤتمتة مع تحكم مناخي دقيق وكفاءة طاقة محسّنة.",
   },
   aquaponics: {
     nameEn: "Aquaponics Systems",
     nameAr: "أنظمة الاستزراع السمكي المتكاملة",
     category: "HARDWARE",
-    description: "تكامل بين الزراعة والاستزراع السمكي مع 90% إعادة تدوير للمياه.",
+    description: "تكامل بين الزراعة والاستزراع السمكي مع إعادة تدوير متقدّمة للمياه.",
   },
   aeroponics: {
     nameEn: "Aeroponics",
