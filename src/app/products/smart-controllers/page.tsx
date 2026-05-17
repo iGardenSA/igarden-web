@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://igarden.sa/products/smart-controllers" },
   openGraph: {
     title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
-    description: "تصميم وبرمجة وتصنيع 100% سعودي. قابلة للربط مع أيّ نظام قائم.",
+    description: "مُصمَّم ومُجمَّع في السعودية · SAIP #423450193. قابلة للربط مع أيّ نظام قائم.",
     images: [
       {
         url: "/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
-    description: "تصميم وبرمجة وتصنيع 100% سعودي. قابلة للربط مع أيّ نظام قائم.",
+    description: "مُصمَّم ومُجمَّع في السعودية · SAIP #423450193. قابلة للربط مع أيّ نظام قائم.",
     images: ["/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84"],
   },
 };
@@ -73,8 +73,7 @@ function Hero() {
               لحظياً — قبل أن يَتحوّل الخلل إلى خسارة.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
-              تصميم وبرمجة وتصنيع 100% سعودي. قطع غيار محلية. فريق دعم في نفس
-              مدينتك.
+              تصميم وتطوير وتجميع في السعودية · مكوّنات عالمية · نموذج صناعي مسجّل لدى الهيئة السعودية للملكية الفكرية. قطع غيار محلية. فريق دعم في نفس مدينتك.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=controllers" variant="lime">
