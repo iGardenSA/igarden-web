@@ -32,17 +32,19 @@ export function VisitForm() {
       const { error } = await supabase.from("leads").insert({
         full_name: data.full_name,
         phone: data.phone,
+        lead_type: "individual",
+        interested_in: ["osfan_visit"],
         message: `طلب زيارة عسفان — النوع: ${data.visit_type}، التاريخ المقترح: ${data.preferred_date}`,
         channel: "website",
         status: "new",
         source_url: typeof window !== "undefined" ? window.location.href : null,
-        interest: "osfan_visit",
       });
 
       if (error) throw error;
       setStatus("success");
       form.reset();
-    } catch {
+    } catch (err) {
+      console.error("[VisitForm] Submission error:", err);
       setStatus("error");
     }
   }
