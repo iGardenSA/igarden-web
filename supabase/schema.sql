@@ -1,3 +1,4 @@
 -- iGarden CRM Schema v1.0
 -- راجع لوحة Supabase → SQL Editor للنسخة الكاملة
 -- أو ادخل: Database → Migrations لرؤية كل التغييرات
+-- Migrations directory created 2026-05-21: see supabase/migrations/
