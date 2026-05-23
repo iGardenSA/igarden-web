@@ -50,7 +50,7 @@ const CONTROLLERS = [
     platform: "Raspberry Pi 5 + ESP32",
     protocol: "MQTT 5.0 over TLS",
     relays: "8 channels (مضخات + دوزرات)",
-    tests: "208 unit tests passing",
+    tests: "comprehensive unit test coverage",
   },
 ];
 
@@ -153,7 +153,7 @@ export default function IoTPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <div className="bg-deep-green/5 rounded-xl p-5 text-center">
-                  <p className="text-4xl font-bold text-lime mb-2 font-latin">208</p>
+                  <p className="text-2xl font-bold text-lime mb-2">تغطية موسّعة</p>
                   <p className="text-sm text-medium-gray">{c.tests}</p>
                 </div>
               </div>

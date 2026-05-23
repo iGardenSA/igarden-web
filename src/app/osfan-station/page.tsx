@@ -61,7 +61,7 @@ function Hero() {
           <span className="text-[#A5D63F]/40">·</span>
           <span>5 ورش مُنفَّذة</span>
           <span className="text-[#A5D63F]/40">·</span>
-          <span className="font-latin">208 unit tests</span>
+          <span className="font-latin">Comprehensive QA</span>
         </div>
       </div>
     </section>

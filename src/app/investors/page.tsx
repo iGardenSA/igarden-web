@@ -210,7 +210,7 @@ export default function InvestorsPage() {
                 icon={<Building className="h-6 w-6" />}
                 number="06"
                 title="أصول تشغيلية"
-                description="محطة عسفان الميدانية، 5+ ورش عمل، نماذج Hydroponics مُختبَرة، و208 unit test ناجح."
+                description="محطة عسفان الميدانية، 5+ ورش عمل، نماذج Hydroponics مُختبَرة، وتغطية اختبارات وحدوية موسّعة."
               />
             </FadeIn>
           </div>
@@ -274,7 +274,7 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: محطّة عسفان قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، و208 اختبار وحدوي ناجح. ليس مجرد فكرة.",
+                    text: "التشغيل الميداني بدأ: محطّة عسفان قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، وتغطية اختبارات وحدوية موسّعة. ليس مجرد فكرة.",
                   },
                   {
                     num: "03",
@@ -308,7 +308,7 @@ export default function InvestorsPage() {
               <h2 className="heading-section mb-6">ماذا بُني فعلاً؟</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  "منظومة Smart Controllers (ESP32 + Raspberry Pi) — 208 unit test ناجح",
+                  "منظومة Smart Controllers (ESP32 + Raspberry Pi) — تغطية اختبارات وحدوية موسّعة",
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
                   "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
                   "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
