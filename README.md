@@ -4,7 +4,7 @@
 >
 > الموقع المؤسسي لـ **iGarden — الحديقة الذكية**
 >
-> ازرع بذكاء · Plant Smart
+> ازرع بذكاء
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.4-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.5-61DAFB)](https://react.dev/)
@@ -287,5 +287,5 @@ RESEND_API_KEY                     # عند تفعيل Resend
 
 ---
 
-*ازرع بذكاء · Plant Smart* 🌱
+*ازرع بذكاء* 🌱
 

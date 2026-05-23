@@ -96,7 +96,7 @@ function Hero() {
           >
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
-              208 unit tests · ESP32 + Pi 5
+              Comprehensive QA · ESP32 + Pi 5
             </span>
           </div>
         </div>
@@ -704,7 +704,7 @@ function DevTimeline() {
   const PHASES = [
     { year: "2024", title: "البحث الأوّلي", desc: "دراسة السوق المحلي وتحديد الفجوة — حلول موجودة لا تتحمّل المناخ السعودي." },
     { year: "2024–25", title: "أول Prototype", desc: "بناء نموذج أوّلي بـ ESP32 وRaspberry Pi في بيئة مختبرية. اختبار حساسات pH وEC والحرارة." },
-    { year: "2025", title: "الاختبار في عسفان", desc: "208 اختبار وحدوي ناجح. اختبار ميداني مستمرّ." },
+    { year: "2025", title: "الاختبار في عسفان", desc: "تغطية اختبارات وحدوية موسّعة. اختبار ميداني مستمرّ." },
     { year: "2026", title: "الإصدار التجاري — Early Access", desc: "نَفتح قائمة Early Access لعدد محدود من المشاريع التجريبية. سجّل اهتمامك للحصول على أولوية التركيب." },
   ];
 

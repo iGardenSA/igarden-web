@@ -46,7 +46,7 @@ export function Footer() {
               height={40}
             />
             <p className="text-lime font-medium text-base mt-1">
-              ازرع بذكاء · Plant Smart
+              ازرع بذكاء
             </p>
             <p className="text-cream/60 text-sm">
               نَبني · نُوطّن · نُطوّر

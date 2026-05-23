@@ -95,7 +95,8 @@
 ## هرم الشعارات (الفصل 9 — حرج)
 
 ```
-Primary:     ازرع بذكاء · Plant Smart           ← كل السياقات
+Primary (AR): ازرع بذكاء                       ← العربية · كل السياقات
+Primary (EN): Plant Smart                      ← الإنجليزية · سياق منفصل، لا يُجمَع مع AR في سلوغن واحد
 Secondary:   نَبني · نُوطّن · نُطوّر            ← Tier 0+ (Secondary فقط)
 App-only:    ازرع بذكاء · من جيبك              ← Tier 3 (app فقط)
 Store-only:  حلول جاهزة · للمنزل              ← Tier 3 (shop فقط)
