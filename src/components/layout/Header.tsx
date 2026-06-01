@@ -81,8 +81,8 @@ export default function Header() {
               <Image
                 src="/logo/lockup-horizontal-en-white.png"
                 alt="iGarden"
-                width={130}
-                height={38}
+                width={160}
+                height={47}
                 priority
               />
             ) : (
@@ -90,12 +90,12 @@ export default function Header() {
                 <Image
                   src="/logo/icon-master-original.png"
                   alt=""
-                  width={36}
-                  height={36}
+                  width={44}
+                  height={44}
                   priority
                   aria-hidden
                 />
-                <span className="font-latin font-bold text-[#0F3D2E] text-lg leading-none tracking-tight">
+                <span className="font-latin font-bold text-[#0F3D2E] text-xl leading-none tracking-tight">
                   iGarden
                 </span>
               </>
