@@ -23,7 +23,6 @@ import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
 import { ThreePillarsSection } from "@/components/sections/ThreePillarsSection";
 import { ComplianceSection } from "@/components/sections/ComplianceSection";
 import { OperationalIdentity } from "@/components/sections/OperationalIdentity";
-import { StatsStrip } from "@/components/sections/StatsStrip";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { HomeSolutions } from "@/components/sections/HomeSolutions";
@@ -59,8 +58,7 @@ export default function HomePage() {
       {/* 8. من التحكم إلى الامتثال */}
       <ComplianceSection />
 
-      {/* 8. أرقام + كيف نعمل */}
-      <StatsStrip />
+      {/* 8. كيف نعمل */}
       <HowWeWork />
 
       {/* 9. دعوة للتواصل */}
