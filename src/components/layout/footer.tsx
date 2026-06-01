@@ -46,16 +46,8 @@ export function Footer() {
               height={40}
             />
             <p className="text-lime font-medium text-base mt-1">
-              ازرع بذكاء
+              ازرع بذكاء.
             </p>
-            <p className="text-cream/60 text-sm">
-              منهجنا: نَبني · نُوطّن · نُطوّر
-            </p>
-            <span className="inline-block bg-lime/10 px-3 py-1 rounded-full mt-1 w-fit">
-              <span className="text-xs text-lime font-medium">
-                مرخّصة من وزارة الاستثمار (رخصة ريادي)
-              </span>
-            </span>
           </div>
 
           {/* Contact quick links */}
