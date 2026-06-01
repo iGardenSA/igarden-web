@@ -1,4 +1,4 @@
-import { Sprout, Fish } from "lucide-react";
+import { Sprout, Fish, Sun } from "lucide-react";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 const PRODUCTS = [
@@ -16,6 +16,13 @@ const PRODUCTS = [
     cta: "اطلب استشارة",
     href: "/contact?interest=aquaponics",
   },
+  {
+    Icon: Sun,
+    title: "حلول الطاقة الشمسية الذكية",
+    desc: "أنظمة طاقة شمسية مساندة للمضخات، الحساسات، ووحدات التحكم — تُصمَّم لتقليل الاعتماد على الشبكة وربط التشغيل الزراعي بمصدر طاقة أكثر استدامة.",
+    cta: "اطلب استشارة",
+    href: "/contact",
+  },
 ];
 
 export function ComplementaryProducts() {
@@ -31,7 +38,7 @@ export function ComplementaryProducts() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {PRODUCTS.map(({ Icon, title, desc, cta, href }) => (
             <div
               key={title}
