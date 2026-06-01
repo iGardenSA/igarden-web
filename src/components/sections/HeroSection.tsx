@@ -37,18 +37,14 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl mb-2">
-          شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة
+          شركة سعودية ريادية متخصّصة في حلول الزراعة المحكمة الذكية.
         </p>
 
         <p className="text-white/65 text-base leading-relaxed max-w-xl mt-3 mb-2">
-          أنظمة استشعار وتحكم مُكيَّفة للمناخ السعودي — مُختبَرة ميدانياً في مرفق عسفان قبل أن تصل إليك.
+          نبني منظومة متكاملة للمنشآت تجمع المحميات والزراعة المائية والتحكم الذكي والبيانات — من التصميم والتركيب إلى التشغيل والتحسين.
         </p>
 
-        <p className="text-sm text-[#A5D63F]/70 font-medium tracking-wider uppercase mt-2 mb-8">
-          نَبني · نُوطّن · نُطوّر
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 items-start">
+        <div className="flex flex-col sm:flex-row gap-4 items-start mt-8">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-lg md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none min-w-[220px]"
