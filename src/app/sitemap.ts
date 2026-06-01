@@ -20,7 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/learn/operational-logs-farm-decisions`,   lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/learn/daily-measurements-smart-farm`,     lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/how-we-work`,                    lastModified, changeFrequency: "monthly", priority: 0.6  },
-    { url: `${base}/investors`,                      lastModified, changeFrequency: "monthly", priority: 0.7  },
     { url: `${base}/privacy`,                        lastModified, changeFrequency: "yearly",  priority: 0.3  },
     { url: `${base}/terms`,                          lastModified, changeFrequency: "yearly",  priority: 0.3  },
   ];

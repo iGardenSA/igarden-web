@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description:
     "iGarden (انتيليجنت غاردن): شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير، ومحطة اختبار ميدانية في عسفان.",
   alternates: { canonical: "https://igarden.sa/investors" },
+  robots: { index: false, follow: false },
   openGraph: {
     title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
     description: "شركة سعودية مرخّصة MISA بنموذج صناعي مسجّل وأصول ميدانية مُختبَرة في عسفان.",

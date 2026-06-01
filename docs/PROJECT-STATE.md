@@ -1,6 +1,6 @@
 # Project State — igarden.sa
 
-> **Last Updated:** 2026-05-17
+> **Last Updated:** 2026-06-01
 > **Branch of Truth:** `main`
 > **Deployment:** Vercel (Pro plan) — auto-deploy on `main`
 
@@ -8,9 +8,17 @@
 
 ## 🎯 الحالة الجوهرية
 
-main متوافق 100% مع Lexicon v3.2 بعد دمج PR #30 و #31. الموقع منشور، الـ legal pages مكتملة، Knowledge Hub منشور، صفحة عسفان موجودة.
+main متوافق مع Lexicon بعد دمج PRs #30 → #35 (آخرها #35 «webmanifest dual-slogan» 28 مايو · #34 «إزالة 208 العامة + فصل AR/EN slogan» 23 مايو · #33 «visit-form leads schema» 19 مايو · #32 «CLAUDE.md v3 + docs split» 17 مايو). الموقع منشور، الـ legal pages مكتملة، Knowledge Hub منشور، صفحة عسفان موجودة.
 
 **ما لا يوجد بعد:** صفحة `/asfan` كـ Case Study كامل (الحالية `/osfan-station` placeholder/coming-soon).
+
+**◐ صفحات منشورة غير مذكورة سابقاً في هذا الملف (وصفي — يحتاج تأكيد علي للتصنيف):**
+- `/investors` — صفحة المستثمرين (محتوى تعريفي + توزيع تمويل + disclaimers · كانت في sitemap)
+- `/roadmap` — خارطة الطريق
+- `/fact-sheet` — بيانات الشركة الرسمية
+- `/products/smart-os` — صفحة منصة Smart OS
+- `/products/iot` — صفحة طبقة IoT/الحساسات
+- `/app` — يُعيد التوجيه إلى `app.igarden.sa`
 
 ---
 

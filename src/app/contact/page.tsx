@@ -129,7 +129,7 @@ export default function ContactPage() {
                 للأفراد والمنازل
               </p>
               <p className="text-base font-semibold text-[var(--color-brand-600)]">
-                تبحث عن حلول منزلية؟ تطبيق الحديقة الذكية أو متجر iGarden هما وجهتك.
+                تبحث عن حلول منزلية؟ تطبيق الحديقة الذكية أو iGarden Home Solutions هما وجهتك.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">

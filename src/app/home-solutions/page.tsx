@@ -6,7 +6,7 @@ import { CTAButton } from "@/components/shared/CTAButton";
 export const metadata: Metadata = {
   title: "للأفراد — الحديقة الذكية في منزلك",
   description:
-    "iGarden تقدّم للأفراد المهتمّين بالزراعة المنزلية منصّتين: تطبيق الحديقة الذكية للإرشاد والتعلّم، ومتجر iGarden لشراء الأنظمة والمستلزمات.",
+    "iGarden تقدّم للأفراد المهتمّين بالزراعة المنزلية منصّتين: تطبيق الحديقة الذكية للإرشاد والتعلّم، و iGarden Home Solutions لشراء الأنظمة والمستلزمات الجاهزة للمنزل.",
   alternates: { canonical: "https://igarden.sa/home-solutions" },
 };
 
@@ -23,10 +23,10 @@ const OPTIONS = [
   {
     Icon: ShoppingBag,
     badge: "متاح الآن",
-    title: "متجر iGarden",
-    subtitle: "أنظمة وأدوات جاهزة للتركيب",
+    title: "iGarden Home Solutions",
+    subtitle: "حلول جاهزة للمنزل",
     desc: "حلول زراعة مائية مُوطَّنة للمنازل والشقق — أبراج aeroponics، مستلزمات NFT، ومكمّلات غذائية مُختارة. نفس الجودة التجارية بمقاسات منزلية.",
-    cta: { label: "تصفّح المتجر", href: "https://shop.igarden.sa", variant: "outline-green" as const, external: true },
+    cta: { label: "تصفّح الحلول المنزلية", href: "https://shop.igarden.sa", variant: "outline-green" as const, external: true },
     bg: "bg-white",
   },
 ];

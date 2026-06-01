@@ -9,7 +9,7 @@ import { BreadcrumbSchema, ServiceSchema } from "@/components/shared/SchemaJsonL
 export const metadata: Metadata = {
   title: "الحلول — أيّ ركيزة تُناسبك؟ | iGarden",
   description:
-    "ثلاث ركائز مُختَبَرة في عسفان: Smart Controllers (Flagship) + المحميات الذكية + أنظمة الزراعة المائية. يَشمل iGarden Tower المُسجَّل صناعياً.",
+    "ثلاث ركائز مُختَبَرة في عسفان: Smart Controllers (رأس الحربة التقني) + المحميات الذكية + أنظمة الزراعة المائية. يَشمل iGarden Tower المُسجَّل صناعياً.",
   alternates: { canonical: "https://igarden.sa/products" },
   openGraph: {
     title: "الحلول — أيّ ركيزة تُناسبك؟ | iGarden",
@@ -32,7 +32,7 @@ function Hero() {
     <section className="section-light py-16 md:py-20">
       <div className="container mx-auto px-4 max-w-7xl text-center">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-          نَبني · نُوطّن · نُطوّر
+          منهجنا: نَبني · نُوطّن · نُطوّر
         </p>
         <h1 className="h1 text-deep-green mb-5">أيّ ركيزة تَبدأ بها؟</h1>
         <p className="body-base text-medium-gray max-w-2xl mx-auto">
@@ -68,9 +68,9 @@ const DECISIONS = [
   {
     Icon: Droplets,
     situation: "أريد إنتاجاً عالياً في مساحة محدودة",
-    detail: "محاصيل ورقية، أعشاب، أو نباتات تَتحمّل ٣× في نفس المتر المربّع.",
+    detail: "محاصيل ورقية، أعشاب، أو نباتات تُحقّق زيادة إنتاجية ملموسة في نفس المتر المربّع.",
     recommendation: "أنظمة الزراعة المائية",
-    why: "نَختار التقنية الأنسب من ٧ تقنيات (NFT/DWC/Tower…) — حتى ٩٥٪ توفير ماء.",
+    why: "نَختار التقنية الأنسب من ٧ تقنيات (NFT/DWC/Tower…) — تقليص جوهري في استهلاك المياه يُقاس فردياً.",
     href: "/products/hydroponics",
     bg: "bg-corp-green",
   },
@@ -166,8 +166,8 @@ const COMPARISON_ROWS = [
   {
     label: "الميزة الأبرز",
     controllers: "تَذكية بدون استبدال",
-    greenhouses: "كفاءة طاقة حتى ٤٠٪",
-    hydroponics: "حتى ٩٥٪ توفير مياه",
+    greenhouses: "تحسين كفاءة الطاقة (يُقاس فردياً)",
+    hydroponics: "تقليص جوهري في استهلاك المياه (يُقاس فردياً)",
   },
   {
     label: "Smart OS مُدمَج",
@@ -197,7 +197,7 @@ function ComparisonTable() {
                 <th className="text-right p-5 font-bold text-base">
                   Smart Controllers
                   <span className="block text-xs font-normal text-bright-lime/80 mt-0.5">
-                    Flagship
+                    رأس الحربة التقني
                   </span>
                 </th>
                 <th className="text-right p-5 font-bold text-base">
@@ -235,7 +235,7 @@ function ComparisonTable() {
         {/* Mobile Stacked */}
         <div className="md:hidden space-y-6">
           {[
-            { name: "Smart Controllers", badge: "Flagship", key: "controllers" },
+            { name: "Smart Controllers", badge: "رأس الحربة التقني", key: "controllers" },
             { name: "المحميات الذكية", badge: null, key: "greenhouses" },
             { name: "أنظمة الزراعة المائية", badge: null, key: "hydroponics" },
           ].map((p) => (
@@ -311,7 +311,7 @@ export default function ProductsPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <ServiceSchema
         name="أنظمة الزراعة الذكية — iGarden"
-        description="ثلاث ركائز: Smart Controllers (Flagship) + المحميات الذكية + أنظمة الزراعة المائية. مُختبَرة في عسفان للمناخ السعودي."
+        description="ثلاث ركائز: Smart Controllers (رأس الحربة التقني) + المحميات الذكية + أنظمة الزراعة المائية. مُختبَرة في عسفان للمناخ السعودي."
         url="/products"
         serviceType="Smart Agriculture Systems"
       />

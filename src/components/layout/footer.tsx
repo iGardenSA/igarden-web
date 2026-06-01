@@ -49,11 +49,11 @@ export function Footer() {
               ازرع بذكاء
             </p>
             <p className="text-cream/60 text-sm">
-              نَبني · نُوطّن · نُطوّر
+              منهجنا: نَبني · نُوطّن · نُطوّر
             </p>
             <span className="inline-block bg-lime/10 px-3 py-1 rounded-full mt-1 w-fit">
               <span className="text-xs text-lime font-medium">
-                شركة ريادية مُرخّصة · وزارة الاستثمار
+                مرخّصة من وزارة الاستثمار (رخصة ريادي)
               </span>
             </span>
           </div>

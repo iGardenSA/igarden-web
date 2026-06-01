@@ -19,12 +19,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Greenhouses — محميات ذكية تصمد في +45°C | iGarden",
+  title: "Smart Greenhouses — محميات ذكية اختُبرت في +45°C بعسفان | iGarden",
   description:
     "محميات ذكية بأتمتة IoT كاملة. هياكل مقاومة للرياح، عزل حراري، تحكم مناخي مُختَبَر في عسفان. حلول للمزارع التجارية والحكومية.",
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
   openGraph: {
-    title: "Smart Greenhouses — محميات ذكية تصمد في +45°C",
+    title: "Smart Greenhouses — محميات ذكية اختُبرت في +45°C بعسفان",
     description: "هيكل + أتمتة + تحكم مناخي. كفاءة طاقة محسّنة في الاختبارات الميدانية. مُختَبَرة في عسفان.",
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Greenhouses — محميات ذكية تصمد في +45°C",
+    title: "Smart Greenhouses — محميات ذكية اختُبرت في +45°C بعسفان",
     description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة محسّنة في الاختبارات الميدانية.",
     images: ["/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
@@ -145,7 +145,7 @@ const SCENARIOS = [
     Icon: Zap,
     pain: "فاتورة كهرباء قاتلة في الصيف",
     detail: "تَكييف يَعمل ٢٤/٧ من مايو إلى سبتمبر. الفاتورة الشهرية ٤-٦× الشتاء. الربح يَختفي.",
-    solution: "كفاءة طاقة حتى ٤٠٪",
+    solution: "تحسين كفاءة الطاقة (يُقاس فردياً)",
     benefit: "تَهوية ذكية + ظلّ آلي + Foggers تَعمل بتَنسيق — تَشغيل أقلّ، نفس درجة الحرارة الداخلية.",
   },
   {
@@ -494,8 +494,8 @@ const SCALES = [
   {
     tier: "منزلي",
     title: "محميات منزلية صغيرة",
-    desc: "للفلل والاستراحات. حلول شبه جاهزة بأسعار مناسبة — متاحة عبر متجرنا الإلكتروني.",
-    cta: { label: "استكشف المتجر ↗", href: "https://shop.igarden.sa" },
+    desc: "للفلل والاستراحات. حلول شبه جاهزة — متاحة عبر iGarden Home Solutions.",
+    cta: { label: "استكشف الحلول المنزلية ↗", href: "https://shop.igarden.sa" },
     external: true,
     highlight: false,
   },
