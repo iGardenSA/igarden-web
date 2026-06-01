@@ -56,7 +56,7 @@ export default function PrivacyPage() {
           </li>
         </ul>
         <p>
-          <strong>لا تنطبق</strong> هذه السياسة على متجرنا الإلكتروني{" "}
+          <strong>لا تنطبق</strong> هذه السياسة على iGarden Home Solutions{" "}
           <code>shop.igarden.sa</code> (سياسة منفصلة)، ولا على روابط
           خارجية لا نملكها.
         </p>

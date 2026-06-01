@@ -44,8 +44,8 @@ export const FOUNDERS: FounderCardProps[] = [
   {
     name: "محمد يعن الله الكثيري",
     nameEn: "Mohammed Al-Kuthairi",
-    role: "رئيس العمليات والشريك المؤسس",
-    roleEn: "COO & Co-Founder",
+    role: "شريك مؤسس · عضو مجلس الإدارة",
+    roleEn: "Co-Founder · Board Member",
     photoUrl: "/team/team-mohammed.jpg",
     expertise: "العلاقات الحكومية · الامتثال · تطوير الأعمال",
     bullets: [

@@ -185,8 +185,28 @@ export default function SmartOSPage() {
         </div>
       </section>
 
-      {/* ─── Where we test ─────────────────────────────────── */}
+      {/* ─── رشيد ───────────────────────────────────────────── */}
       <section className="bg-white py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="w-12 h-12 rounded-full bg-lime/10 flex items-center justify-center">
+              <Brain className="w-6 h-6 text-deep-green" aria-hidden />
+            </span>
+            <p className="text-lime text-sm font-bold uppercase tracking-widest">
+              طبقة الذكاء
+            </p>
+          </div>
+          <h2 className="h2 text-deep-green mb-6">رشيد</h2>
+          <p className="body-base text-medium-gray leading-relaxed max-w-3xl">
+            رشيد — طبقة الذكاء داخل Smart OS. يساعد على فهم الأسئلة واسترجاع
+            المعرفة وتنظيم المهام والسياقات عبر قنوات متعددة. (Telegram قناة
+            أولى.)
+          </p>
+        </div>
+      </section>
+
+      {/* ─── Where we test ─────────────────────────────────── */}
+      <section className="section-light py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
             الاختبار الميداني
@@ -208,7 +228,7 @@ export default function SmartOSPage() {
       </section>
 
       {/* ─── Integration Workflow ──────────────────────────── */}
-      <section className="section-light py-20">
+      <section className="bg-white py-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="h2 text-deep-green">كيف تتكامل المنصة مع عملياتك؟</h2>
@@ -228,7 +248,7 @@ export default function SmartOSPage() {
       </section>
 
       {/* ─── Checklist ─────────────────────────────────────── */}
-      <section className="bg-white py-16">
+      <section className="section-light py-16">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="h3 text-deep-green mb-8 text-center">
             ما تحصل عليه مع المنصة

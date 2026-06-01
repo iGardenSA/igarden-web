@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const PILLARS = [
   {
-    badge: "Flagship · صناعة سعودية",
+    badge: "رأس الحربة التقني · صناعة سعودية",
     title: "Smart Controllers",
     desc: "لوحات تحكم زراعية بصناعتنا. تُربط بأيّ نظام قائم وتُراقب pH وEC والحرارة لحظياً.",
     href: "/products/smart-controllers",
@@ -12,7 +12,7 @@ const PILLARS = [
   {
     badge: null,
     title: "Smart Greenhouses",
-    desc: "محميات ذكية تصمد في +45°C وتُؤتمت بالكامل. كفاءة طاقة محسّنة وتحكّم مناخي دقيق.",
+    desc: "محميات ذكية مُختبَرة ميدانياً في حرارة عسفان المرتفعة وتُؤتمت بالكامل. كفاءة طاقة محسّنة وتحكّم مناخي دقيق.",
     href: "/products/smart-greenhouses",
     img: { src: "/images/osfan-full/04_greenhouse_wide.webp", alt: "منظر داخلي لمحمية ذكية في محطة iGarden عسفان" },
   },

@@ -154,7 +154,7 @@ const VALUES = [
   },
   {
     Icon: TrendingUp,
-    title: "3× إنتاجية",
+    title: "زيادة إنتاجية ملموسة",
     text: "زراعة عمودية + دورة نمو أقصر = إنتاج أعلى لكل متر مربع في نفس المساحة.",
   },
   {
@@ -302,7 +302,7 @@ const CROP_GUIDE = [
     crops: "زراعة عمودية / ضيقة المساحة",
     examples: "خس عمودي · أعشاب · فراولة معلّقة",
     techniques: ["iGarden Tower", "Aeroponics"],
-    why: "تَضاعف الإنتاج لكلّ متر مربّع، وتُوفّر ٩٥٪ مياه. مناسبة للمساحات المغطّاة الصغيرة.",
+    why: "إنتاج أعلى لكلّ متر مربّع، وتقليص جوهري في استهلاك المياه يُقاس فردياً. مناسبة للمساحات المغطّاة الصغيرة.",
     color: "from-lime/15 to-lime/5",
     flagship: true,
   },
@@ -310,7 +310,7 @@ const CROP_GUIDE = [
     crops: "أعلاف خضراء طازجة",
     examples: "شعير مُستنبَت · أعلاف للماشية والدواجن",
     techniques: ["Hydroponic Fodder"],
-    why: "إنتاج يومي مُتجدّد بـ ٩٨٪ توفير مياه مقارنةً بالأعلاف التقليدية.",
+    why: "إنتاج يومي مُتجدّد بتقليص جوهري في استهلاك المياه مقارنةً بالأعلاف التقليدية.",
     color: "from-amber-100/40 to-amber-50/30",
   },
 ];
@@ -571,8 +571,8 @@ const SCALES = [
   {
     tier: "منزلي",
     title: "أنظمة منزلية + iGarden Tower مصغّر",
-    desc: "للفلل والشرفات والاستراحات. يشمل iGarden Tower المصغّر — حلول جاهزة عبر متجرنا.",
-    cta: { label: "استكشف المتجر ↗", href: "https://shop.igarden.sa" },
+    desc: "للفلل والشرفات والاستراحات. يشمل iGarden Tower المصغّر — حلول جاهزة عبر iGarden Home Solutions.",
+    cta: { label: "استكشف الحلول المنزلية ↗", href: "https://shop.igarden.sa" },
     external: true,
     highlight: false,
   },

@@ -57,7 +57,7 @@ function Hero() {
           <div>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="bg-lime text-white text-lg font-bold px-3 py-1 rounded-pill">
-                Flagship · صناعة سعودية
+                رأس الحربة التقني · صناعة سعودية
               </span>
             </div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
@@ -77,7 +77,7 @@ function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <CTAButton href="/contact?interest=controllers" variant="lime">
-                سجّل اهتمامك — Early Access
+                اطلب عرضاً
               </CTAButton>
               <CTAButton
                 href="https://demo.igarden.sa"
@@ -95,8 +95,8 @@ function Hero() {
             aria-label="لوحة Smart Controller من محطة عسفان"
           >
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
-            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
-              Comprehensive QA · ESP32 + Pi 5
+            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium">
+              اختبار شامل · مُجمَّع في السعودية
             </span>
           </div>
         </div>
@@ -112,23 +112,19 @@ function StatusCard() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mx-auto bg-cream rounded-card p-6 border-s-4 border-lime shadow-soft">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            الشفافية أوّلاً
+            جاهز للتشغيل
           </p>
-          <h2 className="h4 text-deep-green mb-3">منتج قيد التطوير الميداني</h2>
+          <h2 className="h4 text-deep-green mb-3">نظام تحكّم ذكي متكامل، مُختبَر ميدانياً</h2>
           <p className="body-base text-medium-gray mb-4">
-            عدّة نماذج أوّلية قيد الاختبار في محطّة عسفان — إطلاق تجاري 2026.
-            نقبل اهتمام عملاء{" "}
-            <span dir="ltr" className="ltr-inline font-latin font-medium">
-              Early Access
-            </span>{" "}
-            للمشاركة في مرحلة الاختبار الميداني والحصول على أولوية في الإصدار
-            التجاري.
+            نظام تحكّم زراعي متكامل، مُختبَر ميدانياً في محطّة عسفان وجاهز للتركيب
+            لدى المنشآت التجارية والحكومية. نبدأ معك بتقييم ميداني لمزرعتك،
+            ثم نُصمّم الحلّ الأنسب لمحصولك وبيئتك.
           </p>
           <Link
-            href="/contact?interest=controllers&type=early-access"
+            href="/contact?interest=controllers"
             className="text-lime font-medium hover:text-deep-green transition-colors text-lg"
           >
-            انضمّ لـ Early Access ←
+            اطلب عرضاً ←
           </Link>
         </div>
       </div>
@@ -317,19 +313,19 @@ function ValuesSection() {
 
 /* ─── Section 4: Tech Specs ───────────────────────────────── */
 const SENSORS = [
-  "pH meter — دقّة ±0.01",
-  "EC / TDS meter — للمحاليل المغذّية",
-  "DHT22 — حرارة + رطوبة",
-  "DS18B20 — حرارة الماء",
-  "Float switch — مستوى الخزّانات",
-  "Light sensor — قياس الإضاءة",
+  "حموضة الماء (pH)",
+  "التوصيلية الكهربائية (EC/TDS) للمحاليل المغذّية",
+  "الحرارة والرطوبة",
+  "حرارة الماء",
+  "مستوى الخزّانات",
+  "قياس الإضاءة",
 ];
 
 const SOFTWARE = [
-  "Smart OS — Python + n8n",
-  "MQTT Broker محلي + اتصال سحابي",
-  "Dashboard ويب محلي",
-  "تنبيهات WhatsApp + Email لحظية",
+  "منصّة Smart OS للمراقبة والتحكّم",
+  "اتصال محلي + سحابي",
+  "لوحة تحكّم ويب",
+  "تنبيهات فورية لحظية",
 ];
 
 function TechSpecs() {
@@ -338,10 +334,10 @@ function TechSpecs() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            المواصفات التقنية
+            نظرة على النظام
           </p>
-          <h2 className="h2 text-deep-green">ما داخل الصندوق</h2>
-          {/* [CONTENT_NEEDED: مراجعة دقة المواصفات التقنية مع م. أيمن قبل النشر] */}
+          <h2 className="h2 text-deep-green">ما الذي يقيسه ويتحكّم به</h2>
+          {/* [CONTENT_NEEDED: تفاصيل المواصفات الدقيقة تُؤجَّل لجولة منتجات مخصّصة لاحقة] */}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -354,7 +350,7 @@ function TechSpecs() {
                   <div className="w-12 h-12 rounded bg-brand-600 flex items-center justify-center">
                     <Cpu className="w-6 h-6 text-white" aria-hidden />
                   </div>
-                  <span className="text-lg text-medium-gray font-latin">Pi 5</span>
+                  <span className="text-lg text-medium-gray">وحدة مركزية</span>
                 </div>
                 <div className="flex flex-col items-center gap-2 self-center">
                   <div className="h-px w-full bg-lime" aria-hidden />
@@ -363,11 +359,11 @@ function TechSpecs() {
                   <div className="w-12 h-12 rounded bg-corp-green flex items-center justify-center">
                     <Radio className="w-6 h-6 text-white" aria-hidden />
                   </div>
-                  <span className="text-lg text-medium-gray font-latin">ESP32</span>
+                  <span className="text-lg text-medium-gray">وحدات طرفية</span>
                 </div>
               </div>
               <p className="text-medium-gray text-lg mt-6">
-                Pi 5 يُدير المنظومة المركزية · ESP32 يَستشعر ويُنفّذ ميدانياً
+                وحدة مركزية تُدير المنظومة · وحدات طرفية تَستشعر وتُنفّذ ميدانياً
               </p>
             </div>
           </div>
@@ -382,8 +378,8 @@ function TechSpecs() {
               </div>
               <ul className="space-y-2 ms-7">
                 {[
-                  "Raspberry Pi 5 — العقل المركزي",
-                  "ESP32 — Edge nodes للحساسات البعيدة",
+                  "وحدة مركزية تُدير المنظومة",
+                  "وحدات طرفية للحساسات البعيدة",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <CheckCircle2 className="w-4 h-4 text-lime flex-shrink-0 mt-0.5" aria-hidden />
@@ -451,7 +447,7 @@ const HOW_STEPS = [
   {
     num: "04",
     title: "التنبيه",
-    desc: "أيّ انحراف خارج النطاق → إشعار WhatsApp + Email خلال ثوانٍ، أينما كنت.",
+    desc: "أيّ انحراف خارج النطاق → إشعار فوري خلال ثوانٍ، أينما كنت.",
   },
 ];
 
@@ -489,7 +485,7 @@ function HowItWorks() {
 /* ─── Section 5.1: Scope (Includes / Excludes) ────────────── */
 const SCOPE_INCLUDES = [
   "تقييم ميداني أوّلي للمزرعة (زيارة أو مكالمة تقنية)",
-  "توريد لوحة Smart Controller (Pi 5 + ESP32 + وحدة حساسات)",
+  "توريد لوحة Smart Controller (وحدة التحكّم + وحدة حساسات)",
   "تركيب وتوصيل الحساسات بالمعدات القائمة",
   "ربط النظام بـ Smart OS وضبط قيم التشغيل المثلى",
   "متابعة تشغيلية مكثّفة لمدّة أسبوع بعد التركيب",
@@ -703,9 +699,9 @@ function DevTimeline() {
      مع تواريخ وصور حقيقية. م. أيمن مصدر المعلومات. */
   const PHASES = [
     { year: "2024", title: "البحث الأوّلي", desc: "دراسة السوق المحلي وتحديد الفجوة — حلول موجودة لا تتحمّل المناخ السعودي." },
-    { year: "2024–25", title: "أول Prototype", desc: "بناء نموذج أوّلي بـ ESP32 وRaspberry Pi في بيئة مختبرية. اختبار حساسات pH وEC والحرارة." },
-    { year: "2025", title: "الاختبار في عسفان", desc: "تغطية اختبارات وحدوية موسّعة. اختبار ميداني مستمرّ." },
-    { year: "2026", title: "الإصدار التجاري — Early Access", desc: "نَفتح قائمة Early Access لعدد محدود من المشاريع التجريبية. سجّل اهتمامك للحصول على أولوية التركيب." },
+    { year: "2024–25", title: "النموذج الأوّلي", desc: "بناء النموذج الأوّلي واختباره في بيئة مختبرية — حساسات الحموضة والتوصيلية والحرارة." },
+    { year: "2025", title: "الاختبار في عسفان", desc: "تغطية اختبارات موسّعة. اختبار ميداني مستمرّ." },
+    { year: "2026", title: "الإصدار التجاري", desc: "نظام جاهز للتشغيل لدى المنشآت التجارية والحكومية. اطلب عرضاً مخصّصاً لمشروعك." },
   ];
 
   return (
@@ -795,16 +791,16 @@ function B2BSection() {
 /* ─── Section 9: FAQ ──────────────────────────────────────── */
 const FAQS = [
   {
-    q: "متى الإصدار التجاري المتوقّع؟",
-    a: "نحن في مرحلة Early Access — قائمة محدودة من المشاريع التجريبية مفتوحة الآن. سجّل اهتمامك للحصول على أولوية التركيب والتسعير.",
+    q: "هل النظام جاهز للتشغيل الآن؟",
+    a: "نعم — نظام مُختبَر ميدانياً في عسفان وجاهز للتركيب لدى المنشآت التجارية والحكومية. نبدأ معك بتقييم ميداني لمشروعك.",
   },
   {
     q: "هل يعمل مع نظامي الزراعي الحالي؟",
     a: "نعم — Smart Controllers مُصمَّمة للتكامل مع أيّ نظام زراعة قائم (هيدروبونيك، تربة، أيروبونيك). نُقيّم نظامك الحالي في الاستشارة المجانية.",
   },
   {
-    q: "ما النطاق السعري المتوقّع؟",
-    a: "التسعير يعتمد على حجم المزرعة وعدد الحساسات والمناطق. تواصل معنا لعرض مخصّص — تقييم أوّلي مجاني.",
+    q: "كيف نبدأ؟",
+    a: "نبدأ بتقييم ميداني لمزرعتك، ثم نُقدّم عرضاً مخصّصاً حسب نطاق مشروعك ومحصولك — تقييم أوّلي مجاني.",
   },
   {
     q: "هل يحتاج تركيباً من فريقكم؟",
@@ -842,18 +838,18 @@ function FinalCTA() {
     <section className="bg-deep-green py-24">
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-4">
-          Early Access
+          ابدأ الآن
         </p>
         <h2 className="h2 text-cream mb-5">
-          هل أنت جاهز لتجربة لوحة تحكم صُنعت لمناخك؟
+          هل أنت جاهز للوحة تحكم صُنعت لمناخك؟
         </h2>
         <p className="body-base text-cream/80 max-w-2xl mx-auto mb-10">
-          سجّل اهتمامك الآن وكُن من أوائل من يحصل على النظام عند إطلاقه
-          التجاري — مع أولوية في التركيب والتسعير.
+          نظام مُختبَر ميدانياً وجاهز للتركيب لدى المنشآت التجارية والحكومية.
+          نبدأ معك بتقييم ميداني لمشروعك ثم عرض مخصّص لمحصولك وبيئتك.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=controllers&type=early-access" variant="lime">
-            سجّل اهتمامك — Early Access
+          <CTAButton href="/contact?interest=controllers" variant="lime">
+            اطلب عرضاً
           </CTAButton>
           <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>
             جرّب الديمو أولاً ↗
