@@ -37,11 +37,11 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl mb-2">
-          شركة سعودية ريادية متخصّصة في حلول الزراعة المحكمة الذكية.
+          شركة سعودية ريادية متخصّصة في حلول الزراعة المستدامة الذكية.
         </p>
 
         <p className="text-white/65 text-base leading-relaxed max-w-xl mt-3 mb-2">
-          نبني منظومة متكاملة للمنشآت تجمع المحميات والزراعة المائية والتحكم الذكي والبيانات — من التصميم والتركيب إلى التشغيل والتحسين.
+          نبني منظومة متكاملة تجمع المحميات، والزراعة المائية، والتحكم الذكي، والبيانات — من التصميم والتركيب إلى التشغيل والتحسين.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 items-start mt-8">
