@@ -27,6 +27,7 @@
 - لماذا هذه القاعدة موجودة؟ → `docs/BRAND-BIBLE.md`
 - ما حالة المشروع الحالية؟ → `docs/PROJECT-STATE.md`
 - ما الدستور التشغيلي؟ → `docs/CONSTITUTION.md`
+- **قبل أي مهمة SEO (audit · meta · schema · keywords · content): اقرأ `IGARDEN-SEO-CONTEXT.md` أولاً — طبقة حوكمة iGarden تَجُبّ نصائح أي skill عامة.**
 
 ---
 
