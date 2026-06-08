@@ -79,7 +79,7 @@ export const metadata: Metadata = {
       "شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة · مُختبَرة في مرفق عسفان.",
     images: [
       {
-        url: "/images/og/home.jpg",
+        url: "/api/og?title=iGarden+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9+%D9%81%D9%8A+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
         width: 1200,
         height: 630,
         alt: `${COMPANY.nameEn} — ازرع بذكاء`,
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: `${COMPANY.nameEn} · الحديقة الذكية`,
     description:
       "شركة سعودية ريادية مُرخّصة · حلول IoT والذكاء الاصطناعي للزراعة المُحكَمة.",
-    images: ["/images/og/home.jpg"],
+    images: ["/api/og?title=iGarden+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%A3%D9%86%D8%B8%D9%85%D8%A9+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9+%D9%81%D9%8A+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
 
   alternates: {

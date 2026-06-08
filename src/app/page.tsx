@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
     description:
       "شركة سعودية تبني أنظمة تحكم وزراعة مائية مكيّفة للمناخ السعودي. ازرع بذكاء.",
-    images: ["/images/og/home.jpg"],
+    images: ["/api/og?title=iGarden+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%AD%D8%B3%D8%A7%D8%B3%D8%A7%D8%AA+%C2%B7+%D8%AA%D8%AD%D9%83%D9%85+%C2%B7+%D8%A8%D8%B1%D9%85%D8%AC%D9%8A%D8%A7%D8%AA+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%84%D9%84%D9%85%D9%86%D8%A7%D8%AE+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A"],
     type: "website",
     locale: "ar_SA",
   },

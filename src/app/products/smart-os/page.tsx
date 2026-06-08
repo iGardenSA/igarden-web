@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Smart OS — الذكاء التشغيلي للزراعة | iGarden",
     description: "منصة IoT + AI لتحليل بيانات المزرعة وتحويلها إلى قرارات تشغيلية — مُختبَرة في عسفان.",
+    images: ["/api/og?title=Smart+OS+%E2%80%94+%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84%D9%8A+%D9%84%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9&sub=%D9%85%D9%86%D8%B5%D8%A9+IoT+%2B+AI+%D9%85%D9%8F%D8%AE%D8%AA%D8%A8%D9%8E%D8%B1%D8%A9+%D9%81%D9%8A+%D8%B9%D8%B3%D9%81%D8%A7%D9%86"],
     type: "website",
     locale: "ar_SA",
   },
