@@ -1,6 +1,6 @@
 # Project State — igarden.sa
 
-> **Last Updated:** 2026-06-01
+> **Last Updated:** 2026-06-13
 > **Branch of Truth:** `main`
 > **Deployment:** Vercel (Pro plan) — auto-deploy on `main`
 
@@ -8,7 +8,12 @@
 
 ## 🎯 الحالة الجوهرية
 
-main متوافق مع Lexicon بعد دمج PRs #30 → #35 (آخرها #35 «webmanifest dual-slogan» 28 مايو · #34 «إزالة 208 العامة + فصل AR/EN slogan» 23 مايو · #33 «visit-form leads schema» 19 مايو · #32 «CLAUDE.md v3 + docs split» 17 مايو). الموقع منشور، الـ legal pages مكتملة، Knowledge Hub منشور، صفحة عسفان موجودة.
+main متوافق مع Lexicon بعد دمج PRs #30 → #40. دفعة 1 يونيو 2026 (#36 «مواءمة الموقع العام مع Brand Stack v4» · #37 «تبسيط tagline الفوتر العام» · #38 «تحسين وضوح الشعار» · #39 «توحيد lockup الشعار (الرئيسية + الصفحات الداخلية)» · #40 «إزالة metrics block من الرئيسية + بطاقة الحلول الشمسية») — جميعها مدموجة. ثم دفعة مايو (#35 «webmanifest dual-slogan» 28 مايو · #34 «إزالة 208 العامة + فصل AR/EN slogan» 23 مايو · #33 «visit-form leads schema» 19 مايو · #32 «CLAUDE.md v3 + docs split» 17 مايو). الموقع منشور، الـ legal pages مكتملة، Knowledge Hub منشور، صفحة عسفان موجودة.
+
+**◐ PRs مفتوحة (غير مدموجة بعد — لا تُحتسب على `main`، حالة 2026-06-13):**
+- **#41** — fix(seo) pass 1: OG images + sitemap coverage + robots OG allow
+- **#42** — fix(lexicon) pass 2: أرقام `/learn` + «ريادية»→«متخصّصة» (مكدّس على #41)
+- **#43** — docs: طبقة حوكمة SEO + مؤشّر CLAUDE.md (الفرع الحالي وقت رصد هذه الحالة)
 
 **ما لا يوجد بعد:** صفحة `/asfan` كـ Case Study كامل (الحالية `/osfan-station` placeholder/coming-soon).
 
@@ -62,6 +67,16 @@ main متوافق مع Lexicon بعد دمج PRs #30 → #35 (آخرها #35 «w
 ### Brand Discipline Fixes ✅
 - **PR #30** (2026-05-17): إصلاح هرميّة الشعار في Footer + Homepage + SchemaJsonLd
 - **PR #31** (2026-05-17): Lexicon sweep — 4 metadata slogans + `100% سعودي` + dead code + `الحفاظ 24/7`
+
+### Brand Stack v4 Alignment ✅
+**PRs:** #36 → #40 | **Date:** 2026-06-01 | **Merge:** merge-commit (لا squash — انظر «ملاحظة استراتيجية الدمج» أدناه)
+- **#36** — مواءمة المحتوى العام مع Brand Stack v4
+- **#37** — تبسيط الـ tagline العام في الفوتر
+- **#38** — تحسين وضوح الشعار في الهيدر
+- **#39** — توحيد lockup الشعار بين الرئيسية والصفحات الداخلية
+- **#40** — إزالة metrics block من الرئيسية + إضافة بطاقة الحلول الشمسية
+
+> ملاحظة محتوى (◐ — تنتظر علي): «Brand Stack v4» مفهوم جديد دخل عبر #36 وليس له بعدُ مدخل تعريفي في هذا الملف ولا في `docs/`. هل يحتاج توثيقاً مستقلاً؟
 
 ---
 
@@ -167,26 +182,45 @@ git branch --merged main | grep -v "^\*\|main" | xargs git branch -d
 
 > هذا القسم Tier 3 — لا يُكشف علناً. للحوكمة الداخلية.
 
-- **عدد الصفحات المنشورة:** 33+
+- **عدد الصفحات المنشورة:** 33+ (◐ لا يشمل الصفحات غير المصنّفة أعلاه — تنتظر تأكيد)
 - **عدد المقالات في `/learn`:** 5
-- **عدد PRs المدموجة (إجمالاً):** 31
+- **عدد PRs المدموجة (إجمالاً):** 37 (✓ مُتحقَّق `gh pr list --state merged`، آخرها #40 · 2026-06-01)
 - **عدد المخالفات المتراكمة قبل Audit (2026-05-17):** 13 (8 P1 + 5 P2)
 - **عدد المخالفات بعد PR #31:** 0
-- **آخر deployment ناجح:** 2026-05-17 (PR #31 squash merge `b9239cf`)
+- **◐ آخر deployment موثّق:** `main` عند `01a5819` (PR #40، 2026-06-01) — Vercel auto-deploy مُفترَض لكن **غير مُتحقَّق منه في هذا التوفيق** (يتطلّب فحص Vercel فعلي). آخر deployment مُتحقَّق سابقاً: 2026-05-17 (`b9239cf` squash).
+
+---
+
+## 🔀 ملاحظة استراتيجية الدمج (✓ مُسجَّلة 2026-06-13)
+
+✓ **رُصد تحوّل في استراتيجية الدمج.** PRs ≤ #35 دُمجت **squash** (commit واحد لكل PR — مثل #31 = `b9239cf`). بينما **#36 → #40 دُمجت merge-commit**، ما أنتج أزواج commits على `main` بنفس الموضوع:
+
+| PR | الموضوع | الزوج على main |
+|---|---|---|
+| #40 | metrics block + solar card | `01a5819` + `cc18c22` |
+| #39 | unified logo lockup | `c430739` + `d574a12` |
+| #38 | logo visibility | `cbc28d4` + `26d9b1c` |
+| #37 | footer tagline | `bd361b1` + `08abd2e` |
+| #36 | Brand Stack v4 | `c8f80bd` + `db99fd6` |
+
+**الأثر:** لا أثر وظيفي على المحتوى المنشور؛ لكن سجلّ `main` صار مزدوجاً ويصعب قراءته. **توصية (PENDING — لا فعل الآن):** توحيد سياسة الدمج على squash افتراضياً لمنع تضخّم السجل مستقبلاً.
 
 ---
 
 ## 🗺️ Roadmap المُقترح (الأشهر القادمة)
 
-| الفترة | المهمة | الأولوية |
-|---|---|---|
-| **20 مايو 2026** | TASMU F6S submission | 🔴 P0 |
-| 21-25 مايو | Phase 6 Stage 1: محتوى `/asfan` | 🟠 P1 |
-| 26-31 مايو | Phase 6 Stage 2: Audience Routing | 🟠 P1 |
-| يونيو 2026 | Phase 7: Lexicon CI Validator | 🟡 P2 |
-| يونيو 2026 | Branch Hygiene + Cleanup | 🟢 P3 |
-| Q3 2026 | shop.igarden.sa Phase 1 (Salla integration) | 🟠 P1 |
-| Q4 2026 | demo.igarden.sa enhancements | 🟡 P2 |
+> **مُعاد التأريخ 2026-06-13.** ما جرى فعلاً في يونيو: مواءمة Brand Stack v4 (#36–#40 مدموجة) + مسار SEO (#41–#43 مفتوحة). **Phase 6** (`/asfan` + Audience Routing) لم يبدأ بعد — انزاح عن نافذة 21–31 مايو.
+
+| الفترة | المهمة | الأولوية | الحالة |
+|---|---|---|---|
+| ~~20 مايو 2026~~ | TASMU F6S submission | 🔴 P0 | ◐ مرّ — يحتاج تأكيد علي |
+| ~~21-31 مايو~~ | Phase 6: `/asfan` + Audience Routing | 🟠 P1 | ⏸ لم يبدأ — يُعاد جدولته |
+| **يونيو 2026 (جارٍ)** | مسار SEO (#41–#43) + مواءمة Brand Stack v4 | 🟠 P1 | 🟡 #36–#40 ✓ · #41–#43 ◐ مفتوحة |
+| يوليو 2026 | Phase 6 (مُعاد جدولته): `/asfan` Case Study + `/gov` | 🟠 P1 | ◐ مُقترَح — تنتظر تأكيد علي |
+| يوليو 2026 | Phase 7: Lexicon CI Validator | 🟡 P2 | ◐ مُقترَح — تنتظر تأكيد علي |
+| يوليو-أغسطس 2026 | Branch Hygiene + Cleanup | 🟢 P3 | ◐ مُقترَح — تنتظر تأكيد علي |
+| Q3 2026 | shop.igarden.sa Phase 1 (Salla integration) | 🟠 P1 | ◐ مُقترَح — تنتظر تأكيد علي |
+| Q4 2026 | demo.igarden.sa enhancements | 🟡 P2 | ◐ مُقترَح — تنتظر تأكيد علي |
 
 **ملاحظة:** الأولويات قد تتغيّر بناءً على نتائج Sunbulah (متوقعة منتصف يونيو - يوليو) وTASMU.
 
