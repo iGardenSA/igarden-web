@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   title: "خارطة الطريق",
   description:
     "استراتيجية توسع iGarden على 3 سنوات — من جدة إلى الخليج بأهداف قابلة للقياس في كل مرحلة.",
+  robots: { index: false, follow: false },
 };
 
 /* ============================================================ */
