@@ -7,21 +7,21 @@ const PRODUCTS = [
     title: "Hydroponic Fodder — استنبات الشعير",
     desc: "إنتاج علف أخضر طازج بكفاءة مائية عالية، مثالي لقطاعات الإنتاج الحيواني. كفاءة مائية عالية مقارنةً بالزراعة التقليدية.",
     cta: "اطلب استشارة",
-    href: "/contact?interest=fodder",
+    href: "/contact?interest=fodder&cta=request_quote",
   },
   {
     Icon: Fish,
     title: "Aquaponics — نظام تكاملي سمكي-نباتي",
     desc: "منظومة مغلقة تُنتج الأسماك والخضراوات في تناغم بيئي تامّ. إعادة تدوير عالية للمياه مع تدفّق مستمر.",
     cta: "اطلب استشارة",
-    href: "/contact?interest=aquaponics",
+    href: "/contact?interest=aquaponics&cta=request_quote",
   },
   {
     Icon: Sun,
     title: "حلول الطاقة الشمسية الذكية",
     desc: "أنظمة طاقة شمسية مساندة للمضخات، الحساسات، ووحدات التحكم — تُصمَّم لتقليل الاعتماد على الشبكة وربط التشغيل الزراعي بمصدر طاقة أكثر استدامة.",
     cta: "اطلب استشارة",
-    href: "/contact",
+    href: "/contact?cta=request_quote",
   },
 ];
 

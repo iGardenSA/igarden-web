@@ -411,7 +411,7 @@ function FinalCTA() {
           تقييم مجاني أو زيارة لمرفق R&D في عسفان — ابدأ من أيّ نقطة تريدها.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact" variant="lime">
+          <CTAButton href="/contact?cta=book_consultation" variant="lime">
             احجز استشارة
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">

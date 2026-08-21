@@ -76,7 +76,7 @@ function Hero() {
               المُسجَّل صناعياً (SAIP #423450193).
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href="/contact?interest=hydroponics" variant="lime">
+              <CTAButton href="/contact?interest=hydroponics&cta=request_quote" variant="lime">
                 أيّ تقنية تُناسب محصولك؟
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
@@ -379,7 +379,7 @@ function CropGuideSection() {
         <p className="text-center text-medium-gray text-sm mt-8 max-w-2xl mx-auto">
           محصول مختلف؟{" "}
           <a
-            href="/contact?interest=hydroponics"
+            href="/contact?interest=hydroponics&cta=book_consultation"
             className="text-lime hover:text-deep-green font-medium"
           >
             اسأل عن النظام الأنسب لمشروعك ←
@@ -490,7 +490,7 @@ function IGardenTowerSection() {
               </div>
             </div>
 
-            <CTAButton href="/contact?interest=tower" variant="lime">
+            <CTAButton href="/contact?interest=tower&cta=request_quote" variant="lime">
               اطلب iGarden Tower لمشروعك
             </CTAButton>
           </div>
@@ -556,7 +556,7 @@ const SCALES = [
     tier: "صناعي",
     title: "مزارع مائية تجارية",
     desc: "مشاريع تجارية كبرى. NFT + Towers بمقاييس صناعية. تصميم مخصّص وفريق تركيب متكامل.",
-    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-industrial" },
+    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-industrial&cta=request_quote" },
     external: false,
     highlight: false,
   },
@@ -564,7 +564,7 @@ const SCALES = [
     tier: "متوسط",
     title: "أنظمة للمزارع المتوسطة",
     desc: "حلول مرنة 50–500 م². نُختار التقنية الأنسب لمحصولك وميزانيتك.",
-    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-mid" },
+    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-mid&cta=request_quote" },
     external: false,
     highlight: true,
   },
@@ -896,10 +896,10 @@ function FinalCTA() {
           الفريق مباشرة، وتقرّر بثقة.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=osfan-visit" variant="lime">
+          <CTAButton href="/contact?interest=osfan-visit&cta=osfan_visit_request" variant="lime">
             احجز زيارة مجانية لعسفان
           </CTAButton>
-          <CTAButton href="/contact?interest=hydroponics" variant="outline-green">
+          <CTAButton href="/contact?interest=hydroponics&cta=request_quote" variant="outline-green">
             اطلب استشارة عن بُعد
           </CTAButton>
         </div>

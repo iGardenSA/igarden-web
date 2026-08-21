@@ -76,7 +76,7 @@ function Hero() {
               تصميم وتطوير وتجميع في السعودية · مكوّنات عالمية · نموذج صناعي مسجّل لدى الهيئة السعودية للملكية الفكرية. قطع غيار محلية. فريق دعم في نفس مدينتك.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href="/contact?interest=controllers" variant="lime">
+              <CTAButton href="/contact?interest=controllers&cta=request_quote" variant="lime">
                 اطلب عرضاً
               </CTAButton>
               <CTAButton
@@ -121,7 +121,7 @@ function StatusCard() {
             ثم نُصمّم الحلّ الأنسب لمحصولك وبيئتك.
           </p>
           <Link
-            href="/contact?interest=controllers"
+            href="/contact?interest=controllers&cta=request_quote"
             className="text-lime font-medium hover:text-deep-green transition-colors text-lg"
           >
             اطلب عرضاً ←
@@ -255,7 +255,7 @@ function PainScenarios() {
 
         <div className="text-center mt-10">
           <Link
-            href="/contact?interest=controllers"
+            href="/contact?interest=controllers&cta=readiness_assessment"
             className="inline-flex items-center gap-2 text-lime font-medium hover:text-deep-green transition-colors"
           >
             ناقش وضع مزرعتك معنا <ArrowLeft className="w-4 h-4" aria-hidden />
@@ -779,7 +779,7 @@ function B2BSection() {
               </span>
             ))}
           </div>
-          <CTAButton href="/contact?interest=controllers&type=b2b" variant="outline-green">
+          <CTAButton href="/contact?interest=controllers&type=b2b&cta=request_quote" variant="outline-green">
             تواصل مع فريق المشاريع
           </CTAButton>
         </div>
@@ -848,7 +848,7 @@ function FinalCTA() {
           نبدأ معك بتقييم ميداني لمشروعك ثم عرض مخصّص لمحصولك وبيئتك.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=controllers" variant="lime">
+          <CTAButton href="/contact?interest=controllers&cta=request_quote" variant="lime">
             اطلب عرضاً
           </CTAButton>
           <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>

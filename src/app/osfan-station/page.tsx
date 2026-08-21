@@ -328,7 +328,7 @@ function WorkshopsSection() {
               {/* HIDDEN IN WAVE 1 — Workshop quote needed from team (Wave 2) */}
             </div>
 
-            <CTAButton href="/contact?interest=workshop" variant="lime">
+            <CTAButton href="/contact?interest=workshop&cta=workshop_signup" variant="lime">
               اشترك للتنبيه بالورشة القادمة
             </CTAButton>
           </div>

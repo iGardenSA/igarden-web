@@ -298,7 +298,7 @@ export default function ArticlePage() {
               تحدّث معنا عن وضع مزرعتك وسنُساعدك في تحديد النظام المناسب لاحتياجاتك.
             </p>
             <Link
-              href="/contact"
+              href="/contact?cta=book_consultation"
               className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
             >
               احجز استشارة

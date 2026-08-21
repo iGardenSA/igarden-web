@@ -131,7 +131,7 @@ export default function SmartOSPage() {
             قابلة للتنفيذ، مُختبَرة في مرفق عسفان قبل أن تصل إلى أي عميل.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <CTAButton href="/contact" variant="lime">
+            <CTAButton href="/contact?cta=live_demo" variant="lime">
               احجز جلسة عرض
             </CTAButton>
             <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>
@@ -283,7 +283,7 @@ export default function SmartOSPage() {
             نُقدّم جلسة عرض تقنية للعملاء الجادّين — استعراض مباشر للمنصة
             على بيانات واقعية من مرفق عسفان.
           </p>
-          <CTAButton href="/contact" variant="lime">
+          <CTAButton href="/contact?cta=live_demo" variant="lime">
             احجز جلسة عرض
           </CTAButton>
         </div>

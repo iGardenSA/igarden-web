@@ -70,7 +70,7 @@ function Hero() {
               ميداني بعد التَسليم.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href="/contact?interest=greenhouses" variant="lime">
+              <CTAButton href="/contact?interest=greenhouses&cta=request_quote" variant="lime">
                 اطلب عرضاً مخصّصاً
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
@@ -479,7 +479,7 @@ const SCALES = [
     tier: "صناعي",
     title: "محميات تجارية كبرى",
     desc: "للمشاريع التجارية والحكومية. مساحات 1,000–10,000+ م². تصميم مخصّص وفريق تركيب متكامل.",
-    cta: { label: "اطلب عرضاً", href: "/contact?interest=greenhouses-industrial" },
+    cta: { label: "اطلب عرضاً", href: "/contact?interest=greenhouses-industrial&cta=request_quote" },
     external: false,
     highlight: false,
   },
@@ -487,7 +487,7 @@ const SCALES = [
     tier: "متوسط",
     title: "محميات للمزارع المتوسطة",
     desc: "200–1,000 م². للمزارعين والمنتجين المحلّيين الراغبين في رفع الكفاءة وتقليل التكاليف.",
-    cta: { label: "اطلب عرضاً", href: "/contact?interest=greenhouses-mid" },
+    cta: { label: "اطلب عرضاً", href: "/contact?interest=greenhouses-mid&cta=request_quote" },
     external: false,
     highlight: true,
   },
@@ -837,7 +837,7 @@ function FinalCTA() {
           مسبق.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=greenhouses" variant="lime">
+          <CTAButton href="/contact?interest=greenhouses&cta=request_quote" variant="lime">
             اطلب عرض مخصّص
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">

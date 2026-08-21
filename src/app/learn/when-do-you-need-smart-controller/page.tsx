@@ -281,7 +281,7 @@ export default function ArticlePage() {
               أرسل لنا وصفاً مختصراً لوضعك الحالي وسنعطيك رأياً صادقاً — حتى لو كان الجواب «لا تحتاجه بعد».
             </p>
             <Link
-              href="/contact"
+              href="/contact?cta=book_consultation"
               className="inline-block bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] px-7 py-3.5 rounded-lg font-semibold transition-colors"
             >
               احجز استشارة

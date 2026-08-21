@@ -225,5 +225,5 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
 
 export const MAIN_CTA = {
   label: "احجز استشارة",
-  href: "/contact",
+  href: "/contact?cta=book_consultation",
 } as const;

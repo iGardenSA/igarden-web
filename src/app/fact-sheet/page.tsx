@@ -143,7 +143,7 @@ export default function FactSheetPage() {
               الشروط والأحكام
             </Link>
             <Link
-              href="/contact"
+              href="/contact?cta=book_consultation"
               className="text-sm text-[#0F3D2E] hover:text-[#7CB342] transition-colors font-medium"
             >
               تواصل معنا
