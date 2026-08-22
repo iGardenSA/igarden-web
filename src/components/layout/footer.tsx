@@ -9,6 +9,7 @@ const COMPANY_LINKS = [
   { label: "محطة عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
   { label: "تواصل معنا", href: "/contact" },
+  { label: "بيانات الشركة الرسمية", href: "/fact-sheet" },
 ];
 
 const SERVICES_LINKS = [
