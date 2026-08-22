@@ -92,7 +92,7 @@ function Hero() {
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-600 flex items-center justify-center"
             role="img"
-            aria-label="لوحة Smart Controller من محطة عسفان"
+            aria-label="لوحة Smart Controller من مرفق R&D في عسفان"
           >
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium">
@@ -116,7 +116,7 @@ function StatusCard() {
           </p>
           <h2 className="h4 text-deep-green mb-3">نظام تحكّم ذكي متكامل، مُختبَر ميدانياً</h2>
           <p className="body-base text-medium-gray mb-4">
-            نظام تحكّم زراعي متكامل، مُختبَر ميدانياً في محطّة عسفان وجاهز للتركيب
+            نظام تحكّم زراعي متكامل، مُختبَر ميدانياً في مرفق R&D في عسفان وجاهز للتركيب
             لدى المنشآت التجارية والحكومية. نبدأ معك بتقييم ميداني لمزرعتك،
             ثم نُصمّم الحلّ الأنسب لمحصولك وبيئتك.
           </p>
@@ -669,7 +669,7 @@ function DemoSection() {
             </h2>
             <p className="body-base text-cream/80 mb-4">
               الديمو الحيّ يعرض 7 حسّاسات + 10 شاشات تفاعلية مبنية على بيانات
-              حقيقية من محطّة عسفان.
+              حقيقية من مرفق R&D في عسفان.
             </p>
             <p className="body-sm text-cream/60 mb-8">
               لا تسجيل مطلوب — افتح وجرّب مباشرة.
