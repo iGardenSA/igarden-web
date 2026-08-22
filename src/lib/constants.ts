@@ -179,6 +179,7 @@ export const TOP_BAR_ITEMS: TopBarItem[] = [
     href: "https://shop.igarden.sa",
     external: true,
   },
+  { label: "للأفراد", icon: "shopping-bag", href: "/home-solutions" },
   { label: "احجز التطبيق", icon: "smartphone", href: "/app", badge: "soon" },
 ];
 
@@ -216,7 +217,6 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
   },
   { label: "عسفان", href: "/osfan-station" },
   { label: "من نحن", href: "/about" },
-  { label: "للأفراد", href: "/home-solutions" },
   { label: "المعرفة", href: "/learn" },
   { label: "تواصل", href: "/contact" },
 ];

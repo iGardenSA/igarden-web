@@ -15,61 +15,53 @@ export const metadata: Metadata = {
     locale: "ar_SA",
   },
 };
-import HeroSection from "@/components/sections/HeroSection";
-import { TrustBar } from "@/components/sections/TrustBar";
-import { MethodologySection } from "@/components/sections/MethodologySection";
-import { SmartOSDemoSection } from "@/components/sections/SmartOSDemoSection";
-import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
-import { ThreePillarsSection } from "@/components/sections/ThreePillarsSection";
-import { ComplianceSection } from "@/components/sections/ComplianceSection";
-import { OperationalIdentity } from "@/components/sections/OperationalIdentity";
-import { HowWeWork } from "@/components/sections/HowWeWork";
-import { FinalCTA } from "@/components/sections/FinalCTA";
-import { HomeSolutions } from "@/components/sections/HomeSolutions";
-import { ComplementaryProducts } from "@/components/sections/ComplementaryProducts";
-import { KnowledgeSection } from "@/components/sections/KnowledgeSection";
+
+import { SalesHero } from "@/components/sections/SalesHero";
+import { AudienceSplit } from "@/components/sections/AudienceSplit";
+import { DigitizationStages } from "@/components/sections/DigitizationStages";
+import { FieldProjectCard } from "@/components/sections/FieldProjectCard";
+import { SolutionTracks } from "@/components/sections/SolutionTracks";
+import { SmartOSFlow } from "@/components/sections/SmartOSFlow";
+import { InnovationTracks } from "@/components/sections/InnovationTracks";
+import { OsfanFacility } from "@/components/sections/OsfanFacility";
+import { KnowledgeGrid } from "@/components/sections/KnowledgeGrid";
+import { AssessmentSection } from "@/components/sections/AssessmentSection";
 
 export default function HomePage() {
   return (
     <>
       <OrganizationSchema />
       <WebSiteSchema />
-      {/* Pull hero up behind sticky Header (64px) so transparent nav shows video */}
-      <div className="-mt-[64px]">
-        <HeroSection />
-      </div>
 
-      {/* 2. لماذا الحديقة الذكية */}
-      <TrustBar />
-      <MethodologySection />
+      {/* ① Hero */}
+      <SalesHero />
 
-      {/* 4. Smart OS */}
-      <SmartOSDemoSection />
+      {/* ② فرز الجمهور */}
+      <AudienceSplit />
 
-      {/* 5. مرفق R&D في عسفان */}
-      <OsfanStationPreview />
+      {/* ③ أربع مراحل */}
+      <DigitizationStages />
 
-      {/* 6. حلول المزارع التجارية */}
-      <ThreePillarsSection />
+      {/* ⑤ من الميدان — بطاقة مشروع */}
+      <FieldProjectCard />
 
-      {/* 7. هويتنا التشغيلية */}
-      <OperationalIdentity />
+      {/* ④ الحلول */}
+      <SolutionTracks />
 
-      {/* 8. من التحكم إلى الامتثال */}
-      <ComplianceSection />
+      {/* ⑥ Smart OS */}
+      <SmartOSFlow />
 
-      {/* 8. كيف نعمل */}
-      <HowWeWork />
+      {/* ⑦ بطاقة الابتكار */}
+      <InnovationTracks />
 
-      {/* 9. دعوة للتواصل */}
-      <FinalCTA />
+      {/* ⑧ مرفق R&D في عسفان */}
+      <OsfanFacility />
 
-      {/* 10. ثانوي: B2C + أكاديمية */}
-      <ComplementaryProducts />
-      <KnowledgeSection />
+      {/* ⑨ المعرفة */}
+      <KnowledgeGrid />
 
-      {/* 11. B2C path — شريط خفيف قبل الفوتر */}
-      <HomeSolutions />
+      {/* ⑩ الإغلاق والنموذج */}
+      <AssessmentSection />
     </>
   );
 }
