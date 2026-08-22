@@ -40,6 +40,7 @@ export default function ContactPage() {
   const [showDetails, setShowDetails] = useState(false);
 
   const [prefilledLabels, setPrefilledLabels] = useState<string[]>([]);
+  const [contextualWhatsApp, setContextualWhatsApp] = useState<string | null>(null);
   const tracking = useRef<TrackingParams>({
     cta: null,
     utm_source: null,
@@ -77,6 +78,22 @@ export default function ContactPage() {
     if (resolution.leadType) {
       setValue("lead_type", resolution.leadType);
     }
+
+    // رابط واتساب سياقي: يحمل الصفحة والاهتمام في نصّ مُعبّأ مسبقاً.
+    // الرقم يأتي من CONTACT.whatsapp — لا رقم مكتوب يدوياً.
+    const labels = resolution.interests.map(
+      (v) => INTERESTS.find((i) => i.value === v)?.label ?? v
+    );
+    const page =
+      typeof window !== "undefined" ? window.location.pathname : "/contact";
+    const lines = [
+      `مرحباً، أتواصل من صفحة ${page} في موقع iGarden.`,
+      labels.length > 0 ? `اهتمامي: ${labels.join(" · ")}` : null,
+      params.cta ? `المصدر: ${params.cta}` : null,
+    ].filter(Boolean) as string[];
+    setContextualWhatsApp(
+      `${CONTACT.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`
+    );
 
     // resolution.unknown → تجاهل صامت: لا تحديد مسبق، والنموذج يعمل كما هو.
   }, [setValue]);
@@ -370,6 +387,20 @@ export default function ContactPage() {
                           {prefilledLabels.join(" · ")}
                         </span>{" "}
                         بناءً على الصفحة التي جئت منها — يمكنك تغييره.
+                      </p>
+                    )}
+                    {contextualWhatsApp && (
+                      <p className="text-sm text-medium-gray mb-3">
+                        تفضّل واتساب؟{" "}
+                        <a
+                          href={contextualWhatsApp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-[var(--color-brand-600)] underline hover:text-deep-green"
+                        >
+                          راسلنا مباشرةً
+                        </a>{" "}
+                        — الرسالة جاهزة بصفحتك واهتمامك.
                       </p>
                     )}
                     <Controller
