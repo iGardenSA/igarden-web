@@ -88,7 +88,7 @@ function Hero() {
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green flex items-center justify-center"
             role="img"
-            aria-label="أنظمة الزراعة المائية من iGarden في مرفق R&D في عسفان"
+            aria-label="أنظمة الزراعة المائية من iGarden داخل مرفق R&D في عسفان"
           >
             <Droplets className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
@@ -455,7 +455,7 @@ function IGardenTowerSection() {
 
             <blockquote className="border-s-4 border-lime ps-4 mb-6">
               <p className="body-base text-medium-gray italic">
-                «مرّ بثلاث مراحل تطوير في مرفق R&D في عسفان قبل أن يصل إلى مرحلة
+                «مرّ بثلاث مراحل تطوير داخل مرفق R&D في عسفان قبل أن يصل إلى مرحلة
                 الاعتماد. كلّ مدخل فيه — من المضخّات إلى الأنابيب — اختُرنا
                 أفضل بديل متاح من السوق المحلي قبل اللجوء للاستيراد.»
               </p>
@@ -502,7 +502,7 @@ function IGardenTowerSection() {
 
 /* ─── Section 5: Osfan Gallery ───────────────────────────── */
 const GALLERY = [
-  { src: "/images/products/hydroponics/osfan-1.jpg", alt: "نظام NFT يعمل في مرفق R&D في عسفان" },
+  { src: "/images/products/hydroponics/osfan-1.jpg", alt: "نظام NFT يعمل داخل مرفق R&D في عسفان" },
   { src: "/images/products/hydroponics/osfan-2.jpg", alt: "DWC — جذور في محلول مُهوّى" },
   { src: "/images/products/hydroponics/osfan-3.jpg", alt: "iGarden Tower في وضع التشغيل الميداني" },
   { src: "/images/products/hydroponics/osfan-4.jpg", alt: "نباتات الخس في مرحلة الحصاد" },
@@ -519,7 +519,7 @@ function OsfanGallery() {
             كلّها تعمل الآن في عسفان
           </p>
           <h2 className="h2 text-deep-green">الأنظمة في الميدان</h2>
-          {/* [CONTENT_NEEDED: 4-6 صور حقيقية لأنظمة Hydroponics في مرفق R&D في عسفان — /images/products/hydroponics/osfan-1..6.jpg] */}
+          {/* [CONTENT_NEEDED: 4-6 صور حقيقية لأنظمة Hydroponics داخل مرفق R&D في عسفان — /images/products/hydroponics/osfan-1..6.jpg] */}
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">

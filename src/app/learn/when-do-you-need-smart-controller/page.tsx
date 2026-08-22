@@ -263,7 +263,7 @@ export default function ArticlePage() {
           {/* 7. ربط بـ iGarden */}
           <section className="mb-10 bg-[#0F3D2E]/5 rounded-xl p-6 border border-[#0F3D2E]/10">
             <p className="text-[#1A1A1A] leading-relaxed">
-              <span dir="ltr" className="font-semibold">iGarden Smart Controllers</span> مُصمَّمة لهذه المرحلة تحديداً — الانتقال من المراقبة اليدوية إلى التشغيل القائم على البيانات، دون استبدال البنية التحتية القائمة بالكامل. اختُبرت في مرفق R&D في عسفان لتحمّل حرارة الصيف السعودي.
+              <span dir="ltr" className="font-semibold">iGarden Smart Controllers</span> مُصمَّمة لهذه المرحلة تحديداً — الانتقال من المراقبة اليدوية إلى التشغيل القائم على البيانات، دون استبدال البنية التحتية القائمة بالكامل. اختُبرت داخل مرفق R&D في عسفان لتحمّل حرارة الصيف السعودي.
             </p>
             <Link
               href="/products/smart-controllers"

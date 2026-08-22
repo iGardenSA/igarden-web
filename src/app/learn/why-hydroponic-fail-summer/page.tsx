@@ -268,7 +268,7 @@ export default function ArticlePage() {
           {/* 7. ربط بـ iGarden */}
           <section className="mb-10 bg-[#0F3D2E]/5 rounded-xl p-6 border border-[#0F3D2E]/10">
             <p className="text-[#1A1A1A] leading-relaxed">
-              <span dir="ltr" className="font-semibold">iGarden</span> تُصمّم أنظمتها الزراعية بأخذ مناخ السعودية نقطة البداية — لا تكيّفاً لاحقاً. اختُبرت الأنظمة في مرفق R&D في عسفان في ظروف تتجاوز +45°C، وما نشتغل به نتائج فعلية من الميدان.
+              <span dir="ltr" className="font-semibold">iGarden</span> تُصمّم أنظمتها الزراعية بأخذ مناخ السعودية نقطة البداية — لا تكيّفاً لاحقاً. اختُبرت الأنظمة داخل مرفق R&D في عسفان في ظروف تتجاوز +45°C، وما نشتغل به نتائج فعلية من الميدان.
             </p>
             <Link
               href="/osfan-station"
