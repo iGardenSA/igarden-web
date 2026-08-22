@@ -169,9 +169,6 @@ export function Footer() {
                 <span className="font-latin">SAIP: #423450193</span>
                 {" · "}
                 <span className="font-latin">Tax: 312554598200003</span>
-                {" · "}
-                رأس المال:{" "}
-                <span className="font-latin">100,000 SAR</span>
               </p>
             </div>
             <p className="font-latin whitespace-nowrap">
