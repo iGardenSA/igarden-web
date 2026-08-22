@@ -70,7 +70,6 @@ export default function FactSheetPage() {
               <FactRow label="نموذج صناعي SAIP" value="#423450193 (iGarden Tower)" mono />
               <FactRow label="الرقم الضريبي" value="312554598200003" mono />
               <FactRow label="رقم الكيان" value="1490078" mono />
-              <FactRow label="رأس المال المسجل" value="100,000 ريال سعودي" />
             </FactBlock>
 
             {/* الموقع والتأسيس */}
