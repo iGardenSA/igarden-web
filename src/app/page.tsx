@@ -46,7 +46,7 @@ export default function HomePage() {
       {/* 4. Smart OS */}
       <SmartOSDemoSection />
 
-      {/* 5. محطة عسفان */}
+      {/* 5. مرفق R&D في عسفان */}
       <OsfanStationPreview />
 
       {/* 6. حلول المزارع التجارية */}

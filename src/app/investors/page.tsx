@@ -211,7 +211,7 @@ export default function InvestorsPage() {
                 icon={<Building className="h-6 w-6" />}
                 number="06"
                 title="أصول تشغيلية"
-                description="محطة عسفان الميدانية، 5+ ورش عمل، نماذج Hydroponics مُختبَرة، وتغطية اختبارات وحدوية موسّعة."
+                description="مرفق R&D في عسفان الميدانية، 5+ ورش عمل، نماذج Hydroponics مُختبَرة، وتغطية اختبارات وحدوية موسّعة."
               />
             </FadeIn>
           </div>
@@ -241,7 +241,7 @@ export default function InvestorsPage() {
                   percentage={50}
                 />
                 <FundingBar
-                  label="محطّة عسفان — توسعة وأنظمة جديدة"
+                  label="مرفق R&D في عسفان — توسعة وأنظمة جديدة"
                   percentage={25}
                 />
                 <FundingBar
@@ -275,7 +275,7 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: محطّة عسفان قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، وتغطية اختبارات وحدوية موسّعة. ليس مجرد فكرة.",
+                    text: "التشغيل الميداني بدأ: مرفق R&D في عسفان قائمة منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، وتغطية اختبارات وحدوية موسّعة. ليس مجرد فكرة.",
                   },
                   {
                     num: "03",
@@ -311,7 +311,7 @@ export default function InvestorsPage() {
                 {[
                   "منظومة Smart Controllers (ESP32 + Raspberry Pi) — تغطية اختبارات وحدوية موسّعة",
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
-                  "محطة عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
+                  "مرفق R&D في عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
                   "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
                   "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
                   "Supabase CRM + نموذج جمع العملاء المحتملين",

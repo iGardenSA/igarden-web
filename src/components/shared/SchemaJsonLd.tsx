@@ -72,7 +72,7 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://igarden.sa/#localbusiness",
-    name: "iGarden — محطّة عسفان للتجارب والتطوير",
+    name: "iGarden — مرفق R&D في عسفان للتجارب والتطوير",
     description: "المختبر الميداني لـ iGarden في عسفان شمال جدة.",
     url: "https://igarden.sa/osfan-station",
     image: "https://igarden.sa/images/og/osfan-station.jpg",
@@ -84,7 +84,7 @@ export function LocalBusinessSchema() {
       addressRegion: "مكة المكرمة",
       addressLocality: "عسفان",
     },
-    // [CONTENT_NEEDED: إحداثيات GPS الدقيقة لمحطّة عسفان]
+    // [CONTENT_NEEDED: إحداثيات GPS الدقيقة لمرفق R&D في عسفان]
     // geo: { "@type": "GeoCoordinates", latitude: ..., longitude: ... },
     openingHoursSpecification: [
       {

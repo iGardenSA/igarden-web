@@ -323,7 +323,7 @@ export default function HowWeWorkPage() {
               href="/osfan-station"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/60 text-white hover:bg-white/10 rounded-lg font-medium text-base transition-colors"
             >
-              تعرّف على محطة عسفان
+              تعرّف على مرفق R&D في عسفان
             </Link>
           </div>
         </div>

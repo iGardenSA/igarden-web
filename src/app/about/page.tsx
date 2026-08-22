@@ -162,7 +162,7 @@ const TIMELINE = [
     title: "النماذج والتجارب",
     items: [
       "بناء النماذج الأوّلية لـ Smart Controllers",
-      "إطلاق محطّة عسفان للتجارب والتطوير",
+      "إطلاق مرفق R&D في عسفان للتجارب والتطوير",
       "تنفيذ 5 ورش «ازرع بذكاء»",
       "تغطية اختبارات وحدوية موسّعة على Smart OS",
     ],
@@ -335,7 +335,7 @@ function OsfanLinkSection() {
               كل نظام في ظروف المناخ السعودي الحقيقية قبل تسليمه لأيّ عميل.
             </p>
             <CTAButton href="/osfan-station" variant="outline-green">
-              استكشف محطّة عسفان
+              استكشف مرفق R&D في عسفان
             </CTAButton>
           </div>
         </div>
@@ -408,14 +408,14 @@ function FinalCTA() {
           هل أنت جاهز للعمل مع شركة تُجرّب قبل أن تُسلّم؟
         </h2>
         <p className="body-base text-cream/80 max-w-xl mx-auto mb-10">
-          تقييم مجاني أو زيارة لمحطّة عسفان — ابدأ من أيّ نقطة تريدها.
+          تقييم مجاني أو زيارة لمرفق R&D في عسفان — ابدأ من أيّ نقطة تريدها.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact" variant="lime">
             احجز استشارة
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">
-            زُر محطّة عسفان
+            زُر مرفق R&D في عسفان
           </CTAButton>
         </div>
       </div>

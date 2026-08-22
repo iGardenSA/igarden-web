@@ -82,7 +82,7 @@ function Hero() {
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-500 flex items-center justify-center"
             role="img"
-            aria-label="محمية ذكية من iGarden في محطة عسفان"
+            aria-label="محمية ذكية من iGarden في مرفق R&D في عسفان"
           >
             <Building2 className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
@@ -421,12 +421,12 @@ function HowItWorks() {
 
 /* ─── Section 5: Osfan Gallery ───────────────────────────── */
 const GALLERY = [
-  { src: "/images/products/smart-greenhouses/osfan-1.jpg", alt: "محمية ذكية في محطة عسفان — جانب خارجي" },
+  { src: "/images/products/smart-greenhouses/osfan-1.jpg", alt: "محمية ذكية في مرفق R&D في عسفان — جانب خارجي" },
   { src: "/images/products/smart-greenhouses/osfan-2.jpg", alt: "نظام التهوية الجانبي في المحمية" },
   { src: "/images/products/smart-greenhouses/osfan-3.jpg", alt: "الداخل — نباتات تحت التحكم المناخي" },
   { src: "/images/products/smart-greenhouses/osfan-4.jpg", alt: "لوحة التحكم داخل المحمية" },
   { src: "/images/products/smart-greenhouses/osfan-5.jpg", alt: "نظام الريّ الآلي" },
-  { src: "/images/products/smart-greenhouses/osfan-6.jpg", alt: "محطة عسفان — منظر عام للمحميات" },
+  { src: "/images/products/smart-greenhouses/osfan-6.jpg", alt: "مرفق R&D في عسفان — منظر عام للمحميات" },
 ];
 
 function OsfanGallery() {
@@ -465,7 +465,7 @@ function OsfanGallery() {
 
         <div className="text-center">
           <CTAButton href="/osfan-station" variant="outline-green">
-            تعرّف على محطّة عسفان كاملاً
+            تعرّف على مرفق R&D في عسفان كاملاً
           </CTAButton>
         </div>
       </div>
