@@ -68,7 +68,7 @@ export function OsfanStationPreview() {
 
         <div className="text-center">
           <CTAButton href="/osfan-station" variant="lime">
-            تعرّف على محطّة عسفان
+            تعرّف على مرفق R&D في عسفان
           </CTAButton>
         </div>
       </div>

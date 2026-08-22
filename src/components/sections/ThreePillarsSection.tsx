@@ -7,7 +7,7 @@ const PILLARS = [
     title: "Smart Controllers",
     desc: "لوحات تحكم زراعية بصناعتنا. تُربط بأيّ نظام قائم وتُراقب pH وEC والحرارة لحظياً.",
     href: "/products/smart-controllers",
-    img: { src: "/images/osfan-full/03_cabbage_diversity.webp", alt: "محاصيل خضار تحت مراقبة Smart Controllers في محطة عسفان" },
+    img: { src: "/images/osfan-full/03_cabbage_diversity.webp", alt: "محاصيل خضار تحت مراقبة Smart Controllers في مرفق R&D في عسفان" },
   },
   {
     badge: null,
@@ -21,7 +21,7 @@ const PILLARS = [
     title: "Hydroponic Systems",
     desc: "7 تقنيات زراعة مائية + برج iGarden المُسجَّل SAIP. كفاءة مائية عالية مُختبَرة في عسفان.",
     href: "/products/hydroponics",
-    img: { src: "/images/osfan-full/02_tower_closeup.webp", alt: "نظام iGarden Tower للزراعة العمودية — مُختبَر في محطة عسفان" },
+    img: { src: "/images/osfan-full/02_tower_closeup.webp", alt: "نظام iGarden Tower للزراعة العمودية — مُختبَر في مرفق R&D في عسفان" },
   },
 ];
 

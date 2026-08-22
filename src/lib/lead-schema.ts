@@ -85,7 +85,7 @@ export const INTERESTS = [
   { value: "controllers", label: "نظام تحكم وحساسات" },
   { value: "hydroponics", label: "زراعة مائية" },
   { value: "greenhouse", label: "محمية ذكية" },
-  { value: "osfan_visit", label: "زيارة محطة عسفان" },
+  { value: "osfan_visit", label: "زيارة مرفق R&D في عسفان" },
   { value: "demo", label: "ديمو Smart OS" },
   { value: "investment", label: "استثمار / شراكة" },
   { value: "consultation", label: "استشارة عامة" },

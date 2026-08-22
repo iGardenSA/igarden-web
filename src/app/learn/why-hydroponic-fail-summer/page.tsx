@@ -268,13 +268,13 @@ export default function ArticlePage() {
           {/* 7. ربط بـ iGarden */}
           <section className="mb-10 bg-[#0F3D2E]/5 rounded-xl p-6 border border-[#0F3D2E]/10">
             <p className="text-[#1A1A1A] leading-relaxed">
-              <span dir="ltr" className="font-semibold">iGarden</span> تُصمّم أنظمتها الزراعية بأخذ مناخ السعودية نقطة البداية — لا تكيّفاً لاحقاً. اختُبرت الأنظمة في محطة عسفان في ظروف تتجاوز +45°C، وما نشتغل به نتائج فعلية من الميدان.
+              <span dir="ltr" className="font-semibold">iGarden</span> تُصمّم أنظمتها الزراعية بأخذ مناخ السعودية نقطة البداية — لا تكيّفاً لاحقاً. اختُبرت الأنظمة في مرفق R&D في عسفان في ظروف تتجاوز +45°C، وما نشتغل به نتائج فعلية من الميدان.
             </p>
             <Link
               href="/osfan-station"
               className="inline-flex items-center gap-1 mt-3 text-[#7CB342] hover:text-[#0F3D2E] font-medium text-sm transition-colors"
             >
-              <span>شاهد محطة عسفان</span>
+              <span>شاهد مرفق R&D في عسفان</span>
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
           </section>
@@ -296,7 +296,7 @@ export default function ArticlePage() {
                 href="/osfan-station"
                 className="inline-block border border-[#0F3D2E] text-[#0F3D2E] hover:bg-[#0F3D2E] hover:text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
               >
-                شاهد محطة عسفان
+                شاهد مرفق R&D في عسفان
               </Link>
             </div>
           </section>
