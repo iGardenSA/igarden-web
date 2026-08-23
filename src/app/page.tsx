@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
@@ -41,6 +42,15 @@ export default function HomePage() {
 
       {/* شريط الثقة */}
       <TrustBar />
+
+      <div className="bg-white pb-6 text-center" dir="rtl">
+        <Link
+          href="/about"
+          className="text-sm text-medium-gray underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
+        >
+          تعرّف على iGarden
+        </Link>
+      </div>
 
       {/* ② فرز الجمهور */}
       <AudienceSplit />

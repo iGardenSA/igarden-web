@@ -52,6 +52,12 @@ export function AudienceSplit() {
               تحدّث إلينا عن مشروعك
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
+            <Link
+              href="/compliance"
+              className="mt-3 text-sm text-medium-gray underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
+            >
+              تعرّف على جاهزية الامتثال
+            </Link>
           </article>
         </div>
       </div>

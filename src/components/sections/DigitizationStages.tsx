@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Search, Gauge, SlidersHorizontal, LineChart } from "lucide-react";
 
 const STAGES = [
@@ -61,6 +62,15 @@ export function DigitizationStages() {
           كل مرحلة نطاق تنفيذي مستقلّ، مصمَّمة لتتكامل مع التي تليها. تبدأ بما تحتاجه،
           وتتوسّع حين تجهز.
         </p>
+
+        <div className="text-center mt-5">
+          <Link
+            href="/how-we-work"
+            className="text-sm font-semibold text-[var(--color-brand-600)] underline underline-offset-4 hover:text-deep-green transition-colors"
+          >
+            كيف ننفّذ المشاريع
+          </Link>
+        </div>
       </div>
     </section>
   );

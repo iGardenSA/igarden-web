@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/learn/operational-logs-farm-decisions`,   lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/learn/daily-measurements-smart-farm`,     lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/how-we-work`,                    lastModified, changeFrequency: "monthly", priority: 0.6  },
+    { url: `${base}/products/smart-os`,              lastModified, changeFrequency: "weekly",  priority: 0.85 },
+    { url: `${base}/products/iot`,                   lastModified, changeFrequency: "weekly",  priority: 0.85 },
+    { url: `${base}/compliance`,                     lastModified, changeFrequency: "monthly", priority: 0.6  },
+    { url: `${base}/fact-sheet`,                     lastModified, changeFrequency: "monthly", priority: 0.5  },
+    { url: `${base}/data-charter`,                   lastModified, changeFrequency: "yearly",  priority: 0.3  },
+    { url: `${base}/compliance-disclaimer`,          lastModified, changeFrequency: "yearly",  priority: 0.3  },
     { url: `${base}/privacy`,                        lastModified, changeFrequency: "yearly",  priority: 0.3  },
     { url: `${base}/terms`,                          lastModified, changeFrequency: "yearly",  priority: 0.3  },
   ];
