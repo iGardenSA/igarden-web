@@ -146,7 +146,7 @@ export function PortfolioFamilies() {
                       <li key={l.href}>
                         <Link
                           href={l.href}
-                          className="inline-flex items-center gap-1 bg-white text-deep-green hover:text-lime border border-light-gray rounded-pill px-3.5 py-1.5 text-sm font-medium transition-colors"
+                          className="inline-flex items-center gap-1 min-h-[44px] bg-white text-deep-green hover:text-lime border border-light-gray rounded-pill px-4 py-2.5 text-sm font-medium transition-colors"
                         >
                           {l.label}
                           <ArrowLeft className="w-3.5 h-3.5" aria-hidden />
@@ -160,7 +160,7 @@ export function PortfolioFamilies() {
                   <div className="mt-auto pt-4 border-t border-light-gray">
                     <Link
                       href={cta.href}
-                      className="inline-flex items-center gap-1 text-lime hover:text-deep-green font-medium transition-colors"
+                      className="inline-flex items-center gap-1 min-h-[44px] py-2 text-lime hover:text-deep-green font-medium transition-colors"
                     >
                       {cta.label}
                       <ArrowLeft className="w-4 h-4" aria-hidden />

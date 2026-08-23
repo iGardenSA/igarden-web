@@ -1,114 +1,62 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Globe, Monitor, ShoppingBag, Smartphone, type LucideIcon } from "lucide-react";
-import { TOP_BAR_ITEMS, type TopBarIconName } from "@/lib/constants";
+import { Monitor, ShoppingBag, Home, type LucideIcon } from "lucide-react";
+import { UTILITY_ITEMS, type UtilityIconName } from "@/lib/constants";
 
-const iconMap: Record<TopBarIconName, LucideIcon> = {
-  globe: Globe,
+const iconMap: Record<UtilityIconName, LucideIcon> = {
   monitor: Monitor,
   "shopping-bag": ShoppingBag,
-  smartphone: Smartphone,
+  home: Home,
 };
 
+/**
+ * شريط الخدمات — سطح المكتب فقط، وفي التدفق العادي (‏غير sticky).
+ * الهيدر وحده هو اللاصق. ثلاثة روابط لا أكثر: Demo · المتجر · للأفراد.
+ * على الجوال تظهر هذه الوجهات داخل الدرج تحت «منصات iGarden» و«للأفراد».
+ */
 export default function TopBar() {
-  const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const isHome = pathname === "/";
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 80);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Inner pages always get solid dark bg (no transparent over white content)
-  const bgClass = !isHome || isScrolled
-    ? "bg-[#0A2920]/95 backdrop-blur-md border-b border-[#1B5E3F]/40 shadow-sm shadow-black/20"
-    : "bg-black/25 backdrop-blur-sm border-b border-white/15 shadow-sm shadow-black/10";
-
   return (
     <div
-      className={`sticky top-0 z-[60] transition-all duration-300 ${bgClass}`}
+      className="hidden lg:block bg-[#0A2920] border-b border-[#1B5E3F]/40"
       role="navigation"
       aria-label="منصات iGarden"
     >
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex items-center justify-between h-9">
-          {/* Platform Switcher */}
-          <ul className="flex items-center gap-2 md:gap-4 overflow-x-auto scrollbar-hide">
-            {TOP_BAR_ITEMS.map((item, idx) => {
-              const Icon = iconMap[item.icon];
-              const isLive = item.badge === "live";
-              const isSoon = item.badge === "soon";
-
-              const content = (
-                <span
-                  className={[
-                    "inline-flex items-center gap-1.5",
-                    "px-3 md:px-4 py-1 rounded-md",
-                    "text-[13px] font-medium whitespace-nowrap",
-                    "transition-all duration-150",
-                    item.active
-                      ? "bg-[#7CB342]/15 text-[#A5D63F]"
-                      : "text-white/80 hover:text-[#A5D63F] hover:bg-white/5",
-                  ].join(" ")}
-                >
-                  <Icon className="w-3.5 h-3.5 flex-shrink-0" aria-hidden="true" />
-                  <span>{item.label}</span>
-
-                  {/* Fix 4: Live indicator — larger + glow + blur halo */}
-                  {isLive && (
-                    <span className="relative inline-flex ms-1" aria-label="مباشر">
-                      <span className="absolute inline-flex h-2.5 w-2.5 rounded-full bg-[#A5D63F] opacity-60 animate-ping" />
-                      <span
-                        className="absolute inline-flex h-2.5 w-2.5 rounded-full bg-[#A5D63F] opacity-40"
-                        style={{ filter: "blur(2px)" }}
-                      />
-                      <span
-                        className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#A5D63F]"
-                        style={{ boxShadow: "0 0 8px rgba(165, 214, 63, 0.8)" }}
-                      />
-                    </span>
-                  )}
-
-                  {isSoon && (
-                    <span className="text-[10px] text-[#A5D63F]/70 ms-0.5">
-                      قريباً
-                    </span>
-                  )}
-                </span>
-              );
-
-              return (
-                <li key={idx} className="flex items-center">
-                  {item.external ? (
-                    <a href={item.href} target="_blank" rel="noopener noreferrer">
-                      {content}
-                    </a>
-                  ) : (
-                    <Link href={item.href}>{content}</Link>
-                  )}
-
-                  {/* Fix 5: separator always visible, more breathing room */}
-                  {idx < TOP_BAR_ITEMS.length - 1 && (
+        <ul className="flex items-center justify-end gap-1">
+          {UTILITY_ITEMS.map((item) => {
+            const Icon = iconMap[item.icon];
+            const cls =
+              "inline-flex items-center gap-1.5 min-h-[44px] px-3 py-2 text-[13px] font-medium whitespace-nowrap text-white/80 hover:text-[#A5D63F] transition-colors";
+            const content = (
+              <>
+                <Icon className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+                <span>{item.label}</span>
+                {item.badge === "live" && (
+                  <span className="relative inline-flex ms-1" aria-label="مباشر">
+                    <span className="absolute inline-flex h-2.5 w-2.5 rounded-full bg-[#A5D63F] opacity-60 animate-ping" />
                     <span
-                      className="text-[#7CB342]/30 mx-1 text-xs select-none"
-                      aria-hidden="true"
-                    >
-                      ·
-                    </span>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+                      className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#A5D63F]"
+                      style={{ boxShadow: "0 0 8px rgba(165, 214, 63, 0.8)" }}
+                    />
+                  </span>
+                )}
+              </>
+            );
 
-          {/* Language Switcher — hidden until i18n is ready */}
-        </div>
+            return (
+              <li key={item.href} className="flex items-center">
+                {item.external ? (
+                  <a href={item.href} target="_blank" rel="noopener noreferrer" className={cls}>
+                    {content}
+                  </a>
+                ) : (
+                  <Link href={item.href} className={cls}>
+                    {content}
+                  </Link>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </div>
   );

@@ -102,7 +102,7 @@ function StartPoints() {
               <p className="body-sm text-medium-gray flex-1 mb-5">{text}</p>
               <Link
                 href={href}
-                className="inline-flex items-center gap-1 text-lime hover:text-deep-green font-medium transition-colors"
+                className="inline-flex items-center gap-1 min-h-[44px] py-2 text-lime hover:text-deep-green font-medium transition-colors"
               >
                 {cta}
                 <ArrowLeft className="w-4 h-4" aria-hidden />
