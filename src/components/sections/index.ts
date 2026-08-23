@@ -6,8 +6,8 @@
 export { default as HeroSection } from "./HeroSection";
 export { TrustBar }               from "./TrustBar";
 export { MethodologySection }     from "./MethodologySection";
-export { ThreePillarsSection }    from "./ThreePillarsSection";
-export { ComplementaryProducts }  from "./ComplementaryProducts";
+export { PortfolioFamilies }      from "./PortfolioFamilies";
+export { SpecializedSolutions }   from "./SpecializedSolutions";
 export { OsfanStationPreview }    from "./OsfanStationPreview";
 export { SmartOSDemoSection }     from "./SmartOSDemoSection";
 export { StatsStrip }             from "./StatsStrip";
