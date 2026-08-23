@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Database, BrainCircuit, Send } from "lucide-react";
 
 const STEPS = [
@@ -33,6 +34,37 @@ export function SmartOSFlow() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
             من الحقل إلى القرار — ثمّ إلى التنفيذ
           </h2>
+        </div>
+
+        {/* لقطة لوحة التشغيل داخل إطار متصفّح */}
+        <div className="relative max-w-5xl mx-auto mb-12">
+          <div
+            className="absolute -inset-6 rounded-3xl opacity-25 blur-3xl pointer-events-none -z-10"
+            style={{ background: "radial-gradient(ellipse, #7CB342 0%, transparent 70%)" }}
+            aria-hidden="true"
+          />
+          <div className="rounded-2xl overflow-hidden shadow-2xl border border-[#A5D63F]/20">
+            <div className="bg-[#1B2631] px-4 py-3 flex items-center gap-3 border-b border-white/10">
+              <div className="flex gap-1.5">
+                <span className="w-3 h-3 rounded-full bg-red-500/80" />
+                <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                <span className="w-3 h-3 rounded-full bg-green-500/80" />
+              </div>
+              <div className="flex-1 mx-3">
+                <div className="bg-[#0D1117] rounded px-3 py-1 text-xs text-white/50 font-latin inline-flex items-center gap-1.5">
+                  demo.igarden.sa
+                </div>
+              </div>
+            </div>
+            <Image
+              src="/smart-os/dashboard-preview.png"
+              alt="لوحة تشغيل Smart OS — قراءات التشغيل في مكان واحد"
+              width={1349}
+              height={661}
+              className="w-full h-auto block"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
+            />
+          </div>
         </div>
 
         <ol className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">

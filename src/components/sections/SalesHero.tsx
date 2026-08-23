@@ -5,11 +5,36 @@ import { CONTACT } from "@/lib/constants";
 export function SalesHero() {
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-br from-[var(--color-brand-700)] via-[var(--color-brand-600)] to-[var(--color-brand-500)] text-white"
+      className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center overflow-hidden pt-28 md:pt-32 pb-16 md:pb-20 text-white"
       dir="rtl"
       aria-labelledby="hero-headline"
     >
-      <div className="container-igarden section-padding">
+      {/* فيديو الرئيسية — يمتدّ خلف الهيدر الشفّاف */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/images/hero-poster.jpg"
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover -z-20"
+      >
+        <source src="/videos/hero-video.webm" type="video/webm" />
+        <source src="/videos/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* طبقة التعتيم — تضمن وضوح النصّ والهيدر الأبيض فوق الفيديو */}
+      <div
+        className="absolute inset-0 -z-10 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(15,61,46,0.55) 0%, rgba(15,61,46,0.40) 50%, rgba(15,61,46,0.65) 100%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="container-igarden relative">
         <div className="max-w-4xl">
           <h1
             id="hero-headline"

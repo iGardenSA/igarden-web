@@ -1,7 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Network, Cpu, Sprout, MonitorCog } from "lucide-react";
 
-const TRACKS = [
+type Track = {
+  Icon: typeof Network;
+  title: string;
+  text: string;
+  href: string;
+  img?: { src: string; alt: string };
+};
+
+const TRACKS: Track[] = [
   {
     Icon: Network,
     title: "رقمنة تشغيل المزرعة",
@@ -13,12 +22,20 @@ const TRACKS = [
     title: "التحكّم والأتمتة",
     text: "ريّ وتسميد ومناخ ومضخّات ومحابس، بجدولة وتشغيل عن بُعد.",
     href: "/products/smart-controllers",
+    img: {
+      src: "/images/osfan-full/03_cabbage_diversity.webp",
+      alt: "محاصيل خضار تحت مراقبة Smart Controllers داخل مرفق R&D في عسفان",
+    },
   },
   {
     Icon: Sprout,
     title: "أنظمة الإنتاج",
     text: "أنظمة زراعة مائية وبيوت محمية وأبراج رأسية، تشمل نموذج iGarden Tower المسجّل لدى SAIP.",
     href: "/products/hydroponics",
+    img: {
+      src: "/images/osfan-full/02_tower_closeup.webp",
+      alt: "نظام iGarden Tower للزراعة العمودية — مُختبَر داخل مرفق R&D في عسفان",
+    },
   },
   {
     Icon: MonitorCog,
@@ -26,7 +43,7 @@ const TRACKS = [
     text: "لوحة تشغيل موحّدة، وسجلّات تدعم الجاهزية لمتطلبات Saudi GAP.",
     href: "/products/smart-os",
   },
-] as const;
+];
 
 export function SolutionTracks() {
   return (
@@ -38,12 +55,24 @@ export function SolutionTracks() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {TRACKS.map(({ Icon, title, text, href }) => (
+          {TRACKS.map(({ Icon, title, text, href, img }) => (
             <Link
               key={title}
               href={href}
-              className="group bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-7 hover:border-[var(--color-accent-500)] transition-colors flex flex-col"
+              className="group bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] overflow-hidden hover:border-[var(--color-accent-500)] transition-colors flex flex-col"
             >
+              {img && (
+                <div className="relative aspect-[16/9] w-full">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              )}
+              <div className="p-7 flex flex-col flex-1">
               <Icon
                 className="w-8 h-8 text-[var(--color-brand-600)] mb-4"
                 aria-hidden="true"
@@ -56,6 +85,7 @@ export function SolutionTracks() {
                 اعرف أكثر
                 <ArrowLeft className="w-4 h-4" aria-hidden="true" />
               </span>
+              </div>
             </Link>
           ))}
         </div>

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 };
 
 import { SalesHero } from "@/components/sections/SalesHero";
+import { TrustBar } from "@/components/sections/TrustBar";
 import { AudienceSplit } from "@/components/sections/AudienceSplit";
 import { DigitizationStages } from "@/components/sections/DigitizationStages";
 import { FieldProjectCard } from "@/components/sections/FieldProjectCard";
@@ -33,8 +34,13 @@ export default function HomePage() {
       <OrganizationSchema />
       <WebSiteSchema />
 
-      {/* ① Hero */}
-      <SalesHero />
+      {/* ① Hero — يمتدّ خلف الهيدر اللاصق (64px) ليظهر التنقّل الأبيض فوق الفيديو */}
+      <div className="-mt-[64px]">
+        <SalesHero />
+      </div>
+
+      {/* شريط الثقة */}
+      <TrustBar />
 
       {/* ② فرز الجمهور */}
       <AudienceSplit />
