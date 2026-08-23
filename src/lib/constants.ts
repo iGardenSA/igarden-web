@@ -197,6 +197,8 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
         items: [
           { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
           { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
+          { label: "المحميات الزراعية", href: "/products/smart-greenhouses" },
+          { label: "Smart Controllers", href: "/products/smart-controllers" },
         ],
       },
       {
@@ -205,6 +207,7 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
         items: [
           { label: "منصة Smart OS", href: "/products/smart-os" },
           { label: "جاهزية الامتثال", href: "/compliance" },
+          { label: "كيف نعمل", href: "/how-we-work" },
         ],
         cta: {
           label: "Live Demo",

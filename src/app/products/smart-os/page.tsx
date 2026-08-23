@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك | iGarden",
     description: "لوحة تشغيل موحّدة: ربط وعرض وتحكّم وإشراف عن بُعد ضمن نطاق المشروع — والتحليلات المتقدّمة قيد التطوير.",
+    images: [{ url: "/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
   },
