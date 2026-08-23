@@ -20,8 +20,8 @@ export function AudienceSplit() {
               للمنشآت والمزارع التجارية
             </h3>
             <p className="body-base text-medium-gray leading-relaxed mb-6 flex-1">
-              مزارع ومحميات قائمة تريد تشغيلاً قابلاً للقياس والمتابعة بدل الاجتهاد
-              اليومي — نبدأ بنطاق واحد ونتوسّع معك.
+              مشروع جديد تؤسّسه، أو منشأة قائمة تطوّر تشغيلها — نبدأ من نقطتك
+              ونتوسّع معك.
             </p>
             <Link
               href="#assessment"

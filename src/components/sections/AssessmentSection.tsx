@@ -26,6 +26,12 @@ const FACILITY_TYPES = [
   { value: "authority", label: "جهة", leadType: "government" },
 ] as const;
 
+const START_POINTS = [
+  { value: "new_project", label: "مشروع جديد — تخطيط وتأسيس" },
+  { value: "existing_facility", label: "منشأة قائمة — تطوير ورقمنة" },
+  { value: "expansion", label: "توسعة أو نظام إضافي" },
+] as const;
+
 const TIMING = [
   { value: "now", label: "فوري" },
   { value: "three_months", label: "خلال ٣ أشهر" },
@@ -33,6 +39,9 @@ const TIMING = [
 ] as const;
 
 const schema = z.object({
+  start_point: z.enum(["new_project", "existing_facility", "expansion"], {
+    message: "اختر نقطة البداية",
+  }),
   full_name: z.string().min(2, "الاسم مطلوب"),
   company: z.string().min(2, "اسم المنشأة مطلوب"),
   region: z.string().min(2, "المنطقة مطلوبة"),
@@ -81,6 +90,7 @@ export function AssessmentSection() {
   }, [setValue]);
 
   const timing = watch("timing");
+  const startPoint = watch("start_point");
 
   const onSubmit = async (data: FormData) => {
     setState("submitting");
@@ -90,8 +100,12 @@ export function AssessmentSection() {
         INTERESTS.find((i) => i.value === data.interest)?.label ?? data.interest;
       const timingLabel = TIMING.find((t) => t.value === data.timing)?.label ?? "";
 
+      const startLabel =
+        START_POINTS.find((s) => s.value === data.start_point)?.label ?? "";
+
       const message = [
         `طلب تقييم أوّلي لجاهزية المزرعة.`,
+        `نقطة البداية: ${startLabel}`,
         `المنطقة: ${data.region}`,
         `نوع المنشأة: ${facility?.label ?? data.facility_type}`,
         `أقرب احتياج: ${interestLabel}`,
@@ -139,7 +153,8 @@ export function AssessmentSection() {
               لا تحتاج قراراً كبيراً لتبدأ — تحتاج تقييماً.
             </h2>
             <p className="body-base text-medium-gray leading-relaxed">
-              أخبرنا بوضع مزرعتك، ونعود إليك بالخطوة الأولى المناسبة ونطاقها.
+              سواء كنت تؤسّس مشروعاً جديداً أو تطوّر منشأة قائمة، أخبرنا بنقطة
+              البداية واحتياجك، ونعود إليك بالخطوة الأولى المناسبة.
             </p>
           </div>
 
@@ -157,6 +172,29 @@ export function AssessmentSection() {
               className="bg-white rounded-2xl border border-[var(--color-border)] shadow-[var(--shadow-soft)] p-7 md:p-9 space-y-5"
               noValidate
             >
+              <Field label="نقطة البداية" error={errors.start_point?.message}>
+                <div className="flex flex-wrap gap-2.5">
+                  {START_POINTS.map((sp) => (
+                    <button
+                      key={sp.value}
+                      type="button"
+                      onClick={() =>
+                        setValue("start_point", sp.value, { shouldValidate: true })
+                      }
+                      aria-pressed={startPoint === sp.value}
+                      className={`px-5 py-2.5 rounded-lg border-2 text-sm font-semibold transition-colors ${
+                        startPoint === sp.value
+                          ? "border-[var(--color-accent-500)] bg-[var(--color-accent-500)]/10 text-deep-green"
+                          : "border-[var(--color-border)] text-medium-gray hover:border-[var(--color-brand-300)]"
+                      }`}
+                    >
+                      {sp.label}
+                    </button>
+                  ))}
+                </div>
+                <input type="hidden" {...register("start_point")} />
+              </Field>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <Field label="الاسم" error={errors.full_name?.message}>
                   <input {...register("full_name")} className="input-igarden" />

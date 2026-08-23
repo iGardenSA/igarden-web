@@ -1,12 +1,8 @@
 /* بطاقة نصّية بلا إطار صورة — حتى تصل صور الميدان. */
 const BLOCKS = [
   {
-    label: "التحدّي",
-    text: "صالتان إنتاجيتان كان التشغيل فيهما يعتمد بدرجة كبيرة على المتابعة اليدوية، مع غياب سجلّ تشغيل موحّد.",
-  },
-  {
-    label: "ما رُكّب",
-    text: "نقاط قياس ومنظومة تحكّم في صالتين، مع إشراف عن بُعد.",
+    label: "ما أُنشئ",
+    text: "نظام زراعة مائية جديد في صالتين، ومنظومة تحكّم ونقاط قياس.",
   },
   {
     label: "ما يعمل اليوم",
@@ -30,9 +26,14 @@ export function FieldProjectCard() {
               منشأة زراعية تجارية · المنطقة الشرقية · قيد التنفيذ
             </span>
 
-            <h2 className="text-2xl md:text-3xl font-bold text-deep-green mb-8">
-              من متابعة يدوية إلى تشغيل مقاس
+            <h2 className="text-2xl md:text-3xl font-bold text-deep-green mb-4">
+              إنشاء نظام زراعة مائية جديد داخل منشأة قائمة
             </h2>
+
+            <p className="body-base text-medium-gray leading-relaxed mb-8">
+              مشروع يجمع المسارين: تأسيس نظام إنتاج جديد، وربطه بتشغيل المنشأة
+              القائمة بالتحكّم والإشراف عن بُعد.
+            </p>
 
             <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
               {BLOCKS.map(({ label, text }) => (

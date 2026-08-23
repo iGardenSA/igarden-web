@@ -33,7 +33,7 @@ export function DigitizationStages() {
       <div className="container-igarden">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="heading-eyebrow mb-3">كيف نرقمن تشغيل مزرعتك؟</p>
-          <h2 className="heading-section">أربع مراحل، تبدأ من حيث أنت</h2>
+          <h2 className="heading-section">لرقمنة منشأة قائمة — أربع مراحل تبدأ من حيث أنت</h2>
         </div>
 
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">

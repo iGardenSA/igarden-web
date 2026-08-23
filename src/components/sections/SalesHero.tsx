@@ -36,33 +36,28 @@ export function SalesHero() {
 
       <div className="container-igarden relative">
         <div className="max-w-4xl">
-          <h1
-            id="hero-headline"
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight text-white mb-6"
-          >
-            مزرعة تُدار بالبيانات — نبنيها معك مرحلةً مرحلة.
-          </h1>
-
-          <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-8">
-            تربط iGarden القياس والتحكّم والأتمتة وبيانات التشغيل فوق بنيتك القائمة.
-            نبدأ بنطاق عملي واضح، ثمّ نوسّعه نحو منظومة رقمية متكاملة لمتابعة المزرعة
-            وإدارة تشغيلها وتوثيق قراراتها.
+          <p className="text-sm md:text-base font-semibold text-[#A5D63F] mb-4">
+            شركة سعودية ريادية ومبتكرة في التقنيات الزراعية
           </p>
 
-          <div className="bg-white/10 border border-white/15 rounded-2xl p-5 md:p-6 mb-10 max-w-3xl">
-            <p className="text-base md:text-lg text-white/90 leading-relaxed">
-              المرحلة الأولى تعمل اليوم على أرض الواقع: ريّ آلي على بيت مزروع في منشأة
-              زراعية تجارية بالمنطقة الشرقية — وتقنيات نطوّرها ونختبرها ميدانياً في
-              مرفق R&amp;D في عسفان.
-            </p>
-          </div>
+          <h1
+            id="hero-headline"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] tracking-tight text-white mb-6"
+          >
+            ازرع بذكاء.
+          </h1>
+
+          <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-10">
+            نَبني ونُوطّن ونُطوّر منظومات زراعية متكاملة — نؤسّس مشروعك من التخطيط
+            والإنشاء، أو نطوّر منشأتك القائمة بالتحكّم والأتمتة وبيانات التشغيل.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="#assessment"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-base md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none"
             >
-              اطلب تقييماً أولياً لجاهزية مزرعتك
+              اطلب تقييماً أولياً لمشروعك الزراعي
             </Link>
             <a
               href={CONTACT.whatsapp}
