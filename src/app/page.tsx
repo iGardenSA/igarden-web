@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
-  title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
+  title: "iGarden — رقمنة تشغيل المزارع والمنشآت الزراعية في السعودية",
   description:
-    "الحديقة الذكية شركة سعودية تبني أنظمة الزراعة الذكية: حساسات، تحكم، وبرمجيات تشغيل ميدانية مكيّفة للمناخ السعودي منذ 2024. ازرع بذكاء.",
+    "مزرعة تُدار بالبيانات — نبنيها معك مرحلةً مرحلة. تربط iGarden القياس والتحكّم والأتمتة وبيانات التشغيل فوق بنيتك القائمة. ازرع بذكاء.",
   alternates: { canonical: "https://igarden.sa/" },
   openGraph: {
-    title: "iGarden — الحديقة الذكية | أنظمة الزراعة الذكية في السعودية",
+    title: "iGarden — رقمنة تشغيل المزارع والمنشآت الزراعية في السعودية",
     description:
-      "شركة سعودية تبني أنظمة تحكم وزراعة مائية مكيّفة للمناخ السعودي. ازرع بذكاء.",
+      "رقمنة تشغيل مزرعتك على مراحل — قياس وتحكّم وأتمتة وبيانات تشغيل فوق بنيتك القائمة. ازرع بذكاء.",
     images: ["/images/og/home.jpg"],
     type: "website",
     locale: "ar_SA",
