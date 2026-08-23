@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Sprout, Cpu, MonitorCog, Sun } from "lucide-react";
 
+type SubLink = { label: string; href: string };
+
 type Track = {
   Icon: typeof Sprout;
   num: string;
@@ -10,6 +12,7 @@ type Track = {
   href: string;
   cta: string;
   badge?: string;
+  subLinks?: SubLink[];
   img: { src: string; alt: string };
 };
 
@@ -21,6 +24,10 @@ const TRACKS: Track[] = [
     text: "للمشاريع الجديدة: دراسة الاحتياج وتخطيط المنظومة، وتصميم وإنشاء وتجهيز البيوت المحمية والزراعة المائية والأبراج الرأسية وأنظمة الاستنبات — حتى التركيب والتشغيل الأولي.",
     href: "/products",
     cta: "اعرف أكثر",
+    subLinks: [
+      { label: "المحميات الزراعية", href: "/products/smart-greenhouses" },
+      { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
+    ],
     img: {
       src: "/images/osfan-full/01_tower_visitors.webp",
       alt: "أبراج iGarden للزراعة الرأسية داخل مرفق R&D في عسفان",
@@ -81,12 +88,12 @@ export function SolutionTracks() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {TRACKS.map(({ Icon, num, title, text, href, cta, badge, img }) => (
-            <Link
+          {TRACKS.map(({ Icon, num, title, text, href, cta, badge, img, subLinks }) => (
+            <div
               key={title}
-              href={href}
               className="group bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] overflow-hidden hover:border-[var(--color-accent-500)] transition-colors flex flex-col"
             >
+              <Link href={href} className="flex flex-col flex-1">
               <div className="relative aspect-[16/9] w-full">
                 <Image
                   src={img.src}
@@ -117,12 +124,28 @@ export function SolutionTracks() {
                 <p className="text-sm text-medium-gray leading-relaxed mb-5 flex-1">
                   {text}
                 </p>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-600)] group-hover:text-deep-green transition-colors">
-                  {cta}
-                  <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-                </span>
-              </div>
-            </Link>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-600)] group-hover:text-deep-green transition-colors">
+                    {cta}
+                    <ArrowLeft className="w-4 h-4" aria-hidden="true" />
+                  </span>
+                </div>
+              </Link>
+
+              {subLinks && (
+                <ul className="px-7 pb-6 -mt-2 flex flex-wrap gap-x-5 gap-y-2">
+                  {subLinks.map((sl) => (
+                    <li key={sl.href}>
+                      <Link
+                        href={sl.href}
+                        className="text-sm text-medium-gray underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
+                      >
+                        {sl.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           ))}
         </div>
       </div>

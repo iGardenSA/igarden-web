@@ -19,12 +19,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Greenhouses — محميات ذكية اختُبرت في +45°C بعسفان | iGarden",
+  title: "Smart Greenhouses — محميات ذكية مُختبَرة ميدانياً في مرفق R&D في عسفان | iGarden",
   description:
     "محميات ذكية بأتمتة IoT كاملة. هياكل مقاومة للرياح، عزل حراري، تحكم مناخي مُختَبَر في عسفان. حلول للمزارع التجارية والحكومية.",
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
   openGraph: {
-    title: "Smart Greenhouses — محميات ذكية اختُبرت في +45°C بعسفان",
+    title: "Smart Greenhouses — محميات ذكية مُختبَرة ميدانياً في مرفق R&D في عسفان",
     description: "هيكل + أتمتة + تحكم مناخي. كفاءة طاقة محسّنة في الاختبارات الميدانية. مُختَبَرة في عسفان.",
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Greenhouses — محميات ذكية اختُبرت في +45°C بعسفان",
+    title: "Smart Greenhouses — محميات ذكية مُختبَرة ميدانياً في مرفق R&D في عسفان",
     description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة محسّنة في الاختبارات الميدانية.",
     images: ["/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
@@ -63,10 +63,10 @@ function Hero() {
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — هياكل مقاومة
               لرياح الخليج، تَبريد متعدّد المراحل، ريّ ذكي، وتحكّم مناخي اختُبر
-              في عسفان تحت +45°C.
+              مُختبَرة ميدانياً في مرفق R&D في عسفان.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
-              كفاءة طاقة محسّنة بحسب التصميم والمحصول. تركيب مفتاح-باليد. دعم
+              كفاءة طاقة محسّنة بحسب التصميم والمحصول. توريد وتركيب وربط وتشغيل أولي بحسب الباقة. دعم
               ميداني بعد التَسليم.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -86,7 +86,7 @@ function Hero() {
           >
             <Building2 className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
-              +45°C · Tested in Osfan
+              Field-tested · iGarden R&D Facility, Osfan
             </span>
           </div>
         </div>
@@ -225,7 +225,7 @@ const VALUES = [
   {
     Icon: Building2,
     title: "هيكل مُصمَّم لمناخك",
-    text: "مقاوم لرياح الخليج. عزل حراري عالٍ. مواد مُختارة لظروف +45°C والرطوبة العالية.",
+    text: "مقاوم لرياح الخليج. عزل حراري عالٍ. مواد مُختارة للحرارة والرطوبة العالية.",
   },
   {
     Icon: Cpu,
@@ -421,12 +421,8 @@ function HowItWorks() {
 
 /* ─── Section 5: Osfan Gallery ───────────────────────────── */
 const GALLERY = [
-  { src: "/images/products/smart-greenhouses/osfan-1.jpg", alt: "محمية ذكية داخل مرفق R&D في عسفان — جانب خارجي" },
-  { src: "/images/products/smart-greenhouses/osfan-2.jpg", alt: "نظام التهوية الجانبي في المحمية" },
-  { src: "/images/products/smart-greenhouses/osfan-3.jpg", alt: "الداخل — نباتات تحت التحكم المناخي" },
-  { src: "/images/products/smart-greenhouses/osfan-4.jpg", alt: "لوحة التحكم داخل المحمية" },
-  { src: "/images/products/smart-greenhouses/osfan-5.jpg", alt: "نظام الريّ الآلي" },
-  { src: "/images/products/smart-greenhouses/osfan-6.jpg", alt: "مرفق R&D في عسفان — منظر عام للمحميات" },
+  { src: "/images/osfan-full/04_greenhouse_wide.webp", alt: "منظر داخلي لمحمية ذكية داخل مرفق R&D في عسفان" },
+  { src: "/images/osfan-full/05_tomato_tunnel.webp", alt: "نفق الطماطم بنظام Dutch Bucket داخل مرفق R&D في عسفان" },
 ];
 
 function OsfanGallery() {
@@ -437,14 +433,12 @@ function OsfanGallery() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             اختُبرت في عسفان
           </p>
-          <h2 className="h2 text-deep-green">مُختَبَرة في ظروف سعودية حقيقية</h2>
+          <h2 className="h2 text-deep-green">من مرفق R&amp;D في عسفان</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ما تراه هنا ليس نماذج افتراضية — هي محميات تعمل فعلياً في عسفان
-            منذ 2025 تحت +45°C.
+            منذ 2025 في ظروف صيفية سعودية.
           </p>
         </div>
-
-        {/* [CONTENT_NEEDED: 6 صور حقيقية من محميات عسفان — /images/products/smart-greenhouses/osfan-1..6.jpg] */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
           {GALLERY.map((img) => (
             <div
@@ -632,42 +626,72 @@ function ScopeSection() {
   );
 }
 
-/* ─── Section 6.2: Prerequisites ──────────────────────────── */
-const PREREQUISITES = [
+/* ─── Section 6.2: نطاق التنفيذ — باقتان ─────────────────── */
+const PACKAGES = [
   {
-    title: "موقع جاهز بأساسات مُكتملة",
-    desc: "الأرضية والأساسات وأعمال التسوية تُكمَل قبل وصول فريق التركيب. نُزوّدك بالمواصفات المطلوبة مسبقاً.",
+    tag: "لمشروع جديد",
+    title: "التأسيس المتكامل",
+    items: [
+      "دراسة الاحتياج والموقع",
+      "التخطيط والتصميم",
+      "توريد وتجهيز المحمية وأنظمة الإنتاج",
+      "التركيب والربط",
+      "التشغيل الأولي والتدريب",
+    ],
   },
   {
-    title: "توصيل الكهرباء لقبل لوحة التحكم",
-    desc: "وصلة كهرباء ثلاثية إلى موقع التركيب. من هناك نُدير كل الأنظمة الداخلية.",
-  },
-  {
-    title: "وضوح المحصول المستهدف وهدف الإنتاج",
-    desc: "المحصول يُحدّد متطلبات الحرارة والرطوبة والتهوية — كلّما عرفنا محصولك مسبقاً، دقّ التصميم.",
-  },
-  {
-    title: "فريق تشغيل ملتزم بالمتابعة",
-    desc: "محمية ذكية تحتاج مشغّلاً يراجع التنبيهات ويتابع Smart OS. التدريب نُقدّمه — الالتزام اليومي عليك.",
+    tag: "لموقع جاهز",
+    title: "التجهيز والتركيب",
+    items: [
+      "يجهّز العميل الأرض والأساسات والكهرباء وفق مواصفات iGarden",
+      "تتولّى iGarden التوريد والتركيب والربط",
+      "التشغيل الأولي والتدريب حسب العقد",
+    ],
   },
 ];
 
-function PrerequisitesSection() {
+function ScopePackagesSection() {
   return (
     <section className="bg-white py-16" dir="rtl">
       <div className="container mx-auto px-4 max-w-7xl">
-        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">قبل البدء</p>
-        <h2 className="h2 text-deep-green mb-8">المتطلبات قبل التركيب</h2>
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
+          كيف نعمل معك
+        </p>
+        <h2 className="h2 text-deep-green mb-8">نطاق التنفيذ — باقتان</h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {PREREQUISITES.map((p, i) => (
-            <div key={p.title} className="bg-[#FAFAF7] rounded-2xl p-6 border border-[#E5E7EB] flex gap-4">
-              <div className="w-10 h-10 rounded-full bg-lime/10 flex items-center justify-center flex-shrink-0">
-                <span className="font-latin font-bold text-deep-green text-sm">{String(i + 1).padStart(2, "0")}</span>
+          {PACKAGES.map((pkg, i) => (
+            <div
+              key={pkg.title}
+              className="bg-[#FAFAF7] rounded-2xl p-7 border border-[#E5E7EB]"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <span className="w-9 h-9 rounded-full bg-lime/10 flex items-center justify-center flex-shrink-0">
+                  <span className="font-latin font-bold text-deep-green text-sm">
+                    {String.fromCharCode(1571 + i)}
+                  </span>
+                </span>
+                <span className="text-xs font-semibold px-3 py-1 rounded-full bg-deep-green/10 text-deep-green">
+                  {pkg.tag}
+                </span>
               </div>
-              <div>
-                <h3 className="font-bold text-deep-green mb-1">{p.title}</h3>
-                <p className="text-[#6B7280] body-sm leading-relaxed">{p.desc}</p>
-              </div>
+
+              <h3 className="font-bold text-deep-green text-lg mb-4">{pkg.title}</h3>
+
+              <ul className="space-y-2.5">
+                {pkg.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-[#6B7280] body-sm leading-relaxed"
+                  >
+                    <CheckCircle2
+                      className="w-4 h-4 text-lime mt-0.5 flex-shrink-0"
+                      aria-hidden
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -681,7 +705,7 @@ const CLIENT_OUTPUTS = [
   {
     Icon: Building2,
     title: "محمية جاهزة للإنتاج",
-    desc: "تسليم مفتاح-باليد — من الهيكل إلى الحساسات إلى أوّل دورة تشغيل.",
+    desc: "من التوريد والتركيب إلى الربط والتشغيل الأولي — بحسب الباقة المتّفق عليها.",
   },
   {
     Icon: MonitorSmartphone,
@@ -880,7 +904,7 @@ export default function SmartGreenhousesPage() {
       <ProductSchema
         name="Smart Greenhouses — المحميات الذكية"
         description="محميات ذكية بأتمتة IoT كاملة. هياكل مقاومة للرياح، عزل حراري، تحكم مناخي مُختَبَر في عسفان. حلول للمزارع التجارية والحكومية."
-        image="/images/products/smart-greenhouses/hero.jpg"
+        image="/images/osfan-full/04_greenhouse_wide.webp"
         url="/products/smart-greenhouses"
         category="Smart Agricultural Greenhouses"
       />
@@ -900,7 +924,7 @@ export default function SmartGreenhousesPage() {
       <OsfanGallery />
       <ScalesSection />
       <ScopeSection />
-      <PrerequisitesSection />
+      <ScopePackagesSection />
       <ClientOutputsSection />
       <SmartOSSection />
       <OperationalLogsSection />

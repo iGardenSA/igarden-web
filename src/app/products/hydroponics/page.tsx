@@ -502,12 +502,9 @@ function IGardenTowerSection() {
 
 /* ─── Section 5: Osfan Gallery ───────────────────────────── */
 const GALLERY = [
-  { src: "/images/products/hydroponics/osfan-1.jpg", alt: "نظام NFT يعمل داخل مرفق R&D في عسفان" },
-  { src: "/images/products/hydroponics/osfan-2.jpg", alt: "DWC — جذور في محلول مُهوّى" },
-  { src: "/images/products/hydroponics/osfan-3.jpg", alt: "iGarden Tower في وضع التشغيل الميداني" },
-  { src: "/images/products/hydroponics/osfan-4.jpg", alt: "نباتات الخس في مرحلة الحصاد" },
-  { src: "/images/products/hydroponics/osfan-5.jpg", alt: "لقطة قريبة — جذور نظام Aeroponics" },
-  { src: "/images/products/hydroponics/osfan-6.jpg", alt: "منظر عام لقسم الهيدروبونيك في عسفان" },
+  { src: "/images/osfan-full/01_tower_visitors.webp", alt: "أبراج iGarden للزراعة الرأسية داخل مرفق R&D في عسفان" },
+  { src: "/images/osfan-full/02_tower_closeup.webp", alt: "لقطة قريبة لبرج iGarden داخل مرفق R&D في عسفان" },
+  { src: "/images/osfan-full/03_cabbage_diversity.webp", alt: "تنوّع محاصيل الخضار في منظومة الزراعة المائية داخل مرفق R&D في عسفان" },
 ];
 
 function OsfanGallery() {
@@ -518,8 +515,7 @@ function OsfanGallery() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             كلّها تعمل الآن في عسفان
           </p>
-          <h2 className="h2 text-deep-green">الأنظمة في الميدان</h2>
-          {/* [CONTENT_NEEDED: 4-6 صور حقيقية لأنظمة Hydroponics داخل مرفق R&D في عسفان — /images/products/hydroponics/osfan-1..6.jpg] */}
+          <h2 className="h2 text-deep-green">الأنظمة داخل مرفق R&amp;D في عسفان</h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
@@ -935,7 +931,7 @@ export default function HydroponicsPage() {
       <ProductSchema
         name="Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower"
         description="7 تقنيات زراعة مائية مُختَبَرة في عسفان. من NFT إلى DWC إلى Aeroponics. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
-        image="/images/products/hydroponics/hero.jpg"
+        image="/images/osfan-full/02_tower_closeup.webp"
         url="/products/hydroponics"
         category="Hydroponic Systems"
       />

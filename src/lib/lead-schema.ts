@@ -16,13 +16,13 @@ export const leadSchema = z.object({
     .optional()
     .or(z.literal("")),
 
+  // مطلوب: هو قناة التواصل الأساسية، والبريد يبقى اختيارياً.
   phone: z
     .string()
+    .min(1, "رقم الجوال مطلوب — هو وسيلتنا للتواصل معك")
     .min(7, "رقم الهاتف قصير جداً")
     .max(20, "رقم الهاتف طويل جداً")
-    .regex(/^[\d\s+()-]+$/, "رقم الهاتف يحتوي أحرفاً غير صالحة")
-    .optional()
-    .or(z.literal("")),
+    .regex(/^[\d\s+()-]+$/, "رقم الهاتف يحتوي أحرفاً غير صالحة"),
 
   company: z.string().max(120).optional().or(z.literal("")),
 
@@ -60,14 +60,7 @@ export const leadSchema = z.object({
     .string()
     .min(10, "الرسالة قصيرة جداً (10 أحرف على الأقل)")
     .max(2000, "الرسالة طويلة جداً"),
-})
-.refine(
-  (data) => data.email || data.phone,
-  {
-    message: "يجب إدخال بريد إلكتروني أو رقم هاتف على الأقل",
-    path: ["email"],
-  }
-);
+});
 
 export type LeadFormData = z.infer<typeof leadSchema>;
 

@@ -11,91 +11,37 @@ import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 export const metadata: Metadata = {
-  title: "منصة Smart OS · الذكاء التشغيلي للزراعة · iGarden",
+  title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك · iGarden",
   description:
-    "منصة تحليلية متكاملة بقدرات AI (LSTM, Anomaly Detection) وIoT (MQTT 5.0)، مُختبَرة ميدانياً في مرفق عسفان. حلول للزراعة التجارية والصناعية في السعودية.",
+    "لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد والبرامج المجدولة ضمن نطاق مشروعك — والسجلّات والتنبيهات والتقارير تُفعَّل بحسبه. طبقات التحليل المتقدّم قيد التطوير.",
   alternates: { canonical: "https://igarden.sa/products/smart-os" },
   openGraph: {
-    title: "Smart OS — الذكاء التشغيلي للزراعة | iGarden",
-    description: "منصة IoT + AI لتحليل بيانات المزرعة وتحويلها إلى قرارات تشغيلية — مُختبَرة في عسفان.",
+    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك | iGarden",
+    description: "لوحة تشغيل موحّدة: ربط وعرض وتحكّم وإشراف عن بُعد ضمن نطاق المشروع — والتحليلات المتقدّمة قيد التطوير.",
     type: "website",
     locale: "ar_SA",
   },
 };
 
 /* ─── Technical Layers ─────────────────────────────────── */
-const TECHNICAL_LAYERS = [
+const CAPABILITY_TIERS = [
   {
-    layer: "01",
-    Icon: Brain,
-    title: "طبقة التحليل الذكي",
-    capabilities: [
-      {
-        name: "اكتشاف الشذوذ",
-        tech: "Isolation Forest · Statistical Process Control",
-        description:
-          "رصد القراءات الشاذة في pH وEC والحرارة قبل أن تؤثر على المحصول.",
-      },
-      {
-        name: "التنبّؤ بالإنتاجية",
-        tech: "LSTM · Time Series Analysis",
-        description:
-          "نماذج تنبّؤ مُدرَّبة على بيانات الموسم الحالي مع تحديث دوري.",
-      },
-      {
-        name: "توصيات التحكّم المناخي",
-        tech: "Rule-based + ML Hybrid",
-        description:
-          "توصيات لإعدادات التهوية والتبريد والإضاءة بناءً على ظروف الموقع.",
-      },
-    ],
-  },
-  {
-    layer: "02",
+    tier: "متاح ضمن نطاق المشروع",
     Icon: Wifi,
-    title: "طبقة التكامل (IoT)",
-    capabilities: [
-      {
-        name: "بروتوكول الاتصال",
-        tech: "MQTT 5.0 over TLS",
-        description: "اتصال موثوق منخفض الاستهلاك مع طبقة أمان كاملة.",
-      },
-      {
-        name: "الاستشعار المدعوم",
-        tech: "pH · EC/TDS · Temperature · Humidity · CO₂ · Light",
-        description:
-          "دعم لمستشعرات صناعية وأخرى مفتوحة المصدر.",
-      },
-      {
-        name: "الأجهزة المُتكاملة",
-        tech: "Raspberry Pi 5 · ESP32 · Industrial PLCs",
-        description:
-          "مرونة في النشر من المزارع الصغيرة إلى المنشآت الصناعية.",
-      },
-    ],
+    items: ["الربط", "العرض على لوحة واحدة", "التحكّم والإشراف عن بُعد", "البرامج المجدولة"],
+    note: "بحسب التجهيزات المركَّبة.",
   },
   {
-    layer: "03",
+    tier: "يُفعَّل حسب نطاق المشروع",
     Icon: BarChart3,
-    title: "طبقة التقارير والتنبيهات",
-    capabilities: [
-      {
-        name: "لوحات تحكّم للعميل",
-        tech: "Real-time Dashboards · Custom KPIs",
-        description:
-          "لوحة لكل موقع مع مؤشرات قابلة للتخصيص حسب نوع المحصول.",
-      },
-      {
-        name: "تقارير دورية آلية",
-        tech: "Scheduled Reports · PDF/Email",
-        description: "تقارير أسبوعية وشهرية تُولَّد تلقائياً وتُرسَل لفريق العميل.",
-      },
-      {
-        name: "تنبيهات في الوقت الفعلي",
-        tech: "Webhook · WhatsApp · SMS",
-        description: "تنبيهات فورية عند تجاوز العتبات أو رصد شذوذ.",
-      },
-    ],
+    items: ["السجلّات", "التنبيهات", "التقارير", "التكاملات"],
+    note: null,
+  },
+  {
+    tier: "قيد التطوير",
+    Icon: Brain,
+    items: ["رشيد التشغيلي", "اكتشاف الشذوذ", "LSTM", "التحليلات والتوصيات المتقدّمة", "إدارة المزرعة الأوسع"],
+    note: null,
   },
 ];
 
@@ -127,8 +73,8 @@ export default function SmartOSPage() {
             Smart OS — الذكاء التشغيلي للزراعة
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
-            منصة تحليلية متكاملة تُحوّل بيانات الاستشعار إلى قرارات تشغيلية
-            قابلة للتنفيذ، مُختبَرة في مرفق عسفان قبل أن تصل إلى أي عميل.
+            لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد
+            والبرامج المجدولة — بحسب التجهيزات المركَّبة ونطاق المشروع.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CTAButton href="/contact?cta=live_demo" variant="lime">
@@ -148,41 +94,38 @@ export default function SmartOSPage() {
             <p className="text-lime text-sm font-bold uppercase tracking-widest mb-2">
               البنية التقنية
             </p>
-            <h2 className="h2 text-deep-green">ثلاث طبقات متكاملة</h2>
+            <h2 className="h2 text-deep-green">القدرات — ثلاث مجموعات</h2>
             <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
-              من الحساس إلى القرار — كل طبقة مُصمَّمة لتعمل بشكل مستقل أو
-              متكامل حسب احتياج المنشأة.
+              ما يعمل اليوم ضمن نطاق المشروع، وما يُفعَّل بحسبه، وما هو قيد
+              التطوير — مفصولة بوضوح.
             </p>
           </div>
 
-          <div className="space-y-10">
-            {TECHNICAL_LAYERS.map(({ layer, Icon, title, capabilities }) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {CAPABILITY_TIERS.map(({ tier, Icon, items, note }) => (
               <div
-                key={layer}
-                className="bg-white rounded-card border border-light-gray shadow-soft overflow-hidden"
+                key={tier}
+                className="bg-white rounded-card border border-light-gray shadow-soft p-7"
               >
-                <div className="flex items-center gap-4 px-8 py-5 border-b border-light-gray bg-cream">
-                  <span className="text-3xl font-bold text-deep-green/20 font-latin">
-                    {layer}
-                  </span>
+                <div className="flex items-center gap-3 mb-5">
                   <Icon className="w-6 h-6 text-lime" aria-hidden />
-                  <h3 className="h3 text-deep-green">{title}</h3>
+                  <h3 className="font-bold text-deep-green text-lg">{tier}</h3>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-light-gray rtl:md:divide-x-reverse">
-                  {capabilities.map((cap) => (
-                    <div key={cap.name} className="p-6">
-                      <p className="font-bold text-deep-green mb-1">{cap.name}</p>
-                      <p className="text-xs font-mono text-lime mb-3 leading-relaxed">
-                        {cap.tech}
-                      </p>
-                      <p className="body-sm text-medium-gray">{cap.description}</p>
-                    </div>
+                <ul className="space-y-2.5">
+                  {items.map((it) => (
+                    <li key={it} className="flex items-start gap-2 text-medium-gray body-sm">
+                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-lime flex-shrink-0" aria-hidden />
+                      <span>{it}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
+                {note && (
+                  <p className="text-xs text-medium-gray mt-4 leading-relaxed">{note}</p>
+                )}
               </div>
             ))}
           </div>
-        </div>
+              </div>
       </section>
 
       {/* ─── رشيد ───────────────────────────────────────────── */}
@@ -198,9 +141,9 @@ export default function SmartOSPage() {
           </div>
           <h2 className="h2 text-deep-green mb-6">رشيد</h2>
           <p className="body-base text-medium-gray leading-relaxed max-w-3xl">
-            رشيد — طبقة الذكاء داخل Smart OS. يساعد على فهم الأسئلة واسترجاع
-            المعرفة وتنظيم المهام والسياقات عبر قنوات متعددة. (Telegram قناة
-            أولى.)
+            رشيد — طبقة الذكاء التي نطوّرها داخل Smart OS: تفرز ما يحتاج
+            انتباهك، وتجهّز الأسئلة والتقارير، وتُصعّد القرار إلى الإنسان.
+            ⟵ قيد التطوير، وليست جاهزة اليوم.
           </p>
         </div>
       </section>
@@ -255,7 +198,7 @@ export default function SmartOSPage() {
           </h2>
           <ul className="space-y-4">
             {[
-              "وصول كامل لبيانات مزرعتك في الوقت الفعلي",
+              "وصول إلى قراءات مزرعتك على لوحة واحدة",
               "تنبيهات فورية عند أي شذوذ في القراءات",
               "تقارير دورية آلية لفريقك",
               "اشتراك سنوي مع دعم فني مباشر من الفريق",
