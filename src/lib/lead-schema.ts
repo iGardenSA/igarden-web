@@ -175,6 +175,7 @@ export const CTA_IDS = [
   "pitch_deck_request",
   "live_demo",
   "sustainability_solutions",
+  "bioponics_inquiry",
 ] as const;
 
 export type InterestResolution = {

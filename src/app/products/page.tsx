@@ -17,7 +17,7 @@ const DESCRIPTION =
   "تخطط iGarden وتبني أنظمة الإنتاج، وتؤتمت التشغيل، وترقمن المزرعة، وتدمج حلول الاستدامة وكفاءة التشغيل للمشاريع الجديدة والمنشآت القائمة.";
 
 export const metadata: Metadata = {
-  title: "الحلول والمنظومات الزراعية المتكاملة | iGarden",
+  title: "الحلول والمنظومات الزراعية المتكاملة",
   description: DESCRIPTION,
   alternates: { canonical: "https://igarden.sa/products" },
   openGraph: {

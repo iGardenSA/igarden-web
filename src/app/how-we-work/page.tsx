@@ -14,7 +14,7 @@ const DESCRIPTION =
   "مشروع جديد من التخطيط حتى التشغيل الأولي، أو منشأة قائمة من التقييم حتى الرقمنة والتوسع المرحلي. في الحالتين يبدأ العمل بفهم الموقع والهدف.";
 
 export const metadata: Metadata = {
-  title: "كيف نعمل — مساران للتنفيذ | iGarden",
+  title: "كيف نعمل — مساران للتنفيذ",
   description: DESCRIPTION,
   alternates: { canonical: "https://igarden.sa/how-we-work" },
   openGraph: {

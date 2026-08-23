@@ -34,9 +34,9 @@ const SOLUTIONS: Solution[] = [
   {
     Icon: Leaf,
     title: "الزراعة المائية العضوية وBioponics",
-    desc: "التطبيق العضوي الميداني متاح ضمن نطاق المشروع بمدخلات معتمدة. أمّا Bioponics — التغذية من مصادر حيوية بالكامل — فهو مسار قيد التطوير في مرفق R&D في عسفان، ولا يُعرض كحلّ جاهز للتسليم.",
+    desc: "التطبيق العضوي الميداني متاح ضمن نطاق المشروع. أمّا Bioponics — التغذية من مصادر حيوية بالكامل — فهو مسار قيد التطوير في مرفق R&D في عسفان، ولا يُعرض كحلّ جاهز للتسليم.",
     cta: "ناقش نطاق مشروعك",
-    href: "/contact?interest=organic&cta=request_quote",
+    href: "/contact?interest=hydroponics&cta=bioponics_inquiry",
   },
 ];
 
