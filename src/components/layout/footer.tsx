@@ -21,6 +21,7 @@ const SERVICES_LINKS = [
 ];
 
 const INDIVIDUALS_LINKS = [
+  { label: "للأفراد — حلول منزلية جاهزة", href: "/home-solutions" },
   { label: "تطبيق الحديقة الذكية", href: "/app" },
   { label: "iGarden Home Solutions", href: "https://shop.igarden.sa", external: true },
   { label: "Demo تفاعلي", href: "https://demo.igarden.sa", external: true },

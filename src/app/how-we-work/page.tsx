@@ -313,7 +313,7 @@ export default function HowWeWorkPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/contact"
+              href="/contact?cta=readiness_assessment"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold text-base transition-colors"
             >
               اطلب تقييم مزرعتك

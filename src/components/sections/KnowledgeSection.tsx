@@ -23,7 +23,7 @@ const CARDS = [
     tag: "النشرة الأسبوعية",
     title: "حكمة الحقل — كلّ أسبوع في بريدك",
     desc: "نصائح عملية، أخبار القطاع، وحالات دراسية من مزارعينا. لا spam، فقط قيمة.",
-    href: "/contact?interest=newsletter",
+    href: "/contact?interest=newsletter&cta=newsletter_signup",
     cta: "اشترك مجاناً",
   },
 ];

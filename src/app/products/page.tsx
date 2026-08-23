@@ -128,7 +128,7 @@ function DecisionTree() {
 
         <p className="text-center text-medium-gray text-sm mt-10">
           مَوقفك مختلف؟{" "}
-          <Link href="/contact" className="text-lime hover:text-deep-green font-medium">
+          <Link href="/contact?cta=book_consultation" className="text-lime hover:text-deep-green font-medium">
             احجز استشارة ←
           </Link>
         </p>
@@ -288,7 +288,7 @@ function FinalCTA() {
           نَسمع، نَسأل، ونَقترح — أو نُصارحك إن كان مشروعك ليس جاهزاً بعد.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact" variant="lime">
+          <CTAButton href="/contact?cta=book_consultation" variant="lime">
             احجز استشارة
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-green">

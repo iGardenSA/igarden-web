@@ -76,7 +76,7 @@ function Hero() {
               المُسجَّل صناعياً (SAIP #423450193).
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href="/contact?interest=hydroponics" variant="lime">
+              <CTAButton href="/contact?interest=hydroponics&cta=request_quote" variant="lime">
                 أيّ تقنية تُناسب محصولك؟
               </CTAButton>
               <CTAButton href="/osfan-station" variant="outline-green">
@@ -88,7 +88,7 @@ function Hero() {
           <div
             className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green flex items-center justify-center"
             role="img"
-            aria-label="أنظمة الزراعة المائية من iGarden في مرفق R&D في عسفان"
+            aria-label="أنظمة الزراعة المائية من iGarden داخل مرفق R&D في عسفان"
           >
             <Droplets className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
@@ -379,7 +379,7 @@ function CropGuideSection() {
         <p className="text-center text-medium-gray text-sm mt-8 max-w-2xl mx-auto">
           محصول مختلف؟{" "}
           <a
-            href="/contact?interest=hydroponics"
+            href="/contact?interest=hydroponics&cta=book_consultation"
             className="text-lime hover:text-deep-green font-medium"
           >
             اسأل عن النظام الأنسب لمشروعك ←
@@ -455,7 +455,7 @@ function IGardenTowerSection() {
 
             <blockquote className="border-s-4 border-lime ps-4 mb-6">
               <p className="body-base text-medium-gray italic">
-                «مرّ بثلاث مراحل تطوير في مرفق R&D في عسفان قبل أن يصل إلى مرحلة
+                «مرّ بثلاث مراحل تطوير داخل مرفق R&D في عسفان قبل أن يصل إلى مرحلة
                 الاعتماد. كلّ مدخل فيه — من المضخّات إلى الأنابيب — اختُرنا
                 أفضل بديل متاح من السوق المحلي قبل اللجوء للاستيراد.»
               </p>
@@ -490,7 +490,7 @@ function IGardenTowerSection() {
               </div>
             </div>
 
-            <CTAButton href="/contact?interest=tower" variant="lime">
+            <CTAButton href="/contact?interest=tower&cta=request_quote" variant="lime">
               اطلب iGarden Tower لمشروعك
             </CTAButton>
           </div>
@@ -502,12 +502,9 @@ function IGardenTowerSection() {
 
 /* ─── Section 5: Osfan Gallery ───────────────────────────── */
 const GALLERY = [
-  { src: "/images/products/hydroponics/osfan-1.jpg", alt: "نظام NFT يعمل في مرفق R&D في عسفان" },
-  { src: "/images/products/hydroponics/osfan-2.jpg", alt: "DWC — جذور في محلول مُهوّى" },
-  { src: "/images/products/hydroponics/osfan-3.jpg", alt: "iGarden Tower في وضع التشغيل الميداني" },
-  { src: "/images/products/hydroponics/osfan-4.jpg", alt: "نباتات الخس في مرحلة الحصاد" },
-  { src: "/images/products/hydroponics/osfan-5.jpg", alt: "لقطة قريبة — جذور نظام Aeroponics" },
-  { src: "/images/products/hydroponics/osfan-6.jpg", alt: "منظر عام لقسم الهيدروبونيك في عسفان" },
+  { src: "/images/osfan-full/01_tower_visitors.webp", alt: "أبراج iGarden للزراعة الرأسية داخل مرفق R&D في عسفان" },
+  { src: "/images/osfan-full/02_tower_closeup.webp", alt: "لقطة قريبة لبرج iGarden داخل مرفق R&D في عسفان" },
+  { src: "/images/osfan-full/03_cabbage_diversity.webp", alt: "تنوّع محاصيل الخضار في منظومة الزراعة المائية داخل مرفق R&D في عسفان" },
 ];
 
 function OsfanGallery() {
@@ -518,8 +515,7 @@ function OsfanGallery() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             كلّها تعمل الآن في عسفان
           </p>
-          <h2 className="h2 text-deep-green">الأنظمة في الميدان</h2>
-          {/* [CONTENT_NEEDED: 4-6 صور حقيقية لأنظمة Hydroponics في مرفق R&D في عسفان — /images/products/hydroponics/osfan-1..6.jpg] */}
+          <h2 className="h2 text-deep-green">الأنظمة داخل مرفق R&amp;D في عسفان</h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
@@ -556,7 +552,7 @@ const SCALES = [
     tier: "صناعي",
     title: "مزارع مائية تجارية",
     desc: "مشاريع تجارية كبرى. NFT + Towers بمقاييس صناعية. تصميم مخصّص وفريق تركيب متكامل.",
-    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-industrial" },
+    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-industrial&cta=request_quote" },
     external: false,
     highlight: false,
   },
@@ -564,7 +560,7 @@ const SCALES = [
     tier: "متوسط",
     title: "أنظمة للمزارع المتوسطة",
     desc: "حلول مرنة 50–500 م². نُختار التقنية الأنسب لمحصولك وميزانيتك.",
-    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-mid" },
+    cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-mid&cta=request_quote" },
     external: false,
     highlight: true,
   },
@@ -792,7 +788,7 @@ function SmartOSSection() {
         <div className="bg-[#0F3D2E] rounded-2xl p-8 md:p-10 text-center">
           <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">علاقته بـ Smart OS</p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-            مزرعتك متصلة — تُراقَب وتُدار لحظياً
+            مزرعتك متصلة — تُراقَب وتُدار عن بُعد
           </h2>
           <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
             كل نظام هيدروبونيك نُركّبه يتصل بـ Smart OS — بيانات pH وEC والحرارة والريّ
@@ -856,7 +852,7 @@ const FAQS = [
   },
   {
     q: "كيف يختلف iGarden Tower عن الأبراج المستوردة؟",
-    a: "iGarden Tower مُصمَّم ومُختَبَر في +45°C وبرطوبة الخليج. المستوردة مُصمَّمة لمناخات أوروبية وتحتاج تعديلات مكلفة. علاوةً على أنّ قطع الغيار محلية — لا انتظار لشحنات.",
+    a: "iGarden Tower مصمَّم للحرارة والرطوبة العالية، ومُختبَر ميدانياً في مرفق R&D في عسفان. المستوردة مُصمَّمة لمناخات أوروبية وتحتاج تعديلات مكلفة. علاوةً على أنّ قطع الغيار محلية — لا انتظار لشحنات.",
   },
 ];
 
@@ -896,10 +892,10 @@ function FinalCTA() {
           الفريق مباشرة، وتقرّر بثقة.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=osfan-visit" variant="lime">
+          <CTAButton href="/contact?interest=osfan-visit&cta=osfan_visit_request" variant="lime">
             احجز زيارة مجانية لعسفان
           </CTAButton>
-          <CTAButton href="/contact?interest=hydroponics" variant="outline-green">
+          <CTAButton href="/contact?interest=hydroponics&cta=request_quote" variant="outline-green">
             اطلب استشارة عن بُعد
           </CTAButton>
         </div>
@@ -925,7 +921,7 @@ const SCHEMA_FAQS = [
   {
     question: "كيف يختلف iGarden Tower عن الأبراج المستوردة؟",
     answer:
-      "iGarden Tower مُصمَّم ومُختَبَر في +45°C وبرطوبة الخليج. المستوردة مُصمَّمة لمناخات أوروبية وتحتاج تعديلات مكلفة. علاوةً على أنّ قطع الغيار محلية — لا انتظار لشحنات.",
+      "iGarden Tower مصمَّم للحرارة والرطوبة العالية، ومُختبَر ميدانياً في مرفق R&D في عسفان. المستوردة مُصمَّمة لمناخات أوروبية وتحتاج تعديلات مكلفة. علاوةً على أنّ قطع الغيار محلية — لا انتظار لشحنات.",
   },
 ];
 
@@ -935,7 +931,7 @@ export default function HydroponicsPage() {
       <ProductSchema
         name="Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower"
         description="7 تقنيات زراعة مائية مُختَبَرة في عسفان. من NFT إلى DWC إلى Aeroponics. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
-        image="/images/products/hydroponics/hero.jpg"
+        image="/images/osfan-full/02_tower_closeup.webp"
         url="/products/hydroponics"
         category="Hydroponic Systems"
       />

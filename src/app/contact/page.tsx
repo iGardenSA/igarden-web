@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
@@ -26,6 +26,10 @@ import {
   PROJECT_SIZES,
   TIMELINES,
 } from "@/lib/lead-schema";
+import {
+  readLeadPrefillFromLocation,
+  type TrackingParams,
+} from "@/lib/lead-tracking";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
@@ -35,16 +39,64 @@ export default function ContactPage() {
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [showDetails, setShowDetails] = useState(false);
 
+  const [prefilledLabels, setPrefilledLabels] = useState<string[]>([]);
+  const [contextualWhatsApp, setContextualWhatsApp] = useState<string | null>(null);
+  const tracking = useRef<TrackingParams>({
+    cta: null,
+    utm_source: null,
+    utm_medium: null,
+    utm_campaign: null,
+  });
+
   const {
     register,
     handleSubmit,
     control,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<LeadFormData>({
     resolver: zodResolver(leadSchema),
     defaultValues: { lead_type: "unknown", interested_in: [] },
   });
+
+  // تعبئة مسبقة من الرابط — بعد الترطيب، فلا تعارض بين الخادم والمتصفح.
+  // الخيار يظهر محدَّداً في الشرائح ويبقى قابلاً للتغيير — لا حقل خفيّ.
+  useEffect(() => {
+    const { resolution, tracking: params } = readLeadPrefillFromLocation();
+    tracking.current = params;
+
+    if (resolution.interests.length > 0) {
+      setValue("interested_in", [...resolution.interests]);
+      setPrefilledLabels(
+        resolution.interests.map(
+          (v) => INTERESTS.find((i) => i.value === v)?.label ?? v
+        )
+      );
+    }
+
+    if (resolution.leadType) {
+      setValue("lead_type", resolution.leadType);
+    }
+
+    // رابط واتساب سياقي: يحمل الصفحة والاهتمام في نصّ مُعبّأ مسبقاً.
+    // الرقم يأتي من CONTACT.whatsapp — لا رقم مكتوب يدوياً.
+    const labels = resolution.interests.map(
+      (v) => INTERESTS.find((i) => i.value === v)?.label ?? v
+    );
+    const page =
+      typeof window !== "undefined" ? window.location.pathname : "/contact";
+    const lines = [
+      `مرحباً، أتواصل من صفحة ${page} في موقع iGarden.`,
+      labels.length > 0 ? `اهتمامي: ${labels.join(" · ")}` : null,
+      params.cta ? `المصدر: ${params.cta}` : null,
+    ].filter(Boolean) as string[];
+    setContextualWhatsApp(
+      `${CONTACT.whatsapp}?text=${encodeURIComponent(lines.join("\n"))}`
+    );
+
+    // resolution.unknown → تجاهل صامت: لا تحديد مسبق، والنموذج يعمل كما هو.
+  }, [setValue]);
 
   const onSubmit = async (data: LeadFormData) => {
     setSubmitState("submitting");
@@ -69,10 +121,14 @@ export default function ContactPage() {
         message: fullMessage,
         channel: "website",
         status: "new",
+        // يحمل ?cta= و?interest= كما وردا — لا عمود جديد.
         source_url:
           typeof window !== "undefined" ? window.location.href : null,
         user_agent:
           typeof navigator !== "undefined" ? navigator.userAgent : null,
+        utm_source: tracking.current.utm_source,
+        utm_medium: tracking.current.utm_medium,
+        utm_campaign: tracking.current.utm_campaign,
       });
 
       if (error) {
@@ -299,6 +355,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField
                       label="رقم الجوال"
+                      required
                       error={errors.phone?.message}
                     >
                       <input
@@ -324,6 +381,29 @@ export default function ContactPage() {
                   </div>
 
                   <FormField label="مهتم بـ (اختر ما يناسب)">
+                    {prefilledLabels.length > 0 && (
+                      <p className="text-sm text-medium-gray mb-2">
+                        حدّدنا لك{" "}
+                        <span className="font-semibold text-deep-green">
+                          {prefilledLabels.join(" · ")}
+                        </span>{" "}
+                        بناءً على الصفحة التي جئت منها — يمكنك تغييره.
+                      </p>
+                    )}
+                    {contextualWhatsApp && (
+                      <p className="text-sm text-medium-gray mb-3">
+                        تفضّل واتساب؟{" "}
+                        <a
+                          href={contextualWhatsApp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-[var(--color-brand-600)] underline hover:text-deep-green"
+                        >
+                          راسلنا مباشرةً
+                        </a>{" "}
+                        — الرسالة جاهزة بصفحتك واهتمامك.
+                      </p>
+                    )}
                     <Controller
                       control={control}
                       name="interested_in"

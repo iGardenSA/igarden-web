@@ -46,7 +46,7 @@ export default function HeroSection() {
 
         <div className="flex flex-col sm:flex-row gap-4 items-start mt-8">
           <Link
-            href="/contact"
+            href="/contact?cta=book_consultation"
             className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-lg md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none min-w-[220px]"
           >
             احجز استشارة

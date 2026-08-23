@@ -15,7 +15,7 @@ export function FinalCTA() {
           بلا التزام، بلا مبالغة.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact" variant="lime">
+          <CTAButton href="/contact?cta=book_consultation" variant="lime">
             احجز استشارة مجانية
           </CTAButton>
           <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>

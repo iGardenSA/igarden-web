@@ -79,7 +79,7 @@ export default function IoTPage() {
             كل وحدة مُختبَرة في مرفق عسفان قبل التسليم.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <CTAButton href="/contact" variant="lime">
+            <CTAButton href="/contact?cta=book_consultation" variant="lime">
               احجز استشارة
             </CTAButton>
             <CTAButton href="/products/smart-os" variant="outline-green">
@@ -200,7 +200,7 @@ export default function IoTPage() {
             حرارة الصيف السعودي الحقيقية.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <CTAButton href="/contact" variant="lime">
+            <CTAButton href="/contact?cta=readiness_assessment" variant="lime">
               احجز تقييماً لمزرعتك
             </CTAButton>
             <CTAButton href="/osfan-station" variant="outline-green">
