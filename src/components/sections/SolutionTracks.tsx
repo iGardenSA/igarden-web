@@ -16,6 +16,10 @@ const TRACKS: Track[] = [
     title: "رقمنة تشغيل المزرعة",
     text: "المظلّة: قياس وتحكّم وبيانات تشغيل فوق مزرعة قائمة — بلا استبدال شامل.",
     href: "/products",
+    img: {
+      src: "/images/osfan-full/06_inspector_crops.webp",
+      alt: "فحص ميداني للمحاصيل داخل مرفق R&D في عسفان",
+    },
   },
   {
     Icon: Cpu,
@@ -33,8 +37,8 @@ const TRACKS: Track[] = [
     text: "أنظمة زراعة مائية وبيوت محمية وأبراج رأسية، تشمل نموذج iGarden Tower المسجّل لدى SAIP.",
     href: "/products/hydroponics",
     img: {
-      src: "/images/osfan-full/02_tower_closeup.webp",
-      alt: "نظام iGarden Tower للزراعة العمودية — مُختبَر داخل مرفق R&D في عسفان",
+      src: "/images/osfan-full/01_tower_visitors.webp",
+      alt: "أبراج iGarden للزراعة الرأسية داخل مرفق R&D في عسفان",
     },
   },
   {
@@ -42,6 +46,10 @@ const TRACKS: Track[] = [
     title: "Smart OS وجاهزية الامتثال",
     text: "لوحة تشغيل موحّدة، وسجلّات تدعم الجاهزية لمتطلبات Saudi GAP.",
     href: "/products/smart-os",
+    img: {
+      src: "/smart-os/dashboard-preview.png",
+      alt: "لوحة تشغيل Smart OS — سجلّات وقراءات التشغيل في مكان واحد",
+    },
   },
 ];
 
