@@ -174,6 +174,7 @@ export const CTA_IDS = [
   "newsletter_signup",
   "pitch_deck_request",
   "live_demo",
+  "sustainability_solutions",
 ] as const;
 
 export type InterestResolution = {
