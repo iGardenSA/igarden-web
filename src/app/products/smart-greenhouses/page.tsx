@@ -282,7 +282,7 @@ const SMART_ITEMS = [
 
 const MONITORING_ITEMS = [
   "Dashboard لمراقبة الظروف 24/7",
-  "تنبيهات الانحرافات لحظياً",
+  "تنبيهات عند تجاوز العتبات",
 ];
 
 function TechSpecs() {
@@ -754,7 +754,7 @@ function SmartOSSection() {
         <div className="bg-[#0F3D2E] rounded-2xl p-8 md:p-10 text-center">
           <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">علاقته بـ Smart OS</p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-            محميتك متصلة — تُراقَب وتُدار لحظياً
+            محميتك متصلة — تُراقَب وتُدار عن بُعد
           </h2>
           <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
             كل محمية نُركّبها تتصل بـ Smart OS — بيانات الحرارة والرطوبة والتهوية مرئية
