@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "مرفق R&D في عسفان — حيث نُجرّب قبل أن نُسلّم",
     description:
       "المختبر الميداني لـ iGarden. أنظمة زراعة مائية + ورش «ازرع بذكاء» في ظروف +45°C.",
-    images: [{ url: "/api/og?title=%D9%85%D8%B1%D9%81%D9%82+R%26D+%D9%81%D9%8A+%D8%B9%D8%B3%D9%81%D8%A7%D9%86+%E2%80%94+%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A8%D8%B1+%D8%A7%D9%84%D9%85%D9%8A%D8%AF%D8%A7%D9%86%D9%8A&sub=%D9%86%D8%AC%D8%B1%D9%91%D8%A8+%D9%82%D8%A8%D9%84+%D8%A3%D9%86+%D9%86%D9%8F%D8%B3%D9%84%D9%91%D9%85+%2B45%C2%B0C", width: 1200, height: 630 }],
+    images: [{ url: "/api/og?title=%D9%85%D8%B1%D9%81%D9%82+R%26D+%D9%81%D9%8A+%D8%B9%D8%B3%D9%81%D8%A7%D9%86+%E2%80%94+%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A8%D8%B1+%D8%A7%D9%84%D9%85%D9%8A%D8%AF%D8%A7%D9%86%D9%8A&sub=%D9%86%D8%AC%D8%B1%D9%91%D8%A8+%D9%82%D8%A8%D9%84+%D8%A3%D9%86+%D9%86%D9%8F%D8%B3%D9%84%D9%91%D9%85", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "مرفق R&D في عسفان — المختبر الميداني | iGarden",
     description: "نُجرّب كلّ نظام في ظروف السعودية الحقيقية قبل أن يصل إلى عميل. +45°C.",
-    images: ["/api/og?title=%D9%85%D8%AD%D8%B7%D9%91%D8%A9+%D8%B9%D8%B3%D9%81%D8%A7%D9%86"],
+    images: ["/api/og?title=%D9%85%D8%B1%D9%81%D9%82+R%26D+%D9%81%D9%8A+%D8%B9%D8%B3%D9%81%D8%A7%D9%86"],
   },
 };
 

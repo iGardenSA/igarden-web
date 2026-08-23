@@ -12,7 +12,7 @@ export function OrganizationSchema() {
     legalName: "شركة انتيليجنت غاردن (ذات مسؤولية محدودة)",
     url: "https://igarden.sa",
     logo: "https://igarden.sa/logo/icon-master-original.png",
-    image: "https://igarden.sa/images/og/home.png",
+    image: "https://igarden.sa/api/og?title=iGarden+%E2%80%94+%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%A7%D8%B2%D8%B1%D8%B9+%D8%A8%D8%B0%D9%83%D8%A7%D8%A1",
     description:
       "شركة سعودية لتطوير المزارع وأنظمة التحكم الزراعي الذكي. ازرع بذكاء.",
     foundingDate: "2024",

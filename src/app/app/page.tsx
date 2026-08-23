@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "التطبيق · iGarden في جيبك",
     description:
       "أرقام دقيقة، لا تخمين. EC · pH · PPM · توقيت الري — مرافق عربي للزراعة المائية.",
-    images: ["/images/og/app.png"],
+    images: ["/api/og?title=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82+iGarden&sub=EC+%C2%B7+pH+%C2%B7+PPM+%E2%80%94+%D8%B1%D9%81%D9%8A%D9%82%D9%83+%D9%81%D9%8A+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9"],
   },
 };
 
