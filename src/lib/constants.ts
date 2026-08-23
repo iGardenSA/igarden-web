@@ -104,129 +104,132 @@ export const SOCIAL = {
   youtube: "https://youtube.com/@igarden",
 } as const;
 
-export const NAV_MAIN = [
-  { href: "/", label: "الرئيسية" },
-  { href: "/about", label: "من نحن" },
-  { href: "/products", label: "خدماتنا" },
-  { href: "/roadmap", label: "خارطة الطريق" },
-  { href: "/investors", label: "المستثمرون" },
-  { href: "/contact", label: "تواصل معنا" },
-] as const;
-
 // ─────────────────────────────────────────────────────────────────────────────
-// Wave 2A — Navigation System Types + Constants
+// Navigation System — v2 (Wave 1C)
+// المرجع: docs/SITE-ARCHITECTURE.md
+// ⚠ NAV_MAIN القديمة حُذفت: كانت كوداً ميّتاً (صفر مستهلك) وتحمل
+//   /roadmap و/investors، وكلاهما خارج التنقّل العام بقرار محسوم.
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type TopBarIconName = "globe" | "monitor" | "shopping-bag" | "smartphone";
+/** رسالة واتساب مسبقة عامّة — تُشير إلى أن الزائر وصل من الموقع. */
+export const WHATSAPP_PREFILL = "مرحباً iGarden، وصلت من الموقع وأودّ الاستفسار عن حلولكم.";
 
-export type TopBarItem = {
+/** رابط واتساب الجاهز — يُبنى من CONTACT.whatsapp، بلا رقم مكتوب يدوياً. */
+export const WHATSAPP_HREF = `${CONTACT.whatsapp}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`;
+
+export const DEMO_URL = "https://demo.igarden.sa";
+export const SHOP_URL = "https://shop.igarden.sa";
+
+// ─── Utility Bar — سطح المكتب فقط · ثلاثة روابط · غير sticky ─────────────────
+
+export type UtilityIconName = "monitor" | "shopping-bag" | "home";
+
+export type UtilityItem = {
   label: string;
-  icon: TopBarIconName;
+  icon: UtilityIconName;
   href: string;
   external?: boolean;
-  active?: boolean;
   badge?: "live" | "soon";
 };
+
+export const UTILITY_ITEMS: UtilityItem[] = [
+  { label: "Smart OS Demo", icon: "monitor", href: DEMO_URL, external: true, badge: "live" },
+  { label: "المتجر", icon: "shopping-bag", href: SHOP_URL, external: true },
+  { label: "للأفراد", icon: "home", href: "/home-solutions" },
+];
+
+// ─── Mega Menu — مساران + أربعة أعمدة + شريط سفلي ────────────────────────────
 
 export type NavColumnItem = {
   label: string;
   href: string;
   external?: boolean;
+  badge?: "live";
 };
 
 export type NavColumn = {
   title: string;
-  icon: "tractor" | "cpu" | "leaf";
+  icon: "sprout" | "cpu" | "monitor-cog" | "sun";
   items: NavColumnItem[];
-  cta?: {
-    label: string;
-    href: string;
-    external?: boolean;
-    variant: "live" | "shop" | "default";
-  };
 };
+
+/** مساران أعلى القائمة — مرساتان مُتحقَّقتان على الإنتاج. */
+export const MEGA_PATHS: NavColumnItem[] = [
+  { label: "مشروع جديد", href: "/how-we-work#new-project" },
+  { label: "منشأة قائمة", href: "/how-we-work#existing-facility" },
+];
+
+export const MEGA_COLUMNS: NavColumn[] = [
+  {
+    title: "أنظمة الإنتاج",
+    icon: "sprout",
+    items: [
+      { label: "المحميات الزراعية", href: "/products/smart-greenhouses" },
+      { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
+      { label: "الحلول المتخصصة", href: "/products#specialized" },
+    ],
+  },
+  {
+    title: "التحكم والأتمتة",
+    icon: "cpu",
+    items: [
+      { label: "Smart Controllers", href: "/products/smart-controllers" },
+      { label: "القياس وإنترنت الأشياء", href: "/products/iot" },
+    ],
+  },
+  {
+    title: "رقمنة تشغيل المزرعة",
+    icon: "monitor-cog",
+    items: [
+      { label: "Smart OS — لوحة تشغيل المزرعة", href: "/products/smart-os" },
+      { label: "Demo مباشر", href: DEMO_URL, external: true, badge: "live" },
+      { label: "السجلات وجاهزية الامتثال", href: "/compliance" },
+    ],
+  },
+  {
+    title: "الاستدامة وكفاءة التشغيل",
+    icon: "sun",
+    items: [
+      // ملاحظة: قيمة cta واحدة معتمدة؛ التفريق في topic ويُحفظ ضمن source_url.
+      { label: "الطاقة الشمسية المساندة", href: "/contact?cta=sustainability_solutions&topic=solar_support" },
+      { label: "كفاءة المياه والطاقة", href: "/contact?cta=sustainability_solutions&topic=water_energy_efficiency" },
+    ],
+  },
+];
+
+export const MEGA_FOOTER: NavColumnItem[] = [
+  { label: "استعرض كل الحلول", href: "/products" },
+  { label: "كيف نعمل", href: "/how-we-work" },
+  { label: "Demo مباشر", href: DEMO_URL, external: true, badge: "live" },
+];
+
+// ─── التنقّل الرئيسي ─────────────────────────────────────────────────────────
 
 export type NavItemMega = {
   label: string;
   href: string;
   hasMegaMenu: true;
-  megaMenuColumns: NavColumn[];
 };
 
 export type NavItemSimple = {
   label: string;
   href: string;
   hasMegaMenu?: never;
-  megaMenuColumns?: never;
 };
 
 export type NavItemType = NavItemMega | NavItemSimple;
 
-// ─── Top Bar — المنظومة الموحّدة ─────────────────────────────────────────────
-
-export const TOP_BAR_ITEMS: TopBarItem[] = [
-  { label: "الموقع", icon: "globe", href: "/", active: true },
-  {
-    label: "Demo",
-    icon: "monitor",
-    href: "https://demo.igarden.sa",
-    external: true,
-    badge: "live",
-  },
-  {
-    label: "المتجر",
-    icon: "shopping-bag",
-    href: "https://shop.igarden.sa",
-    external: true,
-  },
-  { label: "للأفراد", icon: "shopping-bag", href: "/home-solutions" },
-  { label: "احجز التطبيق", icon: "smartphone", href: "/app", badge: "soon" },
-];
-
-// ─── Main Navigation — الهيكل الجديد v3 ──────────────────────────────────────
-
 export const HEADER_NAV_ITEMS: NavItemType[] = [
-  {
-    label: "خدماتنا",
-    href: "/products",
-    hasMegaMenu: true,
-    megaMenuColumns: [
-      {
-        title: "العتاد والأنظمة",
-        icon: "tractor",
-        items: [
-          { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
-          { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
-          { label: "المحميات الزراعية", href: "/products/smart-greenhouses" },
-          { label: "Smart Controllers", href: "/products/smart-controllers" },
-        ],
-      },
-      {
-        title: "البرمجيات والامتثال",
-        icon: "cpu",
-        items: [
-          { label: "منصة Smart OS", href: "/products/smart-os" },
-          { label: "جاهزية الامتثال", href: "/compliance" },
-          { label: "كيف نعمل", href: "/how-we-work" },
-        ],
-        cta: {
-          label: "Live Demo",
-          href: "https://demo.igarden.sa",
-          external: true,
-          variant: "live",
-        },
-      },
-    ],
-  },
-  { label: "عسفان", href: "/osfan-station" },
-  { label: "من نحن", href: "/about" },
+  { label: "الحلول", href: "/products", hasMegaMenu: true },
+  { label: "كيف نعمل", href: "/how-we-work" },
+  { label: "مرفق عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
-  { label: "تواصل", href: "/contact" },
+  { label: "عن iGarden", href: "/about" },
 ];
 
-// ─── Main CTA ─────────────────────────────────────────────────────────────────
+// ─── CTA الأساسي ─────────────────────────────────────────────────────────────
 
 export const MAIN_CTA = {
-  label: "احجز استشارة",
-  href: "/contact?cta=book_consultation",
+  label: "ابدأ مشروعك",
+  href: "/contact?cta=readiness_assessment",
 } as const;
