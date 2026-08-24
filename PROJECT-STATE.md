@@ -10,18 +10,18 @@
 
 ## الحالة الآن
 
-- **`main` = `origin/main` = `e96824afc900363366af2b62e92e746c5c421c06`** ✓
-- **نشر إنتاجي مُتحقَّق:** `sha=e96824a` · `2026-08-24T07:11Z` · `Production id=6058124397` ✓
-- مسار `main`: `…` → `14f59bd` → `af33e31` → `cb88f64` → `7fac9d8` → **`e96824a`** ✓
+- **`main` = `origin/main` = `e8979f0321913eb68bf4289bd90b1eb19d5b5acc`** ✓
+- **نشر إنتاجي مُتحقَّق:** `sha=e8979f0` · `2026-08-24T09:05Z` · `Production id=6059643726` ✓
+- مسار `main`: `…` → `af33e31` → `cb88f64` → `7fac9d8` → `e96824a` → **`e8979f0`** ✓
 - **#51 · #52 MERGED** ✓ — Wave 1B وWave 1C ‏LIVE
-- **#53 MERGED ✓ — Wave 2A ‏LIVE على الإنتاج**
-- **Wave 2B جاهزة للمراجعة على PR #54 — ⛔ ليست Live**
+- **#53 · #54 MERGED ✓ — Wave 2A وWave 2B ‏LIVE على الإنتاج**
+- **Wave 2C قيد العمل** على `feat/wave2c-visual-proof`
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
 ---
 
-## الدمجات التسع
+## الدمجات العشر
 
 | PR | العنوان | sha | الطريقة | التاريخ (UTC) |
 |---|---|---|---|---|
@@ -34,6 +34,7 @@
 | **#51** | Wave 1B — integrated portfolio and two delivery paths | **`cb88f64`** | squash | 2026-08-23 18:18 |
 | **#52** | Navigation and footer v2 — site architecture | **`7fac9d8`** | squash | 2026-08-23 20:06 |
 | **#53** | Wave 2A — capability truth across product depth pages | **`e96824a`** | squash | 2026-08-24 07:11 |
+| **#54** | Wave 2B — truth review and search intent | **`e8979f0`** | squash | 2026-08-24 09:04 |
 
 ◐ #48 قاعدته كانت `fix/factsheet-prep` لا `main` — دخل الإنتاج ضمن #47.
 
@@ -66,6 +67,7 @@
 | **`pre-merge-51`** | `af33e31` | **`git revert cb88f64`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-52`** | `cb88f64` | **`git revert 7fac9d8`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-53`** | `7fac9d8` | **`git revert e96824a`** (squash — أب واحد، بلا `-m`) |
+| **`pre-merge-54`** | `e96824a` | **`git revert e8979f0`** (squash — أب واحد، بلا `-m`) |
 
 ✓ الجدول أعلاه هو الحاكم — **ثمانية وسوم `pre-merge-*`** على `origin` ✓ مُتحقَّقة بـ`git ls-remote --tags`.
 
@@ -77,7 +79,7 @@
 |---|---|---|
 | **#41** | ✅ **CLOSED** — أُغلق 2026-08-23 10:48 UTC (✓ `gh pr view 41`) | مادّته الحيّة (‏sitemap + `robots` allow `/api/og`) نُقلت إلى **#50** قبل الإغلاق ✓ |
 | **#42** | ✅ **CLOSED** — 2026-08-23 · **متجاوَز** | 🔴 قاعدته `fix/seo-audit-pass1` كانت تُرجِع `sitemap` إلى ما قبل #50 (‏تُسقط `/app` وتُعيد `/investors` و`/roadmap`) رغم أن `merge-tree` يقول صفر تعارض. **سطرا مقال `hydroponic-vs-traditional` نُقلا إلى Wave 1B**؛ شقّ «ريادية→متخصّصة» ساقط. الفرعان `fix/seo-audit-pass1` و`fix/seo-lexicon-pass2` **مرجعيان — لا يُحذفان** |
-| **#43** | **OPEN — بلا تغيير** | توثيق SEO معلّق (`CLAUDE.md` +1 · `IGARDEN-SEO-CONTEXT.md` جديد) · صفر تعارض مع `main` الجديد ✓ |
+| **#43** | ✅ **CLOSED** — 2026-08-24 · **متجاوَز** | مبنيّ على تموضع وحالة يونيو، ويعيد قرار «ريادية→متخصصة» المسحوب، ويعتمد #41/#42 المغلقين، ويحمل حالة OG وsitemap قديمة. **فرع `docs/seo-context-layer` محفوظ ولا يُحذف.** طبقة SEO تُعاد لاحقاً من SSOT الحالي |
 
 ✓ **قرار علي 2026-08-23:** لا يُغلق #41 حتى تُنقل مواده الحيّة الباقية.
 مادّته الحيّة (‏OG · sitemap · robots) نُقلت في **#50** — فأُغلق بعدها.
@@ -160,15 +162,15 @@
 
 ## NEXT DELTA
 
-**Wave 2B — Truth + Search Intent.**
-الصفحات: `/products/hydroponics` · `/products/smart-greenhouses` (‏مراجعة حقيقة **ثم**
-نيّة بحث) · `/products/smart-controllers` (‏نيّة بحث وروابط صاعدة **فقط** —
-⛔ حقيقة القدرات مغلقة بـ#53 ولا تُعاد فتحها).
-فرع `feat/wave2b-truth-search` من `e96824a`.
+**Wave 2C — Visual Proof Pass 1.**
+إدخال ثلاثة أصول **موجودة ومنسوبة** في `hydroponics` و`smart-greenhouses` و`smart-os`:
+برج عسفان · محمية عسفان · واجهة Smart OS ببيانات محاكاة معلَنة.
+فرع `feat/wave2c-visual-proof` من `e8979f0`.
 
-⛔ خارج النطاق: صفحات أو مقالات أو صور جديدة · navigation/footer/sitemap/redirects ·
-FAQ Schema جديد حيث يوجد واحد · أحجام بحث أو ادّعاءات SEO بلا بيانات · #43.
-`sitemap` يبقى **25**.
+⛔ خارج النطاق: حذف أي أصل · صور الأحساء والمشروع العضوي (‏يبقيان نصّيين) ·
+صورة لـ`compliance` قبل وجود سجل منزوع البيانات · ضغط `team-ali.jpg` ·
+النصوص وmetadata وschema والروابط · صور AI أو renders.
+تنظيف التكرارات (‏13MB) = **P2 مؤجَّل إلى Branch Hygiene، لا P0**.
 
 ---
 
