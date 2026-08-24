@@ -211,6 +211,26 @@ homepage ──┬── /products      (Hub الحلول)
 
 ---
 
+## Wave 2 — Image Requirements
+
+توثيق فقط. ⛔ لم تُضف صور ولم تُغيَّر assets في هذه التمريرة، ولم يُحذف أي موضع
+`CONTENT_NEEDED` قائم.
+
+| الصفحة | الأصل المطلوب | الحالة |
+|---|---|---|
+| Smart OS | لقطة Dashboard حقيقية، منزوعة البيانات الحساسة | `missing` |
+| IoT | صورة وحدة/حساسات مركَّبة | `missing` |
+| IoT | مخطط اتصال المنظومة | `missing` |
+| Smart Controllers | صورة المنتج | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
+| Smart Controllers | مخطط الربط (Pi 5 ↔ ESP32 ↔ حساسات ↔ مضخات) | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
+| Smart Controllers | لقطة Dashboard | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
+| Compliance | نموذج سجل أو تقرير، منزوعة منه بيانات العملاء | `missing` — **بعد توفّره فعلياً** |
+
+الصور الستّ المؤقتة في `/products` و`/how-we-work` تبقى موسومة `imageStatus: "temporary"`
+وتُجرَد بـ`rg 'imageStatus: "temporary",'`.
+
+---
+
 ## المسارات المستقبلية ◐
 
 | المسار | الغرض | الحالة |

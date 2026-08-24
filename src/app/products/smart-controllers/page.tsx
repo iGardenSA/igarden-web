@@ -21,13 +21,13 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية | iGarden",
+  title: "Smart Controllers — لوحات التحكم الزراعي | iGarden",
   description:
-    "لوحات تحكم زراعية مُصمَّمة ومُصنَّعة في السعودية. تُربط بأيّ نظام زراعي قائم. اختُبرت في عسفان لتحمّل +45°C ورطوبة الخليج.",
+    "لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   alternates: { canonical: "https://igarden.sa/products/smart-controllers" },
   openGraph: {
-    title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
-    description: "مُصمَّم ومُجمَّع في السعودية · SAIP #423450193. قابلة للربط مع أيّ نظام قائم.",
+    title: "Smart Controllers — لوحات التحكم الزراعي",
+    description: "مصمَّمة ومطوَّرة ومجمَّعة في السعودية · تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة.",
     images: [
       {
         url: "/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Controllers — لوحات التحكم الزراعي بصناعة سعودية",
-    description: "مُصمَّم ومُجمَّع في السعودية · SAIP #423450193. قابلة للربط مع أيّ نظام قائم.",
+    title: "Smart Controllers — لوحات التحكم الزراعي",
+    description: "مصمَّمة ومطوَّرة ومجمَّعة في السعودية · تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة.",
     images: ["/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84"],
   },
 };
@@ -57,7 +57,7 @@ function Hero() {
           <div>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="bg-lime text-white text-lg font-bold px-3 py-1 rounded-pill">
-                رأس الحربة التقني · صناعة سعودية
+                رأس الحربة التقني · تطوير وتجميع سعودي
               </span>
             </div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
@@ -70,14 +70,15 @@ function Hero() {
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               Smart Controllers من iGarden تَربط حسّاساتك ومضخّاتك ونظام الري
               الحالي بلوحة تَحكّم واحدة. تَعرف حالة الماء والتغذية والمناخ
-              لحظياً — قبل أن يَتحوّل الخلل إلى خسارة.
+              وفق دورية القياس وإعدادات الاتصال — ما يساعد على اكتشاف
+              الانحراف مبكراً وتقليص زمن الاستجابة.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
-              تصميم وتطوير وتجميع في السعودية · مكوّنات عالمية · نموذج صناعي مسجّل لدى الهيئة السعودية للملكية الفكرية. قطع غيار محلية. فريق دعم في نفس مدينتك.
+              مصمَّمة ومطوَّرة ومجمَّعة في السعودية · مكوّنات عالمية · دعم فني داخل السعودية · توفير ودعم قطع الغيار محلياً بحسب نطاق المشروع.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <CTAButton href="/contact?interest=controllers&cta=request_quote" variant="lime">
-                اطلب عرضاً
+              <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
+                اطلب تقييماً أولياً
               </CTAButton>
               <CTAButton
                 href="https://demo.igarden.sa"
@@ -96,7 +97,7 @@ function Hero() {
           >
             <Cpu className="w-20 h-20 text-white/20" aria-hidden />
             <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium">
-              اختبار شامل · مُجمَّع في السعودية
+              اختبار وظيفي وميداني · مجمَّعة في السعودية
             </span>
           </div>
         </div>
@@ -116,16 +117,60 @@ function StatusCard() {
           </p>
           <h2 className="h4 text-deep-green mb-3">نظام تحكّم ذكي متكامل، مُختبَر ميدانياً</h2>
           <p className="body-base text-medium-gray mb-4">
-            نظام تحكّم زراعي متكامل، مُختبَر ميدانياً داخل مرفق R&D في عسفان وجاهز للتركيب
-            لدى المنشآت التجارية والحكومية. نبدأ معك بتقييم ميداني لمزرعتك،
-            ثم نُصمّم الحلّ الأنسب لمحصولك وبيئتك.
+            نظام تحكّم زراعي متكامل، مختبر ميدانياً في ظروف صيفية سعودية وبيئات
+            مرتفعة الحرارة والرطوبة داخل مرفق R&D في عسفان. اللوحة ليست منتجاً
+            رفّياً موحّداً — تُصمَّم وتُجهَّز بحسب المشروع: نبدأ بتقييم ميداني
+            لمزرعتك، ثم نُحدّد النطاق والتجهيزات الأنسب لمحصولك وبيئتك.
           </p>
           <Link
-            href="/contact?interest=controllers&cta=request_quote"
+            href="/contact?interest=controllers&cta=readiness_assessment"
             className="text-lime font-medium hover:text-deep-green transition-colors text-lg"
           >
-            اطلب عرضاً ←
+            اطلب تقييماً أولياً ←
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Section 2.1: حالة القدرة ─────────────────────────────
+   تصنيف صريح يمنع قراءة القدرات على أنها كلّها جاهزة افتراضياً. */
+const CAPABILITY_STATE = [
+  {
+    tier: "متاح ضمن التجهيز",
+    items: ["القياس", "الربط", "لوحة العرض", "التشغيل المحلي وعن بُعد بحسب التجهيز"],
+  },
+  {
+    tier: "حسب نطاق المشروع",
+    items: ["الأتمتة", "التنبيهات", "السجلات", "التقارير", "واتساب والتكاملات"],
+  },
+  {
+    tier: "قيد التطوير",
+    items: ["التحليلات المتقدمة", "اكتشاف الشذوذ", "رشيد التشغيلي"],
+  },
+];
+
+function CapabilityState() {
+  return (
+    <section className="section-light py-12" dir="rtl">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="h4 text-deep-green mb-6 text-center">حالة القدرة</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {CAPABILITY_STATE.map((c) => (
+            <div key={c.tier} className="bg-white rounded-card p-5 border border-light-gray shadow-soft">
+              <p className="text-xs font-bold uppercase tracking-widest text-lime mb-3">
+                {c.tier}
+              </p>
+              <ul className="space-y-1.5">
+                {c.items.map((it) => (
+                  <li key={it} className="body-sm text-medium-gray">
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -148,7 +193,7 @@ const FOR_WHOM = [
   },
   {
     title: "مشاريع حكومية وزراعية",
-    desc: "تحتاج منظومة تحكم موثوقة وقابلة للتدقيق — مع توثيق السجلات وتقارير الأداء الأسبوعية.",
+    desc: "تحتاج منظومة تحكم موثوقة وقابلة للتدقيق — مع سجلات وتقارير تُفعَّل بحسب نطاق المشروع.",
   },
 ];
 
@@ -181,20 +226,20 @@ const SCENARIOS = [
   {
     pain: "المراقبة اليدوية تَستهلك العامل وتَتأخّر",
     detail: "عامل يَفحص pH وEC كل ٤ ساعات. ليلاً ونهاراً. التَكلفة تَرتفع، والأخطاء تَحدث.",
-    solution: "قراءة كل ٣٠ ثانية، ٢٤/٧",
-    benefit: "تَنبيه فوري عند انحراف ٠.٢ pH — قبل أن يَتأثّر المحصول.",
+    solution: "قراءات وفق الدورية المحددة للمشروع",
+    benefit: "تنبيه عند تجاوز العتبة المحددة — ما يساعد على اكتشاف الانحراف مبكراً.",
   },
   {
     pain: "اكتشاف المشاكل عند ذبول النباتات",
-    detail: "مضخّة تَتعطّل في الفجر. تَكتشف المشكلة الظهر، بعد فقدان دورة ريّ كاملة في يوم +٤٥°C.",
-    solution: "تنبيه واتساب فور الانحراف",
-    benefit: "تَدخّل خلال دقائق، لا ساعات. خسارة ٠ نباتات مقابل ١٥٠.",
+    detail: "مضخّة تَتعطّل في الفجر. تَكتشف المشكلة الظهر، بعد فقدان دورة ريّ كاملة في يوم صيفي حارّ.",
+    solution: "تنبيه عند تجاوز العتبة — بحسب نطاق المشروع",
+    benefit: "يساعد على اكتشاف الانحراف مبكراً وتقليص زمن الاستجابة.",
   },
   {
     pain: "بيانات الموسم الماضي ضائعة",
     detail: "تُريد مَعرفة لماذا نَجح موسم الخس في يناير، لكن البيانات على ورق فنّي غادر العمل.",
     solution: "سجلّ مُؤرشَف قابل للبحث",
-    benefit: "كل قراءة، كل أمر، كل تَدخّل — مَحفوظ مع طابع زمني.",
+    benefit: "القراءات والأوامر التي يشملها نطاق الربط تُحفظ بطابع زمني.",
   },
 ];
 
@@ -270,18 +315,18 @@ function PainScenarios() {
 const VALUES = [
   {
     Icon: Factory,
-    title: "صناعة محلية",
-    text: "قطع الغيار متاحة في السعودية. لا انتظار لشحنات دولية. لا ترجمة لمشاكل دعم فنّي بعيد.",
+    title: "تطوير وتجميع سعودي",
+    text: "دعم فني داخل السعودية، وتوفير ودعم قطع الغيار محلياً بحسب نطاق المشروع.",
   },
   {
     Icon: Plug,
     title: "قابلية الربط",
-    text: "تتكامل مع أيّ نظام زراعة قائم — لا حاجة لاستبدال معداتك الحالية. فقط أضف الذكاء.",
+    text: "تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة — دون استبدال معداتك الحالية.",
   },
   {
     Icon: Thermometer,
-    title: "تحمّل +45°C",
-    text: "مُصمَّمة لظروف الخليج — حرارة قاسية، رطوبة عالية، غبار، وأعطال شبكة كهرباء.",
+    title: "مختبرة ميدانياً",
+    text: "مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة، مع الغبار وتذبذب شبكة الكهرباء.",
   },
 ];
 
@@ -325,7 +370,7 @@ const SOFTWARE = [
   "منصّة Smart OS للمراقبة والتحكّم",
   "اتصال محلي + سحابي",
   "لوحة تحكّم ويب",
-  "تنبيهات فورية لحظية",
+  "تنبيهات عند تجاوز العتبات — بحسب نطاق المشروع",
 ];
 
 function TechSpecs() {
@@ -432,22 +477,22 @@ const HOW_STEPS = [
   {
     num: "01",
     title: "القياس",
-    desc: "الحساسات تقرأ pH وEC والحرارة والرطوبة كل ثانية — بيانات حقيقية، لا تخمين.",
+    desc: "الحساسات تقرأ pH وEC والحرارة والرطوبة وفق الدورية المحددة للمشروع — قياس فعلي، لا تخمين.",
   },
   {
     num: "02",
     title: "التحليل",
-    desc: "Smart OS يقارن القراءات بالقيم المثلى لمحصولك ويكتشف الانحرافات فور حدوثها.",
+    desc: "Smart OS يقارن القراءات بالنطاقات المضبوطة لمحصولك ويرصد تجاوز العتبات المحددة.",
   },
   {
     num: "03",
     title: "التحكم",
-    desc: "المضخات والصمّامات والدوزرات تُعمل/تُطفأ تلقائياً — بلا تدخّل يدوي.",
+    desc: "المضخات والصمّامات والدوزرات تُشغَّل وفق البرامج المضبوطة — والأتمتة تُفعَّل بحسب نطاق المشروع.",
   },
   {
     num: "04",
     title: "التنبيه",
-    desc: "أيّ انحراف خارج النطاق → إشعار فوري خلال ثوانٍ، أينما كنت.",
+    desc: "تجاوز العتبة المحددة → إشعار عبر القناة المفعَّلة في نطاق المشروع.",
   },
 ];
 
@@ -588,23 +633,23 @@ function PrerequisitesSection() {
 const CLIENT_OUTPUTS = [
   {
     Icon: MonitorSmartphone,
-    title: "لوحة بيانات لحظية",
-    desc: "Dashboard يعرض pH وEC والحرارة والرطوبة ومستوى الخزّانات — لحظياً ومن أيّ جهاز.",
+    title: "لوحة بيانات موحّدة",
+    desc: "Dashboard يعرض pH وEC والحرارة والرطوبة ومستوى الخزّانات وفق دورية القياس وإعدادات الاتصال، من أيّ جهاز.",
   },
   {
     Icon: Bell,
-    title: "تنبيهات واتساب فورية",
-    desc: "إشعار فوري عند أيّ انحراف خارج النطاق — مع تحديد الحساس والقيمة والوقت.",
+    title: "تنبيهات واتساب — بحسب نطاق المشروع",
+    desc: "إشعار عند تجاوز العتبة المحددة، مع تحديد الحساس والقيمة والوقت.",
   },
   {
     Icon: FileText,
-    title: "تقارير أداء أسبوعية",
-    desc: "ملخّص أسبوعي تلقائي: استهلاك الماء، دورات التشغيل، أعلى وأدنى قراءة لكل حساس.",
+    title: "تقارير أداء — بحسب نطاق المشروع",
+    desc: "ملخّص دوري: استهلاك الماء، دورات التشغيل، أعلى وأدنى قراءة لكل حساس.",
   },
   {
     Icon: BarChart3,
-    title: "سجل تشغيلي كامل",
-    desc: "كل قراءة وكل قرار وكل أمر تشغيل — محفوظ بطابع زمني دقيق وقابل للتصدير.",
+    title: "سجل تشغيلي — يُفعَّل بحسب النطاق",
+    desc: "القراءات وأوامر التشغيل التي يشملها نطاق الربط تُحفظ بطابع زمني دقيق وقابلة للتصدير.",
   },
 ];
 
@@ -637,11 +682,11 @@ function OperationalLogsSection() {
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">سجلات التشغيل القابلة للمراجعة</p>
         <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-          كل قراءة. كل قرار. كل تنبيه.
+سجل يشمل ما يغطّيه نطاق الربط.
         </h2>
         <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-          النظام يُسجّل تلقائياً — بطابع زمني دقيق — كل pH وEC وحرارة وقرار تشغيل.
-          السجل قابل للمراجعة في أيّ وقت بصيغة قابلة للتدقيق.
+          عند تفعيل طبقة التسجيل ضمن نطاق المشروع، تُسجَّل قراءات pH وEC والحرارة
+          وأوامر التشغيل بطابع زمني دقيق، ويصبح السجل قابلاً للمراجعة بصيغة قابلة للتدقيق.
         </p>
         <Link
           href="/compliance"
@@ -796,7 +841,7 @@ const FAQS = [
   },
   {
     q: "هل يعمل مع نظامي الزراعي الحالي؟",
-    a: "نعم — Smart Controllers مُصمَّمة للتكامل مع أيّ نظام زراعة قائم (هيدروبونيك، تربة، أيروبونيك). نُقيّم نظامك الحالي في الاستشارة المجانية.",
+    a: "تتكامل Smart Controllers مع الأنظمة ذات الواجهات والتجهيزات المدعومة (هيدروبونيك، تربة، أيروبونيك). نُقيّم نظامك الحالي في التقييم الأولي ونحدّد ما يلزم لربطه.",
   },
   {
     q: "كيف نبدأ؟",
@@ -844,12 +889,12 @@ function FinalCTA() {
           هل أنت جاهز للوحة تحكم صُنعت لمناخك؟
         </h2>
         <p className="body-base text-cream/80 max-w-2xl mx-auto mb-10">
-          نظام مُختبَر ميدانياً وجاهز للتركيب لدى المنشآت التجارية والحكومية.
-          نبدأ معك بتقييم ميداني لمشروعك ثم عرض مخصّص لمحصولك وبيئتك.
+          نظام مختبر ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.
+          نبدأ معك بتقييم ميداني لمشروعك، ثم نُحدّد النطاق والعرض المناسب لمحصولك وبيئتك.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <CTAButton href="/contact?interest=controllers&cta=request_quote" variant="lime">
-            اطلب عرضاً
+          <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
+            اطلب تقييماً أولياً
           </CTAButton>
           <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>
             جرّب الديمو أولاً ↗
@@ -872,7 +917,7 @@ const SCHEMA_FAQS = [
   {
     question: "هل يعمل مع نظامي الزراعي الحالي؟",
     answer:
-      "نعم — Smart Controllers مُصمَّمة للتكامل مع أيّ نظام زراعة قائم (هيدروبونيك، تربة، أيروبونيك). نُقيّم نظامك الحالي في الاستشارة المجانية.",
+      "تتكامل Smart Controllers مع الأنظمة ذات الواجهات والتجهيزات المدعومة (هيدروبونيك، تربة، أيروبونيك). نُقيّم نظامك الحالي في التقييم الأولي ونحدّد ما يلزم لربطه.",
   },
   {
     question: "هل يحتاج تركيباً من فريقكم؟",
@@ -886,7 +931,7 @@ export default function SmartControllersPage() {
     <>
       <ProductSchema
         name="Smart Controllers — لوحات التحكم الزراعي"
-        description="لوحات تحكم زراعية مُصمَّمة ومُصنَّعة في السعودية. تُربط بأيّ نظام زراعي قائم. اختُبرت في عسفان لتحمّل +45°C."
+        description="لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة."
         image="/images/products/smart-controllers/hero.jpg"
         url="/products/smart-controllers"
         category="Agricultural Smart Controllers"
@@ -895,6 +940,7 @@ export default function SmartControllersPage() {
       <BreadcrumbSchema items={BREADCRUMB} />
       <Hero />
       <StatusCard />
+      <CapabilityState />
       <section className="bg-[#FAFAF7] py-6">
         <div className="container mx-auto px-4 max-w-7xl">
           <StageHonesty />

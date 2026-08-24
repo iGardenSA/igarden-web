@@ -14,7 +14,7 @@
 - **نشر إنتاجي مُتحقَّق:** `sha=7fac9d8` · `2026-08-23T20:06Z` · `Production id=6052165845` ✓
 - مسار `main`: `3d235c0` → `25d6588` → `02d3c3e` → `6166e2a` → `14f59bd` → `af33e31` → `cb88f64` → **`7fac9d8`** ✓
 - **#51 MERGED** ✓ · **#52 MERGED ✓ — Wave 1C ‏LIVE على الإنتاج**
-- **Wave 2A قيد العمل** على `feat/wave2a-content-truth`
+- **Wave 2A جاهزة للمراجعة على الفرع `feat/wave2a-content-truth` — ⛔ ليست Live**
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
@@ -122,6 +122,10 @@
   بدور `postgres` من محرّر لوحة Supabase. ◐ هوية الشخص لا تبلغها القاعدة.
 - **«ريادية» و«مبتكرة» ليستا مخالفة** (2026-08-22) — المحظور «الأول/الرائد» وحدها.
 - **«نَبني · نُوطّن · نُطوّر»** منهج لا شعار — مسموح داخل الأقسام، ممنوع كشعار موازٍ.
+- **تصحيح نسبة SAIP** ✓ (2026-08-24، Wave 2A): كانت صفحة `smart-controllers` تنسب
+  `SAIP #423450193` و«نموذج صناعي مسجّل» إلى **Smart Controllers**، والرقم يخصّ
+  **iGarden Tower** وفق `docs/LEXICON.md` و`docs/BRAND-BIBLE.md` و`fact-sheet`
+  و`constants.ts`. حُذف الربط **من تلك الصفحة وحدها** ⛔ ولم تُمسّ المواضع الصحيحة.
 - **سياسة legacy لـ`/solutions` و`/services`** ✓ (2026-08-23، مُتحقَّق على الإنتاج):
   المسارات التاريخية **المعروفة** = تحويل **308 دائم** · الـslug **المجهول** = **307 مؤقّت** إلى `/products`
   · ⛔ **لا تحويل wildcard دائم** · صفر 404. الجدول الكامل في `docs/SITE-ARCHITECTURE.md`.
@@ -155,16 +159,9 @@
 
 ## NEXT DELTA
 
-**Wave 2A — مراجعة حقيقة المحتوى وصفحات العمق.**
-الصفحات الأربع: `/products/smart-os` · `/products/iot` · `/products/smart-controllers` · `/compliance`.
-المطلوب: تصنيف كل قدرة إلى **يعمل اليوم · حسب نطاق المشروع · قيد التطوير**،
-وإزالة أو تصحيح `+45°C` و«لحظياً» **وفق حالة كل قدرة** لا بحذف شامل.
-فرع `feat/wave2a-content-truth` من `7fac9d8` — يحمل هذا التصحيح التوثيقي أيضاً
-(⛔ لا PR توثيقي منفصل).
-
-خارج النطاق: الرئيسية · `/products` و`/how-we-work` (اكتملتا في 1B/1C) ·
-metadata/OG · sitemap/robots · صفحة الاستدامة المستقلة · Evidence Pack ·
-صفحة الواحة · تمريرة الصور النهائية · #43.
+**بعد Wave 2A:** مراجعة Preview ثم تمريرة الصور والأدلة — ⛔ **لا دمج قبل المراجعة**.
+سجل الأصول المطلوبة في [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
+تحت «Wave 2 — Image Requirements».
 
 ---
 

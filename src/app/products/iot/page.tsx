@@ -7,11 +7,11 @@ import { CTAButton } from "@/components/shared/CTAButton";
 export const metadata: Metadata = {
   title: "إنترنت الأشياء الزراعي · iGarden",
   description:
-    "حلول IoT متكاملة للمزارع التجارية: استشعار pH وEC والحرارة والرطوبة، تحكم تلقائي، وتكامل مع منصة Smart OS. مُختبَرة ميدانياً في مرفق عسفان.",
+    "حلول IoT للمزارع التجارية: الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة في مرفق R&D في عسفان.",
   alternates: { canonical: "https://igarden.sa/products/iot" },
   openGraph: {
     title: "إنترنت الأشياء الزراعي | iGarden",
-    description: "حلول IoT متكاملة: استشعار وتحكم تلقائي للمزارع التجارية — مُختبَرة في عسفان.",
+    description: "الاستشعار والتحكم والتكامل تُحدَّد حسب تجهيز المشروع — مختبرة ميدانياً في مرفق R&D في عسفان.",
     images: [{ url: "/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
@@ -22,26 +22,26 @@ const SENSORS = [
   {
     Icon: Gauge,
     name: "قياس الحموضة",
-    spec: "pH 0–14 · دقة ±0.1",
-    note: "مع ADC صناعي (ADS1115) لتعويض تأثير الحرارة — ADR داخلي T002.",
+    spec: "pH 0–14 · دقة ±0.1 بعد المعايرة ووفق المجس",
+    note: "قراءة عبر ADC عالي الدقة (ADS1115) للإشارة التناظرية. الدقة النهائية تعتمد على المجس والمعايرة والتركيب — ADR داخلي T002.",
   },
   {
     Icon: Gauge,
     name: "الإجمالي الذائب",
     spec: "EC / TDS عبر UART",
-    note: "قراءة رقمية مباشرة — لا تشويه من الإشارات التناظرية — ADR T003.",
+    note: "قراءة رقمية عبر UART تقلّل تأثر مسار الإشارة التناظرية — ADR T003.",
   },
   {
     Icon: Thermometer,
     name: "الحرارة والرطوبة",
     spec: "DS18B20 + SHT31",
-    note: "مستشعرات صناعية مُتحمِّلة لبيئات +45°C والرطوبة الساحلية.",
+    note: "مستشعرات صناعية مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   },
   {
     Icon: Zap,
     name: "مستوى الخزانات",
     spec: "Ultrasonic + Float",
-    note: "رصد آني لمستوى المحلول مع تنبيه عند الانخفاض.",
+    note: "رصد مستوى المحلول وفق دورية القياس، مع تنبيه عند تجاوز العتبة المحددة.",
   },
 ];
 
@@ -50,7 +50,7 @@ const CONTROLLERS = [
     name: "Smart Controller v2",
     platform: "Raspberry Pi 5 + ESP32",
     protocol: "MQTT 5.0 over TLS",
-    relays: "8 channels (مضخات + دوزرات)",
+    relays: "8 channels في التكوين المرجعي (مضخات + دوزرات)",
     tests: "comprehensive unit test coverage",
   },
 ];
@@ -76,12 +76,13 @@ export default function IoTPage() {
             إنترنت الأشياء الزراعي
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
-            استشعار دقيق، تحكم تلقائي، وتكامل مباشر مع منصة Smart OS —
-            كل وحدة مُختبَرة في مرفق عسفان قبل التسليم.
+            الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز
+            المشروع. تخضع الوحدات لاختبار وظيفي قبل التسليم، وتُختبر المنظومة
+            ميدانياً في مرفق R&D في عسفان.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <CTAButton href="/contact?cta=book_consultation" variant="lime">
-              احجز استشارة
+            <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
+              اطلب تقييماً أولياً
             </CTAButton>
             <CTAButton href="/products/smart-os" variant="outline-green">
               منصة Smart OS →
@@ -171,11 +172,11 @@ export default function IoTPage() {
             <Cpu className="w-8 h-8 text-deep-green" aria-hidden />
           </div>
           <h2 className="h3 text-deep-green mb-4">
-            يتكامل تلقائياً مع منصة Smart OS
+            يتكامل مع منصة Smart OS ضمن إعداد المشروع
           </h2>
           <p className="body-base text-medium-gray mb-8 max-w-2xl mx-auto">
-            كل مستشعر يُرسل بياناته مباشرة إلى المنصة عبر MQTT — لا
-            إعداد يدوي، لا middleware، لوحة تحكّم جاهزة من اليوم الأول.
+            التجهيزات المتوافقة تُربط بمنصة Smart OS عبر MQTT ضمن إعداد
+            المشروع، فتظهر قراءاتها على لوحة واحدة بحسب النطاق المتفق عليه.
           </p>
           <Link
             href="/products/smart-os"
@@ -194,15 +195,16 @@ export default function IoTPage() {
             مُختبَر في عسفان
           </p>
           <h2 className="h2 text-cream mb-5">
-            كل وحدة تمرّ بـ +45°C قبل أن تصل إليك
+            اختبار وظيفي قبل التسليم واختبار ميداني في عسفان
           </h2>
           <p className="body-base text-cream/80 mb-8 max-w-xl mx-auto">
-            مرفق R&D في عسفان هو بيئة الاختبار — ليس معملاً مُكيَّفاً، بل
-            حرارة الصيف السعودي الحقيقية.
+            تخضع الوحدات لاختبار وظيفي قبل التسليم، وتُختبر المنظومة ميدانياً
+            في مرفق R&D في عسفان — في ظروف صيفية سعودية وبيئات مرتفعة الحرارة
+            والرطوبة، لا في معمل مُكيَّف.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <CTAButton href="/contact?cta=readiness_assessment" variant="lime">
-              احجز تقييماً لمزرعتك
+            <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
+              اطلب تقييماً أولياً
             </CTAButton>
             <CTAButton href="/osfan-station" variant="outline-green">
               زر مرفق عسفان

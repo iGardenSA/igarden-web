@@ -5,7 +5,7 @@ import { ArrowLeft, Construction, Database, Cpu, FileText, CheckCircle2, Clock }
 export const metadata: Metadata = {
   title: "سجلات التشغيل القابلة للمراجعة — Smart OS | iGarden",
   description:
-    "iGarden تبني سجلات تشغيل رقمية قابلة للمراجعة — قراءات حساسات، أوامر تشغيل، وتدخلات يدوية موثّقة بتوقيت دقيق لدعم فرق التشغيل والجودة.",
+    "iGarden تبني سجلات تشغيل رقمية قابلة للمراجعة — القراءات والأوامر والتدخلات التي يشملها نطاق الربط تُسجّل بتوقيت دقيق لدعم فرق التشغيل والجودة.",
   alternates: { canonical: "https://igarden.sa/compliance" },
   robots: { index: true, follow: true },
 };
@@ -27,8 +27,9 @@ export default function CompliancePage() {
             سجلات التشغيل القابلة للمراجعة
           </h1>
           <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
-            كل قراءة حساس، كل أمر تشغيل، كل تدخل يدوي — مسجَّل بتوقيت دقيق وقابل للمراجعة،
-            لدعم فرق التشغيل والجودة والاستعداد للمراجعات الداخلية والخارجية.
+            القراءات والأوامر والتدخلات التي يشملها نطاق الربط تُسجّل بتوقيت دقيق
+            وتصبح قابلة للمراجعة، لدعم فرق التشغيل والجودة والاستعداد للمراجعات
+            الداخلية والخارجية.
           </p>
         </div>
       </section>
@@ -64,11 +65,11 @@ export default function CompliancePage() {
               },
               {
                 title: "الجهات التمويلية",
-                body: "البنوك والمسرّعات والجهات الحكومية تطلب سجلات تشغيل موثوقة لمنح القروض أو الدعم.",
+                body: "قد تطلب البنوك والمسرّعات والجهات الحكومية بيانات تشغيل وملفات داعمة بحسب البرنامج.",
               },
               {
                 title: "الشهادات المستقبلية",
-                body: "GAP وGlobalG.A.P وشهادات SFDA كلها تعتمد على سجلات رقمية دقيقة لا ورقية قابلة للفقد.",
+                body: "تستفيد إجراءات الجاهزية والمراجعة من سجلات موثقة — بما فيها مسارات GAP وGlobalG.A.P وSFDA، بحسب متطلبات كل جهة.",
               },
             ].map((item) => (
               <div
@@ -90,7 +91,7 @@ export default function CompliancePage() {
             ما يُسجَّل
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#0F3D2E] mb-5">
-            ما الذي يُسجَّل تلقائياً؟
+            ما الذي يمكن تسجيله ضمن نطاق الربط؟
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             <div className="bg-[#FAFAF7] rounded-2xl border border-[#E5E7EB] p-6">
@@ -125,7 +126,7 @@ export default function CompliancePage() {
               </div>
               <h3 className="font-bold text-[#0F3D2E] mb-3">التدخلات اليدوية</h3>
               <ul className="space-y-1.5 text-sm text-[#6B7280]">
-                <li>· كل تعديل يدوي مُسجَّل</li>
+                <li>· التعديلات اليدوية قابلة للإدخال والتوثيق</li>
                 <li>· سبب التدخل (اختياري)</li>
                 <li>· هوية المشغّل</li>
                 <li>· القيمة قبل وبعد</li>
@@ -150,22 +151,22 @@ export default function CompliancePage() {
               {
                 step: "01",
                 title: "الحساس يقيس",
-                body: "ESP32 يقرأ pH وEC والحرارة والرطوبة كل دقيقة (أو عند الطلب).",
+                body: "ESP32 يقرأ pH وEC والحرارة والرطوبة وفق الدورية المضبوطة للمشروع.",
               },
               {
                 step: "02",
                 title: "MQTT ينقل",
-                body: "القراءة تُرسَل عبر بروتوكول MQTT إلى الـ Hub — بدون توقف، بدون فقد بيانات.",
+                body: "MQTT ينقل القراءات إلى الـ Hub عبر الاتصال المهيأ للموقع.",
               },
               {
                 step: "03",
                 title: "قاعدة البيانات تُسجَّل",
-                body: "كل قراءة تُخزَّن بتوقيت دقيق مع معرّف الجهاز والموقع والنوع.",
+                body: "قاعدة البيانات تسجّل القراءات المستلمة بتوقيت دقيق مع معرّف الجهاز والموقع والنوع.",
               },
               {
                 step: "04",
-                title: "Smart OS يُولّد التقرير",
-                body: "تقرير دوري (يومي / أسبوعي / شهري) يُلخَّص ويُرسَل تلقائياً لصاحب المزرعة.",
+                title: "البيانات جاهزة للتقارير",
+                body: "تصبح البيانات المسجَّلة جاهزة لبناء التقارير الدورية. توليد التقارير الآلي وإرسالها قيد التطوير.",
               },
             ].map((item) => (
               <div
@@ -198,13 +199,13 @@ export default function CompliancePage() {
             <div className="bg-[#A5D63F]/8 border border-[#A5D63F]/30 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-4">
                 <CheckCircle2 className="w-5 h-5 text-[#2E6B1A]" aria-hidden="true" />
-                <span className="font-bold text-[#2E6B1A] text-sm">مكتمل</span>
+                <span className="font-bold text-[#2E6B1A] text-sm">متاح اليوم ضمن نطاق التجهيز</span>
               </div>
               <ul className="space-y-2 text-sm text-[#1A1A1A]">
-                <li>✓ تسجيل قراءات pH وEC والحرارة تلقائياً</li>
+                <li>✓ تسجيل قراءات pH وEC والحرارة ضمن نطاق الربط</li>
                 <li>✓ تسجيل أوامر التشغيل بالتوقيت الدقيق</li>
                 <li>✓ واجهة Smart OS للعرض الميداني</li>
-                <li>✓ اختبار داخل مرفق R&D في عسفان (مناخ +45°C)</li>
+                <li>✓ اختبار ميداني في مرفق R&D في عسفان — ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة</li>
                 <li>✓ تغطية اختبارات وحدوية موسّعة على الـ backend</li>
               </ul>
             </div>
@@ -236,10 +237,10 @@ export default function CompliancePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
             <Link
-              href="/contact?cta=readiness_assessment"
+              href="/contact?interest=farm_digitization&cta=readiness_assessment"
               className="inline-flex items-center gap-2 px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold text-base transition-colors"
             >
-              تواصل معنا
+              اطلب تقييماً أولياً
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
             <a
