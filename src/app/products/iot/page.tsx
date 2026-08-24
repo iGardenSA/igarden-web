@@ -51,7 +51,7 @@ const CONTROLLERS = [
     platform: "Raspberry Pi 5 + ESP32",
     protocol: "MQTT 5.0 over TLS",
     relays: "8 channels في التكوين المرجعي (مضخات + دوزرات)",
-    tests: "comprehensive unit test coverage",
+    tests: "تغطية اختبارات برمجية موسّعة للتكوين المرجعي",
   },
 ];
 
@@ -100,8 +100,8 @@ export default function IoTPage() {
             </p>
             <h2 className="h2 text-deep-green">ما نقيسه</h2>
             <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
-              مستشعرات صناعية مُعيَّرة للبيئة السعودية — لا قراءات عشوائية،
-              لا تشويه بالحرارة.
+              مستشعرات تُختار وتُعاير وفق بيئة الموقع، مع مراعاة أثر الحرارة
+              وطريقة التركيب في جودة القراءة.
             </p>
           </div>
 

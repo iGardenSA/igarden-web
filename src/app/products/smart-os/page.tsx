@@ -50,7 +50,7 @@ const WORKFLOW_STEPS = [
   { step: "01", title: "التركيب", desc: "نشر المستشعرات والـ Gateway" },
   { step: "02", title: "المعايرة", desc: "ضبط العتبات حسب المحصول والموقع" },
   { step: "03", title: "التشغيل", desc: "تدفّق البيانات وتفعيل التنبيهات" },
-  { step: "04", title: "التحسين", desc: "تحديثات دورية للنماذج التحليلية" },
+  { step: "04", title: "المراجعة", desc: "مراجعة إعدادات التشغيل والعتبات وتوسعة الربط بحسب نطاق المشروع." },
 ];
 
 const BREADCRUMB = [
@@ -206,7 +206,7 @@ export default function SmartOSPage() {
               "تنبيهات عند تجاوز العتبات المحددة — عند تضمينها في نطاق المشروع",
               "السجلات والتقارير الدورية — عند تضمينها في نطاق المشروع",
               "الدعم والتحديثات بحسب عقد الخدمة",
-              "تحديثات دورية للنماذج التحليلية",
+              "إمكانية توسعة الربط عند إضافة تجهيزات جديدة",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <CheckCircle2
@@ -224,11 +224,11 @@ export default function SmartOSPage() {
       <section className="bg-deep-green py-20 text-cream text-center">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="h2 text-cream mb-5">
-            هل تريد رؤية المنصة على بياناتك؟
+            هل تريد معرفة كيف تتكامل المنصة مع مزرعتك؟
           </h2>
           <p className="body-base text-cream/80 mb-8 max-w-2xl mx-auto">
-            نُقدّم جلسة عرض تقنية للعملاء الجادّين — استعراض مباشر للمنصة
-            على بيانات واقعية من مرفق عسفان.
+            ابدأ بتقييم أولي لنطاق الربط والتشغيل المناسب لمزرعتك، أو استكشف
+            الديمو للتعرّف على تجربة المنصة.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CTAButton

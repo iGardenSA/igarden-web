@@ -117,7 +117,7 @@ export default function CompliancePage() {
                 <li>· جرعات التغذية (دوزرات)</li>
                 <li>· دورات الري التلقائية</li>
                 <li>· الأوامر الحرارية</li>
-                <li>· توقيت كل أمر بالثانية</li>
+                <li>· طابع زمني دقيق لكل أمر</li>
               </ul>
             </div>
             <div className="bg-[#FAFAF7] rounded-2xl border border-[#E5E7EB] p-6">
@@ -144,7 +144,7 @@ export default function CompliancePage() {
             التدفق
           </p>
           <h2 className="text-2xl md:text-3xl font-bold text-[#0F3D2E] mb-8">
-            من الحساس إلى التقرير
+            من الحساس إلى سجل قابل للمراجعة
           </h2>
           <div className="space-y-4">
             {[
