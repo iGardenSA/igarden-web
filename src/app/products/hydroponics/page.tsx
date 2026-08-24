@@ -64,8 +64,8 @@ function Hero() {
               الزراعة المائية · 7 تقنيات
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              أنظمة زراعة مائية —
-              <span className="block">نختار الأنسب لمحصولك.</span>
+              نظام زراعة مائية يناسب محصولك —
+              <span className="block">لا تقنية واحدة للجميع.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               ٧ تقنيات زراعة مائية مُختَبَرة في عسفان — NFT · DWC · Drip ·

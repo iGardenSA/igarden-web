@@ -47,8 +47,11 @@ function Hero() {
   return (
     <section className="section-light py-16 md:py-20">
       <div className="container mx-auto px-4 max-w-7xl text-center">
+        <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
+          الحلول والمنظومات الزراعية المتكاملة
+        </p>
         <h1 className="h1 text-deep-green mb-5">
-          منظومة متكاملة — تبدأ من احتياجك.
+          لا تطارد أكثر من جهة حين يتوقّف شيء.
         </h1>
         <p className="body-base text-medium-gray max-w-3xl mx-auto">
           نؤسس مشروعاً زراعياً جديداً من التخطيط والتجهيز، أو نطوّر منشأة قائمة

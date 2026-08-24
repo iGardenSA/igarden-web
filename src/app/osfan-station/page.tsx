@@ -45,8 +45,8 @@ function Hero() {
           عسفان، شمال جدة · منذ 2025
         </p>
         <h1 className="h1 text-cream mb-5">
-          قبل أن نُنفّذ في مزرعتك،
-          <span className="block text-[#A5D63F]">نَكسر النظام في عسفان.</span>
+          مرفق R&D في عسفان —
+          <span className="block text-[#A5D63F]">حيث نختبر قبل أن نركّب عندك.</span>
         </h1>
         <p className="body-base text-cream/85 max-w-2xl mx-auto leading-relaxed">
           المختبر الميداني لـ{" "}

@@ -70,10 +70,10 @@ export default function IoTPage() {
       <section className="bg-deep-green text-cream py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           <p className="text-lime text-sm font-bold uppercase tracking-widest mb-4">
-            عتاد وأنظمة
+            إنترنت الأشياء الزراعي · القياس والتحكّم
           </p>
           <h1 className="h1 text-cream mb-6">
-            إنترنت الأشياء الزراعي
+            اربط القياس والتحكّم بدل أن تبقى الأجهزة تعمل منفصلة
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
             الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز

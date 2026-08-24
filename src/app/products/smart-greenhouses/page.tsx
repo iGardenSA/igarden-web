@@ -56,11 +56,11 @@ function Hero() {
           {/* Text */}
           <div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              للمزارع التجارية · IoT-Enabled
+              المحميات الزراعية الذكية · للمزارع التجارية
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              محميات زراعية ذكية —
-              <span className="block">أكثر من مجرد هيكل.</span>
+              محمية زراعية تُصمَّم مع تشغيلها —
+              <span className="block">لا كهيكل منفصل.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — بمواصفات هيكل

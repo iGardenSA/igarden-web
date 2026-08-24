@@ -161,10 +161,10 @@ export default function ContactPage() {
               الخطوة الأولى
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight text-white mb-6">
-              ابدأ بتقييم مشروعك.
+              لا تحتاج قراراً كبيراً لتبدأ —
               <br />
               <span className="text-[var(--color-accent-300)]">
-                ١٥ دقيقة، بلا التزام.
+                تحتاج تقييماً.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl">

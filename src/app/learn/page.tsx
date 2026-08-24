@@ -19,7 +19,7 @@ export default function LearnPage() {
             المعرفة في iGarden
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            ما نتعلّمه، نُشاركه.
+            قبل أن تشتري — اقرأ.
           </h1>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl">
             نُؤمن أن المعرفة في الزراعة الذكية لا تُحتكر — تُبنى بالممارسة،
