@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Droplets,
@@ -24,14 +25,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower | iGarden",
+  title: "أنظمة الزراعة المائية في السعودية — اختر التقنية المناسبة",
   description:
-    "7 تقنيات زراعة مائية مُختَبَرة في عسفان. من NFT إلى DWC إلى Aeroponics. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193).",
+    "كيف تختار بين NFT وDWC وAeroponics والأبراج الرأسية؟ نحدّد التقنية المناسبة لمحصولك وموقعك، ونصمّم النظام ونجهّزه ونربطه بالتشغيل. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193).",
   alternates: { canonical: "https://igarden.sa/products/hydroponics" },
   openGraph: {
-    title: "Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower",
+    title: "أنظمة الزراعة المائية — أيّ تقنية تناسب محصولك؟",
     description:
-      "7 تقنيات + iGarden Tower المُسجَّل. كفاءة مائية عالية وإنتاجية مُضاعَفة في الاختبارات الميدانية بعسفان.",
+      "NFT · DWC · Aeroponics · الأبراج الرأسية — نختار التقنية بعد تقييم المحصول والموقع، ويشمل النطاق iGarden Tower المُسجَّل.",
     images: [
       {
         url: "/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%85%D9%86+7+%D8%AA%D9%82%D9%86%D9%8A%D8%A7%D8%AA",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower",
+    title: "أنظمة الزراعة المائية — أيّ تقنية تناسب محصولك؟",
     description: "نختار التقنية المناسبة من 7 تقنيات — لا نبيع تقنية واحدة للجميع.",
     images: ["/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%85%D9%86+7+%D8%AA%D9%82%D9%86%D9%8A%D8%A7%D8%AA"],
   },
@@ -62,8 +63,8 @@ function Hero() {
               الزراعة المائية · 7 تقنيات
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              لا نَبيعك تقنية جاهزة.
-              <span className="block">نَختار الأنسب لمحصولك.</span>
+              أنظمة زراعة مائية —
+              <span className="block">نختار الأنسب لمحصولك.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               ٧ تقنيات زراعة مائية مُختَبَرة في عسفان — NFT · DWC · Drip ·
@@ -71,7 +72,7 @@ function Hero() {
               وميزانيتك، لا الأشهر تسويقياً.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
-              كفاءة مائية عالية وإنتاجية مُضاعَفة بحسب التقنية والمحصول. يَشمل{" "}
+              كفاءة مائية عالية ورفع الإنتاجية لكل متر مربع بحسب التقنية والمحصول. يَشمل{" "}
               <span className="font-medium text-deep-green">iGarden Tower</span>{" "}
               المُسجَّل صناعياً (SAIP #423450193).
             </p>
@@ -105,11 +106,11 @@ function Hero() {
 const FOR_WHOM = [
   {
     title: "مزارعون حضريون وأصحاب مساحات محدودة",
-    desc: "تريد إنتاج أعلى في مساحة أقل — الزراعة المائية تُضاعف الإنتاج مقارنة بالزراعة التقليدية في نفس الحيّز.",
+    desc: "تريد إنتاج أعلى في مساحة أقل — الزراعة المائية ترفع الإنتاجية لكل متر مربع بحسب التقنية والمحصول.",
   },
   {
     title: "مستثمرون في الإنتاج الغذائي كثيف الكثافة",
-    desc: "تبحث عن نموذج عائد واضح من الزراعة — 7 تقنيات مُختَبَرة في عسفان نُرشّح منها الأنسب لمحصولك وميزانيتك.",
+    desc: "تبحث عن نموذج عائد واضح من الزراعة — نعرض 7 تقنيات ونُرشّح منها الأنسب لمحصولك وميزانيتك.",
   },
   {
     title: "مزارعون في مناطق شحيحة المياه",
@@ -159,7 +160,7 @@ const VALUES = [
   },
   {
     Icon: Leaf,
-    title: "بلا تربة، بلا مبيدات",
+    title: "بلا تربة، مع إدارة أدق للمياه والمغذّيات",
     text: "بيئة معقّمة محكومة — أقلّ آفات، أقلّ كيماويات، محصول أنظف وأكثر أماناً.",
   },
 ];
@@ -229,7 +230,7 @@ const TECHNIQUES = [
     Icon: Layers,
     name: "Vertical",
     fullName: "Vertical Towers",
-    desc: "أعمدة عمودية تُضاعف الإنتاج لكل م² — أساس iGarden Tower.",
+    desc: "أعمدة عمودية ترفع الإنتاجية لكل م² بحسب التقنية والمحصول — أساس iGarden Tower.",
   },
 ];
 
@@ -634,7 +635,7 @@ function ScalesSection() {
 
 /* ─── Section 6.1: Scope (Includes / Excludes) ────────────── */
 const SCOPE_INCLUDES = [
-  "تصميم النظام واختيار التقنية المناسبة من 7 تقنيات مُختَبَرة",
+  "تصميم النظام واختيار التقنية المناسبة من 7 تقنيات معروضة",
   "توريد المعدات والهيكل وتوصيل الأنابيب والمحاليل",
   "التركيب الكامل وضبط القيم المثلى للمحصول",
   "التدريب على التشغيل اليومي والمحلول المغذّي",
@@ -749,12 +750,12 @@ const CLIENT_OUTPUTS = [
   {
     Icon: Bell,
     title: "مراقبة Smart OS فعّالة",
-    desc: "تنبيهات فورية عند انحراف pH أو EC أو حرارة الماء خارج النطاق المثالي.",
+    desc: "تنبيهات عند تجاوز العتبات المحددة لـpH أو EC أو حرارة الماء — بحسب نطاق المشروع.",
   },
   {
     Icon: BarChart3,
     title: "سجل تشغيلي قابل للمراجعة",
-    desc: "كل قراءة وكل دورة ريّ محفوظة بطابع زمني — لمراجعة الأداء ومقارنة الموسم بالموسم.",
+    desc: "القراءات ودورات الريّ التي يشملها نطاق الربط تُحفظ بطابع زمني — لمراجعة الأداء ومقارنة الموسم بالموسم.",
   },
 ];
 
@@ -791,7 +792,7 @@ function SmartOSSection() {
             مزرعتك متصلة — تُراقَب وتُدار عن بُعد
           </h2>
           <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-            كل نظام هيدروبونيك نُركّبه يتصل بـ Smart OS — بيانات pH وEC والحرارة والريّ
+            أنظمة الهيدروبونيك تُربط بـ Smart OS ضمن نطاق المشروع — بيانات pH وEC والحرارة والريّ
             مرئية في أيّ وقت من Dashboard أو عبر تنبيهات واتساب.
           </p>
           <Link
@@ -815,11 +816,11 @@ function OperationalLogsSection() {
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">سجلات التشغيل القابلة للمراجعة</p>
         <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-          كل قراءة. كل قرار. كل تنبيه.
+          سجل يشمل ما يغطّيه نطاق الربط.
         </h2>
         <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-          النظام يُسجّل تلقائياً — بطابع زمني دقيق — كل pH وEC وحرارة وقرار تشغيل.
-          السجل قابل للمراجعة في أيّ وقت بصيغة قابلة للتدقيق.
+          عند تفعيل طبقة التسجيل ضمن نطاق المشروع، تُسجَّل قراءات pH وEC والحرارة
+          وقرارات التشغيل بطابع زمني دقيق، ويصبح السجل قابلاً للمراجعة بصيغة قابلة للتدقيق.
         </p>
         <Link
           href="/compliance"
@@ -848,7 +849,7 @@ const FAQS = [
   },
   {
     q: "هل أحتاج خبير لتشغيل النظام يومياً؟",
-    a: "لا — Smart OS يُراقب الأنظمة تلقائياً ويُرسل تنبيهات عند أيّ انحراف. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
+    a: "لا — تُفعَّل المراقبة والتنبيهات بحسب نطاق النظام والتجهيزات المتصلة. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
   },
   {
     q: "كيف يختلف iGarden Tower عن الأبراج المستوردة؟",
@@ -877,6 +878,41 @@ function FAQ() {
 }
 
 /* ─── Section 8: Final CTA ────────────────────────────────── */
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "متى تحتاج Smart Controller؟",
+    desc: "خمس علامات تدلّ أن المراقبة اليدوية لم تعد كافية.",
+    href: "/learn/when-do-you-need-smart-controller",
+  },
+  {
+    label: "لماذا تفشل الزراعة المائية في الصيف؟",
+    desc: "أسباب شائعة وحلول عملية قبل بدء الموسم.",
+    href: "/learn/why-hydroponic-fail-summer",
+  },
+  {
+    label: "الزراعة المائية مقابل التقليدية",
+    desc: "مقارنة موضوعية تساعدك على تحديد المسار.",
+    href: "/learn/hydroponic-vs-traditional",
+  },
+  {
+    label: "Smart Controllers",
+    desc: "لوحات التحكّم التي تُدير الريّ والتسميد والمناخ.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "منصة Smart OS",
+    desc: "بيانات التشغيل والإشراف عن بُعد في لوحة واحدة.",
+    href: "/products/smart-os",
+  },
+  {
+    label: "كيف نعمل",
+    desc: "مشروع جديد أو منشأة قائمة — مساران واضحان.",
+    href: "/how-we-work",
+  },
+];
+
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -916,7 +952,7 @@ const SCHEMA_FAQS = [
   {
     question: "هل أحتاج خبير لتشغيل النظام يومياً؟",
     answer:
-      "لا — Smart OS يُراقب الأنظمة تلقائياً ويُرسل تنبيهات عند أيّ انحراف. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
+      "لا — تُفعَّل المراقبة والتنبيهات بحسب نطاق النظام والتجهيزات المتصلة. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
   },
   {
     question: "كيف يختلف iGarden Tower عن الأبراج المستوردة؟",
@@ -930,7 +966,7 @@ export default function HydroponicsPage() {
     <>
       <ProductSchema
         name="Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower"
-        description="7 تقنيات زراعة مائية مُختَبَرة في عسفان. من NFT إلى DWC إلى Aeroponics. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
+        description="7 تقنيات زراعة مائية معروضة — من NFT إلى DWC إلى Aeroponics — نُرشّح منها الأنسب لمحصولك وموقعك. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
         image="/images/osfan-full/02_tower_closeup.webp"
         url="/products/hydroponics"
         category="Hydroponic Systems"
@@ -956,6 +992,7 @@ export default function HydroponicsPage() {
       <SmartOSSection />
       <OperationalLogsSection />
       <FAQ />
+      <RelatedPaths links={RELATED_LINKS} />
       <FinalCTA />
     </>
   );

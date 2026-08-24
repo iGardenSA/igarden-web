@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Building2,
@@ -19,13 +20,13 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Greenhouses — محميات ذكية مُختبَرة ميدانياً في مرفق R&D في عسفان | iGarden",
+  title: "المحميات الزراعية الذكية في السعودية — التصميم والتحكم",
   description:
-    "محميات ذكية بأتمتة IoT كاملة. هياكل مقاومة للرياح، عزل حراري، تحكم مناخي مُختَبَر في عسفان. حلول للمزارع التجارية والحكومية.",
+    "محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
   openGraph: {
-    title: "Smart Greenhouses — محميات ذكية مُختبَرة ميدانياً في مرفق R&D في عسفان",
-    description: "هيكل + أتمتة + تحكم مناخي. كفاءة طاقة محسّنة في الاختبارات الميدانية. مُختَبَرة في عسفان.",
+    title: "المحميات الزراعية الذكية — التصميم والتحكم المناخي",
+    description: "كيف تُصمَّم محمية تعمل في الصيف السعودي؟ الهيكل والعزل والتحكم المناخي والأتمتة — بحسب نطاق المشروع.",
     images: [
       {
         url: "/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9",
@@ -39,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Greenhouses — محميات ذكية مُختبَرة ميدانياً في مرفق R&D في عسفان",
-    description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة محسّنة في الاختبارات الميدانية.",
+    title: "المحميات الزراعية الذكية — التصميم والتحكم المناخي",
+    description: "كيف تُصمَّم محمية تعمل في الصيف السعودي؟ الهيكل والعزل والتحكم المناخي والأتمتة — بحسب نطاق المشروع.",
     images: ["/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
 };
@@ -57,13 +58,13 @@ function Hero() {
               للمزارع التجارية · IoT-Enabled
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              محمية ليست مجرّد هيكل.
-              <span className="block">بل نظام تشغيل لإنتاجك.</span>
+              محميات زراعية ذكية —
+              <span className="block">أكثر من مجرد هيكل.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
-              نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — هياكل مقاومة
-              لرياح الخليج، تَبريد متعدّد المراحل، ريّ ذكي، وتحكّم مناخي اختُبر
-              مُختبَرة ميدانياً في مرفق R&D في عسفان.
+              نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — بمواصفات هيكل
+              تُحدَّد بحسب الموقع، وتبريد متعدّد المراحل، وريّ ذكي، وتحكّم مناخي
+              نختبره ميدانياً في مرفق R&D في عسفان.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
               كفاءة طاقة محسّنة بحسب التصميم والمحصول. توريد وتركيب وربط وتشغيل أولي بحسب الباقة. دعم
@@ -103,7 +104,7 @@ const FOR_WHOM = [
   },
   {
     title: "مشغّلو مزارع كبيرة يريدون خفض التكاليف",
-    desc: "فاتورة الكهرباء والعمالة ترتفع مع كل صيف — منظومة التحكم المناخي الذكي تُخفّضها بشكل ملموس في الاختبارات الميدانية.",
+    desc: "فاتورة الكهرباء والعمالة ترتفع مع كل صيف — منظومة التحكم المناخي تهدف إلى ترشيد التشغيل، ويُقاس أثرها فردياً لكل مشروع.",
   },
   {
     title: "مشاريع حكومية وزراعية مُمَوَّلة",
@@ -153,7 +154,7 @@ const SCENARIOS = [
     pain: "محصول يَخسر ٧ أيام من ضغطة حرارية",
     detail: "درجة الحرارة قَفزت ٤°C في ساعة. اكتشفتَها بعد ساعتين. الخسّ ذابل، الطماطم تَوقّفت عن العقد.",
     solution: "ضبط آلي قبل الانحراف",
-    benefit: "Smart OS يَفتح المنافذ ويُشغّل المراوح عند ٢°C انحراف — قبل أن يَتأثّر المحصول.",
+    benefit: "تُفتح المنافذ وتُشغَّل المراوح عند تجاوز العتبة المحددة للمشروع — قبل أن يَتأثّر المحصول.",
   },
   {
     Icon: TrendingUp,
@@ -229,13 +230,13 @@ const VALUES = [
   },
   {
     Icon: Cpu,
-    title: "أتمتة IoT كاملة",
-    text: "تحكم آلي بالتهوية والتبريد والريّ والإضاءة. لوحة Smart Controller داخلية متكاملة.",
+    title: "أتمتة IoT بحسب النطاق",
+    text: "تحكم آلي بالتهوية والتبريد والريّ والإضاءة — يُحدَّد نطاقه بحسب المشروع، مع لوحة Smart Controller داخلية.",
   },
   {
     Icon: Wind,
     title: "تحكم مناخي ذكي",
-    text: "مراقبة وتحكم تلقائي للحرارة والرطوبة دون توقف — حتى في ذروة الصيف.",
+    text: "مراقبة وتحكم للحرارة والرطوبة بحسب تجهيزات المشروع وإعداداته — حتى في ذروة الصيف.",
   },
 ];
 
@@ -710,17 +711,17 @@ const CLIENT_OUTPUTS = [
   {
     Icon: MonitorSmartphone,
     title: "تحكم مناخي آلي",
-    desc: "Smart OS يُحافظ على درجة الحرارة والرطوبة المثاليتين تلقائياً — أينما كنت.",
+    desc: "Smart OS يضبط الحرارة والرطوبة ضمن النطاقات المحددة للمحصول وفق البرامج المضبوطة — من أيّ جهاز.",
   },
   {
     Icon: Bell,
-    title: "تنبيهات انحراف لحظية",
-    desc: "إشعار فوري عند أيّ انحراف في الحرارة أو الرطوبة أو ضغط الريّ — قبل أن يتأثّر المحصول.",
+    title: "تنبيهات الانحراف — بحسب نطاق المشروع",
+    desc: "إشعار عند تجاوز العتبة المحددة للحرارة أو الرطوبة أو ضغط الريّ — قبل أن يتأثّر المحصول.",
   },
   {
     Icon: BarChart3,
-    title: "سجل تشغيلي كامل",
-    desc: "كل قراءة وكل قرار آلي محفوظ بطابع زمني — لمراجعة الأداء وتحسين الموسم القادم.",
+    title: "سجل تشغيلي — يُفعَّل بحسب النطاق",
+    desc: "القراءات والقرارات الآلية التي يشملها نطاق الربط تُحفظ بطابع زمني — لمراجعة الأداء وتحسين الموسم القادم.",
   },
 ];
 
@@ -757,7 +758,7 @@ function SmartOSSection() {
             محميتك متصلة — تُراقَب وتُدار عن بُعد
           </h2>
           <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-            كل محمية نُركّبها تتصل بـ Smart OS — بيانات الحرارة والرطوبة والتهوية مرئية
+            المحميات تُربط بـ Smart OS ضمن نطاق المشروع — بيانات الحرارة والرطوبة والتهوية مرئية
             في Dashboard أو عبر تنبيهات واتساب. جرّب الديمو الحيّ قبل الشراء.
           </p>
           <Link
@@ -781,10 +782,11 @@ function OperationalLogsSection() {
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">سجلات التشغيل القابلة للمراجعة</p>
         <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-          كل قراءة. كل قرار. كل تنبيه.
+          سجل يشمل ما يغطّيه نطاق الربط.
         </h2>
         <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-          النظام يُسجّل تلقائياً — بطابع زمني دقيق — كل درجة حرارة وكل قرار تهوية وكل دورة ريّ.
+          عند تفعيل طبقة التسجيل ضمن نطاق المشروع، تُسجَّل قراءات الحرارة وقرارات
+          التهوية ودورات الريّ بطابع زمني دقيق.
           السجل قابل للمراجعة في أيّ وقت بصيغة قابلة للتدقيق.
         </p>
         <Link
@@ -817,7 +819,7 @@ const FAQS = [
   },
   {
     q: "ما تكلفة التشغيل الشهرية؟",
-    a: "الطاقة والمياه تُقدَّر حسب حجم المحمية والمحصول. Smart Controllers يُقلّل الهدر تلقائياً — نُقدّم تقديراً عند التصميم.",
+    a: "الطاقة والمياه تُقدَّر حسب حجم المحمية والمحصول. Smart Controllers يساعد على ترشيد التشغيل بحسب التجهيزات والإعدادات، ويُقدَّر الأثر عند التصميم.",
   },
   {
     q: "هل تقدّمون عقود صيانة سنوية؟",
@@ -846,6 +848,41 @@ function FAQ() {
 }
 
 /* ─── Section 8: Final CTA ────────────────────────────────── */
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "قياسات المزرعة الذكية",
+    desc: "المؤشرات اليومية التي تستحقّ المتابعة داخل المحمية.",
+    href: "/learn/daily-measurements-smart-farm",
+  },
+  {
+    label: "سجلات التشغيل وقرارات المزرعة",
+    desc: "كيف يُحسّن السجل الموثّق قراراتك بين المواسم.",
+    href: "/learn/operational-logs-farm-decisions",
+  },
+  {
+    label: "Smart Controllers",
+    desc: "لوحات التحكّم في التهوية والتبريد والريّ.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "منصة Smart OS",
+    desc: "بيانات المحمية والإشراف عن بُعد في لوحة واحدة.",
+    href: "/products/smart-os",
+  },
+  {
+    label: "السجلات وجاهزية الامتثال",
+    desc: "ما الذي يمكن تسجيله ضمن نطاق الربط.",
+    href: "/compliance",
+  },
+  {
+    label: "كيف نعمل",
+    desc: "مشروع جديد أو منشأة قائمة — مساران واضحان.",
+    href: "/how-we-work",
+  },
+];
+
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -903,7 +940,7 @@ export default function SmartGreenhousesPage() {
     <>
       <ProductSchema
         name="Smart Greenhouses — المحميات الذكية"
-        description="محميات ذكية بأتمتة IoT كاملة. هياكل مقاومة للرياح، عزل حراري، تحكم مناخي مُختَبَر في عسفان. حلول للمزارع التجارية والحكومية."
+        description="محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة."
         image="/images/osfan-full/04_greenhouse_wide.webp"
         url="/products/smart-greenhouses"
         category="Smart Agricultural Greenhouses"
@@ -929,6 +966,7 @@ export default function SmartGreenhousesPage() {
       <SmartOSSection />
       <OperationalLogsSection />
       <FAQ />
+      <RelatedPaths links={RELATED_LINKS} />
       <FinalCTA />
     </>
   );

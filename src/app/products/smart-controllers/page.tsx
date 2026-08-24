@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Factory,
@@ -21,12 +22,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Controllers — لوحات التحكم الزراعي | iGarden",
+  title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
   description:
     "لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   alternates: { canonical: "https://igarden.sa/products/smart-controllers" },
   openGraph: {
-    title: "Smart Controllers — لوحات التحكم الزراعي",
+    title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
     description: "مصمَّمة ومطوَّرة ومجمَّعة في السعودية · تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة.",
     images: [
       {
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Controllers — لوحات التحكم الزراعي",
+    title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
     description: "مصمَّمة ومطوَّرة ومجمَّعة في السعودية · تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة.",
     images: ["/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84"],
   },
@@ -64,8 +65,8 @@ function Hero() {
               لوحات التحكّم · Smart OS Powered
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              لا تُغيّر نظامك الزراعي.
-              <span className="block">أَضف له عقلاً.</span>
+              لوحات تحكّم زراعي —
+              <span className="block">أضف لمنظومتك عقلاً.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               Smart Controllers من iGarden تَربط حسّاساتك ومضخّاتك ونظام الري
@@ -878,6 +879,41 @@ function FAQ() {
 }
 
 /* ─── Section 10: Final CTA ───────────────────────────────── */
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "متى تحتاج Smart Controller؟",
+    desc: "خمس علامات تدلّ أن المراقبة اليدوية لم تعد كافية.",
+    href: "/learn/when-do-you-need-smart-controller",
+  },
+  {
+    label: "قياسات المزرعة الذكية",
+    desc: "المؤشرات اليومية الأساسية وكيف تُقرأ.",
+    href: "/learn/daily-measurements-smart-farm",
+  },
+  {
+    label: "منصة Smart OS",
+    desc: "بيانات التشغيل والإشراف عن بُعد في لوحة واحدة.",
+    href: "/products/smart-os",
+  },
+  {
+    label: "القياس وإنترنت الأشياء",
+    desc: "المستشعرات والبروتوكولات التي تُغذّي اللوحة.",
+    href: "/products/iot",
+  },
+  {
+    label: "السجلات وجاهزية الامتثال",
+    desc: "ما الذي يمكن تسجيله ضمن نطاق الربط.",
+    href: "/compliance",
+  },
+  {
+    label: "كيف نعمل",
+    desc: "مشروع جديد أو منشأة قائمة — مساران واضحان.",
+    href: "/how-we-work",
+  },
+];
+
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -959,6 +995,7 @@ export default function SmartControllersPage() {
       <DevTimeline />
       <B2BSection />
       <FAQ />
+      <RelatedPaths links={RELATED_LINKS} />
       <FinalCTA />
     </>
   );
