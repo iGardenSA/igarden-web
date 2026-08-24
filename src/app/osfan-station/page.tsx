@@ -6,9 +6,9 @@ import { VisitForm } from "./VisitForm";
 import { CheckCircle2, Microscope } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "مرفق R&D في عسفان للتجارب والتطوير | iGarden",
+  title: "مرفق R&D في عسفان للتجارب والتطوير",
   description:
-    "المختبر الميداني لـ iGarden في عسفان شمال جدة. حيث نُجرّب كلّ نظام في ظروف السعودية الحقيقية قبل أن يصل إلى عميل.",
+    "مرفق R&D واختبار ميداني لـ iGarden في عسفان شمال جدة. نطوّر ونختبر فيه نماذج وتقنيات مختارة في ظروف تشغيل سعودية، ونستقبل الزيارات التقنية.",
   alternates: { canonical: "https://igarden.sa/osfan-station" },
   openGraph: {
     title: "مرفق R&D في عسفان — حيث نُجرّب قبل أن نُسلّم",
@@ -53,16 +53,16 @@ function Hero() {
           <span dir="ltr" className="ltr-inline font-latin font-bold">
             iGarden
           </span>{" "}
-          — حيث تَمرّ كلّ تقنية بصيف +٤٥°C، رطوبة ساحلية، رياح الخليج، وغبار
+          — حيث نختبر نماذج وتقنيات مختارة في ظروف صيفية سعودية، ورطوبة ساحلية، ورياح الخليج، وغبار
           قبل أن تَصل إلى عميل.
         </p>
 
         <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-4 text-cream/70 text-sm">
-          <span className="font-latin">7 تقنيات نشطة</span>
+          <span>نماذج وتجارب نشطة</span>
           <span className="text-[#A5D63F]/40">·</span>
-          <span>5 ورش مُنفَّذة</span>
+          <span>ورش تقنية مُنفَّذة</span>
           <span className="text-[#A5D63F]/40">·</span>
-          <span className="font-latin">Comprehensive QA</span>
+          <span>اختبار ميداني تدريجي</span>
         </div>
       </div>
     </section>
@@ -84,9 +84,9 @@ function WhyOsfan() {
             </h2>
             <blockquote className="border-s-4 border-lime ps-5 mb-6 space-y-4">
               <p className="body-base text-medium-gray">
-                «في عسفان، كلّ نظام قبل أن يصل إليك، اختُبر في ظروف المناخ
-                السعودي الحقيقية — درجات حرارة تتجاوز +45°C، رطوبة ساحلية،
-                رياح، وغبار.»
+                «في مرفق R&D في عسفان نطوّر ونختبر نماذج وتقنيات مختارة في
+                ظروف تشغيل سعودية — حرارة صيفية مرتفعة، ورطوبة ساحلية، ورياح،
+                وغبار — قبل توسيعها إلى نطاقات العملاء.»
               </p>
               <p className="body-base text-medium-gray">
                 «ما يصلك من{" "}
@@ -98,7 +98,7 @@ function WhyOsfan() {
               </p>
             </blockquote>
             <CTAButton href="#احجز-زيارة" variant="outline-green">
-              احجز زيارة للمحطّة ↓
+              احجز زيارة للمرفق ↓
             </CTAButton>
           </div>
 
@@ -122,7 +122,7 @@ function WhyOsfan() {
 const GALLERY_IMAGES = [
   {
     src: "/images/osfan-full/04_greenhouse_wide.webp",
-    label: "منظر عام للمحطة",
+    label: "منظر عام للمرفق",
     detail: "شمال جدة — ظروف مناخية حقيقية",
   },
   {
@@ -133,7 +133,7 @@ const GALLERY_IMAGES = [
   {
     src: "/images/osfan-full/03_cabbage_diversity.webp",
     label: "تنوع المحاصيل",
-    detail: "ورقيات مُنتجة في ظروف +٤٥°C",
+    detail: "ورقيات مُنتجة في ظروف صيفية سعودية",
   },
   {
     src: "/images/osfan-full/02_tower_closeup.webp",
@@ -206,38 +206,39 @@ const SYSTEMS = [
   {
     Icon: Microscope,
     name: "NFT — Nutrient Film Technique",
-    learned: "الأنابيب الرفيعة تتسدّ بسرعة في الصيف بسبب تكلّس الماء — اكتشفنا الحاجة لفلاتر متخصّصة للمناخ الخليجي.",
-    changed: "أضفنا مرحلة ترشيح بلوري لكل وحدة NFT نُركّبها — تُمدَّد عمر الأنظمة وتقلّل الصيانة.",
+    learned: "جودة المياه والترشيح تؤثّران مباشرة في انسداد الأنابيب الرفيعة — وهو ما ظهر في التشغيل الصيفي.",
+    changed: "أدخلنا مرحلة ترشيح ضمن التصميم؛ ويُحدَّد نوعها ومداها وفق تحليل المياه ونطاق المشروع.",
   },
   {
     Icon: Microscope,
     name: "DWC — Deep Water Culture",
-    learned: "الجذور تتعفّن عند درجات حرارة الماء >26°C بدون تبريد إضافي — المناخ السعودي يتطلّب تبريد قاعدي.",
-    changed: "كل وحدة DWC الآن مُجهَّزة بمبدّل حرارة صغير للحفاظ على 18-22°C في الصيف.",
+    learned: "حرارة المحلول تؤثّر في صحة الجذور، وظهر ذلك بوضوح في التشغيل الصيفي.",
+    changed: "أدرجنا التبريد ضمن خيارات تصميم DWC؛ وتُحدَّد الحاجة إليه بحسب الموقع والمحصول.",
   },
   {
     Icon: Microscope,
     name: "iGarden Tower — النموذج الأوّل",
-    learned: "الهيكل الأوّلي فقد صلابته بعد 6 أشهر تحت الحرارة الشديدة — الألومنيوم المُعالَج حرارياً ضروري لا اختياري.",
+    learned: "الاستخدام الميداني أظهر الحاجة إلى تطوير صلابة الهيكل وتفاصيل التوزيع.",
     changed: "النموذج الحالي مُسجَّل صناعياً (SAIP #423450193) بهيكل أثقل وفتحات تشريب مُحسَّنة.",
   },
   {
     Icon: Microscope,
     name: "Smart Controller v0.1",
-    learned: "الإصدار الأوّل استخدم قراءة pH تناظرية مباشرة — درجة الحرارة تُشوّه القراءات بنسبة تصل 15%.",
-    changed: "الإصدار الحالي يستخدم ADS1115 (ADR الداخلي T002) — تعويض تلقائي لدرجة الحرارة يضمن دقة ±0.1 pH.",
+    learned: "النسخة الأولى أظهرت حساسية القراءة التناظرية للحرارة؛ والدقّة تتأثر بالـADC والمعايرة والمجس والتركيب.",
+    // [CONTENT_NEEDED: سجلّ قياس دقّة pH للإصدارين v0.1 وv0.2 — من م. أيمن]
+    changed: "الإصدار الحالي يستخدم ADC عالي الدقة (ADS1115 — ADR الداخلي T002) لقراءة الإشارة التناظرية؛ الدقّة النهائية تعتمد على المجس والمعايرة والتركيب.",
   },
   {
     Icon: Microscope,
     name: "نظام Foggers للتبريد",
-    learned: "الضباب الدقيق يخفّض حرارة المحمية 6-8°C لكنه يرفع الرطوبة — فطريات الجذور في الأصناف الحسّاسة.",
-    changed: "الآن نُوازن الفوجرز مع تهوية جانبية مُتزامنة — التبريد بدون ارتفاع في الرطوبة فوق 75%.",
+    learned: "التبريد بالضباب قد يرفع الرطوبة، وهو ما يستدعي انتباهاً في الأصناف الحسّاسة.",
+    changed: "نوازن التبريد والتهوية بحسب المحصول والموقع ضمن تصميم المشروع.",
   },
   {
     Icon: Microscope,
     name: "Drip Hydroponics",
-    learned: "الريّ التقطيري يعمل جيداً مع Coco Coir لكن يحتاج تدفقاً أعلى في +45°C لتجنّب التجفيف بين الجرعات.",
-    changed: "برمجنا Smart OS لزيادة تردد الريّ تلقائياً عند الحرارة العالية — بدون تدخل يدوي.",
+    learned: "الريّ التقطيري يعمل جيداً مع Coco Coir لكن يحتاج تدفقاً أعلى في ذروة الحرارة الصيفية لتجنّب التجفيف بين الجرعات.",
+    changed: "أضفنا إلى Smart OS إمكانية تعديل تردّد الريّ وفق الحرارة — تُفعَّل بحسب نطاق المشروع وتجهيزاته، لا كأتمتة مسلَّمة لكل مشروع.",
   },
 ];
 
@@ -251,7 +252,7 @@ function TestedSystems() {
           </p>
           <h2 className="h2 text-deep-green">ما اختبرناه في عسفان</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
-            كلّ نظام مرّ بعسفان علّمنا شيئاً لم تُخبرنا به كتالوجات
+            ما اختبرناه في المرفق علّمنا أشياء لم تُخبرنا بها كتالوجات
             الموردين.
           </p>
         </div>
@@ -310,21 +311,20 @@ function WorkshopsSection() {
               «ازرع بذكاء»
             </p>
             <h2 className="h2 text-deep-green mb-4">
-              5 ورش مُنفَّذة — والقادمة تنتظركم
+              ورش «ازرع بذكاء» مُنفَّذة — والقادمة تنتظركم
             </h2>
             <p className="body-base text-medium-gray mb-8">
-              ورش عمل تطبيقية بدلاً من المحاضرات النظرية. كلّ ورشة تأخذ
-              المشارك من الفكرة إلى نظام شغّال — في يوم واحد.
+              ورش تطبيقية تنقل المشارك من الفكرة إلى تطبيق عملي داخل المرفق.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
-                <p className="stat-num !text-3xl mb-1">5</p>
+                <p className="stat-num !text-3xl mb-1">تطبيقية</p>
                 <p className="text-deep-green text-lg font-medium">ورش مُنفَّذة</p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
-                <p className="stat-num !text-3xl mb-1">+45°C</p>
-                <p className="text-deep-green text-lg font-medium">اختبار ميداني</p>
+                <p className="stat-num !text-3xl mb-1">ميداني</p>
+                <p className="text-deep-green text-lg font-medium">اختبار في ظروف صيفية سعودية</p>
               </div>
               {/* HIDDEN IN WAVE 1 — Workshop quote needed from team (Wave 2) */}
             </div>

@@ -1,7 +1,7 @@
 # PROJECT-STATE.md — igarden-web
 
 > **SSOT (iKGOS).** يُقرأ أولاً ويغلب عند التعارض.
-> **آخر Reality Lock:** 2026-08-23 · **المضيف القانوني:** HP-EliteBook-840
+> **آخر Reality Lock:** 2026-08-24 · **المضيف القانوني:** HP-EliteBook-840
 > **فرع الحقيقة:** `main` · **النشر:** Vercel — تلقائي على `main`
 >
 > **وسم الثقة:** ✓ مُتحقَّق بأمر أو نشر · ◐ مُستنتَج أو غير مُتحقَّق · ⚠ افتراض لا يُبنى عليه
@@ -10,18 +10,18 @@
 
 ## الحالة الآن
 
-- **`main` = `origin/main` = `e8979f0321913eb68bf4289bd90b1eb19d5b5acc`** ✓
-- **نشر إنتاجي مُتحقَّق:** `sha=e8979f0` · `2026-08-24T09:05Z` · `Production id=6059643726` ✓
-- مسار `main`: `…` → `af33e31` → `cb88f64` → `7fac9d8` → `e96824a` → **`e8979f0`** ✓
+- **`main` = `origin/main` = `7cf896b31fc5de2a95e5481d3a6843c7f6117e97`** ✓
+- **نشر إنتاجي مُتحقَّق:** `sha=7cf896b` · `2026-08-24T13:30Z` · `Production id=6063738220` ✓
+- مسار `main`: `…` → `cb88f64` → `7fac9d8` → `e96824a` → `e8979f0` → **`7cf896b`** ✓
 - **#51 · #52 MERGED** ✓ — Wave 1B وWave 1C ‏LIVE
-- **#53 · #54 MERGED ✓ — Wave 2A وWave 2B ‏LIVE على الإنتاج**
-- **Wave 2C قيد العمل** على `feat/wave2c-visual-proof`
+- **#53 · #54 · #55 MERGED ✓ — Wave 2A وWave 2B وWave 2C ‏LIVE على الإنتاج**
+- **Wave 2D قيد العمل** على `feat/wave2d-truth-closure`
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
 ---
 
-## الدمجات العشر
+## الدمجات الإحدى عشرة
 
 | PR | العنوان | sha | الطريقة | التاريخ (UTC) |
 |---|---|---|---|---|
@@ -35,6 +35,7 @@
 | **#52** | Navigation and footer v2 — site architecture | **`7fac9d8`** | squash | 2026-08-23 20:06 |
 | **#53** | Wave 2A — capability truth across product depth pages | **`e96824a`** | squash | 2026-08-24 07:11 |
 | **#54** | Wave 2B — truth review and search intent | **`e8979f0`** | squash | 2026-08-24 09:04 |
+| **#55** | Wave 2C — visual proof pass 1 | **`7cf896b`** | squash | 2026-08-24 13:30 |
 
 ◐ #48 قاعدته كانت `fix/factsheet-prep` لا `main` — دخل الإنتاج ضمن #47.
 
@@ -68,8 +69,9 @@
 | **`pre-merge-52`** | `cb88f64` | **`git revert 7fac9d8`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-53`** | `7fac9d8` | **`git revert e96824a`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-54`** | `e96824a` | **`git revert e8979f0`** (squash — أب واحد، بلا `-m`) |
+| **`pre-merge-55`** | `e8979f0` | **`git revert 7cf896b`** (squash — أب واحد، بلا `-m`) |
 
-✓ الجدول أعلاه هو الحاكم — **ثمانية وسوم `pre-merge-*`** على `origin` ✓ مُتحقَّقة بـ`git ls-remote --tags`.
+✓ الجدول أعلاه هو الحاكم — **عشرة وسوم `pre-merge-*`** على `origin` ✓ مُتحقَّقة بـ`git ls-remote --tags` (2026-08-24).
 
 ---
 
@@ -106,6 +108,12 @@
 
 ## المفتوح — المرحلة التالية
 
+- 🔴 **فجوة الإسناد (attribution):** ‏UTM تُقرأ من صفحة النموذج الحالية فقط؛
+  **لا يوجد حتى الآن first-touch attribution عبر صفحات الهبوط.**
+  تُغلق في **Wave 2E** قبل تحديث روابط حراج.
+- ◐ **`StatsStrip.tsx` مكوّن يتيم** — يحمل `STATS` محلّياً فيه `+45°C` و«5 ورش»،
+  **غير مُصيَّر في أي صفحة** (يبقيه `sections/index.ts` وحده). سُجّل في Wave 2D
+  ولم يُنظَّف؛ يُحسم مع Branch Hygiene.
 - **Evidence Pack** — لم يبدأ ◐
 - **صفحة الواحة** — لم تبدأ ◐
 - **v5** — لم تبدأ ◐
@@ -162,15 +170,12 @@
 
 ## NEXT DELTA
 
-**Wave 2C — Visual Proof Pass 1.**
-إدخال ثلاثة أصول **موجودة ومنسوبة** في `hydroponics` و`smart-greenhouses` و`smart-os`:
-برج عسفان · محمية عسفان · واجهة Smart OS ببيانات محاكاة معلَنة.
-فرع `feat/wave2c-visual-proof` من `e8979f0`.
+**Wave 2E — Attribution Bridge.** إغلاق فجوة الإسناد قبل توسيع الحركة من حراج
+وLinkedIn وTarget 30: first-touch attribution عبر صفحات الهبوط، لا قراءة UTM
+من صفحة النموذج وحدها.
 
-⛔ خارج النطاق: حذف أي أصل · صور الأحساء والمشروع العضوي (‏يبقيان نصّيين) ·
-صورة لـ`compliance` قبل وجود سجل منزوع البيانات · ضغط `team-ali.jpg` ·
-النصوص وmetadata وschema والروابط · صور AI أو renders.
-تنظيف التكرارات (‏13MB) = **P2 مؤجَّل إلى Branch Hygiene، لا P0**.
+بعدها: صفحة **الاستدامة** (‏الأولى في ترتيب Claim Gate) · الأصول الخمسة المطلوبة
+من علي · Branch Hygiene (‏13MB تكرارات + المكوّنات اليتيمة).
 
 ---
 

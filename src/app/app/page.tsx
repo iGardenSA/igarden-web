@@ -18,9 +18,9 @@ import {
 import AppWaitlistForm from "./AppWaitlistForm";
 
 export const metadata: Metadata = {
-  title: "التطبيق · iGarden في جيبك | iGarden",
+  title: "التطبيق — قيد التحقق والتطوير",
   description:
-    "تطبيق iGarden — رفيقك في الزراعة المائية. حاسبات دقيقة لـ EC و pH، يوميات نظامك، ومرشد تقني عربي. للهواة الجادّين والمزارعين المنزليين في السعودية. قريباً.",
+    "تطبيق iGarden قيد التحقق والتطوير للهواة والمزارعين المنزليين. نختبر نطاقاً مخططاً يشمل حاسبات الزراعة المائية واليوميات والإرشاد التقني بالعربية. انضم إلى قائمة الانتظار.",
   keywords: [
     "تطبيق iGarden",
     "iGarden App",
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     "Hydroponics Saudi Arabia",
   ],
   openGraph: {
-    title: "التطبيق · iGarden في جيبك",
+    title: "تطبيق iGarden — قيد التحقق والتطوير",
     description:
-      "أرقام دقيقة، لا تخمين. EC · pH · PPM · توقيت الري — مرافق عربي للزراعة المائية.",
-    images: ["/api/og?title=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82+iGarden&sub=EC+%C2%B7+pH+%C2%B7+PPM+%E2%80%94+%D8%B1%D9%81%D9%8A%D9%82%D9%83+%D9%81%D9%8A+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9"],
+      "نطاق منتج مخطط للزراعة المائية المنزلية: حاسبات ويوميات وإرشاد تقني بالعربية. انضم إلى قائمة الانتظار.",
+    images: ["/api/og?title=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82+iGarden&sub=%D9%82%D9%8A%D8%AF+%D8%A7%D9%84%D8%AA%D8%AD%D9%82%D9%82+%D9%88%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%E2%80%94+%D9%86%D8%B7%D8%A7%D9%82+%D9%85%D9%86%D8%AA%D8%AC+%D9%85%D8%AE%D8%B7%D8%B7"],
   },
 };
 
@@ -205,10 +205,18 @@ export default function AppPage() {
               <p className="text-cream/85 text-lg md:text-xl leading-relaxed mb-4 font-semibold">
                 رفيقك في الزراعة المائية — EC، pH، PPM، توقيت الري.
               </p>
-              <p className="text-cream/75 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+              <p className="text-cream/75 text-base md:text-lg leading-relaxed mb-6 max-w-xl">
                 أرقام دقيقة، لا تخمين. للهواة الجادّين والمزارعين المنزليين الذين
                 يبنون أنظمة DWC و NFT في السعودية.
               </p>
+
+              {/* تصريح المرحلة — المرحلة الحالية في ROADMAP هي «التحقق من السوق» */}
+              <div className="mb-8 max-w-xl rounded-xl border border-amber-400/40 bg-amber-400/10 px-4 py-3">
+                <p className="text-amber-200 text-sm leading-relaxed">
+                  <strong className="font-bold">قيد التحقق والتطوير</strong> — التفاصيل
+                  المعروضة تمثل نطاق المنتج المخطط، وليست إعلاناً عن إطلاق تجاري مكتمل.
+                </p>
+              </div>
 
               <div className="flex items-center gap-4 flex-wrap mb-8">
                 <Link
@@ -222,7 +230,7 @@ export default function AppPage() {
                   href="#features"
                   className="text-cream hover:text-lime transition-colors text-sm font-semibold underline-offset-4 hover:underline"
                 >
-                  شاهد الميزات ↓
+                  شاهد نطاق المنتج المخطط ↓
                 </Link>
               </div>
 
@@ -307,13 +315,19 @@ export default function AppPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center mb-14">
             <p className="text-brand-600 text-sm font-bold uppercase tracking-widest mb-3">
-              الميزات · What&apos;s Inside
+              نطاق المنتج المخطط · Planned Scope
             </p>
             <h2 className="text-deep-green text-3xl md:text-4xl font-bold mb-4">
               ست أدوات · بنية واحدة متكاملة
             </h2>
-            <p className="text-medium-gray max-w-2xl mx-auto">
-              كل ميزة مبنيّة على بيانات حقيقية من الميدان — ومُكيَّفة للمناخ السعودي.
+            <p className="text-medium-gray max-w-2xl mx-auto mb-4">
+              نخطط أن يقدّم التطبيق هذه الأدوات، مُكيَّفة للمناخ السعودي. الشاشات
+              المعروضة نماذج تصوّرية للتصميم.
+            </p>
+            <p className="text-medium-gray/80 text-sm max-w-2xl mx-auto">
+              <strong>ما يوجد اليوم:</strong> صفحة التعريف وقائمة الانتظار والنماذج
+              التصوّرية. · <strong>ما نختبره ضمن MVP:</strong> المحتوى والحاسبات
+              والمتابعة. · <strong>Roadmap:</strong> الهاردوير والجسر إلى B2B.
             </p>
           </div>
 
@@ -332,6 +346,9 @@ export default function AppPage() {
                     <p className="text-medium-gray text-xs font-bold uppercase tracking-wider mb-2">
                       {feature.subtitle}
                     </p>
+                    <span className="inline-block mb-3 text-[11px] font-bold text-amber-700 bg-amber-100 rounded-full px-2.5 py-0.5">
+                      ضمن MVP المخطط
+                    </span>
                     <h3 className="text-deep-green text-2xl lg:text-3xl font-bold mb-4">
                       {feature.title}
                     </h3>
