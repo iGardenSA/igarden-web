@@ -126,23 +126,12 @@ export const WHATSAPP_HREF = `${CONTACT.whatsapp}?text=${encodeURIComponent(WHAT
 export const DEMO_URL = "https://demo.igarden.sa";
 export const SHOP_URL = "https://shop.igarden.sa";
 
-// ─── Utility Bar — سطح المكتب فقط · ثلاثة روابط · غير sticky ─────────────────
-
-export type UtilityIconName = "monitor" | "shopping-bag" | "home";
-
-export type UtilityItem = {
-  label: string;
-  icon: UtilityIconName;
-  href: string;
-  external?: boolean;
-  badge?: "live" | "soon";
-};
-
-export const UTILITY_ITEMS: UtilityItem[] = [
-  { label: "Smart OS Demo", icon: "monitor", href: DEMO_URL, external: true, badge: "live" },
-  { label: "المتجر", icon: "shopping-bag", href: SHOP_URL, external: true },
-  { label: "للأفراد", icon: "home", href: "/home-solutions" },
-];
+// ─── Utility Bar — حُذف في Site Narrative Rebuild ───────────────────────────
+// شريط الخدمات أُزيل من التصيير العام لتقليل مستويات التنقّل إلى واحد.
+// وجهاته الثلاث محفوظة: Demo في Mega Menu والدرج والفوتر · المتجر في الدرج
+// والفوتر وHome Solutions · للأفراد في الدرج والفوتر والشريط الختامي.
+// الاسترجاع: git show 87cb99b:src/lib/constants.ts
+// ─────────────────────────────────────────────────────────────────────────────
 
 // ─── Mega Menu — مساران + أربعة أعمدة + شريط سفلي ────────────────────────────
 
