@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "تواصل معنا — احجز استشارة | iGarden",
+  title: "تواصل معنا — اطلب تقييماً أولياً",
   description:
     "تواصل مع فريق iGarden لتقييم مشروعك أو طلب عرض سعر. نسمع، نسأل، ونقترح — أو نصارحك إن كان المشروع غير جاهز. نردّ خلال يوم عمل.",
   alternates: { canonical: "https://igarden.sa/contact" },

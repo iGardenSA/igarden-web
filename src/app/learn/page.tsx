@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArticleGrid } from "./_components/ArticleGrid";
 
 export const metadata: Metadata = {
-  title: "المعرفة | iGarden",
+  title: "المعرفة — قبل أن تشتري اقرأ",
   description:
     "مقالات تعليمية وتأملات عملية في الزراعة الذكية، الزراعة المائية، أنظمة التحكم، وتصميم المرافق الزراعية.",
   alternates: { canonical: "https://igarden.sa/learn" },

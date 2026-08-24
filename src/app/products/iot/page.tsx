@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 export const metadata: Metadata = {
-  title: "إنترنت الأشياء الزراعي · iGarden",
+  title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
   description:
     "حلول IoT للمزارع التجارية: الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة في مرفق R&D في عسفان.",
   alternates: { canonical: "https://igarden.sa/products/iot" },

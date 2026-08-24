@@ -10,18 +10,18 @@
 
 ## الحالة الآن
 
-- **`main` = `origin/main` = `7cf896b31fc5de2a95e5481d3a6843c7f6117e97`** ✓
-- **نشر إنتاجي مُتحقَّق:** `sha=7cf896b` · `2026-08-24T13:30Z` · `Production id=6063738220` ✓
-- مسار `main`: `…` → `cb88f64` → `7fac9d8` → `e96824a` → `e8979f0` → **`7cf896b`** ✓
+- **`main` = `origin/main` = `87cb99b44f40f5c77dca678523559a8fa291f600`** ✓
+- **نشر إنتاجي مُتحقَّق:** `sha=87cb99b` · `2026-08-24T19:37Z` · `Production id=6069993338` ✓
+- مسار `main`: `…` → `7fac9d8` → `e96824a` → `e8979f0` → `7cf896b` → **`87cb99b`** ✓
 - **#51 · #52 MERGED** ✓ — Wave 1B وWave 1C ‏LIVE
-- **#53 · #54 · #55 MERGED ✓ — Wave 2A وWave 2B وWave 2C ‏LIVE على الإنتاج**
-- **Wave 2D قيد العمل** على `feat/wave2d-truth-closure`
+- **#53 · #54 · #55 · #56 MERGED ✓ — Wave 2A→2D ‏LIVE على الإنتاج**
+- **Site Narrative Rebuild جاهز للمراجعة على `feat/site-narrative-rebuild` — ⛔ ليس LIVE**
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
 ---
 
-## الدمجات الإحدى عشرة
+## الدمجات الاثنتا عشرة
 
 | PR | العنوان | sha | الطريقة | التاريخ (UTC) |
 |---|---|---|---|---|
@@ -36,6 +36,7 @@
 | **#53** | Wave 2A — capability truth across product depth pages | **`e96824a`** | squash | 2026-08-24 07:11 |
 | **#54** | Wave 2B — truth review and search intent | **`e8979f0`** | squash | 2026-08-24 09:04 |
 | **#55** | Wave 2C — visual proof pass 1 | **`7cf896b`** | squash | 2026-08-24 13:30 |
+| **#56** | Wave 2D — public truth closure | **`87cb99b`** | squash | 2026-08-24 19:36 |
 
 ◐ #48 قاعدته كانت `fix/factsheet-prep` لا `main` — دخل الإنتاج ضمن #47.
 
@@ -70,8 +71,9 @@
 | **`pre-merge-53`** | `7fac9d8` | **`git revert e96824a`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-54`** | `e96824a` | **`git revert e8979f0`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-55`** | `e8979f0` | **`git revert 7cf896b`** (squash — أب واحد، بلا `-m`) |
+| **`pre-merge-56`** | `7cf896b` | **`git revert 87cb99b`** (squash — أب واحد، بلا `-m`) |
 
-✓ الجدول أعلاه هو الحاكم — **عشرة وسوم `pre-merge-*`** على `origin` ✓ مُتحقَّقة بـ`git ls-remote --tags` (2026-08-24).
+✓ الجدول أعلاه هو الحاكم — **أحد عشر وسم `pre-merge-*`** على `origin` ✓ مُتحقَّق بـ`git ls-remote --tags` (2026-08-24).
 
 ---
 
@@ -170,12 +172,12 @@
 
 ## NEXT DELTA
 
-**Wave 2E — Attribution Bridge.** إغلاق فجوة الإسناد قبل توسيع الحركة من حراج
-وLinkedIn وTarget 30: first-touch attribution عبر صفحات الهبوط، لا قراءة UTM
-من صفحة النموذج وحدها.
+**Wave 2E — Attribution Bridge** ما زالت التالية **قبل توسيع حركة حراج**:
+first-touch attribution عبر صفحات الهبوط، لا قراءة UTM من صفحة النموذج وحدها.
 
-بعدها: صفحة **الاستدامة** (‏الأولى في ترتيب Claim Gate) · الأصول الخمسة المطلوبة
-من علي · Branch Hygiene (‏13MB تكرارات + المكوّنات اليتيمة).
+⏳ **Site Narrative Rebuild** جاهز للمراجعة على `feat/site-narrative-rebuild`
+(‏من `87cb99b`) — حذف Utility Bar · ترتيب الرئيسية بالمنفعة · مواءمة الصفحات
+الداخلية · قاعدة «المنفعة ← الآلية ← التحقق ← حدّ نطاق». **ليس LIVE.**
 
 ---
 

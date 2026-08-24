@@ -12,7 +12,7 @@ import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 export const metadata: Metadata = {
-  title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك · iGarden",
+  title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
   description:
     "لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد والبرامج المجدولة ضمن نطاق مشروعك — والسجلّات والتنبيهات والتقارير تُفعَّل بحسبه. طبقات التحليل المتقدّم قيد التطوير.",
   alternates: { canonical: "https://igarden.sa/products/smart-os" },
