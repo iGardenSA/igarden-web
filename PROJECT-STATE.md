@@ -15,7 +15,7 @@
 - مسار `main`: `…` → `14f59bd` → `af33e31` → `cb88f64` → `7fac9d8` → **`e96824a`** ✓
 - **#51 · #52 MERGED** ✓ — Wave 1B وWave 1C ‏LIVE
 - **#53 MERGED ✓ — Wave 2A ‏LIVE على الإنتاج**
-- **Wave 2B قيد العمل** على `feat/wave2b-truth-search`
+- **Wave 2B جاهزة للمراجعة على PR #54 — ⛔ ليست Live**
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
@@ -67,7 +67,7 @@
 | **`pre-merge-52`** | `cb88f64` | **`git revert 7fac9d8`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-53`** | `7fac9d8` | **`git revert e96824a`** (squash — أب واحد، بلا `-m`) |
 
-◐ البلاغ ذكر ثلاثة وسوم — الموجودة فعلاً **أربعة** ✓ مُتحقَّق بـ`git ls-remote --tags`.
+✓ الجدول أعلاه هو الحاكم — **ثمانية وسوم `pre-merge-*`** على `origin` ✓ مُتحقَّقة بـ`git ls-remote --tags`.
 
 ---
 
@@ -104,8 +104,6 @@
 
 ## المفتوح — المرحلة التالية
 
-- **ادّعاءات باقية** — نطاق **Wave 2A**: `+45°C` في `smart-controllers` · `iot` · `compliance`
-  · و«لحظياً» في `smart-controllers` ✓ مُتحقَّق بالبحث
 - **Evidence Pack** — لم يبدأ ◐
 - **صفحة الواحة** — لم تبدأ ◐
 - **v5** — لم تبدأ ◐

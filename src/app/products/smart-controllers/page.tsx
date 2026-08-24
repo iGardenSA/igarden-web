@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Factory,
@@ -21,7 +22,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller لمزرعتك؟ | iGarden",
+  title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
   description:
     "لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   alternates: { canonical: "https://igarden.sa/products/smart-controllers" },
@@ -64,8 +65,8 @@ function Hero() {
               لوحات التحكّم · Smart OS Powered
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              لا تُغيّر نظامك الزراعي.
-              <span className="block">أَضف له عقلاً.</span>
+              لوحات تحكّم زراعي —
+              <span className="block">أضف لمنظومتك عقلاً.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               Smart Controllers من iGarden تَربط حسّاساتك ومضخّاتك ونظام الري
@@ -878,9 +879,9 @@ function FAQ() {
 }
 
 /* ─── Section 10: Final CTA ───────────────────────────────── */
-/* ─── مسارات ذات صلة — روابط صاعدة داخلية ─────────────────
-   ⛔ لا صفحات ولا مقالات جديدة: كلّها وجهات منشورة قائمة. */
-const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
   {
     label: "متى تحتاج Smart Controller؟",
     desc: "خمس علامات تدلّ أن المراقبة اليدوية لم تعد كافية.",
@@ -912,32 +913,6 @@ const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
     href: "/how-we-work",
   },
 ];
-
-function RelatedPaths() {
-  return (
-    <section className="section-light py-16" dir="rtl">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <h2 className="h3 text-deep-green mb-2 text-center">مسارات ذات صلة</h2>
-        <p className="body-sm text-medium-gray text-center mb-8 max-w-2xl mx-auto">
-          تابع من هنا حسب سؤالك التالي.
-        </p>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {RELATED_LINKS.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="flex flex-col gap-1 min-h-[44px] bg-white rounded-card border border-light-gray p-5 shadow-soft hover:border-lime transition-colors h-full"
-              >
-                <span className="font-bold text-deep-green">{l.label}</span>
-                <span className="body-sm text-medium-gray">{l.desc}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
 
 function FinalCTA() {
   return (
@@ -1020,7 +995,7 @@ export default function SmartControllersPage() {
       <DevTimeline />
       <B2BSection />
       <FAQ />
-      <RelatedPaths />
+      <RelatedPaths links={RELATED_LINKS} />
       <FinalCTA />
     </>
   );

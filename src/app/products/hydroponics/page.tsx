@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Droplets,
@@ -24,7 +25,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "أنظمة الزراعة المائية في السعودية — أيّ تقنية تناسب محصولك؟ | iGarden",
+  title: "أنظمة الزراعة المائية في السعودية — اختر التقنية المناسبة",
   description:
     "كيف تختار بين NFT وDWC وAeroponics والأبراج الرأسية؟ نحدّد التقنية المناسبة لمحصولك وموقعك، ونصمّم النظام ونجهّزه ونربطه بالتشغيل. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193).",
   alternates: { canonical: "https://igarden.sa/products/hydroponics" },
@@ -62,8 +63,8 @@ function Hero() {
               الزراعة المائية · 7 تقنيات
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              لا نَبيعك تقنية جاهزة.
-              <span className="block">نَختار الأنسب لمحصولك.</span>
+              أنظمة زراعة مائية —
+              <span className="block">نختار الأنسب لمحصولك.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               ٧ تقنيات زراعة مائية مُختَبَرة في عسفان — NFT · DWC · Drip ·
@@ -71,7 +72,7 @@ function Hero() {
               وميزانيتك، لا الأشهر تسويقياً.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
-              كفاءة مائية عالية وإنتاجية مُضاعَفة بحسب التقنية والمحصول. يَشمل{" "}
+              كفاءة مائية عالية ورفع الإنتاجية لكل متر مربع بحسب التقنية والمحصول. يَشمل{" "}
               <span className="font-medium text-deep-green">iGarden Tower</span>{" "}
               المُسجَّل صناعياً (SAIP #423450193).
             </p>
@@ -105,11 +106,11 @@ function Hero() {
 const FOR_WHOM = [
   {
     title: "مزارعون حضريون وأصحاب مساحات محدودة",
-    desc: "تريد إنتاج أعلى في مساحة أقل — الزراعة المائية تُضاعف الإنتاج مقارنة بالزراعة التقليدية في نفس الحيّز.",
+    desc: "تريد إنتاج أعلى في مساحة أقل — الزراعة المائية ترفع الإنتاجية لكل متر مربع بحسب التقنية والمحصول.",
   },
   {
     title: "مستثمرون في الإنتاج الغذائي كثيف الكثافة",
-    desc: "تبحث عن نموذج عائد واضح من الزراعة — 7 تقنيات مُختَبَرة في عسفان نُرشّح منها الأنسب لمحصولك وميزانيتك.",
+    desc: "تبحث عن نموذج عائد واضح من الزراعة — نعرض 7 تقنيات ونُرشّح منها الأنسب لمحصولك وميزانيتك.",
   },
   {
     title: "مزارعون في مناطق شحيحة المياه",
@@ -159,7 +160,7 @@ const VALUES = [
   },
   {
     Icon: Leaf,
-    title: "بلا تربة، بلا مبيدات",
+    title: "بلا تربة، مع إدارة أدق للمياه والمغذّيات",
     text: "بيئة معقّمة محكومة — أقلّ آفات، أقلّ كيماويات، محصول أنظف وأكثر أماناً.",
   },
 ];
@@ -229,7 +230,7 @@ const TECHNIQUES = [
     Icon: Layers,
     name: "Vertical",
     fullName: "Vertical Towers",
-    desc: "أعمدة عمودية تُضاعف الإنتاج لكل م² — أساس iGarden Tower.",
+    desc: "أعمدة عمودية ترفع الإنتاجية لكل م² بحسب التقنية والمحصول — أساس iGarden Tower.",
   },
 ];
 
@@ -634,7 +635,7 @@ function ScalesSection() {
 
 /* ─── Section 6.1: Scope (Includes / Excludes) ────────────── */
 const SCOPE_INCLUDES = [
-  "تصميم النظام واختيار التقنية المناسبة من 7 تقنيات مُختَبَرة",
+  "تصميم النظام واختيار التقنية المناسبة من 7 تقنيات معروضة",
   "توريد المعدات والهيكل وتوصيل الأنابيب والمحاليل",
   "التركيب الكامل وضبط القيم المثلى للمحصول",
   "التدريب على التشغيل اليومي والمحلول المغذّي",
@@ -848,7 +849,7 @@ const FAQS = [
   },
   {
     q: "هل أحتاج خبير لتشغيل النظام يومياً؟",
-    a: "لا — Smart OS يُراقب الأنظمة تلقائياً ويُرسل تنبيهات عند أيّ انحراف. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
+    a: "لا — تُفعَّل المراقبة والتنبيهات بحسب نطاق النظام والتجهيزات المتصلة. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
   },
   {
     q: "كيف يختلف iGarden Tower عن الأبراج المستوردة؟",
@@ -877,9 +878,9 @@ function FAQ() {
 }
 
 /* ─── Section 8: Final CTA ────────────────────────────────── */
-/* ─── مسارات ذات صلة — روابط صاعدة داخلية ─────────────────
-   ⛔ لا صفحات ولا مقالات جديدة: كلّها وجهات منشورة قائمة. */
-const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
   {
     label: "متى تحتاج Smart Controller؟",
     desc: "خمس علامات تدلّ أن المراقبة اليدوية لم تعد كافية.",
@@ -911,32 +912,6 @@ const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
     href: "/how-we-work",
   },
 ];
-
-function RelatedPaths() {
-  return (
-    <section className="section-light py-16" dir="rtl">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <h2 className="h3 text-deep-green mb-2 text-center">مسارات ذات صلة</h2>
-        <p className="body-sm text-medium-gray text-center mb-8 max-w-2xl mx-auto">
-          تابع من هنا حسب سؤالك التالي.
-        </p>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {RELATED_LINKS.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="flex flex-col gap-1 min-h-[44px] bg-white rounded-card border border-light-gray p-5 shadow-soft hover:border-lime transition-colors h-full"
-              >
-                <span className="font-bold text-deep-green">{l.label}</span>
-                <span className="body-sm text-medium-gray">{l.desc}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
 
 function FinalCTA() {
   return (
@@ -977,7 +952,7 @@ const SCHEMA_FAQS = [
   {
     question: "هل أحتاج خبير لتشغيل النظام يومياً؟",
     answer:
-      "لا — Smart OS يُراقب الأنظمة تلقائياً ويُرسل تنبيهات عند أيّ انحراف. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
+      "لا — تُفعَّل المراقبة والتنبيهات بحسب نطاق النظام والتجهيزات المتصلة. نُوفّر تدريباً كاملاً عند التسليم حتى تتمكّن من إدارة المزرعة بنفسك.",
   },
   {
     question: "كيف يختلف iGarden Tower عن الأبراج المستوردة؟",
@@ -991,7 +966,7 @@ export default function HydroponicsPage() {
     <>
       <ProductSchema
         name="Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower"
-        description="7 تقنيات زراعة مائية مُختَبَرة في عسفان. من NFT إلى DWC إلى Aeroponics. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
+        description="7 تقنيات زراعة مائية معروضة — من NFT إلى DWC إلى Aeroponics — نُرشّح منها الأنسب لمحصولك وموقعك. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
         image="/images/osfan-full/02_tower_closeup.webp"
         url="/products/hydroponics"
         category="Hydroponic Systems"
@@ -1017,7 +992,7 @@ export default function HydroponicsPage() {
       <SmartOSSection />
       <OperationalLogsSection />
       <FAQ />
-      <RelatedPaths />
+      <RelatedPaths links={RELATED_LINKS} />
       <FinalCTA />
     </>
   );

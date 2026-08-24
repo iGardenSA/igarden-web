@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Building2,
@@ -19,7 +20,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "المحميات الزراعية الذكية في السعودية — التصميم والتحكم المناخي | iGarden",
+  title: "المحميات الزراعية الذكية في السعودية — التصميم والتحكم",
   description:
     "محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "المحميات الزراعية الذكية — التصميم والتحكم المناخي",
-    description: "محميات ذكية مُصمَّمة لظروف السعودية. كفاءة طاقة محسّنة في الاختبارات الميدانية.",
+    description: "كيف تُصمَّم محمية تعمل في الصيف السعودي؟ الهيكل والعزل والتحكم المناخي والأتمتة — بحسب نطاق المشروع.",
     images: ["/api/og?title=Smart+Greenhouses+%E2%80%94+iGarden&sub=%D9%85%D8%AD%D9%85%D9%8A%D8%A7%D8%AA+%D8%B0%D9%83%D9%8A%D8%A9+%D9%84%D8%B8%D8%B1%D9%88%D9%81+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9"],
   },
 };
@@ -57,13 +58,13 @@ function Hero() {
               للمزارع التجارية · IoT-Enabled
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              محمية ليست مجرّد هيكل.
-              <span className="block">بل نظام تشغيل لإنتاجك.</span>
+              محميات زراعية ذكية —
+              <span className="block">أكثر من مجرد هيكل.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
-              نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — هياكل مقاومة
-              لرياح الخليج، تَبريد متعدّد المراحل، ريّ ذكي، وتحكّم مناخي اختُبر
-              مُختبَرة ميدانياً في مرفق R&D في عسفان.
+              نُصمّم المحمية حول محصولك ومناخك وهدفك الإنتاجي — بمواصفات هيكل
+              تُحدَّد بحسب الموقع، وتبريد متعدّد المراحل، وريّ ذكي، وتحكّم مناخي
+              نختبره ميدانياً في مرفق R&D في عسفان.
             </p>
             <p className="body-sm text-medium-gray mb-8 max-w-lg">
               كفاءة طاقة محسّنة بحسب التصميم والمحصول. توريد وتركيب وربط وتشغيل أولي بحسب الباقة. دعم
@@ -235,7 +236,7 @@ const VALUES = [
   {
     Icon: Wind,
     title: "تحكم مناخي ذكي",
-    text: "مراقبة وتحكم تلقائي للحرارة والرطوبة دون توقف — حتى في ذروة الصيف.",
+    text: "مراقبة وتحكم للحرارة والرطوبة بحسب تجهيزات المشروع وإعداداته — حتى في ذروة الصيف.",
   },
 ];
 
@@ -818,7 +819,7 @@ const FAQS = [
   },
   {
     q: "ما تكلفة التشغيل الشهرية؟",
-    a: "الطاقة والمياه تُقدَّر حسب حجم المحمية والمحصول. Smart Controllers يُقلّل الهدر تلقائياً — نُقدّم تقديراً عند التصميم.",
+    a: "الطاقة والمياه تُقدَّر حسب حجم المحمية والمحصول. Smart Controllers يساعد على ترشيد التشغيل بحسب التجهيزات والإعدادات، ويُقدَّر الأثر عند التصميم.",
   },
   {
     q: "هل تقدّمون عقود صيانة سنوية؟",
@@ -847,9 +848,9 @@ function FAQ() {
 }
 
 /* ─── Section 8: Final CTA ────────────────────────────────── */
-/* ─── مسارات ذات صلة — روابط صاعدة داخلية ─────────────────
-   ⛔ لا صفحات ولا مقالات جديدة: كلّها وجهات منشورة قائمة. */
-const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
   {
     label: "قياسات المزرعة الذكية",
     desc: "المؤشرات اليومية التي تستحقّ المتابعة داخل المحمية.",
@@ -881,32 +882,6 @@ const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
     href: "/how-we-work",
   },
 ];
-
-function RelatedPaths() {
-  return (
-    <section className="section-light py-16" dir="rtl">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <h2 className="h3 text-deep-green mb-2 text-center">مسارات ذات صلة</h2>
-        <p className="body-sm text-medium-gray text-center mb-8 max-w-2xl mx-auto">
-          تابع من هنا حسب سؤالك التالي.
-        </p>
-        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {RELATED_LINKS.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="flex flex-col gap-1 min-h-[44px] bg-white rounded-card border border-light-gray p-5 shadow-soft hover:border-lime transition-colors h-full"
-              >
-                <span className="font-bold text-deep-green">{l.label}</span>
-                <span className="body-sm text-medium-gray">{l.desc}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
 
 function FinalCTA() {
   return (
@@ -991,7 +966,7 @@ export default function SmartGreenhousesPage() {
       <SmartOSSection />
       <OperationalLogsSection />
       <FAQ />
-      <RelatedPaths />
+      <RelatedPaths links={RELATED_LINKS} />
       <FinalCTA />
     </>
   );
