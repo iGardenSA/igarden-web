@@ -84,7 +84,7 @@ export default function IoTPage() {
             <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
               اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="/products/smart-os" variant="outline-green">
+            <CTAButton href="/products/smart-os" variant="outline-light">
               منصة Smart OS →
             </CTAButton>
           </div>
@@ -206,7 +206,7 @@ export default function IoTPage() {
             <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
               اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="/osfan-station" variant="outline-green">
+            <CTAButton href="/osfan-station" variant="outline-light">
               زر مرفق عسفان
             </CTAButton>
           </div>

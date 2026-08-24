@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type Variant = "lime" | "outline-green" | "ghost";
+type Variant = "lime" | "outline-green" | "outline-light" | "ghost";
 
 export function CTAButton({
   href,
@@ -22,6 +22,9 @@ export function CTAButton({
     lime: "bg-lime text-white hover:bg-bright-lime",
     "outline-green":
       "border-2 border-deep-green text-deep-green hover:bg-deep-green hover:text-cream",
+    // للأقسام الداكنة: outline-green يتّحد لونه مع الخلفية فيصبح الزر غير مرئي.
+    "outline-light":
+      "border-2 border-cream text-cream hover:bg-cream hover:text-deep-green",
     ghost: "text-deep-green hover:bg-cream",
   };
 

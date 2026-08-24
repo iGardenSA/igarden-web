@@ -896,7 +896,7 @@ function FinalCTA() {
           <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
             اطلب تقييماً أولياً
           </CTAButton>
-          <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>
+          <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
             جرّب الديمو أولاً ↗
           </CTAButton>
         </div>
