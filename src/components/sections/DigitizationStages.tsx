@@ -34,7 +34,7 @@ export function DigitizationStages() {
       <div className="container-igarden">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="heading-eyebrow mb-3">كيف نرقمن تشغيل مزرعتك؟</p>
-          <h2 className="heading-section">لرقمنة منشأة قائمة — أربع مراحل تبدأ من حيث أنت</h2>
+          <h2 className="heading-section">لتطوير منشأة قائمة — أربع مراحل تبدأ من حيث أنت</h2>
         </div>
 
         <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -63,12 +63,19 @@ export function DigitizationStages() {
           وتتوسّع حين تجهز.
         </p>
 
-        <div className="text-center mt-5">
+        {/* الفرع الشقيق — مسار تأسيس المشروع الجديد */}
+        <div className="text-center mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2">
           <Link
-            href="/how-we-work"
+            href="/how-we-work#existing-facility"
             className="text-sm font-semibold text-[var(--color-brand-600)] underline underline-offset-4 hover:text-deep-green transition-colors"
           >
-            كيف ننفّذ المشاريع
+            مسار المنشأة القائمة
+          </Link>
+          <Link
+            href="/how-we-work#new-project"
+            className="text-sm font-semibold text-[var(--color-brand-600)] underline underline-offset-4 hover:text-deep-green transition-colors"
+          >
+            تؤسّس مشروعاً جديداً؟ ابدأ من هنا
           </Link>
         </div>
       </div>

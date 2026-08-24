@@ -22,7 +22,7 @@ export function InnovationTracks() {
       <div className="container-igarden">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="heading-eyebrow mb-3">بطاقة الابتكار</p>
-          <h2 className="heading-section">نطوّر ما لا يوجد جاهزاً</h2>
+          <h2 className="heading-section">حين لا يناسب مشروعك حلّ جاهز، نبدأ بتحديد ما يستحقّ الاختبار</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">

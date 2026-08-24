@@ -47,9 +47,20 @@ export function SalesHero() {
             ازرع بذكاء.
           </h1>
 
+          {/* شريط النطاق — تخطيط · محميات · زراعة مائية · أتمتة · رقمنة */}
+          <p className="text-sm md:text-base font-medium text-[#A5D63F]/90 mb-5 tracking-wide">
+            تخطيط · محميات · زراعة مائية · أتمتة · رقمنة
+          </p>
+
+          {/* المنفعة */}
+          <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-3xl mb-4">
+            من أرض فارغة أو منشأة قائمة — إلى تشغيل تعرف ما يجري فيه.
+          </p>
+
+          {/* الآلية */}
           <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-10">
-            نَبني ونُوطّن ونُطوّر منظومات زراعية متكاملة — نؤسّس مشروعك من التخطيط
-            والإنشاء، أو نطوّر منشأتك القائمة بالتحكّم والأتمتة وبيانات التشغيل.
+            نخطّط ونبني مشاريع البيوت المحمية والزراعة المائية، أو نطوّر منشأتك
+            القائمة بالتحكّم والأتمتة وبيانات التشغيل.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -57,7 +68,7 @@ export function SalesHero() {
               href="#assessment"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-base md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none"
             >
-              اطلب تقييماً أولياً لمشروعك الزراعي
+              اطلب تقييماً أولياً
             </Link>
             <a
               href={CONTACT.whatsapp}
@@ -66,9 +77,14 @@ export function SalesHero() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-white/40 text-white text-base md:text-lg font-semibold hover:bg-white/10 transition-colors"
             >
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
-              تواصل سريع عبر واتساب
+              تواصل عبر واتساب
             </a>
           </div>
+
+          {/* إسناد الفيديو — الصورة من المرفق لا من مشروع عميل */}
+          <p className="mt-8 text-xs md:text-sm text-white/60">
+            مرفق R&D في عسفان · شمال جدة
+          </p>
         </div>
       </div>
     </section>

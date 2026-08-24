@@ -1,10 +1,10 @@
 import { CheckCircle2 } from "lucide-react";
 
 const TRUST_ITEMS = [
-  { text: "مرخّصة", label: "MISA", number: "24926249716" },
-  { text: "نموذج صناعي", label: "SAIP", number: "#423450193" },
-  { text: "مرفق R&D في عسفان للتجارب قائم", label: null, number: null },
-  { text: "Smart OS · ديمو حيّ", label: null, number: null },
+  { text: "شركة سعودية مرخّصة", label: "MISA", number: "24926249716" },
+  { text: "مشروع جديد أو تطوير منشأة قائمة", label: null, number: null },
+  { text: "نموذج صناعي مسجّل لـiGarden Tower", label: "SAIP", number: "#423450193" },
+  { text: "مرفق R&D في عسفان قابل للزيارة", label: null, number: null },
 ];
 
 export function TrustBar() {
