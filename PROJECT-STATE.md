@@ -10,17 +10,18 @@
 
 ## الحالة الآن
 
-- **`main` = `origin/main` = `7fac9d8cefa873fa1aba10efa62bcdfff47652b9`** ✓
-- **نشر إنتاجي مُتحقَّق:** `sha=7fac9d8` · `2026-08-23T20:06Z` · `Production id=6052165845` ✓
-- مسار `main`: `3d235c0` → `25d6588` → `02d3c3e` → `6166e2a` → `14f59bd` → `af33e31` → `cb88f64` → **`7fac9d8`** ✓
-- **#51 MERGED** ✓ · **#52 MERGED ✓ — Wave 1C ‏LIVE على الإنتاج**
-- **Wave 2A جاهزة للمراجعة على الفرع `feat/wave2a-content-truth` — ⛔ ليست Live**
+- **`main` = `origin/main` = `e96824afc900363366af2b62e92e746c5c421c06`** ✓
+- **نشر إنتاجي مُتحقَّق:** `sha=e96824a` · `2026-08-24T07:11Z` · `Production id=6058124397` ✓
+- مسار `main`: `…` → `14f59bd` → `af33e31` → `cb88f64` → `7fac9d8` → **`e96824a`** ✓
+- **#51 · #52 MERGED** ✓ — Wave 1B وWave 1C ‏LIVE
+- **#53 MERGED ✓ — Wave 2A ‏LIVE على الإنتاج**
+- **Wave 2B قيد العمل** على `feat/wave2b-truth-search`
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
 ---
 
-## الدمجات الثماني
+## الدمجات التسع
 
 | PR | العنوان | sha | الطريقة | التاريخ (UTC) |
 |---|---|---|---|---|
@@ -32,6 +33,7 @@
 | **#50** | wave 1a — navigation, contextual links, sitemap | **`af33e31`** | squash | 2026-08-23 14:25 |
 | **#51** | Wave 1B — integrated portfolio and two delivery paths | **`cb88f64`** | squash | 2026-08-23 18:18 |
 | **#52** | Navigation and footer v2 — site architecture | **`7fac9d8`** | squash | 2026-08-23 20:06 |
+| **#53** | Wave 2A — capability truth across product depth pages | **`e96824a`** | squash | 2026-08-24 07:11 |
 
 ◐ #48 قاعدته كانت `fix/factsheet-prep` لا `main` — دخل الإنتاج ضمن #47.
 
@@ -63,6 +65,7 @@
 | **`pre-merge-50`** | `14f59bd` | **`git revert af33e31`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-51`** | `af33e31` | **`git revert cb88f64`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-52`** | `cb88f64` | **`git revert 7fac9d8`** (squash — أب واحد، بلا `-m`) |
+| **`pre-merge-53`** | `7fac9d8` | **`git revert e96824a`** (squash — أب واحد، بلا `-m`) |
 
 ◐ البلاغ ذكر ثلاثة وسوم — الموجودة فعلاً **أربعة** ✓ مُتحقَّق بـ`git ls-remote --tags`.
 
@@ -159,9 +162,15 @@
 
 ## NEXT DELTA
 
-**بعد Wave 2A:** مراجعة Preview ثم تمريرة الصور والأدلة — ⛔ **لا دمج قبل المراجعة**.
-سجل الأصول المطلوبة في [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
-تحت «Wave 2 — Image Requirements».
+**Wave 2B — Truth + Search Intent.**
+الصفحات: `/products/hydroponics` · `/products/smart-greenhouses` (‏مراجعة حقيقة **ثم**
+نيّة بحث) · `/products/smart-controllers` (‏نيّة بحث وروابط صاعدة **فقط** —
+⛔ حقيقة القدرات مغلقة بـ#53 ولا تُعاد فتحها).
+فرع `feat/wave2b-truth-search` من `e96824a`.
+
+⛔ خارج النطاق: صفحات أو مقالات أو صور جديدة · navigation/footer/sitemap/redirects ·
+FAQ Schema جديد حيث يوجد واحد · أحجام بحث أو ادّعاءات SEO بلا بيانات · #43.
+`sitemap` يبقى **25**.
 
 ---
 

@@ -1,7 +1,7 @@
 # SITE-ARCHITECTURE.md — igarden.sa
 
 > **مرجع Information Architecture.** يُقرأ مع `PROJECT-STATE.md` ولا يحلّ محلّه.
-> **الأساس:** `main = 7fac9d8` (#52 مدموج · **Wave 1C ‏LIVE** · `Production id=6052165845`) · **آخر تحديث:** 2026-08-23 · **Wave 2A قيد العمل**
+> **الأساس:** `main = e96824a` (#53 مدموج · **Wave 2A ‏LIVE** · `Production id=6058124397`) · **آخر تحديث:** 2026-08-24 · **Wave 2B قيد العمل**
 > **وسم الثقة:** ✓ مُتحقَّق بأمر أو نشر · ◐ مؤجَّل أو غير مبنيّ · ⚠ افتراض
 
 ---

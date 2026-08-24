@@ -24,14 +24,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower | iGarden",
+  title: "أنظمة الزراعة المائية في السعودية — أيّ تقنية تناسب محصولك؟ | iGarden",
   description:
-    "7 تقنيات زراعة مائية مُختَبَرة في عسفان. من NFT إلى DWC إلى Aeroponics. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193).",
+    "كيف تختار بين NFT وDWC وAeroponics والأبراج الرأسية؟ نحدّد التقنية المناسبة لمحصولك وموقعك، ونصمّم النظام ونجهّزه ونربطه بالتشغيل. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193).",
   alternates: { canonical: "https://igarden.sa/products/hydroponics" },
   openGraph: {
-    title: "Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower",
+    title: "أنظمة الزراعة المائية — أيّ تقنية تناسب محصولك؟",
     description:
-      "7 تقنيات + iGarden Tower المُسجَّل. كفاءة مائية عالية وإنتاجية مُضاعَفة في الاختبارات الميدانية بعسفان.",
+      "NFT · DWC · Aeroponics · الأبراج الرأسية — نختار التقنية بعد تقييم المحصول والموقع، ويشمل النطاق iGarden Tower المُسجَّل.",
     images: [
       {
         url: "/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%85%D9%86+7+%D8%AA%D9%82%D9%86%D9%8A%D8%A7%D8%AA",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower",
+    title: "أنظمة الزراعة المائية — أيّ تقنية تناسب محصولك؟",
     description: "نختار التقنية المناسبة من 7 تقنيات — لا نبيع تقنية واحدة للجميع.",
     images: ["/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%85%D9%86+7+%D8%AA%D9%82%D9%86%D9%8A%D8%A7%D8%AA"],
   },
@@ -749,12 +749,12 @@ const CLIENT_OUTPUTS = [
   {
     Icon: Bell,
     title: "مراقبة Smart OS فعّالة",
-    desc: "تنبيهات فورية عند انحراف pH أو EC أو حرارة الماء خارج النطاق المثالي.",
+    desc: "تنبيهات عند تجاوز العتبات المحددة لـpH أو EC أو حرارة الماء — بحسب نطاق المشروع.",
   },
   {
     Icon: BarChart3,
     title: "سجل تشغيلي قابل للمراجعة",
-    desc: "كل قراءة وكل دورة ريّ محفوظة بطابع زمني — لمراجعة الأداء ومقارنة الموسم بالموسم.",
+    desc: "القراءات ودورات الريّ التي يشملها نطاق الربط تُحفظ بطابع زمني — لمراجعة الأداء ومقارنة الموسم بالموسم.",
   },
 ];
 
@@ -791,7 +791,7 @@ function SmartOSSection() {
             مزرعتك متصلة — تُراقَب وتُدار عن بُعد
           </h2>
           <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-            كل نظام هيدروبونيك نُركّبه يتصل بـ Smart OS — بيانات pH وEC والحرارة والريّ
+            أنظمة الهيدروبونيك تُربط بـ Smart OS ضمن نطاق المشروع — بيانات pH وEC والحرارة والريّ
             مرئية في أيّ وقت من Dashboard أو عبر تنبيهات واتساب.
           </p>
           <Link
@@ -815,11 +815,11 @@ function OperationalLogsSection() {
       <div className="container mx-auto px-4 max-w-5xl text-center">
         <p className="text-[#A5D63F] text-sm font-bold uppercase tracking-widest mb-3">سجلات التشغيل القابلة للمراجعة</p>
         <h2 className="text-2xl md:text-3xl font-bold text-[#FAFAF7] mb-4">
-          كل قراءة. كل قرار. كل تنبيه.
+          سجل يشمل ما يغطّيه نطاق الربط.
         </h2>
         <p className="text-white/70 text-lg mb-6 max-w-2xl mx-auto">
-          النظام يُسجّل تلقائياً — بطابع زمني دقيق — كل pH وEC وحرارة وقرار تشغيل.
-          السجل قابل للمراجعة في أيّ وقت بصيغة قابلة للتدقيق.
+          عند تفعيل طبقة التسجيل ضمن نطاق المشروع، تُسجَّل قراءات pH وEC والحرارة
+          وقرارات التشغيل بطابع زمني دقيق، ويصبح السجل قابلاً للمراجعة بصيغة قابلة للتدقيق.
         </p>
         <Link
           href="/compliance"
@@ -877,6 +877,67 @@ function FAQ() {
 }
 
 /* ─── Section 8: Final CTA ────────────────────────────────── */
+/* ─── مسارات ذات صلة — روابط صاعدة داخلية ─────────────────
+   ⛔ لا صفحات ولا مقالات جديدة: كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
+  {
+    label: "متى تحتاج Smart Controller؟",
+    desc: "خمس علامات تدلّ أن المراقبة اليدوية لم تعد كافية.",
+    href: "/learn/when-do-you-need-smart-controller",
+  },
+  {
+    label: "لماذا تفشل الزراعة المائية في الصيف؟",
+    desc: "أسباب شائعة وحلول عملية قبل بدء الموسم.",
+    href: "/learn/why-hydroponic-fail-summer",
+  },
+  {
+    label: "الزراعة المائية مقابل التقليدية",
+    desc: "مقارنة موضوعية تساعدك على تحديد المسار.",
+    href: "/learn/hydroponic-vs-traditional",
+  },
+  {
+    label: "Smart Controllers",
+    desc: "لوحات التحكّم التي تُدير الريّ والتسميد والمناخ.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "منصة Smart OS",
+    desc: "بيانات التشغيل والإشراف عن بُعد في لوحة واحدة.",
+    href: "/products/smart-os",
+  },
+  {
+    label: "كيف نعمل",
+    desc: "مشروع جديد أو منشأة قائمة — مساران واضحان.",
+    href: "/how-we-work",
+  },
+];
+
+function RelatedPaths() {
+  return (
+    <section className="section-light py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="h3 text-deep-green mb-2 text-center">مسارات ذات صلة</h2>
+        <p className="body-sm text-medium-gray text-center mb-8 max-w-2xl mx-auto">
+          تابع من هنا حسب سؤالك التالي.
+        </p>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {RELATED_LINKS.map((l) => (
+            <li key={l.href}>
+              <Link
+                href={l.href}
+                className="flex flex-col gap-1 min-h-[44px] bg-white rounded-card border border-light-gray p-5 shadow-soft hover:border-lime transition-colors h-full"
+              >
+                <span className="font-bold text-deep-green">{l.label}</span>
+                <span className="body-sm text-medium-gray">{l.desc}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -956,6 +1017,7 @@ export default function HydroponicsPage() {
       <SmartOSSection />
       <OperationalLogsSection />
       <FAQ />
+      <RelatedPaths />
       <FinalCTA />
     </>
   );

@@ -21,12 +21,12 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Controllers — لوحات التحكم الزراعي | iGarden",
+  title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller لمزرعتك؟ | iGarden",
   description:
     "لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
   alternates: { canonical: "https://igarden.sa/products/smart-controllers" },
   openGraph: {
-    title: "Smart Controllers — لوحات التحكم الزراعي",
+    title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
     description: "مصمَّمة ومطوَّرة ومجمَّعة في السعودية · تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة.",
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smart Controllers — لوحات التحكم الزراعي",
+    title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
     description: "مصمَّمة ومطوَّرة ومجمَّعة في السعودية · تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة.",
     images: ["/api/og?title=Smart+Controllers+%E2%80%94+iGarden&sub=%D8%AA%D8%AD%D8%AF%D9%8A%D8%AB+%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83+%D8%AF%D9%88%D9%86+%D8%A7%D8%B3%D8%AA%D8%A8%D8%AF%D8%A7%D9%84+%D9%83%D8%A7%D9%85%D9%84"],
   },
@@ -878,6 +878,67 @@ function FAQ() {
 }
 
 /* ─── Section 10: Final CTA ───────────────────────────────── */
+/* ─── مسارات ذات صلة — روابط صاعدة داخلية ─────────────────
+   ⛔ لا صفحات ولا مقالات جديدة: كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: { label: string; desc: string; href: string }[] = [
+  {
+    label: "متى تحتاج Smart Controller؟",
+    desc: "خمس علامات تدلّ أن المراقبة اليدوية لم تعد كافية.",
+    href: "/learn/when-do-you-need-smart-controller",
+  },
+  {
+    label: "قياسات المزرعة الذكية",
+    desc: "المؤشرات اليومية الأساسية وكيف تُقرأ.",
+    href: "/learn/daily-measurements-smart-farm",
+  },
+  {
+    label: "منصة Smart OS",
+    desc: "بيانات التشغيل والإشراف عن بُعد في لوحة واحدة.",
+    href: "/products/smart-os",
+  },
+  {
+    label: "القياس وإنترنت الأشياء",
+    desc: "المستشعرات والبروتوكولات التي تُغذّي اللوحة.",
+    href: "/products/iot",
+  },
+  {
+    label: "السجلات وجاهزية الامتثال",
+    desc: "ما الذي يمكن تسجيله ضمن نطاق الربط.",
+    href: "/compliance",
+  },
+  {
+    label: "كيف نعمل",
+    desc: "مشروع جديد أو منشأة قائمة — مساران واضحان.",
+    href: "/how-we-work",
+  },
+];
+
+function RelatedPaths() {
+  return (
+    <section className="section-light py-16" dir="rtl">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <h2 className="h3 text-deep-green mb-2 text-center">مسارات ذات صلة</h2>
+        <p className="body-sm text-medium-gray text-center mb-8 max-w-2xl mx-auto">
+          تابع من هنا حسب سؤالك التالي.
+        </p>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {RELATED_LINKS.map((l) => (
+            <li key={l.href}>
+              <Link
+                href={l.href}
+                className="flex flex-col gap-1 min-h-[44px] bg-white rounded-card border border-light-gray p-5 shadow-soft hover:border-lime transition-colors h-full"
+              >
+                <span className="font-bold text-deep-green">{l.label}</span>
+                <span className="body-sm text-medium-gray">{l.desc}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function FinalCTA() {
   return (
     <section className="bg-deep-green py-24">
@@ -959,6 +1020,7 @@ export default function SmartControllersPage() {
       <DevTimeline />
       <B2BSection />
       <FAQ />
+      <RelatedPaths />
       <FinalCTA />
     </>
   );
