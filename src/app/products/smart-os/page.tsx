@@ -50,7 +50,7 @@ const WORKFLOW_STEPS = [
   { step: "01", title: "التركيب", desc: "نشر المستشعرات والـ Gateway" },
   { step: "02", title: "المعايرة", desc: "ضبط العتبات حسب المحصول والموقع" },
   { step: "03", title: "التشغيل", desc: "تدفّق البيانات وتفعيل التنبيهات" },
-  { step: "04", title: "التحسين", desc: "تحديثات دورية للنماذج التحليلية" },
+  { step: "04", title: "المراجعة", desc: "مراجعة إعدادات التشغيل والعتبات وتوسعة الربط بحسب نطاق المشروع." },
 ];
 
 const BREADCRUMB = [
@@ -78,10 +78,13 @@ export default function SmartOSPage() {
             والبرامج المجدولة — بحسب التجهيزات المركَّبة ونطاق المشروع.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <CTAButton href="/contact?cta=live_demo" variant="lime">
-              احجز جلسة عرض
+            <CTAButton
+              href="/contact?interest=farm_digitization&cta=readiness_assessment"
+              variant="lime"
+            >
+              اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="https://demo.igarden.sa" variant="outline-green" external>
+            <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
               Live Demo ←
             </CTAButton>
           </div>
@@ -157,9 +160,9 @@ export default function SmartOSPage() {
           </p>
           <h2 className="h2 text-deep-green mb-6">أين نختبر؟</h2>
           <p className="body-base text-medium-gray mb-6 leading-relaxed">
-            في مرفق عسفان. كل وحدة قبل أن تصل لعميل تمرّ بدورة اختبار كاملة
-            في بيئتنا الخاصة. هذا يعني أن ما تستلمه ليس نموذجاً أوّلياً —
-            بل نظام مُختبَر تحت ظروف سعودية حقيقية (+٤٥°C، رطوبة ساحلية).
+            في مرفق R&D في عسفان. تخضع الوحدات والتكاملات لاختبار وظيفي
+            وميداني قبل التسليم، ضمن منظومة مختبرة ميدانياً في ظروف صيفية
+            سعودية وبيئات مرتفعة الحرارة والرطوبة.
           </p>
           <Link
             href="/osfan-station"
@@ -199,11 +202,11 @@ export default function SmartOSPage() {
           </h2>
           <ul className="space-y-4">
             {[
-              "وصول إلى قراءات مزرعتك على لوحة واحدة",
-              "تنبيهات فورية عند أي شذوذ في القراءات",
-              "تقارير دورية آلية لفريقك",
-              "اشتراك سنوي مع دعم فني مباشر من الفريق",
-              "تحديثات دورية للنماذج التحليلية",
+              "عرض قراءات مزرعتك وربطها على لوحة واحدة — بحسب التجهيزات المركَّبة",
+              "تنبيهات عند تجاوز العتبات المحددة — عند تضمينها في نطاق المشروع",
+              "السجلات والتقارير الدورية — عند تضمينها في نطاق المشروع",
+              "الدعم والتحديثات بحسب عقد الخدمة",
+              "إمكانية توسعة الربط عند إضافة تجهيزات جديدة",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <CheckCircle2
@@ -221,15 +224,23 @@ export default function SmartOSPage() {
       <section className="bg-deep-green py-20 text-cream text-center">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="h2 text-cream mb-5">
-            هل تريد رؤية المنصة على بياناتك؟
+            هل تريد معرفة كيف تتكامل المنصة مع مزرعتك؟
           </h2>
           <p className="body-base text-cream/80 mb-8 max-w-2xl mx-auto">
-            نُقدّم جلسة عرض تقنية للعملاء الجادّين — استعراض مباشر للمنصة
-            على بيانات واقعية من مرفق عسفان.
+            ابدأ بتقييم أولي لنطاق الربط والتشغيل المناسب لمزرعتك، أو استكشف
+            الديمو للتعرّف على تجربة المنصة.
           </p>
-          <CTAButton href="/contact?cta=live_demo" variant="lime">
-            احجز جلسة عرض
-          </CTAButton>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <CTAButton
+              href="/contact?interest=farm_digitization&cta=readiness_assessment"
+              variant="lime"
+            >
+              اطلب تقييماً أولياً
+            </CTAButton>
+            <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
+              Live Demo ←
+            </CTAButton>
+          </div>
         </div>
       </section>
     </>

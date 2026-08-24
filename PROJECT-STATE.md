@@ -10,16 +10,17 @@
 
 ## الحالة الآن
 
-- **`main` = `origin/main` = `cb88f64213791d41796d31e8e6b3602512b68c68`** ✓
-- **نشر إنتاجي مُتحقَّق:** `sha=cb88f64` · `2026-08-23T18:19Z` · `Production id=6051191825` ✓
-- مسار `main`: `3d235c0` → `25d6588` → `02d3c3e` → `6166e2a` → `14f59bd` → `af33e31` → **`cb88f64`** ✓
-- **#51 MERGED** ✓ · **Wave 1C قيد المعاينة** على `feat/navigation-footer-v2`
+- **`main` = `origin/main` = `7fac9d8cefa873fa1aba10efa62bcdfff47652b9`** ✓
+- **نشر إنتاجي مُتحقَّق:** `sha=7fac9d8` · `2026-08-23T20:06Z` · `Production id=6052165845` ✓
+- مسار `main`: `3d235c0` → `25d6588` → `02d3c3e` → `6166e2a` → `14f59bd` → `af33e31` → `cb88f64` → **`7fac9d8`** ✓
+- **#51 MERGED** ✓ · **#52 MERGED ✓ — Wave 1C ‏LIVE على الإنتاج**
+- **Wave 2A جاهزة للمراجعة على الفرع `feat/wave2a-content-truth` — ⛔ ليست Live**
 - 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
   — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
 
 ---
 
-## الدمجات السبع
+## الدمجات الثماني
 
 | PR | العنوان | sha | الطريقة | التاريخ (UTC) |
 |---|---|---|---|---|
@@ -30,6 +31,7 @@
 | **#49** | Sales launch v1 — homepage rebuild + lead capture | **`14f59bd`** | squash | 2026-08-23 09:47 |
 | **#50** | wave 1a — navigation, contextual links, sitemap | **`af33e31`** | squash | 2026-08-23 14:25 |
 | **#51** | Wave 1B — integrated portfolio and two delivery paths | **`cb88f64`** | squash | 2026-08-23 18:18 |
+| **#52** | Navigation and footer v2 — site architecture | **`7fac9d8`** | squash | 2026-08-23 20:06 |
 
 ◐ #48 قاعدته كانت `fix/factsheet-prep` لا `main` — دخل الإنتاج ضمن #47.
 
@@ -60,6 +62,7 @@
 | `pre-merge-49` | `6166e2a` | **`git revert 14f59bd`** |
 | **`pre-merge-50`** | `14f59bd` | **`git revert af33e31`** (squash — أب واحد، بلا `-m`) |
 | **`pre-merge-51`** | `af33e31` | **`git revert cb88f64`** (squash — أب واحد، بلا `-m`) |
+| **`pre-merge-52`** | `cb88f64` | **`git revert 7fac9d8`** (squash — أب واحد، بلا `-m`) |
 
 ◐ البلاغ ذكر ثلاثة وسوم — الموجودة فعلاً **أربعة** ✓ مُتحقَّق بـ`git ls-remote --tags`.
 
@@ -98,15 +101,12 @@
 
 ## المفتوح — المرحلة التالية
 
-- **`/products`** تسرد ثلاثة أبناء لا خمسة (تُغفل `smart-os` و`iot`) ✓ مُتحقَّق
-- **`/how-we-work`** لم تُراجَع تحريرياً منذ ما قبل موجة التوحيد ◐
-- **ادّعاءات باقية:** `+45°C` في `smart-controllers` · `iot` · `compliance`
-  · و«لحظياً» في `smart-controllers` (2) ✓ مُتحقَّق بالبحث
+- **ادّعاءات باقية** — نطاق **Wave 2A**: `+45°C` في `smart-controllers` · `iot` · `compliance`
+  · و«لحظياً» في `smart-controllers` ✓ مُتحقَّق بالبحث
 - **Evidence Pack** — لم يبدأ ◐
 - **صفحة الواحة** — لم تبدأ ◐
 - **v5** — لم تبدأ ◐
 - **صور الأحساء والمشروع العضوي** لم تصل — `FieldProjectCard` و`InnovationTracks` بطاقتان نصّيتان ✓
-- **عرض الجوال 390px لم يُقَس آلياً** ⚠ (تغيير حجم النافذة لا يؤثّر · الإطار المضمّن محجوب بـ`X-Frame-Options`)
 - **مكوّنات يتيمة لم تُحذف:** `ComplianceSection` · `OperationalIdentity` · `WhatWeDontClaim`
   · وسبعة يبقيها `sections/index.ts` وحده ✓
 - **رمز n8n API منتهٍ** منذ 2026-07-08 ✓ · و`n8n.igarden.sa` معطّل بـCloudflare 1033 ✓
@@ -122,6 +122,13 @@
   بدور `postgres` من محرّر لوحة Supabase. ◐ هوية الشخص لا تبلغها القاعدة.
 - **«ريادية» و«مبتكرة» ليستا مخالفة** (2026-08-22) — المحظور «الأول/الرائد» وحدها.
 - **«نَبني · نُوطّن · نُطوّر»** منهج لا شعار — مسموح داخل الأقسام، ممنوع كشعار موازٍ.
+- **تصحيح نسبة SAIP** ✓ (2026-08-24، Wave 2A): كانت صفحة `smart-controllers` تنسب
+  `SAIP #423450193` و«نموذج صناعي مسجّل» إلى **Smart Controllers**، والرقم يخصّ
+  **iGarden Tower** وفق `docs/LEXICON.md` و`docs/BRAND-BIBLE.md` و`fact-sheet`
+  و`constants.ts`. حُذف الربط **من تلك الصفحة وحدها** ⛔ ولم تُمسّ المواضع الصحيحة.
+- **سياسة legacy لـ`/solutions` و`/services`** ✓ (2026-08-23، مُتحقَّق على الإنتاج):
+  المسارات التاريخية **المعروفة** = تحويل **308 دائم** · الـslug **المجهول** = **307 مؤقّت** إلى `/products`
+  · ⛔ **لا تحويل wildcard دائم** · صفر 404. الجدول الكامل في `docs/SITE-ARCHITECTURE.md`.
 
 ---
 
@@ -152,11 +159,9 @@
 
 ## NEXT DELTA
 
-**Wave 1C** — إعادة بناء Header + Mega Menu + Mobile Drawer + Footer وفق
-[`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md). فرع `feat/navigation-footer-v2` من `cb88f64`.
-خارج النطاق: محتوى الرئيسية وصفحات المنتجات · metadata/OG · sitemap/robots ·
-`+45°C` و«لحظياً» داخل صفحات المنتجات · صفحة الاستدامة المستقلة · Evidence Pack ·
-صفحة الواحة · تمريرة الصور النهائية · #43.
+**بعد Wave 2A:** مراجعة Preview ثم تمريرة الصور والأدلة — ⛔ **لا دمج قبل المراجعة**.
+سجل الأصول المطلوبة في [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
+تحت «Wave 2 — Image Requirements».
 
 ---
 

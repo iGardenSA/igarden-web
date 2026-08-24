@@ -1,7 +1,7 @@
 # SITE-ARCHITECTURE.md — igarden.sa
 
 > **مرجع Information Architecture.** يُقرأ مع `PROJECT-STATE.md` ولا يحلّ محلّه.
-> **الأساس:** `main = cb88f64` (#51 مدموج) · **آخر تحديث:** 2026-08-23 · **Wave 1C قيد المعاينة**
+> **الأساس:** `main = 7fac9d8` (#52 مدموج · **Wave 1C ‏LIVE** · `Production id=6052165845`) · **آخر تحديث:** 2026-08-23 · **Wave 2A قيد العمل**
 > **وسم الثقة:** ✓ مُتحقَّق بأمر أو نشر · ◐ مؤجَّل أو غير مبنيّ · ⚠ افتراض
 
 ---
@@ -204,9 +204,30 @@ homepage ──┬── /products      (Hub الحلول)
 - **صفر 404** — لا تسرّب زوّار من روابط حراج ولينكدإن القديمة ✓.
 - التحويلات الدائمة في `next.config.ts`؛ الـfallback في `src/app/solutions/[slug]/page.tsx`.
 
-**السياسة:** المسارات التاريخية المعروفة فقط = 308 صريح · الـfallback المجهول يبقى 307.
-⛔ لا تحويل wildcard كامل إلى دائم.
+**السياسة ✓ مثبَّتة (2026-08-23):** المسارات التاريخية **المعروفة** فقط = **308 دائم** صريح في
+`next.config.ts` · الـslug **المجهول** يبقى **307 مؤقّت** إلى `/products` · ⛔ **لا تحويل wildcard
+كامل إلى دائم** · صفر 404. أي slug تاريخي حقيقي غير مغطّى ⟹ يُبلَّغ ولا يُنفَّذ قبل قرار علي.
 `/solutions/[slug]` مسار legacy **يحتاج جرداً لاحقاً، ولا يُروَّج له الآن** — لا يظهر في أي قائمة ولا في الـsitemap.
+
+---
+
+## Wave 2 — Image Requirements
+
+توثيق فقط. ⛔ لم تُضف صور ولم تُغيَّر assets في هذه التمريرة، ولم يُحذف أي موضع
+`CONTENT_NEEDED` قائم.
+
+| الصفحة | الأصل المطلوب | الحالة |
+|---|---|---|
+| Smart OS | لقطة Dashboard حقيقية، منزوعة البيانات الحساسة | `missing` |
+| IoT | صورة وحدة/حساسات مركَّبة | `missing` |
+| IoT | مخطط اتصال المنظومة | `missing` |
+| Smart Controllers | صورة المنتج | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
+| Smart Controllers | مخطط الربط (Pi 5 ↔ ESP32 ↔ حساسات ↔ مضخات) | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
+| Smart Controllers | لقطة Dashboard | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
+| Compliance | نموذج سجل أو تقرير، منزوعة منه بيانات العملاء | `missing` — **بعد توفّره فعلياً** |
+
+الصور الستّ المؤقتة في `/products` و`/how-we-work` تبقى موسومة `imageStatus: "temporary"`
+وتُجرَد بـ`rg 'imageStatus: "temporary",'`.
 
 ---
 
