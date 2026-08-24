@@ -18,9 +18,9 @@ import {
 import AppWaitlistForm from "./AppWaitlistForm";
 
 export const metadata: Metadata = {
-  title: "التطبيق · iGarden في جيبك | iGarden",
+  title: "التطبيق — قيد التحقق والتطوير",
   description:
-    "تطبيق iGarden — رفيقك في الزراعة المائية. حاسبات دقيقة لـ EC و pH، يوميات نظامك، ومرشد تقني عربي. للهواة الجادّين والمزارعين المنزليين في السعودية. قريباً.",
+    "تطبيق iGarden قيد التحقق والتطوير للهواة والمزارعين المنزليين. نختبر نطاقاً مخططاً يشمل حاسبات الزراعة المائية واليوميات والإرشاد التقني بالعربية. انضم إلى قائمة الانتظار.",
   keywords: [
     "تطبيق iGarden",
     "iGarden App",
@@ -32,10 +32,10 @@ export const metadata: Metadata = {
     "Hydroponics Saudi Arabia",
   ],
   openGraph: {
-    title: "التطبيق · iGarden في جيبك",
+    title: "تطبيق iGarden — قيد التحقق والتطوير",
     description:
-      "أرقام دقيقة، لا تخمين. EC · pH · PPM · توقيت الري — مرافق عربي للزراعة المائية.",
-    images: ["/api/og?title=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82+iGarden&sub=EC+%C2%B7+pH+%C2%B7+PPM+%E2%80%94+%D8%B1%D9%81%D9%8A%D9%82%D9%83+%D9%81%D9%8A+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9"],
+      "نطاق منتج مخطط للزراعة المائية المنزلية: حاسبات ويوميات وإرشاد تقني بالعربية. انضم إلى قائمة الانتظار.",
+    images: ["/api/og?title=%D8%AA%D8%B7%D8%A8%D9%8A%D9%82+iGarden&sub=%D9%82%D9%8A%D8%AF+%D8%A7%D9%84%D8%AA%D8%AD%D9%82%D9%82+%D9%88%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D9%8A%D8%B1+%E2%80%94+%D9%86%D8%B7%D8%A7%D9%82+%D9%85%D9%86%D8%AA%D8%AC+%D9%85%D8%AE%D8%B7%D8%B7"],
   },
 };
 
