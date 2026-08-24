@@ -84,21 +84,23 @@ function Hero() {
           <div>
             {/* أصل مؤقّت منسوب — imageStatus: "temporary" · صورة من مرفق R&D
                 في عسفان، ⛔ ليست مشروع عميل ولا محمية تجارية مسلَّمة. */}
-            <figure className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-500">
-              <Image
-                src="/images/osfan-full/04_greenhouse_wide.webp"
-                alt="داخل محمية زراعية في مرفق R&D في عسفان"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <span className="absolute bottom-4 left-4 text-white/80 text-sm font-medium font-latin drop-shadow">
-                Field-tested · iGarden R&D Facility, Osfan
-              </span>
+            <figure>
+              <div className="relative aspect-[4/3] rounded-card overflow-hidden bg-brand-500">
+                <Image
+                  src="/images/osfan-full/04_greenhouse_wide.webp"
+                  alt="داخل محمية زراعية في مرفق R&D في عسفان"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <span className="absolute bottom-4 left-4 text-white/80 text-sm font-medium font-latin drop-shadow">
+                  Field-tested · iGarden R&D Facility, Osfan
+                </span>
+              </div>
+              <figcaption className="body-sm text-medium-gray mt-3">
+                داخل إحدى المحميات في مرفق R&D في عسفان — صورة ميدانية.
+              </figcaption>
             </figure>
-            <figcaption className="body-sm text-medium-gray mt-3">
-              داخل إحدى المحميات في مرفق R&D في عسفان — صورة ميدانية.
-            </figcaption>
           </div>
         </div>
       </div>
