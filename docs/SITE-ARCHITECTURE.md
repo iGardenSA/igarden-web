@@ -1,7 +1,7 @@
 # SITE-ARCHITECTURE.md — igarden.sa
 
 > **مرجع Information Architecture.** يُقرأ مع `PROJECT-STATE.md` ولا يحلّ محلّه.
-> **الأساس:** `main = e96824a` (#53 مدموج · **Wave 2A ‏LIVE** · `Production id=6058124397`) · **آخر تحديث:** 2026-08-24 · **Wave 2B قيد العمل**
+> **الأساس:** `main = e8979f0` (#54 مدموج · **Wave 2B ‏LIVE** · `Production id=6059643726`) · **آخر تحديث:** 2026-08-24 · **Wave 2C قيد العمل**
 > **وسم الثقة:** ✓ مُتحقَّق بأمر أو نشر · ◐ مؤجَّل أو غير مبنيّ · ⚠ افتراض
 
 ---
@@ -218,13 +218,17 @@ homepage ──┬── /products      (Hub الحلول)
 
 | الصفحة | الأصل المطلوب | الحالة |
 |---|---|---|
-| Smart OS | لقطة Dashboard حقيقية، منزوعة البيانات الحساسة | `missing` |
-| IoT | صورة وحدة/حساسات مركَّبة | `missing` |
-| IoT | مخطط اتصال المنظومة | `missing` |
-| Smart Controllers | صورة المنتج | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
-| Smart Controllers | مخطط الربط (Pi 5 ↔ ESP32 ↔ حساسات ↔ مضخات) | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
-| Smart Controllers | لقطة Dashboard | `temporary` — الموضع قائم في `CONTENT_NEEDED` |
-| Compliance | نموذج سجل أو تقرير، منزوعة منه بيانات العملاء | `missing` — **بعد توفّره فعلياً** |
+| **Smart OS** | لقطة Dashboard | **`temporary-safe`** ✓ — `/smart-os/dashboard-preview.png` مُدخَلة في Wave 2C. **بيانات محاكاة معلَنة** داخل اللقطة: شارتا `Demo Mode` و`Simulated Readings` + `Not a Certification Substitute` + شريط عربي يصرّح بذلك. ⛔ لا تُقصّ الشارات |
+| **Hydroponics — iGarden Tower** | صورة برج | **`temporary`** — `/images/osfan-full/02_tower_closeup.webp` منسوبة صراحةً لمرفق R&D في عسفان. ⚠ **صورة المنتج المستقلة بخلفية نظيفة ما زالت مطلوبة (P1)** والموضع يحمل `CONTENT_NEEDED` |
+| **Smart Greenhouses** | صورة محمية داخلية | **`temporary`** — `/images/osfan-full/04_greenhouse_wide.webp` منسوبة صراحةً لعسفان. ⛔ لا تُعرض كدليل مشروع عميل أو محمية تجارية مسلَّمة |
+| **Smart Controllers** | صورة المنتج · مخطط الربط · لقطة Dashboard | `missing` — الموضعان الأولان بلا أصل؛ ثلاثة `CONTENT_NEEDED` قائمة |
+| **IoT** | صورة وحدة/حساسات مركَّبة + مخطط اتصال | `missing` |
+| **الأحساء (FieldProjectCard)** | صورة مشروع | `missing` — ⛔ **لا يجوز استعمال صورة عسفان بديلاً**؛ القسم يبقى نصّياً |
+| **المشروع العضوي (InnovationTracks)** | صورة مشروع | `missing` — ⛔ نفس القيد؛ القسم يبقى نصّياً |
+| **Compliance** | نموذج سجل أو تقرير منزوع بيانات العملاء | `missing` — **بعد توفّره فعلياً**، ⛔ لا صورة قبل ذلك |
+
+**تنظيف التكرارات** (‏`iGarden_Asfan_Images/` و`responsive/` الفائضة و`preview-*` — نحو 13MB):
+**P2 مؤجَّل إلى Branch Hygiene** ✓ — ⛔ ليس P0، ولا يُحذف أي أصل في موجات المحتوى.
 
 الصور الستّ المؤقتة في `/products` و`/how-we-work` تبقى موسومة `imageStatus: "temporary"`
 وتُجرَد بـ`rg 'imageStatus: "temporary",'`.

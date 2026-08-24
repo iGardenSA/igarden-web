@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
@@ -411,26 +412,34 @@ function IGardenTowerSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Tower image — left in LTR layout (visual right in RTL) */}
-          <div
-            className="order-2 lg:order-1 relative aspect-[3/4] rounded-card overflow-hidden bg-corp-green flex items-center justify-center shadow-lg"
-            role="img"
-            aria-label="iGarden Tower — برج الزراعة المائية العمودي"
-          >
-            {/* [CONTENT_NEEDED: /images/products/hydroponics/igarden-tower.jpg — صورة كاملة للبرج] */}
-            <div className="text-center p-8">
-              <Layers className="w-24 h-24 text-white/20 mx-auto mb-4" aria-hidden />
-              <p className="text-white/40 text-lg font-latin">iGarden Tower</p>
-            </div>
-            {/* SAIP badge on image */}
-            <div className="absolute bottom-4 start-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow">
-              <p className="text-deep-green font-bold text-lg">نموذج صناعي مُسجَّل</p>
-              <p
-                dir="ltr"
-                className="ltr-inline font-latin text-lime font-bold text-lg"
-              >
-                SAIP #423450193
-              </p>
-            </div>
+          <div className="order-2 lg:order-1">
+            {/* أصل مؤقّت منسوب — imageStatus: "temporary"
+                ⚠ الحاجة إلى صورة منتج مستقلة بخلفية نظيفة ما زالت قائمة (P1).
+                [CONTENT_NEEDED: /images/products/hydroponics/igarden-tower.jpg — صورة كاملة للبرج بخلفية نظيفة] */}
+            <figure>
+              <div className="relative aspect-[3/4] rounded-card overflow-hidden bg-corp-green shadow-lg">
+                <Image
+                  src="/images/osfan-full/02_tower_closeup.webp"
+                  alt="برج iGarden Tower داخل مرفق R&D في عسفان"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                {/* SAIP badge on image */}
+                <div className="absolute bottom-4 start-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow">
+                  <p className="text-deep-green font-bold text-lg">نموذج صناعي مُسجَّل</p>
+                  <p
+                    dir="ltr"
+                    className="ltr-inline font-latin text-lime font-bold text-lg"
+                  >
+                    SAIP #423450193
+                  </p>
+                </div>
+              </div>
+              <figcaption className="body-sm text-medium-gray mt-3 text-center">
+                iGarden Tower داخل مرفق R&D في عسفان — صورة ميدانية.
+              </figcaption>
+            </figure>
           </div>
 
           {/* Text — right side */}
@@ -484,9 +493,9 @@ function IGardenTowerSection() {
                 </p>
               </div>
               <div className="text-center bg-white rounded-card p-4 shadow-soft">
-                <p className="stat-num !text-3xl mb-1">×4</p>
+                <p className="stat-num !text-3xl mb-1">رأسي</p>
                 <p className="text-deep-green text-lg font-medium">
-                  يُضاعف الإنتاج عمودياً
+                  استغلال مساحة الزراعة عمودياً
                 </p>
               </div>
             </div>

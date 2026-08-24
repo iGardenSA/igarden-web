@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Brain,
   Wifi,
@@ -164,6 +165,24 @@ export default function SmartOSPage() {
             وميداني قبل التسليم، ضمن منظومة مختبرة ميدانياً في ظروف صيفية
             سعودية وبيئات مرتفعة الحرارة والرطوبة.
           </p>
+
+          {/* أصل مؤقّت آمن — imageStatus: "temporary-safe"
+              الصورة تحمل شارات Demo Mode وSimulated Readings ضمن اللقطة نفسها.
+              ⛔ لا تُقصّ الشارات ولا تُستبدل بلقطة تحمل بيانات عميل. */}
+          <figure className="mb-6">
+            <div className="relative aspect-[1346/690] rounded-card overflow-hidden border border-light-gray shadow-soft">
+              <Image
+                src="/smart-os/dashboard-preview.png"
+                alt="واجهة Smart OS التجريبية بقراءات محاكاة"
+                fill
+                sizes="(max-width: 1024px) 100vw, 896px"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="body-sm text-medium-gray mt-3">
+              واجهة تجريبية ببيانات محاكاة — لا تعرض بيانات عميل.
+            </figcaption>
+          </figure>
           <Link
             href="/osfan-station"
             className="inline-flex items-center gap-2 text-lime font-semibold hover:text-deep-green transition-colors"
