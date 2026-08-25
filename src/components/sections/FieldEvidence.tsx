@@ -22,6 +22,26 @@ const OSFAN_GALLERY = [
   },
 ] as const;
 
+/* صور مشروع ميداني في الأحساء — مجموعة مستقلة تماماً عن مجموعة عسفان.
+   ⛔ قاعدة حاكمة: لا تُخلط داخل `OSFAN_GALLERY` ولا تُنسب إلى عسفان، ولا تُقدَّم
+   كمشروع مكتمل أو مُسلَّم أو كنتيجة إنتاجية — هي مشاهد تجهيز وتركيب فقط.
+   ⛔ ولا يُذكر اسم العميل أو الجهة في أيّ نصّ مرئي أو alt.
+   الحالة: preview-candidate — موثّقة في docs/IMAGE-ASSET-MANIFEST.md */
+const AL_AHSA_GALLERY = [
+  {
+    src: "/images/projects/al-ahsa/al-ahsa-towers-installation.webp",
+    alt: "أبراج زراعة رأسية أثناء التجهيز في مشروع ميداني بالأحساء",
+  },
+  {
+    src: "/images/projects/al-ahsa/al-ahsa-greenhouse-layout.webp",
+    alt: "تجهيز صفوف الزراعة داخل محمية لمشروع ميداني بالأحساء",
+  },
+  {
+    src: "/images/projects/al-ahsa/al-ahsa-drip-irrigation-detail.webp",
+    alt: "تفصيل شبكة الري بالتنقيط داخل مشروع ميداني بالأحساء",
+  },
+] as const;
+
 export function FieldEvidence() {
   return (
     <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
@@ -59,9 +79,41 @@ export function FieldEvidence() {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-medium-gray mb-10">
+        <p className="text-center text-xs text-medium-gray mb-12">
           مشاهد من مرفق R&amp;D في عسفان · شمال جدة
         </p>
+
+        {/* مجموعة الأحساء — مستقلة بعنوانها ونسبتها، بمقاس عمودي يميّزها بصرياً
+            عن شبكة عسفان المربّعة. ⛔ لا تُدمج المصفوفتان. */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <div className="text-center mb-5">
+            <h3 className="text-xl md:text-2xl font-bold text-deep-green mb-2">
+              تنفيذ ميداني في الأحساء
+            </h3>
+            <p className="body-sm text-medium-gray leading-relaxed max-w-2xl mx-auto">
+              مشاهد من تجهيز وتركيب أنظمة الإنتاج والري داخل مشروع ميداني، دون
+              إظهار اسم العميل.
+            </p>
+          </div>
+          <div className="grid grid-cols-3 gap-3">
+            {AL_AHSA_GALLERY.map((img) => (
+              <figure key={img.src} className="m-0">
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-corp-green">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 33vw, 280px"
+                  />
+                </div>
+              </figure>
+            ))}
+          </div>
+          <p className="text-center text-xs text-medium-gray mt-4">
+            مشاهد تجهيز وتركيب من مشروع ميداني في الأحساء
+          </p>
+        </div>
 
         <div className="text-center">
           <Link

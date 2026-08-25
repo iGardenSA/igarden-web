@@ -37,7 +37,8 @@ export const metadata: Metadata = {
 
 /* ─── المساران ─────────────────────────────────────────────
    أصول الصور مؤقّتة — تمريرة الصور النهائية بعد تثبيت الهيكل.
-   للجرد: rg 'imageStatus: "temporary"'                        */
+   للجرد: rg 'imageStatus: "temporary"'
+   `verified-field-preview` = أصل ميداني حقيقي منسوب، بانتظار اعتماد الدمج. */
 
 type Path = {
   id: string;
@@ -45,7 +46,13 @@ type Path = {
   label: string;
   title: string;
   steps: string[];
-  img: { src: string; alt: string; imageStatus: "temporary" };
+  img: {
+    src: string;
+    alt: string;
+    imageStatus: "temporary" | "verified-field-preview";
+    /* الإطار عمودي داخل موضع 4:3 → contain بدل قصّ يقطع السياق */
+    fit?: "cover" | "contain";
+  };
 };
 
 const PATHS: Path[] = [
@@ -63,9 +70,10 @@ const PATHS: Path[] = [
       "التوسع أو الإدارة والتشغيل وفق اتفاق مستقل.",
     ],
     img: {
-      src: "/images/osfan-full/04_greenhouse_wide.webp",
-      alt: "منظر داخلي لمحمية زراعية داخل مرفق R&D في عسفان",
-      imageStatus: "temporary",
+      src: "/images/projects/al-ahsa/al-ahsa-greenhouse-layout.webp",
+      alt: "تجهيز مشروع زراعي جديد في الأحساء — صفوف الإنتاج والبنية الداخلية للمحمية",
+      imageStatus: "verified-field-preview",
+      fit: "contain",
     },
   },
   {
@@ -189,13 +197,19 @@ export default function HowWeWorkPage() {
                 </ol>
               </div>
 
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+              <div
+                className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ${
+                  p.img.fit === "contain" ? "bg-[#0F3D2E]" : ""
+                }`}
+              >
                 <Image
                   src={p.img.src}
                   alt={p.img.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className={
+                    p.img.fit === "contain" ? "object-contain" : "object-cover"
+                  }
                 />
               </div>
             </div>

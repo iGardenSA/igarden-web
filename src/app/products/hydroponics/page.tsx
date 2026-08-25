@@ -87,16 +87,25 @@ function Hero() {
             </div>
           </div>
 
-          <div
-            className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green flex items-center justify-center"
-            role="img"
-            aria-label="أنظمة الزراعة المائية من iGarden داخل مرفق R&D في عسفان"
-          >
-            <Droplets className="w-20 h-20 text-white/20" aria-hidden />
-            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
-              ٧ تقنيات · نَختار لك الأنسب
-            </span>
-          </div>
+          {/* أصل ميداني من مشروع في الأحساء — preview-candidate.
+              ⛔ الأبراج غير مزروعة: دليل تجهيز وتركيب، لا دليل محصول أو نتيجة إنتاجية.
+              الإطار عمودي داخل موضع 4:3 → `object-contain` على خلفية هادئة
+              بدل قصّ يقطع البرج أو يُخفي سياق المحمية. */}
+          <figure className="m-0">
+            <div className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green">
+              <Image
+                src="/images/projects/al-ahsa/al-ahsa-towers-installation.webp"
+                alt="أبراج زراعة رأسية أثناء التجهيز في مشروع ميداني بالأحساء"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-contain"
+              />
+            </div>
+            <figcaption className="body-sm text-medium-gray mt-3 text-center">
+              أبراج زراعة رأسية أثناء التجهيز في مشروع ميداني بالأحساء.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -413,17 +422,18 @@ function IGardenTowerSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Tower image — left in LTR layout (visual right in RTL) */}
           <div className="order-2 lg:order-1">
-            {/* أصل مؤقّت منسوب — imageStatus: "temporary"
-                ⚠ الحاجة إلى صورة منتج مستقلة بخلفية نظيفة ما زالت قائمة (P1).
-                [CONTENT_NEEDED: /images/products/hydroponics/igarden-tower.jpg — صورة كاملة للبرج بخلفية نظيفة] */}
+            {/* صورة منتج مستقلة بخلفية نظيفة — أُغلق موضعها بهذه التمريرة.
+                الإطار عمودي أطول من 3:4 → `object-contain` للحفاظ على البرج كاملاً
+                من التاج إلى القاعدة بدل قصّ يقطعه.
+                الحالة: preview-candidate — تحتاج اعتماد الهوية والقصّ قبل الدمج. */}
             <figure>
               <div className="relative aspect-[3/4] rounded-card overflow-hidden bg-corp-green shadow-lg">
                 <Image
-                  src="/images/osfan-full/02_tower_closeup.webp"
-                  alt="برج iGarden Tower داخل مرفق R&D في عسفان"
+                  src="/images/products/hydroponics/igarden-tower-product.webp"
+                  alt="iGarden Tower — برج الزراعة الرأسية"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
                 {/* SAIP badge on image */}
                 <div className="absolute bottom-4 start-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow">
@@ -437,7 +447,23 @@ function IGardenTowerSection() {
                 </div>
               </div>
               <figcaption className="body-sm text-medium-gray mt-3 text-center">
-                iGarden Tower داخل مرفق R&D في عسفان — صورة ميدانية.
+                iGarden Tower — صورة المنتج.
+              </figcaption>
+            </figure>
+
+            {/* تفصيل داعم صغير — منفذ الزراعة والكوب الشبكي */}
+            <figure className="mt-4 max-w-[62%] mx-auto">
+              <div className="relative aspect-[3/4] rounded-card overflow-hidden bg-corp-green">
+                <Image
+                  src="/images/products/hydroponics/igarden-tower-port-detail.webp"
+                  alt="تفصيل منفذ الزراعة والكوب الشبكي في iGarden Tower"
+                  fill
+                  sizes="(max-width: 1024px) 60vw, 300px"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="body-sm text-medium-gray mt-2 text-center">
+                تفصيل منفذ الزراعة والكوب الشبكي في البرج.
               </figcaption>
             </figure>
           </div>

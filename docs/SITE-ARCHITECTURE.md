@@ -289,25 +289,32 @@ homepage ──┬── /products      (Hub الحلول)
 
 ## Wave 2 — Image Requirements
 
-توثيق فقط. ⛔ لم تُضف صور ولم تُغيَّر assets في هذه التمريرة، ولم يُحذف أي موضع
-`CONTENT_NEEDED` قائم.
+توثيق. الدفعة #1 من الصور المتحقّقة دخلت على `feat/image-pass-al-ahsa-tower`
+بحالة **`preview-candidate`** — ⛔ **ليست `production-approved`** ولم تُدمج.
+السجلّ الكامل بالبصمات وحدود الادّعاء: [`docs/IMAGE-ASSET-MANIFEST.md`](IMAGE-ASSET-MANIFEST.md).
+⛔ لم يُحذف أي موضع صورة قائم، ولم يُحذف أي `CONTENT_NEEDED` عدا موضع صورة البرج
+الذي أُغلق فعلياً بأصل حقيقي.
 
 | الصفحة | الأصل المطلوب | الحالة |
 |---|---|---|
 | **Smart OS** | لقطة Dashboard | **`temporary-safe`** ✓ — `/smart-os/dashboard-preview.png` مُدخَلة في Wave 2C. **بيانات محاكاة معلَنة** داخل اللقطة: شارتا `Demo Mode` و`Simulated Readings` + `Not a Certification Substitute` + شريط عربي يصرّح بذلك. ⛔ لا تُقصّ الشارات |
-| **Hydroponics — iGarden Tower** | صورة برج | **`temporary`** — `/images/osfan-full/02_tower_closeup.webp` منسوبة صراحةً لمرفق R&D في عسفان. ⚠ **صورة المنتج المستقلة بخلفية نظيفة ما زالت مطلوبة (P1)** والموضع يحمل `CONTENT_NEEDED` |
-| **Smart Greenhouses** | صورة محمية داخلية | **`temporary`** — `/images/osfan-full/04_greenhouse_wide.webp` منسوبة صراحةً لعسفان. ⛔ لا تُعرض كدليل مشروع عميل أو محمية تجارية مسلَّمة |
-| **Smart Controllers** | صورة المنتج · مخطط الربط · لقطة Dashboard | `missing` — الموضعان الأولان بلا أصل؛ ثلاثة `CONTENT_NEEDED` قائمة |
-| **IoT** | صورة وحدة/حساسات مركَّبة + مخطط اتصال | `missing` |
-| **الأحساء (FieldProjectCard)** | صورة مشروع | `missing` — ⛔ **لا يجوز استعمال صورة عسفان بديلاً**؛ القسم يبقى نصّياً |
+| **Hydroponics — iGarden Tower** | صورة برج | **`preview-candidate`** ⚠ — `igarden-tower-product.webp` + `igarden-tower-port-detail.webp` أصل منتج بخلفية نظيفة، أُغلق به `CONTENT_NEEDED`. ⛔ البرج غير مزروع: ليس دليل محصول. ⚠ يحتاج اعتماد علي للهوية والقصّ |
+| **Hydroponics — Hero** | صورة صدر الصفحة | **`preview-candidate`** ⚠ — `al-ahsa-towers-installation.webp` بـ`object-contain`. ⛔ دليل تجهيز وتركيب فقط |
+| **Smart Greenhouses** | صورة محمية داخلية | **`temporary`** — `/images/osfan-full/04_greenhouse_wide.webp` منسوبة صراحةً لعسفان في الـHero والمعرض، **باقية كما هي**. ⛔ لا تُعرض كدليل مشروع عميل أو محمية تجارية مسلَّمة |
+| **Smart Greenhouses — مجموعة الأحساء** | صور تنفيذ ميداني | **`preview-candidate`** ⚠ — `AlAhsaField` مستقلة عن `GALLERY`. ⛔ لا «محمية ذكية مسلَّمة» ولا «تشغيل آلي» |
+| **Smart Controllers** | صورة المنتج · مخطط الربط · لقطة Dashboard | `missing` — الموضعان الأولان بلا أصل؛ ثلاثة `CONTENT_NEEDED` قائمة. ⛔ **لا تُملأ بأي صورة عتاد ميداني أو Bench** — الهوية غير محسومة |
+| **IoT** | صورة وحدة/حساسات مركَّبة + مخطط اتصال | `missing` — ⛔ الصور المتاحة مكوّنات طرف ثالث في بيئة Bench ولا تثبت تركيباً ميدانياً |
+| **الأحساء (FieldProjectCard)** | صورة مشروع | **`preview-candidate`** ⚠ — `AL_AHSA_GALLERY` في `FieldEvidence` بثلاث صور، مستقلة تماماً عن `OSFAN_GALLERY`. ⛔ يبقى القيد: لا صورة عسفان بديلاً، ولا اسم عميل |
 | **المشروع العضوي (InnovationTracks)** | صورة مشروع | `missing` — ⛔ نفس القيد؛ القسم يبقى نصّياً |
 | **Compliance** | نموذج سجل أو تقرير منزوع بيانات العملاء | `missing` — **بعد توفّره فعلياً**، ⛔ لا صورة قبل ذلك |
 
 **تنظيف التكرارات** (‏`iGarden_Asfan_Images/` و`responsive/` الفائضة و`preview-*` — نحو 13MB):
 **P2 مؤجَّل إلى Branch Hygiene** ✓ — ⛔ ليس P0، ولا يُحذف أي أصل في موجات المحتوى.
 
-الصور الستّ المؤقتة في `/products` و`/how-we-work` تبقى موسومة `imageStatus: "temporary"`
-وتُجرَد بـ`rg 'imageStatus: "temporary",'`.
+الصور المؤقتة الباقية في `/products` و`/how-we-work` تبقى موسومة `imageStatus: "temporary"`
+وتُجرَد بـ`rg 'imageStatus: "temporary",'`. وصورة مسار **المشروع الجديد** في
+`/how-we-work` انتقلت إلى `imageStatus: "verified-field-preview"` — أصل ميداني حقيقي
+منسوب، ⚠ بانتظار اعتماد الدمج. صورة مسار **المنشأة القائمة** (‏Smart OS) بلا تغيير.
 
 ---
 
