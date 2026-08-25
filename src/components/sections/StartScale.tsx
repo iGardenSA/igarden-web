@@ -1,40 +1,26 @@
 import Link from "next/link";
-import { ArrowLeft, Home, Sprout, Building2, Landmark } from "lucide-react";
+import { ArrowLeft, Sprout, Wrench } from "lucide-react";
 
-type Step = {
-  Icon: typeof Home;
+type Gate = {
+  Icon: typeof Sprout;
   title: string;
   desc: string;
   href: string;
-  emphasis?: boolean;
 };
 
-/** سلّم نقطة البداية — الثقل البصري على «منشأة تجارية». */
-const STEPS: Step[] = [
-  {
-    Icon: Home,
-    title: "نظام منزلي",
-    desc: "تبدأ بنظام صغير في المنزل أو الاستراحة.",
-    href: "/home-solutions",
-  },
+/** بوّابتان لا سلّم أحجام — الأفراد يبقون في الشريط الختامي وحده. */
+const GATES: Gate[] = [
   {
     Icon: Sprout,
-    title: "مزرعة صغيرة",
-    desc: "لديك إنتاج قائم وتريد توسيعه أو ضبطه.",
-    href: "/products",
+    title: "أؤسّس مشروعاً جديداً",
+    desc: "من تحديد الاحتياج والتصميم إلى الإنشاء والتجهيز والتشغيل الأولي.",
+    href: "/how-we-work#new-project",
   },
   {
-    Icon: Building2,
-    title: "منشأة تجارية",
-    desc: "تشغيل يومي بفريق ومسؤوليات — وتحتاج وضوحاً في القرار.",
-    href: "/how-we-work",
-    emphasis: true,
-  },
-  {
-    Icon: Landmark,
-    title: "مشروع مؤسسي",
-    desc: "نطاق أكبر يجمع الإنتاج والتحكّم والبيانات في منظومة واحدة.",
-    href: "/products",
+    Icon: Wrench,
+    title: "أطوّر منشأة قائمة",
+    desc: "من قراءة التشغيل إلى القياس والتحكّم والسجلّ وبيانات التشغيل.",
+    href: "/how-we-work#existing-facility",
   },
 ];
 
@@ -43,47 +29,28 @@ export function StartScale() {
     <section className="bg-[var(--color-surface)] section-padding" dir="rtl">
       <div className="container-igarden">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="heading-section mb-5">أين تقف اليوم؟</h2>
-          <p className="body-base text-medium-gray leading-relaxed">
-            حين يعتمد التشغيل على حضور شخص واحد، يصبح الغياب فجوة في المعرفة.
-            وحين تتغيّر ظروف الصيف وتبقى القرارات بلا سجلّ، يصعب معرفة ما حدث.
-          </p>
+          <h2 className="heading-section">من أين تبدأ؟</h2>
         </div>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-          {STEPS.map(({ Icon, title, desc, href, emphasis }) => (
-            <li key={title} className={emphasis ? "lg:-mt-3" : ""}>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {GATES.map(({ Icon, title, desc, href }) => (
+            <li key={href}>
               <Link
                 href={href}
-                className={[
-                  "group flex flex-col h-full rounded-2xl p-7 transition-all",
-                  emphasis
-                    ? "bg-white border-2 border-[var(--color-accent-500)] shadow-[var(--shadow-soft)] lg:py-9"
-                    : "bg-white border border-[var(--color-border)] shadow-[var(--shadow-soft)] hover:border-[var(--color-accent-500)]",
-                ].join(" ")}
+                className="group flex flex-col h-full rounded-2xl p-8 bg-white border border-[var(--color-border)] shadow-[var(--shadow-soft)] hover:border-[var(--color-accent-500)] transition-all"
               >
                 <Icon
-                  className={
-                    emphasis
-                      ? "w-10 h-10 text-[var(--color-brand-600)] mb-4"
-                      : "w-8 h-8 text-[var(--color-brand-600)] mb-4"
-                  }
+                  className="w-10 h-10 text-[var(--color-brand-600)] mb-4"
                   aria-hidden="true"
                 />
-                <h3
-                  className={
-                    emphasis
-                      ? "text-xl md:text-2xl font-bold text-deep-green mb-2"
-                      : "text-lg font-bold text-deep-green mb-2"
-                  }
-                >
+                <h3 className="text-xl md:text-2xl font-bold text-deep-green mb-3">
                   {title}
                 </h3>
-                <p className="body-sm text-medium-gray leading-relaxed flex-1 mb-5">
+                <p className="body-base text-medium-gray leading-relaxed flex-1 mb-6">
                   {desc}
                 </p>
                 <span className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-[var(--color-brand-600)] group-hover:text-deep-green transition-colors">
-                  ابدأ من هنا
+                  اطّلع على المسار
                   <ArrowLeft className="w-4 h-4" aria-hidden="true" />
                 </span>
               </Link>

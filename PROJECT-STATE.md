@@ -172,12 +172,11 @@
 
 ## NEXT DELTA
 
-**Wave 2E — Attribution Bridge** ما زالت التالية **قبل توسيع حركة حراج**:
+**Wave 2E — Attribution Bridge** — التالية قبل توسيع حركة حراج:
 first-touch attribution عبر صفحات الهبوط، لا قراءة UTM من صفحة النموذج وحدها.
 
-⏳ **Site Narrative Rebuild** جاهز للمراجعة على `feat/site-narrative-rebuild`
-(‏من `87cb99b`) — حذف Utility Bar · ترتيب الرئيسية بالمنفعة · مواءمة الصفحات
-الداخلية · قاعدة «المنفعة ← الآلية ← التحقق ← حدّ نطاق». **ليس LIVE.**
+⏳ **Site Narrative Rebuild** على PR #57 — **آخر تمريرة نصّية أُغلقت 2026-08-25**؛
+أي فكرة تحسين بعدها تذهب إلى الموجة التالية. **ليس LIVE.**
 
 ---
 

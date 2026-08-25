@@ -29,17 +29,13 @@ export function SalesHero() {
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(15,61,46,0.55) 0%, rgba(15,61,46,0.40) 50%, rgba(15,61,46,0.65) 100%)",
+            "linear-gradient(to bottom, rgba(10,41,32,0.72) 0%, rgba(10,41,32,0.62) 50%, rgba(10,41,32,0.80) 100%)",
         }}
         aria-hidden="true"
       />
 
       <div className="container-igarden relative">
         <div className="max-w-4xl">
-          <p className="text-sm md:text-base font-semibold text-[#A5D63F] mb-4">
-            شركة سعودية ريادية ومبتكرة في التقنيات الزراعية
-          </p>
-
           <h1
             id="hero-headline"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] tracking-tight text-white mb-6"
@@ -47,20 +43,15 @@ export function SalesHero() {
             ازرع بذكاء.
           </h1>
 
-          {/* شريط النطاق — تخطيط · محميات · زراعة مائية · أتمتة · رقمنة */}
-          <p className="text-sm md:text-base font-medium text-[#A5D63F]/90 mb-5 tracking-wide">
-            تخطيط · محميات · زراعة مائية · أتمتة · رقمنة
+          {/* الوصف */}
+          <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-3xl mb-5">
+            نؤسّس مشروعك الزراعي كمنظومة مترابطة، أو نطوّر منشأتك القائمة لتعرف
+            ما يجري في تشغيلها.
           </p>
 
-          {/* المنفعة */}
-          <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-3xl mb-4">
-            من أرض فارغة أو منشأة قائمة — إلى تشغيل تعرف ما يجري فيه.
-          </p>
-
-          {/* الآلية */}
-          <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-10">
-            نخطّط ونبني مشاريع البيوت المحمية والزراعة المائية، أو نطوّر منشأتك
-            القائمة بالتحكّم والأتمتة وبيانات التشغيل.
+          {/* النطاق — ⛔ بلا «استنبات» (قرار 2026-08-25) */}
+          <p className="text-sm md:text-base font-medium text-[#A5D63F]/90 mb-10 tracking-wide">
+            محميات · زراعة مائية · تحكّم وأتمتة · تشغيل ورقمنة
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -82,8 +73,8 @@ export function SalesHero() {
           </div>
 
           {/* إسناد الفيديو — الصورة من المرفق لا من مشروع عميل */}
-          <p className="mt-8 text-xs md:text-sm text-white/60">
-            مرفق R&D في عسفان · شمال جدة
+          <p className="mt-8 inline-block text-xs md:text-sm text-white/85 bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
+            مشاهد من مرفق R&D في عسفان · شمال جدة
           </p>
         </div>
       </div>

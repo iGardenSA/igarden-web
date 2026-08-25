@@ -20,9 +20,10 @@ export const metadata: Metadata = {
 import { SalesHero } from "@/components/sections/SalesHero";
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StartScale } from "@/components/sections/StartScale";
-import { DigitizationStages } from "@/components/sections/DigitizationStages";
+import { DeliveryPaths } from "@/components/sections/DeliveryPaths";
 import { FieldEvidence } from "@/components/sections/FieldEvidence";
 import { SolutionTracks } from "@/components/sections/SolutionTracks";
+import { SpecializedCapabilities } from "@/components/sections/SpecializedCapabilities";
 import { SmartOSFlow } from "@/components/sections/SmartOSFlow";
 import { InnovationTracks } from "@/components/sections/InnovationTracks";
 import { KnowledgeGrid } from "@/components/sections/KnowledgeGrid";
@@ -57,11 +58,14 @@ export default function HomePage() {
       {/* ④ العائلات الأربع */}
       <SolutionTracks />
 
-      {/* ⑤ الدليل الميداني — المشروع + عسفان */}
+      {/* ④ب القدرات المتخصّصة — مضغوط */}
+      <SpecializedCapabilities />
+
+      {/* ⑤ الدليل الميداني */}
       <FieldEvidence />
 
-      {/* ⑥ مراحل الرقمنة ثم Smart OS */}
-      <DigitizationStages />
+      {/* ⑥ طريقة التنفيذ — مساران متوازيان، ثم Smart OS */}
+      <DeliveryPaths />
       <SmartOSFlow />
 
       {/* ⑦ الابتكار */}

@@ -193,9 +193,9 @@ export const MEGA_COLUMNS: NavColumn[] = [
 ];
 
 export const MEGA_FOOTER: NavColumnItem[] = [
-  { label: "استعرض كل الحلول", href: "/products" },
+  // ⛔ حُذف «استعرض كل الحلول» و«Live Demo» بقرار 2026-08-25.
+  // الديمو يبقى مبلوغاً من عمود الرقمنة داخل الميجا ومن قسم Smart OS وصفحته.
   { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "Demo مباشر", href: DEMO_URL, external: true, badge: "live" },
 ];
 
 // ─── التنقّل الرئيسي ─────────────────────────────────────────────────────────
@@ -219,7 +219,7 @@ export const HEADER_NAV_ITEMS: NavItemType[] = [
   { label: "كيف نعمل", href: "/how-we-work" },
   { label: "مرفق عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
-  { label: "عن iGarden", href: "/about" },
+  { label: "من نحن", href: "/about" },
 ];
 
 // ─── CTA الأساسي ─────────────────────────────────────────────────────────────
