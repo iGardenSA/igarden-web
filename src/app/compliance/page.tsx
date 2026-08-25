@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Construction, Database, Cpu, FileText, CheckCircle2, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "سجلات التشغيل القابلة للمراجعة — Smart OS | iGarden",
+  title: "سجلات التشغيل القابلة للمراجعة — Smart OS",
   description:
     "iGarden تبني سجلات تشغيل رقمية قابلة للمراجعة — القراءات والأوامر والتدخلات التي يشملها نطاق الربط تُسجّل بتوقيت دقيق لدعم فرق التشغيل والجودة.",
   alternates: { canonical: "https://igarden.sa/compliance" },
@@ -24,7 +24,7 @@ export default function CompliancePage() {
             سجلات التشغيل · Smart OS
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-[#FAFAF7] mb-5 leading-tight">
-            سجلات التشغيل القابلة للمراجعة
+            تشغيل يمكنك مراجعته — لا الاعتماد على الذاكرة وحدها
           </h1>
           <p className="text-white/75 text-lg leading-relaxed max-w-2xl">
             القراءات والأوامر والتدخلات التي يشملها نطاق الربط تُسجّل بتوقيت دقيق

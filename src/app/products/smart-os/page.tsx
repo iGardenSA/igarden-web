@@ -12,7 +12,7 @@ import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 
 export const metadata: Metadata = {
-  title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك · iGarden",
+  title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
   description:
     "لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد والبرامج المجدولة ضمن نطاق مشروعك — والسجلّات والتنبيهات والتقارير تُفعَّل بحسبه. طبقات التحليل المتقدّم قيد التطوير.",
   alternates: { canonical: "https://igarden.sa/products/smart-os" },
@@ -69,10 +69,10 @@ export default function SmartOSPage() {
       <section className="bg-deep-green text-cream py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           <p className="text-lime text-sm font-bold uppercase tracking-widest mb-4">
-            منصة برمجية
+            Smart OS · منصة تشغيل المزرعة
           </p>
           <h1 className="h1 text-cream mb-6">
-            Smart OS — الذكاء التشغيلي للزراعة
+            ما يحتاج انتباهك يظهر في مكان واحد — لا يضيع بين القراءات
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
             لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد

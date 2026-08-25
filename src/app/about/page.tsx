@@ -94,11 +94,14 @@ function WhyWeStarted() {
 }
 
 /* ─── Section 3: Identity ─────────────────────────────────── */
+/* البيانات النظامية — نُقلت كاملةً من الفوتر إلى هنا (قرار 2026-08-25).
+   الرقم الضريبي ظاهر أيضاً على shop.igarden.sa ✓ مُتحقَّق قبل النقل. */
 const REGISTRATION_BADGES = [
   { label: "السجل التجاري", value: "4030579637" },
   { label: "الرقم الموحد", value: "7041878278" },
-  { label: "وزارة الاستثمار", value: "24926249716" },
-  { label: "الملكية الفكرية", value: "423450193" },
+  { label: "وزارة الاستثمار — MISA", value: "24926249716" },
+  { label: "الملكية الفكرية — SAIP", value: "#423450193" },
+  { label: "الرقم الضريبي", value: "312554598200003" },
   { label: "التصنيف", value: "ريادية" },
 ];
 
@@ -416,7 +419,7 @@ function FinalCTA() {
           <CTAButton href="/contact?cta=book_consultation" variant="lime">
             احجز استشارة
           </CTAButton>
-          <CTAButton href="/osfan-station" variant="outline-green">
+          <CTAButton href="/osfan-station" variant="outline-light">
             زُر مرفق R&D في عسفان
           </CTAButton>
         </div>

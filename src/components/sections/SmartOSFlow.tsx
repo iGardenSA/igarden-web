@@ -32,7 +32,7 @@ export function SmartOSFlow() {
             Smart OS
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
-            من الحقل إلى القرار — ثمّ إلى التنفيذ
+            ما يحتاج انتباهك يظهر في مكان واحد — لا يضيع بين القراءات
           </h2>
         </div>
 
@@ -94,6 +94,12 @@ export function SmartOSFlow() {
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
+
+        {/* حدّ النطاق — مرة واحدة في نهاية القسم */}
+        <p className="text-center text-sm text-white/60 mt-8 max-w-3xl mx-auto leading-relaxed">
+          تُفعَّل السجلات والتنبيهات والتقارير والتكاملات بحسب نطاق المشروع
+          وتجهيزاته.
+        </p>
       </div>
     </section>
   );

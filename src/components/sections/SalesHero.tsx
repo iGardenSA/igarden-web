@@ -29,17 +29,13 @@ export function SalesHero() {
         className="absolute inset-0 -z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(15,61,46,0.55) 0%, rgba(15,61,46,0.40) 50%, rgba(15,61,46,0.65) 100%)",
+            "linear-gradient(to bottom, rgba(10,41,32,0.72) 0%, rgba(10,41,32,0.62) 50%, rgba(10,41,32,0.80) 100%)",
         }}
         aria-hidden="true"
       />
 
       <div className="container-igarden relative">
         <div className="max-w-4xl">
-          <p className="text-sm md:text-base font-semibold text-[#A5D63F] mb-4">
-            شركة سعودية ريادية ومبتكرة في التقنيات الزراعية
-          </p>
-
           <h1
             id="hero-headline"
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.15] tracking-tight text-white mb-6"
@@ -47,9 +43,15 @@ export function SalesHero() {
             ازرع بذكاء.
           </h1>
 
-          <p className="text-lg md:text-xl text-white/85 leading-relaxed max-w-3xl mb-10">
-            نَبني ونُوطّن ونُطوّر منظومات زراعية متكاملة — نؤسّس مشروعك من التخطيط
-            والإنشاء، أو نطوّر منشأتك القائمة بالتحكّم والأتمتة وبيانات التشغيل.
+          {/* الوصف */}
+          <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-3xl mb-5">
+            نؤسّس مشروعك الزراعي كمنظومة مترابطة، أو نطوّر منشأتك القائمة لتعرف
+            ما يجري في تشغيلها.
+          </p>
+
+          {/* النطاق — ⛔ بلا «استنبات» (قرار 2026-08-25) */}
+          <p className="text-sm md:text-base font-medium text-[#A5D63F]/90 mb-10 tracking-wide">
+            محميات · زراعة مائية · تحكّم وأتمتة · تشغيل ورقمنة
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -57,7 +59,7 @@ export function SalesHero() {
               href="#assessment"
               className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-base md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none"
             >
-              اطلب تقييماً أولياً لمشروعك الزراعي
+              اطلب تقييماً أولياً
             </Link>
             <a
               href={CONTACT.whatsapp}
@@ -66,9 +68,14 @@ export function SalesHero() {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border-2 border-white/40 text-white text-base md:text-lg font-semibold hover:bg-white/10 transition-colors"
             >
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
-              تواصل سريع عبر واتساب
+              تواصل عبر واتساب
             </a>
           </div>
+
+          {/* إسناد الفيديو — الصورة من المرفق لا من مشروع عميل */}
+          <p className="mt-8 inline-block text-xs md:text-sm text-white/85 bg-black/30 backdrop-blur-sm rounded-full px-4 py-2">
+            مشاهد من مرفق R&D في عسفان · شمال جدة
+          </p>
         </div>
       </div>
     </section>

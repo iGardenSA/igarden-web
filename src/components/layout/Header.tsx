@@ -6,7 +6,6 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu } from "lucide-react";
 import { CTAButton } from "@/components/shared/CTAButton";
-import TopBar from "@/components/layout/TopBar";
 import MegaMenu from "@/components/layout/MegaMenu";
 import MobileDrawer from "@/components/layout/MobileDrawer";
 import { HEADER_NAV_ITEMS, MAIN_CTA, WHATSAPP_HREF } from "@/lib/constants";
@@ -84,9 +83,6 @@ export default function Header() {
 
   return (
     <>
-      {/* شريط الخدمات — في التدفق العادي، الهيدر وحده sticky */}
-      <TopBar />
-
       <header
         ref={megaRef}
         className={cn(

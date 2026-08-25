@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ArticleGrid } from "./_components/ArticleGrid";
 
 export const metadata: Metadata = {
-  title: "المعرفة | iGarden",
+  title: "المعرفة — قبل أن تشتري اقرأ",
   description:
     "مقالات تعليمية وتأملات عملية في الزراعة الذكية، الزراعة المائية، أنظمة التحكم، وتصميم المرافق الزراعية.",
   alternates: { canonical: "https://igarden.sa/learn" },
@@ -19,7 +19,7 @@ export default function LearnPage() {
             المعرفة في iGarden
           </p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            ما نتعلّمه، نُشاركه.
+            قبل أن تشتري — اقرأ.
           </h1>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl">
             نُؤمن أن المعرفة في الزراعة الذكية لا تُحتكر — تُبنى بالممارسة،

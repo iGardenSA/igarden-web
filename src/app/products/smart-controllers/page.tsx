@@ -65,8 +65,8 @@ function Hero() {
               لوحات التحكّم · Smart OS Powered
             </p>
             <h1 className="h1 text-deep-green mb-5">
-              لوحات تحكّم زراعي —
-              <span className="block">أضف لمنظومتك عقلاً.</span>
+              تعرف ما يجري في مزرعتك
+              <span className="block">وأنت لست فيها.</span>
             </h1>
             <p className="body-base text-medium-gray mb-4 max-w-lg">
               Smart Controllers من iGarden تَربط حسّاساتك ومضخّاتك ونظام الري

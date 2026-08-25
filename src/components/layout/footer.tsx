@@ -9,37 +9,32 @@ import {
   Linkedin,
   Instagram,
   Youtube,
-  Twitter,
   ChevronDown,
   ExternalLink,
 } from "lucide-react";
-import { CTAButton } from "@/components/shared/CTAButton";
 import {
   COMPANY,
   CONTACT,
   SOCIAL,
   MAIN_CTA,
   WHATSAPP_HREF,
-  DEMO_URL,
   SHOP_URL,
 } from "@/lib/constants";
 
 type FLink = { label: string; href: string; external?: boolean; badge?: string };
 
 const SOLUTIONS_LINKS: FLink[] = [
-  { label: "كل الحلول", href: "/products" },
   { label: "المحميات الزراعية", href: "/products/smart-greenhouses" },
   { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
   { label: "Smart Controllers", href: "/products/smart-controllers" },
   { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
   { label: "Smart OS", href: "/products/smart-os" },
-  { label: "Demo مباشر", href: DEMO_URL, external: true },
   { label: "جاهزية الامتثال", href: "/compliance" },
   { label: "الحلول المتخصصة", href: "/products#specialized" },
 ];
 
 const COMPANY_LINKS: FLink[] = [
-  { label: "عن iGarden", href: "/about" },
+  { label: "من نحن", href: "/about" },
   { label: "كيف نعمل", href: "/how-we-work" },
   { label: "مرفق R&D في عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
@@ -75,35 +70,28 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* ─── كتلة الهوية — 4/12 ─────────────────────────── */}
           <div className="lg:col-span-4">
-            <Image
-              src="/logo/lockup-horizontal-en-white.png"
-              alt="iGarden — الحديقة الذكية"
-              width={140}
-              height={40}
-            />
+            {/* تركيب مطابق للهيدر: الأيقونة يميناً والكلمة يساراً (RTL)،
+                بالأصل نفسه ومعالجة اللون نفسها — ⛔ بلا نسخة صورة جديدة
+                وبلا scaleX(-1). */}
+            <div className="flex items-center gap-2">
+              <Image
+                src="/logo/icon-master-original.png"
+                alt=""
+                width={44}
+                height={44}
+                aria-hidden
+                className="brightness-0 invert"
+              />
+              <span className="font-latin font-bold text-xl leading-none tracking-tight text-white">
+                iGarden
+              </span>
+            </div>
             <p className="text-lime font-medium text-base mt-3">ازرع بذكاء.</p>
             <p className="text-sm opacity-75 leading-relaxed mt-3 max-w-sm">
               نبني منظومات زراعية متكاملة للمشاريع الجديدة والمنشآت القائمة.
             </p>
 
-            <div className="mt-5">
-              <CTAButton href={MAIN_CTA.href} variant="lime">
-                {MAIN_CTA.label}
-              </CTAButton>
-            </div>
-
             <ul className="mt-6 space-y-1">
-              <li>
-                <a
-                  href={WHATSAPP_HREF}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm opacity-75 hover:opacity-100 hover:text-lime transition-all"
-                >
-                  <WhatsAppIcon />
-                  <span>واتساب</span>
-                </a>
-              </li>
               <li>
                 <a
                   href={`tel:${CONTACT.phoneE164}`}
@@ -128,14 +116,17 @@ export function Footer() {
               <SocialIcon href={SOCIAL.linkedin} label="LinkedIn">
                 <Linkedin className="w-4 h-4" />
               </SocialIcon>
-              <SocialIcon href={SOCIAL.twitter} label="X (Twitter)">
-                <Twitter className="w-4 h-4" />
+              <SocialIcon href={SOCIAL.twitter} label="X">
+                <XIcon />
               </SocialIcon>
               <SocialIcon href={SOCIAL.instagram} label="Instagram">
                 <Instagram className="w-4 h-4" />
               </SocialIcon>
               <SocialIcon href={SOCIAL.youtube} label="YouTube">
                 <Youtube className="w-4 h-4" />
+              </SocialIcon>
+              <SocialIcon href={WHATSAPP_HREF} label="WhatsApp">
+                <WhatsAppIcon />
               </SocialIcon>
             </div>
           </div>
@@ -195,21 +186,7 @@ export function Footer() {
           </ul>
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs opacity-55">
-            <div className="space-y-1 leading-relaxed">
-              <p className="font-medium opacity-80">{COMPANY.legalFull}</p>
-              <p>
-                <span className="font-latin">CR: 4030579637</span>
-                {" · "}
-                الرقم الموحد: <span className="font-latin">7041878278</span>
-                {" · "}
-                <span className="font-latin">MISA: 24926249716</span>
-              </p>
-              <p>
-                <span className="font-latin">SAIP: #423450193</span>
-                {" · "}
-                <span className="font-latin">Tax: 312554598200003</span>
-              </p>
-            </div>
+            <p className="font-medium opacity-80">{COMPANY.legalFull}</p>
             <p className="font-latin whitespace-nowrap">
               © {new Date().getFullYear()} iGarden. All rights reserved.
             </p>
@@ -277,6 +254,14 @@ function SocialIcon({
     >
       {children}
     </a>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
   );
 }
 

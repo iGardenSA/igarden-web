@@ -63,7 +63,25 @@ export const articles: Article[] = [
   },
 ];
 
-export const sortedArticles = [...articles].sort(
-  (a, b) =>
-    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-);
+/**
+ * الترتيب حسب قرار العميل لا حسب التاريخ:
+ * اختيار نظام الإنتاج → التشغيل الصيفي → القياس والتحكم → السجلات والقرارات.
+ * ⛔ publishedAt لم يتغيّر — يبقى للعرض وللـsitemap.
+ */
+const DECISION_ORDER = [
+  "hydroponic-vs-traditional",
+  "why-hydroponic-fail-summer",
+  "when-do-you-need-smart-controller",
+  "daily-measurements-smart-farm",
+  "operational-logs-farm-decisions",
+] as const;
+
+export const sortedArticles = [...articles].sort((a, b) => {
+  const ai = DECISION_ORDER.indexOf(a.slug as (typeof DECISION_ORDER)[number]);
+  const bi = DECISION_ORDER.indexOf(b.slug as (typeof DECISION_ORDER)[number]);
+  if (ai === -1 && bi === -1)
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  if (ai === -1) return 1;
+  if (bi === -1) return -1;
+  return ai - bi;
+});

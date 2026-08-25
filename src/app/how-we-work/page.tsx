@@ -53,7 +53,7 @@ const PATHS: Path[] = [
     id: "new-project",
     Icon: Sprout,
     label: "المسار الأول",
-    title: "مشروع جديد — من الفكرة إلى التشغيل الأولي",
+    title: "مشروع جديد — من دراسة الاحتياج إلى التشغيل الأولي",
     steps: [
       "فهم الفكرة والموقع والمحصول والطاقة المستهدفة.",
       "بناء التصور الأولي ونطاق أنظمة الإنتاج والمياه والطاقة.",
@@ -72,7 +72,7 @@ const PATHS: Path[] = [
     id: "existing-facility",
     Icon: Wrench,
     label: "المسار الثاني",
-    title: "منشأة قائمة — تطوير مرحلي دون هدم ما يعمل",
+    title: "منشأة قائمة — نبدأ بفهم ما لديك، لا ببيع ما لدينا",
     steps: [
       "تقييم التشغيل والبنية الحالية.",
       "تحديد نقاط القياس والتحكم والأولوية.",
@@ -144,7 +144,7 @@ export default function HowWeWorkPage() {
             منهجية العمل
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#FAFAF7] mb-6 leading-tight">
-            مساران — ومنهج واحد يبدأ من واقع مشروعك.
+            مساران للتنفيذ — حسب نقطة بداية مشروعك.
           </h1>
           <p className="text-lg md:text-xl text-[#FAFAF7]/80 leading-relaxed max-w-3xl mx-auto">
             نؤسس مشروعك الزراعي الجديد، أو نطوّر منشأتك القائمة. في الحالتين يبدأ

@@ -30,9 +30,9 @@ export function OrganizationSchema() {
       availableLanguage: ["Arabic", "English"],
     },
     sameAs: [
-      "https://linkedin.com/company/igarden-sa",
-      "https://instagram.com/igarden.sa",
-      "https://x.com/igarden_sa",
+      "https://linkedin.com/company/igardensa",
+      "https://instagram.com/igardensa",
+      "https://x.com/igardensa",
       "https://youtube.com/@igarden",
     ],
     identifier: [

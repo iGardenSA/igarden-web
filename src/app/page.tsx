@@ -18,14 +18,13 @@ export const metadata: Metadata = {
 };
 
 import { SalesHero } from "@/components/sections/SalesHero";
-import { TrustBar } from "@/components/sections/TrustBar";
-import { AudienceSplit } from "@/components/sections/AudienceSplit";
-import { DigitizationStages } from "@/components/sections/DigitizationStages";
-import { FieldProjectCard } from "@/components/sections/FieldProjectCard";
+import { StartScale } from "@/components/sections/StartScale";
+import { DeliveryPaths } from "@/components/sections/DeliveryPaths";
+import { FieldEvidence } from "@/components/sections/FieldEvidence";
 import { SolutionTracks } from "@/components/sections/SolutionTracks";
+import { SpecializedCapabilities } from "@/components/sections/SpecializedCapabilities";
 import { SmartOSFlow } from "@/components/sections/SmartOSFlow";
 import { InnovationTracks } from "@/components/sections/InnovationTracks";
-import { OsfanFacility } from "@/components/sections/OsfanFacility";
 import { KnowledgeGrid } from "@/components/sections/KnowledgeGrid";
 import { AssessmentSection } from "@/components/sections/AssessmentSection";
 
@@ -40,9 +39,6 @@ export default function HomePage() {
         <SalesHero />
       </div>
 
-      {/* شريط الثقة */}
-      <TrustBar />
-
       <div className="bg-white pb-6 text-center" dir="rtl">
         <Link
           href="/about"
@@ -52,32 +48,56 @@ export default function HomePage() {
         </Link>
       </div>
 
-      {/* ② فرز الجمهور */}
-      <AudienceSplit />
+      {/* ③ سلّم نقطة البداية */}
+      <StartScale />
 
-      {/* ③ أربع مراحل */}
-      <DigitizationStages />
-
-      {/* ⑤ من الميدان — بطاقة مشروع */}
-      <FieldProjectCard />
-
-      {/* ④ الحلول */}
+      {/* ④ العائلات الأربع */}
       <SolutionTracks />
 
-      {/* ⑥ Smart OS */}
+      {/* ④ب القدرات المتخصّصة — مضغوط */}
+      <SpecializedCapabilities />
+
+      {/* ⑤ الدليل الميداني */}
+      <FieldEvidence />
+
+      {/* ⑥ طريقة التنفيذ — مساران متوازيان، ثم Smart OS */}
+      <DeliveryPaths />
       <SmartOSFlow />
 
-      {/* ⑦ بطاقة الابتكار */}
+      {/* ⑦ الابتكار */}
       <InnovationTracks />
 
-      {/* ⑧ مرفق R&D في عسفان */}
-      <OsfanFacility />
-
-      {/* ⑨ المعرفة */}
+      {/* ⑧ المعرفة */}
       <KnowledgeGrid />
 
-      {/* ⑩ الإغلاق والنموذج */}
+      {/* ⑨ التقييم */}
       <AssessmentSection />
+
+      {/* ⑩ شريط الأفراد — سطران، روابط نصّية، بلا صور وبلا CTA رابع */}
+      <section className="bg-white border-t border-light-gray py-8" dir="rtl">
+        <div className="container-igarden text-center">
+          <p className="body-sm text-medium-gray leading-relaxed max-w-2xl mx-auto">
+            تبحث عن نظام لمنزلك أو استراحتك؟ لدينا مسار مستقلّ للأفراد بأنظمة
+            جاهزة ومواد قياسية.
+            <br />
+            <Link
+              href="/home-solutions"
+              className="underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
+            >
+              حلول الأفراد
+            </Link>
+            {" · "}
+            <a
+              href="https://shop.igarden.sa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
+            >
+              المتجر
+            </a>
+          </p>
+        </div>
+      </section>
     </>
   );
 }
