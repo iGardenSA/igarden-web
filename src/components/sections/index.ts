@@ -4,7 +4,6 @@
 // =============================================
 
 export { default as HeroSection } from "./HeroSection";
-export { TrustBar }               from "./TrustBar";
 export { MethodologySection }     from "./MethodologySection";
 export { PortfolioFamilies }      from "./PortfolioFamilies";
 export { SpecializedSolutions }   from "./SpecializedSolutions";

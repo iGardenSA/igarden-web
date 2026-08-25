@@ -107,9 +107,9 @@ export default function FactSheetPage() {
 
             {/* التواصل الاجتماعي */}
             <FactBlock title="التواصل الاجتماعي">
-              <FactRow label="LinkedIn" value="linkedin.com/company/igarden-sa" mono />
-              <FactRow label="Instagram" value="instagram.com/igarden.sa" mono />
-              <FactRow label="X (Twitter)" value="x.com/igarden_sa" mono />
+              <FactRow label="LinkedIn" value="linkedin.com/company/igardensa" mono />
+              <FactRow label="Instagram" value="instagram.com/igardensa" mono />
+              <FactRow label="X (Twitter)" value="x.com/igardensa" mono />
             </FactBlock>
 
           </div>

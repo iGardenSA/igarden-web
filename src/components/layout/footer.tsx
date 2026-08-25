@@ -18,20 +18,17 @@ import {
   SOCIAL,
   MAIN_CTA,
   WHATSAPP_HREF,
-  DEMO_URL,
   SHOP_URL,
 } from "@/lib/constants";
 
 type FLink = { label: string; href: string; external?: boolean; badge?: string };
 
 const SOLUTIONS_LINKS: FLink[] = [
-  { label: "كل الحلول", href: "/products" },
   { label: "المحميات الزراعية", href: "/products/smart-greenhouses" },
   { label: "أنظمة الزراعة المائية", href: "/products/hydroponics" },
   { label: "Smart Controllers", href: "/products/smart-controllers" },
   { label: "إنترنت الأشياء الزراعي", href: "/products/iot" },
   { label: "Smart OS", href: "/products/smart-os" },
-  { label: "Demo مباشر", href: DEMO_URL, external: true },
   { label: "جاهزية الامتثال", href: "/compliance" },
   { label: "الحلول المتخصصة", href: "/products#specialized" },
 ];
@@ -73,12 +70,22 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* ─── كتلة الهوية — 4/12 ─────────────────────────── */}
           <div className="lg:col-span-4">
-            <Image
-              src="/logo/lockup-horizontal-en-white.png"
-              alt="iGarden — الحديقة الذكية"
-              width={140}
-              height={40}
-            />
+            {/* تركيب مطابق للهيدر: الأيقونة يميناً والكلمة يساراً (RTL)،
+                بالأصل نفسه ومعالجة اللون نفسها — ⛔ بلا نسخة صورة جديدة
+                وبلا scaleX(-1). */}
+            <div className="flex items-center gap-2">
+              <Image
+                src="/logo/icon-master-original.png"
+                alt=""
+                width={44}
+                height={44}
+                aria-hidden
+                className="brightness-0 invert"
+              />
+              <span className="font-latin font-bold text-xl leading-none tracking-tight text-white">
+                iGarden
+              </span>
+            </div>
             <p className="text-lime font-medium text-base mt-3">ازرع بذكاء.</p>
             <p className="text-sm opacity-75 leading-relaxed mt-3 max-w-sm">
               نبني منظومات زراعية متكاملة للمشاريع الجديدة والمنشآت القائمة.

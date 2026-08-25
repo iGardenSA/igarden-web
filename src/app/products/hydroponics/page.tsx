@@ -940,7 +940,7 @@ function FinalCTA() {
           <CTAButton href="/contact?interest=osfan-visit&cta=osfan_visit_request" variant="lime">
             احجز زيارة مجانية لعسفان
           </CTAButton>
-          <CTAButton href="/contact?interest=hydroponics&cta=request_quote" variant="outline-green">
+          <CTAButton href="/contact?interest=hydroponics&cta=request_quote" variant="outline-light">
             اطلب استشارة عن بُعد
           </CTAButton>
         </div>

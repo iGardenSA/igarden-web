@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 };
 
 import { SalesHero } from "@/components/sections/SalesHero";
-import { TrustBar } from "@/components/sections/TrustBar";
 import { StartScale } from "@/components/sections/StartScale";
 import { DeliveryPaths } from "@/components/sections/DeliveryPaths";
 import { FieldEvidence } from "@/components/sections/FieldEvidence";
@@ -39,9 +38,6 @@ export default function HomePage() {
       <div className="-mt-[64px]">
         <SalesHero />
       </div>
-
-      {/* ② شريط الثقة */}
-      <TrustBar />
 
       <div className="bg-white pb-6 text-center" dir="rtl">
         <Link

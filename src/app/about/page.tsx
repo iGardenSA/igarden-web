@@ -419,7 +419,7 @@ function FinalCTA() {
           <CTAButton href="/contact?cta=book_consultation" variant="lime">
             احجز استشارة
           </CTAButton>
-          <CTAButton href="/osfan-station" variant="outline-green">
+          <CTAButton href="/osfan-station" variant="outline-light">
             زُر مرفق R&D في عسفان
           </CTAButton>
         </div>

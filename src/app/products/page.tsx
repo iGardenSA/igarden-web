@@ -136,7 +136,7 @@ function FinalCTA() {
           >
             اطلب تقييماً أولياً لمشروعك
           </CTAButton>
-          <CTAButton href="/how-we-work" variant="outline-green">
+          <CTAButton href="/how-we-work" variant="outline-light">
             كيف نعمل
           </CTAButton>
         </div>

@@ -104,9 +104,9 @@ export const PRODUCTS = {
 } as const;
 
 export const SOCIAL = {
-  linkedin: "https://linkedin.com/company/igarden-sa",
-  instagram: "https://instagram.com/igarden.sa",
-  twitter: "https://x.com/igarden_sa",
+  linkedin: "https://linkedin.com/company/igardensa",
+  instagram: "https://instagram.com/igardensa",
+  twitter: "https://x.com/igardensa",
   youtube: "https://youtube.com/@igarden",
 } as const;
 

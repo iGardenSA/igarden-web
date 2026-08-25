@@ -913,7 +913,7 @@ function FinalCTA() {
           <CTAButton href="/contact?interest=greenhouses&cta=request_quote" variant="lime">
             اطلب عرض مخصّص
           </CTAButton>
-          <CTAButton href="/osfan-station" variant="outline-green">
+          <CTAButton href="/osfan-station" variant="outline-light">
             شاهد نتائجنا في عسفان
           </CTAButton>
         </div>
