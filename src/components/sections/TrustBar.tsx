@@ -1,8 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 
 const TRUST_ITEMS = [
-  { text: "شركة سعودية ريادية ومبتكرة في التقنيات الزراعية", label: null, number: null },
-  { text: "مرخّصة", label: "MISA", number: "24926249716" },
+  { text: "شركة سعودية ريادية ومبتكرة في التقنيات الزراعية", label: "MISA", number: "24926249716" },
   { text: "مشروع جديد أو تطوير منشأة قائمة", label: null, number: null },
   { text: "نموذج صناعي مسجّل لـiGarden Tower", label: "SAIP", number: "#423450193" },
   { text: "مرفق R&D في عسفان قابل للزيارة", label: null, number: null },

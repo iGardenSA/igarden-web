@@ -39,7 +39,10 @@ export function FieldEvidence() {
           </p>
         </div>
 
-        {/* صور المرفق وحده — ⛔ لا تُقدَّم كصور مشاريع عملاء */}
+        {/* صور المرفق وحده.
+            ⛔ قاعدة حاكمة: هذه الصور تُنسب إلى مرفق R&D في عسفان حصراً،
+            ولا يجوز تقديمها كصور مشاريع عملاء. القاعدة موثّقة أيضاً في
+            docs/SITE-ARCHITECTURE.md — ⛔ ولا تُكتب في النصّ المرئي. */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 max-w-5xl mx-auto mb-4">
           {OSFAN_GALLERY.map((img) => (
             <div
@@ -57,8 +60,7 @@ export function FieldEvidence() {
           ))}
         </div>
         <p className="text-center text-xs text-medium-gray mb-10">
-          صور من مرفق R&amp;D في عسفان — تُظهر نشاط المرفق والاختبار، ولا تُقدَّم
-          كصور مشاريع عملاء.
+          مشاهد من مرفق R&amp;D في عسفان · شمال جدة
         </p>
 
         <div className="text-center">
