@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { createBrowserSupabase } from "@/lib/supabase";
+import { notifyLead } from "@/lib/notify-lead";
+import { buildAttribution } from "@/lib/lead-tracking";
 
 type VisitType = "individual" | "group" | "investor" | "press";
 
@@ -29,6 +31,9 @@ export function VisitForm() {
 
     try {
       const supabase = createBrowserSupabase();
+      const attribution = buildAttribution({
+        cta: null, utm_source: null, utm_medium: null, utm_campaign: null,
+      });
       const { error } = await supabase.from("leads").insert({
         full_name: data.full_name,
         phone: data.phone,
@@ -37,10 +42,26 @@ export function VisitForm() {
         message: `طلب زيارة عسفان — النوع: ${data.visit_type}، التاريخ المقترح: ${data.preferred_date}`,
         channel: "website",
         status: "new",
-        source_url: typeof window !== "undefined" ? window.location.href : null,
+        source_url: attribution.source_url,
+        referrer: attribution.referrer,
+        utm_source: attribution.utm_source,
+        utm_medium: attribution.utm_medium,
+        utm_campaign: attribution.utm_campaign,
       });
 
       if (error) throw error;
+
+      // إشعار داخلي — لا يمنع نجاح الحفظ.
+      void notifyLead({
+        form: "osfan-visit",
+        full_name: data.full_name,
+        phone: data.phone,
+        interested_in: ["osfan_visit"],
+        subject: "طلب زيارة مرفق R&D في عسفان",
+        message: `النوع: ${data.visit_type} · التاريخ المقترح: ${data.preferred_date}`,
+        ...attribution,
+      });
+
       setStatus("success");
       form.reset();
     } catch (err) {

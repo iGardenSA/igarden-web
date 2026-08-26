@@ -33,7 +33,7 @@ export function OrganizationSchema() {
       "https://linkedin.com/company/igardensa",
       "https://instagram.com/igardensa",
       "https://x.com/igardensa",
-      "https://youtube.com/@igarden",
+      "https://youtube.com/@igardensa",
     ],
     identifier: [
       { "@type": "PropertyValue", propertyID: "MISA", value: "24926249716" },

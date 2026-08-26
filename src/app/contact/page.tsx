@@ -25,11 +25,14 @@ import {
   INTERESTS,
   PROJECT_SIZES,
   TIMELINES,
+  PREFERRED_CONTACT_OPTIONS,
 } from "@/lib/lead-schema";
 import {
   readLeadPrefillFromLocation,
+  buildAttribution,
   type TrackingParams,
 } from "@/lib/lead-tracking";
+import { notifyLead } from "@/lib/notify-lead";
 import { CONTACT, COMPANY } from "@/lib/constants";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
@@ -54,11 +57,19 @@ export default function ContactPage() {
     control,
     reset,
     setValue,
+    watch,
     formState: { errors },
   } = useForm<LeadFormData>({
     resolver: zodResolver(leadSchema),
-    defaultValues: { lead_type: "unknown", interested_in: [] },
+    defaultValues: {
+      lead_type: "unknown",
+      interested_in: [],
+      preferred_contact: "whatsapp",
+    },
   });
+
+  // يقود إلزامية البريد وعلامة * عليه.
+  const preferredContact = watch("preferred_contact");
 
   // تعبئة مسبقة من الرابط — بعد الترطيب، فلا تعارض بين الخادم والمتصفح.
   // الخيار يظهر محدَّداً في الشرائح ويبقى قابلاً للتغيير — لا حقل خفيّ.
@@ -110,6 +121,8 @@ export default function ContactPage() {
         data.timeline ? `موعد البدء: ${TIMELINES.find(t => t.value === data.timeline)?.label}` : null,
       ].filter(Boolean).join(" | ");
       const fullMessage = extraInfo ? `${data.message}\n\n[${extraInfo}]` : data.message;
+      // Wave 2E — النسبة: أول صفحة وصول + أول UTM (بلا تغيير مخطط).
+      const attribution = buildAttribution(tracking.current);
       const { error } = await supabase.from("leads").insert({
         full_name: data.full_name,
         email: data.email || null,
@@ -121,20 +134,35 @@ export default function ContactPage() {
         message: fullMessage,
         channel: "website",
         status: "new",
-        // يحمل ?cta= و?interest= كما وردا — لا عمود جديد.
-        source_url:
-          typeof window !== "undefined" ? window.location.href : null,
+        // يحمل ?cta= و?interest= وأول صفحة وصول — لا عمود جديد.
+        source_url: attribution.source_url,
+        referrer: attribution.referrer,
         user_agent:
           typeof navigator !== "undefined" ? navigator.userAgent : null,
-        utm_source: tracking.current.utm_source,
-        utm_medium: tracking.current.utm_medium,
-        utm_campaign: tracking.current.utm_campaign,
+        utm_source: attribution.utm_source,
+        utm_medium: attribution.utm_medium,
+        utm_campaign: attribution.utm_campaign,
       });
 
       if (error) {
         console.error("Supabase error:", error);
         throw new Error("تعذّر إرسال الرسالة. حاول مرة أخرى.");
       }
+
+      // إشعار داخلي — ⚠ لا يمنع نجاح الحفظ مهما فشل.
+      void notifyLead({
+        form: "contact",
+        full_name: data.full_name,
+        phone: data.phone,
+        email: data.email,
+        company: data.company,
+        city: data.city,
+        preferred_contact: data.preferred_contact,
+        interested_in: data.interested_in,
+        subject: data.subject,
+        message: fullMessage,
+        ...attribution,
+      });
 
       setSubmitState("success");
       reset();
@@ -366,6 +394,48 @@ export default function ContactPage() {
                         dir="ltr"
                       />
                     </FormField>
+                    <FormField
+                      label="البريد الإلكتروني"
+                      required={preferredContact === "email"}
+                      error={errors.email?.message}
+                    >
+                      <input
+                        type="email"
+                        {...register("email")}
+                        className="input-igarden"
+                        placeholder="name@example.com"
+                        dir="ltr"
+                      />
+                    </FormField>
+                  </div>
+
+                  {/* Wave 2E — طريقة التواصل المفضّلة.
+                      ⚠ البريد ظاهر دائماً (لا داخل طيّ) كي لا يفشل التحقق بصمت
+                      حين يصير إلزامياً باختيار «البريد». */}
+                  <FormField label="طريقة التواصل المفضّلة" required>
+                    <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="طريقة التواصل المفضّلة">
+                      {PREFERRED_CONTACT_OPTIONS.map((opt) => (
+                        <label
+                          key={opt.value}
+                          className={`cursor-pointer select-none rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors min-h-[44px] flex items-center ${
+                            preferredContact === opt.value
+                              ? "border-[var(--color-brand-600)] bg-[var(--color-brand-600)]/10 text-[var(--color-brand-600)]"
+                              : "border-[var(--color-border)] text-[var(--color-muted)] hover:border-[var(--color-brand-600)]/50"
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            value={opt.value}
+                            {...register("preferred_contact")}
+                            className="sr-only"
+                          />
+                          {opt.label}
+                        </label>
+                      ))}
+                    </div>
+                  </FormField>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField label="نوع الجهة">
                       <select
                         {...register("lead_type")}
@@ -468,18 +538,7 @@ export default function ContactPage() {
                     {showDetails && (
                       <div className="mt-5 space-y-5">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                          <FormField
-                            label="البريد الإلكتروني"
-                            error={errors.email?.message}
-                          >
-                            <input
-                              type="email"
-                              {...register("email")}
-                              className="input-igarden"
-                              placeholder="name@example.com"
-                              dir="ltr"
-                            />
-                          </FormField>
+                          {/* ⛔ البريد نُقل إلى الكتلة الظاهرة أعلاه (Wave 2E). */}
                           <FormField label="الجهة / الشركة">
                             <input
                               type="text"

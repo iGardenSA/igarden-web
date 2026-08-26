@@ -5,7 +5,8 @@ import { COMPANY, CONTACT } from "@/lib/constants";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
-  title: "Fact Sheet — بيانات الشركة الرسمية | iGarden",
+  // ⛔ بلا «| iGarden»: قالب الجذر «%s · iGarden» يضيفها، فكان العنوان يكرّرها.
+  title: "Fact Sheet — بيانات الشركة الرسمية",
   description:
     "البيانات القانونية والتشغيلية الرسمية لشركة انتيليجنت غاردن (iGarden) — السجل التجاري، رخصة MISA، النموذج الصناعي SAIP، والنطاقات الرسمية.",
   alternates: { canonical: "https://igarden.sa/fact-sheet" },

@@ -56,11 +56,31 @@ export const leadSchema = z.object({
     "later",
   ]).optional(),
 
+  // Wave 2E — طريقة التواصل المفضّلة. البريد يصبح إلزامياً فقط عند اختياره.
+  preferred_contact: z
+    .enum(["whatsapp", "phone", "email"])
+    .default("whatsapp"),
+
   message: z
     .string()
     .min(10, "الرسالة قصيرة جداً (10 أحرف على الأقل)")
     .max(2000, "الرسالة طويلة جداً"),
+}).superRefine((data, ctx) => {
+  // البريد اختياري افتراضياً، وإلزامي متى اختاره المستخدم قناةً مفضّلة.
+  if (data.preferred_contact === "email" && !data.email?.trim()) {
+    ctx.addIssue({
+      code: "custom",
+      path: ["email"],
+      message: "البريد مطلوب لأنك اخترته طريقة التواصل المفضّلة",
+    });
+  }
 });
+
+export const PREFERRED_CONTACT_OPTIONS = [
+  { value: "whatsapp", label: "واتساب" },
+  { value: "phone", label: "اتصال هاتفي" },
+  { value: "email", label: "البريد الإلكتروني" },
+] as const;
 
 export type LeadFormData = z.infer<typeof leadSchema>;
 

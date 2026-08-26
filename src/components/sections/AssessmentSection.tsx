@@ -6,10 +6,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
 import { createBrowserSupabase } from "@/lib/supabase";
+import { notifyLead } from "@/lib/notify-lead";
 import { INTERESTS, type LeadTypeValue } from "@/lib/lead-schema";
 import {
   readLeadPrefillFromLocation,
   type TrackingParams,
+  buildAttribution,
 } from "@/lib/lead-tracking";
 
 /* ────────────────────────────────────────────────────────────────
@@ -116,6 +118,7 @@ export function AssessmentSection() {
         .join("\n");
 
       const supabase = createBrowserSupabase();
+      const attribution = buildAttribution(tracking.current);
       const { error } = await supabase.from("leads").insert({
         full_name: data.full_name,
         phone: data.phone,
@@ -126,16 +129,29 @@ export function AssessmentSection() {
         message,
         channel: "website",
         status: "new",
-        source_url:
-          typeof window !== "undefined" ? window.location.href : null,
+        source_url: attribution.source_url,
+        referrer: attribution.referrer,
         user_agent:
           typeof navigator !== "undefined" ? navigator.userAgent : null,
-        utm_source: tracking.current.utm_source,
-        utm_medium: tracking.current.utm_medium,
-        utm_campaign: tracking.current.utm_campaign,
+        utm_source: attribution.utm_source,
+        utm_medium: attribution.utm_medium,
+        utm_campaign: attribution.utm_campaign,
       });
 
       if (error) throw error;
+
+      // إشعار داخلي — لا يمنع نجاح الحفظ.
+      void notifyLead({
+        form: "homepage-assessment",
+        full_name: data.full_name,
+        phone: data.phone,
+        company: data.company,
+        interested_in: [data.interest],
+        subject: "طلب تقييم أوّلي — الصفحة الرئيسية",
+        message,
+        ...attribution,
+      });
+
       setState("success");
       reset();
     } catch (err) {

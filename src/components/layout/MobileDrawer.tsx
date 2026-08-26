@@ -248,6 +248,7 @@ export default function MobileDrawer({ open, onClose }: MobileDrawerProps) {
             <li>
               <Link
                 href="/app"
+                prefetch={false}
                 onClick={onClose}
                 className={`${ROW} justify-between`}
               >

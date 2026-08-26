@@ -25,7 +25,7 @@ const OPTIONS = [
     badge: "متاح الآن",
     title: "iGarden Home Solutions",
     subtitle: "حلول جاهزة للمنزل",
-    desc: "حلول زراعة مائية مُوطَّنة للمنازل والشقق — أبراج aeroponics، مستلزمات NFT، ومكمّلات غذائية مُختارة. نفس الجودة التجارية بمقاسات منزلية.",
+    desc: "حلول زراعة مائية مُوطَّنة للمنازل والشقق — أبراج aeroponics، مستلزمات NFT، ومكمّلات غذائية مُختارة. بمواصفات مستمدّة من أنظمتنا التجارية، بمقاسات منزلية.",
     cta: { label: "تصفّح الحلول المنزلية", href: "https://shop.igarden.sa", variant: "outline-green" as const, external: true },
     bg: "bg-white",
   },
