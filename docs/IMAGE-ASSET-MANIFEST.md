@@ -3,7 +3,7 @@
 > **الغرض:** سجلّ جراحي لكل صورة أُدخلت إلى الموقع — مصدرها، بصمتها، موضعها،
 > نسبتها، وحدود الادّعاء المسموح بها عليها.
 > **الأساس:** `origin/main = a20b258` · **الفرع:** `feat/image-pass-al-ahsa-tower`
-> **آخر تحديث:** 2026-08-25
+> **آخر تحديث:** 2026-08-26 — **تمريرة التصحيح (Correction Pass)**
 >
 > **وسم الثقة:** ✓ مُتحقَّق بأمر · ◐ مُستنتَج · ⚠ يحتاج اعتماد
 
@@ -13,104 +13,138 @@
 
 1. **المصدر لا يُذكر بمساره الشخصي الكامل** — اسم الملف فقط.
 2. **كل أصل يحمل `claim limitations`** — ما لا يجوز أن تُستخدم الصورة لإثباته.
-3. **لا صورة تُنسب إلى عميل أو موقع خاص** — الوصف جغرافي عام فقط.
-4. **`preview-candidate` ≠ `production-approved`** — لا دمج قبل اعتماد علي.
-5. الأصول الكاملة (‏4000px) **لا تدخل Git** — النسخ المنشورة فقط.
+3. **لا صورة تُنسب إلى عميل أو موقع خاص** — الوصف عام فقط.
+4. **⛔ لا يتكرّر أيّ أصل في أكثر من route/section واحد.**
+5. **الصور الميدانية تُعرض بـ`object-cover` دائماً** — ⛔ لا `object-contain` ولا شرائط جانبية.
+6. الأصول الكاملة **لا تدخل Git** — النسخ المنشورة فقط.
 
 ---
 
-## الدفعة #1 — 2026-08-25 · Al-Ahsa Field Evidence + Tower Preview
+## سجلّ التصحيح — 2026-08-26
 
-**حالة الاعتماد للدفعة كاملة: `PREVIEW_PENDING_ALI`** ⚠
+الدفعة الأولى (2026-08-25) رُفضت. ما صُحِّح:
 
-### 1. `igarden-tower-product.webp`
+| العيب | التصحيح |
+|---|---|
+| `al-ahsa-greenhouse-layout` في **3** مواضع | موضع **واحد** فقط |
+| `al-ahsa-towers-installation` في **2** | **حُذف الأصل** — غير مستخدم |
+| `al-ahsa-drip-irrigation-detail` في **2** *(لم يكن مرصوداً)* | **حُذف الأصل** — غير مستخدم |
+| `object-contain` + شرائط جانبية في 3 مواضع | **صفر** `object-contain` في المستودع |
+| صورة منتج بخلفية جدار خشبي بنّي | أصل استوديو **1440×1440 خلفية بيضاء حقيقية** |
+| لقطة Detail طويلة مستقلة أسفل المنتج | **inset صغير داخل** Product Card |
+| معرض أحساء ثانٍ أسفل معرض عسفان في الرئيسية | **أُزيل المعرض بالكامل** |
+| وصف «خلفية نظيفة» غير الصحيح | صُحِّح في `SITE-ARCHITECTURE.md` وتعليق الكود |
+| كل أدلة الأحساء تجهيز/تركيب | **بطاقة واحدة** موسومة صراحةً «مرحلة التجهيز» |
+
+**أصول محذوفة من الفرع (قابلة للاستعادة):**
+`git show 4fe297c:public/images/projects/al-ahsa/al-ahsa-towers-installation.webp`
+`git show 4fe297c:public/images/projects/al-ahsa/al-ahsa-drip-irrigation-detail.webp`
+
+---
+
+## الأصول الحيّة — خمسة، بلا أي تكرار
+
+### 1. `igarden-tower-product.webp` — **الصورة الرئيسية للمنتج**
 
 | الحقل | القيمة |
 |---|---|
-| **source filename** | `tower-product-full-01.jpg` |
-| **source sha256** | `47449cdb1d630dfb9c4d4b7fca7d65eb5dd3ad2d960137579f02da9342eae380` |
-| **final sha256** | `f98bbcd49d7854a7da17a183cf4d6687667b8c2f25e5d34099d8dfe4d5c6a498` |
-| **الأبعاد النهائية** | `924×2000` · WebP q82 · 93.1 KB |
-| **placement** | `/products/hydroponics` → قسم iGarden Tower → `object-contain` |
-| **attribution** | صورة منتج · بلا موقع أو مشروع |
-| **privacy status** | `PUBLIC_OK` ✓ — لا وجوه، لا أسماء، لا لوحات |
-| **claim limitations** | ⛔ ليست دليل محصول ولا نتيجة إنتاجية — البرج غير مزروع. ⛔ لا تُنسب إلى عسفان ولا إلى أي مشروع عميل. |
-| **approval status** | `PREVIEW_PENDING_ALI` ⚠ — هوية الإصدار والقصّ |
+| **source filename** | `1000156737_f90319fa…_20250123_204434_٠٠٠٠.png` (مجلد صور منتج البرج) |
+| **source sha256** | `44d11f3611bf67c6…` |
+| **final sha256** | `778e6912dcdc35df7818be49dbbb8f80c7983ea0e0e3bfa0310b46c78fa2d930` |
+| **الأبعاد** | **1440×1440 مربّع** · WebP q82 · 13.8 KB |
+| **placement** | `/products/hydroponics` → قسم iGarden Tower → Product Card مربّعة · `object-cover` |
+| **attribution** | تصوير منتج على **خلفية بيضاء استوديو حقيقية** ✓ · بلا موقع أو مشروع |
+| **privacy** | `PUBLIC_OK` ✓ |
+| **claim limitations** | ⛔ البرج غير مزروع → **ليست دليل محصول أو نتيجة إنتاجية**. ⛔ لا تُنسب إلى عسفان ولا إلى مشروع عميل. |
+| **approval** | `APPROVED_BY_ALI` ✓ (قرار 1 — الخيار 1) |
 
-### 2. `igarden-tower-port-detail.webp`
+### 2. `igarden-tower-port-detail.webp` — inset داخل البطاقة
 
 | الحقل | القيمة |
 |---|---|
-| **source filename** | `tower-product-port-detail-01.jpg` |
-| **source sha256** | `c8258b1dcec5db5dd30cd9de712a0b231dd46dd69cceb0a5fd06942a06d2c1eb` |
-| **final sha256** | `079f647c220d5be9f4f730d5359704ace2e98013a16dd1c09882b8db9cd881bb` |
-| **الأبعاد النهائية** | `1050×1400` · WebP q82 · 45.9 KB · قُصَّت رأسياً 8%–69.6% |
-| **placement** | `/products/hydroponics` → تفصيل داعم تحت صورة المنتج |
-| **attribution** | تفصيل منتج · بلا موقع |
-| **privacy status** | `PUBLIC_OK` ✓ — تظهر يد مجهولة الهوية بلا وجه |
+| **source filename** | `1000156747_20250123_204822_٠٠٠٤.png` |
+| **source sha256** | `edf47e4958d4051f…` |
+| **final sha256** | `7529d78854486e0b68ab7b2660d514bd67b45702545a70d7e7140036af851d9c` |
+| **الأبعاد** | **900×900 مربّع** · WebP q82 · 13.1 KB |
+| **placement** | `/products/hydroponics` → **inset صغير (22% عرض) داخل** Product Card — ⛔ لا لقطة مستقلة |
+| **attribution** | تفصيل منتج على خلفية بيضاء · يد مجهولة بلا وجه |
+| **privacy** | `PUBLIC_OK` ✓ |
 | **claim limitations** | ⛔ تفصيل آلية زراعة فقط — ليست دليل تشغيل أو أتمتة. |
-| **approval status** | `PREVIEW_PENDING_ALI` ⚠ |
+| **approval** | `APPROVED_BY_ALI` ✓ |
 
-### 3. `al-ahsa-towers-installation.webp`
-
-| الحقل | القيمة |
-|---|---|
-| **source filename** | `al-ahsa-towers-installed-wide-01.jpg` |
-| **source sha256** | `522ca30556fdbc1230247c7e2a588a4354e69fc1d1c70394875a1454b3cd6c23` |
-| **final sha256** | `4696500aaf36b5cdcda1f6157b3cbe501d1ed9d03961a865e62c30d24f6a04f5` |
-| **الأبعاد النهائية** | `924×2000` · WebP q82 · 407.4 KB |
-| **placement** | `/` → `FieldEvidence` → `AL_AHSA_GALLERY` · و`/products/hydroponics` → Hero |
-| **attribution** | مشروع ميداني في الأحساء · ⛔ بلا اسم عميل |
-| **privacy status** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ **دليل تجهيز وتركيب فقط** — الأبراج غير مزروعة. ⛔ لا «مشروع مكتمل» ولا «مُسلَّم» ولا «نتائج إنتاجية» ولا «Smart/Automated» استناداً إلى الصورة وحدها. |
-| **approval status** | `PREVIEW_PENDING_ALI` ⚠ |
-
-### 4. `al-ahsa-greenhouse-layout.webp`
+### 3. `home-greenhouse-hydroponic-rows.webp`
 
 | الحقل | القيمة |
 |---|---|
-| **source filename** | `al-ahsa-greenhouse-layout-wide-01.jpg` |
-| **source sha256** | `4a0ece4c38d2baed77e27cca6449f6a825d5efe71887a5b05794279cd5553cff` |
-| **final sha256** | `625dfb338d0f774eec9b0e2d69d977471a29b9b329861406c9795198906579cc` |
-| **الأبعاد النهائية** | `924×2000` · WebP q82 · 196.1 KB |
-| **placement** | `/` → `AL_AHSA_GALLERY` · `/products/smart-greenhouses` → `AlAhsaField` · `/how-we-work` → مسار `new-project` |
-| **attribution** | مشروع ميداني في الأحساء · ⛔ بلا اسم عميل |
-| **privacy status** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ **ليست «محمية ذكية مسلَّمة» ولا «تشغيل آلي»** — الصورة تُظهر تجهيز صفوف وبنية داخلية فقط. |
-| **approval status** | `PREVIEW_PENDING_ALI` ⚠ |
+| **source filename** | `٢٠٢٦٠٢٠٨_١٧٥١٢٣.jpg` (مجلد محمية منزلية ٣×٩) |
+| **source sha256** | `843075c965416071…` |
+| **final sha256** | `8378224a44352f313595e6c501320ebe9c74201fbea6fa66fcb2bca7c882d0c5` |
+| **الأبعاد** | **1800×1350 (4:3)** · قصّ من 1848×4000 عند نقطة تركيز 0.42 · WebP q82 · 384 KB |
+| **placement** | `/products/hydroponics` → **Hero** · `object-cover` · `objectPosition: 50% 45%` |
+| **attribution** | **محمية منزلية مُشغَّلة** · ⛔ بلا اسم مالك أو موقع |
+| **privacy** | `PUBLIC_OK` ✓ — لا وجوه ولا لوحات ولا بيانات |
+| **claim limitations** | ⛔ **منشأة منزلية** — لا تُقدَّم كمشروع تجاري ولا كمشروع عميل ولا كمقياس إنتاج. |
+| **approval** | `APPROVED_BY_ALI` ✓ (قرار 2 — الخيار 1: بوصف «محمية منزلية» صراحةً) |
 
-### 5. `al-ahsa-drip-irrigation-detail.webp`
+### 4. `home-greenhouse-production-path.webp`
 
 | الحقل | القيمة |
 |---|---|
-| **source filename** | `al-ahsa-drip-emitter-detail-01.jpg` |
-| **source sha256** | `495d9072b4ee7b4b2d4945463ae860e9659b9f984223398ceaf689cf16255cc0` |
-| **final sha256** | `65259491d583390951c3f4b71d4c6fe090080bd3f29e95abc849e213d1829772` |
-| **الأبعاد النهائية** | `739×1600` · WebP q82 · 210.4 KB |
-| **placement** | `/` → `AL_AHSA_GALLERY` · `/products/smart-greenhouses` → `AlAhsaField` |
+| **source filename** | `٢٠٢٦٠٢٠٨_١٧٥١٠٧.jpg` |
+| **source sha256** | `77ff1444222cce14…` |
+| **final sha256** | `b064bddb0d27e0b75ae18507f400b567d75839458906837f01e4b468e8832cde` |
+| **الأبعاد** | **1800×1350 (4:3)** · نقطة تركيز 0.50 · WebP q82 · 391 KB |
+| **placement** | `/how-we-work` → مسار **المشروع الجديد** · `object-cover` |
+| **attribution** | محمية منزلية مُشغَّلة · ⛔ بلا اسم مالك |
+| **privacy** | `PUBLIC_OK` ✓ |
+| **claim limitations** | ⛔ منشأة منزلية — تُوضِّح **منهج التنفيذ**، لا مقياس المشاريع التجارية. |
+| **approval** | `APPROVED_BY_ALI` ✓ |
+
+### 5. `al-ahsa-greenhouse-layout.webp` — **صورة الأحساء الوحيدة في الموقع**
+
+| الحقل | القيمة |
+|---|---|
+| **source filename** | `al-ahsa-greenhouse-layout-wide-01.jpg` (مكتبة Staging) |
+| **source sha256** | `4a0ece4c38d2baed…` |
+| **final sha256** | `4f0ef34b62d2541bbbb22199e4a4f25687c0afac40b8e1b5b95046a653897a20` |
+| **الأبعاد** | **1800×1350 (4:3)** · أُعيد قصّها من 1848×4000 عند 0.35 · WebP q82 · 137 KB |
+| **placement** | `/products/smart-greenhouses` → **بطاقة تنفيذ واحدة** — ⛔ لا معرض · ⛔ لا Hero |
 | **attribution** | مشروع ميداني في الأحساء · ⛔ بلا اسم عميل |
-| **privacy status** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ ري بالتنقيط ظاهر — **لا يثبت تحكّماً ذكياً ولا أتمتة ولا حسّاسات**. |
-| **approval status** | `PREVIEW_PENDING_ALI` ⚠ |
+| **privacy** | `PUBLIC_OK` ✓ |
+| **claim limitations** | ⛔ **مرحلة تجهيز وتركيب فقط** — لا «مشروع مكتمل» ولا «مُسلَّم» ولا «محمية ذكية» ولا «تشغيل آلي» ولا نتائج إنتاجية. |
+| **approval** | `APPROVED_BY_ALI` ✓ (قرار 5 — الخيار 1) |
 
 ---
 
-## المعالجة المطبَّقة على الخمسة
+## المعالجة المطبَّقة
 
-Auto-orient (‏EXIF Orientation=6 لكلّها) → قصّ للموضع عند اللزوم → Resize **تصغيراً فقط**
-→ WebP q82 → **إزالة كل EXIF وGPS وICC** ✓ مُتحقَّق (‏`metadata-hits=0` لكل ملف).
+Auto-orient → تسطيح alpha على أبيض (لملفات PNG) → قصّ للموضع عند نقطة تركيز مُختارة
+→ Resize **تصغيراً فقط** (⛔ لا Upscale) → WebP q82 → **إزالة كل EXIF وGPS وICC**.
 
 ⛔ لا AI retouching · لا توليد أو إزالة عناصر · لا Blur · لا تعديل على ملفات المصدر.
 
-**مجموع الأصول الجديدة: 964 KB** ✓ (الحدّ المستهدف 2.5 MB)
+**مجموع الأصول الحيّة: 952 KB**
 
 ---
 
-## فجوات ما زالت مفتوحة بعد هذه الدفعة
+## قرارات معلَّقة صراحةً (لا تُنفَّذ بلا اعتماد جديد)
+
+| البند | الحالة | السبب |
+|---|---|---|
+| **خزانة التحكّم بشعار iGarden** (`٢٠٢٦٠٢٢٣_٢٠٣٢٢٩`) وخزانة مفتوحة بشاشة عاملة | **HOLD** | قرار 3 — الخيار 1: لا تُملأ فجوة Smart Controller هذه الجولة |
+| **لوحة تحكّم المناخ الحيّة** (`٢٠٢٦٠٢٢٤_٠٤٠٢٠٤`) | **REJECT** | تكشف عنواناً داخلياً `192.168.8.202:1880` ومنصّة طرف ثالث ومستشعر DHT11 |
+| **صور الاستنبات** (`صور التقنيات`) | **HOLD** | قرار 4 — الخيار 1: تواريخ 2017–2018، الملكية والنسبة غير مثبتتين |
+| **مجلد محمية بمسمّى شخص** | **REJECT** | يحوي صور وجوه ومنزلاً خاصاً قابلاً للتعرّف |
+| صور `unclassified-*` التسعة | **HOLD** | النسب غير محسوم (قرار سابق) |
+
+## فجوات ما زالت مفتوحة — ⛔ لا تُملأ بصور غير صحيحة
 
 | الفجوة | الحالة |
 |---|---|
-| **Smart Controllers** — صورة منتج · مخطط ربط · Dashboard | `OPEN` ⛔ لا تُملأ بأي صورة عتاد من المكتبة |
-| **IoT** — وحدة/حساسات مركّبة · مخطط اتصال | `OPEN` ⛔ الصور المتاحة مكوّنات طرف ثالث في بيئة Bench |
-| **المشروع العضوي** | `OPEN` — لا دليل بصري كافٍ |
-| **Compliance** — نموذج سجلّ منزوع البيانات | `OPEN` |
+| **Smart Controller** — صورة منتج | `OPEN` |
+| **Controller architecture diagram** | `OPEN` — يُرسم، لا يُصوَّر |
+| **IoT architecture diagram** | `OPEN` — يُرسم، لا يُصوَّر |
+| **IoT** — وحدة/حساسات مركَّبة | `OPEN` — المتاح مكوّنات طرف ثالث في بيئة Bench |
+| **المشروع العضوي** | `OPEN` |
+| **Compliance** — نموذج سجلّ أو تقرير | `OPEN` |
+| **Smart OS screenshot** | `OPEN` |

@@ -50,8 +50,8 @@ type Path = {
     src: string;
     alt: string;
     imageStatus: "temporary" | "verified-field-preview";
-    /* الإطار عمودي داخل موضع 4:3 → contain بدل قصّ يقطع السياق */
-    fit?: "cover" | "contain";
+    /* نقطة تركيز القصّ — الأصول مقصوصة 4:3 وتُعرض دائماً بـobject-cover */
+    objectPosition?: string;
   };
 };
 
@@ -70,10 +70,10 @@ const PATHS: Path[] = [
       "التوسع أو الإدارة والتشغيل وفق اتفاق مستقل.",
     ],
     img: {
-      src: "/images/projects/al-ahsa/al-ahsa-greenhouse-layout.webp",
-      alt: "تجهيز مشروع زراعي جديد في الأحساء — صفوف الإنتاج والبنية الداخلية للمحمية",
+      src: "/images/projects/home-greenhouse/home-greenhouse-production-path.webp",
+      alt: "محمية منزلية مُشغَّلة بأنظمة زراعة مائية — صفوف الإنتاج والبرج الرأسي",
       imageStatus: "verified-field-preview",
-      fit: "contain",
+      objectPosition: "50% 50%",
     },
   },
   {
@@ -197,18 +197,17 @@ export default function HowWeWorkPage() {
                 </ol>
               </div>
 
-              <div
-                className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg ${
-                  p.img.fit === "contain" ? "bg-[#0F3D2E]" : ""
-                }`}
-              >
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={p.img.src}
                   alt={p.img.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className={
-                    p.img.fit === "contain" ? "object-contain" : "object-cover"
+                  className="object-cover"
+                  style={
+                    p.img.objectPosition
+                      ? { objectPosition: p.img.objectPosition }
+                      : undefined
                   }
                 />
               </div>

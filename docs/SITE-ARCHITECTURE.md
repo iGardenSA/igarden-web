@@ -289,8 +289,8 @@ homepage ──┬── /products      (Hub الحلول)
 
 ## Wave 2 — Image Requirements
 
-توثيق. الدفعة #1 من الصور المتحقّقة دخلت على `feat/image-pass-al-ahsa-tower`
-بحالة **`preview-candidate`** — ⛔ **ليست `production-approved`** ولم تُدمج.
+توثيق. الدفعة #1 صُحِّحت بالكامل على `feat/image-pass-al-ahsa-tower` (تمريرة التصحيح 2026-08-26)
+بحالة **`approved-preview`** — ⛔ **ليست `production-approved`** ولم تُدمج.
 السجلّ الكامل بالبصمات وحدود الادّعاء: [`docs/IMAGE-ASSET-MANIFEST.md`](IMAGE-ASSET-MANIFEST.md).
 ⛔ لم يُحذف أي موضع صورة قائم، ولم يُحذف أي `CONTENT_NEEDED` عدا موضع صورة البرج
 الذي أُغلق فعلياً بأصل حقيقي.
@@ -298,13 +298,13 @@ homepage ──┬── /products      (Hub الحلول)
 | الصفحة | الأصل المطلوب | الحالة |
 |---|---|---|
 | **Smart OS** | لقطة Dashboard | **`temporary-safe`** ✓ — `/smart-os/dashboard-preview.png` مُدخَلة في Wave 2C. **بيانات محاكاة معلَنة** داخل اللقطة: شارتا `Demo Mode` و`Simulated Readings` + `Not a Certification Substitute` + شريط عربي يصرّح بذلك. ⛔ لا تُقصّ الشارات |
-| **Hydroponics — iGarden Tower** | صورة برج | **`preview-candidate`** ⚠ — `igarden-tower-product.webp` + `igarden-tower-port-detail.webp` أصل منتج بخلفية نظيفة، أُغلق به `CONTENT_NEEDED`. ⛔ البرج غير مزروع: ليس دليل محصول. ⚠ يحتاج اعتماد علي للهوية والقصّ |
-| **Hydroponics — Hero** | صورة صدر الصفحة | **`preview-candidate`** ⚠ — `al-ahsa-towers-installation.webp` بـ`object-contain`. ⛔ دليل تجهيز وتركيب فقط |
+| **Hydroponics — iGarden Tower** | صورة برج | **`approved-preview`** ✓ — `igarden-tower-product.webp` (1440×1440، **خلفية بيضاء استوديو حقيقية**) داخل Product Card مربّعة، وتفصيل المنفذ inset صغير داخلها. أُغلق به `CONTENT_NEEDED`. ⛔ البرج غير مزروع: ليس دليل محصول |
+| **Hydroponics — Hero** | صورة صدر الصفحة | **`approved-preview`** ✓ — `home-greenhouse-hydroponic-rows.webp` قصّ 4:3 و`object-cover`. ⛔ **منشأة منزلية**: لا تُقدَّم كمشروع تجاري ولا كمشروع عميل |
 | **Smart Greenhouses** | صورة محمية داخلية | **`temporary`** — `/images/osfan-full/04_greenhouse_wide.webp` منسوبة صراحةً لعسفان في الـHero والمعرض، **باقية كما هي**. ⛔ لا تُعرض كدليل مشروع عميل أو محمية تجارية مسلَّمة |
-| **Smart Greenhouses — مجموعة الأحساء** | صور تنفيذ ميداني | **`preview-candidate`** ⚠ — `AlAhsaField` مستقلة عن `GALLERY`. ⛔ لا «محمية ذكية مسلَّمة» ولا «تشغيل آلي» |
+| **Smart Greenhouses — بطاقة الأحساء** | صورة تنفيذ ميداني | **`approved-preview`** ✓ — **بطاقة واحدة** 4:3 (`al-ahsa-greenhouse-layout.webp`) مستقلة عن `GALLERY`. ⛔ لا معرض · لا «محمية ذكية مسلَّمة» ولا «تشغيل آلي» |
 | **Smart Controllers** | صورة المنتج · مخطط الربط · لقطة Dashboard | `missing` — الموضعان الأولان بلا أصل؛ ثلاثة `CONTENT_NEEDED` قائمة. ⛔ **لا تُملأ بأي صورة عتاد ميداني أو Bench** — الهوية غير محسومة |
 | **IoT** | صورة وحدة/حساسات مركَّبة + مخطط اتصال | `missing` — ⛔ الصور المتاحة مكوّنات طرف ثالث في بيئة Bench ولا تثبت تركيباً ميدانياً |
-| **الأحساء (FieldProjectCard)** | صورة مشروع | **`preview-candidate`** ⚠ — `AL_AHSA_GALLERY` في `FieldEvidence` بثلاث صور، مستقلة تماماً عن `OSFAN_GALLERY`. ⛔ يبقى القيد: لا صورة عسفان بديلاً، ولا اسم عميل |
+| **الأحساء (FieldProjectCard)** | صورة مشروع | `none-on-homepage` ✓ — **أُزيل معرض الأحساء من الرئيسية**؛ معرض عسفان وحده يبقى. صورة الأحساء الوحيدة في الموقع هي بطاقة `/products/smart-greenhouses`. ⛔ لا معرض ثانٍ أسفل معرض قائم |
 | **المشروع العضوي (InnovationTracks)** | صورة مشروع | `missing` — ⛔ نفس القيد؛ القسم يبقى نصّياً |
 | **Compliance** | نموذج سجل أو تقرير منزوع بيانات العملاء | `missing` — **بعد توفّره فعلياً**، ⛔ لا صورة قبل ذلك |
 
