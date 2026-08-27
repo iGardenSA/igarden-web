@@ -10,7 +10,7 @@
 
 | البند | الحالة | التنفيذ |
 |---|---|---|
-| عبارة الهيرو المعتمدة | **⚠ OPEN** | النصّ الحرفي غير موجود في المستودع ولا في `docs/`. ⛔ لم أخترع نسخة عامة. **Locked #2** يمنع وضع «نَبني · نُوطّن · نُطوّر» في الهيرو كشعار منافس، فلم يُستعمل بديلاً. **المطلوب: النصّ الحرفي.** |
+| عبارة الهيرو المعتمدة | **✓ CLOSED — no change** | CLOSED — no change: retained current production Tier-0 hero; no alternative approved literal source was found. النصّ الإنتاجي الحالي هو baseline المعتمد لهذه الموجة: `H1: "ازرع بذكاء."` ⛔ لم يُغيَّر نصّ الهيرو ولم يُخترع شعار. **Locked #2** يبقى قائماً: «نَبني · نُوطّن · نُطوّر» منهج داخل الأقسام لا شعار منافس. |
 | حذف شريط «تعرّف على iGarden» | ✓ | حُذف من `src/app/page.tsx`. `/about` يبقى مبلوغاً من الهيدر والفوتر والميجا. |
 | تصحيح YouTube | ✓ | `@igarden` → **404** · `@igardensa` → **200** (تحقّق شبكي). صُحِّح في `constants.ts` و`SchemaJsonLd.tsx`. |
 | «حلول الأفراد والمنازل» و«المتجر» في شريط الميجا السفلي | ✓ | أُضيفا إلى `MEGA_FOOTER`. كانا مبلوغَين من الفوتر والدرج فقط. |
@@ -93,9 +93,34 @@
 
 | البند | السبب |
 |---|---|
-| **عبارة الهيرو المعتمدة** | النصّ الحرفي غير متوفّر — ⛔ لا يُخترع نصّ Tier 0. |
+| **Vercel Firewall على `/api/notify-lead`** | ⛔ غير قابل للتهيئة من المستودع (لا `vercel.json` ولا مفتاح firewall) — يُدار من اللوحة. **يسبق وضع المفتاح.** |
 | **`RESEND_API_KEY` في Vercel** | سرّ خارج المستودع — خطوة تسليم دقيقة أدناه. |
 | **اختبارات آلية** | ⛔ لا يوجد أي إطار اختبار في المستودع (لا vitest/jest/playwright، ولا سكربت `test`). إضافته موجة مستقلة. |
+
+### تصليب `/api/notify-lead` (قبل وضع المفتاح)
+
+| الضابط | الحالة |
+|---|---|
+| رفض cross-origin قبل أي استدعاء لـResend | ✓ `Origin`/`Referer` يجب أن يطابق `Host` وإلا **403** |
+| نوع المحتوى | ✓ `application/json` وإلا **415** |
+| سقف حجم الجسم | ✓ 16KB وإلا **413** |
+| حدود أطوال الحقول | ✓ رسالة 2000 · حقول قصيرة 200 · بريد 254 · اهتمامات ≤20 |
+| تحقّق الشكل | ✓ نصوص فقط؛ أي نوع آخر يُسقَط بصمت |
+| `reply_to` | ✓ لا يُمرَّر إلا لبريد صالح الشكل |
+| المستقبِل | ✓ **داخلي وثابت** من البيئة — ⛔ لا يُقرأ من الحمولة |
+| كابح معدّل | ◐ ذاكري خفيف (10/دقيقة لكل IP داخل النسخة) — **دفاع في العمق فقط** |
+| تبعيات جديدة | ✓ صفر |
+
+**العقد الحاكم لم يتغيّر:** كل مسارات الفشل تعود **200** مع `ok:false`، فلا يتحوّل ليد
+محفوظ إلى رسالة خطأ. الاستثناء الوحيد 403/415/413 — وهي مسارات لا يسلكها نموذجنا.
+
+> ⚠ **الكابح الذاكري ليس ضابط المعدّل الحقيقي.** النشر بلا خادم يوزّع الطلبات على
+> نسخ متعدّدة، فالعدّاد لا يُشارَك. **الضابط الحقيقي = Vercel Firewall / Rate Limiting**
+> ويجب تفعيله **قبل** وضع `RESEND_API_KEY` في الإنتاج، وإلا صار المسار قناة إرسال
+> مجانية على حساب الشركة.
+
+**⚠ لا يمكن تهيئته من المستودع:** لا يوجد `vercel.json` ولا مفتاح firewall/rate-limit
+يُلتزم في الشيفرة — قواعد Vercel Firewall تُدار من اللوحة/الـAPI فقط. لم أخترع تهيئة.
 
 ### خطوة التسليم الدقيقة — تفعيل Resend في الإنتاج
 
@@ -106,4 +131,20 @@ Vercel → Project: igarden-web → Settings → Environment Variables
   (CONTACT_TO_EMAIL موجود مسبقاً = info@igarden.sa)
 ثم: Deployments → Redeploy
 ```
+**⚠ الترتيب إلزامي — الجدار أولاً ثم المفتاح:**
+
+```
+1) Vercel → igarden-web → Firewall → Rate Limiting → Add Rule
+     Path equals            /api/notify-lead
+     Limit                  ~20 requests / 60s per IP
+     Action                 Deny (أو Challenge)
+   ثم Save + Deploy Firewall Rules
+2) Vercel → Settings → Environment Variables
+     RESEND_API_KEY    = re_xxxxxxxx                        [Production, Preview]
+     LEAD_NOTIFY_FROM  = iGarden Leads <leads@igarden.sa>   [Production, Preview]
+     (CONTACT_TO_EMAIL موجود = info@igarden.sa)
+3) Deployments → Redeploy
+4) أرسل نموذجاً حقيقياً وتأكّد من وصول الإشعار إلى info@igarden.sa
+```
+
 وفي Resend: تحقّق من نطاق `igarden.sa` قبل استعمال `leads@igarden.sa` كمُرسِل.

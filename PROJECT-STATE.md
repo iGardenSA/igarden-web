@@ -34,8 +34,12 @@
    **بصفر تغيير في المخطط** (استُعمل عمود `referrer` القائم غير المستعمَل).
 4. **الوثائق:** هذه الوثيقة + `SITE-ARCHITECTURE.md` + سجلّ الإقفال.
 
+**✓ الهيرو — مغلق بلا تغيير**
+- CLOSED — no change: retained current production Tier-0 hero; no alternative approved literal source was found.
+- baseline المعتمد لهذه الموجة: `H1: "ازرع بذكاء."` ⛔ لم يُغيَّر النصّ ولم يُخترع شعار.
+
 **⚠ مفتوح**
-- عبارة الهيرو المعتمدة — النصّ الحرفي غير متوفّر، ⛔ لا يُخترع نصّ Tier 0.
+- **Vercel Firewall / Rate Limiting على `/api/notify-lead` — يسبق وضع المفتاح.** ⛔ غير قابل للتهيئة من المستودع.
 - `RESEND_API_KEY` — سرّ يُضاف في Vercel (خطوة تسليم موثّقة).
 - لا إطار اختبارات في المستودع إطلاقاً.
 - تنظيف الفروع والـworktrees وتكرار الأصول — **بعد** دمج Wave 2E.
