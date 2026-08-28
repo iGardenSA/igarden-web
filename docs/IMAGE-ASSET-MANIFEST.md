@@ -1,150 +1,119 @@
-# IMAGE-ASSET-MANIFEST.md — سجلّ أصول الصور
+# IMAGE-ASSET-MANIFEST.md — Public image asset manifest
 
-> **الغرض:** سجلّ جراحي لكل صورة أُدخلت إلى الموقع — مصدرها، بصمتها، موضعها،
-> نسبتها، وحدود الادّعاء المسموح بها عليها.
-> **الأساس:** `origin/main = a20b258` · **الفرع:** `feat/image-pass-al-ahsa-tower`
-> **آخر تحديث:** 2026-08-26 — **تمريرة التصحيح (Correction Pass)**
->
-> **وسم الثقة:** ✓ مُتحقَّق بأمر · ◐ مُستنتَج · ⚠ يحتاج اعتماد
+> **Status:** APPROVED IMAGE PASS CLOSED
+> **Merged PR:** #58
+> **Release anchor:** `618426618852ac78e421d86b45e7fa0f0c7827f7`
+> **Closeout:** 2026-08-28
 
----
+This file records the five public assets approved in the closed image pass. Future visual needs are backlog, not unfinished work from PR #58.
 
-## قواعد حاكمة لهذا السجلّ
+## Governing rules
 
-1. **المصدر لا يُذكر بمساره الشخصي الكامل** — اسم الملف فقط.
-2. **كل أصل يحمل `claim limitations`** — ما لا يجوز أن تُستخدم الصورة لإثباته.
-3. **لا صورة تُنسب إلى عميل أو موقع خاص** — الوصف عام فقط.
-4. **⛔ لا يتكرّر أيّ أصل في أكثر من route/section واحد.**
-5. **الصور الميدانية تُعرض بـ`object-cover` دائماً** — ⛔ لا `object-contain` ولا شرائط جانبية.
-6. الأصول الكاملة **لا تدخل Git** — النسخ المنشورة فقط.
-
----
-
-## سجلّ التصحيح — 2026-08-26
-
-الدفعة الأولى (2026-08-25) رُفضت. ما صُحِّح:
-
-| العيب | التصحيح |
-|---|---|
-| `al-ahsa-greenhouse-layout` في **3** مواضع | موضع **واحد** فقط |
-| `al-ahsa-towers-installation` في **2** | **حُذف الأصل** — غير مستخدم |
-| `al-ahsa-drip-irrigation-detail` في **2** *(لم يكن مرصوداً)* | **حُذف الأصل** — غير مستخدم |
-| `object-contain` + شرائط جانبية في 3 مواضع | **صفر** `object-contain` في المستودع |
-| صورة منتج بخلفية جدار خشبي بنّي | أصل استوديو **1440×1440 خلفية بيضاء حقيقية** |
-| لقطة Detail طويلة مستقلة أسفل المنتج | **inset صغير داخل** Product Card |
-| معرض أحساء ثانٍ أسفل معرض عسفان في الرئيسية | **أُزيل المعرض بالكامل** |
-| وصف «خلفية نظيفة» غير الصحيح | صُحِّح في `SITE-ARCHITECTURE.md` وتعليق الكود |
-| كل أدلة الأحساء تجهيز/تركيب | **بطاقة واحدة** موسومة صراحةً «مرحلة التجهيز» |
-
-**أصول محذوفة من الفرع (قابلة للاستعادة):**
-`git show 4fe297c:public/images/projects/al-ahsa/al-ahsa-towers-installation.webp`
-`git show 4fe297c:public/images/projects/al-ahsa/al-ahsa-drip-irrigation-detail.webp`
+1. Do not publish client/person identity in filename, alt text, caption, or visible copy unless separately approved.
+2. Every asset has claim limits; the image proves only what it actually shows.
+3. Do not label old or third-party hardware as a current iGarden product.
+4. These five assets must not be duplicated across multiple route/section placements without a new editorial decision.
+5. Field photos use crop/cover treatment; do not create letterboxing to preserve an unsuitable original aspect ratio.
+6. Full camera originals remain outside Git; only publication derivatives belong in the repo.
+7. Published derivatives have EXIF/GPS/ICC removed; no AI retouching was used in this pass.
 
 ---
 
-## الأصول الحيّة — خمسة، بلا أي تكرار
+## Live approved assets
 
-### 1. `igarden-tower-product.webp` — **الصورة الرئيسية للمنتج**
+### 1. `public/images/products/hydroponics/igarden-tower-product.webp`
 
-| الحقل | القيمة |
+| Field | Value |
 |---|---|
-| **source filename** | `1000156737_f90319fa…_20250123_204434_٠٠٠٠.png` (مجلد صور منتج البرج) |
-| **source sha256** | `44d11f3611bf67c6…` |
-| **final sha256** | `778e6912dcdc35df7818be49dbbb8f80c7983ea0e0e3bfa0310b46c78fa2d930` |
-| **الأبعاد** | **1440×1440 مربّع** · WebP q82 · 13.8 KB |
-| **placement** | `/products/hydroponics` → قسم iGarden Tower → Product Card مربّعة · `object-cover` |
-| **attribution** | تصوير منتج على **خلفية بيضاء استوديو حقيقية** ✓ · بلا موقع أو مشروع |
-| **privacy** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ البرج غير مزروع → **ليست دليل محصول أو نتيجة إنتاجية**. ⛔ لا تُنسب إلى عسفان ولا إلى مشروع عميل. |
-| **approval** | `APPROVED_BY_ALI` ✓ (قرار 1 — الخيار 1) |
+| source | `1000156737_f90319fa…_20250123_204434_٠٠٠٠.png` |
+| final sha256 | `778e6912dcdc35df7818be49dbbb8f80c7983ea0e0e3bfa0310b46c78fa2d930` |
+| dimensions | 1440×1440 · WebP q82 · ~13.8 KB |
+| placement | `/products/hydroponics` → iGarden Tower product card |
+| attribution | iGarden product photography on white background |
+| privacy | `PUBLIC_OK` |
+| claim limit | unplanted product image; not crop/output evidence and not attributed to a client site |
+| approval | `APPROVED_BY_ALI` |
 
-### 2. `igarden-tower-port-detail.webp` — inset داخل البطاقة
+### 2. `public/images/products/hydroponics/igarden-tower-port-detail.webp`
 
-| الحقل | القيمة |
+| Field | Value |
 |---|---|
-| **source filename** | `1000156747_20250123_204822_٠٠٠٤.png` |
-| **source sha256** | `edf47e4958d4051f…` |
-| **final sha256** | `7529d78854486e0b68ab7b2660d514bd67b45702545a70d7e7140036af851d9c` |
-| **الأبعاد** | **900×900 مربّع** · WebP q82 · 13.1 KB |
-| **placement** | `/products/hydroponics` → **inset صغير (22% عرض) داخل** Product Card — ⛔ لا لقطة مستقلة |
-| **attribution** | تفصيل منتج على خلفية بيضاء · يد مجهولة بلا وجه |
-| **privacy** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ تفصيل آلية زراعة فقط — ليست دليل تشغيل أو أتمتة. |
-| **approval** | `APPROVED_BY_ALI` ✓ |
+| source | `1000156747_20250123_204822_٠٠٠٤.png` |
+| final sha256 | `7529d78854486e0b68ab7b2660d514bd67b45702545a70d7e7140036af851d9c` |
+| dimensions | 900×900 · WebP q82 · ~13.1 KB |
+| placement | `/products/hydroponics` → small inset inside Tower product card |
+| attribution | Tower planting-port/net-cup detail; unidentified hand only |
+| privacy | `PUBLIC_OK` |
+| claim limit | mechanism detail only; not automation or production evidence |
+| approval | `APPROVED_BY_ALI` |
 
-### 3. `home-greenhouse-hydroponic-rows.webp`
+### 3. `public/images/projects/home-greenhouse/home-greenhouse-hydroponic-rows.webp`
 
-| الحقل | القيمة |
+| Field | Value |
 |---|---|
-| **source filename** | `٢٠٢٦٠٢٠٨_١٧٥١٢٣.jpg` (مجلد محمية منزلية ٣×٩) |
-| **source sha256** | `843075c965416071…` |
-| **final sha256** | `8378224a44352f313595e6c501320ebe9c74201fbea6fa66fcb2bca7c882d0c5` |
-| **الأبعاد** | **1800×1350 (4:3)** · قصّ من 1848×4000 عند نقطة تركيز 0.42 · WebP q82 · 384 KB |
-| **placement** | `/products/hydroponics` → **Hero** · `object-cover` · `objectPosition: 50% 45%` |
-| **attribution** | **محمية منزلية مُشغَّلة** · ⛔ بلا اسم مالك أو موقع |
-| **privacy** | `PUBLIC_OK` ✓ — لا وجوه ولا لوحات ولا بيانات |
-| **claim limitations** | ⛔ **منشأة منزلية** — لا تُقدَّم كمشروع تجاري ولا كمشروع عميل ولا كمقياس إنتاج. |
-| **approval** | `APPROVED_BY_ALI` ✓ (قرار 2 — الخيار 1: بوصف «محمية منزلية» صراحةً) |
+| source | `٢٠٢٦٠٢٠٨_١٧٥١٢٣.jpg` — approved 3×9 home greenhouse |
+| final sha256 | `8378224a44352f313595e6c501320ebe9c74201fbea6fa66fcb2bca7c882d0c5` |
+| dimensions | 1800×1350 · WebP q82 · ~384 KB |
+| placement | `/products/hydroponics` → hero |
+| attribution | operating **home greenhouse**; no owner/site name |
+| privacy | `PUBLIC_OK` |
+| claim limit | residential context only; do not present as a commercial project or production-scale evidence |
+| approval | `APPROVED_BY_ALI` — explicit publication permission recorded for the 3×9 greenhouse |
 
-### 4. `home-greenhouse-production-path.webp`
+### 4. `public/images/projects/home-greenhouse/home-greenhouse-production-path.webp`
 
-| الحقل | القيمة |
+| Field | Value |
 |---|---|
-| **source filename** | `٢٠٢٦٠٢٠٨_١٧٥١٠٧.jpg` |
-| **source sha256** | `77ff1444222cce14…` |
-| **final sha256** | `b064bddb0d27e0b75ae18507f400b567d75839458906837f01e4b468e8832cde` |
-| **الأبعاد** | **1800×1350 (4:3)** · نقطة تركيز 0.50 · WebP q82 · 391 KB |
-| **placement** | `/how-we-work` → مسار **المشروع الجديد** · `object-cover` |
-| **attribution** | محمية منزلية مُشغَّلة · ⛔ بلا اسم مالك |
-| **privacy** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ منشأة منزلية — تُوضِّح **منهج التنفيذ**، لا مقياس المشاريع التجارية. |
-| **approval** | `APPROVED_BY_ALI` ✓ |
+| source | `٢٠٢٦٠٢٠٨_١٧٥١٠٧.jpg` — approved 3×9 home greenhouse |
+| final sha256 | `b064bddb0d27e0b75ae18507f400b567d75839458906837f01e4b468e8832cde` |
+| dimensions | 1800×1350 · WebP q82 · ~391 KB |
+| placement | `/how-we-work` → new-project path |
+| attribution | operating home greenhouse; no owner/site name |
+| privacy | `PUBLIC_OK` |
+| claim limit | illustrates execution approach; not commercial-project scale evidence |
+| approval | `APPROVED_BY_ALI` |
 
-### 5. `al-ahsa-greenhouse-layout.webp` — **صورة الأحساء الوحيدة في الموقع**
+### 5. `public/images/projects/al-ahsa/al-ahsa-greenhouse-layout.webp`
 
-| الحقل | القيمة |
+| Field | Value |
 |---|---|
-| **source filename** | `al-ahsa-greenhouse-layout-wide-01.jpg` (مكتبة Staging) |
-| **source sha256** | `4a0ece4c38d2baed…` |
-| **final sha256** | `4f0ef34b62d2541bbbb22199e4a4f25687c0afac40b8e1b5b95046a653897a20` |
-| **الأبعاد** | **1800×1350 (4:3)** · أُعيد قصّها من 1848×4000 عند 0.35 · WebP q82 · 137 KB |
-| **placement** | `/products/smart-greenhouses` → **بطاقة تنفيذ واحدة** — ⛔ لا معرض · ⛔ لا Hero |
-| **attribution** | مشروع ميداني في الأحساء · ⛔ بلا اسم عميل |
-| **privacy** | `PUBLIC_OK` ✓ |
-| **claim limitations** | ⛔ **مرحلة تجهيز وتركيب فقط** — لا «مشروع مكتمل» ولا «مُسلَّم» ولا «محمية ذكية» ولا «تشغيل آلي» ولا نتائج إنتاجية. |
-| **approval** | `APPROVED_BY_ALI` ✓ (قرار 5 — الخيار 1) |
+| source | `al-ahsa-greenhouse-layout-wide-01.jpg` from curated staging library |
+| final sha256 | `4f0ef34b62d2541bbbb22199e4a4f25687c0afac40b8e1b5b95046a653897a20` |
+| dimensions | 1800×1350 · WebP q82 · ~137 KB |
+| placement | `/products/smart-greenhouses` → single field-evidence card |
+| attribution | field project in Al-Ahsa; no client name |
+| privacy | `PUBLIC_OK` |
+| claim limit | **preparation/installation stage only**; does not prove project completion, handover, smart automation, or production results |
+| approval | `APPROVED_BY_ALI` |
+
+**Total publication derivatives:** ~952 KB.
 
 ---
 
-## المعالجة المطبَّقة
+## Rejected / held source material
 
-Auto-orient → تسطيح alpha على أبيض (لملفات PNG) → قصّ للموضع عند نقطة تركيز مُختارة
-→ Resize **تصغيراً فقط** (⛔ لا Upscale) → WebP q82 → **إزالة كل EXIF وGPS وICC**.
+These decisions remain closed; do not import them automatically:
 
-⛔ لا AI retouching · لا توليد أو إزالة عناصر · لا Blur · لا تعديل على ملفات المصدر.
-
-**مجموع الأصول الحيّة: 952 KB**
-
----
-
-## قرارات معلَّقة صراحةً (لا تُنفَّذ بلا اعتماد جديد)
-
-| البند | الحالة | السبب |
+| Source family | Disposition | Reason |
 |---|---|---|
-| **خزانة التحكّم بشعار iGarden** (`٢٠٢٦٠٢٢٣_٢٠٣٢٢٩`) وخزانة مفتوحة بشاشة عاملة | **HOLD** | قرار 3 — الخيار 1: لا تُملأ فجوة Smart Controller هذه الجولة |
-| **لوحة تحكّم المناخ الحيّة** (`٢٠٢٦٠٢٢٤_٠٤٠٢٠٤`) | **REJECT** | تكشف عنواناً داخلياً `192.168.8.202:1880` ومنصّة طرف ثالث ومستشعر DHT11 |
-| **صور الاستنبات** (`صور التقنيات`) | **HOLD** | قرار 4 — الخيار 1: تواريخ 2017–2018، الملكية والنسبة غير مثبتتين |
-| **مجلد محمية بمسمّى شخص** | **REJECT** | يحوي صور وجوه ومنزلاً خاصاً قابلاً للتعرّف |
-| صور `unclassified-*` التسعة | **HOLD** | النسب غير محسوم (قرار سابق) |
+| controller cabinet bearing iGarden branding / open cabinet | `HOLD_FOR_NEW_SCOPE` | product/version identity requires a dedicated controller review |
+| live climate-control screen exposing internal address/platform | `REJECT_PUBLIC` | exposes internal network/platform details |
+| 2017–2018 fodder/technology photos | `HOLD_FOR_NEW_SCOPE` | ownership and historical attribution require separate confirmation |
+| folder named for a private person/site | `REJECT_PUBLIC` | faces/private-home identification risk |
+| `unclassified-*` project groups | `HOLD_FOR_NEW_SCOPE` | project attribution unresolved |
 
-## فجوات ما زالت مفتوحة — ⛔ لا تُملأ بصور غير صحيحة
+---
 
-| الفجوة | الحالة |
-|---|---|
-| **Smart Controller** — صورة منتج | `OPEN` |
-| **Controller architecture diagram** | `OPEN` — يُرسم، لا يُصوَّر |
-| **IoT architecture diagram** | `OPEN` — يُرسم، لا يُصوَّر |
-| **IoT** — وحدة/حساسات مركَّبة | `OPEN` — المتاح مكوّنات طرف ثالث في بيئة Bench |
-| **المشروع العضوي** | `OPEN` |
-| **Compliance** — نموذج سجلّ أو تقرير | `OPEN` |
-| **Smart OS screenshot** | `OPEN` |
+## Future visual backlog — not open work from #58
+
+The following are **BACKLOG_NEXT_PHASE** and must only be reopened under a new explicit scope:
+
+- Smart Controller final product photography.
+- Controller architecture diagram.
+- IoT architecture diagram.
+- Stronger installed IoT node/sensor photography.
+- Publishable organic/bioponics evidence.
+- Compliance/log/report visual example.
+- New approved Smart OS screenshot when needed.
+
+**Closeout rule:** no item in this backlog blocks the current website release or makes PR #58 incomplete.
