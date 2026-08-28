@@ -1,150 +1,85 @@
-# WAVE-2E-CLOSEOUT.md — إقفال الموجة 2E
+# WAVE-2E-CLOSEOUT.md — Wave 2E final closeout
 
-> **الفرع:** `feat/wave-2e-closeout-attribution` · **الأساس:** `origin/main = a20b258`
-> **التاريخ:** 2026-08-27
-> **وسم الثقة:** ✓ مُتحقَّق بأمر · ◐ مُستنتَج · ⚠ يحتاج تحقق
+> **Final status:** CLOSED
+> **Merged PR:** #59
+> **Release anchor:** `a0fb86885b5b7d3b0f7be46d9dfa14f43f72b2b3`
+> **Closed:** 2026-08-28
 
----
-
-## 1. UI / Content corrections
-
-| البند | الحالة | التنفيذ |
-|---|---|---|
-| عبارة الهيرو المعتمدة | **✓ CLOSED — no change** | CLOSED — no change: retained current production Tier-0 hero; no alternative approved literal source was found. النصّ الإنتاجي الحالي هو baseline المعتمد لهذه الموجة: `H1: "ازرع بذكاء."` ⛔ لم يُغيَّر نصّ الهيرو ولم يُخترع شعار. **Locked #2** يبقى قائماً: «نَبني · نُوطّن · نُطوّر» منهج داخل الأقسام لا شعار منافس. |
-| حذف شريط «تعرّف على iGarden» | ✓ | حُذف من `src/app/page.tsx`. `/about` يبقى مبلوغاً من الهيدر والفوتر والميجا. |
-| تصحيح YouTube | ✓ | `@igarden` → **404** · `@igardensa` → **200** (تحقّق شبكي). صُحِّح في `constants.ts` و`SchemaJsonLd.tsx`. |
-| «حلول الأفراد والمنازل» و«المتجر» في شريط الميجا السفلي | ✓ | أُضيفا إلى `MEGA_FOOTER`. كانا مبلوغَين من الفوتر والدرج فقط. |
-| عنوان `/fact-sheet` المكرَّر | ✓ | قالب الجذر `"%s · iGarden"` كان يضيف الاسم مرّة ثانية فوق `"… | iGarden"`. أُزيلت اللاحقة من `metadata.title`. |
-| مراجعة claims صفحة `/home-solutions` | ✓ | «نفس الجودة التجارية بمقاسات منزلية» ادّعاء تكافؤ بلا سند → «بمواصفات مستمدّة من أنظمتنا التجارية، بمقاسات منزلية». باقي النسخة وصفية ومنسوبة. |
-| تشخيص CORS في `/app` | ✓ | **السبب مُثبت:** `/app` مسار داخلي يُعيد التوجيه **308 إلى أصل خارجي** (`app.igarden.sa`) في `next.config.ts`. و`next/link` يعمل **prefetch** له، فتعبر استجابة إعادة التوجيه الأصل ⇒ خطأ CORS في الـconsole. **العلاج:** `prefetch={false}` عبر `noPrefetch()` في `footer` و`CTAButton` و`MobileDrawer` — المواضع الثلاثة الوحيدة التي تربط `/app`. |
-| الخط الأبيض العلوي | ✓ | **أُغلق كسلوك نافذة PWA لا كعلّة موقع** — انظر القسم أدناه. |
-
-### الخط الأبيض العلوي — إقفال
-
-الشريط الأبيض أعلى الشاشة يظهر في **وضع التطبيق المثبَّت (PWA standalone)** فقط،
-وهو منطقة الحالة التي يرسمها النظام خلف الصفحة (`theme_color` في
-`manifest.webmanifest`)، لا عنصر في تخطيط الموقع.
-
-- في المتصفّح العادي لا يظهر.
-- الهيرو يستخدم `-mt-[64px]` ليمرّر الفيديو تحت الهيدر الشفّاف؛ هذا سليم ولا علاقة له.
-- ⛔ **لا يُعالَج بتعديل CSS في التخطيط** — أي `margin/padding` سالب سيكسر المتصفّح العادي.
-- المعالجة الصحيحة عند الحاجة: ضبط `theme_color` في الـmanifest، وهي **تغيير هوية بصرية** يحتاج قراراً منفصلاً.
-
-**الحالة: مغلق كـ`by-design` — ليس bug.**
+Wave 2E is no longer an active branch of work. This document records the final disposition only; `PROJECT-STATE.md` is the governing SSOT.
 
 ---
 
-## 2. Forms / Notifications
+## Delivered
 
-| البند | الحالة | التنفيذ |
-|---|---|---|
-| الهاتف/واتساب إلزامي | ✓ | كان إلزامياً في `leadSchema` ويبقى. |
-| البريد اختياري **وظاهر** | ✓ | كان **مطويّاً داخل «أضف تفاصيل المشروع»** — نُقل إلى الكتلة الظاهرة بجوار الجوال. |
-| طريقة التواصل المفضّلة | ✓ | `preferred_contact` (واتساب · هاتف · بريد) كمجموعة أزرار ظاهرة، الافتراضي «واتساب». |
-| البريد إلزامي عند اختياره | ✓ | `superRefine` في `leadSchema` + علامة `*` تتبدّل عبر `watch`. |
-| البريد غير إلزامي مع واتساب/هاتف | ✓ | يبقى اختيارياً. |
-| إشعار داخلي فوري عبر Resend | ✓ | `POST /api/notify-lead` — Resend REST عبر `fetch` (⛔ بلا تبعية جديدة). |
-| فشل الإشعار لا يمنع حفظ الليد | ✓ | الحفظ في Supabase أولاً، ثم `void notifyLead(...)`. المسار يعيد **200** دائماً حتى عند الفشل، والعميل يبتلع أي خطأ. |
+### UI / content
+- Retained the production Tier-0 hero **«ازرع بذكاء.»**; no alternate unverified literal was invented.
+- Removed the standalone «تعرّف على iGarden» strip.
+- Corrected YouTube to `@igardensa`.
+- Added Home Solutions and Store entries to the Mega Menu footer strip.
+- Corrected `/fact-sheet` title duplication.
+- Softened unsupported commercial-parity wording in `/home-solutions`.
+- Diagnosed `/app` redirect/prefetch CORS noise and disabled prefetch at the three internal `/app` link surfaces.
+- Classified the installed-PWA top white area as platform/PWA chrome behavior, not a site layout defect.
 
-> **⚠ سبب مهم لنقل البريد خارج الطيّ:** حقل إلزامي مخفيّ يُفشل التحقق **بصمت** —
-> وهي العلّة نفسها التي أُصلحت سابقاً في هذا النموذج. لا تُعده إلى داخل الطيّ.
+### Forms
+- Phone/WhatsApp required.
+- Email visible and optional unless `preferred_contact=email`.
+- Preferred-contact choices: WhatsApp / phone / email.
+- Lead is saved before notification is attempted; notification failure never turns a saved lead into a user-facing submission error.
 
-### تهيئة Resend
+### First-touch attribution
+- Captured from root layout using first-touch local storage.
+- First landing page uses existing `referrer`.
+- UTM uses existing `utm_source`, `utm_medium`, `utm_campaign`.
+- Current URL / first-touch metadata is carried in existing `source_url` convention.
+- Applied to home assessment, contact, and Asfan visit forms.
+- Privacy copy updated.
+- **No schema migration.**
 
-| المتغيّر | الحالة | المطلوب |
-|---|---|---|
-| `RESEND_API_KEY` | **⚠ فارغ محلياً** | يُضاف في Vercel → Environment Variables |
-| `CONTACT_TO_EMAIL` | ✓ `info@igarden.sa` | موجود |
-| `LEAD_NOTIFY_FROM` | ◐ اختياري | نطاق مُتحقَّق في Resend، وإلا يسقط على `onboarding@resend.dev` |
-
-**سلوك بلا مفتاح:** المسار يعيد `{ok:false, skipped:"missing_RESEND_API_KEY"}` بحالة 200
-— النموذج ينجح والليد يُحفظ ولا يظهر أي خطأ للمستخدم.
-
----
-
-## 3. Attribution Bridge
-
-**صفر تغيير في مخطط القاعدة** ✓ — أُثبت بجرد الأعمدة الحيّة:
-
-| ما نحفظه | العمود المستعمَل | ملاحظة |
-|---|---|---|
-| أول صفحة وصول | **`referrer`** | عمود قائم كان **غير مستعمَل** |
-| أول UTM | `utm_source` · `utm_medium` · `utm_campaign` | UTM الحالية تغلب إن وُجدت، وإلا أول لمسة |
-| المُحيل الخارجي + وقت أول لمسة + الرابط الحالي | `source_url` | وسوم مقروءة مفصولة بـ` | ` |
-
-- التخزين: `localStorage["igarden_first_touch_v1"]` يُكتب **مرّة واحدة** فقط.
-- يعمل في وضع التصفّح الخاص: أي فشل تخزين يُبتلع والنموذج يعمل طبيعياً.
-- مُطبَّق على النماذج الثلاثة: **الرئيسية** (`AssessmentSection`) · **التواصل** (`/contact`) · **زيارة عسفان** (`VisitForm`).
-- الخصوصية: أُضيف صفّ صريح في `/privacy` §7 يشرح التخزين ومدّته وأنه اختياري.
+### Notification endpoint hardening
+`/api/notify-lead` includes:
+- same-origin enforcement before send;
+- JSON-only request handling;
+- body-size and field-length bounds;
+- payload type filtering;
+- valid-email check before `reply_to`;
+- fixed internal recipient from server environment;
+- a lightweight per-instance memory limiter as defense in depth;
+- non-blocking failure semantics for normal form submission.
 
 ---
 
-## 4. State / Docs / Cleanup
+## Deliberately deferred external activation
 
-- `PROJECT-STATE.md` — أُعيد ضبطه على الواقع (كان متأخّراً 13 دمجة).
-- `SITE-ARCHITECTURE.md` — حُدِّث الهيرو والميجا والنماذج.
-- `#57` منشور على `a20b258` ✓ (تحقّق: `gh pr view 57` + `git rev-parse origin/main`).
-- `#58` تمريرة الصور — مفتوحة بحالة preview.
-- **تنظيف الفروع والـworktrees وتكرار الأصول: بعد دمج هذه الـPR، لا قبلها.**
+Resend production delivery is **NOT ACTIVE by claim in this closeout** because Vercel Firewall/environment and Resend account credentials are outside the connected GitHub execution surface.
+
+This is not unfinished Wave 2E code. It is a future operations task and must be opened as a new task if email notifications are desired:
+1. configure edge/firewall rate limiting for `POST /api/notify-lead`;
+2. verify the sender domain in Resend;
+3. add `RESEND_API_KEY` and approved sender environment variables;
+4. redeploy;
+5. send a real lead and verify arrival before calling the feature active.
+
+Until then, lead saving remains functional and notification sending is skipped/fails safely.
 
 ---
 
-## بنود مفتوحة
+## Verification recorded before merge
 
-| البند | السبب |
-|---|---|
-| **Vercel Firewall على `/api/notify-lead`** | ⛔ غير قابل للتهيئة من المستودع (لا `vercel.json` ولا مفتاح firewall) — يُدار من اللوحة. **يسبق وضع المفتاح.** |
-| **`RESEND_API_KEY` في Vercel** | سرّ خارج المستودع — خطوة تسليم دقيقة أدناه. |
-| **اختبارات آلية** | ⛔ لا يوجد أي إطار اختبار في المستودع (لا vitest/jest/playwright، ولا سكربت `test`). إضافته موجة مستقلة. |
+- ESLint: 0 errors on the Wave 2E source set.
+- TypeScript: `tsc --noEmit` passed.
+- Production build passed.
+- `git diff --check` clean.
+- Desktop/mobile QA reported RTL intact, no horizontal overflow, and no relevant 4xx.
+- `/app` prefetch request disappeared after the fix.
+- Conditional email requirement worked in both directions.
+- First UTM persisted across navigation.
 
-### تصليب `/api/notify-lead` (قبل وضع المفتاح)
+---
 
-| الضابط | الحالة |
-|---|---|
-| رفض cross-origin قبل أي استدعاء لـResend | ✓ `Origin`/`Referer` يجب أن يطابق `Host` وإلا **403** |
-| نوع المحتوى | ✓ `application/json` وإلا **415** |
-| سقف حجم الجسم | ✓ 16KB وإلا **413** |
-| حدود أطوال الحقول | ✓ رسالة 2000 · حقول قصيرة 200 · بريد 254 · اهتمامات ≤20 |
-| تحقّق الشكل | ✓ نصوص فقط؛ أي نوع آخر يُسقَط بصمت |
-| `reply_to` | ✓ لا يُمرَّر إلا لبريد صالح الشكل |
-| المستقبِل | ✓ **داخلي وثابت** من البيئة — ⛔ لا يُقرأ من الحمولة |
-| كابح معدّل | ◐ ذاكري خفيف (10/دقيقة لكل IP داخل النسخة) — **دفاع في العمق فقط** |
-| تبعيات جديدة | ✓ صفر |
+## Closeout decision
 
-**العقد الحاكم لم يتغيّر:** كل مسارات الفشل تعود **200** مع `ok:false`، فلا يتحوّل ليد
-محفوظ إلى رسالة خطأ. الاستثناء الوحيد 403/415/413 — وهي مسارات لا يسلكها نموذجنا.
-
-> ⚠ **الكابح الذاكري ليس ضابط المعدّل الحقيقي.** النشر بلا خادم يوزّع الطلبات على
-> نسخ متعدّدة، فالعدّاد لا يُشارَك. **الضابط الحقيقي = Vercel Firewall / Rate Limiting**
-> ويجب تفعيله **قبل** وضع `RESEND_API_KEY` في الإنتاج، وإلا صار المسار قناة إرسال
-> مجانية على حساب الشركة.
-
-**⚠ لا يمكن تهيئته من المستودع:** لا يوجد `vercel.json` ولا مفتاح firewall/rate-limit
-يُلتزم في الشيفرة — قواعد Vercel Firewall تُدار من اللوحة/الـAPI فقط. لم أخترع تهيئة.
-
-### خطوة التسليم الدقيقة — تفعيل Resend في الإنتاج
-
-```
-Vercel → Project: igarden-web → Settings → Environment Variables
-  RESEND_API_KEY    = re_xxxxxxxx        [Production, Preview]
-  LEAD_NOTIFY_FROM  = iGarden Leads <leads@igarden.sa>   [Production, Preview]
-  (CONTACT_TO_EMAIL موجود مسبقاً = info@igarden.sa)
-ثم: Deployments → Redeploy
-```
-**⚠ الترتيب إلزامي — الجدار أولاً ثم المفتاح:**
-
-```
-1) Vercel → igarden-web → Firewall → Rate Limiting → Add Rule
-     Path equals            /api/notify-lead
-     Limit                  ~20 requests / 60s per IP
-     Action                 Deny (أو Challenge)
-   ثم Save + Deploy Firewall Rules
-2) Vercel → Settings → Environment Variables
-     RESEND_API_KEY    = re_xxxxxxxx                        [Production, Preview]
-     LEAD_NOTIFY_FROM  = iGarden Leads <leads@igarden.sa>   [Production, Preview]
-     (CONTACT_TO_EMAIL موجود = info@igarden.sa)
-3) Deployments → Redeploy
-4) أرسل نموذجاً حقيقياً وتأكّد من وصول الإشعار إلى info@igarden.sa
-```
-
-وفي Resend: تحقّق من نطاق `igarden.sa` قبل استعمال `leads@igarden.sa` كمُرسِل.
+✓ Wave 2E merged and closed.
+✓ No remaining code change from this wave is waiting for merge.
+✓ Resend activation is a future external-ops task, not an open development blocker.
+✓ Automated-test-framework creation is future scope, not a defect left open by this wave.
