@@ -16,9 +16,9 @@ import {
   COMPANY,
   CONTACT,
   SOCIAL,
-  MAIN_CTA,
   WHATSAPP_HREF,
   SHOP_URL,
+  noPrefetch,
 } from "@/lib/constants";
 
 type FLink = { label: string; href: string; external?: boolean; badge?: string };
@@ -229,7 +229,7 @@ function FooterLink({
     );
   }
   return (
-    <Link href={href} className={cls}>
+    <Link href={href} prefetch={noPrefetch(href)} className={cls}>
       {inner}
     </Link>
   );

@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 import { COMPANY } from "@/lib/constants";
 import "@/styles/globals.css";
+import { FirstTouchCapture } from "@/components/shared/FirstTouchCapture";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -128,6 +129,8 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <OrganizationSchema />
         <WebSiteSchema />
+        {/* Attribution Bridge — يلتقط أول صفحة وصول وأول UTM عند أوّل تحميل. */}
+        <FirstTouchCapture />
 
         <div className="flex min-h-screen flex-col">
           <Header />

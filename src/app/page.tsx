@@ -39,14 +39,8 @@ export default function HomePage() {
         <SalesHero />
       </div>
 
-      <div className="bg-white pb-6 text-center" dir="rtl">
-        <Link
-          href="/about"
-          className="text-sm text-medium-gray underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
-        >
-          تعرّف على iGarden
-        </Link>
-      </div>
+      {/* ⛔ حُذف شريط «تعرّف على iGarden» (Wave 2E): سطر معزول تحت الهيرو
+          بلا وظيفة تحويل، و/about مبلوغ من الهيدر والفوتر والميجا. */}
 
       {/* ③ سلّم نقطة البداية */}
       <StartScale />
