@@ -1,245 +1,123 @@
 # Project State — igarden.sa
 
-> **Last Updated:** 2026-08-27
-> **Branch of Truth:** `main`
-> **Deployment:** Vercel (Pro plan) — auto-deploy on `main`
+> **SSOT for website work.** Read this first. If older docs or branch descriptions conflict with this file, this file wins.
+> **Closeout date:** 2026-08-28
+> **Branch of truth:** `main`
+> **Deployment:** Vercel auto-deploy from `main`
+> **Release baseline before this docs-only closeout:** `618426618852ac78e421d86b45e7fa0f0c7827f7`
+> **Status:** WEBSITE PREVIOUS-WORK CLOSEOUT COMPLETE
 
 ---
 
-## ✓ Reality Lock — 2026-08-27 · Wave 2E
+## 1. Release reality
 
-> يسجّل ما تحقّق بأمر فعليّ. كل بند ✓ ما لم يُوسَم ◐ أو ⚠.
+The previous website delivery sequence is closed and incorporated into `main`:
 
-**`main` الآن**
-- `origin/main` = **`a20b258`** ✓ — «Site narrative rebuild — value-led homepage and internal journeys (#57)»
-- ⚠ **تصحيح انحراف:** كانت هذه الوثيقة تقول `main = 14f59bd` وهي **متأخّرة 13 دمجة**.
-  المسار الفعلي: `14f59bd` → `af33e31` → `cb88f64` → `7fac9d8` → `e96824a` → `e8979f0`
-  → `7cf896b` → `87cb99b` → **`a20b258`**.
-
-**حالة الـPRs**
-| PR | الموضوع | الحالة |
+| PR | Scope | Result |
 |---|---|---|
-| **#57** | Site narrative rebuild | **MERGED ✓ ومنشور على `a20b258`** (2026-08-25) |
-| **#58** | تمريرة الصور المصحّحة | **مفتوحة** · `b34393e` · preview — لا تُدمج قبل Wave 2E |
-| **Wave 2E** | Closeout + Attribution | هذا الفرع — `feat/wave-2e-closeout-attribution` |
+| #57 | Site narrative rebuild | **MERGED** — release anchor `a20b258` |
+| #59 | Wave 2E — UI/content closeout, forms, lead attribution, notification hardening | **MERGED** — release anchor `a0fb868` |
+| #58 | Corrected image pass | **MERGED** — release anchor `6184266` |
 
-**ما نُفِّذ في Wave 2E** — التفاصيل في [`docs/WAVE-2E-CLOSEOUT.md`](docs/WAVE-2E-CLOSEOUT.md)
-1. **UI/Content:** حذف شريط «تعرّف على iGarden» · تصحيح YouTube (`@igarden` كان 404) ·
-   إضافة مسارَي B2C إلى شريط الميجا · تصحيح تكرار عنوان `/fact-sheet` ·
-   تخفيف ادّعاء تكافؤ في `/home-solutions` · **تشخيص وإصلاح CORS في `/app`** ·
-   إقفال «الخط الأبيض» كسلوك PWA لا علّة.
-2. **النماذج:** البريد صار **ظاهراً** لا مطويّاً · `preferred_contact` جديد ·
-   البريد إلزامي فقط عند اختياره · إشعار Resend داخلي لا يمنع حفظ الليد.
-3. **Attribution Bridge:** أول صفحة وصول + أول UTM على النماذج الثلاثة —
-   **بصفر تغيير في المخطط** (استُعمل عمود `referrer` القائم غير المستعمَل).
-4. **الوثائق:** هذه الوثيقة + `SITE-ARCHITECTURE.md` + سجلّ الإقفال.
-
-**✓ الهيرو — مغلق بلا تغيير**
-- CLOSED — no change: retained current production Tier-0 hero; no alternative approved literal source was found.
-- baseline المعتمد لهذه الموجة: `H1: "ازرع بذكاء."` ⛔ لم يُغيَّر النصّ ولم يُخترع شعار.
-
-**⚠ مفتوح**
-- **Vercel Firewall / Rate Limiting على `/api/notify-lead` — يسبق وضع المفتاح.** ⛔ غير قابل للتهيئة من المستودع.
-- `RESEND_API_KEY` — سرّ يُضاف في Vercel (خطوة تسليم موثّقة).
-- لا إطار اختبارات في المستودع إطلاقاً.
-- تنظيف الفروع والـworktrees وتكرار الأصول — **بعد** دمج Wave 2E.
-
-
-
-## الحالة الآن
-
-- **`main` = `origin/main` = `87cb99b44f40f5c77dca678523559a8fa291f600`** ✓
-- **نشر إنتاجي مُتحقَّق:** `sha=87cb99b` · `2026-08-24T19:37Z` · `Production id=6069993338` ✓
-- مسار `main`: `…` → `7fac9d8` → `e96824a` → `e8979f0` → `7cf896b` → **`87cb99b`** ✓
-- **#51 · #52 MERGED** ✓ — Wave 1B وWave 1C ‏LIVE
-- **#53 · #54 · #55 · #56 MERGED ✓ — Wave 2A→2D ‏LIVE على الإنتاج**
-- **Site Narrative Rebuild جاهز للمراجعة على `feat/site-narrative-rebuild` — ⛔ ليس LIVE**
-- 📐 **مرجع معمارية الموقع:** [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md)
-  — الجمهور · شجرة المسارات · الهيدر والميجا والفوتر · Hub & Spoke · المراسي · legacy
+There are **no earlier website PRs waiting to be merged** as part of this closeout. Closed/unmerged historical PRs were reviewed and are intentionally superseded or archival; they must not be revived wholesale onto current `main`.
 
 ---
 
-## الدمجات الاثنتا عشرة
+## 2. What is live in the closed website baseline
 
-| PR | العنوان | sha | الطريقة | التاريخ (UTC) |
-|---|---|---|---|---|
-| **#45** | Tier 0 content pass — fact-sheet + roadmap | `25d6588` | merge-commit | 2026-08-22 06:18 |
-| **#46** | Remove registered capital from global footer | `02d3c3e` | squash | 2026-08-22 13:00 |
-| **#48** | Standardize Osfan R&D terminology | `0694147` | squash → فرع | 2026-08-22 19:13 |
-| **#47** | Fact Sheet prep — Osfan term + footer link | `6166e2a` | merge-commit | 2026-08-22 19:19 |
-| **#49** | Sales launch v1 — homepage rebuild + lead capture | **`14f59bd`** | squash | 2026-08-23 09:47 |
-| **#50** | wave 1a — navigation, contextual links, sitemap | **`af33e31`** | squash | 2026-08-23 14:25 |
-| **#51** | Wave 1B — integrated portfolio and two delivery paths | **`cb88f64`** | squash | 2026-08-23 18:18 |
-| **#52** | Navigation and footer v2 — site architecture | **`7fac9d8`** | squash | 2026-08-23 20:06 |
-| **#53** | Wave 2A — capability truth across product depth pages | **`e96824a`** | squash | 2026-08-24 07:11 |
-| **#54** | Wave 2B — truth review and search intent | **`e8979f0`** | squash | 2026-08-24 09:04 |
-| **#55** | Wave 2C — visual proof pass 1 | **`7cf896b`** | squash | 2026-08-24 13:30 |
-| **#56** | Wave 2D — public truth closure | **`87cb99b`** | squash | 2026-08-24 19:36 |
+### UI / content
+- Hero Tier-0 remains **«ازرع بذكاء.»**; no competing unverified slogan was introduced.
+- The isolated «تعرّف على iGarden» strip was removed.
+- YouTube points to `@igardensa`.
+- Mega footer includes **حلول الأفراد والمنازل** and **المتجر**.
+- `/fact-sheet` title duplication was corrected.
+- `/home-solutions` unsupported parity wording was softened.
+- `/app` prefetch is disabled where the internal route redirects to the external application origin, preventing the diagnosed redirect/prefetch CORS noise.
+- The top white area in installed-PWA mode is classified as platform/PWA chrome behavior, not a website layout bug.
 
-◐ #48 قاعدته كانت `fix/factsheet-prep` لا `main` — دخل الإنتاج ضمن #47.
+### Forms / lead capture
+- Phone/WhatsApp remains required.
+- Email is visible and optional unless the visitor selects email as the preferred contact method.
+- `preferred_contact` supports WhatsApp / phone / email.
+- First-touch attribution is captured at root layout, not at form-submit time.
+- First landing page uses the existing `referrer` field; first UTM uses existing `utm_*` fields; **no database migration was required**.
+- Applied to home assessment, contact, and Asfan visit forms.
+- Privacy text was updated for first-touch/UTM storage.
 
----
+### Lead email notification code
+- `/api/notify-lead` is merged and hardened with same-origin checks, JSON/content-size limits, payload limits, safe `reply_to`, fixed internal recipient, and non-blocking failure behavior.
+- **Email notification is intentionally INACTIVE until external operations are configured.** This is not an unfinished code change and does not block website use or lead saving.
+- Future activation requires, as a new operations task: Vercel edge/firewall rate limiting, verified Resend sender domain, and `RESEND_API_KEY`/sender environment variables.
+- Never claim notification delivery is active until a real production notification is verified.
 
-## الرئيسية — سطح بيعي بعشرة أقسام ✓
+### Approved image pass
+Five approved public assets are live in the release baseline:
+1. iGarden Tower product image — `/products/hydroponics` product card.
+2. iGarden Tower port detail — inset inside that product card.
+3. Approved 3×9 home-greenhouse crop image — `/products/hydroponics` hero.
+4. Approved 3×9 home-greenhouse image — `/how-we-work` new-project path.
+5. One Al-Ahsa field-installation image — `/products/smart-greenhouses`, explicitly limited to preparation/installation evidence.
 
-① Hero (فيديو + «ازرع بذكاء.») → ② فرز الجمهور → ③ أربع مراحل → ⑤ بطاقة الميدان
-→ ④ الحلول (أربع عائلات) → ⑥ Smart OS → ⑦ الابتكار → ⑧ مرفق R&D في عسفان
-→ ⑨ المعرفة (خمسة مقالات) → ⑩ نموذج التقييم
-
-- `<title>` الحيّ: «iGarden — منظومات زراعية متكاملة ورقمنة تشغيل المزارع» ✓
-- `hero-video` ✓ · «نقطة البداية» في النموذج ✓ · رابطا المحميات والمائية ✓
-- **التقاط الليد:** `?interest=` يُقرأ ويُحدَّد ظاهراً · `?cta=` يُحفظ في `source_url`
-  · `utm_*` تُكتب لأول مرة · **صفر عمود جديد وصفر migration** ✓
-- **إصلاح علّة صامتة:** `refine` كان يربط خطأ «بريد أو هاتف» بحقل `email` المطويّ
-  داخل `showDetails`، فيفشل الإرسال بلا رسالة مرئية. الهاتف صار مطلوباً ومعلَّماً `*` ✓
-
----
-
-## وسوم التراجع (مدفوعة على origin) ✓
-
-| الوسم | يشير إلى | أمر التراجع للدمج التالي له |
-|---|---|---|
-| `pre-merge-2026-08-21` | `3d235c0` | `git revert -m 1 25d6588` |
-| `pre-merge-46` | `25d6588` | `git revert 02d3c3e` |
-| `pre-merge-47-48` | `02d3c3e` | `git revert -m 1 6166e2a` |
-| `pre-merge-49` | `6166e2a` | **`git revert 14f59bd`** |
-| **`pre-merge-50`** | `14f59bd` | **`git revert af33e31`** (squash — أب واحد، بلا `-m`) |
-| **`pre-merge-51`** | `af33e31` | **`git revert cb88f64`** (squash — أب واحد، بلا `-m`) |
-| **`pre-merge-52`** | `cb88f64` | **`git revert 7fac9d8`** (squash — أب واحد، بلا `-m`) |
-| **`pre-merge-53`** | `7fac9d8` | **`git revert e96824a`** (squash — أب واحد، بلا `-m`) |
-| **`pre-merge-54`** | `e96824a` | **`git revert e8979f0`** (squash — أب واحد، بلا `-m`) |
-| **`pre-merge-55`** | `e8979f0` | **`git revert 7cf896b`** (squash — أب واحد، بلا `-m`) |
-| **`pre-merge-56`** | `7cf896b` | **`git revert 87cb99b`** (squash — أب واحد، بلا `-m`) |
-
-✓ الجدول أعلاه هو الحاكم — **أحد عشر وسم `pre-merge-*`** على `origin` ✓ مُتحقَّق بـ`git ls-remote --tags` (2026-08-24).
+Image rules remain: no client/person identity in public naming/copy, no mislabeling old/third-party hardware as a current iGarden product, and no duplicate use of these five assets across routes.
 
 ---
 
-## الطابور المجمَّد — الحالة الحقيقية
+## 3. Items deliberately NOT carried forward as unfinished previous work
 
-| PR | الحالة الفعلية | ما بقي منه |
-|---|---|---|
-| **#41** | ✅ **CLOSED** — أُغلق 2026-08-23 10:48 UTC (✓ `gh pr view 41`) | مادّته الحيّة (‏sitemap + `robots` allow `/api/og`) نُقلت إلى **#50** قبل الإغلاق ✓ |
-| **#42** | ✅ **CLOSED** — 2026-08-23 · **متجاوَز** | 🔴 قاعدته `fix/seo-audit-pass1` كانت تُرجِع `sitemap` إلى ما قبل #50 (‏تُسقط `/app` وتُعيد `/investors` و`/roadmap`) رغم أن `merge-tree` يقول صفر تعارض. **سطرا مقال `hydroponic-vs-traditional` نُقلا إلى Wave 1B**؛ شقّ «ريادية→متخصّصة» ساقط. الفرعان `fix/seo-audit-pass1` و`fix/seo-lexicon-pass2` **مرجعيان — لا يُحذفان** |
-| **#43** | ✅ **CLOSED** — 2026-08-24 · **متجاوَز** | مبنيّ على تموضع وحالة يونيو، ويعيد قرار «ريادية→متخصصة» المسحوب، ويعتمد #41/#42 المغلقين، ويحمل حالة OG وsitemap قديمة. **فرع `docs/seo-context-layer` محفوظ ولا يُحذف.** طبقة SEO تُعاد لاحقاً من SSOT الحالي |
+The following are **future backlog / new-scope candidates**, not blockers and not open work from the closed waves:
 
-✓ **قرار علي 2026-08-23:** لا يُغلق #41 حتى تُنقل مواده الحيّة الباقية.
-مادّته الحيّة (‏OG · sitemap · robots) نُقلت في **#50** — فأُغلق بعدها.
-⛔ **فرع #41 لا يُحذف** لأن #42 مبنيّ عليه.
+- Final Smart Controller product photography and verified hardware identity.
+- Controller architecture diagram.
+- IoT architecture diagram and stronger installed-sensor imagery.
+- Organic/bioponics publishable evidence.
+- Compliance/log/report visual example.
+- New Smart OS publishable screenshot if/when a newer approved public view is selected.
+- Optional automated test framework (Vitest/Jest/Playwright); the repository did not previously contain one.
+- Optional Resend production activation as an external operations task.
 
-### عطب OG العربي — سابق للوجود، أُصلح مركزياً في #50 ✓
-لم يكن عطباً استحدثه هذا الفرع: `/api/og` كان يُصيَّر بـ`sans-serif` بلا خطّ مُضمَّن،
-فيُرجع **200 بجسم فارغ (0 بايت)** لكل عنوان عربي — أثّر في **37 مرجعاً** عبر الموقع
-(‏32 عنوان URL فريداً). أُصلح في **#50** بإجراء واحد مركزي في `src/app/api/og/route.tsx`:
-خطّا Tajawal (‏Regular + Bold، TTF مُضمَّنان تحت `src/app/api/og/fonts/` برخصة SIL OFL)،
-وترتيب RTL صحيح عبر تخطيط `row-reverse` — لأن Satori **لا يطبّق خوارزمية Unicode Bidi**
-فكان يرصف الكلمات العربية معكوسة (مُتحقَّق بمدخل «أولاً ثانياً ثالثاً») — وحواجز مدخلات
-(‏قصّ آمن على نقاط الترميز · 500 عند فشل التصيير بدل 200 فارغ).
+Do not reopen these automatically when resuming website work. They require a new explicit scope.
 
 ---
 
-## فرعان مرجعيان بلا دمج ◐
+## 4. Historical PR / branch disposition
 
-- **`fix/lead-intent-capture`** @ `3059c5e` — منطق Lane A؛ **نُقل بـcherry-pick إلى #49 ودخل الإنتاج**، فالفرع مرجعي لا أكثر.
-- **`docs/project-state-reconcile-aug`** @ `bcbc4ad` — **متجاوَز · مرجعي فقط** ✓ (قرار علي 2026-08-23).
-  ⛔ **لا يُدمج ولا يُحذف.** المصدر المعتمد لـ`PROJECT-STATE.md` هو هذا الملفّ على `wave1a-nav`.
+### Historical merged work
+Branches associated with merged PRs through #59 are historical refs only. Their work is represented in current `main`; do not merge them again.
 
----
+### Closed, deliberately unmerged historical work
+The following lines of work were inspected and are **ARCHIVE / SUPERSEDED**, not pending:
+- `fix/seo-audit-pass1` (#41) — old sitemap/metadata state; useful material was transferred into later waves.
+- `fix/seo-lexicon-pass2` (#42) — stacked on the old SEO pass; valid copy corrections were transferred later; wholesale merge would regress current structure.
+- `docs/seo-context-layer` (#43) — old SEO governance snapshot; must be rebuilt from current SSOT if SEO governance is reopened.
+- `claude/convert-to-html-IJFTQ` post-PR #2 work (#3) — pitch/company-profile artifact branch, not part of current website runtime closeout.
 
-## المفتوح — المرحلة التالية
+### Un-PR'd old branches inspected during closeout
+These have **zero commits ahead of current main** and are therefore stale historical refs: `claude/fix-igarden-sunbolah-7jVlt`, `feat/app-page`, `feat/rebuild-v1.4`, `feat/wave-2b-hero-and-trust-bar`, `feat/wave-2b-prep-stats-update`, `fix/wave-2a-visual-polish`, `fix/wave-2a-visual-polish-r2`, `preview/claude-review`.
 
-- 🔴 **فجوة الإسناد (attribution):** ‏UTM تُقرأ من صفحة النموذج الحالية فقط؛
-  **لا يوجد حتى الآن first-touch attribution عبر صفحات الهبوط.**
-  تُغلق في **Wave 2E** قبل تحديث روابط حراج.
-- ◐ **`StatsStrip.tsx` مكوّن يتيم** — يحمل `STATS` محلّياً فيه `+45°C` و«5 ورش»،
-  **غير مُصيَّر في أي صفحة** (يبقيه `sections/index.ts` وحده). سُجّل في Wave 2D
-  ولم يُنظَّف؛ يُحسم مع Branch Hygiene.
-- **Evidence Pack** — لم يبدأ ◐
-- **صفحة الواحة** — لم تبدأ ◐
-- **v5** — لم تبدأ ◐
-- **صور الأحساء والمشروع العضوي** لم تصل — `FieldProjectCard` و`InnovationTracks` بطاقتان نصّيتان ✓
-- **مكوّنات يتيمة لم تُحذف:** `ComplianceSection` · `OperationalIdentity` · `WhatWeDontClaim`
-  · وسبعة يبقيها `sections/index.ts` وحده ✓
-- **رمز n8n API منتهٍ** منذ 2026-07-08 ✓ · و`n8n.igarden.sa` معطّل بـCloudflare 1033 ✓
+Two very old divergent review branches (`claude/github-project-selection-ozhkZ`, `claude/website-review-audit-NIRd3`) contain pre-current versions of navigation/legal/learn/roadmap work and are **SUPERSEDED** by later merged implementations; do not merge them.
+
+**Remote branch refs may remain on GitHub for history. Their presence does not mean active work.** Local worktrees on Ali's laptop are outside this connected GitHub closeout and should be treated as local housekeeping only.
 
 ---
 
-## قرارات محسومة
+## 5. Definition of a clean starting point
 
-- **إسناد كتابة الليدات** (2026-08-21): **لا شيء في القاعدة** — الإسناد من بوّابة الكتابة القادمة.
-  ⚠ ثغرة مفتوحة: `postgres` يملك `bypassrls`، فمحرّر SQL في اللوحة يتجاوز أي بوّابة.
-- **سحب وصول `anon` عن `public.leads_stats`** (2026-08-21) ✓ · التراجع: `grant select on public.leads_stats to anon;`
-- **كاتب ليدات حراج** ✓ حُسم: 13 ليداً بعبارة `INSERT` واحدة في **2026-06-14 21:35:35 UTC**
-  بدور `postgres` من محرّر لوحة Supabase. ◐ هوية الشخص لا تبلغها القاعدة.
-- **«ريادية» و«مبتكرة» ليستا مخالفة** (2026-08-22) — المحظور «الأول/الرائد» وحدها.
-- **«نَبني · نُوطّن · نُطوّر»** منهج لا شعار — مسموح داخل الأقسام، ممنوع كشعار موازٍ.
-- **تصحيح نسبة SAIP** ✓ (2026-08-24، Wave 2A): كانت صفحة `smart-controllers` تنسب
-  `SAIP #423450193` و«نموذج صناعي مسجّل» إلى **Smart Controllers**، والرقم يخصّ
-  **iGarden Tower** وفق `docs/LEXICON.md` و`docs/BRAND-BIBLE.md` و`fact-sheet`
-  و`constants.ts`. حُذف الربط **من تلك الصفحة وحدها** ⛔ ولم تُمسّ المواضع الصحيحة.
-- **سياسة legacy لـ`/solutions` و`/services`** ✓ (2026-08-23، مُتحقَّق على الإنتاج):
-  المسارات التاريخية **المعروفة** = تحويل **308 دائم** · الـslug **المجهول** = **307 مؤقّت** إلى `/products`
-  · ⛔ **لا تحويل wildcard دائم** · صفر 404. الجدول الكامل في `docs/SITE-ARCHITECTURE.md`.
+A future website session begins from fresh `origin/main` only, then performs a new Reality Lock. It must **not** resume an old feature branch merely because the branch still exists.
+
+Before a new wave:
+1. `git fetch origin --prune`
+2. verify `origin/main`
+3. read this file and `docs/SITE-ARCHITECTURE.md`
+4. define the new scope explicitly
+5. create a fresh branch/worktree from current `origin/main`
 
 ---
 
-## سياسة الدمج ✓ (قرار 2026-08-23)
+## 6. Confidence / closeout
 
-- **squash** للـPR المستقلّ — سجلّ نظيف، والتراجع بـ`git revert <sha>`.
-- **merge-commit** حين يلزم حفظ نسب الفروع المكدّسة — والتراجع بـ`git revert -m 1 <sha>`.
-
----
-
-## Backlog
-
-- ~~**مولّد `/api/og`**~~ ✅ **أُنجز في #50** (`f6c83e7`): Tajawal مضمَّن · RTL صحيح
-  · حدود طول (‏60/100) · و`500` صريحة بدل `200` بجسم فارغ.
-  ⛔ مقاربة الصور الثابتة **أُلغيت**: `public/images/og/*.png` و`scripts/generate-og.mjs`
-  محذوفان، والمصدر الوحيد هو `/api/og`.
-- **Lexicon CI Validator** — سكربت `npm run lexicon:check` يفشل CI عند الصياغات المحظورة.
-  ◐ فكرة موثَّقة لم تُجدول.
-- **Branch Hygiene** — تنظيف الفروع المدموجة والـworktrees. ◐ **بعد استقرار الموجات**، لا قبله.
-
----
-
-## قرار B2C ✓ (2026-08-23)
-
-**B2B أولاً.** B2C مسار **ثانوي** عبر `/home-solutions` والمتجر `shop.igarden.sa` — يظهر في الشريط العلوي والفوتر، لا في التنقّل الرئيسي.
-
----
-
-## NEXT DELTA
-
-**Wave 2E — Attribution Bridge** — التالية قبل توسيع حركة حراج:
-first-touch attribution عبر صفحات الهبوط، لا قراءة UTM من صفحة النموذج وحدها.
-
-⏳ **Site Narrative Rebuild** على PR #57 — **آخر تمريرة نصّية أُغلقت 2026-08-25**؛
-أي فكرة تحسين بعدها تذهب إلى الموجة التالية. **ليس LIVE.**
-
----
-
-## Locked — Do Not Reopen
-
-قرارات CEO حاكمة. ⛔ لا تُناقَش ولا تُعكَس ولا يُعاد اعتمادها.
-التفصيل الكامل في [`docs/SITE-ARCHITECTURE.md`](docs/SITE-ARCHITECTURE.md).
-
-1. **«شركة سعودية ريادية ومبتكرة» مسموحة** — «ريادية» = ريادة أعمال. المحظور «الأولى/الرائدة» بلا سند.
-2. **«ازرع بذكاء.» الشعار الرئيسي** — «نَبني · نُوطّن · نُطوّر» منهج داخل الأقسام لا شعار منافس.
-3. **منظومات متكاملة** — مشروع جديد من التخطيط والإنشاء، أو منشأة قائمة تُطوّر مرحلياً.
-   الرقمنة أولوية تجارية، لا تعريف الشركة كلّه.
-4. **B2B أولاً · B2G ثانياً · B2C ثانوي** عبر المتجر و`/home-solutions`.
-5. **«مرفق R&D في عسفان»** هو المصطلح المعتمد.
-6. **العضوية تطبيق ميداني؛ Bioponics قيد التطوير** — لا حلّ جاهز للتسليم.
-7. **الصور الحالية placeholders** — لا يُحذف موضع صورة قائم.
-8. **وصف القدرة العامة بلا دليل بجواره؛** الدليل إلزامي عند رقم أو عميل أو مشروع أو وفر.
-9. **#41 و#42 مغلقان ومتجاوزان** — لا إعادة فتح.
-10. **`sitemap` الصحيح = 25.**
-11. **CTA أساسي واحد ظاهر لكل صفحة:** تقييم · زيارة تقنية · واتساب.
-    `CTA_IDS` قاموس تتبّع تقني منفصل، لا تُضاف إليه قيمة عشوائية.
-12. **Breadcrumbs قاعدة** لصفحات Hub & Spoke الجديدة — تنفيذ لاحق حيث لا توجد.
-
----
-
-## أولوية المصادر
-
-`PROJECT-STATE.md` (الجذر · المضيف القانوني) > Notion > userMemories > افتراض.
+✓ #57, #59 and #58 are merged in the intended order.
+✓ Wave 2E code and corrected approved image pass are in `main`.
+✓ Historical unmerged SEO branches were reviewed and intentionally not merged.
+✓ Resend is reclassified as a future external activation task, not an open development blocker.
+✓ Image/controller/IoT/compliance gaps are reclassified as next-phase backlog, not unfinished prior-wave work.
+⚠ Vercel/Resend account configuration cannot be asserted active from GitHub; do not claim it is.
