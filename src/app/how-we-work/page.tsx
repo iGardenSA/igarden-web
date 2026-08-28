@@ -37,7 +37,8 @@ export const metadata: Metadata = {
 
 /* ─── المساران ─────────────────────────────────────────────
    أصول الصور مؤقّتة — تمريرة الصور النهائية بعد تثبيت الهيكل.
-   للجرد: rg 'imageStatus: "temporary"'                        */
+   للجرد: rg 'imageStatus: "temporary"'
+   `verified-field-preview` = أصل ميداني حقيقي منسوب، بانتظار اعتماد الدمج. */
 
 type Path = {
   id: string;
@@ -45,7 +46,13 @@ type Path = {
   label: string;
   title: string;
   steps: string[];
-  img: { src: string; alt: string; imageStatus: "temporary" };
+  img: {
+    src: string;
+    alt: string;
+    imageStatus: "temporary" | "verified-field-preview";
+    /* نقطة تركيز القصّ — الأصول مقصوصة 4:3 وتُعرض دائماً بـobject-cover */
+    objectPosition?: string;
+  };
 };
 
 const PATHS: Path[] = [
@@ -63,9 +70,10 @@ const PATHS: Path[] = [
       "التوسع أو الإدارة والتشغيل وفق اتفاق مستقل.",
     ],
     img: {
-      src: "/images/osfan-full/04_greenhouse_wide.webp",
-      alt: "منظر داخلي لمحمية زراعية داخل مرفق R&D في عسفان",
-      imageStatus: "temporary",
+      src: "/images/projects/home-greenhouse/home-greenhouse-production-path.webp",
+      alt: "محمية منزلية مُشغَّلة بأنظمة زراعة مائية — صفوف الإنتاج والبرج الرأسي",
+      imageStatus: "verified-field-preview",
+      objectPosition: "50% 50%",
     },
   },
   {
@@ -196,6 +204,11 @@ export default function HowWeWorkPage() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
+                  style={
+                    p.img.objectPosition
+                      ? { objectPosition: p.img.objectPosition }
+                      : undefined
+                  }
                 />
               </div>
             </div>

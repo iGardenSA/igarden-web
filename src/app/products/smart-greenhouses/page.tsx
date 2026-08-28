@@ -480,6 +480,43 @@ function OsfanGallery() {
   );
 }
 
+/* ─── Section 5.5: بطاقة تنفيذ ميداني واحدة ──────────────────
+   ⛔ بطاقة واحدة فقط — لا معرض. مستقلة عن `GALLERY` الخاصة بعسفان.
+   ⛔ لا تُوصف بأنها «محمية ذكية مسلَّمة» ولا «تشغيل آلي» — الصورة لا تثبت ذلك.
+   ⛔ ولا يُذكر اسم العميل. docs/IMAGE-ASSET-MANIFEST.md */
+function AlAhsaField() {
+  return (
+    <section className="bg-white py-16">
+      <div className="container mx-auto px-4 max-w-2xl">
+        <div className="text-center mb-8">
+          <h2 className="h2 text-deep-green">من تنفيذ ميداني في الأحساء</h2>
+          <p className="body-base text-medium-gray mt-3">
+            مشهد من تجهيز صفوف الإنتاج والبنية الداخلية لمحمية بمقياس تجاري،
+            ضمن مشروع ميداني، دون إظهار اسم العميل.
+          </p>
+        </div>
+        <figure className="m-0">
+          <div className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green">
+            <Image
+              src="/images/projects/al-ahsa/al-ahsa-greenhouse-layout.webp"
+              alt="تجهيز صفوف الزراعة والبنية الداخلية لمحمية بمقياس تجاري في مشروع ميداني بالأحساء"
+              fill
+              sizes="(max-width: 768px) 100vw, 672px"
+              className="object-cover"
+              style={{ objectPosition: "50% 50%" }}
+            />
+          </div>
+          {/* ⛔ حدّ الادّعاء: مرحلة تجهيز وتركيب — ليست دليل تشغيل أو إنتاج.
+              يبقى هذا القيد تعليقاً برمجياً، ولا يُكتب في النصّ المرئي. */}
+          <figcaption className="body-sm text-medium-gray mt-3 text-center">
+            مرحلة التجهيز والتركيب.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Section 6: Scales ───────────────────────────────────── */
 const SCALES = [
   {
@@ -971,6 +1008,7 @@ export default function SmartGreenhousesPage() {
       <TechSpecs />
       <HowItWorks />
       <OsfanGallery />
+      <AlAhsaField />
       <ScalesSection />
       <ScopeSection />
       <ScopePackagesSection />

@@ -22,6 +22,10 @@ const OSFAN_GALLERY = [
   },
 ] as const;
 
+/* ⛔ لا يُضاف معرض ثانٍ أسفل معرض عسفان في هذا القسم.
+   صور المشاريع الميدانية تُعرض كبطاقة واحدة داخل صفحة المنتج المعنية،
+   لا كمعرض مكرَّر هنا. راجع docs/IMAGE-ASSET-MANIFEST.md */
+
 export function FieldEvidence() {
   return (
     <section className="bg-[var(--color-surface)] section-padding" dir="rtl">

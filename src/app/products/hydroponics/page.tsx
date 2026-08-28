@@ -87,16 +87,25 @@ function Hero() {
             </div>
           </div>
 
-          <div
-            className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green flex items-center justify-center"
-            role="img"
-            aria-label="أنظمة الزراعة المائية من iGarden داخل مرفق R&D في عسفان"
-          >
-            <Droplets className="w-20 h-20 text-white/20" aria-hidden />
-            <span className="absolute bottom-4 left-4 text-white/60 text-sm font-medium font-latin">
-              ٧ تقنيات · نَختار لك الأنسب
-            </span>
-          </div>
+          {/* محمية منزلية مُشغَّلة — أصل قُصَّ إلى 4:3 و`object-cover`، بلا شرائط جانبية.
+              ⛔ منشأة منزلية: لا تُقدَّم كمشروع تجاري ولا كمشروع عميل.
+              ⛔ ولا يُذكر اسم المالك أو الموقع. */}
+          <figure className="m-0">
+            <div className="relative aspect-[4/3] rounded-card overflow-hidden bg-corp-green">
+              <Image
+                src="/images/projects/home-greenhouse/home-greenhouse-hydroponic-rows.webp"
+                alt="صفوف زراعة مائية مُثمرة داخل محمية منزلية مع برج زراعة رأسية"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                style={{ objectPosition: "50% 45%" }}
+              />
+            </div>
+            <figcaption className="body-sm text-medium-gray mt-3 text-center">
+              محمية منزلية بأنظمة زراعة مائية — تشغيل فعلي.
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -413,31 +422,45 @@ function IGardenTowerSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Tower image — left in LTR layout (visual right in RTL) */}
           <div className="order-2 lg:order-1">
-            {/* أصل مؤقّت منسوب — imageStatus: "temporary"
-                ⚠ الحاجة إلى صورة منتج مستقلة بخلفية نظيفة ما زالت قائمة (P1).
-                [CONTENT_NEEDED: /images/products/hydroponics/igarden-tower.jpg — صورة كاملة للبرج بخلفية نظيفة] */}
-            <figure>
-              <div className="relative aspect-[3/4] rounded-card overflow-hidden bg-corp-green shadow-lg">
+            {/* Product Card مربّعة بخلفية محايدة مصمَّمة — الأصل مربّع 1:1 فيملأ
+                الإطار تماماً بلا شرائط جانبية. تفصيل المنفذ inset صغير داخل
+                البطاقة نفسها، ⛔ لا لقطة Detail ضخمة مستقلة تحتها. */}
+            <figure className="m-0">
+              <div className="relative aspect-square rounded-card overflow-hidden bg-[#F6F5F0] ring-1 ring-black/5 shadow-lg">
                 <Image
-                  src="/images/osfan-full/02_tower_closeup.webp"
-                  alt="برج iGarden Tower داخل مرفق R&D في عسفان"
+                  src="/images/products/hydroponics/igarden-tower-product.webp"
+                  alt="iGarden Tower — برج الزراعة الرأسية"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
-                {/* SAIP badge on image */}
-                <div className="absolute bottom-4 start-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow">
-                  <p className="text-deep-green font-bold text-lg">نموذج صناعي مُسجَّل</p>
+                {/* SAIP badge on image — مقاس مضغوط على الجوال لتقليل التداخل
+                    مع قاعدة البرج، ويعود لحجمه الكامل من md فأعلى. */}
+                <div className="absolute bottom-3 start-3 md:bottom-4 md:start-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1.5 md:px-3 md:py-2 shadow">
+                  <p className="text-deep-green font-bold text-xs md:text-lg leading-tight">
+                    نموذج صناعي مُسجَّل
+                  </p>
                   <p
                     dir="ltr"
-                    className="ltr-inline font-latin text-lime font-bold text-lg"
+                    className="ltr-inline font-latin text-lime font-bold text-xs md:text-lg leading-tight"
                   >
                     SAIP #423450193
                   </p>
                 </div>
+                {/* تفصيل منفذ الزراعة — inset صغير داخل البطاقة */}
+                <div className="absolute bottom-4 end-4 w-[22%] max-w-[120px] aspect-square rounded-lg overflow-hidden bg-white ring-1 ring-black/10 shadow">
+                  <Image
+                    src="/images/products/hydroponics/igarden-tower-port-detail.webp"
+                    alt="تفصيل منفذ الزراعة والكوب الشبكي في iGarden Tower"
+                    fill
+                    sizes="120px"
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <figcaption className="body-sm text-medium-gray mt-3 text-center">
-                iGarden Tower داخل مرفق R&D في عسفان — صورة ميدانية.
+                iGarden Tower — صورة المنتج · والإطار الصغير تفصيل منفذ الزراعة
+                والكوب الشبكي.
               </figcaption>
             </figure>
           </div>
