@@ -1,12 +1,50 @@
-# PROJECT-STATE.md — igarden-web
+# Project State — igarden.sa
 
-> **SSOT (iKGOS).** يُقرأ أولاً ويغلب عند التعارض.
-> **آخر Reality Lock:** 2026-08-24 · **المضيف القانوني:** HP-EliteBook-840
-> **فرع الحقيقة:** `main` · **النشر:** Vercel — تلقائي على `main`
->
-> **وسم الثقة:** ✓ مُتحقَّق بأمر أو نشر · ◐ مُستنتَج أو غير مُتحقَّق · ⚠ افتراض لا يُبنى عليه
+> **Last Updated:** 2026-08-27
+> **Branch of Truth:** `main`
+> **Deployment:** Vercel (Pro plan) — auto-deploy on `main`
 
 ---
+
+## ✓ Reality Lock — 2026-08-27 · Wave 2E
+
+> يسجّل ما تحقّق بأمر فعليّ. كل بند ✓ ما لم يُوسَم ◐ أو ⚠.
+
+**`main` الآن**
+- `origin/main` = **`a20b258`** ✓ — «Site narrative rebuild — value-led homepage and internal journeys (#57)»
+- ⚠ **تصحيح انحراف:** كانت هذه الوثيقة تقول `main = 14f59bd` وهي **متأخّرة 13 دمجة**.
+  المسار الفعلي: `14f59bd` → `af33e31` → `cb88f64` → `7fac9d8` → `e96824a` → `e8979f0`
+  → `7cf896b` → `87cb99b` → **`a20b258`**.
+
+**حالة الـPRs**
+| PR | الموضوع | الحالة |
+|---|---|---|
+| **#57** | Site narrative rebuild | **MERGED ✓ ومنشور على `a20b258`** (2026-08-25) |
+| **#58** | تمريرة الصور المصحّحة | **مفتوحة** · `b34393e` · preview — لا تُدمج قبل Wave 2E |
+| **Wave 2E** | Closeout + Attribution | هذا الفرع — `feat/wave-2e-closeout-attribution` |
+
+**ما نُفِّذ في Wave 2E** — التفاصيل في [`docs/WAVE-2E-CLOSEOUT.md`](docs/WAVE-2E-CLOSEOUT.md)
+1. **UI/Content:** حذف شريط «تعرّف على iGarden» · تصحيح YouTube (`@igarden` كان 404) ·
+   إضافة مسارَي B2C إلى شريط الميجا · تصحيح تكرار عنوان `/fact-sheet` ·
+   تخفيف ادّعاء تكافؤ في `/home-solutions` · **تشخيص وإصلاح CORS في `/app`** ·
+   إقفال «الخط الأبيض» كسلوك PWA لا علّة.
+2. **النماذج:** البريد صار **ظاهراً** لا مطويّاً · `preferred_contact` جديد ·
+   البريد إلزامي فقط عند اختياره · إشعار Resend داخلي لا يمنع حفظ الليد.
+3. **Attribution Bridge:** أول صفحة وصول + أول UTM على النماذج الثلاثة —
+   **بصفر تغيير في المخطط** (استُعمل عمود `referrer` القائم غير المستعمَل).
+4. **الوثائق:** هذه الوثيقة + `SITE-ARCHITECTURE.md` + سجلّ الإقفال.
+
+**✓ الهيرو — مغلق بلا تغيير**
+- CLOSED — no change: retained current production Tier-0 hero; no alternative approved literal source was found.
+- baseline المعتمد لهذه الموجة: `H1: "ازرع بذكاء."` ⛔ لم يُغيَّر النصّ ولم يُخترع شعار.
+
+**⚠ مفتوح**
+- **Vercel Firewall / Rate Limiting على `/api/notify-lead` — يسبق وضع المفتاح.** ⛔ غير قابل للتهيئة من المستودع.
+- `RESEND_API_KEY` — سرّ يُضاف في Vercel (خطوة تسليم موثّقة).
+- لا إطار اختبارات في المستودع إطلاقاً.
+- تنظيف الفروع والـworktrees وتكرار الأصول — **بعد** دمج Wave 2E.
+
+
 
 ## الحالة الآن
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { noPrefetch } from "@/lib/constants";
 
 type Variant = "lime" | "outline-green" | "outline-light" | "ghost";
 
@@ -39,7 +40,7 @@ export function CTAButton({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} prefetch={noPrefetch(href)} className={classes}>
       {children}
     </Link>
   );

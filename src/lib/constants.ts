@@ -107,7 +107,7 @@ export const SOCIAL = {
   linkedin: "https://linkedin.com/company/igardensa",
   instagram: "https://instagram.com/igardensa",
   twitter: "https://x.com/igardensa",
-  youtube: "https://youtube.com/@igarden",
+  youtube: "https://youtube.com/@igardensa",
 } as const;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -122,6 +122,16 @@ export const WHATSAPP_PREFILL = "مرحباً iGarden، وصلت من الموق
 
 /** رابط واتساب الجاهز — يُبنى من CONTACT.whatsapp، بلا رقم مكتوب يدوياً. */
 export const WHATSAPP_HREF = `${CONTACT.whatsapp}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`;
+
+/* مسارات داخلية تُعيد التوجيه إلى أصل خارجي (308 cross-origin).
+   ⚠ prefetch من next/link عليها يُصدر خطأ CORS في الـconsole لأنّ استجابة
+   إعادة التوجيه تعبر الأصل. تُعطَّل الـprefetch عليها عبر `noPrefetch`. */
+export const CROSS_ORIGIN_REDIRECT_PATHS = ["/app"] as const;
+export function noPrefetch(href: string): false | undefined {
+  return (CROSS_ORIGIN_REDIRECT_PATHS as readonly string[]).includes(href)
+    ? false
+    : undefined;
+}
 
 export const DEMO_URL = "https://demo.igarden.sa";
 export const SHOP_URL = "https://shop.igarden.sa";
@@ -196,6 +206,9 @@ export const MEGA_FOOTER: NavColumnItem[] = [
   // ⛔ حُذف «استعرض كل الحلول» و«Live Demo» بقرار 2026-08-25.
   // الديمو يبقى مبلوغاً من عمود الرقمنة داخل الميجا ومن قسم Smart OS وصفحته.
   { label: "كيف نعمل", href: "/how-we-work" },
+  // Wave 2E: مسارا B2C كانا مبلوغَين من الفوتر والدرج فقط — أُضيفا للميجا.
+  { label: "حلول الأفراد والمنازل", href: "/home-solutions" },
+  { label: "المتجر", href: SHOP_URL, external: true },
 ];
 
 // ─── التنقّل الرئيسي ─────────────────────────────────────────────────────────
