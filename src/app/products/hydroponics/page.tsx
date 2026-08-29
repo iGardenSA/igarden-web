@@ -601,8 +601,8 @@ const SCALES = [
     tier: "منزلي",
     title: "أنظمة منزلية + iGarden Tower مصغّر",
     desc: "للفلل والشرفات والاستراحات. يشمل iGarden Tower المصغّر — حلول جاهزة عبر iGarden Home Solutions.",
-    cta: { label: "استكشف الحلول المنزلية ↗", href: "https://shop.igarden.sa" },
-    external: true,
+    cta: { label: "استكشف الحلول المنزلية", href: "/home-solutions" },
+    external: false,
     highlight: false,
   },
 ];

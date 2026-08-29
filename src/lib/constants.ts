@@ -208,7 +208,6 @@ export const MEGA_FOOTER: NavColumnItem[] = [
   { label: "كيف نعمل", href: "/how-we-work" },
   // Wave 2E: مسارا B2C كانا مبلوغَين من الفوتر والدرج فقط — أُضيفا للميجا.
   { label: "حلول الأفراد والمنازل", href: "/home-solutions" },
-  { label: "المتجر", href: SHOP_URL, external: true },
 ];
 
 // ─── التنقّل الرئيسي ─────────────────────────────────────────────────────────

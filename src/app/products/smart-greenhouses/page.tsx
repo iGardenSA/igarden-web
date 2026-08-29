@@ -539,8 +539,8 @@ const SCALES = [
     tier: "منزلي",
     title: "محميات منزلية صغيرة",
     desc: "للفلل والاستراحات. حلول شبه جاهزة — متاحة عبر iGarden Home Solutions.",
-    cta: { label: "استكشف الحلول المنزلية ↗", href: "https://shop.igarden.sa" },
-    external: true,
+    cta: { label: "استكشف الحلول المنزلية", href: "/home-solutions" },
+    external: false,
     highlight: false,
   },
 ];

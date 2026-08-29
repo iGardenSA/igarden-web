@@ -17,7 +17,6 @@ import {
   CONTACT,
   SOCIAL,
   WHATSAPP_HREF,
-  SHOP_URL,
   noPrefetch,
 } from "@/lib/constants";
 
@@ -42,7 +41,6 @@ const COMPANY_LINKS: FLink[] = [
 ];
 
 const PLATFORMS_LINKS: FLink[] = [
-  { label: "المتجر", href: SHOP_URL, external: true },
   { label: "Home Solutions — حلول الأفراد", href: "/home-solutions" },
   { label: "تطبيق iGarden", href: "/app", badge: "قريباً" },
   { label: "تواصل معنا", href: "/contact" },

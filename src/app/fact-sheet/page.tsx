@@ -94,7 +94,6 @@ export default function FactSheetPage() {
                 label="iGarden Home Solutions"
                 value="shop.igarden.sa"
                 mono
-                href="https://shop.igarden.sa"
               />
               <FactRow
                 label="الديمو التفاعلي"

@@ -223,14 +223,6 @@ export default function ContactPage() {
               >
                 اكتشف الحلول الفردية
               </a>
-              <a
-                href="https://shop.igarden.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-[var(--color-border)] text-[var(--color-brand-600)] text-sm font-semibold hover:border-[var(--color-brand-300)] transition-colors"
-              >
-                iGarden Home Solutions
-              </a>
             </div>
           </div>
         </div>

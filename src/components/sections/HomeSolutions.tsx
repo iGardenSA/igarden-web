@@ -28,7 +28,7 @@ export function HomeSolutions() {
           {/* زر CTA */}
           <div className="flex-shrink-0">
             <Link
-              href="https://shop.igarden.sa"
+              href="/home-solutions"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold px-6 py-3 rounded-lg transition-colors"

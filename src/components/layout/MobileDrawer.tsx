@@ -12,7 +12,6 @@ import {
   MAIN_CTA,
   WHATSAPP_HREF,
   DEMO_URL,
-  SHOP_URL,
   type NavColumnItem,
 } from "@/lib/constants";
 
@@ -21,7 +20,6 @@ const PLATFORMS: NavColumnItem[] = [
 ];
 
 const INDIVIDUALS: NavColumnItem[] = [
-  { label: "المتجر", href: SHOP_URL, external: true },
   { label: "Home Solutions — حلول الأفراد", href: "/home-solutions" },
 ];
 

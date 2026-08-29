@@ -80,15 +80,6 @@ export default function HomePage() {
             >
               حلول الأفراد
             </Link>
-            {" · "}
-            <a
-              href="https://shop.igarden.sa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
-            >
-              المتجر
-            </a>
           </p>
         </div>
       </section>
