@@ -511,4 +511,3 @@ function InvestmentAdvantage({
     </div>
   );
 }
-
