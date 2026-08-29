@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "إخلاء الامتثال | iGarden",
+  title: "إخلاء الامتثال",
   description:
     "حدود ما تقدّمه طبقة الامتثال في Smart OS — شفافية كاملة حول ما هو سجل تشغيلي وما هو ليس شهادة امتثال رسمية.",
   alternates: { canonical: "https://igarden.sa/compliance-disclaimer" },

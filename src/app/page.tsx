@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
   title: "iGarden — منظومات زراعية متكاملة ورقمنة تشغيل المزارع",
@@ -31,8 +30,6 @@ import { AssessmentSection } from "@/components/sections/AssessmentSection";
 export default function HomePage() {
   return (
     <>
-      <OrganizationSchema />
-      <WebSiteSchema />
 
       {/* ① Hero — يمتدّ خلف الهيدر اللاصق (64px) ليظهر التنقّل الأبيض فوق الفيديو */}
       <div className="-mt-[64px]">

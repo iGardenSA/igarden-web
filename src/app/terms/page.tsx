@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "الشروط والأحكام | iGarden",
+  title: "الشروط والأحكام",
   description:
     "الشروط القانونية لاستخدام موقع iGarden وخدماتنا. صياغة واضحة بدون تعقيد.",
   alternates: { canonical: "https://igarden.sa/terms" },

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "ميثاق بيانات العميل | iGarden",
+  title: "ميثاق بيانات العميل",
   description:
     "كيف نتعامل مع بيانات عملاء Smart OS — ملكية، سيطرة، وحدود الاستخدام.",
   alternates: { canonical: "https://igarden.sa/data-charter" },

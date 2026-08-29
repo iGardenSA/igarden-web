@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "سياسة الخصوصية | iGarden",
+  title: "سياسة الخصوصية",
   description:
     "كيف نجمع البيانات، ولماذا، وما حقوقك. شرح صريح متوافق مع نظام حماية البيانات الشخصية السعودي (PDPL).",
   alternates: { canonical: "https://igarden.sa/privacy" },

@@ -7,6 +7,7 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://igarden.sa/#organization",
     name: "iGarden",
     alternateName: ["انتيليجنت غاردن", "شركة انتيليجنت غاردن"],
     legalName: "شركة انتيليجنت غاردن (ذات مسؤولية محدودة)",
@@ -53,10 +54,11 @@ export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://igarden.sa/#website",
     name: "iGarden",
     url: "https://igarden.sa",
     inLanguage: "ar-SA",
-    publisher: { "@type": "Organization", name: "iGarden" },
+    publisher: { "@id": "https://igarden.sa/#organization" },
   };
 
   return (

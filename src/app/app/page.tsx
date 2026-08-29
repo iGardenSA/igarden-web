@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "التطبيق — قيد التحقق والتطوير",
   description:
     "تطبيق iGarden قيد التحقق والتطوير للهواة والمزارعين المنزليين. نختبر نطاقاً مخططاً يشمل حاسبات الزراعة المائية واليوميات والإرشاد التقني بالعربية. انضم إلى قائمة الانتظار.",
+  alternates: { canonical: "https://igarden.sa/app" },
   keywords: [
     "تطبيق iGarden",
     "iGarden App",
