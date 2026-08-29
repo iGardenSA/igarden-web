@@ -96,7 +96,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm opacity-75 hover:opacity-100 hover:text-lime transition-all"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" aria-hidden />
-                  <span className="font-latin">{CONTACT.phone}</span>
+                  <span dir="ltr" className="font-latin ltr-inline">{CONTACT.phone}</span>
                 </a>
               </li>
               <li>
