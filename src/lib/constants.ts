@@ -149,6 +149,9 @@ export type NavColumnItem = {
   label: string;
   href: string;
   external?: boolean;
+  /** وسم نصّي ساكن يوضّح أن الوجهة نموذج تواصل لا صفحة حلّ.
+      نصّ فقط — لا حركة ولا دلالة «مباشر». */
+  tag?: string;
 };
 
 export type NavColumn = {
@@ -195,8 +198,8 @@ export const MEGA_COLUMNS: NavColumn[] = [
     icon: "sun",
     items: [
       // ملاحظة: قيمة cta واحدة معتمدة؛ التفريق في topic ويُحفظ ضمن source_url.
-      { label: "الطاقة الشمسية المساندة", href: "/contact?cta=sustainability_solutions&topic=solar_support" },
-      { label: "كفاءة المياه والطاقة", href: "/contact?cta=sustainability_solutions&topic=water_energy_efficiency" },
+      { label: "الطاقة الشمسية المساندة", href: "/contact?cta=sustainability_solutions&topic=solar_support", tag: "تواصل" },
+      { label: "كفاءة المياه والطاقة", href: "/contact?cta=sustainability_solutions&topic=water_energy_efficiency", tag: "تواصل" },
     ],
   },
 ];
