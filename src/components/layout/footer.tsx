@@ -185,8 +185,14 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs opacity-55">
             <p className="font-medium opacity-80">{COMPANY.legalFull}</p>
-            <p className="font-latin whitespace-nowrap">
-              © {new Date().getFullYear()} iGarden. All rights reserved.
+            {/* الجزء اللاتيني معزول باتجاهه داخل <bdi dir="ltr"> كي لا يتكفّل
+                خوارزم الاتجاه بترتيبه — فتُصيَّر النقطة والرمز في موضعهما.
+                الترتيب البصري: «© 2026 iGarden. جميع الحقوق محفوظة.» */}
+            <p>
+              <bdi dir="ltr" className="font-latin">
+                © {new Date().getFullYear()} iGarden.
+              </bdi>{" "}
+              جميع الحقوق محفوظة.
             </p>
           </div>
         </div>
