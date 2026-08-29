@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Construction, Database, Cpu, FileText, CheckCircle2, Clock } from "lucide-react";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "سجلات التشغيل القابلة للمراجعة — Smart OS",
@@ -9,6 +10,26 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://igarden.sa/compliance" },
   robots: { index: true, follow: true },
 };
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "حدود طبقة الامتثال",
+    desc: "ما تقدّمه السجلات وما لا تُغني عنه.",
+    href: "/compliance-disclaimer",
+  },
+  {
+    label: "منصّة Smart OS",
+    desc: "المنصّة التي تُنتج السجلات والتقارير.",
+    href: "/products/smart-os",
+  },
+  {
+    label: "ميثاق بيانات العميل",
+    desc: "ملكية بيانات التشغيل والتحكّم في الوصول إليها.",
+    href: "/data-charter",
+  },
+];
 
 export default function CompliancePage() {
   return (
@@ -252,6 +273,7 @@ export default function CompliancePage() {
           </div>
         </div>
       </section>
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

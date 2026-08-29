@@ -9,6 +9,7 @@ import {
   Microscope,
   CheckCircle2,
 } from "lucide-react";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لأنظمة الزراعة الذكية",
@@ -433,6 +434,16 @@ const BREADCRUMB = [
   { name: "من نحن", url: "/about" },
 ];
 
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "بيانات الشركة الرسمية",
+    desc: "السجل التجاري والتراخيص والأرقام النظامية.",
+    href: "/fact-sheet",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -447,6 +458,7 @@ export default function AboutPage() {
       <OsfanLinkSection />
       <ValuesSection />
       <FinalCTA />
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

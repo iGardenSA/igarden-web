@@ -34,8 +34,19 @@ import {
 } from "@/lib/lead-tracking";
 import { notifyLead } from "@/lib/notify-lead";
 import { CONTACT, COMPANY } from "@/lib/constants";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "كيف نعمل",
+    desc: "مساران للتنفيذ: مشروع جديد أو منشأة قائمة — وما يحدث في كل خطوة.",
+    href: "/how-we-work",
+  },
+];
 
 export default function ContactPage() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -685,6 +696,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

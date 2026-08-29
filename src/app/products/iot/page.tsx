@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Cpu, Wifi, Thermometer, Gauge, Zap, ArrowLeft } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
@@ -58,6 +59,21 @@ const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
   { name: "خدماتنا", url: "/products" },
   { name: "إنترنت الأشياء الزراعي", url: "/products/iot" },
+];
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "Smart Controllers",
+    desc: "وحدة التحكّم التي تُدير الحساسات وتُنفّذ الأوامر ميدانياً.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "ميثاق بيانات العميل",
+    desc: "ملكية قراءات الحساسات وحدود استخدامها.",
+    href: "/data-charter",
+  },
 ];
 
 export default function IoTPage() {
@@ -216,6 +232,7 @@ export default function IoTPage() {
           </div>
         </div>
       </section>
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

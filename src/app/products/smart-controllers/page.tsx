@@ -899,6 +899,11 @@ const RELATED_LINKS: RelatedLink[] = [
     href: "/products/iot",
   },
   {
+    label: "ميثاق بيانات العميل",
+    desc: "ملكية السجلات التشغيلية ومن يصل إليها.",
+    href: "/data-charter",
+  },
+  {
     label: "السجلات وجاهزية الامتثال",
     desc: "ما الذي يمكن تسجيله ضمن نطاق الربط.",
     href: "/compliance",

@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
@@ -58,6 +59,31 @@ const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
   { name: "خدماتنا", url: "/products" },
   { name: "Smart OS", url: "/products/smart-os" },
+];
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "Smart Controllers",
+    desc: "لوحة التحكّم التي تُغذّي المنصّة بالقراءات وتُنفّذ الأوامر.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "إنترنت الأشياء الزراعي",
+    desc: "ما نقيسه وكيف تصل القراءة من الحقل إلى المنصّة.",
+    href: "/products/iot",
+  },
+  {
+    label: "السجلات وجاهزية الامتثال",
+    desc: "كيف تتحوّل القراءات إلى سجلّ قابل للمراجعة.",
+    href: "/compliance",
+  },
+  {
+    label: "ميثاق بيانات العميل",
+    desc: "من يملك بيانات التشغيل ومن يصل إليها.",
+    href: "/data-charter",
+  },
 ];
 
 export default function SmartOSPage() {
@@ -262,6 +288,7 @@ export default function SmartOSPage() {
           </div>
         </div>
       </section>
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

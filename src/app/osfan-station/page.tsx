@@ -4,6 +4,7 @@ import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/shared/Schem
 import { CTAButton } from "@/components/shared/CTAButton";
 import { VisitForm } from "./VisitForm";
 import { CheckCircle2, Microscope } from "lucide-react";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "مرفق R&D في عسفان للتجارب والتطوير",
@@ -419,6 +420,21 @@ const BREADCRUMB = [
   { name: "مرفق R&D في عسفان", url: "/osfan-station" },
 ];
 
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "أنظمة الزراعة المائية",
+    desc: "التقنيات التي نختبرها في المرفق وأيّها يناسب محصولك.",
+    href: "/products/hydroponics",
+  },
+  {
+    label: "Smart Controllers",
+    desc: "لوحة التحكّم التي تُختبر ميدانياً في المرفق.",
+    href: "/products/smart-controllers",
+  },
+];
+
 export default function OsfanStationPage() {
   return (
     <>
@@ -431,6 +447,7 @@ export default function OsfanStationPage() {
       <WorkshopsSection />
       <ExpansionPlans />
       <BookVisit />
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }
