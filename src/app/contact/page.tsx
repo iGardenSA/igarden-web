@@ -668,14 +668,15 @@ export default function ContactPage() {
                       )}
                     </Button>
                     <p className="text-lg text-[var(--color-muted)] mt-4 leading-relaxed">
-                      بإرسالك هذه الرسالة، توافق على{" "}
+                      لن نبيع بياناتك ولن نشاركها لأغراض تسويقية. تُعالَج بواسطة مزوّدي
+                      الخدمة المذكورين في{" "}
                       <Link
                         href="/privacy"
                         className="text-[var(--color-brand-600)] underline hover:text-[var(--color-accent-600)]"
                       >
                         سياسة الخصوصية
-                      </Link>{" "}
-                      الخاصة بنا. لن نشارك بياناتك مع أي طرف ثالث.
+                      </Link>
+                      .
                     </p>
                   </div>
                 </form>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { createBrowserSupabase } from "@/lib/supabase";
 import { notifyLead } from "@/lib/notify-lead";
 import { buildAttribution } from "@/lib/lead-tracking";
+import Link from "next/link";
 
 type VisitType = "individual" | "group" | "investor" | "press";
 
@@ -159,6 +160,15 @@ export function VisitForm() {
           تعذّر إرسال الطلب. حاول مرة أخرى أو تواصل معنا مباشرة.
         </p>
       )}
+
+      <p className="body-sm text-medium-gray text-center leading-relaxed">
+        لن نبيع بياناتك ولن نشاركها لأغراض تسويقية. تُعالَج بواسطة مزوّدي
+        الخدمة المذكورين في{" "}
+        <Link href="/privacy" className="text-lime hover:text-deep-green underline">
+          سياسة الخصوصية
+        </Link>
+        .
+      </p>
     </form>
   );
 }

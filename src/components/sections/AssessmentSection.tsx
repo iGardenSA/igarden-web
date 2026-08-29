@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -364,6 +365,18 @@ export function AssessmentSection() {
               <p className="text-sm text-medium-gray leading-relaxed text-center">
                 نراجع احتياجك ونقترح الخطوة الأولى المناسبة. لا يتضمّن التقييم الأولي
                 تسعيراً أو تصميماً هندسياً نهائياً.
+              </p>
+
+              <p className="text-sm text-medium-gray leading-relaxed text-center">
+                لن نبيع بياناتك ولن نشاركها لأغراض تسويقية. تُعالَج بواسطة
+                مزوّدي الخدمة المذكورين في{" "}
+                <Link
+                  href="/privacy"
+                  className="text-[var(--color-brand-600)] underline hover:text-deep-green"
+                >
+                  سياسة الخصوصية
+                </Link>
+                .
               </p>
             </form>
           )}

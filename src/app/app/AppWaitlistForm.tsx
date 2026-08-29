@@ -306,11 +306,12 @@ export default function AppWaitlistForm({
         )}
 
         <p className="text-medium-gray text-xs text-center leading-relaxed">
-          بالتسجيل أنت توافق على{" "}
+          لن نبيع بياناتك ولن نشاركها لأغراض تسويقية. تُعالَج بواسطة مزوّدي
+          الخدمة المذكورين في{" "}
           <a href="/privacy" className="text-brand-600 underline-offset-2 hover:underline">
             سياسة الخصوصية
           </a>
-          . لن نشارك بياناتك مع طرف ثالث.
+          .
         </p>
       </div>
     </form>
