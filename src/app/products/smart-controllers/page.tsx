@@ -3,6 +3,11 @@ import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
+import {
+  CapabilityStatus,
+  CAPABILITY_STATUS_META,
+  type CapabilityStatusValue,
+} from "@/components/shared/CapabilityStatus";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Factory,
@@ -135,42 +140,53 @@ function StatusCard() {
 }
 
 /* ─── Section 2.1: حالة القدرة ─────────────────────────────
-   تصنيف صريح يمنع قراءة القدرات على أنها كلّها جاهزة افتراضياً. */
-const CAPABILITY_STATE = [
-  {
-    tier: "متاح ضمن التجهيز",
-    items: ["القياس", "الربط", "لوحة العرض", "التشغيل المحلي وعن بُعد بحسب التجهيز"],
-  },
-  {
-    tier: "حسب نطاق المشروع",
-    items: ["الأتمتة", "التنبيهات", "السجلات", "التقارير", "واتساب والتكاملات"],
-  },
-  {
-    tier: "قيد التطوير",
-    items: ["التحليلات المتقدمة", "اكتشاف الشذوذ"],
-  },
+   تصنيف صريح يمنع قراءة القدرات على أنها كلّها جاهزة افتراضياً.
+   الحالات قرار تجاري معتمد في docs/CAPABILITY-MATRIX.md — لا تُشتقّ من
+   وجود كود أو واجهة. ترتيب القدرات داخل كل مجموعة كما كان قبل التمديد. */
+const CAPABILITY_STATE: {
+  status: CapabilityStatusValue;
+  items: string[];
+}[] = [
+  { status: "available", items: ["الربط", "لوحة العرض"] },
+  { status: "scoped", items: ["التشغيل المحلي وعن بُعد", "التنبيهات", "السجلات", "التقارير", "واتساب والتكاملات"] },
+  { status: "field-test", items: ["القياس", "الأتمتة"] },
+  { status: "wip", items: ["التحليلات المتقدمة", "اكتشاف الشذوذ"] },
 ];
 
 function CapabilityState() {
   return (
-    <section className="section-light py-12" dir="rtl">
+    <section className="section-light py-12" dir="rtl" aria-labelledby="capability-state-heading">
       <div className="container mx-auto px-4 max-w-5xl">
-        <h2 className="h4 text-deep-green mb-6 text-center">حالة القدرة</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {CAPABILITY_STATE.map((c) => (
-            <div key={c.tier} className="bg-white rounded-card p-5 border border-light-gray shadow-soft">
-              <p className="text-xs font-bold uppercase tracking-widest text-lime mb-3">
-                {c.tier}
-              </p>
-              <ul className="space-y-1.5">
-                {c.items.map((it) => (
-                  <li key={it} className="body-sm text-medium-gray">
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <h2 id="capability-state-heading" className="h4 text-deep-green mb-3 text-center">
+          حالة القدرة
+        </h2>
+        {/* تحوّط واحد في رأس القسم — لا يُكرَّر داخل البطاقات. */}
+        <p className="body-sm text-medium-gray text-center max-w-2xl mx-auto mb-8">
+          الحالات أدناه تصف العرض الحالي. التجهيز النهائي لكل قدرة يحدده نطاق
+          المشروع والعقد.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {CAPABILITY_STATE.map((c) => {
+            const meta = CAPABILITY_STATUS_META[c.status];
+            return (
+              <div
+                key={c.status}
+                className="bg-white rounded-card p-5 border border-light-gray shadow-soft flex flex-col"
+              >
+                <h3 className="mb-2">
+                  <CapabilityStatus value={c.status} id={`capability-${c.status}`} />
+                </h3>
+                <p className="body-sm text-medium-gray mb-4">{meta.meaning}</p>
+                <ul className="space-y-1.5" aria-labelledby={`capability-${c.status}`}>
+                  {c.items.map((it) => (
+                    <li key={it} className="body-sm text-deep-green">
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
