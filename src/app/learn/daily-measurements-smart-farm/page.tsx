@@ -286,12 +286,10 @@ export default function ArticlePage() {
               <span dir="ltr" className="font-semibold">iGarden Smart OS</span> يُسجّل هذه المؤشرات تلقائياً مع الطابع الزمني لكل قراءة — دون أن تحمل قلماً أو تملأ جدولاً. يُنبّهك فقط عند الانحراف عن النطاقات التي تُحدّدها.
             </p>
             <Link
-              href="https://demo.igarden.sa"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact?interest=demo&cta=demo_access_request"
               className="inline-flex items-center gap-1 mt-3 text-[#7CB342] hover:text-[#0F3D2E] font-medium text-sm transition-colors"
             >
-              <span>شاهد Smart OS Demo</span>
+              <span>اطلب وصولاً إلى الديمو</span>
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
           </section>
@@ -309,14 +307,12 @@ export default function ArticlePage() {
               >
                 تعرّف على Smart Controllers
               </Link>
-              <a
-                href="https://demo.igarden.sa"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact?interest=demo&cta=demo_access_request"
                 className="inline-block border border-[#0F3D2E] text-[#0F3D2E] hover:bg-[#0F3D2E] hover:text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
               >
-                شاهد Smart OS Demo
-              </a>
+                اطلب وصولاً إلى الديمو
+              </Link>
             </div>
           </section>
 

@@ -23,8 +23,7 @@ export function SmartOSDemoSection() {
             منصة تعمل اليوم — لا وعد للغد
           </h2>
           <p className="text-cream/75 text-lg leading-relaxed">
-            لوحة تحكّم تجمع بيانات الاستشعار من الميدان لحظياً مع 4 مفاتيح ذكية.
-            مُختَبَرة في عسفان، جاهزة لمزرعتك.
+            واجهة تجريبية ببيانات محاكاة تعرض لوحة الاستشعار و4 مفاتيح ذكية.
           </p>
         </div>
 
@@ -84,8 +83,8 @@ export function SmartOSDemoSection() {
 
         {/* Disclaimer + CTA */}
         <div className="text-center">
-          <CTAButton href="https://demo.igarden.sa" variant="lime" external>
-            افتح المنصة المباشرة
+          <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="lime">
+            اطلب وصولاً إلى الديمو
           </CTAButton>
           <p className="text-cream/40 text-xs mt-3">
             نموذج تفاعلي — بيانات محاكاة لأغراض العرض · ليس بديلاً عن شهادة Saudi GAP

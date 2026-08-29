@@ -52,18 +52,13 @@ export default function HeroSection() {
             احجز استشارة
           </Link>
 
-          <a
-            href="https://demo.igarden.sa"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact?interest=demo&cta=demo_access_request"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/80 text-white hover:bg-white/10 rounded-lg text-lg md:text-lg font-medium transition-all duration-200 min-w-[220px]"
           >
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#A5D63F] animate-pulse flex-shrink-0" />
-              شاهد الديمو
-            </span>
+            <span>اطلب وصولاً إلى الديمو</span>
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

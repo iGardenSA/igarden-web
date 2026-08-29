@@ -193,7 +193,7 @@ export const CTA_IDS = [
   "workshop_signup",
   "newsletter_signup",
   "pitch_deck_request",
-  "live_demo",
+  "demo_access_request",
   "sustainability_solutions",
   "bioponics_inquiry",
 ] as const;

@@ -243,15 +243,13 @@ export default function CompliancePage() {
               اطلب تقييماً أولياً
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
-            <a
-              href="https://demo.igarden.sa"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact?interest=demo&cta=demo_access_request"
               className="inline-flex items-center gap-2 px-8 py-4 border border-white/30 text-white hover:bg-white/10 rounded-lg font-semibold text-base transition-colors"
             >
-              شاهد Smart OS
+              اطلب وصولاً إلى الديمو
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

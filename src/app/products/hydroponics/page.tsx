@@ -828,12 +828,10 @@ function SmartOSSection() {
             مرئية في أيّ وقت من Dashboard أو عبر تنبيهات واتساب.
           </p>
           <Link
-            href="https://demo.igarden.sa"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/contact?interest=demo&cta=demo_access_request"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold transition-colors"
           >
-            جرّب الديمو الحيّ ↗
+            اطلب وصولاً إلى الديمو
           </Link>
         </div>
       </div>

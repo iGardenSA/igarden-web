@@ -85,8 +85,8 @@ export default function SmartOSPage() {
             >
               اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-              Live Demo ←
+            <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+              اطلب وصولاً إلى الديمو
             </CTAButton>
           </div>
         </div>
@@ -256,8 +256,8 @@ export default function SmartOSPage() {
             >
               اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-              Live Demo ←
+            <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+              اطلب وصولاً إلى الديمو
             </CTAButton>
           </div>
         </div>

@@ -18,8 +18,8 @@ export function FinalCTA() {
           <CTAButton href="/contact?cta=book_consultation" variant="lime">
             احجز استشارة مجانية
           </CTAButton>
-          <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-            جرّب الـ Demo أولاً
+          <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+            اطلب وصولاً إلى الديمو
           </CTAButton>
         </div>
 

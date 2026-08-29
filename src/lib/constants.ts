@@ -149,7 +149,6 @@ export type NavColumnItem = {
   label: string;
   href: string;
   external?: boolean;
-  badge?: "live";
 };
 
 export type NavColumn = {
@@ -187,7 +186,7 @@ export const MEGA_COLUMNS: NavColumn[] = [
     icon: "monitor-cog",
     items: [
       { label: "Smart OS — لوحة تشغيل المزرعة", href: "/products/smart-os" },
-      { label: "Demo مباشر", href: DEMO_URL, external: true, badge: "live" },
+      { label: "ديمو Smart OS", href: DEMO_URL, external: true },
       { label: "السجلات وجاهزية الامتثال", href: "/compliance" },
     ],
   },

@@ -82,11 +82,10 @@ function Hero() {
                 اطلب تقييماً أولياً
               </CTAButton>
               <CTAButton
-                href="https://demo.igarden.sa"
+                href="/contact?interest=demo&cta=demo_access_request"
                 variant="outline-green"
-                external
               >
-                شاهد البيانات الحيّة ↗
+                اطلب وصولاً إلى الديمو
               </CTAButton>
             </div>
           </div>
@@ -708,20 +707,17 @@ function DemoSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              تجربة حيّة قبل الشراء
+              الديمو قبل الشراء
             </p>
             <h2 className="h2 text-cream mb-5">
               جرّب لوحة التحكم بنفسك — قبل أن تقتنيها
             </h2>
             <p className="body-base text-cream/80 mb-4">
-              الديمو الحيّ يعرض 7 حسّاسات + 10 شاشات تفاعلية مبنية على بيانات
-              حقيقية من مرفق R&D في عسفان.
+              الديمو يعرض 7 حسّاسات + 10 شاشات تفاعلية مبنية على بيانات
+              محاكاة.
             </p>
-            <p className="body-sm text-cream/60 mb-8">
-              لا تسجيل مطلوب — افتح وجرّب مباشرة.
-            </p>
-            <CTAButton href="https://demo.igarden.sa" variant="lime" external>
-              افتح الديمو التفاعلي ↗
+            <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="lime">
+              اطلب وصولاً إلى الديمو
             </CTAButton>
           </div>
 
@@ -932,8 +928,8 @@ function FinalCTA() {
           <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
             اطلب تقييماً أولياً
           </CTAButton>
-          <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-            جرّب الديمو أولاً ↗
+          <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+            اطلب وصولاً إلى الديمو
           </CTAButton>
         </div>
       </div>
