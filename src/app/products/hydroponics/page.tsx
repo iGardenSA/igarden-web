@@ -592,7 +592,7 @@ const SCALES = [
   {
     tier: "متوسط",
     title: "أنظمة للمزارع المتوسطة",
-    desc: "حلول مرنة 50–500 م². نُختار التقنية الأنسب لمحصولك وميزانيتك.",
+    desc: "حلول مرنة من 50 إلى 500 م². نُختار التقنية الأنسب لمحصولك وميزانيتك.",
     cta: { label: "اطلب عرضاً", href: "/contact?interest=hydroponics-mid&cta=request_quote" },
     external: false,
     highlight: true,
