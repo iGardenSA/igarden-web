@@ -87,7 +87,7 @@ export default function AppWaitlistForm({
   // ─────────────────────────────────────────────────────────
   if (status === "success") {
     return (
-      <div className="bg-cream rounded-card p-8 lg:p-12 text-center shadow-2xl border-2 border-lime">
+      <div role="status" className="bg-cream rounded-card p-8 lg:p-12 text-center shadow-2xl border-2 border-lime">
         <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-lime/25 flex items-center justify-center ring-4 ring-lime/10">
           <CheckCircle2 className="w-12 h-12 text-brand-600" aria-hidden strokeWidth={2.5} />
         </div>
@@ -108,7 +108,7 @@ export default function AppWaitlistForm({
   // ─────────────────────────────────────────────────────────
   if (status === "duplicate") {
     return (
-      <div className="bg-cream rounded-card p-8 lg:p-12 text-center shadow-2xl border-2 border-brand-600/50">
+      <div role="status" className="bg-cream rounded-card p-8 lg:p-12 text-center shadow-2xl border-2 border-brand-600/50">
         <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-brand-600/15 flex items-center justify-center ring-4 ring-brand-600/5">
           <CheckCircle2 className="w-12 h-12 text-brand-600" aria-hidden strokeWidth={2.5} />
         </div>
@@ -176,10 +176,17 @@ export default function AppWaitlistForm({
         </div>
 
         <div>
-          <label className="block text-deep-green text-sm font-semibold mb-2">
+          <span
+            id="waitlist-interest-label"
+            className="block text-deep-green text-sm font-semibold mb-2"
+          >
             مستوى اهتمامك <span className="text-error">*</span>
-          </label>
-          <div className="space-y-2">
+          </span>
+          <div
+            className="space-y-2"
+            role="radiogroup"
+            aria-labelledby="waitlist-interest-label"
+          >
             {APP_INTEREST_LEVELS.map((level) => {
               const checked = formData.interest_level === level.value;
               return (
@@ -237,6 +244,8 @@ export default function AppWaitlistForm({
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 disabled={status === "submitting"}
+                aria-invalid={!!errors.phone}
+                aria-describedby={errors.phone ? "waitlist-phone-error" : undefined}
                 className={`w-full px-4 py-3 rounded-button border text-deep-green placeholder:text-medium-gray/60 focus:outline-none focus:ring-2 focus:ring-brand-600/30 disabled:opacity-50 ${
                   errors.phone
                     ? "border-error focus:border-error"
@@ -245,7 +254,7 @@ export default function AppWaitlistForm({
                 placeholder="+966 5x xxx xxxx"
               />
               {errors.phone && (
-                <p className="text-error text-xs mt-1.5">{errors.phone}</p>
+                <p id="waitlist-phone-error" className="text-error text-xs mt-1.5">{errors.phone}</p>
               )}
             </div>
 
@@ -270,6 +279,7 @@ export default function AppWaitlistForm({
         <button
           type="submit"
           disabled={status === "submitting"}
+          aria-busy={status === "submitting"}
           className="w-full bg-brand-600 hover:bg-deep-green text-cream font-semibold py-3.5 rounded-button transition-colors focus:outline-none focus:ring-2 focus:ring-brand-600/40 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           {status === "submitting" ? (
@@ -283,7 +293,7 @@ export default function AppWaitlistForm({
         </button>
 
         {status === "error" && (
-          <div className="flex items-start gap-2 p-3 bg-error/10 border border-error/30 rounded-button">
+          <div role="alert" className="flex items-start gap-2 p-3 bg-error/10 border border-error/30 rounded-button">
             <AlertCircle className="w-4 h-4 text-error shrink-0 mt-0.5" aria-hidden />
             <p className="text-error text-xs leading-relaxed">
               تعذّر التسجيل الآن. حاول مرة أخرى، أو راسلنا على{" "}

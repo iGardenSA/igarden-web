@@ -72,7 +72,7 @@ export function VisitForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-lime/10 border border-lime rounded-card p-8 text-center">
+      <div role="status" className="bg-lime/10 border border-lime rounded-card p-8 text-center">
         <p className="h3 text-deep-green mb-2">وصل طلبك ✓</p>
         <p className="body-base text-medium-gray">سيتواصل معك فريقنا خلال 24 ساعة لتأكيد الموعد.</p>
       </div>
@@ -90,7 +90,9 @@ export function VisitForm() {
             id="visit-name"
             name="full_name"
             type="text"
+            autoComplete="name"
             required
+            aria-required="true"
             placeholder="محمد العمري"
             className="w-full px-4 py-3 rounded-card border border-light-gray bg-white text-dark-text placeholder:text-medium-gray/60 focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime transition-colors"
           />
@@ -103,7 +105,9 @@ export function VisitForm() {
             id="visit-phone"
             name="phone"
             type="tel"
+            autoComplete="tel"
             required
+            aria-required="true"
             placeholder="05xxxxxxxx"
             dir="ltr"
             className="w-full px-4 py-3 rounded-card border border-light-gray bg-white text-dark-text placeholder:text-medium-gray/60 focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime transition-colors text-start"
@@ -144,13 +148,14 @@ export function VisitForm() {
       <button
         type="submit"
         disabled={status === "loading"}
+        aria-busy={status === "loading"}
         className="w-full bg-lime text-white font-medium py-3.5 rounded-card hover:bg-bright-lime transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? "جارٍ الإرسال…" : "احجز الزيارة"}
       </button>
 
       {status === "error" && (
-        <p className="text-lg text-red-600 text-center">
+        <p role="alert" className="text-lg text-red-600 text-center">
           تعذّر إرسال الطلب. حاول مرة أخرى أو تواصل معنا مباشرة.
         </p>
       )}

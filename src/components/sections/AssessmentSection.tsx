@@ -175,7 +175,10 @@ export function AssessmentSection() {
           </div>
 
           {state === "success" ? (
-            <div className="bg-white rounded-2xl border border-[var(--color-border)] p-10 text-center">
+            <div
+              role="status"
+              className="bg-white rounded-2xl border border-[var(--color-border)] p-10 text-center"
+            >
               <CheckCircle2 className="w-12 h-12 text-[#7CB342] mx-auto mb-4" aria-hidden="true" />
               <p className="text-xl font-bold text-deep-green mb-2">وصل طلبك ✓</p>
               <p className="body-base text-medium-gray">
@@ -188,8 +191,12 @@ export function AssessmentSection() {
               className="bg-white rounded-2xl border border-[var(--color-border)] shadow-[var(--shadow-soft)] p-7 md:p-9 space-y-5"
               noValidate
             >
-              <Field label="نقطة البداية" error={errors.start_point?.message}>
-                <div className="flex flex-wrap gap-2.5">
+              <Field id="assess-start-point" label="نقطة البداية" error={errors.start_point?.message} group>
+                <div
+                  className="flex flex-wrap gap-2.5"
+                  role="group"
+                  aria-labelledby="assess-start-point-label"
+                >
                   {START_POINTS.map((sp) => (
                     <button
                       key={sp.value}
@@ -212,28 +219,81 @@ export function AssessmentSection() {
               </Field>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <Field label="الاسم" error={errors.full_name?.message}>
-                  <input {...register("full_name")} className="input-igarden" />
+                <Field id="assess-name" label="الاسم" error={errors.full_name?.message}>
+                  <input
+                    id="assess-name"
+                    type="text"
+                    autoComplete="name"
+                    aria-required="true"
+                    aria-invalid={!!errors.full_name}
+                    aria-describedby={errors.full_name ? "assess-name-error" : undefined}
+                    {...register("full_name")}
+                    className="input-igarden"
+                  />
                 </Field>
-                <Field label="المنشأة" error={errors.company?.message}>
-                  <input {...register("company")} className="input-igarden" />
+                <Field id="assess-company" label="المنشأة" error={errors.company?.message}>
+                  <input
+                    id="assess-company"
+                    type="text"
+                    autoComplete="organization"
+                    aria-required="true"
+                    aria-invalid={!!errors.company}
+                    aria-describedby={errors.company ? "assess-company-error" : undefined}
+                    {...register("company")}
+                    className="input-igarden"
+                  />
                 </Field>
-                <Field label="المنطقة" error={errors.region?.message}>
-                  <input {...register("region")} className="input-igarden" />
+                <Field id="assess-region" label="المنطقة" error={errors.region?.message}>
+                  <input
+                    id="assess-region"
+                    type="text"
+                    autoComplete="address-level1"
+                    aria-required="true"
+                    aria-invalid={!!errors.region}
+                    aria-describedby={errors.region ? "assess-region-error" : undefined}
+                    {...register("region")}
+                    className="input-igarden"
+                  />
                 </Field>
-                <Field label="رقم واتساب" error={errors.phone?.message}>
-                  <input {...register("phone")} className="input-igarden" dir="ltr" />
+                <Field id="assess-phone" label="رقم واتساب" error={errors.phone?.message}>
+                  <input
+                    id="assess-phone"
+                    type="tel"
+                    autoComplete="tel"
+                    aria-required="true"
+                    aria-invalid={!!errors.phone}
+                    aria-describedby={errors.phone ? "assess-phone-error" : undefined}
+                    {...register("phone")}
+                    className="input-igarden"
+                    dir="ltr"
+                  />
                 </Field>
-                <Field label="نوع المنشأة" error={errors.facility_type?.message}>
-                  <select {...register("facility_type")} className="input-igarden" defaultValue="">
+                <Field id="assess-facility" label="نوع المنشأة" error={errors.facility_type?.message}>
+                  <select
+                    id="assess-facility"
+                    aria-required="true"
+                    aria-invalid={!!errors.facility_type}
+                    aria-describedby={errors.facility_type ? "assess-facility-error" : undefined}
+                    {...register("facility_type")}
+                    className="input-igarden"
+                    defaultValue=""
+                  >
                     <option value="" disabled>اختر…</option>
                     {FACILITY_TYPES.map((f) => (
                       <option key={f.value} value={f.value}>{f.label}</option>
                     ))}
                   </select>
                 </Field>
-                <Field label="أقرب احتياج" error={errors.interest?.message}>
-                  <select {...register("interest")} className="input-igarden" defaultValue="">
+                <Field id="assess-interest" label="أقرب احتياج" error={errors.interest?.message}>
+                  <select
+                    id="assess-interest"
+                    aria-required="true"
+                    aria-invalid={!!errors.interest}
+                    aria-describedby={errors.interest ? "assess-interest-error" : undefined}
+                    {...register("interest")}
+                    className="input-igarden"
+                    defaultValue=""
+                  >
                     <option value="" disabled>اختر…</option>
                     {INTERESTS.map((i) => (
                       <option key={i.value} value={i.value}>{i.label}</option>
@@ -242,8 +302,12 @@ export function AssessmentSection() {
                 </Field>
               </div>
 
-              <Field label="التوقيت" error={errors.timing?.message}>
-                <div className="flex flex-wrap gap-2.5">
+              <Field id="assess-timing" label="التوقيت" error={errors.timing?.message} group>
+                <div
+                  className="flex flex-wrap gap-2.5"
+                  role="group"
+                  aria-labelledby="assess-timing-label"
+                >
                   {TIMING.map((t) => (
                     <button
                       key={t.value}
@@ -263,12 +327,21 @@ export function AssessmentSection() {
                 <input type="hidden" {...register("timing")} />
               </Field>
 
-              <Field label="المساحة تقريباً (اختياري)">
-                <input {...register("area")} className="input-igarden" placeholder="مثال: 2,000 م²" />
+              <Field id="assess-area" label="المساحة تقريباً (اختياري)">
+                <input
+                  id="assess-area"
+                  type="text"
+                  {...register("area")}
+                  className="input-igarden"
+                  placeholder="مثال: 2,000 م²"
+                />
               </Field>
 
               {state === "error" && (
-                <p className="flex items-start gap-2 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3">
+                <p
+                  role="alert"
+                  className="flex items-start gap-2 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg p-3"
+                >
                   <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" aria-hidden="true" />
                   تعذّر إرسال الطلب حالياً. حاول مرة أخرى أو تواصل معنا مباشرةً.
                 </p>
@@ -277,6 +350,7 @@ export function AssessmentSection() {
               <button
                 type="submit"
                 disabled={state === "submitting"}
+                aria-busy={state === "submitting"}
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] font-semibold transition-colors disabled:opacity-60"
               >
                 {state === "submitting" ? (
@@ -300,19 +374,37 @@ export function AssessmentSection() {
 }
 
 function Field({
+  id,
   label,
   error,
   children,
+  group = false,
 }: {
+  id: string;
   label: string;
   error?: string;
   children: React.ReactNode;
+  /** مجموعة أزرار لا حقلاً مفرداً — تُسمّى بـaria-labelledby لا htmlFor. */
+  group?: boolean;
 }) {
+  const labelClass = "block text-sm font-semibold text-deep-green mb-2";
   return (
     <div>
-      <label className="block text-sm font-semibold text-deep-green mb-2">{label}</label>
+      {group ? (
+        <span id={`${id}-label`} className={labelClass}>
+          {label}
+        </span>
+      ) : (
+        <label htmlFor={id} className={labelClass}>
+          {label}
+        </label>
+      )}
       {children}
-      {error && <p className="text-xs text-red-600 mt-1.5">{error}</p>}
+      {error && (
+        <p id={`${id}-error`} className="text-xs text-red-600 mt-1.5">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
