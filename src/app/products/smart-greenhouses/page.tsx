@@ -238,7 +238,7 @@ const VALUES = [
   {
     Icon: Building2,
     title: "هيكل مُصمَّم لمناخك",
-    text: "مقاوم لرياح الخليج. عزل حراري عالٍ. مواد مُختارة للحرارة والرطوبة العالية.",
+    text: "تُحدَّد مواصفات الهيكل وفق موقع المشروع ومتطلبات التصميم الإنشائي. عزل حراري عالٍ. مواد مُختارة للحرارة والرطوبة العالية.",
   },
   {
     Icon: Cpu,
@@ -946,7 +946,7 @@ function FinalCTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact?interest=greenhouses&cta=request_quote" variant="lime">
-            اطلب عرض مخصّص
+            اطلب عرضاً مخصّصاً
           </CTAButton>
           <CTAButton href="/osfan-station" variant="outline-light">
             شاهد نتائجنا في عسفان

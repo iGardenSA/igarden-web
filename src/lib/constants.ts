@@ -228,7 +228,7 @@ export type NavItemType = NavItemMega | NavItemSimple;
 export const HEADER_NAV_ITEMS: NavItemType[] = [
   { label: "الحلول", href: "/products", hasMegaMenu: true },
   { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "مرفق عسفان", href: "/osfan-station" },
+  { label: "مرفق R&D في عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
   { label: "من نحن", href: "/about" },
 ];

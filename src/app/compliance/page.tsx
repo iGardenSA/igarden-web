@@ -206,7 +206,6 @@ export default function CompliancePage() {
                 <li>✓ تسجيل أوامر التشغيل بالتوقيت الدقيق</li>
                 <li>✓ واجهة Smart OS للعرض الميداني</li>
                 <li>✓ اختبار ميداني في مرفق R&D في عسفان — ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة</li>
-                <li>✓ تغطية اختبارات وحدوية موسّعة على الـ backend</li>
               </ul>
             </div>
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">

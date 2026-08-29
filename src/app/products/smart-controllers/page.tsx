@@ -58,7 +58,7 @@ function Hero() {
           <div>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="bg-lime text-white text-lg font-bold px-3 py-1 rounded-pill">
-                رأس الحربة التقني · تطوير وتجميع سعودي
+                تطوير وتجميع سعودي
               </span>
             </div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
@@ -113,7 +113,7 @@ function StatusCard() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mx-auto bg-cream rounded-card p-6 border-s-4 border-lime shadow-soft">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            جاهز للتشغيل
+            يُجهّز حسب المشروع
           </p>
           <h2 className="h4 text-deep-green mb-3">نظام تحكّم ذكي متكامل، مُختبَر ميدانياً</h2>
           <p className="body-base text-medium-gray mb-4">
@@ -147,7 +147,7 @@ const CAPABILITY_STATE = [
   },
   {
     tier: "قيد التطوير",
-    items: ["التحليلات المتقدمة", "اكتشاف الشذوذ", "رشيد التشغيلي"],
+    items: ["التحليلات المتقدمة", "اكتشاف الشذوذ"],
   },
 ];
 
@@ -742,7 +742,7 @@ function DevTimeline() {
   const PHASES = [
     { year: "01", title: "البحث الأولي", desc: "دراسة السوق المحلي وتحديد الفجوة — حلول موجودة لا تناسب ظروف التشغيل المحلية." },
     { year: "02", title: "النموذج الأولي", desc: "بناء النموذج الأوّلي واختباره في بيئة مختبرية — حساسات الحموضة والتوصيلية والحرارة." },
-    { year: "03", title: "الاختبار الميداني", desc: "تغطية اختبارات موسّعة، واختبار ميداني مستمرّ في مرفق R&D في عسفان." },
+    { year: "03", title: "الاختبار الميداني", desc: "اختبار ميداني مستمرّ في مرفق R&D في عسفان." },
     { year: "04", title: "التخصيص والتنفيذ", desc: "تجهيز النظام وتخصيص نطاقه وفق احتياج المنشأة والتجهيزات المطلوب ربطها." },
   ];
 
@@ -833,7 +833,7 @@ function B2BSection() {
 /* ─── Section 9: FAQ ──────────────────────────────────────── */
 const FAQS = [
   {
-    q: "هل النظام جاهز للتشغيل الآن؟",
+    q: "هل يُجهَّز النظام لمزرعتي الآن؟",
     a: "نعم — نظام مُختبَر ميدانياً في عسفان وجاهز للتركيب لدى المنشآت التجارية والحكومية. نبدأ معك بتقييم ميداني لمشروعك.",
   },
   {
