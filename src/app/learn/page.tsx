@@ -6,6 +6,29 @@ export const metadata: Metadata = {
   description:
     "مقالات تعليمية وتأملات عملية في الزراعة الذكية، الزراعة المائية، أنظمة التحكم، وتصميم المرافق الزراعية.",
   alternates: { canonical: "https://igarden.sa/learn" },
+  openGraph: {
+    title: "المعرفة — قبل أن تشتري اقرأ",
+    description:
+      "مقالات تعليمية وتأملات عملية في الزراعة الذكية، الزراعة المائية، أنظمة التحكم، وتصميم المرافق الزراعية.",
+    url: "https://igarden.sa/learn",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D9%81%D8%A9&sub=%D9%82%D8%A8%D9%84+%D8%A3%D9%86+%D8%AA%D8%B4%D8%AA%D8%B1%D9%8A+%D8%A7%D9%82%D8%B1%D8%A3",
+        width: 1200,
+        height: 630,
+        alt: "مركز المعرفة في iGarden",
+      },
+    ],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "المعرفة — قبل أن تشتري اقرأ",
+    description: "مقالات عملية في الزراعة الذكية والمائية وأنظمة التحكم.",
+    images: ["/api/og?title=%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D9%81%D8%A9&sub=%D9%82%D8%A8%D9%84+%D8%A3%D9%86+%D8%AA%D8%B4%D8%AA%D8%B1%D9%8A+%D8%A7%D9%82%D8%B1%D8%A3"],
+  },
   robots: { index: true, follow: true },
 };
 

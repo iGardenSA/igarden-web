@@ -18,11 +18,26 @@ export const metadata: Metadata = {
     "لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد والبرامج المجدولة ضمن نطاق مشروعك — والسجلّات والتنبيهات والتقارير تُفعَّل بحسبه. طبقات التحليل المتقدّم قيد التطوير.",
   alternates: { canonical: "https://igarden.sa/products/smart-os" },
   openGraph: {
-    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك | iGarden",
+    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
     description: "لوحة تشغيل موحّدة: ربط وعرض وتحكّم وإشراف عن بُعد ضمن نطاق المشروع — والتحليلات المتقدّمة قيد التطوير.",
-    images: [{ url: "/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83", width: 1200, height: 630 }],
+    url: "https://igarden.sa/products/smart-os",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83",
+        width: 1200,
+        height: 630,
+        alt: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
+    description: "ربط وعرض وتحكّم وإشراف عن بُعد ضمن نطاق المشروع.",
+    images: ["/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83"],
   },
 };
 

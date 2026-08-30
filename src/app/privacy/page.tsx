@@ -5,6 +5,29 @@ export const metadata: Metadata = {
   description:
     "كيف نجمع البيانات، ولماذا، وما حقوقك. شرح صريح متوافق مع نظام حماية البيانات الشخصية السعودي (PDPL).",
   alternates: { canonical: "https://igarden.sa/privacy" },
+  openGraph: {
+    title: "سياسة الخصوصية",
+    description:
+      "كيف نجمع البيانات، ولماذا، وما حقوقك. شرح صريح متوافق مع نظام حماية البيانات الشخصية السعودي (PDPL).",
+    url: "https://igarden.sa/privacy",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9+%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9&sub=%D9%85%D8%AA%D9%88%D8%A7%D9%81%D9%82%D8%A9+%D9%85%D8%B9+%D9%86%D8%B8%D8%A7%D9%85+%D8%AD%D9%85%D8%A7%D9%8A%D8%A9+%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA+%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9",
+        width: 1200,
+        height: 630,
+        alt: "سياسة الخصوصية",
+      },
+    ],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "سياسة الخصوصية",
+    description: "كيف نجمع البيانات ولماذا وما حقوقك — متوافق مع PDPL.",
+    images: ["/api/og?title=%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9+%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9&sub=%D9%85%D8%AA%D9%88%D8%A7%D9%81%D9%82%D8%A9+%D9%85%D8%B9+%D9%86%D8%B8%D8%A7%D9%85+%D8%AD%D9%85%D8%A7%D9%8A%D8%A9+%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA+%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9"],
+  },
   robots: { index: true, follow: true },
 };
 

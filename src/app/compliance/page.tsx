@@ -8,6 +8,29 @@ export const metadata: Metadata = {
   description:
     "iGarden تبني سجلات تشغيل رقمية قابلة للمراجعة — القراءات والأوامر والتدخلات التي يشملها نطاق الربط تُسجّل بتوقيت دقيق لدعم فرق التشغيل والجودة.",
   alternates: { canonical: "https://igarden.sa/compliance" },
+  openGraph: {
+    title: "سجلات التشغيل القابلة للمراجعة — Smart OS",
+    description:
+      "سجلات تشغيل رقمية قابلة للمراجعة: القراءات والأوامر والتدخلات التي يشملها نطاق الربط تُسجّل بتوقيت دقيق لدعم فرق التشغيل والجودة.",
+    url: "https://igarden.sa/compliance",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%B3%D8%AC%D9%84%D8%A7%D8%AA+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D8%A7%D9%84%D9%82%D8%A7%D8%A8%D9%84%D8%A9+%D9%84%D9%84%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9&sub=Smart+OS+%C2%B7+%D9%82%D8%A7%D8%A8%D9%84%D8%A9+%D9%84%D9%84%D8%AA%D8%AF%D9%82%D9%8A%D9%82",
+        width: 1200,
+        height: 630,
+        alt: "سجلات التشغيل في Smart OS",
+      },
+    ],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "سجلات التشغيل القابلة للمراجعة — Smart OS",
+    description: "سجلات تشغيل رقمية قابلة للمراجعة لدعم فرق التشغيل والجودة.",
+    images: ["/api/og?title=%D8%B3%D8%AC%D9%84%D8%A7%D8%AA+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D8%A7%D9%84%D9%82%D8%A7%D8%A8%D9%84%D8%A9+%D9%84%D9%84%D9%85%D8%B1%D8%A7%D8%AC%D8%B9%D8%A9&sub=Smart+OS+%C2%B7+%D9%82%D8%A7%D8%A8%D9%84%D8%A9+%D9%84%D9%84%D8%AA%D8%AF%D9%82%D9%8A%D9%82"],
+  },
   robots: { index: true, follow: true },
 };
 

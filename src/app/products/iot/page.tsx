@@ -11,11 +11,26 @@ export const metadata: Metadata = {
     "حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل.",
   alternates: { canonical: "https://igarden.sa/products/iot" },
   openGraph: {
-    title: "إنترنت الأشياء الزراعي | iGarden",
+    title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
     description: "حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل.",
-    images: [{ url: "/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9", width: 1200, height: 630 }],
+    url: "https://igarden.sa/products/iot",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9",
+        width: 1200,
+        height: 630,
+        alt: "إنترنت الأشياء الزراعي — القياس والتحكّم",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
+    description: "القياس والربط والتكامل مع Smart OS، وفق ظروف الموقع ومتطلبات التشغيل.",
+    images: ["/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9"],
   },
 };
 
