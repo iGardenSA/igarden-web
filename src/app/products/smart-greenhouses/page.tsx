@@ -448,8 +448,8 @@ function OsfanGallery() {
           </p>
           <h2 className="h2 text-deep-green">من مرفق R&amp;D في عسفان</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
-            ما تراه هنا ليس نماذج افتراضية — هي محميات تعمل فعلياً في عسفان
-            منذ 2025 في ظروف صيفية سعودية.
+            الصور من مرفق R&D في عسفان، حيث يجري تشغيل وتطوير نماذج ميدانية
+            منذ 2025.
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">

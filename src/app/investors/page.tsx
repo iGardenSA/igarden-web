@@ -15,7 +15,7 @@ import { CONTACT } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "للمستثمرين — AgriTech سعودية، أصول ميدانية",
   description:
-    "iGarden (انتيليجنت غاردن): شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير، ومحطة اختبار ميدانية في عسفان.",
+    "تعرّف على مرحلة iGarden الحالية ومسارها في تطوير منظومات الزراعة الذكية.",
   alternates: { canonical: "https://igarden.sa/investors" },
   robots: { index: false, follow: false },
   openGraph: {
@@ -203,7 +203,7 @@ export default function InvestorsPage() {
                 icon={<Building className="h-6 w-6" />}
                 number="06"
                 title="أصول تشغيلية"
-                description="مرفق R&D في عسفان الميداني، 5+ ورش عمل، ونماذج Hydroponics مُختبَرة."
+                description="مرفق R&D في عسفان، وورش تطبيقية، ونماذج Hydroponics يجري تطويرها وتشغيلها ميدانياً."
               />
             </FadeIn>
           </div>
@@ -249,7 +249,7 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: مرفق R&D في عسفان قائم منذ 2025، و5 ورش «ازرع بذكاء» مُنفَّذة. ليس مجرد فكرة.",
+                    text: "التشغيل الميداني بدأ: مرفق R&D في عسفان قائم منذ 2025، مع أنشطة وورش تطبيقية.",
                   },
                 ].map((item) => (
                   <div
@@ -281,7 +281,7 @@ export default function InvestorsPage() {
                 {[
                   "منظومة Smart Controllers (ESP32 + Raspberry Pi)",
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
-                  "مرفق R&D في عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
+                  "مرفق R&D في عسفان — تشغيل ونماذج تطبيقية منذ 2025",
                   "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
                   "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
                 ].map((item) => (

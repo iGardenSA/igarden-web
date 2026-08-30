@@ -188,7 +188,7 @@ function TimelineSection() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             الرحلة
           </p>
-          <h2 className="h2 text-deep-green">3 سنوات من التطوير</h2>
+          <h2 className="h2 text-deep-green">من التجربة إلى بناء المنظومة</h2>
           {/* [CONTENT_NEEDED: تأكيد التواريخ والإنجازات الدقيقة من Master Doc §1.5] */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
