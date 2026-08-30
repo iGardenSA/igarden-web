@@ -24,7 +24,6 @@ export function SmartOSDemoSection() {
           </h2>
           <p className="text-cream/75 text-lg leading-relaxed">
             واجهة تجريبية ببيانات محاكاة تعرض لوحة الاستشعار و4 مفاتيح ذكية.
-            المنصّة مُختبَرة في مرفق R&D في عسفان.
           </p>
         </div>
 

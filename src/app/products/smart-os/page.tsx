@@ -187,9 +187,8 @@ export default function SmartOSPage() {
           </p>
           <h2 className="h2 text-deep-green mb-6">أين نختبر؟</h2>
           <p className="body-base text-medium-gray mb-6 leading-relaxed">
-            في مرفق R&D في عسفان. تخضع الوحدات والتكاملات لاختبار وظيفي
-            وميداني قبل التسليم، ضمن منظومة مختبرة ميدانياً في ظروف صيفية
-            سعودية وبيئات مرتفعة الحرارة والرطوبة.
+            في مرفق R&D في عسفان. تخضع الوحدات والتكاملات لفحص وظيفي قبل
+            التسليم وفق خطة القبول المتفق عليها.
           </p>
 
           {/* أصل مؤقّت آمن — imageStatus: "temporary-safe"

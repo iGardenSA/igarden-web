@@ -8,11 +8,11 @@ import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths
 export const metadata: Metadata = {
   title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
   description:
-    "حلول IoT للمزارع التجارية: الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة في مرفق R&D في عسفان.",
+    "حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل.",
   alternates: { canonical: "https://igarden.sa/products/iot" },
   openGraph: {
     title: "إنترنت الأشياء الزراعي | iGarden",
-    description: "الاستشعار والتحكم والتكامل تُحدَّد حسب تجهيز المشروع — مختبرة ميدانياً في مرفق R&D في عسفان.",
+    description: "حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل.",
     images: [{ url: "/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9", width: 1200, height: 630 }],
     type: "website",
     locale: "ar_SA",
@@ -91,9 +91,8 @@ export default function IoTPage() {
             اربط القياس والتحكّم بدل أن تبقى الأجهزة تعمل منفصلة
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
-            الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز
-            المشروع. تخضع الوحدات لاختبار وظيفي قبل التسليم، وتُختبر المنظومة
-            ميدانياً في مرفق R&D في عسفان.
+            حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل،
+            وتتكامل مع منصة Smart OS بحسب تجهيز المشروع.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
@@ -212,15 +211,14 @@ export default function IoTPage() {
       <section className="bg-deep-green py-20 text-cream text-center">
         <div className="container mx-auto px-4 max-w-3xl">
           <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
-            مُختبَر في عسفان
+            فحص ما قبل التسليم
           </p>
           <h2 className="h2 text-cream mb-5">
-            اختبار وظيفي قبل التسليم واختبار ميداني في عسفان
+            فحص وظيفي قبل التسليم وفق خطة القبول المتفق عليها
           </h2>
           <p className="body-base text-cream/80 mb-8 max-w-xl mx-auto">
-            تخضع الوحدات لاختبار وظيفي قبل التسليم، وتُختبر المنظومة ميدانياً
-            في مرفق R&D في عسفان — في ظروف صيفية سعودية وبيئات مرتفعة الحرارة
-            والرطوبة، لا في معمل مُكيَّف.
+            تخضع الوحدات لفحص وظيفي قبل التسليم وفق خطة القبول المتفق عليها،
+            وتُحدَّد مكوّنات الحماية والتجهيز بحسب ظروف الموقع.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">

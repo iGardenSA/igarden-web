@@ -23,7 +23,7 @@ import {
 export const metadata: Metadata = {
   title: "المحميات الزراعية الذكية في السعودية — التصميم والتحكم",
   description:
-    "محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
+    "محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع.",
   alternates: { canonical: "https://igarden.sa/products/smart-greenhouses" },
   openGraph: {
     title: "المحميات الزراعية الذكية — التصميم والتحكم المناخي",
@@ -987,7 +987,7 @@ export default function SmartGreenhousesPage() {
     <>
       <ProductSchema
         name="Smart Greenhouses — المحميات الذكية"
-        description="محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة."
+        description="محميات ذكية للمزارع التجارية والحكومية: الهيكل والعزل والتحكم المناخي وأتمتة IoT تُحدَّد بحسب نطاق المشروع."
         image="/images/osfan-full/04_greenhouse_wide.webp"
         url="/products/smart-greenhouses"
         category="Smart Agricultural Greenhouses"
