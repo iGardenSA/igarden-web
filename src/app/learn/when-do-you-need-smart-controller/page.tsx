@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "متى تحتاج مزرعتك إلى Smart Controller؟ | iGarden",
+  title: "متى تحتاج مزرعتك إلى Smart Controller؟",
   description:
     "ليست كل مزرعة بحاجة إلى وحدة تحكم ذكية اليوم. خمس علامات واضحة تدلّك على أن الوقت قد حان للتحول من المراقبة اليدوية إلى أنظمة التحكم الذكي.",
   alternates: { canonical: "https://igarden.sa/learn/when-do-you-need-smart-controller" },
@@ -69,6 +70,14 @@ const CHECKLIST = [
 export default function ArticlePage() {
   return (
     <>
+      <ArticleSchema
+        headline="متى تحتاج مزرعتك إلى Smart Controller؟"
+        description="ليست كل مزرعة بحاجة إلى وحدة تحكم ذكية اليوم. خمس علامات واضحة تدلّك على أن الوقت قد حان للتحول من المراقبة اليدوية إلى أنظمة التحكم الذكي."
+        slug="when-do-you-need-smart-controller"
+        datePublished="2026-05-05"
+        dateModified="2026-08-30"
+        image="/api/og?title=%D9%85%D8%AA%D9%89+%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC+Smart+Controller%3F&sub=%D8%AE%D9%85%D8%B3+%D8%B9%D9%84%D8%A7%D9%85%D8%A7%D8%AA+%D9%88%D8%A7%D8%B6%D8%AD%D8%A9"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -89,6 +98,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               متى تحتاج مزرعتك إلى Smart Controller؟
             </h1>
+            <ArticleByline datePublished="2026-05-05" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               خمس علامات عملية تدلّك على أن الوقت حان — وثلاثة حالات لا تحتاجه فيها بعد.
             </p>

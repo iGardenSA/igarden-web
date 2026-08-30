@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "كيف تساعد سجلات التشغيل في تحسين قرارات المزرعة؟ | iGarden",
+  title: "كيف تساعد سجلات التشغيل في تحسين قرارات المزرعة؟",
   description:
     "البيانات بدون تسجيل حكمة ضائعة. تعرّف على كيف تُحوّل سجلات التشغيل مزرعتك من عمليّة تعتمد على الذاكرة إلى نظام متعلّم يُحسّن قراراته بمرور الوقت.",
   alternates: { canonical: "https://igarden.sa/learn/operational-logs-farm-decisions" },
@@ -77,6 +78,14 @@ const MONTHLY_QUESTIONS = [
 export default function ArticlePage() {
   return (
     <>
+      <ArticleSchema
+        headline="كيف تساعد سجلات التشغيل في تحسين قرارات المزرعة؟"
+        description="البيانات بدون تسجيل حكمة ضائعة. تعرّف على كيف تُحوّل سجلات التشغيل مزرعتك من عمليّة تعتمد على الذاكرة إلى نظام متعلّم يُحسّن قراراته بمرور الوقت."
+        slug="operational-logs-farm-decisions"
+        datePublished="2026-04-20"
+        dateModified="2026-08-23"
+        image="/api/og?title=%D8%B3%D8%AC%D9%84%D8%A7%D8%AA+%D8%A7%D9%84%D8%AA%D8%B4%D8%BA%D9%8A%D9%84&sub=%D9%83%D9%8A%D9%81+%D8%AA%D8%AD%D8%B3%D9%86+%D9%82%D8%B1%D8%A7%D8%B1%D8%A7%D8%AA%D9%83"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -97,6 +106,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               كيف تساعد سجلات التشغيل في تحسين قرارات المزرعة؟
             </h1>
+            <ArticleByline datePublished="2026-04-20" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               البيانات بدون تسجيل حكمة ضائعة. سجّل الآن — وتعلّم لاحقاً.
             </p>

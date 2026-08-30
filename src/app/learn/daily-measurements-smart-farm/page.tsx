@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ما الذي يجب قياسه يومياً في المزرعة الذكية؟ | iGarden",
+  title: "ما الذي يجب قياسه يومياً في المزرعة الذكية؟",
   description:
     "ليست كل القراءات متساوية الأهمية. تعرّف على المؤشرات الأساسية التي يجب رصدها يومياً في المزارع الهيدروبونيكية والمحميات الذكية — وتلك التي يمكن تأجيلها.",
   alternates: { canonical: "https://igarden.sa/learn/daily-measurements-smart-farm" },
@@ -120,6 +121,14 @@ export default function ArticlePage() {
 
   return (
     <>
+      <ArticleSchema
+        headline="ما الذي يجب قياسه يومياً في المزرعة الذكية؟"
+        description="ليست كل القراءات متساوية الأهمية. تعرّف على المؤشرات الأساسية التي يجب رصدها يومياً في المزارع الهيدروبونيكية والمحميات الذكية — وتلك التي يمكن تأجيلها."
+        slug="daily-measurements-smart-farm"
+        datePublished="2026-04-15"
+        dateModified="2026-08-29"
+        image="/api/og?title=%D9%82%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA+%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%A7%D9%84%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA+%D8%A7%D9%84%D9%8A%D9%88%D9%85%D9%8A%D8%A9+%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -140,6 +149,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               ما الذي يجب قياسه يومياً في المزرعة الذكية؟
             </h1>
+            <ArticleByline datePublished="2026-04-15" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               ليست كل القراءات متساوية الأهمية. هذا ما يهمّ فعلاً — ولماذا.
             </p>

@@ -130,11 +130,8 @@ export function ProductSchema({
     url: `https://igarden.sa${url}`,
     category,
     brand: { "@type": "Brand", name: "iGarden" },
-    manufacturer: {
-      "@type": "Organization",
-      name: "شركة انتيليجنت غاردن",
-      url: "https://igarden.sa",
-    },
+    // إشارة إلى المنظّمة المركزية في RootLayout — لا بطاقة Organization ثانية.
+    manufacturer: { "@id": "https://igarden.sa/#organization" },
   };
 
   return (
@@ -183,11 +180,8 @@ export function ServiceSchema({ name, description, url, serviceType = "Agricultu
     description,
     url: `https://igarden.sa${url}`,
     serviceType,
-    provider: {
-      "@type": "Organization",
-      name: "iGarden",
-      url: "https://igarden.sa",
-    },
+    // إشارة إلى المنظّمة المركزية في RootLayout — لا بطاقة Organization ثانية.
+    provider: { "@id": "https://igarden.sa/#organization" },
     areaServed: {
       "@type": "Country",
       name: "Saudi Arabia",
@@ -217,6 +211,51 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
       name: item.name,
       item: `https://igarden.sa${item.url}`,
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+/* ─── Article ──────────────────────────────────────────────
+   لمقالات /learn. التواريخ حقائق لا تُخمَّن:
+   · datePublished من src/app/learn/_data/articles.ts حرفياً
+   · dateModified من آخر commit فعليّ لملف المقال
+   author وpublisher كلاهما المنظّمة — يشير إلى @id المركزي في RootLayout
+   فلا تتكرّر بطاقة Organization. */
+export function ArticleSchema({
+  headline,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image,
+}: {
+  headline: string;
+  description: string;
+  slug: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+}) {
+  const url = `https://igarden.sa/learn/${slug}`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    inLanguage: "ar-SA",
+    datePublished,
+    dateModified,
+    author: { "@id": "https://igarden.sa/#organization" },
+    publisher: { "@id": "https://igarden.sa/#organization" },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    ...(image ? { image: `https://igarden.sa${image}` } : {}),
   };
 
   return (

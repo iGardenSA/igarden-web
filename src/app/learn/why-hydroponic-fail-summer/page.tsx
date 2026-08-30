@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟ | iGarden",
+  title: "لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟",
   description:
     "الصيف السعودي تحدٍّ حقيقي لأنظمة الزراعة المائية. تعرّف على أربعة أسباب رئيسية للفشل في الحرارة الشديدة وكيف تتجنّبها قبل أن تبدأ الموسم.",
   alternates: { canonical: "https://igarden.sa/learn/why-hydroponic-fail-summer" },
@@ -107,6 +108,14 @@ export default function ArticlePage() {
 
   return (
     <>
+      <ArticleSchema
+        headline="لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟"
+        description="الصيف السعودي تحدٍّ حقيقي لأنظمة الزراعة المائية. تعرّف على أربعة أسباب رئيسية للفشل في الحرارة الشديدة وكيف تتجنّبها قبل أن تبدأ الموسم."
+        slug="why-hydroponic-fail-summer"
+        datePublished="2026-05-01"
+        dateModified="2026-08-30"
+        image="/api/og?title=%D9%81%D8%B4%D9%84+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9+%D9%81%D9%8A+%D8%A7%D9%84%D8%B5%D9%8A%D9%81&sub=%D8%A3%D8%B3%D8%A8%D8%A7%D8%A8+%D9%88%D8%AD%D9%84%D9%88%D9%84"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -127,6 +136,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟
             </h1>
+            <ArticleByline datePublished="2026-05-01" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               الصيف السعودي يختلف عمّا صُمِّمت له معظم الأنظمة المستوردة. أربعة أسباب وثمانية حلول.
             </p>
