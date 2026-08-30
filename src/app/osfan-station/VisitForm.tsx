@@ -75,7 +75,7 @@ export function VisitForm() {
     return (
       <div role="status" className="bg-lime/10 border border-lime rounded-card p-8 text-center">
         <p className="h3 text-deep-green mb-2">وصل طلبك ✓</p>
-        <p className="body-base text-medium-gray">سيتواصل معك فريقنا خلال 24 ساعة لتأكيد الموعد.</p>
+        <p className="body-base text-medium-gray">سنراجع طلبك ونتواصل معك لتأكيد الموعد.</p>
       </div>
     );
   }
