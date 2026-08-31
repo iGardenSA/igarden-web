@@ -19,15 +19,6 @@ const columnIconMap: Record<string, LucideIcon> = {
   sun: Sun,
 };
 
-function LiveDot() {
-  return (
-    <span className="relative inline-flex flex-shrink-0" aria-label="مباشر">
-      <span className="absolute inline-flex h-2 w-2 rounded-full bg-[#7CB342] opacity-75 animate-ping" />
-      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7CB342]" />
-    </span>
-  );
-}
-
 function MenuLink({
   item,
   onClose,
@@ -39,8 +30,12 @@ function MenuLink({
 }) {
   const inner = (
     <>
-      {item.badge === "live" && <LiveDot />}
       <span>{item.label}</span>
+      {item.tag && (
+        <span className="flex-shrink-0 rounded-full border border-current/25 px-2 py-0.5 text-[10px] font-medium opacity-60">
+          {item.tag}
+        </span>
+      )}
       {item.external && (
         <ExternalLink className="w-3.5 h-3.5 opacity-40 flex-shrink-0" aria-hidden="true" />
       )}

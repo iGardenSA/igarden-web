@@ -12,16 +12,14 @@ import {
   MAIN_CTA,
   WHATSAPP_HREF,
   DEMO_URL,
-  SHOP_URL,
   type NavColumnItem,
 } from "@/lib/constants";
 
 const PLATFORMS: NavColumnItem[] = [
-  { label: "Smart OS Demo", href: DEMO_URL, external: true, badge: "live" },
+  { label: "ديمو Smart OS", href: DEMO_URL, external: true },
 ];
 
 const INDIVIDUALS: NavColumnItem[] = [
-  { label: "المتجر", href: SHOP_URL, external: true },
   { label: "Home Solutions — حلول الأفراد", href: "/home-solutions" },
 ];
 
@@ -39,13 +37,12 @@ function DrawerLink({
 }) {
   const inner = (
     <>
-      {item.badge === "live" && (
-        <span className="relative inline-flex flex-shrink-0" aria-label="مباشر">
-          <span className="absolute inline-flex h-2 w-2 rounded-full bg-[#7CB342] opacity-75 animate-ping" />
-          <span className="relative inline-flex h-2 w-2 rounded-full bg-[#7CB342]" />
+      <span>{item.label}</span>
+      {item.tag && (
+        <span className="flex-shrink-0 rounded-full border border-current/25 px-2 py-0.5 text-[10px] font-medium opacity-60">
+          {item.tag}
         </span>
       )}
-      <span>{item.label}</span>
       {item.external && (
         <ExternalLink className="w-3 h-3 opacity-50 flex-shrink-0" aria-hidden="true" />
       )}

@@ -8,7 +8,7 @@ export const FOUNDERS: FounderCardProps[] = [
     roleEn: "CEO & Co-Founder",
     photoUrl: "/team/team-ali.jpg",
     expertise: "IoT · AgriTech · القيادة الاستراتيجية",
-    experience: "+9 سنوات في الزراعة الذكية",
+    experience: "خبرة عملية في الزراعة والتقنيات الزراعية",
     bullets: [
       "يقود iGarden منذ 2025 بتركيز على الحلول الزراعية الذكية والمستدامة",
       "مؤسس ورئيس تنفيذي سابق لمؤسسة تقنيات الزراعة الحديثة (2017–2022)",

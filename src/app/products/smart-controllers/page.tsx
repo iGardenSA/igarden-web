@@ -3,6 +3,11 @@ import Link from "next/link";
 import { ProductSchema, FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
 import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
+import {
+  CapabilityStatus,
+  CAPABILITY_STATUS_META,
+  type CapabilityStatusValue,
+} from "@/components/shared/CapabilityStatus";
 import { StageHonesty } from "@/components/shared/StageHonesty";
 import {
   Factory,
@@ -24,7 +29,7 @@ import {
 export const metadata: Metadata = {
   title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
   description:
-    "لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
+    "منظومة تحكّم تُجهّز بحسب المشروع لربط القياس والتشغيل وبيانات المتابعة.",
   alternates: { canonical: "https://igarden.sa/products/smart-controllers" },
   openGraph: {
     title: "لوحات التحكم الزراعي — متى تحتاج Smart Controller؟",
@@ -58,7 +63,7 @@ function Hero() {
           <div>
             <div className="flex flex-wrap gap-2 mb-4">
               <span className="bg-lime text-white text-lg font-bold px-3 py-1 rounded-pill">
-                رأس الحربة التقني · تطوير وتجميع سعودي
+                تطوير وتجميع سعودي
               </span>
             </div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
@@ -82,11 +87,10 @@ function Hero() {
                 اطلب تقييماً أولياً
               </CTAButton>
               <CTAButton
-                href="https://demo.igarden.sa"
+                href="/contact?interest=demo&cta=demo_access_request"
                 variant="outline-green"
-                external
               >
-                شاهد البيانات الحيّة ↗
+                اطلب وصولاً إلى الديمو
               </CTAButton>
             </div>
           </div>
@@ -114,12 +118,11 @@ function StatusCard() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="max-w-3xl mx-auto bg-cream rounded-card p-6 border-s-4 border-lime shadow-soft">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            جاهز للتشغيل
+            يُجهّز حسب المشروع
           </p>
-          <h2 className="h4 text-deep-green mb-3">نظام تحكّم ذكي متكامل، مُختبَر ميدانياً</h2>
+          <h2 className="h4 text-deep-green mb-3">منظومة تحكّم تُجهّز بحسب المشروع.</h2>
           <p className="body-base text-medium-gray mb-4">
-            نظام تحكّم زراعي متكامل، مختبر ميدانياً في ظروف صيفية سعودية وبيئات
-            مرتفعة الحرارة والرطوبة داخل مرفق R&D في عسفان. اللوحة ليست منتجاً
+            منظومة تحكّم زراعي متكاملة. اللوحة ليست منتجاً
             رفّياً موحّداً — تُصمَّم وتُجهَّز بحسب المشروع: نبدأ بتقييم ميداني
             لمزرعتك، ثم نُحدّد النطاق والتجهيزات الأنسب لمحصولك وبيئتك.
           </p>
@@ -136,42 +139,53 @@ function StatusCard() {
 }
 
 /* ─── Section 2.1: حالة القدرة ─────────────────────────────
-   تصنيف صريح يمنع قراءة القدرات على أنها كلّها جاهزة افتراضياً. */
-const CAPABILITY_STATE = [
-  {
-    tier: "متاح ضمن التجهيز",
-    items: ["القياس", "الربط", "لوحة العرض", "التشغيل المحلي وعن بُعد بحسب التجهيز"],
-  },
-  {
-    tier: "حسب نطاق المشروع",
-    items: ["الأتمتة", "التنبيهات", "السجلات", "التقارير", "واتساب والتكاملات"],
-  },
-  {
-    tier: "قيد التطوير",
-    items: ["التحليلات المتقدمة", "اكتشاف الشذوذ", "رشيد التشغيلي"],
-  },
+   تصنيف صريح يمنع قراءة القدرات على أنها كلّها جاهزة افتراضياً.
+   الحالات قرار تجاري معتمد في docs/CAPABILITY-MATRIX.md — لا تُشتقّ من
+   وجود كود أو واجهة. ترتيب القدرات داخل كل مجموعة كما كان قبل التمديد. */
+const CAPABILITY_STATE: {
+  status: CapabilityStatusValue;
+  items: string[];
+}[] = [
+  { status: "available", items: ["الربط", "لوحة العرض"] },
+  { status: "scoped", items: ["التشغيل المحلي وعن بُعد", "التنبيهات", "السجلات", "التقارير", "واتساب والتكاملات"] },
+  { status: "field-test", items: ["القياس", "الأتمتة"] },
+  { status: "wip", items: ["التحليلات المتقدمة", "اكتشاف الشذوذ"] },
 ];
 
 function CapabilityState() {
   return (
-    <section className="section-light py-12" dir="rtl">
+    <section className="section-light py-12" dir="rtl" aria-labelledby="capability-state-heading">
       <div className="container mx-auto px-4 max-w-5xl">
-        <h2 className="h4 text-deep-green mb-6 text-center">حالة القدرة</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {CAPABILITY_STATE.map((c) => (
-            <div key={c.tier} className="bg-white rounded-card p-5 border border-light-gray shadow-soft">
-              <p className="text-xs font-bold uppercase tracking-widest text-lime mb-3">
-                {c.tier}
-              </p>
-              <ul className="space-y-1.5">
-                {c.items.map((it) => (
-                  <li key={it} className="body-sm text-medium-gray">
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <h2 id="capability-state-heading" className="h4 text-deep-green mb-3 text-center">
+          حالة القدرة
+        </h2>
+        {/* تحوّط واحد في رأس القسم — لا يُكرَّر داخل البطاقات. */}
+        <p className="body-sm text-medium-gray text-center max-w-2xl mx-auto mb-8">
+          الحالات أدناه تصف العرض الحالي. التجهيز النهائي لكل قدرة يحدده نطاق
+          المشروع والعقد.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {CAPABILITY_STATE.map((c) => {
+            const meta = CAPABILITY_STATUS_META[c.status];
+            return (
+              <div
+                key={c.status}
+                className="bg-white rounded-card p-5 border border-light-gray shadow-soft flex flex-col"
+              >
+                <h3 className="mb-2">
+                  <CapabilityStatus value={c.status} id={`capability-${c.status}`} />
+                </h3>
+                <p className="body-sm text-medium-gray mb-4">{meta.meaning}</p>
+                <ul className="space-y-1.5" aria-labelledby={`capability-${c.status}`}>
+                  {c.items.map((it) => (
+                    <li key={it} className="body-sm text-deep-green">
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -226,7 +240,7 @@ function ForWhomSection() {
 const SCENARIOS = [
   {
     pain: "المراقبة اليدوية تَستهلك العامل وتَتأخّر",
-    detail: "عامل يَفحص pH وEC كل ٤ ساعات. ليلاً ونهاراً. التَكلفة تَرتفع، والأخطاء تَحدث.",
+    detail: "تكرار فحوص pH وEC يستهلك وقت المشغّل، وتبقى بين الجولات فترات بلا قراءة.",
     solution: "قراءات وفق الدورية المحددة للمشروع",
     benefit: "تنبيه عند تجاوز العتبة المحددة — ما يساعد على اكتشاف الانحراف مبكراً.",
   },
@@ -326,8 +340,8 @@ const VALUES = [
   },
   {
     Icon: Thermometer,
-    title: "مختبرة ميدانياً",
-    text: "مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة، مع الغبار وتذبذب شبكة الكهرباء.",
+    title: "تجهيز وفق ظروف الموقع",
+    text: "تُحدَّد مكوّنات الحماية والتجهيز وفق ظروف الموقع، بما فيها الحرارة والرطوبة والغبار واستقرار الكهرباء.",
   },
 ];
 
@@ -708,20 +722,17 @@ function DemoSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              تجربة حيّة قبل الشراء
+              الديمو قبل الشراء
             </p>
             <h2 className="h2 text-cream mb-5">
               جرّب لوحة التحكم بنفسك — قبل أن تقتنيها
             </h2>
             <p className="body-base text-cream/80 mb-4">
-              الديمو الحيّ يعرض 7 حسّاسات + 10 شاشات تفاعلية مبنية على بيانات
-              حقيقية من مرفق R&D في عسفان.
+              الديمو يعرض 7 حسّاسات + 10 شاشات تفاعلية مبنية على بيانات
+              محاكاة.
             </p>
-            <p className="body-sm text-cream/60 mb-8">
-              لا تسجيل مطلوب — افتح وجرّب مباشرة.
-            </p>
-            <CTAButton href="https://demo.igarden.sa" variant="lime" external>
-              افتح الديمو التفاعلي ↗
+            <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="lime">
+              اطلب وصولاً إلى الديمو
             </CTAButton>
           </div>
 
@@ -746,7 +757,7 @@ function DevTimeline() {
   const PHASES = [
     { year: "01", title: "البحث الأولي", desc: "دراسة السوق المحلي وتحديد الفجوة — حلول موجودة لا تناسب ظروف التشغيل المحلية." },
     { year: "02", title: "النموذج الأولي", desc: "بناء النموذج الأوّلي واختباره في بيئة مختبرية — حساسات الحموضة والتوصيلية والحرارة." },
-    { year: "03", title: "الاختبار الميداني", desc: "تغطية اختبارات موسّعة، واختبار ميداني مستمرّ في مرفق R&D في عسفان." },
+    { year: "03", title: "الاختبار الميداني", desc: "اختبار ميداني مستمرّ في مرفق R&D في عسفان." },
     { year: "04", title: "التخصيص والتنفيذ", desc: "تجهيز النظام وتخصيص نطاقه وفق احتياج المنشأة والتجهيزات المطلوب ربطها." },
   ];
 
@@ -837,8 +848,8 @@ function B2BSection() {
 /* ─── Section 9: FAQ ──────────────────────────────────────── */
 const FAQS = [
   {
-    q: "هل النظام جاهز للتشغيل الآن؟",
-    a: "نعم — نظام مُختبَر ميدانياً في عسفان وجاهز للتركيب لدى المنشآت التجارية والحكومية. نبدأ معك بتقييم ميداني لمشروعك.",
+    q: "هل يُجهَّز النظام لمزرعتي الآن؟",
+    a: "نعم — تُجهّز المنظومة للتركيب وفق نطاق المشروع. نبدأ معك بتقييم ميداني لمشروعك.",
   },
   {
     q: "هل يعمل مع نظامي الزراعي الحالي؟",
@@ -903,6 +914,11 @@ const RELATED_LINKS: RelatedLink[] = [
     href: "/products/iot",
   },
   {
+    label: "ميثاق بيانات العميل",
+    desc: "ملكية السجلات التشغيلية ومن يصل إليها.",
+    href: "/data-charter",
+  },
+  {
     label: "السجلات وجاهزية الامتثال",
     desc: "ما الذي يمكن تسجيله ضمن نطاق الربط.",
     href: "/compliance",
@@ -925,15 +941,15 @@ function FinalCTA() {
           هل تحتاج لوحة تحكم مطوَّرة لظروف موقعك؟
         </h2>
         <p className="body-base text-cream/80 max-w-2xl mx-auto mb-10">
-          نظام مختبر ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.
+          منظومة تحكّم تُجهّز بحسب المشروع.
           نبدأ معك بتقييم ميداني لمشروعك، ثم نُحدّد النطاق والعرض المناسب لمحصولك وبيئتك.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
             اطلب تقييماً أولياً
           </CTAButton>
-          <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-            جرّب الديمو أولاً ↗
+          <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+            اطلب وصولاً إلى الديمو
           </CTAButton>
         </div>
       </div>
@@ -967,7 +983,7 @@ export default function SmartControllersPage() {
     <>
       <ProductSchema
         name="Smart Controllers — لوحات التحكم الزراعي"
-        description="لوحات تحكم زراعية مصمَّمة ومطوَّرة ومجمَّعة في السعودية. تتكامل مع الأنظمة ذات الواجهات والتجهيزات المدعومة. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة."
+        description="منظومة تحكّم تُجهّز بحسب المشروع لربط القياس والتشغيل وبيانات المتابعة."
         image="/images/products/smart-controllers/hero.jpg"
         url="/products/smart-controllers"
         category="Agricultural Smart Controllers"

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟ | iGarden",
+  title: "لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟",
   description:
     "الصيف السعودي تحدٍّ حقيقي لأنظمة الزراعة المائية. تعرّف على أربعة أسباب رئيسية للفشل في الحرارة الشديدة وكيف تتجنّبها قبل أن تبدأ الموسم.",
   alternates: { canonical: "https://igarden.sa/learn/why-hydroponic-fail-summer" },
@@ -60,10 +61,10 @@ const SUMMER_CHECKLIST = [
   "قياس درجة حرارة المياه يومياً (صباحاً + بعد الذروة الحرارية)",
   "عزل الخزان حرارياً أو تظليله بالكامل قبل يونيو",
   "التحقق من وضع المضخات الاحتياطية وجاهزيتها",
-  "جدولة تغيير المحلول الكامل كل 2-3 أسابيع (أقل في الحرارة الشديدة)",
+  "جدولة تغيير المحلول وفق حجم النظام وجودة المياه والمحصول ومؤشرات المحلول.",
   "مراجعة فلاتر الهواء وتهوية المنطقة الزراعية",
   "ضبط حساسات التنبيه لدرجة حرارة 26°C (قبل الوصول للحرج)",
-  "تقليل تركيز EC بنسبة 10-15% في أوج الصيف (لتقليل ضغط الأملاح)",
+  "تعديل هدف EC تدريجياً في أوج الصيف بحسب المحصول وجودة المياه واستجابة النبات",
   "توفير إضاءة اصطناعية إذا احتجت تظليل المحمية بشكل كامل",
 ];
 
@@ -86,7 +87,7 @@ const FAILURE_MODES = [
     num: "٣",
     title: "المضخات تعمل عند حدود قدرتها",
     detail:
-      "درجات الحرارة العالية ترفع ضغط التشغيل على المحركات. المضخات التي تعمل بكفاءة 80% في الشتاء تجد نفسها عند 95-100% في الصيف. ترتفع احتمالية العطل، وأي توقّف حتى لساعات قليلة قد يُسبّب خسائر كاملة في المحصول.",
+      "درجات الحرارة العالية ترفع ضغط التشغيل على المحركات. مع ارتفاع الحرارة قد تعمل المضخات لفترات أطول وتقترب من حدودها التشغيلية، بحسب الحمل والتصميم. ترتفع احتمالية العطل، وأي توقّف حتى لساعات قليلة قد يُسبّب خسائر كاملة في المحصول.",
     risk: "متوسط-عالٍ",
   },
   {
@@ -107,6 +108,14 @@ export default function ArticlePage() {
 
   return (
     <>
+      <ArticleSchema
+        headline="لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟"
+        description="الصيف السعودي تحدٍّ حقيقي لأنظمة الزراعة المائية. تعرّف على أربعة أسباب رئيسية للفشل في الحرارة الشديدة وكيف تتجنّبها قبل أن تبدأ الموسم."
+        slug="why-hydroponic-fail-summer"
+        datePublished="2026-05-01"
+        dateModified="2026-08-30"
+        image="/api/og?title=%D9%81%D8%B4%D9%84+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9+%D9%81%D9%8A+%D8%A7%D9%84%D8%B5%D9%8A%D9%81&sub=%D8%A3%D8%B3%D8%A8%D8%A7%D8%A8+%D9%88%D8%AD%D9%84%D9%88%D9%84"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -127,6 +136,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               لماذا تفشل بعض أنظمة الزراعة المائية في الصيف؟
             </h1>
+            <ArticleByline datePublished="2026-05-01" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               الصيف السعودي يختلف عمّا صُمِّمت له معظم الأنظمة المستوردة. أربعة أسباب وثمانية حلول.
             </p>
@@ -152,7 +162,7 @@ export default function ArticlePage() {
           <section className="mb-10">
             <h2 className="text-2xl font-bold text-[#0F3D2E] mb-4">لماذا المناخ السعودي تحدٍّ خاص؟</h2>
             <p className="text-[#1A1A1A] leading-relaxed mb-4">
-              درجات الحرارة الخارجية فوق 45°C في ذروة الصيف، رطوبة ساحلية عالية في جدة، وأحمال كهربائية ضخمة على معدات التبريد — هذا المزيج يخلق ضغطاً تشغيلياً لم تُختبر فيه معظم المعدات المستوردة.
+              في درجات الحرارة المرتفعة خلال ذروة الصيف، ومع رطوبة ساحلية عالية في جدة، وأحمال كهربائية ضخمة على معدات التبريد — هذا المزيج يخلق ضغطاً تشغيلياً لم تُختبر فيه معظم المعدات المستوردة.
             </p>
             <p className="text-[#1A1A1A] leading-relaxed">
               المشكلة الأخطر أن الإخفاق لا يحدث تدريجياً — يحدث بسرعة. نبات يبدو بصحة جيدة صباحاً قد يكون في حالة حرجة ظهراً إذا وصلت حرارة المياه إلى الحد الحرج.
@@ -268,7 +278,7 @@ export default function ArticlePage() {
           {/* 7. ربط بـ iGarden */}
           <section className="mb-10 bg-[#0F3D2E]/5 rounded-xl p-6 border border-[#0F3D2E]/10">
             <p className="text-[#1A1A1A] leading-relaxed">
-              <span dir="ltr" className="font-semibold">iGarden</span> تُصمّم أنظمتها الزراعية بأخذ مناخ السعودية نقطة البداية — لا تكيّفاً لاحقاً. اختُبرت الأنظمة داخل مرفق R&D في عسفان في ظروف تتجاوز +45°C، وما نشتغل به نتائج فعلية من الميدان.
+              <span dir="ltr" className="font-semibold">iGarden</span> تُصمّم أنظمتها الزراعية بأخذ مناخ السعودية نقطة البداية — لا تكيّفاً لاحقاً. توضح ظروف الصيف أهمية مواءمة التصميم والتشغيل مع الحرارة الفعلية في الموقع.
             </p>
             <Link
               href="/osfan-station"
@@ -283,7 +293,7 @@ export default function ArticlePage() {
           <section className="text-center py-8">
             <h2 className="text-xl font-bold text-[#0F3D2E] mb-3">هل نظامك مستعد للصيف القادم؟</h2>
             <p className="text-[#6B7280] mb-6 max-w-md mx-auto">
-              أنظمة iGarden الهيدروبونيكية مُصمَّمة لمناخ السعودية — مُختبَرة ميدانياً في عسفان في +45°C.
+              أنظمة iGarden الهيدروبونيكية مُصمَّمة لمناخ السعودية — تُجهّز المنظومة وفق ظروف الموقع ومتطلبات التشغيل الصيفية.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link

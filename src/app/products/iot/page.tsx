@@ -3,55 +3,70 @@ import Link from "next/link";
 import { Cpu, Wifi, Thermometer, Gauge, Zap, ArrowLeft } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
   description:
-    "حلول IoT للمزارع التجارية: الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز المشروع. مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة في مرفق R&D في عسفان.",
+    "حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل.",
   alternates: { canonical: "https://igarden.sa/products/iot" },
   openGraph: {
-    title: "إنترنت الأشياء الزراعي | iGarden",
-    description: "الاستشعار والتحكم والتكامل تُحدَّد حسب تجهيز المشروع — مختبرة ميدانياً في مرفق R&D في عسفان.",
-    images: [{ url: "/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9", width: 1200, height: 630 }],
+    title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
+    description: "حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل.",
+    url: "https://igarden.sa/products/iot",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9",
+        width: 1200,
+        height: 630,
+        alt: "إنترنت الأشياء الزراعي — القياس والتحكّم",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "إنترنت الأشياء الزراعي — القياس والتحكّم",
+    description: "القياس والربط والتكامل مع Smart OS، وفق ظروف الموقع ومتطلبات التشغيل.",
+    images: ["/api/og?title=%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA+%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1+%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A&sub=%D9%82%D9%8A%D8%A7%D8%B3+%D9%88%D8%AA%D8%AD%D9%83%D9%91%D9%85+%D9%84%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9+%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9"],
   },
 };
 
 const SENSORS = [
   {
     Icon: Gauge,
-    name: "قياس الحموضة",
-    spec: "pH 0–14 · دقة ±0.1 بعد المعايرة ووفق المجس",
-    note: "قراءة عبر ADC عالي الدقة (ADS1115) للإشارة التناظرية. الدقة النهائية تعتمد على المجس والمعايرة والتركيب — ADR داخلي T002.",
+    name: "حموضة المحلول (pH)",
+    spec: "المدى 0–14 · دقة ±0.1 بعد المعايرة ووفق المجس",
+    note: "الانحراف عن نطاق الحموضة يوقف امتصاص العناصر حتى لو كان التسميد سليماً. تُعاير القراءة دورياً، والدقة النهائية تعتمد على المجس والمعايرة وطريقة التركيب.",
   },
   {
     Icon: Gauge,
-    name: "الإجمالي الذائب",
-    spec: "EC / TDS عبر UART",
-    note: "قراءة رقمية عبر UART تقلّل تأثر مسار الإشارة التناظرية — ADR T003.",
+    name: "تركيز الأملاح (EC / TDS)",
+    spec: "قراءة رقمية · تُعاير وفق المجس",
+    note: "يكشف ضعف التغذية أو تركّز الأملاح قبل ظهور الأثر على النبات. القراءة الرقمية أقلّ تأثراً بمسار الإشارة، وتبقى المعايرة شرط الدقة.",
   },
   {
     Icon: Thermometer,
     name: "الحرارة والرطوبة",
-    spec: "DS18B20 + SHT31",
-    note: "مستشعرات صناعية مختبرة ميدانياً في ظروف صيفية سعودية وبيئات مرتفعة الحرارة والرطوبة.",
+    spec: "حرارة الماء والهواء · الرطوبة النسبية",
+    note: "الحرارة تحرّك معدل التبخر وتركيز المحلول معاً، فتغيّر ما يصل للجذر فعلياً. تُقاس وفق دورية المشروع، ويؤثر موضع التركيب في تمثيل القراءة للواقع.",
   },
   {
     Icon: Zap,
     name: "مستوى الخزانات",
-    spec: "Ultrasonic + Float",
-    note: "رصد مستوى المحلول وفق دورية القياس، مع تنبيه عند تجاوز العتبة المحددة.",
+    spec: "رصد مستمرّ · تنبيه عند العتبة",
+    note: "نفاد المحلول يوقف الري دون إنذار. يُرصد المستوى وفق دورية القياس مع تنبيه عند تجاوز العتبة المحددة في نطاق المشروع.",
   },
 ];
 
 const CONTROLLERS = [
   {
-    name: "Smart Controller v2",
-    platform: "Raspberry Pi 5 + ESP32",
-    protocol: "MQTT 5.0 over TLS",
-    relays: "8 channels في التكوين المرجعي (مضخات + دوزرات)",
-    tests: "تغطية اختبارات برمجية موسّعة للتكوين المرجعي",
+    name: "Smart Controller",
+    platform: "وحدة مركزية تُدير المنظومة ووحدات طرفية تستشعر وتنفّذ",
+    protocol: "اتصال مُعمّى بين الوحدات والمنصّة",
+    relays: "مخارج تحكّم للمضخات والدوزرات — عددها يُحدَّد بنطاق المشروع",
   },
 ];
 
@@ -59,6 +74,21 @@ const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
   { name: "خدماتنا", url: "/products" },
   { name: "إنترنت الأشياء الزراعي", url: "/products/iot" },
+];
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "Smart Controllers",
+    desc: "وحدة التحكّم التي تُدير الحساسات وتُنفّذ الأوامر ميدانياً.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "ميثاق بيانات العميل",
+    desc: "ملكية قراءات الحساسات وحدود استخدامها.",
+    href: "/data-charter",
+  },
 ];
 
 export default function IoTPage() {
@@ -76,9 +106,8 @@ export default function IoTPage() {
             اربط القياس والتحكّم بدل أن تبقى الأجهزة تعمل منفصلة
           </h1>
           <p className="body-base text-cream/80 max-w-3xl leading-relaxed">
-            الاستشعار والتحكم والتكامل مع منصة Smart OS تُحدَّد حسب تجهيز
-            المشروع. تخضع الوحدات لاختبار وظيفي قبل التسليم، وتُختبر المنظومة
-            ميدانياً في مرفق R&D في عسفان.
+            حلول IoT للقياس والربط تُجهّز وفق ظروف الموقع ومتطلبات التشغيل،
+            وتتكامل مع منصة Smart OS بحسب تجهيز المشروع.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
@@ -155,8 +184,13 @@ export default function IoTPage() {
               </div>
               <div className="flex flex-col justify-center">
                 <div className="bg-deep-green/5 rounded-xl p-5 text-center">
-                  <p className="text-2xl font-bold text-lime mb-2">تغطية موسّعة</p>
-                  <p className="text-sm text-medium-gray">{c.tests}</p>
+                  <p className="text-lg font-bold text-deep-green mb-2">
+                    يعمل محلياً وعن بُعد
+                  </p>
+                  <p className="text-sm text-medium-gray">
+                    التشغيل والتحكّم يستمرّان محلياً عند انقطاع الاتصال،
+                    وتُستأنف المزامنة مع المنصّة عند عودته.
+                  </p>
                 </div>
               </div>
             </div>
@@ -192,26 +226,26 @@ export default function IoTPage() {
       <section className="bg-deep-green py-20 text-cream text-center">
         <div className="container mx-auto px-4 max-w-3xl">
           <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
-            مُختبَر في عسفان
+            فحص ما قبل التسليم
           </p>
           <h2 className="h2 text-cream mb-5">
-            اختبار وظيفي قبل التسليم واختبار ميداني في عسفان
+            فحص وظيفي قبل التسليم وفق خطة القبول المتفق عليها
           </h2>
           <p className="body-base text-cream/80 mb-8 max-w-xl mx-auto">
-            تخضع الوحدات لاختبار وظيفي قبل التسليم، وتُختبر المنظومة ميدانياً
-            في مرفق R&D في عسفان — في ظروف صيفية سعودية وبيئات مرتفعة الحرارة
-            والرطوبة، لا في معمل مُكيَّف.
+            تخضع الوحدات لفحص وظيفي قبل التسليم وفق خطة القبول المتفق عليها،
+            وتُحدَّد مكوّنات الحماية والتجهيز بحسب ظروف الموقع.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <CTAButton href="/contact?interest=controllers&cta=readiness_assessment" variant="lime">
               اطلب تقييماً أولياً
             </CTAButton>
             <CTAButton href="/osfan-station" variant="outline-light">
-              زر مرفق عسفان
+              زر مرفق R&D في عسفان
             </CTAButton>
           </div>
         </div>
       </section>
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

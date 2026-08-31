@@ -54,7 +54,7 @@ export function ComplianceSection() {
         </div>
 
         <Link
-          href="https://demo.igarden.sa"
+          href="/contact?interest=demo&cta=demo_access_request"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg font-semibold text-base transition-colors"

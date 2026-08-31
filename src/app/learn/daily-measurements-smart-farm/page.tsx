@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "ما الذي يجب قياسه يومياً في المزرعة الذكية؟ | iGarden",
+  title: "ما الذي يجب قياسه يومياً في المزرعة الذكية؟",
   description:
     "ليست كل القراءات متساوية الأهمية. تعرّف على المؤشرات الأساسية التي يجب رصدها يومياً في المزارع الهيدروبونيكية والمحميات الذكية — وتلك التي يمكن تأجيلها.",
   alternates: { canonical: "https://igarden.sa/learn/daily-measurements-smart-farm" },
@@ -120,6 +121,14 @@ export default function ArticlePage() {
 
   return (
     <>
+      <ArticleSchema
+        headline="ما الذي يجب قياسه يومياً في المزرعة الذكية؟"
+        description="ليست كل القراءات متساوية الأهمية. تعرّف على المؤشرات الأساسية التي يجب رصدها يومياً في المزارع الهيدروبونيكية والمحميات الذكية — وتلك التي يمكن تأجيلها."
+        slug="daily-measurements-smart-farm"
+        datePublished="2026-04-15"
+        dateModified="2026-08-29"
+        image="/api/og?title=%D9%82%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA+%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9&sub=%D8%A7%D9%84%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA+%D8%A7%D9%84%D9%8A%D9%88%D9%85%D9%8A%D8%A9+%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -140,6 +149,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               ما الذي يجب قياسه يومياً في المزرعة الذكية؟
             </h1>
+            <ArticleByline datePublished="2026-04-15" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               ليست كل القراءات متساوية الأهمية. هذا ما يهمّ فعلاً — ولماذا.
             </p>
@@ -286,12 +296,10 @@ export default function ArticlePage() {
               <span dir="ltr" className="font-semibold">iGarden Smart OS</span> يُسجّل هذه المؤشرات تلقائياً مع الطابع الزمني لكل قراءة — دون أن تحمل قلماً أو تملأ جدولاً. يُنبّهك فقط عند الانحراف عن النطاقات التي تُحدّدها.
             </p>
             <Link
-              href="https://demo.igarden.sa"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact?interest=demo&cta=demo_access_request"
               className="inline-flex items-center gap-1 mt-3 text-[#7CB342] hover:text-[#0F3D2E] font-medium text-sm transition-colors"
             >
-              <span>شاهد Smart OS Demo</span>
+              <span>اطلب وصولاً إلى الديمو</span>
               <ArrowLeft className="w-4 h-4" aria-hidden="true" />
             </Link>
           </section>
@@ -309,14 +317,12 @@ export default function ArticlePage() {
               >
                 تعرّف على Smart Controllers
               </Link>
-              <a
-                href="https://demo.igarden.sa"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact?interest=demo&cta=demo_access_request"
                 className="inline-block border border-[#0F3D2E] text-[#0F3D2E] hover:bg-[#0F3D2E] hover:text-white px-7 py-3.5 rounded-lg font-semibold transition-colors"
               >
-                شاهد Smart OS Demo
-              </a>
+                اطلب وصولاً إلى الديمو
+              </Link>
             </div>
           </section>
 

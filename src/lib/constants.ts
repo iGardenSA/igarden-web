@@ -149,7 +149,9 @@ export type NavColumnItem = {
   label: string;
   href: string;
   external?: boolean;
-  badge?: "live";
+  /** وسم نصّي ساكن يوضّح أن الوجهة نموذج تواصل لا صفحة حلّ.
+      نصّ فقط — لا حركة ولا دلالة «مباشر». */
+  tag?: string;
 };
 
 export type NavColumn = {
@@ -187,7 +189,7 @@ export const MEGA_COLUMNS: NavColumn[] = [
     icon: "monitor-cog",
     items: [
       { label: "Smart OS — لوحة تشغيل المزرعة", href: "/products/smart-os" },
-      { label: "Demo مباشر", href: DEMO_URL, external: true, badge: "live" },
+      { label: "ديمو Smart OS", href: DEMO_URL, external: true },
       { label: "السجلات وجاهزية الامتثال", href: "/compliance" },
     ],
   },
@@ -196,8 +198,8 @@ export const MEGA_COLUMNS: NavColumn[] = [
     icon: "sun",
     items: [
       // ملاحظة: قيمة cta واحدة معتمدة؛ التفريق في topic ويُحفظ ضمن source_url.
-      { label: "الطاقة الشمسية المساندة", href: "/contact?cta=sustainability_solutions&topic=solar_support" },
-      { label: "كفاءة المياه والطاقة", href: "/contact?cta=sustainability_solutions&topic=water_energy_efficiency" },
+      { label: "الطاقة الشمسية المساندة", href: "/contact?cta=sustainability_solutions&topic=solar_support", tag: "تواصل" },
+      { label: "كفاءة المياه والطاقة", href: "/contact?cta=sustainability_solutions&topic=water_energy_efficiency", tag: "تواصل" },
     ],
   },
 ];
@@ -208,7 +210,6 @@ export const MEGA_FOOTER: NavColumnItem[] = [
   { label: "كيف نعمل", href: "/how-we-work" },
   // Wave 2E: مسارا B2C كانا مبلوغَين من الفوتر والدرج فقط — أُضيفا للميجا.
   { label: "حلول الأفراد والمنازل", href: "/home-solutions" },
-  { label: "المتجر", href: SHOP_URL, external: true },
 ];
 
 // ─── التنقّل الرئيسي ─────────────────────────────────────────────────────────
@@ -230,7 +231,7 @@ export type NavItemType = NavItemMega | NavItemSimple;
 export const HEADER_NAV_ITEMS: NavItemType[] = [
   { label: "الحلول", href: "/products", hasMegaMenu: true },
   { label: "كيف نعمل", href: "/how-we-work" },
-  { label: "مرفق عسفان", href: "/osfan-station" },
+  { label: "مرفق R&D في عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
   { label: "من نحن", href: "/about" },
 ];

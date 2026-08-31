@@ -8,6 +8,29 @@ export const metadata: Metadata = {
   description:
     "iGarden تقدّم للأفراد المهتمّين بالزراعة المنزلية منصّتين: تطبيق الحديقة الذكية للإرشاد والتعلّم، و iGarden Home Solutions لشراء الأنظمة والمستلزمات الجاهزة للمنزل.",
   alternates: { canonical: "https://igarden.sa/home-solutions" },
+  openGraph: {
+    title: "للأفراد — الحديقة الذكية في منزلك",
+    description:
+      "منصّتان للأفراد المهتمّين بالزراعة المنزلية: تطبيق الحديقة الذكية للإرشاد والتعلّم، و iGarden Home Solutions للأنظمة والمستلزمات الجاهزة للمنزل.",
+    url: "https://igarden.sa/home-solutions",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D9%84%D9%84%D8%A3%D9%81%D8%B1%D8%A7%D8%AF&sub=%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9+%D9%81%D9%8A+%D9%85%D9%86%D8%B2%D9%84%D9%83",
+        width: 1200,
+        height: 630,
+        alt: "حلول الأفراد والمنازل",
+      },
+    ],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "للأفراد — الحديقة الذكية في منزلك",
+    description: "منصّتان للزراعة المنزلية: تطبيق للإرشاد، ومتجر للأنظمة الجاهزة.",
+    images: ["/api/og?title=%D9%84%D9%84%D8%A3%D9%81%D8%B1%D8%A7%D8%AF&sub=%D8%A7%D9%84%D8%AD%D8%AF%D9%8A%D9%82%D8%A9+%D8%A7%D9%84%D8%B0%D9%83%D9%8A%D8%A9+%D9%81%D9%8A+%D9%85%D9%86%D8%B2%D9%84%D9%83"],
+  },
 };
 
 const OPTIONS = [

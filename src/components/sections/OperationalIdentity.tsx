@@ -4,7 +4,7 @@ import { BadgeCheck, Brain, Cpu } from "lucide-react";
 const CARDS = [
   {
     Icon: BadgeCheck,
-    title: "شركة ريادية مُرخّصة",
+    title: "شركة سعودية متخصّصة ومُرخّصة",
     description:
       "بترخيص استثمار ريادي من وزارة الاستثمار، ضمن منظومة ريادة الأعمال السعودية.",
     meta: "CR: 4030579637 · الرقم الموحد: 7041878278 · MISA: 24926249716",
@@ -15,7 +15,7 @@ const CARDS = [
     Icon: Brain,
     title: "ذكاء اصطناعي للزراعة المحلية",
     description:
-      "نُطوّر منصة Smart OS بقدرات تحليلية مُكيَّفة للبيئة السعودية، مُختبَرة ميدانياً في مرفق عسفان.",
+      "نُطوّر منصة Smart OS بقدرات تحليلية مُكيَّفة للبيئة السعودية، مُختبَرة ميدانياً في مرفق R&D في عسفان.",
     meta: null,
     link: { label: "اكتشف المنصة", href: "/products/smart-os" },
     accent: "text-lime",
@@ -39,7 +39,7 @@ export function OperationalIdentity() {
           <p className="text-lime text-sm font-bold uppercase tracking-widest mb-2">
             هويتنا التشغيلية
           </p>
-          <h2 className="h2 text-deep-green">شركة سعودية ريادية — ماذا يعني ذلك؟</h2>
+          <h2 className="h2 text-deep-green">شركة سعودية متخصّصة ومُرخّصة — ماذا يعني ذلك؟</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             ليست مجرد لافتة — هي التزام بالاختبار الميداني، والتوطين الحقيقي،
             والعمل ضمن الإطار التنظيمي السعودي.

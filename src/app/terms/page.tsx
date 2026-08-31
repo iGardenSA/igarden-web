@@ -1,10 +1,33 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "الشروط والأحكام | iGarden",
+  title: "الشروط والأحكام",
   description:
     "الشروط القانونية لاستخدام موقع iGarden وخدماتنا. صياغة واضحة بدون تعقيد.",
   alternates: { canonical: "https://igarden.sa/terms" },
+  openGraph: {
+    title: "الشروط والأحكام",
+    description:
+      "الشروط القانونية لاستخدام موقع iGarden وخدماتنا. صياغة واضحة بدون تعقيد.",
+    url: "https://igarden.sa/terms",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7+%D9%88%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85&sub=%D8%B5%D9%8A%D8%A7%D8%BA%D8%A9+%D9%88%D8%A7%D8%B6%D8%AD%D8%A9+%D8%A8%D8%AF%D9%88%D9%86+%D8%AA%D8%B9%D9%82%D9%8A%D8%AF",
+        width: 1200,
+        height: 630,
+        alt: "الشروط والأحكام",
+      },
+    ],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "الشروط والأحكام",
+    description: "الشروط القانونية لاستخدام الموقع والخدمات، بصياغة واضحة.",
+    images: ["/api/og?title=%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7+%D9%88%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85&sub=%D8%B5%D9%8A%D8%A7%D8%BA%D8%A9+%D9%88%D8%A7%D8%B6%D8%AD%D8%A9+%D8%A8%D8%AF%D9%88%D9%86+%D8%AA%D8%B9%D9%82%D9%8A%D8%AF"],
+  },
   robots: { index: true, follow: true },
 };
 
@@ -160,9 +183,8 @@ export default function TermsPage() {
           <li>الصيانة الدورية المتّفق عليها</li>
         </ul>
         <p>
-          الادعاءات على موقعنا (مثل تحمّل +45°C، عدد الاختبارات
-          الوحدوية) تعكس واقع مرفق R&D في عسفان، وليست وعداً مطلقاً
-          لكل تطبيق ميداني.
+          الادعاءات على موقعنا تعكس واقع مرفق R&D في
+          عسفان، وليست وعداً مطلقاً لكل تطبيق ميداني.
         </p>
 
         <h2>6. حدود المسؤولية</h2>

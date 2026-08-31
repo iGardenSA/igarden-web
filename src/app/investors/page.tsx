@@ -13,9 +13,9 @@ import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CONTACT } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "للمستثمرين — AgriTech سعودية، أصول ميدانية | iGarden",
+  title: "للمستثمرين — AgriTech سعودية، أصول ميدانية",
   description:
-    "iGarden (انتيليجنت غاردن): شركة سعودية لأنظمة الزراعة الذكية. مرخّصة MISA، نموذج صناعي مسجّل SAIP، 3+ سنوات تطوير، ومحطة اختبار ميدانية في عسفان.",
+    "تعرّف على مرحلة iGarden الحالية ومسارها في تطوير منظومات الزراعة الذكية.",
   alternates: { canonical: "https://igarden.sa/investors" },
   robots: { index: false, follow: false },
   openGraph: {
@@ -114,15 +114,7 @@ export default function InvestorsPage() {
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            <FadeIn delay={100}>
-              <QuickFactCard
-                icon={<Building className="h-6 w-6" />}
-                label="رأس المال المسجل"
-                value="100,000"
-                unit="ريال"
-              />
-            </FadeIn>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             <FadeIn delay={150}>
               <QuickFactCard
                 icon={<Calendar className="h-6 w-6" />}
@@ -179,7 +171,7 @@ export default function InvestorsPage() {
                 icon={<Shield className="h-6 w-6" />}
                 number="02"
                 title="توطين استراتيجي"
-                description="تماشٍ تام مع رؤية 2030، الأمن الغذائي، وبرامج التوطين — مما يُسهّل الحصول على الدعم الحكومي."
+                description="تماشٍ تام مع رؤية 2030، الأمن الغذائي، وبرامج التوطين — بما يتقاطع مع أولويات الأمن الغذائي والتوطين."
               />
             </FadeIn>
             <FadeIn delay={200}>
@@ -211,7 +203,7 @@ export default function InvestorsPage() {
                 icon={<Building className="h-6 w-6" />}
                 number="06"
                 title="أصول تشغيلية"
-                description="مرفق R&D في عسفان الميداني، 5+ ورش عمل، نماذج Hydroponics مُختبَرة، وتغطية اختبارات وحدوية موسّعة."
+                description="مرفق R&D في عسفان، وورش تطبيقية، ونماذج Hydroponics يجري تطويرها وتشغيلها ميدانياً."
               />
             </FadeIn>
           </div>
@@ -219,39 +211,21 @@ export default function InvestorsPage() {
       </section>
 
       {/* ============================================================
-          3. توزيع التمويل (منحة سنبلة)
+          3. التفاصيل المالية — عند الطلب
           ============================================================ */}
       <section className="bg-white section-padding">
         <div className="container-igarden">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <FadeIn>
-              <div className="text-center mb-12">
-                <p className="heading-eyebrow mb-4">برامج دعم وتسريع محتملة</p>
-                <h2 className="heading-section mb-4">توزيع استخدام التمويل</h2>
+              <div className="bg-[var(--color-surface)] rounded-2xl p-8 border border-[var(--color-border)] flex items-start gap-4">
+                <FileText
+                  className="h-6 w-6 text-[var(--color-accent-600)] flex-shrink-0 mt-1"
+                  aria-hidden="true"
+                />
                 <p className="text-[var(--color-muted)] text-lg leading-relaxed">
-                  إطار مقترح لتوزيع الدعم على أربعة محاور تشغيلية رئيسية.
+                  التفاصيل المالية ونطاق الاحتياج التمويلي متاحان ضمن Investor
+                  Pack عند الطلب للشركاء المؤهلين.
                 </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={100}>
-              <div className="bg-[var(--color-surface)] rounded-2xl p-8 border border-[var(--color-border)] space-y-6">
-                <FundingBar
-                  label="Smart Controllers — تَطوير وتَصنيع"
-                  percentage={50}
-                />
-                <FundingBar
-                  label="مرفق R&D في عسفان — توسعة وأنظمة جديدة"
-                  percentage={25}
-                />
-                <FundingBar
-                  label="التَسويق + الموقع + المحتوى"
-                  percentage={15}
-                />
-                <FundingBar
-                  label="القانوني + تَسجيل العلامة التجارية"
-                  percentage={10}
-                />
               </div>
             </FadeIn>
           </div>
@@ -275,11 +249,7 @@ export default function InvestorsPage() {
                   },
                   {
                     num: "02",
-                    text: "التشغيل الميداني بدأ: مرفق R&D في عسفان قائم منذ 2025، 5 ورش «ازرع بذكاء» مُنفَّذة، وتغطية اختبارات وحدوية موسّعة. ليس مجرد فكرة.",
-                  },
-                  {
-                    num: "03",
-                    text: "نافذة الشراكة المبكرة مفتوحة. الدخول المبكر يعني شروطاً أفضل ومشاركة أكبر في التشكيل الاستراتيجي.",
+                    text: "التشغيل الميداني بدأ: مرفق R&D في عسفان قائم منذ 2025، مع أنشطة وورش تطبيقية.",
                   },
                 ].map((item) => (
                   <div
@@ -309,12 +279,11 @@ export default function InvestorsPage() {
               <h2 className="heading-section mb-6">ماذا بُني فعلاً؟</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  "منظومة Smart Controllers (ESP32 + Raspberry Pi) — تغطية اختبارات وحدوية موسّعة",
+                  "منظومة Smart Controllers (ESP32 + Raspberry Pi)",
                   "واجهة Smart OS — تشغيل على demo.igarden.sa",
-                  "مرفق R&D في عسفان — 5 ورش عمل + نماذج Hydroponics مُختبَرة منذ 2025",
+                  "مرفق R&D في عسفان — تشغيل ونماذج تطبيقية منذ 2025",
                   "نموذج صناعي مسجّل SAIP #423450193 (iGarden Tower)",
                   "رخصة MISA وسجل تجاري رسمي منذ فبراير 2026",
-                  "Supabase CRM + نموذج جمع العملاء المحتملين",
                 ].map((item) => (
                   <div
                     key={item}
@@ -539,36 +508,6 @@ function InvestmentAdvantage({
       </div>
       <h3 className="text-xl font-bold text-[var(--color-brand-600)] mb-3">{title}</h3>
       <p className="text-lg text-[var(--color-muted)] leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-function FundingBar({
-  label,
-  percentage,
-}: {
-  label: string;
-  percentage: number;
-}) {
-  return (
-    <div>
-      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-        <span className="text-lg font-semibold text-[var(--color-foreground)]">
-          {label}
-        </span>
-        <span
-          className="text-lg font-extrabold text-[var(--color-accent-600)]"
-          data-num
-        >
-          {percentage}%
-        </span>
-      </div>
-      <div className="h-3 bg-[var(--color-brand-100)] rounded-full overflow-hidden">
-        <div
-          className="h-full bg-[var(--color-brand-600)] rounded-full"
-          style={{ width: `${percentage}%` }}
-        />
-      </div>
     </div>
   );
 }

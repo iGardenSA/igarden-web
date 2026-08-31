@@ -25,7 +25,7 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto w-full px-4 md:px-8">
         <div className="inline-flex items-center self-start bg-[#0F3D2E]/40 backdrop-blur-sm border border-[#A5D63F]/40 text-[#A5D63F] px-4 py-1.5 rounded-full text-sm font-medium shadow-sm shadow-black/20 mb-6">
-          AgriTech سعودية · ريادية · مُبتكرة
+          AgriTech سعودية · متخصّصة
         </div>
 
         <h1
@@ -37,7 +37,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/90 text-lg md:text-xl leading-relaxed max-w-xl mb-2">
-          شركة سعودية ريادية متخصّصة في حلول الزراعة المستدامة الذكية.
+          شركة سعودية متخصّصة في حلول الزراعة المستدامة الذكية.
         </p>
 
         <p className="text-white/65 text-base leading-relaxed max-w-xl mt-3 mb-2">
@@ -52,18 +52,13 @@ export default function HeroSection() {
             احجز استشارة
           </Link>
 
-          <a
-            href="https://demo.igarden.sa"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contact?interest=demo&cta=demo_access_request"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent border-2 border-white/80 text-white hover:bg-white/10 rounded-lg text-lg md:text-lg font-medium transition-all duration-200 min-w-[220px]"
           >
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#A5D63F] animate-pulse flex-shrink-0" />
-              شاهد الديمو
-            </span>
+            <span>اطلب وصولاً إلى الديمو</span>
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

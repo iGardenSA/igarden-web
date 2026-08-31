@@ -1,10 +1,33 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "إخلاء الامتثال | iGarden",
+  title: "إخلاء الامتثال",
   description:
     "حدود ما تقدّمه طبقة الامتثال في Smart OS — شفافية كاملة حول ما هو سجل تشغيلي وما هو ليس شهادة امتثال رسمية.",
   alternates: { canonical: "https://igarden.sa/compliance-disclaimer" },
+  openGraph: {
+    title: "إخلاء الامتثال",
+    description:
+      "حدود ما تقدّمه طبقة الامتثال في Smart OS — شفافية كاملة حول ما هو سجل تشغيلي وما هو ليس شهادة امتثال رسمية.",
+    url: "https://igarden.sa/compliance-disclaimer",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=%D8%A5%D8%AE%D9%84%D8%A7%D8%A1+%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AB%D8%A7%D9%84&sub=%D9%85%D8%A7+%D9%8A%D9%82%D8%AF%D9%91%D9%85%D9%87+%D8%A7%D9%84%D8%B3%D8%AC%D9%84+%D9%88%D9%85%D8%A7+%D9%84%D8%A7+%D9%8A%D9%8F%D8%BA%D9%86%D9%8A+%D8%B9%D9%86%D9%87",
+        width: 1200,
+        height: 630,
+        alt: "إخلاء الامتثال",
+      },
+    ],
+    type: "website",
+    locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "إخلاء الامتثال",
+    description: "ما تقدّمه طبقة الامتثال وما لا تُغني عنه — بوضوح.",
+    images: ["/api/og?title=%D8%A5%D8%AE%D9%84%D8%A7%D8%A1+%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AB%D8%A7%D9%84&sub=%D9%85%D8%A7+%D9%8A%D9%82%D8%AF%D9%91%D9%85%D9%87+%D8%A7%D9%84%D8%B3%D8%AC%D9%84+%D9%88%D9%85%D8%A7+%D9%84%D8%A7+%D9%8A%D9%8F%D8%BA%D9%86%D9%8A+%D8%B9%D9%86%D9%87"],
+  },
   robots: { index: true, follow: true },
 };
 
@@ -133,8 +156,7 @@ export default function ComplianceDisclaimerPage() {
 
         <h2>5. الادعاءات الرقمية على موقعنا</h2>
         <p>
-          أي رقم نذكره (مثل: تحمّل +45°C، عدد الاختبارات الوحدوية، مدد
-          الاختبار في عسفان) يعكس{" "}
+          أي رقم نذكره (مثل: مدد الاختبار في عسفان) يعكس{" "}
           <strong>الواقع المُختبَر في مرفق R&D الخاص بنا</strong>، وليس
           وعداً مطلقاً بنفس الأداء في كل بيئة ميدانية.
         </p>

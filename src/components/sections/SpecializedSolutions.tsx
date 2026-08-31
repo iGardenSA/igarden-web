@@ -79,16 +79,7 @@ export function SpecializedSolutions() {
           للأفراد: الأنظمة المنزلية والمواد القياسية عبر{" "}
           <Link href="/home-solutions" className="text-lime hover:text-deep-green font-medium">
             حلول المنزل
-          </Link>{" "}
-          و
-          <a
-            href="https://shop.igarden.sa"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lime hover:text-deep-green font-medium"
-          >
-            shop.igarden.sa
-          </a>
+          </Link>
           .
         </p>
       </div>

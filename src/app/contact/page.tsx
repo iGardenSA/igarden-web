@@ -34,8 +34,19 @@ import {
 } from "@/lib/lead-tracking";
 import { notifyLead } from "@/lib/notify-lead";
 import { CONTACT, COMPANY } from "@/lib/constants";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "كيف نعمل",
+    desc: "مساران للتنفيذ: مشروع جديد أو منشأة قائمة — وما يحدث في كل خطوة.",
+    href: "/how-we-work",
+  },
+];
 
 export default function ContactPage() {
   const [submitState, setSubmitState] = useState<SubmitState>("idle");
@@ -223,14 +234,6 @@ export default function ContactPage() {
               >
                 اكتشف الحلول الفردية
               </a>
-              <a
-                href="https://shop.igarden.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border-2 border-[var(--color-border)] text-[var(--color-brand-600)] text-sm font-semibold hover:border-[var(--color-brand-300)] transition-colors"
-              >
-                iGarden Home Solutions
-              </a>
             </div>
           </div>
         </div>
@@ -323,7 +326,10 @@ export default function ContactPage() {
                 </p>
 
                 {submitState === "success" && (
-                  <div className="mb-6 p-5 rounded-xl bg-[var(--color-accent-100)] border border-[var(--color-accent-500)] flex items-start gap-3">
+                  <div
+                    role="status"
+                    className="mb-6 p-5 rounded-xl bg-[var(--color-accent-100)] border border-[var(--color-accent-500)] flex items-start gap-3"
+                  >
                     <CheckCircle2 className="h-6 w-6 text-[var(--color-accent-700)] shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-[var(--color-brand-700)] mb-1">
@@ -337,7 +343,10 @@ export default function ContactPage() {
                 )}
 
                 {submitState === "error" && (
-                  <div className="mb-6 p-5 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3">
+                  <div
+                    role="alert"
+                    className="mb-6 p-5 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3"
+                  >
                     <AlertCircle className="h-6 w-6 text-red-600 shrink-0 mt-0.5" />
                     <div>
                       <p className="font-bold text-red-800 mb-1">
@@ -368,12 +377,20 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                   {/* الحقول الأساسية */}
                   <FormField
+                    id="contact-full-name"
                     label="الاسم الكامل"
                     required
                     error={errors.full_name?.message}
                   >
                     <input
+                      id="contact-full-name"
                       type="text"
+                      autoComplete="name"
+                      aria-required="true"
+                      aria-invalid={!!errors.full_name}
+                      aria-describedby={
+                        errors.full_name ? "contact-full-name-error" : undefined
+                      }
                       {...register("full_name")}
                       className="input-igarden"
                       placeholder="الاسم الكامل"
@@ -382,12 +399,20 @@ export default function ContactPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <FormField
+                      id="contact-phone"
                       label="رقم الجوال"
                       required
                       error={errors.phone?.message}
                     >
                       <input
+                        id="contact-phone"
                         type="tel"
+                        autoComplete="tel"
+                        aria-required="true"
+                        aria-invalid={!!errors.phone}
+                        aria-describedby={
+                          errors.phone ? "contact-phone-error" : undefined
+                        }
                         {...register("phone")}
                         className="input-igarden"
                         placeholder="+966 5X XXX XXXX"
@@ -395,12 +420,20 @@ export default function ContactPage() {
                       />
                     </FormField>
                     <FormField
+                      id="contact-email"
                       label="البريد الإلكتروني"
                       required={preferredContact === "email"}
                       error={errors.email?.message}
                     >
                       <input
+                        id="contact-email"
                         type="email"
+                        autoComplete="email"
+                        aria-required={preferredContact === "email"}
+                        aria-invalid={!!errors.email}
+                        aria-describedby={
+                          errors.email ? "contact-email-error" : undefined
+                        }
                         {...register("email")}
                         className="input-igarden"
                         placeholder="name@example.com"
@@ -412,8 +445,17 @@ export default function ContactPage() {
                   {/* Wave 2E — طريقة التواصل المفضّلة.
                       ⚠ البريد ظاهر دائماً (لا داخل طيّ) كي لا يفشل التحقق بصمت
                       حين يصير إلزامياً باختيار «البريد». */}
-                  <FormField label="طريقة التواصل المفضّلة" required>
-                    <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="طريقة التواصل المفضّلة">
+                  <FormField
+                    id="contact-preferred"
+                    label="طريقة التواصل المفضّلة"
+                    required
+                    group
+                  >
+                    <div
+                      className="flex flex-wrap gap-2"
+                      role="radiogroup"
+                      aria-labelledby="contact-preferred-label"
+                    >
                       {PREFERRED_CONTACT_OPTIONS.map((opt) => (
                         <label
                           key={opt.value}
@@ -436,8 +478,9 @@ export default function ContactPage() {
                   </FormField>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <FormField label="نوع الجهة">
+                    <FormField id="contact-lead-type" label="نوع الجهة">
                       <select
+                        id="contact-lead-type"
                         {...register("lead_type")}
                         className="input-igarden"
                       >
@@ -450,7 +493,7 @@ export default function ContactPage() {
                     </FormField>
                   </div>
 
-                  <FormField label="مهتم بـ (اختر ما يناسب)">
+                  <FormField id="contact-interests" label="مهتم بـ (اختر ما يناسب)" group>
                     {prefilledLabels.length > 0 && (
                       <p className="text-sm text-medium-gray mb-2">
                         حدّدنا لك{" "}
@@ -478,7 +521,11 @@ export default function ContactPage() {
                       control={control}
                       name="interested_in"
                       render={({ field }) => (
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                        <div
+                          className="grid grid-cols-2 md:grid-cols-3 gap-2"
+                          role="group"
+                          aria-labelledby="contact-interests-label"
+                        >
                           {INTERESTS.map((item) => {
                             const checked =
                               field.value?.includes(item.value) ?? false;
@@ -506,11 +553,18 @@ export default function ContactPage() {
                   </FormField>
 
                   <FormField
+                    id="contact-message"
                     label="الرسالة"
                     required
                     error={errors.message?.message}
                   >
                     <textarea
+                      id="contact-message"
+                      aria-required="true"
+                      aria-invalid={!!errors.message}
+                      aria-describedby={
+                        errors.message ? "contact-message-error" : undefined
+                      }
                       {...register("message")}
                       rows={5}
                       className="input-igarden resize-y"
@@ -539,9 +593,11 @@ export default function ContactPage() {
                       <div className="mt-5 space-y-5">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                           {/* ⛔ البريد نُقل إلى الكتلة الظاهرة أعلاه (Wave 2E). */}
-                          <FormField label="الجهة / الشركة">
+                          <FormField id="contact-company" label="الجهة / الشركة">
                             <input
+                              id="contact-company"
                               type="text"
+                              autoComplete="organization"
                               {...register("company")}
                               className="input-igarden"
                               placeholder="اسم الجهة"
@@ -550,16 +606,22 @@ export default function ContactPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                          <FormField label="المدينة / المنطقة">
+                          <FormField id="contact-city" label="المدينة / المنطقة">
                             <input
+                              id="contact-city"
                               type="text"
+                              autoComplete="address-level1"
                               {...register("city")}
                               className="input-igarden"
                               placeholder="مثال: جدة، الرياض، خميس مشيط"
                             />
                           </FormField>
-                          <FormField label="حجم المشروع">
-                            <select {...register("project_size")} className="input-igarden">
+                          <FormField id="contact-project-size" label="حجم المشروع">
+                            <select
+                              id="contact-project-size"
+                              {...register("project_size")}
+                              className="input-igarden"
+                            >
                               <option value="">اختر...</option>
                               {PROJECT_SIZES.map((p) => (
                                 <option key={p.value} value={p.value}>{p.label}</option>
@@ -569,16 +631,21 @@ export default function ContactPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                          <FormField label="متى تَرغب بالبدء؟">
-                            <select {...register("timeline")} className="input-igarden">
+                          <FormField id="contact-timeline" label="متى تَرغب بالبدء؟">
+                            <select
+                              id="contact-timeline"
+                              {...register("timeline")}
+                              className="input-igarden"
+                            >
                               <option value="">اختر...</option>
                               {TIMELINES.map((t) => (
                                 <option key={t.value} value={t.value}>{t.label}</option>
                               ))}
                             </select>
                           </FormField>
-                          <FormField label="الموضوع">
+                          <FormField id="contact-subject" label="الموضوع">
                             <input
+                              id="contact-subject"
                               type="text"
                               {...register("subject")}
                               className="input-igarden"
@@ -596,6 +663,7 @@ export default function ContactPage() {
                       variant="primary"
                       size="xl"
                       disabled={submitState === "submitting"}
+                      aria-busy={submitState === "submitting"}
                       className="w-full md:w-auto"
                     >
                       {submitState === "submitting" ? (
@@ -611,14 +679,15 @@ export default function ContactPage() {
                       )}
                     </Button>
                     <p className="text-lg text-[var(--color-muted)] mt-4 leading-relaxed">
-                      بإرسالك هذه الرسالة، توافق على{" "}
+                      لن نبيع بياناتك ولن نشاركها لأغراض تسويقية. تُعالَج بواسطة مزوّدي
+                      الخدمة المذكورين في{" "}
                       <Link
                         href="/privacy"
                         className="text-[var(--color-brand-600)] underline hover:text-[var(--color-accent-600)]"
                       >
                         سياسة الخصوصية
-                      </Link>{" "}
-                      الخاصة بنا. لن نشارك بياناتك مع أي طرف ثالث.
+                      </Link>
+                      .
                     </p>
                   </div>
                 </form>
@@ -627,6 +696,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }
@@ -780,22 +851,37 @@ function InfoRow(props: InfoRowProps) {
 }
 
 type FormFieldProps = {
+  id: string;
   label: string;
   required?: boolean;
   error?: string;
   children: React.ReactNode;
+  /** مجموعة عناصر لا حقلاً مفرداً — تُسمّى بـaria-labelledby لا htmlFor. */
+  group?: boolean;
 };
 
 function FormField(props: FormFieldProps) {
+  const labelClass =
+    "block text-lg font-semibold text-[var(--color-foreground)] mb-2";
   return (
     <div>
-      <label className="block text-lg font-semibold text-[var(--color-foreground)] mb-2">
-        {props.label}
-        {props.required && <span className="text-red-500 mr-1">*</span>}
-      </label>
+      {props.group ? (
+        <span id={`${props.id}-label`} className={labelClass}>
+          {props.label}
+          {props.required && <span className="text-red-500 mr-1">*</span>}
+        </span>
+      ) : (
+        <label htmlFor={props.id} className={labelClass}>
+          {props.label}
+          {props.required && <span className="text-red-500 mr-1">*</span>}
+        </label>
+      )}
       {props.children}
       {props.error && (
-        <p className="text-lg text-red-600 mt-1.5 flex items-center gap-1">
+        <p
+          id={`${props.id}-error`}
+          className="text-lg text-red-600 mt-1.5 flex items-center gap-1"
+        >
           <AlertCircle className="h-3 w-3" />
           {props.error}
         </p>

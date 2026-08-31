@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
 import { CTAButton } from "@/components/shared/CTAButton";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
@@ -17,11 +18,26 @@ export const metadata: Metadata = {
     "لوحة تشغيل موحّدة تجمع القراءات والتحكّم والإشراف عن بُعد والبرامج المجدولة ضمن نطاق مشروعك — والسجلّات والتنبيهات والتقارير تُفعَّل بحسبه. طبقات التحليل المتقدّم قيد التطوير.",
   alternates: { canonical: "https://igarden.sa/products/smart-os" },
   openGraph: {
-    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك | iGarden",
+    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
     description: "لوحة تشغيل موحّدة: ربط وعرض وتحكّم وإشراف عن بُعد ضمن نطاق المشروع — والتحليلات المتقدّمة قيد التطوير.",
-    images: [{ url: "/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83", width: 1200, height: 630 }],
+    url: "https://igarden.sa/products/smart-os",
+    siteName: "iGarden",
+    images: [
+      {
+        url: "/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83",
+        width: 1200,
+        height: 630,
+        alt: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
+      },
+    ],
     type: "website",
     locale: "ar_SA",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Smart OS — لوحة تشغيل موحّدة لمزرعتك",
+    description: "ربط وعرض وتحكّم وإشراف عن بُعد ضمن نطاق المشروع.",
+    images: ["/api/og?title=Smart+OS&sub=%D9%84%D9%88%D8%AD%D8%A9+%D8%AA%D8%B4%D8%BA%D9%8A%D9%84+%D9%85%D9%88%D8%AD%D9%91%D8%AF%D8%A9+%D9%84%D9%85%D8%B2%D8%B1%D8%B9%D8%AA%D9%83"],
   },
 };
 
@@ -42,7 +58,7 @@ const CAPABILITY_TIERS = [
   {
     tier: "قيد التطوير",
     Icon: Brain,
-    items: ["رشيد التشغيلي", "اكتشاف الشذوذ", "LSTM", "التحليلات والتوصيات المتقدّمة", "إدارة المزرعة الأوسع"],
+    items: ["رشيد التشغيلي", "اكتشاف الشذوذ", "التحليلات والتوصيات المتقدّمة", "إدارة المزرعة الأوسع"],
     note: null,
   },
 ];
@@ -58,6 +74,31 @@ const BREADCRUMB = [
   { name: "الرئيسية", url: "/" },
   { name: "خدماتنا", url: "/products" },
   { name: "Smart OS", url: "/products/smart-os" },
+];
+
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "Smart Controllers",
+    desc: "لوحة التحكّم التي تُغذّي المنصّة بالقراءات وتُنفّذ الأوامر.",
+    href: "/products/smart-controllers",
+  },
+  {
+    label: "إنترنت الأشياء الزراعي",
+    desc: "ما نقيسه وكيف تصل القراءة من الحقل إلى المنصّة.",
+    href: "/products/iot",
+  },
+  {
+    label: "السجلات وجاهزية الامتثال",
+    desc: "كيف تتحوّل القراءات إلى سجلّ قابل للمراجعة.",
+    href: "/compliance",
+  },
+  {
+    label: "ميثاق بيانات العميل",
+    desc: "من يملك بيانات التشغيل ومن يصل إليها.",
+    href: "/data-charter",
+  },
 ];
 
 export default function SmartOSPage() {
@@ -85,8 +126,8 @@ export default function SmartOSPage() {
             >
               اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-              Live Demo ←
+            <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+              اطلب وصولاً إلى الديمو
             </CTAButton>
           </div>
         </div>
@@ -161,9 +202,8 @@ export default function SmartOSPage() {
           </p>
           <h2 className="h2 text-deep-green mb-6">أين نختبر؟</h2>
           <p className="body-base text-medium-gray mb-6 leading-relaxed">
-            في مرفق R&D في عسفان. تخضع الوحدات والتكاملات لاختبار وظيفي
-            وميداني قبل التسليم، ضمن منظومة مختبرة ميدانياً في ظروف صيفية
-            سعودية وبيئات مرتفعة الحرارة والرطوبة.
+            في مرفق R&D في عسفان. تخضع الوحدات والتكاملات لفحص وظيفي قبل
+            التسليم وفق خطة القبول المتفق عليها.
           </p>
 
           {/* أصل مؤقّت آمن — imageStatus: "temporary-safe"
@@ -256,12 +296,13 @@ export default function SmartOSPage() {
             >
               اطلب تقييماً أولياً
             </CTAButton>
-            <CTAButton href="https://demo.igarden.sa" variant="outline-light" external>
-              Live Demo ←
+            <CTAButton href="/contact?interest=demo&cta=demo_access_request" variant="outline-light">
+              اطلب وصولاً إلى الديمو
             </CTAButton>
           </div>
         </div>
       </section>
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

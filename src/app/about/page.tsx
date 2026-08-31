@@ -9,6 +9,7 @@ import {
   Microscope,
   CheckCircle2,
 } from "lucide-react";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "من نحن — شركة سعودية لأنظمة الزراعة الذكية",
@@ -37,7 +38,7 @@ function Hero() {
     <section className="section-light py-20 md:py-28">
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-          شركة سعودية ريادية ومبتكرة في التقنيات الزراعية
+          شركة سعودية متخصصة في التقنيات الزراعية
         </p>
         <h1 className="h1 text-deep-green mb-5">
           نبني منظومات زراعية متكاملة للمناخ السعودي
@@ -102,7 +103,7 @@ const REGISTRATION_BADGES = [
   { label: "وزارة الاستثمار — MISA", value: "24926249716" },
   { label: "الملكية الفكرية — SAIP", value: "#423450193" },
   { label: "الرقم الضريبي", value: "312554598200003" },
-  { label: "التصنيف", value: "ريادية" },
+  { label: "تصنيف رخصة MISA", value: "ريادي" },
 ];
 
 function IdentitySection() {
@@ -112,12 +113,12 @@ function IdentitySection() {
         <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">
           هويتنا التشغيلية
         </p>
-        <h2 className="h2 text-deep-green mb-8">شركة ريادية مُرخّصة</h2>
+        <h2 className="h2 text-deep-green mb-8">شركة سعودية متخصّصة ومُرخّصة</h2>
 
         <div className="space-y-4 body-base text-medium-gray leading-relaxed mb-12">
           <p>
             <span dir="ltr" className="font-latin font-bold text-deep-green">iGarden</span>{" "}
-            شركة سعودية ريادية مُرخّصة، تعمل بترخيص استثمار ريادي رسمي من وزارة
+            شركة سعودية متخصّصة ومُرخّصة، تعمل بترخيص استثمار ريادي رسمي من وزارة
             الاستثمار، وتُسجَّل ضمن منظومة ريادة الأعمال السعودية.
           </p>
           <p>
@@ -165,7 +166,6 @@ const TIMELINE = [
       "بناء النماذج الأوّلية لـ Smart Controllers",
       "إطلاق مرفق R&D في عسفان للتجارب والتطوير",
       "تنفيذ ورش «ازرع بذكاء»",
-      "تغطية اختبارات وحدوية موسّعة على Smart OS",
     ],
   },
   {
@@ -188,7 +188,7 @@ function TimelineSection() {
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
             الرحلة
           </p>
-          <h2 className="h2 text-deep-green">3 سنوات من التطوير</h2>
+          <h2 className="h2 text-deep-green">من التجربة إلى بناء المنظومة</h2>
           {/* [CONTENT_NEEDED: تأكيد التواريخ والإنجازات الدقيقة من Master Doc §1.5] */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -243,7 +243,7 @@ const METHODOLOGY = [
     title: "R&D داخلي مستمرّ",
     body: "نُواجه الصعوبات بالابتكار، لا بالاستسلام لحدود المنتج المستورد. كل فشل في عسفان يُترجَم إلى تحسين.",
     // [CONTENT_NEEDED: سجلّ قياس دقّة pH للإصدارين v0.1 وv0.2]
-    example: "Smart Controller v0.1 كان يَخطئ في قراءة pH تحت حرارة الصيف. v0.2 يَستخدم ADC عالي الدقة (ADS1115) لقراءة الإشارة التناظرية، والدقّة النهائية تعتمد على المجس والمعايرة والتركيب — مدعومة بتغطية اختبارات وحدوية موسّعة.",
+    example: "Smart Controller v0.1 كان يَخطئ في قراءة pH تحت حرارة الصيف. v0.2 يَستخدم ADC عالي الدقة (ADS1115) لقراءة الإشارة التناظرية، والدقّة النهائية تعتمد على المجس والمعايرة والتركيب.",
   },
 ];
 
@@ -365,7 +365,7 @@ const VALUES = [
   },
   {
     title: "شريك لا بائع",
-    desc: "نَنتهي بعد التسليم بأسبوع متابعة مكثّف — ثم نَبقى متاحين. نجاحك يَبني سمعتنا.",
+    desc: "بعد التسليم، تستمر المتابعة وفق الخطة المتفق عليها. نجاحك يَبني سمعتنا.",
   },
   {
     title: "بناء يتراكم",
@@ -434,6 +434,16 @@ const BREADCRUMB = [
   { name: "من نحن", url: "/about" },
 ];
 
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "بيانات الشركة الرسمية",
+    desc: "السجل التجاري والتراخيص والأرقام النظامية.",
+    href: "/fact-sheet",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -448,6 +458,7 @@ export default function AboutPage() {
       <OsfanLinkSection />
       <ValuesSection />
       <FinalCTA />
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

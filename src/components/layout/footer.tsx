@@ -17,7 +17,6 @@ import {
   CONTACT,
   SOCIAL,
   WHATSAPP_HREF,
-  SHOP_URL,
   noPrefetch,
 } from "@/lib/constants";
 
@@ -42,7 +41,6 @@ const COMPANY_LINKS: FLink[] = [
 ];
 
 const PLATFORMS_LINKS: FLink[] = [
-  { label: "المتجر", href: SHOP_URL, external: true },
   { label: "Home Solutions — حلول الأفراد", href: "/home-solutions" },
   { label: "تطبيق iGarden", href: "/app", badge: "قريباً" },
   { label: "تواصل معنا", href: "/contact" },
@@ -98,7 +96,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm opacity-75 hover:opacity-100 hover:text-lime transition-all"
                 >
                   <Phone className="w-4 h-4 flex-shrink-0" aria-hidden />
-                  <span className="font-latin">{CONTACT.phone}</span>
+                  <span dir="ltr" className="font-latin ltr-inline">{CONTACT.phone}</span>
                 </a>
               </li>
               <li>
@@ -187,8 +185,14 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs opacity-55">
             <p className="font-medium opacity-80">{COMPANY.legalFull}</p>
-            <p className="font-latin whitespace-nowrap">
-              © {new Date().getFullYear()} iGarden. All rights reserved.
+            {/* الجزء اللاتيني معزول باتجاهه داخل <bdi dir="ltr"> كي لا يتكفّل
+                خوارزم الاتجاه بترتيبه — فتُصيَّر النقطة والرمز في موضعهما.
+                الترتيب البصري: «© 2026 iGarden. جميع الحقوق محفوظة.» */}
+            <p>
+              <bdi dir="ltr" className="font-latin">
+                © {new Date().getFullYear()} iGarden.
+              </bdi>{" "}
+              جميع الحقوق محفوظة.
             </p>
           </div>
         </div>

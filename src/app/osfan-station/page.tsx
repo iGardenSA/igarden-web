@@ -4,6 +4,7 @@ import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/shared/Schem
 import { CTAButton } from "@/components/shared/CTAButton";
 import { VisitForm } from "./VisitForm";
 import { CheckCircle2, Microscope } from "lucide-react";
+import { RelatedPaths, type RelatedLink } from "@/components/shared/RelatedPaths";
 
 export const metadata: Metadata = {
   title: "مرفق R&D في عسفان للتجارب والتطوير",
@@ -53,7 +54,7 @@ function Hero() {
           <span dir="ltr" className="ltr-inline font-latin font-bold">
             iGarden
           </span>{" "}
-          — حيث نختبر نماذج وتقنيات مختارة في ظروف صيفية سعودية، ورطوبة ساحلية، ورياح الخليج، وغبار
+          — حيث نختبر نماذج وتقنيات مختارة في ظروف صيفية سعودية، ورطوبة ساحلية، ورياح ساحل البحر الأحمر، وغبار
           قبل أن تَصل إلى عميل.
         </p>
 
@@ -128,7 +129,7 @@ const GALLERY_IMAGES = [
   {
     src: "/images/osfan-full/01_tower_visitors.webp",
     label: "البنية التَحتية المغطّاة",
-    detail: "هيكل مقاوم لرياح الخليج",
+    detail: "هيكل ميداني داخل مرفق R&D في عسفان",
   },
   {
     src: "/images/osfan-full/03_cabbage_diversity.webp",
@@ -226,7 +227,7 @@ const SYSTEMS = [
     name: "Smart Controller v0.1",
     learned: "النسخة الأولى أظهرت حساسية القراءة التناظرية للحرارة؛ والدقّة تتأثر بالـADC والمعايرة والمجس والتركيب.",
     // [CONTENT_NEEDED: سجلّ قياس دقّة pH للإصدارين v0.1 وv0.2 — من م. أيمن]
-    changed: "الإصدار الحالي يستخدم ADC عالي الدقة (ADS1115 — ADR الداخلي T002) لقراءة الإشارة التناظرية؛ الدقّة النهائية تعتمد على المجس والمعايرة والتركيب.",
+    changed: "الإصدار الحالي يستخدم ADC عالي الدقة لقراءة الإشارة التناظرية؛ الدقّة النهائية تعتمد على المجس والمعايرة والتركيب.",
   },
   {
     Icon: Microscope,
@@ -248,7 +249,7 @@ function TestedSystems() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            من الفشل أتعلّمنا
+            من الفشل تعلّمنا
           </p>
           <h2 className="h2 text-deep-green">ما اختبرناه في عسفان</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
@@ -419,6 +420,21 @@ const BREADCRUMB = [
   { name: "مرفق R&D في عسفان", url: "/osfan-station" },
 ];
 
+/* مسارات ذات صلة — الوجهات خاصّة بهذه الصفحة؛ العرض مشترك في
+   @/components/shared/RelatedPaths. ⛔ كلّها وجهات منشورة قائمة. */
+const RELATED_LINKS: RelatedLink[] = [
+  {
+    label: "أنظمة الزراعة المائية",
+    desc: "التقنيات التي نختبرها في المرفق وأيّها يناسب محصولك.",
+    href: "/products/hydroponics",
+  },
+  {
+    label: "Smart Controllers",
+    desc: "لوحة التحكّم التي تُختبر ميدانياً في المرفق.",
+    href: "/products/smart-controllers",
+  },
+];
+
 export default function OsfanStationPage() {
   return (
     <>
@@ -431,6 +447,7 @@ export default function OsfanStationPage() {
       <WorkshopsSection />
       <ExpansionPlans />
       <BookVisit />
+      <RelatedPaths links={RELATED_LINKS} />
     </>
   );
 }

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FAQSchema, BreadcrumbSchema } from "@/components/shared/SchemaJsonLd";
+import { FAQSchema, BreadcrumbSchema, ArticleSchema } from "@/components/shared/SchemaJsonLd";
+import { ArticleByline } from "@/components/shared/ArticleByline";
 import { CheckCircle2, AlertCircle, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "الفرق بين الزراعة المائية والزراعة التقليدية | iGarden",
+  title: "الفرق بين الزراعة المائية والزراعة التقليدية",
   description:
     "ليست الأفضل أو الأسوأ — كل منهما مناسب لظروف مختلفة. مقارنة موضوعية تُساعدك على اختيار النظام الزراعي المناسب لوضعك الفعلي.",
   alternates: { canonical: "https://igarden.sa/learn/hydroponic-vs-traditional" },
@@ -128,6 +129,14 @@ export default function ArticlePage() {
 
   return (
     <>
+      <ArticleSchema
+        headline="الفرق بين الزراعة المائية والزراعة التقليدية"
+        description="ليست الأفضل أو الأسوأ — كل منهما مناسب لظروف مختلفة. مقارنة موضوعية تُساعدك على اختيار النظام الزراعي المناسب لوضعك الفعلي."
+        slug="hydroponic-vs-traditional"
+        datePublished="2026-04-25"
+        dateModified="2026-08-23"
+        image="/api/og?title=%D8%A7%D9%84%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9+%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9+%D9%85%D9%82%D8%A7%D8%A8%D9%84+%D8%A7%D9%84%D8%AA%D9%82%D9%84%D9%8A%D8%AF%D9%8A%D8%A9&sub=%D9%85%D9%82%D8%A7%D8%B1%D9%86%D8%A9+%D9%85%D9%88%D8%B6%D9%88%D8%B9%D9%8A%D8%A9"
+      />
       <BreadcrumbSchema items={BREADCRUMB} />
       <FAQSchema faqs={FAQ_ITEMS} />
 
@@ -148,6 +157,7 @@ export default function ArticlePage() {
             <h1 className="text-3xl md:text-4xl font-bold text-[#FAFAF7] mb-4 leading-snug">
               الفرق بين الزراعة المائية والزراعة التقليدية
             </h1>
+            <ArticleByline datePublished="2026-04-25" className="text-white/60 mb-4" />
             <p className="text-white/70 text-lg leading-relaxed">
               ليست الأفضل أو الأسوأ — كل منهما مناسب لظروف مختلفة. مقارنة موضوعية لمساعدتك.
             </p>

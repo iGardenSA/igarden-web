@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { OrganizationSchema, WebSiteSchema } from "@/components/shared/SchemaJsonLd";
 
 export const metadata: Metadata = {
   title: "iGarden — منظومات زراعية متكاملة ورقمنة تشغيل المزارع",
   description:
-    "شركة سعودية ريادية ومبتكرة في التقنيات الزراعية، تقدّم منظومات متكاملة تشمل البيوت المحمية والزراعة المائية والتحكّم والأتمتة ورقمنة التشغيل في السعودية. ازرع بذكاء.",
+    "شركة سعودية متخصصة في التقنيات الزراعية، تقدّم منظومات متكاملة تشمل البيوت المحمية والزراعة المائية والتحكّم والأتمتة ورقمنة التشغيل في السعودية. ازرع بذكاء.",
   alternates: { canonical: "https://igarden.sa/" },
   openGraph: {
     title: "iGarden — منظومات زراعية متكاملة ورقمنة تشغيل المزارع",
@@ -31,8 +30,6 @@ import { AssessmentSection } from "@/components/sections/AssessmentSection";
 export default function HomePage() {
   return (
     <>
-      <OrganizationSchema />
-      <WebSiteSchema />
 
       {/* ① Hero — يمتدّ خلف الهيدر اللاصق (64px) ليظهر التنقّل الأبيض فوق الفيديو */}
       <div className="-mt-[64px]">
@@ -80,15 +77,6 @@ export default function HomePage() {
             >
               حلول الأفراد
             </Link>
-            {" · "}
-            <a
-              href="https://shop.igarden.sa"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-[var(--color-brand-600)] transition-colors"
-            >
-              المتجر
-            </a>
           </p>
         </div>
       </section>
