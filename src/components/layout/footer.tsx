@@ -37,7 +37,8 @@ const COMPANY_LINKS: FLink[] = [
   { label: "كيف نعمل", href: "/how-we-work" },
   { label: "مرفق R&D في عسفان", href: "/osfan-station" },
   { label: "المعرفة", href: "/learn" },
-  { label: "بيانات الشركة الرسمية", href: "/fact-sheet" },
+  // ⛔ «بيانات الشركة الرسمية» (/fact-sheet) أُزيلت من الفوتر العامّ بقرار علي
+  //    (2026-09-08). الصفحة noindex ولا تُبلَغ إلا من /about — RELATED_LINKS.
 ];
 
 const PLATFORMS_LINKS: FLink[] = [
