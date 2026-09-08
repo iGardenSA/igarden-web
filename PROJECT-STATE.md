@@ -121,3 +121,9 @@ Before a new wave:
 ✓ Resend is reclassified as a future external activation task, not an open development blocker.
 ✓ Image/controller/IoT/compliance gaps are reclassified as next-phase backlog, not unfinished prior-wave work.
 ⚠ Vercel/Resend account configuration cannot be asserted active from GitHub; do not claim it is.
+
+---
+
+## 7. Post-closeout record
+
+✓ **2026-09-08 · `/fact-sheet` noindex + خارج الـsitemap** — الأرقام النظامية لم تُمَسّ · الرابط الوحيد الباقي من `/about` · القاعدة المقفلة #10 صارت 24 · الدليل: فرع `fix/factsheet-noindex` · `effc9ad` + `d461a16` · `<url>`=24 على المُصيَّر · build ناجح.
