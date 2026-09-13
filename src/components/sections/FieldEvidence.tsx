@@ -68,11 +68,13 @@ export function FieldEvidence() {
         </p>
 
         <div className="text-center">
+          {/* ⛔ لا /contact: نموذج الزيارة (4 حقول) في /osfan-station هو الذي يحوّل فعلاً —
+              الطلبات الحقيقية كلّها جاءت منه (SALES-3 · 2026-09-14). */}
           <Link
-            href="/contact?interest=osfan-visit&cta=osfan_visit_request"
+            href="/osfan-station#احجز-زيارة"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] font-semibold transition-colors"
           >
-            اطلب زيارة تقنية إلى عسفان
+            احجز زيارة إلى مرفق R&D في عسفان
             <ArrowLeft className="w-4 h-4" aria-hidden="true" />
           </Link>
         </div>
