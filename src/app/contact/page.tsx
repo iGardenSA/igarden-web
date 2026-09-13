@@ -154,6 +154,9 @@ export default function ContactPage() {
         phone: data.phone || null,
         company: data.company || null,
         lead_type: data.lead_type,
+        // ⛔ يتطلّب migration 20260914000000_leads_preferred_contact مطبَّقة أولاً —
+        // وإلا يرفض PostgREST الإدراج كلّه (PGRST204) ويضيع الليد.
+        preferred_contact: data.preferred_contact,
         interested_in: data.interested_in?.length ? data.interested_in : null,
         subject: data.subject || null,
         message: fullMessage,
