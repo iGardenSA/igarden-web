@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "NFT · DWC · Aeroponics · الأبراج الرأسية — نختار التقنية بعد تقييم المحصول والموقع، ويشمل النطاق iGarden Tower المُسجَّل.",
     images: [
       {
-        url: "/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%85%D9%86+7+%D8%AA%D9%82%D9%86%D9%8A%D8%A7%D8%AA",
+        url: "/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%84%D9%85%D8%AD%D8%B5%D9%88%D9%84%D9%83+%D9%88%D9%85%D9%88%D9%82%D8%B9%D9%83",
         width: 1200,
         height: 630,
         alt: "Hydroponic Systems — iGarden",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "أنظمة الزراعة المائية — أيّ تقنية تناسب محصولك؟",
-    description: "نختار التقنية المناسبة من 7 تقنيات — لا نبيع تقنية واحدة للجميع.",
-    images: ["/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%85%D9%86+7+%D8%AA%D9%82%D9%86%D9%8A%D8%A7%D8%AA"],
+    description: "نُرشّح التقنية المناسبة لمحصولك وموقعك — لا نبيع تقنية واحدة للجميع.",
+    images: ["/api/og?title=Hydroponic+Systems+%E2%80%94+iGarden&sub=%D9%86%D8%AE%D8%AA%D8%A7%D8%B1+%D8%A7%D9%84%D8%AA%D9%82%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9+%D9%84%D9%85%D8%AD%D8%B5%D9%88%D9%84%D9%83+%D9%88%D9%85%D9%88%D9%82%D8%B9%D9%83"],
   },
 };
 
@@ -61,7 +61,7 @@ function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lime text-lg font-bold uppercase tracking-widest mb-3">
-              الزراعة المائية · 7 تقنيات
+              الزراعة المائية · تقنيات متعدّدة
             </p>
             <h1 className="h1 text-deep-green mb-5">
               نظام زراعة مائية يناسب محصولك —
@@ -120,7 +120,7 @@ const FOR_WHOM = [
   },
   {
     title: "مستثمرون في الإنتاج الغذائي كثيف الكثافة",
-    desc: "تبحث عن نموذج عائد واضح من الزراعة — نعرض 7 تقنيات ونُرشّح منها الأنسب لمحصولك وميزانيتك.",
+    desc: "تبحث عن نموذج عائد واضح من الزراعة — نعرض تقنيات متعدّدة ونُرشّح منها الأنسب لمحصولك وميزانيتك.",
   },
   {
     title: "مزارعون في مناطق شحيحة المياه",
@@ -138,7 +138,7 @@ function ForWhomSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         <p className="text-lime text-sm font-bold uppercase tracking-widest mb-3">لمن هذا الحل؟</p>
         <h2 className="h2 text-deep-green mb-8">
-          نختار التقنية المناسبة من 7 تقنيات — لا نبيع تقنية واحدة للجميع
+          نختار التقنية المناسبة لمحصولك — لا نبيع تقنية واحدة للجميع
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {FOR_WHOM.map((t) => (
@@ -250,14 +250,17 @@ function TechniquesSection() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <p className="text-lime text-lg font-bold uppercase tracking-widest mb-2">
-            التقنيات المُختَبَرة في عسفان
+            تقنيات الزراعة المائية
           </p>
-          <h2 className="h2 text-deep-green">7 تقنيات لـ 7 احتياجات</h2>
+          <h2 className="h2 text-deep-green">لكل احتياج تقنية تناسبه</h2>
           <p className="body-base text-medium-gray max-w-2xl mx-auto mt-3">
             لكلّ محصول ومشروع وميزانية — نختار التقنية الأنسب، لا الأكثر
             شهرة.
           </p>
-          {/* [CONTENT_NEEDED: مراجعة هذه التقنيات السبع مع م. أيمن — تأكيد الترتيب وأنّ كلها مُختَبَرة في عسفان] */}
+          {/* ✓ 2026-09-08: حُذف العدد «7» من كل المواضع، وأُسقط ادّعاء «مُختَبَرة في
+              عسفان» عن القائمة كلّها — لم يصل سنده. البطاقات وصف قدرة لا ادّعاء اختبار.
+              [CONTENT_NEEDED: إن أراد م. أيمن إعادة أيّ ادّعاء اختبار، يلزم تحديد أيّ
+              تقنية بعينها اختُبرت وسجلّ قياسها — ⛔ لا تعميم على القائمة.] */}
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -667,7 +670,7 @@ function ScalesSection() {
 
 /* ─── Section 6.1: Scope (Includes / Excludes) ────────────── */
 const SCOPE_INCLUDES = [
-  "تصميم النظام واختيار التقنية المناسبة من 7 تقنيات معروضة",
+  "تصميم النظام واختيار التقنية المناسبة من التقنيات المعروضة",
   "توريد المعدات والهيكل وتوصيل الأنابيب والمحاليل",
   "التركيب الكامل وضبط القيم المثلى للمحصول",
   "التدريب على التشغيل اليومي والمحلول المغذّي",
@@ -951,10 +954,10 @@ function FinalCTA() {
           شاهد بعينك
         </p>
         <h2 className="h2 text-cream mb-5">
-          احجز زيارة لمرفق R&D في عسفان — شاهد التقنيات السبع تعمل أمامك
+          احجز زيارة لمرفق R&D في عسفان — شاهد الأنظمة تعمل أمامك
         </h2>
         <p className="body-base text-cream/80 max-w-2xl mx-auto mb-10">
-          زيارة ميدانية مجانية لمحطّتنا في عسفان — ترى النظام حيّاً، تسأل
+          زيارة ميدانية مجانية لمرفق R&D في عسفان — ترى النظام حيّاً، تسأل
           الفريق مباشرة، وتقرّر بثقة.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -996,7 +999,7 @@ export default function HydroponicsPage() {
     <>
       <ProductSchema
         name="Hydroponic Systems — أنظمة الزراعة المائية + iGarden Tower"
-        description="7 تقنيات زراعة مائية معروضة — من NFT إلى DWC إلى Aeroponics — نُرشّح منها الأنسب لمحصولك وموقعك. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
+        description="تقنيات زراعة مائية معروضة — من NFT إلى DWC إلى Aeroponics — نُرشّح منها الأنسب لمحصولك وموقعك. يشمل iGarden Tower المُسجَّل صناعياً (SAIP #423450193)."
         image="/images/osfan-full/02_tower_closeup.webp"
         url="/products/hydroponics"
         category="Hydroponic Systems"
