@@ -54,6 +54,16 @@ export default function ContactPage() {
   const [showDetails, setShowDetails] = useState(false);
 
   const [prefilledLabels, setPrefilledLabels] = useState<string[]>([]);
+  // رسالة النجاح/الخطأ تُرسَم أعلى البطاقة، والزرّ في أسفلها — على الجوّال تفصلهما
+  // ~1750px فكان الزائر يرى نموذجاً فارغاً بعد الإرسال ويظنّ أن شيئاً لم يحدث.
+  const statusRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (submitState !== "success" && submitState !== "error") return;
+    const el = statusRef.current;
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    el.focus({ preventScroll: true });
+  }, [submitState]);
   const [contextualWhatsApp, setContextualWhatsApp] = useState<string | null>(null);
   const tracking = useRef<TrackingParams>({
     cta: null,
@@ -121,12 +131,16 @@ export default function ContactPage() {
   }, [setValue]);
 
   const onSubmit = async (data: LeadFormData) => {
+    if (submitState === "submitting") return; // منع الإرسال المزدوج
     setSubmitState("submitting");
     setErrorMessage("");
 
     try {
       const supabase = createBrowserSupabase();
       const extraInfo = [
+        // اختيار الزائر كان يذهب للإشعار فقط (المعطَّل) ولا يُحفَظ — يُحفَظ هنا حتى
+        // يصل العمود المخصّص (فرع feat/leads-preferred-contact-column).
+        `طريقة التواصل المفضّلة: ${PREFERRED_CONTACT_OPTIONS.find((o) => o.value === data.preferred_contact)?.label ?? data.preferred_contact}`,
         data.city ? `المدينة/المنطقة: ${data.city}` : null,
         data.project_size ? `حجم المشروع: ${PROJECT_SIZES.find(p => p.value === data.project_size)?.label}` : null,
         data.timeline ? `موعد البدء: ${TIMELINES.find(t => t.value === data.timeline)?.label}` : null,
@@ -211,28 +225,24 @@ export default function ContactPage() {
               جاهزة بعد، ونَقترح مساراً عملياً إن كانت جاهزة. لا توقّع NDA،
               لا مندوب مبيعات.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* B2C Path — Individuals */}
-      <section className="bg-[var(--color-surface)] border-b border-[var(--color-border)] py-10">
-        <div className="container-igarden">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 max-w-4xl">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-600)] mb-1">
-                للأفراد والمنازل
-              </p>
-              <p className="text-base font-semibold text-[var(--color-brand-600)]">
-                تبحث عن حلول منزلية؟ تطبيق الحديقة الذكية أو iGarden Home Solutions هما وجهتك.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3 shrink-0">
+            {/* CTA إلى النموذج — على الجوّال كان النموذج يبدأ بعد ~2.6 شاشة بلا أي
+                فعل مرئي في أول شاشة، وأول زرّ يظهر كان خروجاً إلى B2C. */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="/home-solutions"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--color-brand-600)] text-white text-sm font-semibold hover:bg-[var(--color-brand-700)] transition-colors"
+                href="#contact-form"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-button bg-lime text-white font-bold hover:bg-bright-lime transition-colors"
               >
-                اكتشف الحلول الفردية
+                اطلب التقييم الآن
+                <ChevronDown className="h-5 w-5" aria-hidden="true" />
+              </a>
+              <a
+                href={contextualWhatsApp ?? CONTACT.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-button border-2 border-white/40 text-white font-semibold hover:bg-white/10 transition-colors"
+              >
+                <MessageSquare className="h-5 w-5" aria-hidden="true" />
+                أو عبر واتساب
               </a>
             </div>
           </div>
@@ -316,7 +326,10 @@ export default function ContactPage() {
             </aside>
 
             <div className="lg:col-span-3">
-              <div className="bg-[var(--color-surface)] rounded-2xl p-7 md:p-10 border border-[var(--color-border)]">
+              <div
+                id="contact-form"
+                className="bg-[var(--color-surface)] rounded-2xl p-7 md:p-10 border border-[var(--color-border)] scroll-mt-24"
+              >
                 <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-brand-600)] mb-2">
                   احجز استشارة
                 </h2>
@@ -327,6 +340,8 @@ export default function ContactPage() {
 
                 {submitState === "success" && (
                   <div
+                    ref={statusRef}
+                    tabIndex={-1}
                     role="status"
                     className="mb-6 p-5 rounded-xl bg-[var(--color-accent-100)] border border-[var(--color-accent-500)] flex items-start gap-3"
                   >
@@ -344,6 +359,8 @@ export default function ContactPage() {
 
                 {submitState === "error" && (
                   <div
+                    ref={statusRef}
+                    tabIndex={-1}
                     role="alert"
                     className="mb-6 p-5 rounded-xl bg-red-50 border border-red-200 flex items-start gap-3"
                   >
@@ -692,6 +709,30 @@ export default function ContactPage() {
                   </div>
                 </form>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* B2C Path — Individuals — نُقل تحت النموذج كي لا يكون أول زرّ مرئي خروجاً إلى B2C */}
+      <section className="bg-[var(--color-surface)] border-b border-[var(--color-border)] py-10">
+        <div className="container-igarden">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 max-w-4xl">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent-600)] mb-1">
+                للأفراد والمنازل
+              </p>
+              <p className="text-base font-semibold text-[var(--color-brand-600)]">
+                تبحث عن حلول منزلية؟ تطبيق الحديقة الذكية أو iGarden Home Solutions هما وجهتك.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <a
+                href="/home-solutions"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--color-brand-600)] text-white text-sm font-semibold hover:bg-[var(--color-brand-700)] transition-colors"
+              >
+                اكتشف الحلول الفردية
+              </a>
             </div>
           </div>
         </div>

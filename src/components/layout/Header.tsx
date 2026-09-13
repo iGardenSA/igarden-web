@@ -186,22 +186,32 @@ export default function Header() {
             </CTAButton>
           </div>
 
-          {/* Mobile Burger */}
-          <button
-            ref={burgerRef}
-            type="button"
-            onClick={() => setMobileOpen(true)}
-            className={cn(
-              "lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg transition-colors",
-              useLightText
-                ? "text-white hover:text-[#A5D63F]"
-                : "text-[#0F3D2E] hover:text-[#7CB342]"
-            )}
-            aria-label="فتح القائمة"
-            aria-expanded={mobileOpen}
-          >
-            <Menu className="w-6 h-6" />
-          </button>
+          {/* Mobile: CTA مضغوط + Burger — كان الـCTA يختفي تحت lg فتبقى أول شاشة
+              على الجوّال بلا فعل تحويلي. */}
+          <div className="lg:hidden flex items-center gap-1">
+            <CTAButton
+              href={MAIN_CTA.href}
+              variant="lime"
+              className="px-4! py-2! text-sm whitespace-nowrap"
+            >
+              {MAIN_CTA.label}
+            </CTAButton>
+            <button
+              ref={burgerRef}
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              className={cn(
+                "inline-flex items-center justify-center w-11 h-11 rounded-lg transition-colors",
+                useLightText
+                  ? "text-white hover:text-[#A5D63F]"
+                  : "text-[#0F3D2E] hover:text-[#7CB342]"
+              )}
+              aria-label="فتح القائمة"
+              aria-expanded={mobileOpen}
+            >
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </nav>
 
           {megaOpen && <MegaMenu onClose={closeMega} />}
