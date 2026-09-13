@@ -206,6 +206,18 @@
   textarea.input-igarden {
     @apply leading-relaxed;
   }
+
+  /* select: المظهر الأصلي في Chrome/Android مع RTL كان يقصّ النصّ عند الحافّة
+     اليمنى ويضع السهم فوقه. نرسم السهم بأنفسنا ونحجز له مساحة في جهة النهاية. */
+  select.input-igarden {
+    @apply appearance-none pe-10 bg-no-repeat text-start;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-position: left 0.9rem center;
+    background-size: 1rem;
+  }
+  [dir="ltr"] select.input-igarden {
+    background-position: right 0.9rem center;
+  }
 }
 
 /* ==========================================================================
