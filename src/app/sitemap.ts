@@ -7,6 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // لا من new Date() ولا من mtime الملفّ على القرص. أيّ مسار يتعذّر استخراج تاريخ
   // موثوق له يُنشر بلا lastModified بدل تخمينه.
   // ⛔ app.igarden.sa لا يُدرَج: يُحوَّل 301 إلى /app (src/middleware.ts).
+  // ⛔ /fact-sheet لا يُدرَج منذ 2026-09-08: صارت noindex بقرار علي، ونفس
+  //    سابقة /investors و/roadmap — إدراج noindex في الـsitemap تناقض ذاتي
+  //    ويرفعه GSC كخطأ. العدد المعتمد صار 24 (docs/SITE-ARCHITECTURE.md #10).
   return [
     { url: `${base}/`,                                                   lastModified: "2026-08-29", changeFrequency: "weekly", priority: 1.0 },
     { url: `${base}/products/smart-controllers`,                         lastModified: "2026-08-29", changeFrequency: "weekly", priority: 0.95 },
@@ -26,7 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/products/smart-os`,                                  lastModified: "2026-08-29", changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/products/iot`,                                       lastModified: "2026-08-29", changeFrequency: "weekly", priority: 0.85 },
     { url: `${base}/compliance`,                                         lastModified: "2026-08-29", changeFrequency: "monthly", priority: 0.6 },
-    { url: `${base}/fact-sheet`,                                         lastModified: "2026-08-29", changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/data-charter`,                                       lastModified: "2026-05-12", changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/compliance-disclaimer`,                              lastModified: "2026-08-29", changeFrequency: "yearly", priority: 0.3 },
     { url: `${base}/privacy`,                                            lastModified: "2026-08-29", changeFrequency: "yearly", priority: 0.3 },

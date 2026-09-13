@@ -10,7 +10,9 @@ export const metadata: Metadata = {
   description:
     "البيانات القانونية والتشغيلية الرسمية لشركة انتيليجنت غاردن (iGarden) — السجل التجاري، رخصة MISA، النموذج الصناعي SAIP، والنطاقات الرسمية.",
   alternates: { canonical: "https://igarden.sa/fact-sheet" },
-  robots: { index: true, follow: true },
+  // ⛔ noindex بقرار علي (2026-09-08): الأرقام النظامية تبقى منشورة للمراجعة
+  //    المباشرة، لكن الصفحة تخرج من الفهرسة ولا تُبلَغ إلا من /about.
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Fact Sheet — بيانات الشركة الرسمية | iGarden",
     description: "البيانات القانونية والتشغيلية الرسمية — MISA · SAIP · CR.",
