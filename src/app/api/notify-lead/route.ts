@@ -1,7 +1,11 @@
 import { NextResponse } from "next/server";
 
 /**
- * إشعار داخلي فوري عند وصول ليد جديد — عبر Resend REST مباشرة (بلا تبعية جديدة).
+ * إشعار داخلي فوري عند وصول ليد جديد — قناتان مستقلّتان، بلا تبعية جديدة:
+ *   • بريد عبر Resend REST      (RESEND_API_KEY + CONTACT_TO_EMAIL + LEAD_NOTIFY_FROM)
+ *   • رسالة تلغرام عبر Bot API  (TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID)
+ *   كل قناة تُعطَّل بصمت إن غابت متغيّراتها، ولا تمنع الأخرى. الردّ يحمل حالة كلّ قناة
+ *   (`channels.email` / `channels.telegram`) لتشخيص التفعيل دون كشف أي سرّ.
  *
  * ⚠ العقد الحاكم — لا يتغيّر: **فشل الإشعار لا يمنع حفظ الليد إطلاقاً.**
  *   الليد يُحفظ في Supabase من العميل أولاً، ثم يُستدعى هذا المسار.
@@ -128,7 +132,7 @@ export async function POST(req: Request) {
   }
   const r = parsed as Record<string, unknown>;
 
-  const b = {
+  const b: Lead = {
     form: str(r.form, 40),
     full_name: str(r.full_name, 120),
     phone: str(r.phone, 40),
@@ -151,15 +155,35 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, skipped: "empty_payload" }, { status: 200 });
   }
 
-  // 5) التهيئة — المستقبِل داخلي وثابت، ⛔ لا يُقرأ من الحمولة.
-  const key = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL || "info@igarden.sa";
-  const from = process.env.LEAD_NOTIFY_FROM || "iGarden Leads <onboarding@resend.dev>";
-  if (!key) {
-    return NextResponse.json({ ok: false, skipped: "missing_RESEND_API_KEY" }, { status: 200 });
-  }
+  // 5) القنوات — المستقبِلون داخليون وثابتون من البيئة، ⛔ لا يُقرأون من الحمولة.
+  const [email, telegram] = await Promise.all([sendEmail(b), sendTelegram(b)]);
+  const ok = email === "sent" || telegram === "sent";
+  return NextResponse.json({ ok, channels: { email, telegram } }, { status: 200 });
+}
 
-  const rows: [string, unknown][] = [
+type Lead = {
+  form?: string;
+  full_name?: string;
+  phone?: string;
+  email?: string;
+  company?: string;
+  city?: string;
+  preferred_contact?: string;
+  interested_in?: string[];
+  subject?: string;
+  message?: string;
+  source_url?: string;
+  referrer?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+};
+
+/** حالة قناة واحدة — نصّ تشخيصي قصير بلا أسرار. */
+type ChannelResult = "sent" | `skipped:${string}` | `failed:${string}`;
+
+function leadRows(b: Lead): [string, unknown][] {
+  return [
     ["النموذج", b.form],
     ["الاسم", b.full_name],
     ["الجوال", b.phone],
@@ -175,11 +199,19 @@ export async function POST(req: Request) {
     ["utm_medium", b.utm_medium],
     ["utm_campaign", b.utm_campaign],
   ];
+}
+
+/** قناة البريد — Resend. تُعطَّل بصمت بلا RESEND_API_KEY. */
+async function sendEmail(b: Lead): Promise<ChannelResult> {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return "skipped:missing_RESEND_API_KEY";
+  const to = process.env.CONTACT_TO_EMAIL || "info@igarden.sa";
+  const from = process.env.LEAD_NOTIFY_FROM || "iGarden Leads <onboarding@resend.dev>";
 
   const html = `<div dir="rtl" style="font-family:system-ui,sans-serif;line-height:1.7">
 <h2 style="margin:0 0 12px">ليد جديد — ${esc(b.full_name)}</h2>
 <table cellpadding="6" style="border-collapse:collapse;font-size:14px">
-${rows.map(([k, v]) => `<tr><td style="background:#f4f6f4;font-weight:700">${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}
+${leadRows(b).map(([k, v]) => `<tr><td style="background:#f4f6f4;font-weight:700">${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}
 </table>
 <h3 style="margin:16px 0 6px">الرسالة</h3>
 <pre style="white-space:pre-wrap;background:#fafaf7;padding:12px;border-radius:8px;font-family:inherit">${esc(b.message)}</pre>
@@ -200,15 +232,60 @@ ${rows.map(([k, v]) => `<tr><td style="background:#f4f6f4;font-weight:700">${esc
         ...(replyTo ? { reply_to: replyTo } : {}),
       }),
     });
-
     if (!res.ok) {
       const detail = await res.text().catch(() => "");
       console.error("[notify-lead] Resend rejected:", res.status, detail.slice(0, 300));
-      return NextResponse.json({ ok: false, status: res.status }, { status: 200 });
+      return `failed:${res.status}`;
     }
-    return NextResponse.json({ ok: true }, { status: 200 });
+    return "sent";
   } catch (err) {
-    console.error("[notify-lead] send failed:", err);
-    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 200 });
+    console.error("[notify-lead] Resend send failed:", err);
+    return "failed:network";
+  }
+}
+
+/** هروب لوضع HTML في تلغرام (parse_mode=HTML يقبل &lt; &gt; &amp; فقط). */
+const tg = (v: unknown) => esc(v);
+
+/**
+ * قناة تلغرام — Bot API مباشرة. تُعطَّل بصمت بلا TELEGRAM_BOT_TOKEN أو TELEGRAM_CHAT_ID.
+ * الوجهة (chat_id) ثابتة من البيئة: محادثة علي الخاصّة مع البوت أو مجموعة داخلية.
+ */
+async function sendTelegram(b: Lead): Promise<ChannelResult> {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return "skipped:missing_TELEGRAM_env";
+
+  const lines = [
+    `🌱 <b>ليد جديد — ${tg(b.full_name)}</b>`,
+    ...leadRows(b)
+      .filter(([, v]) => v !== undefined && v !== null && v !== "")
+      .filter(([k]) => k !== "الاسم")
+      .map(([k, v]) => `<b>${tg(k)}:</b> ${tg(v)}`),
+    b.message ? `\n<b>الرسالة:</b>\n${tg(b.message)}` : null,
+  ].filter(Boolean);
+  // سقف تلغرام 4096 حرفاً للرسالة الواحدة.
+  const text = lines.join("\n").slice(0, 4000);
+
+  try {
+    const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: "HTML",
+        disable_web_page_preview: true,
+      }),
+    });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      console.error("[notify-lead] Telegram rejected:", res.status, detail.slice(0, 300));
+      return `failed:${res.status}`;
+    }
+    return "sent";
+  } catch (err) {
+    console.error("[notify-lead] Telegram send failed:", err);
+    return "failed:network";
   }
 }
