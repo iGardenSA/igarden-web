@@ -10,8 +10,8 @@ import { NextResponse } from "next/server";
  * ⚠ العقد الحاكم — لا يتغيّر: **فشل الإشعار لا يمنع حفظ الليد إطلاقاً.**
  *   الليد يُحفظ في Supabase من العميل أولاً، ثم يُستدعى هذا المسار.
  *   كل مسارات الفشل تعود **200** مع `ok:false` كي لا يرى المستخدم خطأً.
- *   الاستثناء الوحيد: الرفض الأمني (‏cross-origin / حمولة ضخمة) يعود 403/413
- *   لأنه ليس مساراً يسلكه نموذجنا أصلاً.
+ *   الاستثناء الوحيد: الرفض الأمني (‏cross-origin / حمولة ضخمة / تجاوز المعدّل)
+ *   يعود 403/413/429 لأنه ليس مساراً يسلكه نموذجنا أصلاً.
  *
  * التصليب (قبل تفعيل Resend في الإنتاج):
  *   • رفض cross-origin صراحةً قبل أي استدعاء لـResend.
@@ -19,7 +19,8 @@ import { NextResponse } from "next/server";
  *   • تحقّق من الشكل: نصوص فقط، ومصفوفة اهتمامات محدودة.
  *   • `reply_to` لا يُمرَّر إلا إذا كان بريداً صالحاً.
  *   • المستقبِل **داخلي وثابت** من البيئة — ⛔ لا يُقرأ من الحمولة أبداً.
- *   • كابح ذاكرة خفيف داخل النسخة الواحدة (دفاع في العمق فقط).
+ *   • كابح معدّل داخل النسخة الواحدة على طبقتين: لكل IP + سقف كلّي للنسخة
+ *     (يحمي حصّة تلغرام/Resend من فيضان موزَّع على عناوين كثيرة). يعود 429.
  *
  * ⚠ الكابح الذاكري ليس ضابط المعدّل الحقيقي: النشر بلا خادم يوزّع الطلبات على
  *   نسخ متعدّدة. **الضابط الحقيقي = Vercel Firewall / Rate Limiting على هذا
@@ -35,13 +36,25 @@ const MAX_FIELD = 2000;
 const MAX_SHORT = 200;
 const MAX_INTERESTS = 20;
 
-/** نافذة كابح خفيف داخل النسخة الواحدة — دفاع في العمق لا ضابط معدّل. */
+/**
+ * كابح المعدّل داخل النسخة الواحدة — طبقتان:
+ *   • لكل IP: MAX_PER_IP في الدقيقة (إنسان يعيد الإرسال مرّة أو مرّتين، لا أكثر).
+ *   • كلّي للنسخة: MAX_GLOBAL في الدقيقة أيّاً كان المصدر — يحمي حصّة القنوات من
+ *     فيضان موزَّع على عناوين كثيرة يتجمّع على نسخة دافئة واحدة.
+ * الضابط الحقيقي عبر النسخ = Vercel Firewall على هذا المسار (انظر أعلى الملف).
+ */
 const WINDOW_MS = 60_000;
-const MAX_PER_WINDOW = 10;
+const MAX_PER_IP = 5;
+const MAX_GLOBAL = 60;
 const hits = new Map<string, { n: number; reset: number }>();
+let globalHits = { n: 0, reset: 0 };
 
 function throttled(key: string): boolean {
   const now = Date.now();
+  if (now > globalHits.reset) globalHits = { n: 0, reset: now + WINDOW_MS };
+  globalHits.n += 1;
+  if (globalHits.n > MAX_GLOBAL) return true;
+
   const e = hits.get(key);
   if (!e || now > e.reset) {
     hits.set(key, { n: 1, reset: now + WINDOW_MS });
@@ -49,7 +62,7 @@ function throttled(key: string): boolean {
     return false;
   }
   e.n += 1;
-  return e.n > MAX_PER_WINDOW;
+  return e.n > MAX_PER_IP;
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -111,13 +124,16 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "payload_too_large" }, { status: 413 });
   }
 
-  // 3) كابح خفيف (دفاع في العمق — ليس بديلاً عن WAF).
+  // 3) كابح المعدّل (لكل IP + كلّي) — دفاع في العمق؛ الضابط عبر النسخ هو Vercel Firewall.
   const ip =
     req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
     req.headers.get("x-real-ip") ||
     "unknown";
   if (throttled(ip)) {
-    return NextResponse.json({ ok: false, skipped: "throttled" }, { status: 200 });
+    return NextResponse.json(
+      { ok: false, error: "rate_limited" },
+      { status: 429, headers: { "Retry-After": String(WINDOW_MS / 1000) } },
+    );
   }
 
   // 4) تحليل وتحقّق من الشكل.
@@ -156,9 +172,13 @@ export async function POST(req: Request) {
   }
 
   // 5) القنوات — المستقبِلون داخليون وثابتون من البيئة، ⛔ لا يُقرأون من الحمولة.
-  const [email, telegram] = await Promise.all([sendEmail(b), sendTelegram(b)]);
+  const [email, tgResult] = await Promise.all([sendEmail(b), sendTelegram(b)]);
+  const telegram = tgResult.status;
   const ok = email === "sent" || telegram === "sent";
-  return NextResponse.json({ ok, channels: { email, telegram } }, { status: 200 });
+  return NextResponse.json(
+    { ok, channels: { email, telegram }, ...(tgResult.receipt ? { telegram_receipt: tgResult.receipt } : {}) },
+    { status: 200 },
+  );
 }
 
 type Lead = {
@@ -181,6 +201,9 @@ type Lead = {
 
 /** حالة قناة واحدة — نصّ تشخيصي قصير بلا أسرار. */
 type ChannelResult = "sent" | `skipped:${string}` | `failed:${string}`;
+
+/** إثبات تسليم تلغرام — من ردّ Bot API نفسه (لا يحمل أي سرّ). */
+type TelegramReceipt = { message_id: number; date: string };
 
 function leadRows(b: Lead): [string, unknown][] {
   return [
@@ -251,10 +274,12 @@ const tg = (v: unknown) => esc(v);
  * قناة تلغرام — Bot API مباشرة. تُعطَّل بصمت بلا TELEGRAM_BOT_TOKEN أو TELEGRAM_CHAT_ID.
  * الوجهة (chat_id) ثابتة من البيئة: محادثة علي الخاصّة مع البوت أو مجموعة داخلية.
  */
-async function sendTelegram(b: Lead): Promise<ChannelResult> {
+async function sendTelegram(
+  b: Lead,
+): Promise<{ status: ChannelResult; receipt?: TelegramReceipt }> {
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
-  if (!token || !chatId) return "skipped:missing_TELEGRAM_env";
+  if (!token || !chatId) return { status: "skipped:missing_TELEGRAM_env" };
 
   const lines = [
     `🌱 <b>ليد جديد — ${tg(b.full_name)}</b>`,
@@ -281,11 +306,23 @@ async function sendTelegram(b: Lead): Promise<ChannelResult> {
     if (!res.ok) {
       const detail = await res.text().catch(() => "");
       console.error("[notify-lead] Telegram rejected:", res.status, detail.slice(0, 300));
-      return `failed:${res.status}`;
+      return { status: `failed:${res.status}` };
     }
-    return "sent";
+    // إيصال التسليم من تلغرام: message_id + الطابع الزمني (Unix) — للإثبات والتشخيص.
+    const data = (await res.json().catch(() => null)) as
+      | { result?: { message_id?: number; date?: number } }
+      | null;
+    let receipt: TelegramReceipt | undefined;
+    if (typeof data?.result?.message_id === "number" && typeof data.result.date === "number") {
+      receipt = {
+        message_id: data.result.message_id,
+        date: new Date(data.result.date * 1000).toISOString(),
+      };
+      console.log("[notify-lead] Telegram sent:", JSON.stringify(receipt));
+    }
+    return { status: "sent", receipt };
   } catch (err) {
     console.error("[notify-lead] Telegram send failed:", err);
-    return "failed:network";
+    return { status: "failed:network" };
   }
 }
