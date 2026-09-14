@@ -33,7 +33,7 @@ export function DeliveryPaths() {
       <div className="container-igarden">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="heading-eyebrow mb-3">طريقة التنفيذ</p>
-          <h2 className="heading-section">مساران يبدآن من حيث أنت</h2>
+          <h2 className="heading-section">ما يحدث بعد أن تختار مسارك</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
