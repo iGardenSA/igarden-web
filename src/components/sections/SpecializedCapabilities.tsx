@@ -19,7 +19,7 @@ export function SpecializedCapabilities() {
     <section className="bg-white section-padding" dir="rtl">
       <div className="container-igarden">
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <h2 className="heading-section mb-4">قدرات متخصّصة حسب المشروع</h2>
+          <h2 className="heading-section mb-4">حلول لاحتياجات لا يغطيها النظام الجاهز</h2>
           <p className="body-base text-medium-gray">
             أنظمة تُبنى عند وجود احتياج محدّد، خارج العائلات الأربع الأساسية.
           </p>

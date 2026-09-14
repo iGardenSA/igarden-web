@@ -45,8 +45,8 @@ export function SalesHero() {
 
           {/* الوصف */}
           <p className="text-xl md:text-2xl text-white font-semibold leading-relaxed max-w-3xl mb-5">
-            نؤسّس مشروعك الزراعي كمنظومة مترابطة، أو نطوّر منشأتك القائمة لتعرف
-            ما يجري في تشغيلها.
+            نؤسّس مشروعك ضمن نطاق مترابط، أو نطوّر منشأتك لتتابع التشغيل بوضوح
+            أكبر وتستجيب للمشكلات مبكراً.
           </p>
 
           {/* النطاق — ⛔ بلا «استنبات» (قرار 2026-08-25) */}
@@ -57,13 +57,19 @@ export function SalesHero() {
           {/* العرض الأوّل فعل ملموس لا «تقييم» مجرّد: الطلبات الحقيقية كلّها جاءت من
               نموذج الزيارة في /osfan-station (SALES-3 · 2026-09-14).
               ⛔ المصطلح المقفل #5: «مرفق R&D في عسفان» لا «محطة». */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/osfan-station#احجز-زيارة"
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-base md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none"
-            >
-              احجز زيارة إلى مرفق R&D في عسفان — تشاهد الأنظمة تعمل
-            </Link>
+          <div className="flex flex-col sm:flex-row sm:items-start gap-4">
+            {/* زرّ الزيارة + سطر مساند تحته مباشرة — الوجهة لم تتغيّر (COPY-1) */}
+            <div className="flex flex-col gap-2">
+              <Link
+                href="/osfan-station#احجز-زيارة"
+                className="inline-flex items-center justify-center px-8 py-4 bg-[#7CB342] hover:bg-[#A5D63F] text-[#0F3D2E] rounded-lg text-base md:text-lg font-semibold transition-colors focus:ring-2 focus:ring-[#A5D63F]/50 focus:outline-none"
+              >
+                احجز زيارة إلى عسفان
+              </Link>
+              <p className="text-sm md:text-base text-white/85 text-center sm:text-start">
+                شاهد الأنظمة تعمل والتقِ الفريق في مرفق R&amp;D
+              </p>
+            </div>
             <a
               href={CONTACT.whatsapp}
               target="_blank"

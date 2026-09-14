@@ -33,7 +33,7 @@ export function FieldEvidence() {
         <div className="text-center max-w-3xl mx-auto mb-10">
           <p className="heading-eyebrow mb-3">من الميدان</p>
           <h2 className="heading-section mb-5">
-            مشاريع نؤسّسها ومنشآت نطوّرها
+            شاهد ما نختبره قبل أن تختار نطاق مشروعك
           </h2>
           <p className="body-base text-medium-gray leading-relaxed">
             نؤسّس أنظمة إنتاج زراعي جديدة، ونطوّر منشآت قائمة بالتحكّم والأتمتة
