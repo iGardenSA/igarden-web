@@ -17,16 +17,19 @@ import {
 
 /* ────────────────────────────────────────────────────────────────
    نموذج التقييم الأوّلي.
-   ⛔ لا عمود جديد ولا migration: كل حقل يُخزَّن في عمود قائم في
-   جدول leads، وما لا عمود له (المنطقة · نوع المنشأة · التوقيت ·
-   المساحة) يُضمّ إلى `message` بنفس نمط نموذج /contact القائم.
+   كل حقل يُخزَّن في عمود قائم في جدول leads، وما لا عمود له (المنطقة ·
+   نوع الجهة · التوقيت · المساحة) يُضمّ إلى `message` بنفس نمط /contact.
+   SALES-3 (2026-09-14): الإلزامي = الاسم والجوال فقط. الدليل: الطلبات
+   الحقيقية الثلاثة كلّها individual/investor، و«المنشأة» الإلزامي كان يُقصيهم.
    ──────────────────────────────────────────────────────────────── */
 
 const FACILITY_TYPES = [
+  { value: "individual", label: "فرد / منزل أو استراحة", leadType: "individual" },
   { value: "farm", label: "مزرعة", leadType: "commercial" },
   { value: "greenhouse", label: "محمية", leadType: "commercial" },
   { value: "company", label: "شركة", leadType: "commercial" },
-  { value: "authority", label: "جهة", leadType: "government" },
+  { value: "authority", label: "جهة حكومية", leadType: "government" },
+  { value: "investor", label: "مستثمر", leadType: "investor" },
 ] as const;
 
 const START_POINTS = [
@@ -41,25 +44,31 @@ const TIMING = [
   { value: "exploring", label: "أستكشف" },
 ] as const;
 
+const optionalEnum = <T extends readonly [string, ...string[]]>(values: T) =>
+  z.enum(values).optional().or(z.literal(""));
+
 const schema = z.object({
-  start_point: z.enum(["new_project", "existing_facility", "expansion"], {
-    message: "اختر نقطة البداية",
-  }),
+  // الإلزامي: الاسم والجوال فقط.
   full_name: z.string().min(2, "الاسم مطلوب"),
-  company: z.string().min(2, "اسم المنشأة مطلوب"),
-  region: z.string().min(2, "المنطقة مطلوبة"),
-  facility_type: z.enum(["farm", "greenhouse", "company", "authority"], {
-    message: "اختر نوع المنشأة",
-  }),
-  interest: z.string().min(1, "اختر أقرب احتياج"),
   phone: z
     .string()
     .min(7, "رقم قصير جداً")
     .max(20, "رقم طويل جداً")
     .regex(/^[\d\s+()-]+$/, "الرقم يحتوي أحرفاً غير صالحة"),
-  timing: z.enum(["now", "three_months", "exploring"], {
-    message: "اختر التوقيت",
-  }),
+  // الباقي اختياري — يُحسّن المكالمة ولا يمنع الطلب.
+  start_point: optionalEnum(["new_project", "existing_facility", "expansion"]),
+  company: z.string().max(120).optional().or(z.literal("")),
+  region: z.string().max(100).optional().or(z.literal("")),
+  facility_type: optionalEnum([
+    "individual",
+    "farm",
+    "greenhouse",
+    "company",
+    "authority",
+    "investor",
+  ]),
+  interest: z.string().max(60).optional().or(z.literal("")),
+  timing: optionalEnum(["now", "three_months", "exploring"]),
   area: z.string().max(60).optional().or(z.literal("")),
 });
 
@@ -68,6 +77,13 @@ type SubmitState = "idle" | "submitting" | "success" | "error";
 
 export function AssessmentSection() {
   const [state, setState] = useState<SubmitState>("idle");
+  // التأكيد يستبدل النموذج في موضعه؛ نُحضره إلى منتصف الشاشة ونمنحه التركيز.
+  const statusRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (state !== "success") return;
+    statusRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    statusRef.current?.focus({ preventScroll: true });
+  }, [state]);
   const tracking = useRef<TrackingParams>({
     cta: null,
     utm_source: null,
@@ -96,23 +112,25 @@ export function AssessmentSection() {
   const startPoint = watch("start_point");
 
   const onSubmit = async (data: FormData) => {
+    if (state === "submitting") return; // منع الإرسال المزدوج
     setState("submitting");
     try {
       const facility = FACILITY_TYPES.find((f) => f.value === data.facility_type);
-      const interestLabel =
-        INTERESTS.find((i) => i.value === data.interest)?.label ?? data.interest;
-      const timingLabel = TIMING.find((t) => t.value === data.timing)?.label ?? "";
-
+      const interestLabel = data.interest
+        ? (INTERESTS.find((i) => i.value === data.interest)?.label ?? data.interest)
+        : null;
+      const timingLabel = TIMING.find((t) => t.value === data.timing)?.label ?? null;
       const startLabel =
-        START_POINTS.find((s) => s.value === data.start_point)?.label ?? "";
+        START_POINTS.find((s) => s.value === data.start_point)?.label ?? null;
 
+      // ما لم يُملأ لا يُذكر — لا أسطر فارغة في الرسالة.
       const message = [
-        `طلب تقييم أوّلي لجاهزية المزرعة.`,
-        `نقطة البداية: ${startLabel}`,
-        `المنطقة: ${data.region}`,
-        `نوع المنشأة: ${facility?.label ?? data.facility_type}`,
-        `أقرب احتياج: ${interestLabel}`,
-        `التوقيت: ${timingLabel}`,
+        `طلب تقييم أوّلي — الصفحة الرئيسية.`,
+        startLabel ? `نقطة البداية: ${startLabel}` : null,
+        data.region ? `المنطقة: ${data.region}` : null,
+        facility ? `نوع الجهة: ${facility.label}` : null,
+        interestLabel ? `أقرب احتياج: ${interestLabel}` : null,
+        timingLabel ? `التوقيت: ${timingLabel}` : null,
         data.area ? `المساحة تقريباً: ${data.area}` : null,
       ]
         .filter(Boolean)
@@ -123,9 +141,11 @@ export function AssessmentSection() {
       const { error } = await supabase.from("leads").insert({
         full_name: data.full_name,
         phone: data.phone,
-        company: data.company,
+        company: data.company || null,
         lead_type: (facility?.leadType ?? "unknown") as LeadTypeValue,
-        interested_in: [data.interest],
+        interested_in: data.interest ? [data.interest] : null,
+        // الحقل مُسمّى «رقم واتساب» — فهي القناة المفضّلة ضمناً.
+        preferred_contact: "whatsapp",
         subject: "طلب تقييم أوّلي — الصفحة الرئيسية",
         message,
         channel: "website",
@@ -146,8 +166,9 @@ export function AssessmentSection() {
         form: "homepage-assessment",
         full_name: data.full_name,
         phone: data.phone,
-        company: data.company,
-        interested_in: [data.interest],
+        company: data.company || undefined,
+        preferred_contact: "whatsapp",
+        interested_in: data.interest ? [data.interest] : undefined,
         subject: "طلب تقييم أوّلي — الصفحة الرئيسية",
         message,
         ...attribution,
@@ -170,15 +191,17 @@ export function AssessmentSection() {
               لا تحتاج قراراً كبيراً لتبدأ — تحتاج تقييماً.
             </h2>
             <p className="body-base text-medium-gray leading-relaxed">
-              سواء كنت تؤسّس مشروعاً جديداً أو تطوّر منشأة قائمة، أخبرنا بنقطة
-              البداية واحتياجك، ونعود إليك بالخطوة الأولى المناسبة.
+              فرداً كنت أو منشأة أو مستثمراً — اسمك وجوالك يكفيان لنعود إليك
+              بالخطوة الأولى المناسبة. الباقي اختياري ويُحسّن المكالمة.
             </p>
           </div>
 
           {state === "success" ? (
             <div
+              ref={statusRef}
+              tabIndex={-1}
               role="status"
-              className="bg-white rounded-2xl border border-[var(--color-border)] p-10 text-center"
+              className="bg-white rounded-2xl border border-[var(--color-border)] p-10 text-center scroll-mt-24"
             >
               <CheckCircle2 className="w-12 h-12 text-[#7CB342] mx-auto mb-4" aria-hidden="true" />
               <p className="text-xl font-bold text-deep-green mb-2">وصل طلبك ✓</p>
@@ -192,7 +215,7 @@ export function AssessmentSection() {
               className="bg-white rounded-2xl border border-[var(--color-border)] shadow-[var(--shadow-soft)] p-7 md:p-9 space-y-5"
               noValidate
             >
-              <Field id="assess-start-point" label="نقطة البداية" error={errors.start_point?.message} group>
+              <Field id="assess-start-point" label="نقطة البداية (اختياري)" error={errors.start_point?.message} group>
                 <div
                   className="flex flex-wrap gap-2.5"
                   role="group"
@@ -232,24 +255,22 @@ export function AssessmentSection() {
                     className="input-igarden"
                   />
                 </Field>
-                <Field id="assess-company" label="المنشأة" error={errors.company?.message}>
+                <Field id="assess-company" label="المنشأة أو الجهة (اختياري)" error={errors.company?.message}>
                   <input
                     id="assess-company"
                     type="text"
                     autoComplete="organization"
-                    aria-required="true"
                     aria-invalid={!!errors.company}
                     aria-describedby={errors.company ? "assess-company-error" : undefined}
                     {...register("company")}
                     className="input-igarden"
                   />
                 </Field>
-                <Field id="assess-region" label="المنطقة" error={errors.region?.message}>
+                <Field id="assess-region" label="المنطقة (اختياري)" error={errors.region?.message}>
                   <input
                     id="assess-region"
                     type="text"
                     autoComplete="address-level1"
-                    aria-required="true"
                     aria-invalid={!!errors.region}
                     aria-describedby={errors.region ? "assess-region-error" : undefined}
                     {...register("region")}
@@ -269,33 +290,31 @@ export function AssessmentSection() {
                     dir="ltr"
                   />
                 </Field>
-                <Field id="assess-facility" label="نوع المنشأة" error={errors.facility_type?.message}>
+                <Field id="assess-facility" label="أنت… (اختياري)" error={errors.facility_type?.message}>
                   <select
                     id="assess-facility"
-                    aria-required="true"
                     aria-invalid={!!errors.facility_type}
                     aria-describedby={errors.facility_type ? "assess-facility-error" : undefined}
                     {...register("facility_type")}
                     className="input-igarden"
                     defaultValue=""
                   >
-                    <option value="" disabled>اختر…</option>
+                    <option value="">— اختياري —</option>
                     {FACILITY_TYPES.map((f) => (
                       <option key={f.value} value={f.value}>{f.label}</option>
                     ))}
                   </select>
                 </Field>
-                <Field id="assess-interest" label="أقرب احتياج" error={errors.interest?.message}>
+                <Field id="assess-interest" label="أقرب احتياج (اختياري)" error={errors.interest?.message}>
                   <select
                     id="assess-interest"
-                    aria-required="true"
                     aria-invalid={!!errors.interest}
                     aria-describedby={errors.interest ? "assess-interest-error" : undefined}
                     {...register("interest")}
                     className="input-igarden"
                     defaultValue=""
                   >
-                    <option value="" disabled>اختر…</option>
+                    <option value="">— اختياري —</option>
                     {INTERESTS.map((i) => (
                       <option key={i.value} value={i.value}>{i.label}</option>
                     ))}
@@ -303,7 +322,7 @@ export function AssessmentSection() {
                 </Field>
               </div>
 
-              <Field id="assess-timing" label="التوقيت" error={errors.timing?.message} group>
+              <Field id="assess-timing" label="التوقيت (اختياري)" error={errors.timing?.message} group>
                 <div
                   className="flex flex-wrap gap-2.5"
                   role="group"
