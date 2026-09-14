@@ -5,7 +5,7 @@
 > **Branch of truth:** `main`
 > **Deployment:** Vercel auto-deploy from `main`
 > **Release baseline before this docs-only closeout:** `618426618852ac78e421d86b45e7fa0f0c7827f7`
-> **Status:** WEBSITE PREVIOUS-WORK CLOSEOUT COMPLETE
+> **Status:** WEBSITE PREVIOUS-WORK CLOSEOUT COMPLETE · **SALES lane open (2026-09-13 →)** — see §7/§8
 
 ---
 
@@ -127,3 +127,34 @@ Before a new wave:
 ## 7. Post-closeout record
 
 ✓ **2026-09-08 · `/fact-sheet` noindex + خارج الـsitemap** — الأرقام النظامية لم تُمَسّ · الرابط الوحيد الباقي من `/about` · القاعدة المقفلة #10 صارت 24 · الدليل: فرع `fix/factsheet-noindex` · `effc9ad` + `d461a16` · `<url>`=24 على المُصيَّر · build ناجح.
+
+✓ **2026-09-13 · SALES-1 (Discovery)** — الإشعار معطَّل بسبب واحد في الكود: `curl` إنتاجي على `/api/notify-lead` ⇒ `skipped:missing_RESEND_API_KEY` (المتغيّر غير موجود في Vercel Production). نطاق Resend غير مُتحقَّق (DNS: لا `resend._domainkey` ولا `send.igarden.sa`؛ MX/SPF → Google). `/contact` على 412px: التأكيد يُرسَم ~1750px فوق الزرّ بلا scroll · أول شاشة بلا CTA · `preferred_contact` لا يُحفَظ. Vercel Analytics غير قابل للقراءة من هنا (MCP 403 على scope `i-garden-sa`).
+
+✓ **2026-09-13/14 · SALES-2 — مدمج في `main`** — #62 `de44e30` (fact-sheet noindex) · #65 `81ec0b4` (إسقاط «7 تقنيات» + ادّعاء الاختبار المعمَّم؛ #63 أُغلق لأن `contact/layout.tsx` يحمل canonical أصلاً) · #66 `d833b47` (`/contact` جوّال: `scrollIntoView` للتأكيد · CTA هيرو+هيدر · شريط B2C تحت النموذج · select) · #68 `7b6b991` (كتابة `leads.preferred_contact`؛ #67 دُمج خطأً في فرع الميزة ثم أُعيد قصّه). **G-DATA منفَّذ**: العمود `preferred_contact text` nullable + CHECK مُضاف على `igarden-web` · `count=24 · with_pc=0` قبل الدمج. صفّ QA `8ddad336` حُذف بعد backup في `~/Projects/igarden-web-backups/`.
+
+✓ **2026-09-14 · SALES-3 — PR #69 `feat/conversion-path` — MERGED `583c5cd`** — الهيرو: العرض الأوّل «احجز زيارة إلى مرفق R&D في عسفان — تشاهد الأنظمة تعمل» → `/osfan-station#احجز-زيارة` · `OsfanStationPreview` شريط مضغوط تحت الهيرو · زرّ `FieldEvidence` → نموذج الزيارة لا `/contact` · `AssessmentSection`: إلزامي = اسم+جوال، «أنت…» يشمل فرد/مستثمر. الدليل على 412px: إلزامي 6→2 · أخطاء اسم+جوال 6→0 · روابط جسم الرئيسية إلى `/osfan-station` 0→3.
+
+◐ **الإشعار — PR #64 (Draft)** — قناتان مستقلّتان (Resend + تلغرام) جاهزتان على الفرع. ينقص للتفعيل: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` في Vercel Production + rate limit على `/api/notify-lead` + Redeploy، ثم lead اختباري `TEST-SALES-20260913`. Resend يبقى معطَّلاً بصمت حتى يُتحقَّق النطاق. ⛔ لا يُدّعى «الإشعار فعّال» قبل وصول رسالة حقيقية.
+
+---
+
+## 7b. Operating rules learned (ambiguous-write)
+
+- **`gh pr edit --base <branch>` قد يفشل صامتاً** (حادثة #67 · 2026-09-14: طبع تحذير GraphQL عن Projects classic وأبقى الـbase القديم، فدُمج الـPR في فرع الميزة لا في `main`). ⇒ بعد أي تغيير base، **تحقّق بقراءة فعلية** `gh pr view <n> --json baseRefName` قبل `gh pr merge`، وبعد الدمج تحقّق بـ`git log origin/main`. الادّعاء لا يكفي — نمط ambiguous-write.
+
+## 8. Commercial discovery — لماذا يحوّل `/osfan-station` (2026-09-14)
+
+**الواقع من قاعدة `leads`** (24 صفّاً؛ آخر lead حقيقي 2026-08-24؛ الصفوف بعده اختبارات داخلية من Linux Desktop):
+- الطلبات الحقيقية الثلاثة عبر الموقع (3 · 16 · 24 أغسطس) كلّها من `VisitForm` في `/osfan-station`، أنواعها individual/investor، صفر UTM، صفر إحالة خارجية.
+- صفر طلبات من نموذج الرئيسية (`AssessmentSection`) وصفر من `/contact` (عدا الاختبارات).
+
+**ما تملكه `/osfan-station` ولم تكن تملكه الرئيسية:**
+1. عرض ملموس ومحدود: «زيارة مجانية — تشاهد الأنظمة تعمل حيّاً» بتاريخ يختاره الزائر — لا «تقييم» مجرّد.
+2. نموذج 4 حقول، إلزاميّان فقط (اسم · جوال). نموذج الرئيسية كان 8 حقول / 7 إلزامية منها «المنشأة» ⇒ يُقصي الأفراد والمستثمرين — وهم مَن يحوّل.
+3. التأكيد يستبدل النموذج («وصل طلبك ✓») — لا نموذج فارغ بعد الإرسال.
+4. الرئيسية لم تكن تصل إلى `/osfan-station` من جسم الصفحة إطلاقاً، وزرّ «زيارة عسفان» فيها كان يذهب إلى `/contact` (النموذج الطويل).
+
+**القرار المُطبَّق في #69:** العرض الأوّل على الرئيسية = الزيارة؛ التقييم ثانوي بحدّه الأدنى. **المصطلح:** «مرفق R&D في عسفان» (القاعدة المقفلة #5) — لا «محطة».
+
+**ما لا نستطيع قياسه بعد:** الزيارات (Vercel Web Analytics مُفعَّل في الكود لكن الوصول من الأدوات مرفوض) — لذا لا يُفصَل «صفر زوّار» عن «زوّار بلا تحويل» إلا بفتح الوصول.
+
