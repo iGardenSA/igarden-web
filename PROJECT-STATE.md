@@ -140,7 +140,7 @@ Before a new wave:
 
 ✓ **2026-09-14 · SALES-4 بند 3 — الليد الحقيقي من الجوّال (S0 على `igarden-web`)** — خطّ الأساس `count=24 · with_pc=0` → الآن **`count=25 · with_pc=1`** (+1). الصفّ الجديد: `created_at=2026-09-14 12:20:56Z` · `lead_type=individual` · `preferred_contact=whatsapp` · `channel=website` · `source_url=/contact?cta=readiness_assessment | first_page=/ | first_seen=2026-08-31T09:52:45Z` ⇒ كتابة `preferred_contact` (#68) والإسناد الأوّل (Wave 2E) يعملان على ليد حقيقي. لا اسم/جوال في أي مخرَج.
 
-✓ **2026-09-14 · G3-A.2 — CLOSED (تقرير علي)** — 79/79 · mismatches 0 على الحارس الحيّ بعد تطبيق علي للـpatch. (المعرّف G3-A.2 غير موجود على قرص هذا الـrepo — مصدره سياق جلسة Web/Notion؛ يُسجَّل هنا كما ورد.)
+✓ **2026-09-14 · G3-A.2 — CLOSED (مُتحقَّق على القرص)** — `python3 tools/guard/guard_matrix.py ~/.claude/hooks/pretooluse-guard.py` (السكريبت في `~/Projects/igarden-ai-council` @ `e32fcd7`؛ الحارس الحيّ `~/.claude/hooks/pretooluse-guard.py` sha256 `1a943da75ec1…`) ⇒ **`cases: 79 · mismatches: 0`** بعد تطبيق علي للـpatch. (تسجيل أوّلي من تقرير علي استُبدل بهذا الدليل الفعلي في الجلسة نفسها.)
 
 ---
 
