@@ -26,6 +26,7 @@ import { SmartOSFlow } from "@/components/sections/SmartOSFlow";
 import { InnovationTracks } from "@/components/sections/InnovationTracks";
 import { KnowledgeGrid } from "@/components/sections/KnowledgeGrid";
 import { AssessmentSection } from "@/components/sections/AssessmentSection";
+import { OsfanStationPreview } from "@/components/sections/OsfanStationPreview";
 
 export default function HomePage() {
   return (
@@ -38,6 +39,10 @@ export default function HomePage() {
 
       {/* ⛔ حُذف شريط «تعرّف على iGarden» (Wave 2E): سطر معزول تحت الهيرو
           بلا وظيفة تحويل، و/about مبلوغ من الهيدر والفوتر والميجا. */}
+
+      {/* ② عرض الزيارة — فعل ملموس تحت الهيرو مباشرة (SALES-3): نموذج الزيارة في
+          /osfan-station هو الذي يحوّل فعلاً، والرئيسية لم تكن تصل إليه. */}
+      <OsfanStationPreview />
 
       {/* ③ سلّم نقطة البداية */}
       <StartScale />
