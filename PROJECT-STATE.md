@@ -132,11 +132,15 @@ Before a new wave:
 
 ✓ **2026-09-13/14 · SALES-2 — مدمج في `main`** — #62 `de44e30` (fact-sheet noindex) · #65 `81ec0b4` (إسقاط «7 تقنيات» + ادّعاء الاختبار المعمَّم؛ #63 أُغلق لأن `contact/layout.tsx` يحمل canonical أصلاً) · #66 `d833b47` (`/contact` جوّال: `scrollIntoView` للتأكيد · CTA هيرو+هيدر · شريط B2C تحت النموذج · select) · #68 `7b6b991` (كتابة `leads.preferred_contact`؛ #67 دُمج خطأً في فرع الميزة ثم أُعيد قصّه). **G-DATA منفَّذ**: العمود `preferred_contact text` nullable + CHECK مُضاف على `igarden-web` · `count=24 · with_pc=0` قبل الدمج. صفّ QA `8ddad336` حُذف بعد backup في `~/Projects/igarden-web-backups/`.
 
-◐ **2026-09-14 · SALES-3 — PR #69 `feat/conversion-path` (مفتوح، بانتظار قرار علي)** — الهيرو: العرض الأوّل «احجز زيارة إلى مرفق R&D في عسفان — تشاهد الأنظمة تعمل» → `/osfan-station#احجز-زيارة` · `OsfanStationPreview` شريط مضغوط تحت الهيرو · زرّ `FieldEvidence` → نموذج الزيارة لا `/contact` · `AssessmentSection`: إلزامي = اسم+جوال، «أنت…» يشمل فرد/مستثمر. الدليل على 412px: إلزامي 6→2 · أخطاء اسم+جوال 6→0 · روابط جسم الرئيسية إلى `/osfan-station` 0→3.
+✓ **2026-09-14 · SALES-3 — PR #69 `feat/conversion-path` — MERGED `583c5cd`** — الهيرو: العرض الأوّل «احجز زيارة إلى مرفق R&D في عسفان — تشاهد الأنظمة تعمل» → `/osfan-station#احجز-زيارة` · `OsfanStationPreview` شريط مضغوط تحت الهيرو · زرّ `FieldEvidence` → نموذج الزيارة لا `/contact` · `AssessmentSection`: إلزامي = اسم+جوال، «أنت…» يشمل فرد/مستثمر. الدليل على 412px: إلزامي 6→2 · أخطاء اسم+جوال 6→0 · روابط جسم الرئيسية إلى `/osfan-station` 0→3.
 
 ◐ **الإشعار — PR #64 (Draft)** — قناتان مستقلّتان (Resend + تلغرام) جاهزتان على الفرع. ينقص للتفعيل: `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` في Vercel Production + rate limit على `/api/notify-lead` + Redeploy، ثم lead اختباري `TEST-SALES-20260913`. Resend يبقى معطَّلاً بصمت حتى يُتحقَّق النطاق. ⛔ لا يُدّعى «الإشعار فعّال» قبل وصول رسالة حقيقية.
 
 ---
+
+## 7b. Operating rules learned (ambiguous-write)
+
+- **`gh pr edit --base <branch>` قد يفشل صامتاً** (حادثة #67 · 2026-09-14: طبع تحذير GraphQL عن Projects classic وأبقى الـbase القديم، فدُمج الـPR في فرع الميزة لا في `main`). ⇒ بعد أي تغيير base، **تحقّق بقراءة فعلية** `gh pr view <n> --json baseRefName` قبل `gh pr merge`، وبعد الدمج تحقّق بـ`git log origin/main`. الادّعاء لا يكفي — نمط ambiguous-write.
 
 ## 8. Commercial discovery — لماذا يحوّل `/osfan-station` (2026-09-14)
 
